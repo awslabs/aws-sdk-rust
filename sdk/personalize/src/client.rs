@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_personalize::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_personalize::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_personalize::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_personalize::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -96,12 +96,13 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::CreateBatchInferenceJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::CreateBatchInferenceJob::set_job_name): <p>The name of the batch inference job to create.</p>
     ///   - [`solution_version_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBatchInferenceJob::solution_version_arn) / [`set_solution_version_arn(Option<String>)`](crate::client::fluent_builders::CreateBatchInferenceJob::set_solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.</p>
-    ///   - [`filter_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBatchInferenceJob::filter_arn) / [`set_filter_arn(Option<String>)`](crate::client::fluent_builders::CreateBatchInferenceJob::set_filter_arn): <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
-    ///   - [`num_results(i32)`](crate::client::fluent_builders::CreateBatchInferenceJob::num_results) / [`set_num_results(Option<i32>)`](crate::client::fluent_builders::CreateBatchInferenceJob::set_num_results): <p>The number of recommendations to retreive.</p>
+    ///   - [`filter_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBatchInferenceJob::filter_arn) / [`set_filter_arn(Option<String>)`](crate::client::fluent_builders::CreateBatchInferenceJob::set_filter_arn): <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering batch recommendations</a>.</p>
+    ///   - [`num_results(i32)`](crate::client::fluent_builders::CreateBatchInferenceJob::num_results) / [`set_num_results(Option<i32>)`](crate::client::fluent_builders::CreateBatchInferenceJob::set_num_results): <p>The number of recommendations to retrieve.</p>
     ///   - [`job_input(BatchInferenceJobInput)`](crate::client::fluent_builders::CreateBatchInferenceJob::job_input) / [`set_job_input(Option<BatchInferenceJobInput>)`](crate::client::fluent_builders::CreateBatchInferenceJob::set_job_input): <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input material must be in JSON format.</p>
     ///   - [`job_output(BatchInferenceJobOutput)`](crate::client::fluent_builders::CreateBatchInferenceJob::job_output) / [`set_job_output(Option<BatchInferenceJobOutput>)`](crate::client::fluent_builders::CreateBatchInferenceJob::set_job_output): <p>The path to the Amazon S3 bucket where the job's output will be stored.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBatchInferenceJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateBatchInferenceJob::set_role_arn): <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
     ///   - [`batch_inference_job_config(BatchInferenceJobConfig)`](crate::client::fluent_builders::CreateBatchInferenceJob::batch_inference_job_config) / [`set_batch_inference_job_config(Option<BatchInferenceJobConfig>)`](crate::client::fluent_builders::CreateBatchInferenceJob::set_batch_inference_job_config): <p>The configuration details of a batch inference job.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateBatchInferenceJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateBatchInferenceJob::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the batch inference job.</p>
     /// - On success, responds with [`CreateBatchInferenceJobOutput`](crate::output::CreateBatchInferenceJobOutput) with field(s):
     ///   - [`batch_inference_job_arn(Option<String>)`](crate::output::CreateBatchInferenceJobOutput::batch_inference_job_arn): <p>The ARN of the batch inference job.</p>
     /// - On failure, responds with [`SdkError<CreateBatchInferenceJobError>`](crate::error::CreateBatchInferenceJobError)
@@ -113,11 +114,12 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::CreateBatchSegmentJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::CreateBatchSegmentJob::set_job_name): <p>The name of the batch segment job to create.</p>
     ///   - [`solution_version_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBatchSegmentJob::solution_version_arn) / [`set_solution_version_arn(Option<String>)`](crate::client::fluent_builders::CreateBatchSegmentJob::set_solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.</p>
-    ///   - [`filter_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBatchSegmentJob::filter_arn) / [`set_filter_arn(Option<String>)`](crate::client::fluent_builders::CreateBatchSegmentJob::set_filter_arn): <p>The ARN of the filter to apply to the batch segment job. For more information on using filters, see <code>filter-batch</code>.</p>
+    ///   - [`filter_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBatchSegmentJob::filter_arn) / [`set_filter_arn(Option<String>)`](crate::client::fluent_builders::CreateBatchSegmentJob::set_filter_arn): <p>The ARN of the filter to apply to the batch segment job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering batch recommendations</a>.</p>
     ///   - [`num_results(i32)`](crate::client::fluent_builders::CreateBatchSegmentJob::num_results) / [`set_num_results(Option<i32>)`](crate::client::fluent_builders::CreateBatchSegmentJob::set_num_results): <p>The number of predicted users generated by the batch segment job for each line of input data.</p>
     ///   - [`job_input(BatchSegmentJobInput)`](crate::client::fluent_builders::CreateBatchSegmentJob::job_input) / [`set_job_input(Option<BatchSegmentJobInput>)`](crate::client::fluent_builders::CreateBatchSegmentJob::set_job_input): <p>The Amazon S3 path for the input data used to generate the batch segment job.</p>
     ///   - [`job_output(BatchSegmentJobOutput)`](crate::client::fluent_builders::CreateBatchSegmentJob::job_output) / [`set_job_output(Option<BatchSegmentJobOutput>)`](crate::client::fluent_builders::CreateBatchSegmentJob::set_job_output): <p>The Amazon S3 path for the bucket where the job's output will be stored.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBatchSegmentJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateBatchSegmentJob::set_role_arn): <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateBatchSegmentJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateBatchSegmentJob::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the batch segment job.</p>
     /// - On success, responds with [`CreateBatchSegmentJobOutput`](crate::output::CreateBatchSegmentJobOutput) with field(s):
     ///   - [`batch_segment_job_arn(Option<String>)`](crate::output::CreateBatchSegmentJobOutput::batch_segment_job_arn): <p>The ARN of the batch segment job.</p>
     /// - On failure, responds with [`SdkError<CreateBatchSegmentJobError>`](crate::error::CreateBatchSegmentJobError)
@@ -131,6 +133,7 @@ impl Client {
     ///   - [`solution_version_arn(impl Into<String>)`](crate::client::fluent_builders::CreateCampaign::solution_version_arn) / [`set_solution_version_arn(Option<String>)`](crate::client::fluent_builders::CreateCampaign::set_solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
     ///   - [`min_provisioned_tps(i32)`](crate::client::fluent_builders::CreateCampaign::min_provisioned_tps) / [`set_min_provisioned_tps(Option<i32>)`](crate::client::fluent_builders::CreateCampaign::set_min_provisioned_tps): <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
     ///   - [`campaign_config(CampaignConfig)`](crate::client::fluent_builders::CreateCampaign::campaign_config) / [`set_campaign_config(Option<CampaignConfig>)`](crate::client::fluent_builders::CreateCampaign::set_campaign_config): <p>The configuration details of a campaign.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateCampaign::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateCampaign::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the campaign.</p>
     /// - On success, responds with [`CreateCampaignOutput`](crate::output::CreateCampaignOutput) with field(s):
     ///   - [`campaign_arn(Option<String>)`](crate::output::CreateCampaignOutput::campaign_arn): <p>The Amazon Resource Name (ARN) of the campaign.</p>
     /// - On failure, responds with [`SdkError<CreateCampaignError>`](crate::error::CreateCampaignError)
@@ -144,6 +147,7 @@ impl Client {
     ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_schema_arn): <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
     ///   - [`dataset_group_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
     ///   - [`dataset_type(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::dataset_type) / [`set_dataset_type(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_dataset_type): <p>The type of dataset.</p>  <p>One of the following (case insensitive) values:</p>  <ul>   <li> <p>Interactions</p> </li>   <li> <p>Items</p> </li>   <li> <p>Users</p> </li>  </ul>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDataset::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDataset::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset.</p>
     /// - On success, responds with [`CreateDatasetOutput`](crate::output::CreateDatasetOutput) with field(s):
     ///   - [`dataset_arn(Option<String>)`](crate::output::CreateDatasetOutput::dataset_arn): <p>The ARN of the dataset.</p>
     /// - On failure, responds with [`SdkError<CreateDatasetError>`](crate::error::CreateDatasetError)
@@ -158,6 +162,7 @@ impl Client {
     ///   - [`ingestion_mode(IngestionMode)`](crate::client::fluent_builders::CreateDatasetExportJob::ingestion_mode) / [`set_ingestion_mode(Option<IngestionMode>)`](crate::client::fluent_builders::CreateDatasetExportJob::set_ingestion_mode): <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetExportJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDatasetExportJob::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
     ///   - [`job_output(DatasetExportJobOutput)`](crate::client::fluent_builders::CreateDatasetExportJob::job_output) / [`set_job_output(Option<DatasetExportJobOutput>)`](crate::client::fluent_builders::CreateDatasetExportJob::set_job_output): <p>The path to the Amazon S3 bucket where the job's output is stored.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDatasetExportJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDatasetExportJob::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset export job.</p>
     /// - On success, responds with [`CreateDatasetExportJobOutput`](crate::output::CreateDatasetExportJobOutput) with field(s):
     ///   - [`dataset_export_job_arn(Option<String>)`](crate::output::CreateDatasetExportJobOutput::dataset_export_job_arn): <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
     /// - On failure, responds with [`SdkError<CreateDatasetExportJobError>`](crate::error::CreateDatasetExportJobError)
@@ -171,6 +176,7 @@ impl Client {
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetGroup::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDatasetGroup::set_role_arn): <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.</p>
     ///   - [`kms_key_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetGroup::kms_key_arn) / [`set_kms_key_arn(Option<String>)`](crate::client::fluent_builders::CreateDatasetGroup::set_kms_key_arn): <p>The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to encrypt the datasets.</p>
     ///   - [`domain(Domain)`](crate::client::fluent_builders::CreateDatasetGroup::domain) / [`set_domain(Option<Domain>)`](crate::client::fluent_builders::CreateDatasetGroup::set_domain): <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain, you create a Custom dataset group with solution versions that you deploy with a campaign. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDatasetGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDatasetGroup::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset group.</p>
     /// - On success, responds with [`CreateDatasetGroupOutput`](crate::output::CreateDatasetGroupOutput) with field(s):
     ///   - [`dataset_group_arn(Option<String>)`](crate::output::CreateDatasetGroupOutput::dataset_group_arn): <p>The Amazon Resource Name (ARN) of the new dataset group.</p>
     ///   - [`domain(Option<Domain>)`](crate::output::CreateDatasetGroupOutput::domain): <p>The domain for the new Domain dataset group.</p>
@@ -185,6 +191,7 @@ impl Client {
     ///   - [`dataset_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_dataset_arn): <p>The ARN of the dataset that receives the imported data.</p>
     ///   - [`data_source(DataSource)`](crate::client::fluent_builders::CreateDatasetImportJob::data_source) / [`set_data_source(Option<DataSource>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_data_source): <p>The Amazon S3 bucket that contains the training data to import.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_role_arn): <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDatasetImportJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset import job.</p>
     /// - On success, responds with [`CreateDatasetImportJobOutput`](crate::output::CreateDatasetImportJobOutput) with field(s):
     ///   - [`dataset_import_job_arn(Option<String>)`](crate::output::CreateDatasetImportJobOutput::dataset_import_job_arn): <p>The ARN of the dataset import job.</p>
     /// - On failure, responds with [`SdkError<CreateDatasetImportJobError>`](crate::error::CreateDatasetImportJobError)
@@ -196,6 +203,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateEventTracker::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateEventTracker::set_name): <p>The name for the event tracker.</p>
     ///   - [`dataset_group_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEventTracker::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::client::fluent_builders::CreateEventTracker::set_dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEventTracker::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEventTracker::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the event tracker.</p>
     /// - On success, responds with [`CreateEventTrackerOutput`](crate::output::CreateEventTrackerOutput) with field(s):
     ///   - [`event_tracker_arn(Option<String>)`](crate::output::CreateEventTrackerOutput::event_tracker_arn): <p>The ARN of the event tracker.</p>
     ///   - [`tracking_id(Option<String>)`](crate::output::CreateEventTrackerOutput::tracking_id): <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
@@ -208,7 +216,8 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_name): <p>The name of the filter to create.</p>
     ///   - [`dataset_group_arn(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_dataset_group_arn): <p>The ARN of the dataset group that the filter will belong to.</p>
-    ///   - [`filter_expression(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::filter_expression) / [`set_filter_expression(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_filter_expression): <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <code>filter-expressions</code>.</p>
+    ///   - [`filter_expression(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::filter_expression) / [`set_filter_expression(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_filter_expression): <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateFilter::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateFilter::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the filter.</p>
     /// - On success, responds with [`CreateFilterOutput`](crate::output::CreateFilterOutput) with field(s):
     ///   - [`filter_arn(Option<String>)`](crate::output::CreateFilterOutput::filter_arn): <p>The ARN of the new filter.</p>
     /// - On failure, responds with [`SdkError<CreateFilterError>`](crate::error::CreateFilterError)
@@ -222,6 +231,7 @@ impl Client {
     ///   - [`dataset_group_arn(impl Into<String>)`](crate::client::fluent_builders::CreateRecommender::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::client::fluent_builders::CreateRecommender::set_dataset_group_arn): <p>The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.</p>
     ///   - [`recipe_arn(impl Into<String>)`](crate::client::fluent_builders::CreateRecommender::recipe_arn) / [`set_recipe_arn(Option<String>)`](crate::client::fluent_builders::CreateRecommender::set_recipe_arn): <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>. </p>
     ///   - [`recommender_config(RecommenderConfig)`](crate::client::fluent_builders::CreateRecommender::recommender_config) / [`set_recommender_config(Option<RecommenderConfig>)`](crate::client::fluent_builders::CreateRecommender::set_recommender_config): <p>The configuration details of the recommender.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRecommender::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRecommender::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the recommender.</p>
     /// - On success, responds with [`CreateRecommenderOutput`](crate::output::CreateRecommenderOutput) with field(s):
     ///   - [`recommender_arn(Option<String>)`](crate::output::CreateRecommenderOutput::recommender_arn): <p>The Amazon Resource Name (ARN) of the recommender.</p>
     /// - On failure, responds with [`SdkError<CreateRecommenderError>`](crate::error::CreateRecommenderError)
@@ -250,6 +260,7 @@ impl Client {
     ///   - [`dataset_group_arn(impl Into<String>)`](crate::client::fluent_builders::CreateSolution::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::client::fluent_builders::CreateSolution::set_dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
     ///   - [`event_type(impl Into<String>)`](crate::client::fluent_builders::CreateSolution::event_type) / [`set_event_type(Option<String>)`](crate::client::fluent_builders::CreateSolution::set_event_type): <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.</p>  <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with equal weight regardless of type.</p>
     ///   - [`solution_config(SolutionConfig)`](crate::client::fluent_builders::CreateSolution::solution_config) / [`set_solution_config(Option<SolutionConfig>)`](crate::client::fluent_builders::CreateSolution::set_solution_config): <p>The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>   <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>  </note>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateSolution::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateSolution::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the solution.</p>
     /// - On success, responds with [`CreateSolutionOutput`](crate::output::CreateSolutionOutput) with field(s):
     ///   - [`solution_arn(Option<String>)`](crate::output::CreateSolutionOutput::solution_arn): <p>The ARN of the solution.</p>
     /// - On failure, responds with [`SdkError<CreateSolutionError>`](crate::error::CreateSolutionError)
@@ -261,6 +272,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`solution_arn(impl Into<String>)`](crate::client::fluent_builders::CreateSolutionVersion::solution_arn) / [`set_solution_arn(Option<String>)`](crate::client::fluent_builders::CreateSolutionVersion::set_solution_arn): <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
     ///   - [`training_mode(TrainingMode)`](crate::client::fluent_builders::CreateSolutionVersion::training_mode) / [`set_training_mode(Option<TrainingMode>)`](crate::client::fluent_builders::CreateSolutionVersion::set_training_mode): <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>   <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>  </important>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateSolutionVersion::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateSolutionVersion::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the solution version.</p>
     /// - On success, responds with [`CreateSolutionVersionOutput`](crate::output::CreateSolutionVersionOutput) with field(s):
     ///   - [`solution_version_arn(Option<String>)`](crate::output::CreateSolutionVersionOutput::solution_version_arn): <p>The ARN of the new solution version.</p>
     /// - On failure, responds with [`SdkError<CreateSolutionVersionError>`](crate::error::CreateSolutionVersionError)
@@ -553,7 +565,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`solution_arn(impl Into<String>)`](crate::client::fluent_builders::ListCampaigns::solution_arn) / [`set_solution_arn(Option<String>)`](crate::client::fluent_builders::ListCampaigns::set_solution_arn): <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When a solution is not specified, all the campaigns associated with the account are listed.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCampaigns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCampaigns::set_next_token): <p>A token returned from the previous call to <code>ListCampaigns</code> for getting the next set of campaigns (if they exist).</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCampaigns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCampaigns::set_next_token): <p>A token returned from the previous call to <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a> for getting the next set of campaigns (if they exist).</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCampaigns::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCampaigns::set_max_results): <p>The maximum number of campaigns to return.</p>
     /// - On success, responds with [`ListCampaignsOutput`](crate::output::ListCampaignsOutput) with field(s):
     ///   - [`campaigns(Option<Vec<CampaignSummary>>)`](crate::output::ListCampaignsOutput::campaigns): <p>A list of the campaigns.</p>
@@ -652,7 +664,7 @@ impl Client {
     ///   - [`recipe_provider(RecipeProvider)`](crate::client::fluent_builders::ListRecipes::recipe_provider) / [`set_recipe_provider(Option<RecipeProvider>)`](crate::client::fluent_builders::ListRecipes::set_recipe_provider): <p>The default is <code>SERVICE</code>.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRecipes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRecipes::set_next_token): <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRecipes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRecipes::set_max_results): <p>The maximum number of recipes to return.</p>
-    ///   - [`domain(Domain)`](crate::client::fluent_builders::ListRecipes::domain) / [`set_domain(Option<Domain>)`](crate::client::fluent_builders::ListRecipes::set_domain): <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned. </p>
+    ///   - [`domain(Domain)`](crate::client::fluent_builders::ListRecipes::domain) / [`set_domain(Option<Domain>)`](crate::client::fluent_builders::ListRecipes::set_domain): <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, all recipes are returned. </p>
     /// - On success, responds with [`ListRecipesOutput`](crate::output::ListRecipesOutput) with field(s):
     ///   - [`recipes(Option<Vec<RecipeSummary>>)`](crate::output::ListRecipesOutput::recipes): <p>The list of available recipes.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListRecipesOutput::next_token): <p>A token for getting the next set of recipes.</p>
@@ -715,6 +727,16 @@ impl Client {
     pub fn list_solution_versions(&self) -> fluent_builders::ListSolutionVersions {
         fluent_builders::ListSolutionVersions::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The resource's Amazon Resource Name.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The resource's tags.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
+    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
+        fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`StopSolutionVersionCreation`](crate::client::fluent_builders::StopSolutionVersionCreation) operation.
     ///
     /// - The fluent builder is configurable:
@@ -724,6 +746,28 @@ impl Client {
     /// - On failure, responds with [`SdkError<StopSolutionVersionCreationError>`](crate::error::StopSolutionVersionCreationError)
     pub fn stop_solution_version_creation(&self) -> fluent_builders::StopSolutionVersionCreation {
         fluent_builders::StopSolutionVersionCreation::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The resource's Amazon Resource Name (ARN).</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Tags to apply to the resource. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging Personalize resources</a>.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
+    pub fn tag_resource(&self) -> fluent_builders::TagResource {
+        fluent_builders::TagResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The resource's Amazon Resource Name (ARN).</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>Keys to remove from the resource's tags.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
+    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
+        fluent_builders::UntagResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateCampaign`](crate::client::fluent_builders::UpdateCampaign) operation.
     ///
@@ -760,7 +804,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateBatchInferenceJob`.
     ///
-    /// <p>Creates a batch inference job. The operation can handle up to 50 million records and the input file must be in JSON format. For more information, see <code>recommendations-batch</code>.</p>
+    /// <p>Creates a batch inference job. The operation can handle up to 50 million records and the input file must be in JSON format. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/creating-batch-inference-job.html">Creating a batch inference job</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBatchInferenceJob {
         handle: std::sync::Arc<super::Handle>,
@@ -823,22 +867,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_solution_version_arn(input);
             self
         }
-        /// <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
+        /// <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering batch recommendations</a>.</p>
         pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.filter_arn(input.into());
             self
         }
-        /// <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
+        /// <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering batch recommendations</a>.</p>
         pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_filter_arn(input);
             self
         }
-        /// <p>The number of recommendations to retreive.</p>
+        /// <p>The number of recommendations to retrieve.</p>
         pub fn num_results(mut self, input: i32) -> Self {
             self.inner = self.inner.num_results(input);
             self
         }
-        /// <p>The number of recommendations to retreive.</p>
+        /// <p>The number of recommendations to retrieve.</p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_num_results(input);
             self
@@ -895,10 +939,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_batch_inference_job_config(input);
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the batch inference job.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the batch inference job.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateBatchSegmentJob`.
     ///
-    /// <p>Creates a batch segment job. The operation can handle up to 50 million records and the input file must be in JSON format. For more information, see <code>recommendations-batch</code>.</p>
+    /// <p>Creates a batch segment job. The operation can handle up to 50 million records and the input file must be in JSON format. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recommendations-batch.html">Getting batch recommendations and user segments</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBatchSegmentJob {
         handle: std::sync::Arc<super::Handle>,
@@ -961,12 +1022,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_solution_version_arn(input);
             self
         }
-        /// <p>The ARN of the filter to apply to the batch segment job. For more information on using filters, see <code>filter-batch</code>.</p>
+        /// <p>The ARN of the filter to apply to the batch segment job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering batch recommendations</a>.</p>
         pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.filter_arn(input.into());
             self
         }
-        /// <p>The ARN of the filter to apply to the batch segment job. For more information on using filters, see <code>filter-batch</code>.</p>
+        /// <p>The ARN of the filter to apply to the batch segment job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering batch recommendations</a>.</p>
         pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_filter_arn(input);
             self
@@ -1017,6 +1078,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_arn(input);
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the batch segment job.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the batch segment job.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateCampaign`.
     ///
@@ -1031,15 +1109,15 @@ pub mod fluent_builders {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    /// <p>To get the campaign status, call <code>DescribeCampaign</code>.</p> <note>
+    /// <p>To get the campaign status, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>.</p> <note>
     /// <p>Wait until the <code>status</code> of the campaign is <code>ACTIVE</code> before asking the campaign for recommendations.</p>
     /// </note>
     /// <p class="title"> <b>Related APIs</b> </p>
     /// <ul>
-    /// <li> <p> <code>ListCampaigns</code> </p> </li>
-    /// <li> <p> <code>DescribeCampaign</code> </p> </li>
-    /// <li> <p> <code>UpdateCampaign</code> </p> </li>
-    /// <li> <p> <code>DeleteCampaign</code> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateCampaign.html">UpdateCampaign</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteCampaign.html">DeleteCampaign</a> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCampaign {
@@ -1126,10 +1204,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_campaign_config(input);
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the campaign.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the campaign.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateDataset`.
     ///
-    /// <p>Creates an empty dataset and adds it to the specified dataset group. Use <code>CreateDatasetImportJob</code> to import your training data to a dataset.</p>
+    /// <p>Creates an empty dataset and adds it to the specified dataset group. Use <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> to import your training data to a dataset.</p>
     /// <p>There are three types of datasets:</p>
     /// <ul>
     /// <li> <p>Interactions</p> </li>
@@ -1142,13 +1237,13 @@ pub mod fluent_builders {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    /// <p>To get the status of the dataset, call <code>DescribeDataset</code>.</p>
+    /// <p>To get the status of the dataset, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html">DescribeDataset</a>.</p>
     /// <p class="title"> <b>Related APIs</b> </p>
     /// <ul>
-    /// <li> <p> <code>CreateDatasetGroup</code> </p> </li>
-    /// <li> <p> <code>ListDatasets</code> </p> </li>
-    /// <li> <p> <code>DescribeDataset</code> </p> </li>
-    /// <li> <p> <code>DeleteDataset</code> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListDatasets.html">ListDatasets</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html">DescribeDataset</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteDataset.html">DeleteDataset</a> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataset {
@@ -1244,6 +1339,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_type(input);
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateDatasetExportJob`.
     ///
@@ -1253,7 +1365,7 @@ pub mod fluent_builders {
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// </ul>
-    /// <p> To get the status of the export job, call <code>DescribeDatasetExportJob</code>, and specify the Amazon Resource Name (ARN) of the dataset export job. The dataset export is complete when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which describes why the job failed. </p>
+    /// <p> To get the status of the export job, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetExportJob.html">DescribeDatasetExportJob</a>, and specify the Amazon Resource Name (ARN) of the dataset export job. The dataset export is complete when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which describes why the job failed. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatasetExportJob {
         handle: std::sync::Arc<super::Handle>,
@@ -1349,6 +1461,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_output(input);
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset export job.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset export job.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateDatasetGroup`.
     ///
@@ -1364,21 +1493,21 @@ pub mod fluent_builders {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING</p> </li>
     /// </ul>
-    /// <p>To get the status of the dataset group, call <code>DescribeDatasetGroup</code>. If the status shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which describes why the creation failed.</p> <note>
+    /// <p>To get the status of the dataset group, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>. If the status shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which describes why the creation failed.</p> <note>
     /// <p>You must wait until the <code>status</code> of the dataset group is <code>ACTIVE</code> before adding a dataset to the group.</p>
     /// </note>
     /// <p>You can specify an Key Management Service (KMS) key to encrypt the datasets in the group. If you specify a KMS key, you must also include an Identity and Access Management (IAM) role that has permission to access the key.</p>
     /// <p class="title"> <b>APIs that require a dataset group ARN in the request</b> </p>
     /// <ul>
-    /// <li> <p> <code>CreateDataset</code> </p> </li>
-    /// <li> <p> <code>CreateEventTracker</code> </p> </li>
-    /// <li> <p> <code>CreateSolution</code> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a> </p> </li>
     /// </ul>
     /// <p class="title"> <b>Related APIs</b> </p>
     /// <ul>
-    /// <li> <p> <code>ListDatasetGroups</code> </p> </li>
-    /// <li> <p> <code>DescribeDatasetGroup</code> </p> </li>
-    /// <li> <p> <code>DeleteDatasetGroup</code> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListDatasetGroups.html">ListDatasetGroups</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteDatasetGroup.html">DeleteDatasetGroup</a> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatasetGroup {
@@ -1459,6 +1588,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset group.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset group.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateDatasetImportJob`.
     ///
@@ -1470,13 +1616,13 @@ pub mod fluent_builders {
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// </ul>
-    /// <p>To get the status of the import job, call <code>DescribeDatasetImportJob</code>, providing the Amazon Resource Name (ARN) of the dataset import job. The dataset import is complete when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which describes why the job failed.</p> <note>
+    /// <p>To get the status of the import job, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>, providing the Amazon Resource Name (ARN) of the dataset import job. The dataset import is complete when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which describes why the job failed.</p> <note>
     /// <p>Importing takes time. You must wait until the status shows as ACTIVE before training a model using the dataset.</p>
     /// </note>
     /// <p class="title"> <b>Related APIs</b> </p>
     /// <ul>
-    /// <li> <p> <code>ListDatasetImportJobs</code> </p> </li>
-    /// <li> <p> <code>DescribeDatasetImportJob</code> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListDatasetImportJobs.html">ListDatasetImportJobs</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatasetImportJob {
@@ -1560,6 +1706,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_arn(input);
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset import job.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset import job.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateEventTracker`.
     ///
@@ -1572,14 +1735,14 @@ pub mod fluent_builders {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    /// <p>To get the status of the event tracker, call <code>DescribeEventTracker</code>.</p> <note>
+    /// <p>To get the status of the event tracker, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeEventTracker.html">DescribeEventTracker</a>.</p> <note>
     /// <p>The event tracker must be in the ACTIVE state before using the tracking ID.</p>
     /// </note>
     /// <p class="title"> <b>Related APIs</b> </p>
     /// <ul>
-    /// <li> <p> <code>ListEventTrackers</code> </p> </li>
-    /// <li> <p> <code>DescribeEventTracker</code> </p> </li>
-    /// <li> <p> <code>DeleteEventTracker</code> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListEventTrackers.html">ListEventTrackers</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeEventTracker.html">DescribeEventTracker</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteEventTracker.html">DeleteEventTracker</a> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEventTracker {
@@ -1643,10 +1806,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_group_arn(input);
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the event tracker.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the event tracker.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateFilter`.
     ///
-    /// <p>Creates a recommendation filter. For more information, see <code>filter</code>.</p>
+    /// <p>Creates a recommendation filter. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user segments</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFilter {
         handle: std::sync::Arc<super::Handle>,
@@ -1709,17 +1889,34 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_group_arn(input);
             self
         }
-        /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <code>filter-expressions</code>.</p>
+        /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
         pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.filter_expression(input.into());
             self
         }
-        /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <code>filter-expressions</code>.</p>
+        /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
         pub fn set_filter_expression(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_filter_expression(input);
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the filter.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the filter.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1736,15 +1933,15 @@ pub mod fluent_builders {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    /// <p>To get the recommender status, call <code>DescribeRecommender</code>.</p> <note>
+    /// <p>To get the recommender status, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a>.</p> <note>
     /// <p>Wait until the <code>status</code> of the recommender is <code>ACTIVE</code> before asking the recommender for recommendations.</p>
     /// </note>
     /// <p class="title"> <b>Related APIs</b> </p>
     /// <ul>
-    /// <li> <p> <code>ListRecommenders</code> </p> </li>
-    /// <li> <p> <code>DescribeRecommender</code> </p> </li>
-    /// <li> <p> <code>UpdateRecommender</code> </p> </li>
-    /// <li> <p> <code>DeleteRecommender</code> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListRecommenders.html">ListRecommenders</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateRecommender.html">UpdateRecommender</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteRecommender.html">DeleteRecommender</a> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRecommender {
@@ -1831,16 +2028,33 @@ pub mod fluent_builders {
             self.inner = self.inner.set_recommender_config(input);
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the recommender.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the recommender.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateSchema`.
     ///
     /// <p>Creates an Amazon Personalize schema from the specified schema string. The schema you create must be in Avro JSON format.</p>
-    /// <p>Amazon Personalize recognizes three schema variants. Each schema is associated with a dataset type and has a set of required field and keywords. If you are creating a schema for a dataset in a Domain dataset group, you provide the domain of the Domain dataset group. You specify a schema when you call <code>CreateDataset</code>.</p>
+    /// <p>Amazon Personalize recognizes three schema variants. Each schema is associated with a dataset type and has a set of required field and keywords. If you are creating a schema for a dataset in a Domain dataset group, you provide the domain of the Domain dataset group. You specify a schema when you call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.</p>
     /// <p class="title"> <b>Related APIs</b> </p>
     /// <ul>
-    /// <li> <p> <code>ListSchemas</code> </p> </li>
-    /// <li> <p> <code>DescribeSchema</code> </p> </li>
-    /// <li> <p> <code>DeleteSchema</code> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSchemas.html">ListSchemas</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSchema.html">DescribeSchema</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteSchema.html">DeleteSchema</a> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSchema {
@@ -1914,8 +2128,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSolution`.
     ///
-    /// <p>Creates the configuration for training a model. A trained model is known as a solution. After the configuration is created, you train the model (create a solution) by calling the <code>CreateSolutionVersion</code> operation. Every time you call <code>CreateSolutionVersion</code>, a new version of the solution is created.</p>
-    /// <p>After creating a solution version, you check its accuracy by calling <code>GetSolutionMetrics</code>. When you are satisfied with the version, you deploy it using <code>CreateCampaign</code>. The campaign provides recommendations to a client through the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> API.</p>
+    /// <p>Creates the configuration for training a model. A trained model is known as a solution. After the configuration is created, you train the model (create a solution) by calling the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a> operation. Every time you call <code>CreateSolutionVersion</code>, a new version of the solution is created.</p>
+    /// <p>After creating a solution version, you check its accuracy by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_GetSolutionMetrics.html">GetSolutionMetrics</a>. When you are satisfied with the version, you deploy it using <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>. The campaign provides recommendations to a client through the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> API.</p>
     /// <p>To train a model, Amazon Personalize requires training data and a recipe. The training data comes from the dataset group that you provide in the request. A recipe specifies the training algorithm and a feature transformation. You can specify one of the predefined recipes provided by Amazon Personalize. Alternatively, you can specify <code>performAutoML</code> and Amazon Personalize will analyze your data and select the optimum USER_PERSONALIZATION recipe for you.</p> <note>
     /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> for solution hyperparameter optimization at this time.</p>
     /// </note>
@@ -1925,17 +2139,17 @@ pub mod fluent_builders {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    /// <p>To get the status of the solution, call <code>DescribeSolution</code>. Wait until the status shows as ACTIVE before calling <code>CreateSolutionVersion</code>.</p>
+    /// <p>To get the status of the solution, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>. Wait until the status shows as ACTIVE before calling <code>CreateSolutionVersion</code>.</p>
     /// <p class="title"> <b>Related APIs</b> </p>
     /// <ul>
-    /// <li> <p> <code>ListSolutions</code> </p> </li>
-    /// <li> <p> <code>CreateSolutionVersion</code> </p> </li>
-    /// <li> <p> <code>DescribeSolution</code> </p> </li>
-    /// <li> <p> <code>DeleteSolution</code> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutions.html">ListSolutions</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteSolution.html">DeleteSolution</a> </p> </li>
     /// </ul>
     /// <ul>
-    /// <li> <p> <code>ListSolutionVersions</code> </p> </li>
-    /// <li> <p> <code>DescribeSolutionVersion</code> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSolution {
@@ -2062,10 +2276,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_solution_config(input);
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the solution.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the solution.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateSolutionVersion`.
     ///
-    /// <p>Trains or retrains an active solution in a Custom dataset group. A solution is created using the <code>CreateSolution</code> operation and must be in the ACTIVE state before calling <code>CreateSolutionVersion</code>. A new version of the solution is created every time you call this operation.</p>
+    /// <p>Trains or retrains an active solution in a Custom dataset group. A solution is created using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a> operation and must be in the ACTIVE state before calling <code>CreateSolutionVersion</code>. A new version of the solution is created every time you call this operation.</p>
     /// <p> <b>Status</b> </p>
     /// <p>A solution version can be in one of the following states:</p>
     /// <ul>
@@ -2076,18 +2307,16 @@ pub mod fluent_builders {
     /// <li> <p>CREATE STOPPING</p> </li>
     /// <li> <p>CREATE STOPPED</p> </li>
     /// </ul>
-    /// <p>To get the status of the version, call <code>DescribeSolutionVersion</code>. Wait until the status shows as ACTIVE before calling <code>CreateCampaign</code>.</p>
+    /// <p>To get the status of the version, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>. Wait until the status shows as ACTIVE before calling <code>CreateCampaign</code>.</p>
     /// <p>If the status shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which describes why the job failed.</p>
     /// <p class="title"> <b>Related APIs</b> </p>
     /// <ul>
-    /// <li> <p> <code>ListSolutionVersions</code> </p> </li>
-    /// <li> <p> <code>DescribeSolutionVersion</code> </p> </li>
-    /// </ul>
-    /// <ul>
-    /// <li> <p> <code>ListSolutions</code> </p> </li>
-    /// <li> <p> <code>CreateSolution</code> </p> </li>
-    /// <li> <p> <code>DescribeSolution</code> </p> </li>
-    /// <li> <p> <code>DeleteSolution</code> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutions.html">ListSolutions</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteSolution.html">DeleteSolution</a> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSolutionVersion {
@@ -2155,10 +2384,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_training_mode(input);
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the solution version.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the solution version.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DeleteCampaign`.
     ///
-    /// <p>Removes a campaign by deleting the solution deployment. The solution that the campaign is based on is not deleted and can be redeployed when needed. A deleted campaign can no longer be specified in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> request. For more information on campaigns, see <code>CreateCampaign</code>.</p>
+    /// <p>Removes a campaign by deleting the solution deployment. The solution that the campaign is based on is not deleted and can be redeployed when needed. A deleted campaign can no longer be specified in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> request. For information on creating campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCampaign {
         handle: std::sync::Arc<super::Handle>,
@@ -2211,7 +2457,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDataset`.
     ///
-    /// <p>Deletes a dataset. You can't delete a dataset if an associated <code>DatasetImportJob</code> or <code>SolutionVersion</code> is in the CREATE PENDING or IN PROGRESS state. For more information on datasets, see <code>CreateDataset</code>.</p>
+    /// <p>Deletes a dataset. You can't delete a dataset if an associated <code>DatasetImportJob</code> or <code>SolutionVersion</code> is in the CREATE PENDING or IN PROGRESS state. For more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataset {
         handle: std::sync::Arc<super::Handle>,
@@ -2325,7 +2571,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEventTracker`.
     ///
-    /// <p>Deletes the event tracker. Does not delete the event-interactions dataset from the associated dataset group. For more information on event trackers, see <code>CreateEventTracker</code>.</p>
+    /// <p>Deletes the event tracker. Does not delete the event-interactions dataset from the associated dataset group. For more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEventTracker {
         handle: std::sync::Arc<super::Handle>,
@@ -2490,7 +2736,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSchema`.
     ///
-    /// <p>Deletes a schema. Before deleting a schema, you must delete all datasets referencing the schema. For more information on schemas, see <code>CreateSchema</code>.</p>
+    /// <p>Deletes a schema. Before deleting a schema, you must delete all datasets referencing the schema. For more information on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSchema {
         handle: std::sync::Arc<super::Handle>,
@@ -2543,7 +2789,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSolution`.
     ///
-    /// <p>Deletes all versions of a solution and the <code>Solution</code> object itself. Before deleting a solution, you must delete all campaigns based on the solution. To determine what campaigns are using the solution, call <code>ListCampaigns</code> and supply the Amazon Resource Name (ARN) of the solution. You can't delete a solution if an associated <code>SolutionVersion</code> is in the CREATE PENDING or IN PROGRESS state. For more information on solutions, see <code>CreateSolution</code>.</p>
+    /// <p>Deletes all versions of a solution and the <code>Solution</code> object itself. Before deleting a solution, you must delete all campaigns based on the solution. To determine what campaigns are using the solution, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a> and supply the Amazon Resource Name (ARN) of the solution. You can't delete a solution if an associated <code>SolutionVersion</code> is in the CREATE PENDING or IN PROGRESS state. For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSolution {
         handle: std::sync::Arc<super::Handle>,
@@ -2771,7 +3017,7 @@ pub mod fluent_builders {
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
     /// <p>When the <code>status</code> is <code>CREATE FAILED</code>, the response includes the <code>failureReason</code> key, which describes why.</p>
-    /// <p>For more information on campaigns, see <code>CreateCampaign</code>.</p>
+    /// <p>For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCampaign {
         handle: std::sync::Arc<super::Handle>,
@@ -2824,7 +3070,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDataset`.
     ///
-    /// <p>Describes the given dataset. For more information on datasets, see <code>CreateDataset</code>.</p>
+    /// <p>Describes the given dataset. For more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataset {
         handle: std::sync::Arc<super::Handle>,
@@ -2877,7 +3123,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDatasetExportJob`.
     ///
-    /// <p>Describes the dataset export job created by <code>CreateDatasetExportJob</code>, including the export job status.</p>
+    /// <p>Describes the dataset export job created by <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html">CreateDatasetExportJob</a>, including the export job status.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDatasetExportJob {
         handle: std::sync::Arc<super::Handle>,
@@ -2933,7 +3179,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDatasetGroup`.
     ///
-    /// <p>Describes the given dataset group. For more information on dataset groups, see <code>CreateDatasetGroup</code>.</p>
+    /// <p>Describes the given dataset group. For more information on dataset groups, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDatasetGroup {
         handle: std::sync::Arc<super::Handle>,
@@ -2989,7 +3235,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDatasetImportJob`.
     ///
-    /// <p>Describes the dataset import job created by <code>CreateDatasetImportJob</code>, including the import job status.</p>
+    /// <p>Describes the dataset import job created by <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>, including the import job status.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDatasetImportJob {
         handle: std::sync::Arc<super::Handle>,
@@ -3045,7 +3291,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEventTracker`.
     ///
-    /// <p>Describes an event tracker. The response includes the <code>trackingId</code> and <code>status</code> of the event tracker. For more information on event trackers, see <code>CreateEventTracker</code>.</p>
+    /// <p>Describes an event tracker. The response includes the <code>trackingId</code> and <code>status</code> of the event tracker. For more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventTracker {
         handle: std::sync::Arc<super::Handle>,
@@ -3217,7 +3463,7 @@ pub mod fluent_builders {
     /// <li> <p>Hyperparameters that govern the training.</p> </li>
     /// <li> <p>Feature transformation information for modifying the input data before training.</p> </li>
     /// </ul>
-    /// <p>Amazon Personalize provides a set of predefined recipes. You specify a recipe when you create a solution with the <code>CreateSolution</code> API. <code>CreateSolution</code> trains a model by using the algorithm in the specified recipe and a training dataset. The solution, when deployed as a campaign, can provide recommendations using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> API.</p>
+    /// <p>Amazon Personalize provides a set of predefined recipes. You specify a recipe when you create a solution with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a> API. <code>CreateSolution</code> trains a model by using the algorithm in the specified recipe and a training dataset. The solution, when deployed as a campaign, can provide recommendations using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRecipe {
         handle: std::sync::Arc<super::Handle>,
@@ -3333,7 +3579,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSchema`.
     ///
-    /// <p>Describes a schema. For more information on schemas, see <code>CreateSchema</code>.</p>
+    /// <p>Describes a schema. For more information on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSchema {
         handle: std::sync::Arc<super::Handle>,
@@ -3386,7 +3632,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSolution`.
     ///
-    /// <p>Describes a solution. For more information on solutions, see <code>CreateSolution</code>.</p>
+    /// <p>Describes a solution. For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSolution {
         handle: std::sync::Arc<super::Handle>,
@@ -3439,7 +3685,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSolutionVersion`.
     ///
-    /// <p>Describes a specific version of a solution. For more information on solutions, see <code>CreateSolution</code>.</p>
+    /// <p>Describes a specific version of a solution. For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSolutionVersion {
         handle: std::sync::Arc<super::Handle>,
@@ -3715,7 +3961,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListCampaigns`.
     ///
-    /// <p>Returns a list of campaigns that use the given solution. When a solution is not specified, all the campaigns associated with the account are listed. The response provides the properties for each campaign, including the Amazon Resource Name (ARN). For more information on campaigns, see <code>CreateCampaign</code>.</p>
+    /// <p>Returns a list of campaigns that use the given solution. When a solution is not specified, all the campaigns associated with the account are listed. The response provides the properties for each campaign, including the Amazon Resource Name (ARN). For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCampaigns {
         handle: std::sync::Arc<super::Handle>,
@@ -3771,12 +4017,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_solution_arn(input);
             self
         }
-        /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting the next set of campaigns (if they exist).</p>
+        /// <p>A token returned from the previous call to <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a> for getting the next set of campaigns (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting the next set of campaigns (if they exist).</p>
+        /// <p>A token returned from the previous call to <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a> for getting the next set of campaigns (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3794,7 +4040,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDatasetExportJobs`.
     ///
-    /// <p>Returns a list of dataset export jobs that use the given dataset. When a dataset is not specified, all the dataset export jobs associated with the account are listed. The response provides the properties for each dataset export job, including the Amazon Resource Name (ARN). For more information on dataset export jobs, see <code>CreateDatasetExportJob</code>. For more information on datasets, see <code>CreateDataset</code>.</p>
+    /// <p>Returns a list of dataset export jobs that use the given dataset. When a dataset is not specified, all the dataset export jobs associated with the account are listed. The response provides the properties for each dataset export job, including the Amazon Resource Name (ARN). For more information on dataset export jobs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html">CreateDatasetExportJob</a>. For more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetExportJobs {
         handle: std::sync::Arc<super::Handle>,
@@ -3873,7 +4119,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDatasetGroups`.
     ///
-    /// <p>Returns a list of dataset groups. The response provides the properties for each dataset group, including the Amazon Resource Name (ARN). For more information on dataset groups, see <code>CreateDatasetGroup</code>.</p>
+    /// <p>Returns a list of dataset groups. The response provides the properties for each dataset group, including the Amazon Resource Name (ARN). For more information on dataset groups, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetGroups {
         handle: std::sync::Arc<super::Handle>,
@@ -3942,7 +4188,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDatasetImportJobs`.
     ///
-    /// <p>Returns a list of dataset import jobs that use the given dataset. When a dataset is not specified, all the dataset import jobs associated with the account are listed. The response provides the properties for each dataset import job, including the Amazon Resource Name (ARN). For more information on dataset import jobs, see <code>CreateDatasetImportJob</code>. For more information on datasets, see <code>CreateDataset</code>.</p>
+    /// <p>Returns a list of dataset import jobs that use the given dataset. When a dataset is not specified, all the dataset import jobs associated with the account are listed. The response provides the properties for each dataset import job, including the Amazon Resource Name (ARN). For more information on dataset import jobs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>. For more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetImportJobs {
         handle: std::sync::Arc<super::Handle>,
@@ -4021,7 +4267,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDatasets`.
     ///
-    /// <p>Returns the list of datasets contained in the given dataset group. The response provides the properties for each dataset, including the Amazon Resource Name (ARN). For more information on datasets, see <code>CreateDataset</code>.</p>
+    /// <p>Returns the list of datasets contained in the given dataset group. The response provides the properties for each dataset, including the Amazon Resource Name (ARN). For more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasets {
         handle: std::sync::Arc<super::Handle>,
@@ -4103,7 +4349,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEventTrackers`.
     ///
-    /// <p>Returns the list of event trackers associated with the account. The response provides the properties for each event tracker, including the Amazon Resource Name (ARN) and tracking ID. For more information on event trackers, see <code>CreateEventTracker</code>.</p>
+    /// <p>Returns the list of event trackers associated with the account. The response provides the properties for each event tracker, including the Amazon Resource Name (ARN) and tracking ID. For more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEventTrackers {
         handle: std::sync::Arc<super::Handle>,
@@ -4346,12 +4592,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned. </p>
+        /// <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, all recipes are returned. </p>
         pub fn domain(mut self, input: crate::model::Domain) -> Self {
             self.inner = self.inner.domain(input);
             self
         }
-        /// <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned. </p>
+        /// <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, all recipes are returned. </p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
@@ -4441,7 +4687,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSchemas`.
     ///
-    /// <p>Returns the list of schemas associated with the account. The response provides the properties for each schema, including the Amazon Resource Name (ARN). For more information on schemas, see <code>CreateSchema</code>.</p>
+    /// <p>Returns the list of schemas associated with the account. The response provides the properties for each schema, including the Amazon Resource Name (ARN). For more information on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSchemas {
         handle: std::sync::Arc<super::Handle>,
@@ -4510,7 +4756,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSolutions`.
     ///
-    /// <p>Returns a list of solutions that use the given dataset group. When a dataset group is not specified, all the solutions associated with the account are listed. The response provides the properties for each solution, including the Amazon Resource Name (ARN). For more information on solutions, see <code>CreateSolution</code>.</p>
+    /// <p>Returns a list of solutions that use the given dataset group. When a dataset group is not specified, all the solutions associated with the account are listed. The response provides the properties for each solution, including the Amazon Resource Name (ARN). For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSolutions {
         handle: std::sync::Arc<super::Handle>,
@@ -4592,7 +4838,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSolutionVersions`.
     ///
-    /// <p>Returns a list of solution versions for the given solution. When a solution is not specified, all the solution versions associated with the account are listed. The response provides the properties for each solution version, including the Amazon Resource Name (ARN). For more information on solutions, see <code>CreateSolution</code>.</p>
+    /// <p>Returns a list of solution versions for the given solution. When a solution is not specified, all the solution versions associated with the account are listed. The response provides the properties for each solution version, including the Amazon Resource Name (ARN).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSolutionVersions {
         handle: std::sync::Arc<super::Handle>,
@@ -4669,6 +4915,59 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListTagsForResource`.
+    ///
+    /// <p>Get a list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> attached to a resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListTagsForResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_tags_for_resource_input::Builder,
+    }
+    impl ListTagsForResource {
+        /// Creates a new `ListTagsForResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListTagsForResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The resource's Amazon Resource Name.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The resource's Amazon Resource Name.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `StopSolutionVersionCreation`.
     ///
     /// <p>Stops creating a solution version that is in a state of CREATE_PENDING or CREATE IN_PROGRESS. </p>
@@ -4731,13 +5030,153 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `TagResource`.
+    ///
+    /// <p>Add a list of tags to a resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct TagResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::tag_resource_input::Builder,
+    }
+    impl TagResource {
+        /// Creates a new `TagResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::TagResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The resource's Amazon Resource Name (ARN).</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The resource's Amazon Resource Name (ARN).</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags to apply to the resource. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging Personalize resources</a>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>Tags to apply to the resource. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging Personalize resources</a>.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UntagResource`.
+    ///
+    /// <p>Remove <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> that are attached to a resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UntagResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::untag_resource_input::Builder,
+    }
+    impl UntagResource {
+        /// Creates a new `UntagResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UntagResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The resource's Amazon Resource Name (ARN).</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The resource's Amazon Resource Name (ARN).</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Appends an item to `tagKeys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>Keys to remove from the resource's tags.</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
+            self
+        }
+        /// <p>Keys to remove from the resource's tags.</p>
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_keys(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateCampaign`.
     ///
     /// <p>Updates a campaign by either deploying a new solution or changing the value of the campaign's <code>minProvisionedTPS</code> parameter.</p>
-    /// <p>To update a campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the campaign status using the <code>DescribeCampaign</code> API.</p> <note>
+    /// <p>To update a campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the campaign status using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> operation.</p> <note>
     /// <p>You must wait until the <code>status</code> of the updated campaign is <code>ACTIVE</code> before asking the campaign for recommendations.</p>
     /// </note>
-    /// <p>For more information on campaigns, see <code>CreateCampaign</code>.</p>
+    /// <p>For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCampaign {
         handle: std::sync::Arc<super::Handle>,

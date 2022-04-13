@@ -12907,6 +12907,40 @@ pub fn parse_modify_instance_event_window_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_instance_maintenance_options_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyInstanceMaintenanceOptionsOutput,
+    crate::error::ModifyInstanceMaintenanceOptionsError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ModifyInstanceMaintenanceOptionsError::unhandled)?;
+    Err(crate::error::ModifyInstanceMaintenanceOptionsError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_instance_maintenance_options_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyInstanceMaintenanceOptionsOutput,
+    crate::error::ModifyInstanceMaintenanceOptionsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::modify_instance_maintenance_options_output::Builder::default();
+        let _ = response;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_modify_instance_maintenance_options(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ModifyInstanceMaintenanceOptionsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_instance_metadata_options_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

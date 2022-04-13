@@ -68,6 +68,19 @@ pub fn serialize_operation_crate_operation_create_function(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_create_function_url_config(
+    input: &crate::input::CreateFunctionUrlConfigInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_create_function_url_config_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_payload_invoke_input(
     payload: std::option::Option<aws_smithy_types::Blob>,
 ) -> Result<std::vec::Vec<u8>, aws_smithy_http::operation::BuildError> {
@@ -237,6 +250,19 @@ pub fn serialize_operation_crate_operation_update_function_event_invoke_config(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_update_function_event_invoke_config_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_update_function_url_config(
+    input: &crate::input::UpdateFunctionUrlConfigInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_update_function_url_config_input(
         &mut object,
         input,
     )?;

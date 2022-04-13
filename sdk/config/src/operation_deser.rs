@@ -4230,6 +4230,64 @@ pub fn parse_get_conformance_pack_compliance_summary_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_custom_rule_policy_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetCustomRulePolicyOutput,
+    crate::error::GetCustomRulePolicyError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetCustomRulePolicyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetCustomRulePolicyError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "NoSuchConfigRuleException" => crate::error::GetCustomRulePolicyError {
+            meta: generic,
+            kind: crate::error::GetCustomRulePolicyErrorKind::NoSuchConfigRuleException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::no_such_config_rule_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_no_such_config_rule_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCustomRulePolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetCustomRulePolicyError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_custom_rule_policy_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetCustomRulePolicyOutput,
+    crate::error::GetCustomRulePolicyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_custom_rule_policy_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_custom_rule_policy(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetCustomRulePolicyError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_discovered_resource_counts_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -4512,6 +4570,76 @@ pub fn parse_get_organization_conformance_pack_detailed_status_response(
         #[allow(unused_mut)]let mut output = crate::output::get_organization_conformance_pack_detailed_status_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_get_organization_conformance_pack_detailed_status(response.body().as_ref(), output).map_err(crate::error::GetOrganizationConformancePackDetailedStatusError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_organization_custom_rule_policy_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetOrganizationCustomRulePolicyOutput,
+    crate::error::GetOrganizationCustomRulePolicyError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetOrganizationCustomRulePolicyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetOrganizationCustomRulePolicyError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "NoSuchOrganizationConfigRuleException" => crate::error::GetOrganizationCustomRulePolicyError { meta: generic, kind: crate::error::GetOrganizationCustomRulePolicyErrorKind::NoSuchOrganizationConfigRuleException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_organization_config_rule_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_no_such_organization_config_rule_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetOrganizationCustomRulePolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationAccessDeniedException" => crate::error::GetOrganizationCustomRulePolicyError { meta: generic, kind: crate::error::GetOrganizationCustomRulePolicyErrorKind::OrganizationAccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetOrganizationCustomRulePolicyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::GetOrganizationCustomRulePolicyError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_organization_custom_rule_policy_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetOrganizationCustomRulePolicyOutput,
+    crate::error::GetOrganizationCustomRulePolicyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::get_organization_custom_rule_policy_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_get_organization_custom_rule_policy(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GetOrganizationCustomRulePolicyError::unhandled)?;
         output.build()
     })
 }

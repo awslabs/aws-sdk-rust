@@ -133,6 +133,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationFsxLustre 
     }
 }
 
+/// Operation shape for `CreateLocationFsxOpenZfs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_location_fsx_open_zfs`](crate::client::Client::create_location_fsx_open_zfs).
+///
+/// See [`crate::client::fluent_builders::CreateLocationFsxOpenZfs`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateLocationFsxOpenZfs {
+    _private: (),
+}
+impl CreateLocationFsxOpenZfs {
+    /// Creates a new builder-style object to manufacture [`CreateLocationFsxOpenZfsInput`](crate::input::CreateLocationFsxOpenZfsInput)
+    pub fn builder() -> crate::input::create_location_fsx_open_zfs_input::Builder {
+        crate::input::create_location_fsx_open_zfs_input::Builder::default()
+    }
+    /// Creates a new `CreateLocationFsxOpenZfs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateLocationFsxOpenZfs {
+    type Output = std::result::Result<
+        crate::output::CreateLocationFsxOpenZfsOutput,
+        crate::error::CreateLocationFsxOpenZfsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_location_fsx_open_zfs_error(response)
+        } else {
+            crate::operation_deser::parse_create_location_fsx_open_zfs_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateLocationFsxWindows`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -561,6 +595,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationFsxLustr
             crate::operation_deser::parse_describe_location_fsx_lustre_error(response)
         } else {
             crate::operation_deser::parse_describe_location_fsx_lustre_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeLocationFsxOpenZfs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_location_fsx_open_zfs`](crate::client::Client::describe_location_fsx_open_zfs).
+///
+/// See [`crate::client::fluent_builders::DescribeLocationFsxOpenZfs`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeLocationFsxOpenZfs {
+    _private: (),
+}
+impl DescribeLocationFsxOpenZfs {
+    /// Creates a new builder-style object to manufacture [`DescribeLocationFsxOpenZfsInput`](crate::input::DescribeLocationFsxOpenZfsInput)
+    pub fn builder() -> crate::input::describe_location_fsx_open_zfs_input::Builder {
+        crate::input::describe_location_fsx_open_zfs_input::Builder::default()
+    }
+    /// Creates a new `DescribeLocationFsxOpenZfs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationFsxOpenZfs {
+    type Output = std::result::Result<
+        crate::output::DescribeLocationFsxOpenZfsOutput,
+        crate::error::DescribeLocationFsxOpenZfsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_location_fsx_open_zfs_error(response)
+        } else {
+            crate::operation_deser::parse_describe_location_fsx_open_zfs_response(response)
         }
     }
 }

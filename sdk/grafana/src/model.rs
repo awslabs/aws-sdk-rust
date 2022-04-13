@@ -24,6 +24,9 @@ pub struct WorkspaceSummary {
     pub status: std::option::Option<crate::model::WorkspaceStatus>,
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
     pub authentication: std::option::Option<crate::model::AuthenticationSummary>,
+    /// <p>The list of tags associated with the workspace.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl WorkspaceSummary {
     /// <p>The date that the workspace was created.</p>
@@ -68,6 +71,13 @@ impl WorkspaceSummary {
     pub fn authentication(&self) -> std::option::Option<&crate::model::AuthenticationSummary> {
         self.authentication.as_ref()
     }
+    /// <p>The list of tags associated with the workspace.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for WorkspaceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -82,6 +92,7 @@ impl std::fmt::Debug for WorkspaceSummary {
         formatter.field("notification_destinations", &self.notification_destinations);
         formatter.field("status", &self.status);
         formatter.field("authentication", &self.authentication);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -102,6 +113,9 @@ pub mod workspace_summary {
             std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>,
         pub(crate) status: std::option::Option<crate::model::WorkspaceStatus>,
         pub(crate) authentication: std::option::Option<crate::model::AuthenticationSummary>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The date that the workspace was created.</p>
@@ -231,6 +245,31 @@ pub mod workspace_summary {
             self.authentication = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of tags associated with the workspace.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The list of tags associated with the workspace.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WorkspaceSummary`](crate::model::WorkspaceSummary)
         pub fn build(self) -> crate::model::WorkspaceSummary {
             crate::model::WorkspaceSummary {
@@ -244,6 +283,7 @@ pub mod workspace_summary {
                 notification_destinations: self.notification_destinations,
                 status: self.status,
                 authentication: self.authentication,
+                tags: self.tags,
             }
         }
     }
@@ -801,6 +841,9 @@ pub struct WorkspaceDescription {
     pub free_trial_expiration: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user authentication.</p>
     pub authentication: std::option::Option<crate::model::AuthenticationSummary>,
+    /// <p>The list of tags associated with the workspace.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl WorkspaceDescription {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If this is <code>ORGANIZATION</code>, the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational units the workspace can access.</p>
@@ -891,6 +934,13 @@ impl WorkspaceDescription {
     pub fn authentication(&self) -> std::option::Option<&crate::model::AuthenticationSummary> {
         self.authentication.as_ref()
     }
+    /// <p>The list of tags associated with the workspace.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for WorkspaceDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -916,6 +966,7 @@ impl std::fmt::Debug for WorkspaceDescription {
         formatter.field("license_expiration", &self.license_expiration);
         formatter.field("free_trial_expiration", &self.free_trial_expiration);
         formatter.field("authentication", &self.authentication);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -947,6 +998,9 @@ pub mod workspace_description {
         pub(crate) license_expiration: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) free_trial_expiration: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) authentication: std::option::Option<crate::model::AuthenticationSummary>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If this is <code>ORGANIZATION</code>, the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational units the workspace can access.</p>
@@ -1232,6 +1286,31 @@ pub mod workspace_description {
             self.authentication = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of tags associated with the workspace.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The list of tags associated with the workspace.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WorkspaceDescription`](crate::model::WorkspaceDescription)
         pub fn build(self) -> crate::model::WorkspaceDescription {
             crate::model::WorkspaceDescription {
@@ -1256,6 +1335,7 @@ pub mod workspace_description {
                 license_expiration: self.license_expiration,
                 free_trial_expiration: self.free_trial_expiration,
                 authentication: self.authentication,
+                tags: self.tags,
             }
         }
     }
@@ -1391,10 +1471,14 @@ impl AsRef<str> for PermissionType {
 pub enum DataSourceType {
     /// Amazon OpenSearch Service
     AmazonOpensearchService,
+    /// Amazon Athena
+    Athena,
     /// CloudWatch Logs
     Cloudwatch,
     /// Managed Prometheus
     Prometheus,
+    /// Redshift
+    Redshift,
     /// IoT SiteWise
     Sitewise,
     /// Timestream
@@ -1408,8 +1492,10 @@ impl std::convert::From<&str> for DataSourceType {
     fn from(s: &str) -> Self {
         match s {
             "AMAZON_OPENSEARCH_SERVICE" => DataSourceType::AmazonOpensearchService,
+            "ATHENA" => DataSourceType::Athena,
             "CLOUDWATCH" => DataSourceType::Cloudwatch,
             "PROMETHEUS" => DataSourceType::Prometheus,
+            "REDSHIFT" => DataSourceType::Redshift,
             "SITEWISE" => DataSourceType::Sitewise,
             "TIMESTREAM" => DataSourceType::Timestream,
             "XRAY" => DataSourceType::Xray,
@@ -1429,8 +1515,10 @@ impl DataSourceType {
     pub fn as_str(&self) -> &str {
         match self {
             DataSourceType::AmazonOpensearchService => "AMAZON_OPENSEARCH_SERVICE",
+            DataSourceType::Athena => "ATHENA",
             DataSourceType::Cloudwatch => "CLOUDWATCH",
             DataSourceType::Prometheus => "PROMETHEUS",
+            DataSourceType::Redshift => "REDSHIFT",
             DataSourceType::Sitewise => "SITEWISE",
             DataSourceType::Timestream => "TIMESTREAM",
             DataSourceType::Xray => "XRAY",
@@ -1441,8 +1529,10 @@ impl DataSourceType {
     pub fn values() -> &'static [&'static str] {
         &[
             "AMAZON_OPENSEARCH_SERVICE",
+            "ATHENA",
             "CLOUDWATCH",
             "PROMETHEUS",
+            "REDSHIFT",
             "SITEWISE",
             "TIMESTREAM",
             "XRAY",
@@ -1714,12 +1804,14 @@ impl UpdateInstruction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct User {
     /// <p>The ID of the user or group.</p>
+    /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code> </p>
     pub id: std::option::Option<std::string::String>,
     /// <p>Specifies whether this is a single user or a group.</p>
     pub r#type: std::option::Option<crate::model::UserType>,
 }
 impl User {
     /// <p>The ID of the user or group.</p>
+    /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -1747,11 +1839,13 @@ pub mod user {
     }
     impl Builder {
         /// <p>The ID of the user or group.</p>
+        /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the user or group.</p>
+        /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self

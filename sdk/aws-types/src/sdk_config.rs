@@ -18,6 +18,7 @@ use aws_smithy_types::timeout;
 
 use crate::app_name::AppName;
 use crate::credentials::SharedCredentialsProvider;
+use crate::endpoint::ResolveAwsEndpoint;
 use crate::region::Region;
 
 /// AWS Shared Configuration
@@ -26,6 +27,7 @@ pub struct SdkConfig {
     app_name: Option<AppName>,
     credentials_provider: Option<SharedCredentialsProvider>,
     region: Option<Region>,
+    endpoint_resolver: Option<Arc<dyn ResolveAwsEndpoint>>,
     retry_config: Option<RetryConfig>,
     sleep_impl: Option<Arc<dyn AsyncSleep>>,
     timeout_config: Option<timeout::Config>,
@@ -38,6 +40,7 @@ pub struct Builder {
     app_name: Option<AppName>,
     credentials_provider: Option<SharedCredentialsProvider>,
     region: Option<Region>,
+    endpoint_resolver: Option<Arc<dyn ResolveAwsEndpoint>>,
     retry_config: Option<RetryConfig>,
     sleep_impl: Option<Arc<dyn AsyncSleep>>,
     timeout_config: Option<timeout::Config>,
@@ -76,6 +79,49 @@ impl Builder {
     /// ```
     pub fn set_region(&mut self, region: impl Into<Option<Region>>) -> &mut Self {
         self.region = region.into();
+        self
+    }
+
+    /// Set the endpoint resolver to use when making requests
+    ///
+    /// # Examples
+    /// ```
+    /// use std::sync::Arc;
+    /// use aws_types::SdkConfig;
+    /// use aws_smithy_http::endpoint::Endpoint;
+    /// use http::Uri;
+    /// let config = SdkConfig::builder().endpoint_resolver(
+    ///     Endpoint::immutable(Uri::from_static("http://localhost:8080"))
+    /// ).build();
+    /// ```
+    pub fn endpoint_resolver(
+        mut self,
+        endpoint_resolver: impl ResolveAwsEndpoint + 'static,
+    ) -> Self {
+        self.set_endpoint_resolver(Some(Arc::new(endpoint_resolver)));
+        self
+    }
+
+    /// Set the endpoint resolver to use when making requests
+    ///
+    /// # Examples
+    /// ```
+    /// use std::sync::Arc;
+    /// use aws_types::SdkConfig;
+    /// use aws_types::endpoint::ResolveAwsEndpoint;
+    /// fn endpoint_resolver_override() -> Option<Arc<dyn ResolveAwsEndpoint>> {
+    ///     // ...
+    ///     # None
+    /// }
+    /// let mut config = SdkConfig::builder();
+    /// config.set_endpoint_resolver(endpoint_resolver_override());
+    /// config.build();
+    /// ```
+    pub fn set_endpoint_resolver(
+        &mut self,
+        endpoint_resolver: Option<Arc<dyn ResolveAwsEndpoint>>,
+    ) -> &mut Self {
+        self.endpoint_resolver = endpoint_resolver;
         self
     }
 
@@ -309,6 +355,7 @@ impl Builder {
             app_name: self.app_name,
             credentials_provider: self.credentials_provider,
             region: self.region,
+            endpoint_resolver: self.endpoint_resolver,
             retry_config: self.retry_config,
             sleep_impl: self.sleep_impl,
             timeout_config: self.timeout_config,
@@ -321,6 +368,11 @@ impl SdkConfig {
     /// Configured region
     pub fn region(&self) -> Option<&Region> {
         self.region.as_ref()
+    }
+
+    /// Configured endpoint resolver
+    pub fn endpoint_resolver(&self) -> Option<Arc<dyn ResolveAwsEndpoint>> {
+        self.endpoint_resolver.clone()
     }
 
     /// Configured retry config

@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_apprunner::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_apprunner::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_apprunner::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_apprunner::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -133,17 +133,32 @@ impl Client {
     pub fn create_connection(&self) -> fluent_builders::CreateConnection {
         fluent_builders::CreateConnection::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateObservabilityConfiguration`](crate::client::fluent_builders::CreateObservabilityConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`observability_configuration_name(impl Into<String>)`](crate::client::fluent_builders::CreateObservabilityConfiguration::observability_configuration_name) / [`set_observability_configuration_name(Option<String>)`](crate::client::fluent_builders::CreateObservabilityConfiguration::set_observability_configuration_name): <p>A name for the observability configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>   <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>   <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>  </note>
+    ///   - [`trace_configuration(TraceConfiguration)`](crate::client::fluent_builders::CreateObservabilityConfiguration::trace_configuration) / [`set_trace_configuration(Option<TraceConfiguration>)`](crate::client::fluent_builders::CreateObservabilityConfiguration::set_trace_configuration): <p>The configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateObservabilityConfiguration::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateObservabilityConfiguration::set_tags): <p>A list of metadata items that you can associate with your observability configuration resource. A tag is a key-value pair.</p>
+    /// - On success, responds with [`CreateObservabilityConfigurationOutput`](crate::output::CreateObservabilityConfigurationOutput) with field(s):
+    ///   - [`observability_configuration(Option<ObservabilityConfiguration>)`](crate::output::CreateObservabilityConfigurationOutput::observability_configuration): <p>A description of the App Runner observability configuration that's created by this request.</p>
+    /// - On failure, responds with [`SdkError<CreateObservabilityConfigurationError>`](crate::error::CreateObservabilityConfigurationError)
+    pub fn create_observability_configuration(
+        &self,
+    ) -> fluent_builders::CreateObservabilityConfiguration {
+        fluent_builders::CreateObservabilityConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateService`](crate::client::fluent_builders::CreateService) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::CreateService::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::CreateService::set_service_name): <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
     ///   - [`source_configuration(SourceConfiguration)`](crate::client::fluent_builders::CreateService::source_configuration) / [`set_source_configuration(Option<SourceConfiguration>)`](crate::client::fluent_builders::CreateService::set_source_configuration): <p>The source to deploy to the App Runner service. It can be a code or an image repository.</p>
-    ///   - [`instance_configuration(InstanceConfiguration)`](crate::client::fluent_builders::CreateService::instance_configuration) / [`set_instance_configuration(Option<InstanceConfiguration>)`](crate::client::fluent_builders::CreateService::set_instance_configuration): <p>The runtime configuration of instances (scaling units) of the App Runner service.</p>
+    ///   - [`instance_configuration(InstanceConfiguration)`](crate::client::fluent_builders::CreateService::instance_configuration) / [`set_instance_configuration(Option<InstanceConfiguration>)`](crate::client::fluent_builders::CreateService::set_instance_configuration): <p>The runtime configuration of instances (scaling units) of your service.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateService::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateService::set_tags): <p>An optional list of metadata items that you can associate with the App Runner service resource. A tag is a key-value pair.</p>
     ///   - [`encryption_configuration(EncryptionConfiguration)`](crate::client::fluent_builders::CreateService::encryption_configuration) / [`set_encryption_configuration(Option<EncryptionConfiguration>)`](crate::client::fluent_builders::CreateService::set_encryption_configuration): <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed key.</p>
     ///   - [`health_check_configuration(HealthCheckConfiguration)`](crate::client::fluent_builders::CreateService::health_check_configuration) / [`set_health_check_configuration(Option<HealthCheckConfiguration>)`](crate::client::fluent_builders::CreateService::set_health_check_configuration): <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
-    ///   - [`auto_scaling_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::CreateService::auto_scaling_configuration_arn) / [`set_auto_scaling_configuration_arn(Option<String>)`](crate::client::fluent_builders::CreateService::set_auto_scaling_configuration_arn): <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+    ///   - [`auto_scaling_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::CreateService::auto_scaling_configuration_arn) / [`set_auto_scaling_configuration_arn(Option<String>)`](crate::client::fluent_builders::CreateService::set_auto_scaling_configuration_arn): <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>  <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code> </p>  <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code> </p>
     ///   - [`network_configuration(NetworkConfiguration)`](crate::client::fluent_builders::CreateService::network_configuration) / [`set_network_configuration(Option<NetworkConfiguration>)`](crate::client::fluent_builders::CreateService::set_network_configuration): <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
+    ///   - [`observability_configuration(ServiceObservabilityConfiguration)`](crate::client::fluent_builders::CreateService::observability_configuration) / [`set_observability_configuration(Option<ServiceObservabilityConfiguration>)`](crate::client::fluent_builders::CreateService::set_observability_configuration): <p>The observability configuration of your service.</p>
     /// - On success, responds with [`CreateServiceOutput`](crate::output::CreateServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::output::CreateServiceOutput::service): <p>A description of the App Runner service that's created by this request.</p>
     ///   - [`operation_id(Option<String>)`](crate::output::CreateServiceOutput::operation_id): <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListOperations.html">ListOperations</a> call to track the operation's progress.</p>
@@ -185,6 +200,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteConnectionError>`](crate::error::DeleteConnectionError)
     pub fn delete_connection(&self) -> fluent_builders::DeleteConnection {
         fluent_builders::DeleteConnection::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteObservabilityConfiguration`](crate::client::fluent_builders::DeleteObservabilityConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`observability_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteObservabilityConfiguration::observability_configuration_arn) / [`set_observability_configuration_arn(Option<String>)`](crate::client::fluent_builders::DeleteObservabilityConfiguration::set_observability_configuration_arn): <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want to delete.</p>  <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
+    /// - On success, responds with [`DeleteObservabilityConfigurationOutput`](crate::output::DeleteObservabilityConfigurationOutput) with field(s):
+    ///   - [`observability_configuration(Option<ObservabilityConfiguration>)`](crate::output::DeleteObservabilityConfigurationOutput::observability_configuration): <p>A description of the App Runner observability configuration that this request just deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteObservabilityConfigurationError>`](crate::error::DeleteObservabilityConfigurationError)
+    pub fn delete_observability_configuration(
+        &self,
+    ) -> fluent_builders::DeleteObservabilityConfiguration {
+        fluent_builders::DeleteObservabilityConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteService`](crate::client::fluent_builders::DeleteService) operation.
     ///
@@ -235,6 +262,18 @@ impl Client {
     pub fn describe_custom_domains(&self) -> fluent_builders::DescribeCustomDomains {
         fluent_builders::DescribeCustomDomains::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeObservabilityConfiguration`](crate::client::fluent_builders::DescribeObservabilityConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`observability_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeObservabilityConfiguration::observability_configuration_arn) / [`set_observability_configuration_arn(Option<String>)`](crate::client::fluent_builders::DescribeObservabilityConfiguration::set_observability_configuration_arn): <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for.</p>  <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
+    /// - On success, responds with [`DescribeObservabilityConfigurationOutput`](crate::output::DescribeObservabilityConfigurationOutput) with field(s):
+    ///   - [`observability_configuration(Option<ObservabilityConfiguration>)`](crate::output::DescribeObservabilityConfigurationOutput::observability_configuration): <p>A full description of the App Runner observability configuration that you specified in this request.</p>
+    /// - On failure, responds with [`SdkError<DescribeObservabilityConfigurationError>`](crate::error::DescribeObservabilityConfigurationError)
+    pub fn describe_observability_configuration(
+        &self,
+    ) -> fluent_builders::DescribeObservabilityConfiguration {
+        fluent_builders::DescribeObservabilityConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeService`](crate::client::fluent_builders::DescribeService) operation.
     ///
     /// - The fluent builder is configurable:
@@ -272,8 +311,8 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAutoScalingConfigurations::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_configuration_name(impl Into<String>)`](crate::client::fluent_builders::ListAutoScalingConfigurations::auto_scaling_configuration_name) / [`set_auto_scaling_configuration_name(Option<String>)`](crate::client::fluent_builders::ListAutoScalingConfigurations::set_auto_scaling_configuration_name): <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all configurations.</p>
-    ///   - [`latest_only(bool)`](crate::client::fluent_builders::ListAutoScalingConfigurations::latest_only) / [`set_latest_only(bool)`](crate::client::fluent_builders::ListAutoScalingConfigurations::set_latest_only): <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>  <p>Keep as <code>false</code> to list all revisions for each requested configuration name.</p>  <p>Default: <code>false</code> </p>
+    ///   - [`auto_scaling_configuration_name(impl Into<String>)`](crate::client::fluent_builders::ListAutoScalingConfigurations::auto_scaling_configuration_name) / [`set_auto_scaling_configuration_name(Option<String>)`](crate::client::fluent_builders::ListAutoScalingConfigurations::set_auto_scaling_configuration_name): <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
+    ///   - [`latest_only(bool)`](crate::client::fluent_builders::ListAutoScalingConfigurations::latest_only) / [`set_latest_only(bool)`](crate::client::fluent_builders::ListAutoScalingConfigurations::set_latest_only): <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>  <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>  <p>Default: <code>true</code> </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAutoScalingConfigurations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAutoScalingConfigurations::set_max_results): <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>  <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAutoScalingConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAutoScalingConfigurations::set_next_token): <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>  <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     /// - On success, responds with [`ListAutoScalingConfigurationsOutput`](crate::output::ListAutoScalingConfigurationsOutput) with field(s):
@@ -298,6 +337,23 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListConnectionsError>`](crate::error::ListConnectionsError)
     pub fn list_connections(&self) -> fluent_builders::ListConnections {
         fluent_builders::ListConnections::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListObservabilityConfigurations`](crate::client::fluent_builders::ListObservabilityConfigurations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListObservabilityConfigurations::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`observability_configuration_name(impl Into<String>)`](crate::client::fluent_builders::ListObservabilityConfigurations::observability_configuration_name) / [`set_observability_configuration_name(Option<String>)`](crate::client::fluent_builders::ListObservabilityConfigurations::set_observability_configuration_name): <p>The name of the App Runner observability configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
+    ///   - [`latest_only(bool)`](crate::client::fluent_builders::ListObservabilityConfigurations::latest_only) / [`set_latest_only(bool)`](crate::client::fluent_builders::ListObservabilityConfigurations::set_latest_only): <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>  <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>  <p>Default: <code>true</code> </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListObservabilityConfigurations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListObservabilityConfigurations::set_max_results): <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>  <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListObservabilityConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListObservabilityConfigurations::set_next_token): <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>  <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    /// - On success, responds with [`ListObservabilityConfigurationsOutput`](crate::output::ListObservabilityConfigurationsOutput) with field(s):
+    ///   - [`observability_configuration_summary_list(Option<Vec<ObservabilityConfigurationSummary>>)`](crate::output::ListObservabilityConfigurationsOutput::observability_configuration_summary_list): <p>A list of summary information records for observability configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListObservabilityConfigurationsOutput::next_token): <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    /// - On failure, responds with [`SdkError<ListObservabilityConfigurationsError>`](crate::error::ListObservabilityConfigurationsError)
+    pub fn list_observability_configurations(
+        &self,
+    ) -> fluent_builders::ListObservabilityConfigurations {
+        fluent_builders::ListObservabilityConfigurations::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListOperations`](crate::client::fluent_builders::ListOperations) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListOperations::into_paginator).
@@ -408,10 +464,11 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`service_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateService::service_arn) / [`set_service_arn(Option<String>)`](crate::client::fluent_builders::UpdateService::set_service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service that you want to update.</p>
     ///   - [`source_configuration(SourceConfiguration)`](crate::client::fluent_builders::UpdateService::source_configuration) / [`set_source_configuration(Option<SourceConfiguration>)`](crate::client::fluent_builders::UpdateService::set_source_configuration): <p>The source configuration to apply to the App Runner service.</p>  <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the values to members of the structure that you include.</p>
-    ///   - [`instance_configuration(InstanceConfiguration)`](crate::client::fluent_builders::UpdateService::instance_configuration) / [`set_instance_configuration(Option<InstanceConfiguration>)`](crate::client::fluent_builders::UpdateService::set_instance_configuration): <p>The runtime configuration to apply to instances (scaling units) of the App Runner service.</p>
+    ///   - [`instance_configuration(InstanceConfiguration)`](crate::client::fluent_builders::UpdateService::instance_configuration) / [`set_instance_configuration(Option<InstanceConfiguration>)`](crate::client::fluent_builders::UpdateService::set_instance_configuration): <p>The runtime configuration to apply to instances (scaling units) of your service.</p>
     ///   - [`auto_scaling_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateService::auto_scaling_configuration_arn) / [`set_auto_scaling_configuration_arn(Option<String>)`](crate::client::fluent_builders::UpdateService::set_auto_scaling_configuration_arn): <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service.</p>
     ///   - [`health_check_configuration(HealthCheckConfiguration)`](crate::client::fluent_builders::UpdateService::health_check_configuration) / [`set_health_check_configuration(Option<HealthCheckConfiguration>)`](crate::client::fluent_builders::UpdateService::set_health_check_configuration): <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
     ///   - [`network_configuration(NetworkConfiguration)`](crate::client::fluent_builders::UpdateService::network_configuration) / [`set_network_configuration(Option<NetworkConfiguration>)`](crate::client::fluent_builders::UpdateService::set_network_configuration): <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
+    ///   - [`observability_configuration(ServiceObservabilityConfiguration)`](crate::client::fluent_builders::UpdateService::observability_configuration) / [`set_observability_configuration(Option<ServiceObservabilityConfiguration>)`](crate::client::fluent_builders::UpdateService::set_observability_configuration): <p>The observability configuration of your service.</p>
     /// - On success, responds with [`UpdateServiceOutput`](crate::output::UpdateServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::output::UpdateServiceOutput::service): <p>A description of the App Runner service updated by this request. All configuration values in the returned <code>Service</code> structure reflect configuration changes that are being applied by this request.</p>
     ///   - [`operation_id(Option<String>)`](crate::output::UpdateServiceOutput::operation_id): <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
@@ -506,8 +563,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAutoScalingConfiguration`.
     ///
-    /// <p>Create an App Runner automatic scaling configuration resource. App Runner requires this resource when you create App Runner services that require non-default auto scaling settings. You can share an auto scaling configuration across multiple services.</p>
-    /// <p>Create multiple revisions of a configuration by calling this action multiple times using the same <code>AutoScalingConfigurationName</code>. The call returns incremental <code>AutoScalingConfigurationRevision</code> values. When you create a service, you can set it to use the latest active revision of an auto scaling configuration or a specific revision.</p>
+    /// <p>Create an App Runner automatic scaling configuration resource. App Runner requires this resource when you create or update App Runner services and you require non-default auto scaling settings. You can share an auto scaling configuration across multiple services.</p>
+    /// <p>Create multiple revisions of a configuration by calling this action multiple times using the same <code>AutoScalingConfigurationName</code>. The call returns incremental <code>AutoScalingConfigurationRevision</code> values. When you create a service and configure an auto scaling configuration resource, the service uses the latest active revision of the auto scaling configuration by default. You can optionally configure the service to use a specific revision.</p>
     /// <p>Configure a higher <code>MinSize</code> to increase the spread of your App Runner service over more Availability Zones in the Amazon Web Services Region. The tradeoff is a higher minimal cost.</p>
     /// <p>Configure a lower <code>MaxSize</code> to control your cost. The tradeoff is lower responsiveness during peak demand.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -714,6 +771,103 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateObservabilityConfiguration`.
+    ///
+    /// <p>Create an App Runner observability configuration resource. App Runner requires this resource when you create or update App Runner services and you want to enable non-default observability features. You can share an observability configuration across multiple services.</p>
+    /// <p>Create multiple revisions of a configuration by calling this action multiple times using the same <code>ObservabilityConfigurationName</code>. The call returns incremental <code>ObservabilityConfigurationRevision</code> values. When you create a service and configure an observability configuration resource, the service uses the latest active revision of the observability configuration by default. You can optionally configure the service to use a specific revision.</p>
+    /// <p>The observability configuration resource is designed to configure multiple features (currently one feature, tracing). This action takes optional parameters that describe the configuration of these features (currently one parameter, <code>TraceConfiguration</code>). If you don't specify a feature parameter, App Runner doesn't enable the feature.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateObservabilityConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_observability_configuration_input::Builder,
+    }
+    impl CreateObservabilityConfiguration {
+        /// Creates a new `CreateObservabilityConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateObservabilityConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateObservabilityConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A name for the observability configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
+        /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
+        /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
+        /// </note>
+        pub fn observability_configuration_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.observability_configuration_name(input.into());
+            self
+        }
+        /// <p>A name for the observability configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
+        /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
+        /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
+        /// </note>
+        pub fn set_observability_configuration_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_observability_configuration_name(input);
+            self
+        }
+        /// <p>The configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
+        pub fn trace_configuration(mut self, input: crate::model::TraceConfiguration) -> Self {
+            self.inner = self.inner.trace_configuration(input);
+            self
+        }
+        /// <p>The configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
+        pub fn set_trace_configuration(
+            mut self,
+            input: std::option::Option<crate::model::TraceConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_trace_configuration(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of metadata items that you can associate with your observability configuration resource. A tag is a key-value pair.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>A list of metadata items that you can associate with your observability configuration resource. A tag is a key-value pair.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateService`.
     ///
     /// <p>Create an App Runner service. After the service is created, the action also automatically starts a deployment.</p>
@@ -780,7 +934,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_configuration(input);
             self
         }
-        /// <p>The runtime configuration of instances (scaling units) of the App Runner service.</p>
+        /// <p>The runtime configuration of instances (scaling units) of your service.</p>
         pub fn instance_configuration(
             mut self,
             input: crate::model::InstanceConfiguration,
@@ -788,7 +942,7 @@ pub mod fluent_builders {
             self.inner = self.inner.instance_configuration(input);
             self
         }
-        /// <p>The runtime configuration of instances (scaling units) of the App Runner service.</p>
+        /// <p>The runtime configuration of instances (scaling units) of your service.</p>
         pub fn set_instance_configuration(
             mut self,
             input: std::option::Option<crate::model::InstanceConfiguration>,
@@ -845,7 +999,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_check_configuration(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+        /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code> </p>
+        /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code> </p>
         pub fn auto_scaling_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -853,7 +1009,9 @@ pub mod fluent_builders {
             self.inner = self.inner.auto_scaling_configuration_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+        /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code> </p>
+        /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code> </p>
         pub fn set_auto_scaling_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -872,6 +1030,22 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::NetworkConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_network_configuration(input);
+            self
+        }
+        /// <p>The observability configuration of your service.</p>
+        pub fn observability_configuration(
+            mut self,
+            input: crate::model::ServiceObservabilityConfiguration,
+        ) -> Self {
+            self.inner = self.inner.observability_configuration(input);
+            self
+        }
+        /// <p>The observability configuration of your service.</p>
+        pub fn set_observability_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServiceObservabilityConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_observability_configuration(input);
             self
         }
     }
@@ -1096,6 +1270,67 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_connection_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteObservabilityConfiguration`.
+    ///
+    /// <p>Delete an App Runner observability configuration resource. You can delete a specific revision or the latest active revision. You can't delete a configuration that's used by one or more App Runner services.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteObservabilityConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_observability_configuration_input::Builder,
+    }
+    impl DeleteObservabilityConfiguration {
+        /// Creates a new `DeleteObservabilityConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteObservabilityConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteObservabilityConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want to delete.</p>
+        /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
+        pub fn observability_configuration_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.observability_configuration_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want to delete.</p>
+        /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
+        pub fn set_observability_configuration_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_observability_configuration_arn(input);
             self
         }
     }
@@ -1355,6 +1590,69 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeObservabilityConfiguration`.
+    ///
+    /// <p>Return a full description of an App Runner observability configuration resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeObservabilityConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_observability_configuration_input::Builder,
+    }
+    impl DescribeObservabilityConfiguration {
+        /// Creates a new `DescribeObservabilityConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeObservabilityConfigurationOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DescribeObservabilityConfigurationError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for.</p>
+        /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
+        pub fn observability_configuration_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.observability_configuration_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for.</p>
+        /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
+        pub fn set_observability_configuration_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_observability_configuration_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeService`.
     ///
     /// <p>Return a full description of an App Runner service.</p>
@@ -1532,7 +1830,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAutoScalingConfigurations`.
     ///
-    /// <p>Returns a list of App Runner automatic scaling configurations in your Amazon Web Services account. You can query the revisions for a specific configuration name or the revisions for all configurations in your account. You can optionally query only the latest revision of each requested name.</p>
+    /// <p>Returns a list of active App Runner automatic scaling configurations in your Amazon Web Services account. You can query the revisions for a specific configuration name or the revisions for all active configurations in your account. You can optionally query only the latest revision of each requested name.</p>
+    /// <p>To retrieve a full description of a particular configuration revision, call and provide one of the ARNs returned by <code>ListAutoScalingConfigurations</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAutoScalingConfigurations {
         handle: std::sync::Arc<super::Handle>,
@@ -1578,7 +1877,7 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListAutoScalingConfigurationsPaginator {
             crate::paginator::ListAutoScalingConfigurationsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all configurations.</p>
+        /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
         pub fn auto_scaling_configuration_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -1586,7 +1885,7 @@ pub mod fluent_builders {
             self.inner = self.inner.auto_scaling_configuration_name(input.into());
             self
         }
-        /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all configurations.</p>
+        /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
         pub fn set_auto_scaling_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1595,15 +1894,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
-        /// <p>Keep as <code>false</code> to list all revisions for each requested configuration name.</p>
-        /// <p>Default: <code>false</code> </p>
+        /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn latest_only(mut self, input: bool) -> Self {
             self.inner = self.inner.latest_only(input);
             self
         }
         /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
-        /// <p>Keep as <code>false</code> to list all revisions for each requested configuration name.</p>
-        /// <p>Default: <code>false</code> </p>
+        /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn set_latest_only(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_latest_only(input);
             self
@@ -1713,6 +2012,110 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
+        /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListObservabilityConfigurations`.
+    ///
+    /// <p>Returns a list of active App Runner observability configurations in your Amazon Web Services account. You can query the revisions for a specific configuration name or the revisions for all active configurations in your account. You can optionally query only the latest revision of each requested name.</p>
+    /// <p>To retrieve a full description of a particular configuration revision, call and provide one of the ARNs returned by <code>ListObservabilityConfigurations</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListObservabilityConfigurations {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_observability_configurations_input::Builder,
+    }
+    impl ListObservabilityConfigurations {
+        /// Creates a new `ListObservabilityConfigurations`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListObservabilityConfigurationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListObservabilityConfigurationsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListObservabilityConfigurationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListObservabilityConfigurationsPaginator {
+            crate::paginator::ListObservabilityConfigurationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The name of the App Runner observability configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
+        pub fn observability_configuration_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.observability_configuration_name(input.into());
+            self
+        }
+        /// <p>The name of the App Runner observability configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
+        pub fn set_observability_configuration_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_observability_configuration_name(input);
+            self
+        }
+        /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
+        /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
+        /// <p>Default: <code>true</code> </p>
+        pub fn latest_only(mut self, input: bool) -> Self {
+            self.inner = self.inner.latest_only(input);
+            self
+        }
+        /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
+        /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
+        /// <p>Default: <code>true</code> </p>
+        pub fn set_latest_only(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_latest_only(input);
+            self
+        }
+        /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+        /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+        /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
+        /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
@@ -2380,7 +2783,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_configuration(input);
             self
         }
-        /// <p>The runtime configuration to apply to instances (scaling units) of the App Runner service.</p>
+        /// <p>The runtime configuration to apply to instances (scaling units) of your service.</p>
         pub fn instance_configuration(
             mut self,
             input: crate::model::InstanceConfiguration,
@@ -2388,7 +2791,7 @@ pub mod fluent_builders {
             self.inner = self.inner.instance_configuration(input);
             self
         }
-        /// <p>The runtime configuration to apply to instances (scaling units) of the App Runner service.</p>
+        /// <p>The runtime configuration to apply to instances (scaling units) of your service.</p>
         pub fn set_instance_configuration(
             mut self,
             input: std::option::Option<crate::model::InstanceConfiguration>,
@@ -2439,6 +2842,22 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::NetworkConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_network_configuration(input);
+            self
+        }
+        /// <p>The observability configuration of your service.</p>
+        pub fn observability_configuration(
+            mut self,
+            input: crate::model::ServiceObservabilityConfiguration,
+        ) -> Self {
+            self.inner = self.inner.observability_configuration(input);
+            self
+        }
+        /// <p>The observability configuration of your service.</p>
+        pub fn set_observability_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServiceObservabilityConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_observability_configuration(input);
             self
         }
     }

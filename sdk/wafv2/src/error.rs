@@ -4322,6 +4322,8 @@ pub enum ListAvailableManagedRuleGroupVersionsErrorKind {
     /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
+    /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
+    WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -4337,6 +4339,9 @@ impl std::fmt::Display for ListAvailableManagedRuleGroupVersionsError {
             ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidParameterException(
                 _inner,
             ) => _inner.fmt(f),
+            ListAvailableManagedRuleGroupVersionsErrorKind::WafNonexistentItemException(_inner) => {
+                _inner.fmt(f)
+            }
             ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4415,6 +4420,13 @@ impl ListAvailableManagedRuleGroupVersionsError {
             ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidParameterException(_)
         )
     }
+    /// Returns `true` if the error kind is `ListAvailableManagedRuleGroupVersionsErrorKind::WafNonexistentItemException`.
+    pub fn is_waf_nonexistent_item_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAvailableManagedRuleGroupVersionsErrorKind::WafNonexistentItemException(_)
+        )
+    }
 }
 impl std::error::Error for ListAvailableManagedRuleGroupVersionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4428,6 +4440,9 @@ impl std::error::Error for ListAvailableManagedRuleGroupVersionsError {
             ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidParameterException(
                 _inner,
             ) => Some(_inner),
+            ListAvailableManagedRuleGroupVersionsErrorKind::WafNonexistentItemException(_inner) => {
+                Some(_inner)
+            }
             ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(_inner) => {
                 Some(_inner.as_ref())
             }
@@ -5948,7 +5963,7 @@ pub enum PutPermissionPolicyErrorKind {
     /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>
     /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>
     /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
-    /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
+    /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
     /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
@@ -8210,7 +8225,7 @@ impl WafTagOperationException {
 /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>
 /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>
 /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
-/// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
+/// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
 /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>

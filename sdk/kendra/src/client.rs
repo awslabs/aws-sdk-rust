@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_kendra::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_kendra::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_kendra::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_kendra::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -222,8 +222,8 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateIndex::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateIndex::set_name): <p>The name for the new index.</p>
     ///   - [`edition(IndexEdition)`](crate::client::fluent_builders::CreateIndex::edition) / [`set_edition(Option<IndexEdition>)`](crate::client::fluent_builders::CreateIndex::set_edition): <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases. Once you set the edition for an index, it can't be changed.</p>  <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p>  <p>For more information on quota limits for enterprise and developer editions, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateIndex::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateIndex::set_role_arn): <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
-    ///   - [`server_side_encryption_configuration(ServerSideEncryptionConfiguration)`](crate::client::fluent_builders::CreateIndex::server_side_encryption_configuration) / [`set_server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::client::fluent_builders::CreateIndex::set_server_side_encryption_configuration): <p>The identifier of the KMScustomer managed key (CMK) to use to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateIndex::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateIndex::set_role_arn): <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role you use when you call the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
+    ///   - [`server_side_encryption_configuration(ServerSideEncryptionConfiguration)`](crate::client::fluent_builders::CreateIndex::server_side_encryption_configuration) / [`set_server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::client::fluent_builders::CreateIndex::set_server_side_encryption_configuration): <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateIndex::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateIndex::set_description): <p>A description for the index.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateIndex::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateIndex::set_client_token): <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> API with the same client token will create only one index.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateIndex::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateIndex::set_tags): <p>A list of key-value pairs that identify the index. You can use the tags to identify and organize your resources and to control access to resources.</p>
@@ -420,21 +420,21 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeIndex`](crate::client::fluent_builders::DescribeIndex) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeIndex::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeIndex::set_id): <p>The name of the index to describe.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeIndex::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeIndex::set_id): <p>The identifier of the index to describe.</p>
     /// - On success, responds with [`DescribeIndexOutput`](crate::output::DescribeIndexOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::DescribeIndexOutput::name): <p>The name of the index.</p>
-    ///   - [`id(Option<String>)`](crate::output::DescribeIndexOutput::id): <p>The name of the index.</p>
+    ///   - [`id(Option<String>)`](crate::output::DescribeIndexOutput::id): <p>The identifier of the index.</p>
     ///   - [`edition(Option<IndexEdition>)`](crate::output::DescribeIndexOutput::edition): <p>The Amazon Kendra edition used for the index. You decide the edition when you create the index.</p>
     ///   - [`role_arn(Option<String>)`](crate::output::DescribeIndexOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon Cloudwatch logs.</p>
-    ///   - [`server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::output::DescribeIndexOutput::server_side_encryption_configuration): <p>The identifier of the KMScustomer master key (CMK) used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+    ///   - [`server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::output::DescribeIndexOutput::server_side_encryption_configuration): <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
     ///   - [`status(Option<IndexStatus>)`](crate::output::DescribeIndexOutput::status): <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
-    ///   - [`description(Option<String>)`](crate::output::DescribeIndexOutput::description): <p>The description of the index.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeIndexOutput::description): <p>The description for the index.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeIndexOutput::created_at): <p>The Unix datetime that the index was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeIndexOutput::updated_at): <p>The Unix datetime that the index was last updated.</p>
     ///   - [`document_metadata_configurations(Option<Vec<DocumentMetadataConfiguration>>)`](crate::output::DescribeIndexOutput::document_metadata_configurations): <p>Configuration settings for any metadata applied to the documents in the index.</p>
     ///   - [`index_statistics(Option<IndexStatistics>)`](crate::output::DescribeIndexOutput::index_statistics): <p>Provides information about the number of FAQ questions and answers and the number of text documents indexed.</p>
-    ///   - [`error_message(Option<String>)`](crate::output::DescribeIndexOutput::error_message): <p>When th e<code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
-    ///   - [`capacity_units(Option<CapacityUnitsConfiguration>)`](crate::output::DescribeIndexOutput::capacity_units): <p>For Enterprise edition indexes, you can choose to use additional capacity to meet the needs of your application. This contains the capacity units used for the index. A 0 for the query capacity or the storage capacity indicates that the index is using the default capacity for the index.</p>
+    ///   - [`error_message(Option<String>)`](crate::output::DescribeIndexOutput::error_message): <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
+    ///   - [`capacity_units(Option<CapacityUnitsConfiguration>)`](crate::output::DescribeIndexOutput::capacity_units): <p>For Enterprise Edition indexes, you can choose to use additional capacity to meet the needs of your application. This contains the capacity units used for the index. A query or document storage capacity of zero indicates that the index is using the default capacity. For more information on the default capacity for an index and adjusting this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
     ///   - [`user_token_configurations(Option<Vec<UserTokenConfiguration>>)`](crate::output::DescribeIndexOutput::user_token_configurations): <p>The user token configuration for the Amazon Kendra index.</p>
     ///   - [`user_context_policy(Option<UserContextPolicy>)`](crate::output::DescribeIndexOutput::user_context_policy): <p>The user context policy for the Amazon Kendra index.</p>
     ///   - [`user_group_resolution_configuration(Option<UserGroupResolutionConfiguration>)`](crate::output::DescribeIndexOutput::user_group_resolution_configuration): <p>Shows whether you have enabled the configuration for fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
@@ -878,7 +878,7 @@ impl Client {
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateIndex::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateIndex::set_role_arn): <p>A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch logs.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateIndex::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateIndex::set_description): <p>A new description for the index.</p>
     ///   - [`document_metadata_configuration_updates(Vec<DocumentMetadataConfiguration>)`](crate::client::fluent_builders::UpdateIndex::document_metadata_configuration_updates) / [`set_document_metadata_configuration_updates(Option<Vec<DocumentMetadataConfiguration>>)`](crate::client::fluent_builders::UpdateIndex::set_document_metadata_configuration_updates): <p>The document metadata you want to update.</p>
-    ///   - [`capacity_units(CapacityUnitsConfiguration)`](crate::client::fluent_builders::UpdateIndex::capacity_units) / [`set_capacity_units(Option<CapacityUnitsConfiguration>)`](crate::client::fluent_builders::UpdateIndex::set_capacity_units): <p>Sets the number of additional storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day.</p>  <p>If you are using extra storage units, you can't reduce the storage capacity below that required to meet the storage needs for your index.</p>
+    ///   - [`capacity_units(CapacityUnitsConfiguration)`](crate::client::fluent_builders::UpdateIndex::capacity_units) / [`set_capacity_units(Option<CapacityUnitsConfiguration>)`](crate::client::fluent_builders::UpdateIndex::set_capacity_units): <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>  <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
     ///   - [`user_token_configurations(Vec<UserTokenConfiguration>)`](crate::client::fluent_builders::UpdateIndex::user_token_configurations) / [`set_user_token_configurations(Option<Vec<UserTokenConfiguration>>)`](crate::client::fluent_builders::UpdateIndex::set_user_token_configurations): <p>The user token configuration.</p>
     ///   - [`user_context_policy(UserContextPolicy)`](crate::client::fluent_builders::UpdateIndex::user_context_policy) / [`set_user_context_policy(Option<UserContextPolicy>)`](crate::client::fluent_builders::UpdateIndex::set_user_context_policy): <p>The user context policy.</p>
     ///   - [`user_group_resolution_configuration(UserGroupResolutionConfiguration)`](crate::client::fluent_builders::UpdateIndex::user_group_resolution_configuration) / [`set_user_group_resolution_configuration(Option<UserGroupResolutionConfiguration>)`](crate::client::fluent_builders::UpdateIndex::set_user_group_resolution_configuration): <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
@@ -1953,17 +1953,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_edition(input);
             self
         }
-        /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
+        /// <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role you use when you call the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
+        /// <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role you use when you call the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The identifier of the KMScustomer managed key (CMK) to use to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
+        /// <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
         pub fn server_side_encryption_configuration(
             mut self,
             input: crate::model::ServerSideEncryptionConfiguration,
@@ -1971,7 +1971,7 @@ pub mod fluent_builders {
             self.inner = self.inner.server_side_encryption_configuration(input);
             self
         }
-        /// <p>The identifier of the KMScustomer managed key (CMK) to use to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
+        /// <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
         pub fn set_server_side_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
@@ -3010,7 +3010,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeIndex`.
     ///
-    /// <p>Describes an existing Amazon Kendra index</p>
+    /// <p>Describes an existing Amazon Kendra index.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIndex {
         handle: std::sync::Arc<super::Handle>,
@@ -3050,12 +3050,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the index to describe.</p>
+        /// <p>The identifier of the index to describe.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The name of the index to describe.</p>
+        /// <p>The identifier of the index to describe.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -4294,7 +4294,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListIndices`.
     ///
-    /// <p>Lists the Amazon Kendra indexes that you have created.</p>
+    /// <p>Lists the Amazon Kendra indexes that you created.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIndices {
         handle: std::sync::Arc<super::Handle>,
@@ -5651,14 +5651,14 @@ pub mod fluent_builders {
                 .set_document_metadata_configuration_updates(input);
             self
         }
-        /// <p>Sets the number of additional storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day.</p>
-        /// <p>If you are using extra storage units, you can't reduce the storage capacity below that required to meet the storage needs for your index.</p>
+        /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>
+        /// <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
         pub fn capacity_units(mut self, input: crate::model::CapacityUnitsConfiguration) -> Self {
             self.inner = self.inner.capacity_units(input);
             self
         }
-        /// <p>Sets the number of additional storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day.</p>
-        /// <p>If you are using extra storage units, you can't reduce the storage capacity below that required to meet the storage needs for your index.</p>
+        /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>
+        /// <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
         pub fn set_capacity_units(
             mut self,
             input: std::option::Option<crate::model::CapacityUnitsConfiguration>,

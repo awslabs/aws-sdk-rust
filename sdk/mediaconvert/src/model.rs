@@ -19477,6 +19477,8 @@ pub struct MpdSettings {
     pub audio_duration: std::option::Option<crate::model::MpdAudioDuration>,
     /// Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
     pub caption_container_type: std::option::Option<crate::model::MpdCaptionContainerType>,
+    /// Applies to DASH ISO outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+    pub klv_metadata: std::option::Option<crate::model::MpdKlvMetadata>,
     /// Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
     pub scte35_esam: std::option::Option<crate::model::MpdScte35Esam>,
     /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want those SCTE-35 markers in this output.
@@ -19504,6 +19506,10 @@ impl MpdSettings {
     ) -> std::option::Option<&crate::model::MpdCaptionContainerType> {
         self.caption_container_type.as_ref()
     }
+    /// Applies to DASH ISO outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+    pub fn klv_metadata(&self) -> std::option::Option<&crate::model::MpdKlvMetadata> {
+        self.klv_metadata.as_ref()
+    }
     /// Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
     pub fn scte35_esam(&self) -> std::option::Option<&crate::model::MpdScte35Esam> {
         self.scte35_esam.as_ref()
@@ -19526,6 +19532,7 @@ impl std::fmt::Debug for MpdSettings {
         );
         formatter.field("audio_duration", &self.audio_duration);
         formatter.field("caption_container_type", &self.caption_container_type);
+        formatter.field("klv_metadata", &self.klv_metadata);
         formatter.field("scte35_esam", &self.scte35_esam);
         formatter.field("scte35_source", &self.scte35_source);
         formatter.field("timed_metadata", &self.timed_metadata);
@@ -19543,6 +19550,7 @@ pub mod mpd_settings {
         pub(crate) audio_duration: std::option::Option<crate::model::MpdAudioDuration>,
         pub(crate) caption_container_type:
             std::option::Option<crate::model::MpdCaptionContainerType>,
+        pub(crate) klv_metadata: std::option::Option<crate::model::MpdKlvMetadata>,
         pub(crate) scte35_esam: std::option::Option<crate::model::MpdScte35Esam>,
         pub(crate) scte35_source: std::option::Option<crate::model::MpdScte35Source>,
         pub(crate) timed_metadata: std::option::Option<crate::model::MpdTimedMetadata>,
@@ -19599,6 +19607,19 @@ pub mod mpd_settings {
             self.caption_container_type = input;
             self
         }
+        /// Applies to DASH ISO outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+        pub fn klv_metadata(mut self, input: crate::model::MpdKlvMetadata) -> Self {
+            self.klv_metadata = Some(input);
+            self
+        }
+        /// Applies to DASH ISO outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+        pub fn set_klv_metadata(
+            mut self,
+            input: std::option::Option<crate::model::MpdKlvMetadata>,
+        ) -> Self {
+            self.klv_metadata = input;
+            self
+        }
         /// Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
         pub fn scte35_esam(mut self, input: crate::model::MpdScte35Esam) -> Self {
             self.scte35_esam = Some(input);
@@ -19644,6 +19665,7 @@ pub mod mpd_settings {
                 accessibility_caption_hints: self.accessibility_caption_hints,
                 audio_duration: self.audio_duration,
                 caption_container_type: self.caption_container_type,
+                klv_metadata: self.klv_metadata,
                 scte35_esam: self.scte35_esam,
                 scte35_source: self.scte35_source,
                 timed_metadata: self.timed_metadata,
@@ -19818,6 +19840,61 @@ impl MpdScte35Esam {
     }
 }
 impl AsRef<str> for MpdScte35Esam {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Applies to DASH ISO outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MpdKlvMetadata {
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    Passthrough,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MpdKlvMetadata {
+    fn from(s: &str) -> Self {
+        match s {
+            "NONE" => MpdKlvMetadata::None,
+            "PASSTHROUGH" => MpdKlvMetadata::Passthrough,
+            other => MpdKlvMetadata::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MpdKlvMetadata {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MpdKlvMetadata::from(s))
+    }
+}
+impl MpdKlvMetadata {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MpdKlvMetadata::None => "NONE",
+            MpdKlvMetadata::Passthrough => "PASSTHROUGH",
+            MpdKlvMetadata::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "PASSTHROUGH"]
+    }
+}
+impl AsRef<str> for MpdKlvMetadata {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -21582,6 +21659,8 @@ pub struct M2tsSettings {
     pub force_ts_video_ebp_order: std::option::Option<crate::model::M2tsForceTsVideoEbpOrder>,
     /// The length, in seconds, of each fragment. Only used with EBP markers.
     pub fragment_time: f64,
+    /// Applies to MPEG-TS outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+    pub klv_metadata: std::option::Option<crate::model::M2tsKlvMetadata>,
     /// Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport stream.
     pub max_pcr_interval: i32,
     /// When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is "stretched" to the next marker. The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.
@@ -21696,6 +21775,10 @@ impl M2tsSettings {
     pub fn fragment_time(&self) -> f64 {
         self.fragment_time
     }
+    /// Applies to MPEG-TS outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+    pub fn klv_metadata(&self) -> std::option::Option<&crate::model::M2tsKlvMetadata> {
+        self.klv_metadata.as_ref()
+    }
     /// Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport stream.
     pub fn max_pcr_interval(&self) -> i32 {
         self.max_pcr_interval
@@ -21803,6 +21886,7 @@ impl std::fmt::Debug for M2tsSettings {
         formatter.field("es_rate_in_pes", &self.es_rate_in_pes);
         formatter.field("force_ts_video_ebp_order", &self.force_ts_video_ebp_order);
         formatter.field("fragment_time", &self.fragment_time);
+        formatter.field("klv_metadata", &self.klv_metadata);
         formatter.field("max_pcr_interval", &self.max_pcr_interval);
         formatter.field("min_ebp_interval", &self.min_ebp_interval);
         formatter.field("nielsen_id3", &self.nielsen_id3);
@@ -21851,6 +21935,7 @@ pub mod m2ts_settings {
         pub(crate) force_ts_video_ebp_order:
             std::option::Option<crate::model::M2tsForceTsVideoEbpOrder>,
         pub(crate) fragment_time: std::option::Option<f64>,
+        pub(crate) klv_metadata: std::option::Option<crate::model::M2tsKlvMetadata>,
         pub(crate) max_pcr_interval: std::option::Option<i32>,
         pub(crate) min_ebp_interval: std::option::Option<i32>,
         pub(crate) nielsen_id3: std::option::Option<crate::model::M2tsNielsenId3>,
@@ -22090,6 +22175,19 @@ pub mod m2ts_settings {
         /// The length, in seconds, of each fragment. Only used with EBP markers.
         pub fn set_fragment_time(mut self, input: std::option::Option<f64>) -> Self {
             self.fragment_time = input;
+            self
+        }
+        /// Applies to MPEG-TS outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+        pub fn klv_metadata(mut self, input: crate::model::M2tsKlvMetadata) -> Self {
+            self.klv_metadata = Some(input);
+            self
+        }
+        /// Applies to MPEG-TS outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+        pub fn set_klv_metadata(
+            mut self,
+            input: std::option::Option<crate::model::M2tsKlvMetadata>,
+        ) -> Self {
+            self.klv_metadata = input;
             self
         }
         /// Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport stream.
@@ -22346,6 +22444,7 @@ pub mod m2ts_settings {
                 es_rate_in_pes: self.es_rate_in_pes,
                 force_ts_video_ebp_order: self.force_ts_video_ebp_order,
                 fragment_time: self.fragment_time.unwrap_or_default(),
+                klv_metadata: self.klv_metadata,
                 max_pcr_interval: self.max_pcr_interval.unwrap_or_default(),
                 min_ebp_interval: self.min_ebp_interval.unwrap_or_default(),
                 nielsen_id3: self.nielsen_id3,
@@ -22780,6 +22879,61 @@ impl M2tsNielsenId3 {
     }
 }
 impl AsRef<str> for M2tsNielsenId3 {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Applies to MPEG-TS outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum M2tsKlvMetadata {
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    Passthrough,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for M2tsKlvMetadata {
+    fn from(s: &str) -> Self {
+        match s {
+            "NONE" => M2tsKlvMetadata::None,
+            "PASSTHROUGH" => M2tsKlvMetadata::Passthrough,
+            other => M2tsKlvMetadata::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for M2tsKlvMetadata {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(M2tsKlvMetadata::from(s))
+    }
+}
+impl M2tsKlvMetadata {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            M2tsKlvMetadata::None => "NONE",
+            M2tsKlvMetadata::Passthrough => "PASSTHROUGH",
+            M2tsKlvMetadata::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "PASSTHROUGH"]
+    }
+}
+impl AsRef<str> for M2tsKlvMetadata {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -23778,6 +23932,8 @@ pub struct CmfcSettings {
         std::option::Option<crate::model::CmfcDescriptiveVideoServiceFlag>,
     /// Choose Include (INCLUDE) to have MediaConvert generate an HLS child manifest that lists only the I-frames for this rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the default value Exclude (EXCLUDE).
     pub i_frame_only_manifest: std::option::Option<crate::model::CmfcIFrameOnlyManifest>,
+    /// Applies to CMAF outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+    pub klv_metadata: std::option::Option<crate::model::CmfcKlvMetadata>,
     /// Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
     pub scte35_esam: std::option::Option<crate::model::CmfcScte35Esam>,
     /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want those SCTE-35 markers in this output.
@@ -23814,6 +23970,10 @@ impl CmfcSettings {
     ) -> std::option::Option<&crate::model::CmfcIFrameOnlyManifest> {
         self.i_frame_only_manifest.as_ref()
     }
+    /// Applies to CMAF outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+    pub fn klv_metadata(&self) -> std::option::Option<&crate::model::CmfcKlvMetadata> {
+        self.klv_metadata.as_ref()
+    }
     /// Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
     pub fn scte35_esam(&self) -> std::option::Option<&crate::model::CmfcScte35Esam> {
         self.scte35_esam.as_ref()
@@ -23839,6 +23999,7 @@ impl std::fmt::Debug for CmfcSettings {
             &self.descriptive_video_service_flag,
         );
         formatter.field("i_frame_only_manifest", &self.i_frame_only_manifest);
+        formatter.field("klv_metadata", &self.klv_metadata);
         formatter.field("scte35_esam", &self.scte35_esam);
         formatter.field("scte35_source", &self.scte35_source);
         formatter.field("timed_metadata", &self.timed_metadata);
@@ -23858,6 +24019,7 @@ pub mod cmfc_settings {
         pub(crate) descriptive_video_service_flag:
             std::option::Option<crate::model::CmfcDescriptiveVideoServiceFlag>,
         pub(crate) i_frame_only_manifest: std::option::Option<crate::model::CmfcIFrameOnlyManifest>,
+        pub(crate) klv_metadata: std::option::Option<crate::model::CmfcKlvMetadata>,
         pub(crate) scte35_esam: std::option::Option<crate::model::CmfcScte35Esam>,
         pub(crate) scte35_source: std::option::Option<crate::model::CmfcScte35Source>,
         pub(crate) timed_metadata: std::option::Option<crate::model::CmfcTimedMetadata>,
@@ -23947,6 +24109,19 @@ pub mod cmfc_settings {
             self.i_frame_only_manifest = input;
             self
         }
+        /// Applies to CMAF outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+        pub fn klv_metadata(mut self, input: crate::model::CmfcKlvMetadata) -> Self {
+            self.klv_metadata = Some(input);
+            self
+        }
+        /// Applies to CMAF outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+        pub fn set_klv_metadata(
+            mut self,
+            input: std::option::Option<crate::model::CmfcKlvMetadata>,
+        ) -> Self {
+            self.klv_metadata = input;
+            self
+        }
         /// Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
         pub fn scte35_esam(mut self, input: crate::model::CmfcScte35Esam) -> Self {
             self.scte35_esam = Some(input);
@@ -23995,6 +24170,7 @@ pub mod cmfc_settings {
                 audio_track_type: self.audio_track_type,
                 descriptive_video_service_flag: self.descriptive_video_service_flag,
                 i_frame_only_manifest: self.i_frame_only_manifest,
+                klv_metadata: self.klv_metadata,
                 scte35_esam: self.scte35_esam,
                 scte35_source: self.scte35_source,
                 timed_metadata: self.timed_metadata,
@@ -24169,6 +24345,61 @@ impl CmfcScte35Esam {
     }
 }
 impl AsRef<str> for CmfcScte35Esam {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Applies to CMAF outputs. Use this setting to specify whether the service inserts the KLV metadata from the input in this output.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CmfcKlvMetadata {
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    Passthrough,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CmfcKlvMetadata {
+    fn from(s: &str) -> Self {
+        match s {
+            "NONE" => CmfcKlvMetadata::None,
+            "PASSTHROUGH" => CmfcKlvMetadata::Passthrough,
+            other => CmfcKlvMetadata::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CmfcKlvMetadata {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CmfcKlvMetadata::from(s))
+    }
+}
+impl CmfcKlvMetadata {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CmfcKlvMetadata::None => "NONE",
+            CmfcKlvMetadata::Passthrough => "PASSTHROUGH",
+            CmfcKlvMetadata::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "PASSTHROUGH"]
+    }
+}
+impl AsRef<str> for CmfcKlvMetadata {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -25644,7 +25875,7 @@ impl CaptionDestinationSettings {
 pub struct WebvttDestinationSettings {
     /// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
     pub accessibility: std::option::Option<crate::model::WebvttAccessibilitySubs>,
-    /// Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
+    /// To use the available style, color, and position information from your input captions: Set Style passthrough (stylePassthrough) to Enabled (ENABLED). MediaConvert uses default settings when style and position information is missing from your input captions. To recreate the input captions exactly: Set Style passthrough to Strict (STRICT). MediaConvert automatically applies timing adjustments, including adjustments for frame rate conversion, ad avails, and input clipping. Your input captions format must be WebVTT. To ignore the style and position information from your input captions and use simplified output captions: Set Style passthrough to Disabled (DISABLED), or leave blank.
     pub style_passthrough: std::option::Option<crate::model::WebvttStylePassthrough>,
 }
 impl WebvttDestinationSettings {
@@ -25652,7 +25883,7 @@ impl WebvttDestinationSettings {
     pub fn accessibility(&self) -> std::option::Option<&crate::model::WebvttAccessibilitySubs> {
         self.accessibility.as_ref()
     }
-    /// Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
+    /// To use the available style, color, and position information from your input captions: Set Style passthrough (stylePassthrough) to Enabled (ENABLED). MediaConvert uses default settings when style and position information is missing from your input captions. To recreate the input captions exactly: Set Style passthrough to Strict (STRICT). MediaConvert automatically applies timing adjustments, including adjustments for frame rate conversion, ad avails, and input clipping. Your input captions format must be WebVTT. To ignore the style and position information from your input captions and use simplified output captions: Set Style passthrough to Disabled (DISABLED), or leave blank.
     pub fn style_passthrough(&self) -> std::option::Option<&crate::model::WebvttStylePassthrough> {
         self.style_passthrough.as_ref()
     }
@@ -25688,12 +25919,12 @@ pub mod webvtt_destination_settings {
             self.accessibility = input;
             self
         }
-        /// Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
+        /// To use the available style, color, and position information from your input captions: Set Style passthrough (stylePassthrough) to Enabled (ENABLED). MediaConvert uses default settings when style and position information is missing from your input captions. To recreate the input captions exactly: Set Style passthrough to Strict (STRICT). MediaConvert automatically applies timing adjustments, including adjustments for frame rate conversion, ad avails, and input clipping. Your input captions format must be WebVTT. To ignore the style and position information from your input captions and use simplified output captions: Set Style passthrough to Disabled (DISABLED), or leave blank.
         pub fn style_passthrough(mut self, input: crate::model::WebvttStylePassthrough) -> Self {
             self.style_passthrough = Some(input);
             self
         }
-        /// Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
+        /// To use the available style, color, and position information from your input captions: Set Style passthrough (stylePassthrough) to Enabled (ENABLED). MediaConvert uses default settings when style and position information is missing from your input captions. To recreate the input captions exactly: Set Style passthrough to Strict (STRICT). MediaConvert automatically applies timing adjustments, including adjustments for frame rate conversion, ad avails, and input clipping. Your input captions format must be WebVTT. To ignore the style and position information from your input captions and use simplified output captions: Set Style passthrough to Disabled (DISABLED), or leave blank.
         pub fn set_style_passthrough(
             mut self,
             input: std::option::Option<crate::model::WebvttStylePassthrough>,
@@ -25717,7 +25948,7 @@ impl WebvttDestinationSettings {
     }
 }
 
-/// Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
+/// To use the available style, color, and position information from your input captions: Set Style passthrough (stylePassthrough) to Enabled (ENABLED). MediaConvert uses default settings when style and position information is missing from your input captions. To recreate the input captions exactly: Set Style passthrough to Strict (STRICT). MediaConvert automatically applies timing adjustments, including adjustments for frame rate conversion, ad avails, and input clipping. Your input captions format must be WebVTT. To ignore the style and position information from your input captions and use simplified output captions: Set Style passthrough to Disabled (DISABLED), or leave blank.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -25733,6 +25964,8 @@ pub enum WebvttStylePassthrough {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Strict,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -25741,6 +25974,7 @@ impl std::convert::From<&str> for WebvttStylePassthrough {
         match s {
             "DISABLED" => WebvttStylePassthrough::Disabled,
             "ENABLED" => WebvttStylePassthrough::Enabled,
+            "STRICT" => WebvttStylePassthrough::Strict,
             other => WebvttStylePassthrough::Unknown(other.to_owned()),
         }
     }
@@ -25758,12 +25992,13 @@ impl WebvttStylePassthrough {
         match self {
             WebvttStylePassthrough::Disabled => "DISABLED",
             WebvttStylePassthrough::Enabled => "ENABLED",
+            WebvttStylePassthrough::Strict => "STRICT",
             WebvttStylePassthrough::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &["DISABLED", "ENABLED", "STRICT"]
     }
 }
 impl AsRef<str> for WebvttStylePassthrough {

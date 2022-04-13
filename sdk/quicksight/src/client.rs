@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_quicksight::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_quicksight::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_quicksight::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_quicksight::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -260,7 +260,7 @@ impl Client {
     ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_group_name): <p>A name for the group that you want to create.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_description): <p>A description for the group that you want to create.</p>
     ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_namespace): <p>The namespace that you want the group to be a part of.</p>
     /// - On success, responds with [`CreateGroupOutput`](crate::output::CreateGroupOutput) with field(s):
     ///   - [`group(Option<Group>)`](crate::output::CreateGroupOutput::group): <p>The name of the group.</p>
     ///   - [`request_id(Option<String>)`](crate::output::CreateGroupOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -275,7 +275,7 @@ impl Client {
     ///   - [`member_name(impl Into<String>)`](crate::client::fluent_builders::CreateGroupMembership::member_name) / [`set_member_name(Option<String>)`](crate::client::fluent_builders::CreateGroupMembership::set_member_name): <p>The name of the user that you want to add to the group membership.</p>
     ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::CreateGroupMembership::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::CreateGroupMembership::set_group_name): <p>The name of the group that you want to add the user to.</p>
     ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateGroupMembership::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateGroupMembership::set_aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::CreateGroupMembership::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::CreateGroupMembership::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::CreateGroupMembership::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::CreateGroupMembership::set_namespace): <p>The namespace that you want the user to be a part of.</p>
     /// - On success, responds with [`CreateGroupMembershipOutput`](crate::output::CreateGroupMembershipOutput) with field(s):
     ///   - [`group_member(Option<GroupMember>)`](crate::output::CreateGroupMembershipOutput::group_member): <p>The group member.</p>
     ///   - [`request_id(Option<String>)`](crate::output::CreateGroupMembershipOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -519,7 +519,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::DeleteGroup::set_group_name): <p>The name of the group that you want to delete.</p>
     ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteGroup::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteGroup::set_aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DeleteGroup::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DeleteGroup::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DeleteGroup::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DeleteGroup::set_namespace): <p>The namespace of the group that you want to delete.</p>
     /// - On success, responds with [`DeleteGroupOutput`](crate::output::DeleteGroupOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::output::DeleteGroupOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::output::DeleteGroupOutput::status): <p>The HTTP status of the request.</p>
@@ -533,7 +533,7 @@ impl Client {
     ///   - [`member_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGroupMembership::member_name) / [`set_member_name(Option<String>)`](crate::client::fluent_builders::DeleteGroupMembership::set_member_name): <p>The name of the user that you want to delete from the group membership.</p>
     ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGroupMembership::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::DeleteGroupMembership::set_group_name): <p>The name of the group that you want to delete the user from.</p>
     ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteGroupMembership::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteGroupMembership::set_aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DeleteGroupMembership::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DeleteGroupMembership::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DeleteGroupMembership::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DeleteGroupMembership::set_namespace): <p>The namespace of the group that you want to remove a user from.</p>
     /// - On success, responds with [`DeleteGroupMembershipOutput`](crate::output::DeleteGroupMembershipOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::output::DeleteGroupMembershipOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::output::DeleteGroupMembershipOutput::status): <p>The HTTP status of the request.</p>
@@ -851,7 +851,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::DescribeGroup::set_group_name): <p>The name of the group that you want to describe.</p>
     ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGroup::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeGroup::set_aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DescribeGroup::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DescribeGroup::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DescribeGroup::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DescribeGroup::set_namespace): <p>The namespace of the group that you want described.</p>
     /// - On success, responds with [`DescribeGroupOutput`](crate::output::DescribeGroupOutput) with field(s):
     ///   - [`group(Option<Group>)`](crate::output::DescribeGroupOutput::group): <p>The name of the group.</p>
     ///   - [`request_id(Option<String>)`](crate::output::DescribeGroupOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -859,6 +859,21 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeGroupError>`](crate::error::DescribeGroupError)
     pub fn describe_group(&self) -> fluent_builders::DescribeGroup {
         fluent_builders::DescribeGroup::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeGroupMembership`](crate::client::fluent_builders::DescribeGroupMembership) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`member_name(impl Into<String>)`](crate::client::fluent_builders::DescribeGroupMembership::member_name) / [`set_member_name(Option<String>)`](crate::client::fluent_builders::DescribeGroupMembership::set_member_name): <p>The user name of the user that you want to search for.</p>
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeGroupMembership::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::DescribeGroupMembership::set_group_name): <p>The name of the group that you want to search.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGroupMembership::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeGroupMembership::set_aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DescribeGroupMembership::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DescribeGroupMembership::set_namespace): <p>The namespace that includes the group you are searching within.</p>
+    /// - On success, responds with [`DescribeGroupMembershipOutput`](crate::output::DescribeGroupMembershipOutput) with field(s):
+    ///   - [`group_member(Option<GroupMember>)`](crate::output::DescribeGroupMembershipOutput::group_member): <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
+    ///   - [`request_id(Option<String>)`](crate::output::DescribeGroupMembershipOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
+    ///   - [`status(i32)`](crate::output::DescribeGroupMembershipOutput::status): <p>The HTTP status of the request.</p>
+    /// - On failure, responds with [`SdkError<DescribeGroupMembershipError>`](crate::error::DescribeGroupMembershipError)
+    pub fn describe_group_membership(&self) -> fluent_builders::DescribeGroupMembership {
+        fluent_builders::DescribeGroupMembership::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeIAMPolicyAssignment`](crate::client::fluent_builders::DescribeIAMPolicyAssignment) operation.
     ///
@@ -1208,7 +1223,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGroupMemberships::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGroupMemberships::set_next_token): <p>A pagination token that can be used in a subsequent request.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGroupMemberships::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGroupMemberships::set_max_results): <p>The maximum number of results to return from this request.</p>
     ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListGroupMemberships::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListGroupMemberships::set_aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListGroupMemberships::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListGroupMemberships::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListGroupMemberships::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListGroupMemberships::set_namespace): <p>The namespace of the group that you want a list of users from.</p>
     /// - On success, responds with [`ListGroupMembershipsOutput`](crate::output::ListGroupMembershipsOutput) with field(s):
     ///   - [`group_member_list(Option<Vec<GroupMember>>)`](crate::output::ListGroupMembershipsOutput::group_member_list): <p>The list of the members of the group.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListGroupMembershipsOutput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
@@ -1224,7 +1239,7 @@ impl Client {
     ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListGroups::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListGroups::set_aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGroups::set_next_token): <p>A pagination token that can be used in a subsequent request.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGroups::set_max_results): <p>The maximum number of results to return.</p>
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListGroups::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListGroups::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListGroups::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListGroups::set_namespace): <p>The namespace that you want a list of groups from.</p>
     /// - On success, responds with [`ListGroupsOutput`](crate::output::ListGroupsOutput) with field(s):
     ///   - [`group_list(Option<Vec<Group>>)`](crate::output::ListGroupsOutput::group_list): <p>The list of the groups.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListGroupsOutput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
@@ -1459,7 +1474,7 @@ impl Client {
     ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::RegisterUser::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::RegisterUser::set_aws_account_id): <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::RegisterUser::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::RegisterUser::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::RegisterUser::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::RegisterUser::set_user_name): <p>The Amazon QuickSight user name that you want to create for the user you are registering.</p>
-    ///   - [`custom_permissions_name(impl Into<String>)`](crate::client::fluent_builders::RegisterUser::custom_permissions_name) / [`set_custom_permissions_name(Option<String>)`](crate::client::fluent_builders::RegisterUser::set_custom_permissions_name): <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>  <ul>   <li> <p>Create and update data sources</p> </li>   <li> <p>Create and update datasets</p> </li>   <li> <p>Create and update email reports</p> </li>   <li> <p>Subscribe to email reports</p> </li>  </ul>  <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>  <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user. </p>  <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>  <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
+    ///   - [`custom_permissions_name(impl Into<String>)`](crate::client::fluent_builders::RegisterUser::custom_permissions_name) / [`set_custom_permissions_name(Option<String>)`](crate::client::fluent_builders::RegisterUser::set_custom_permissions_name): <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>  <ul>   <li> <p>Create and update data sources</p> </li>   <li> <p>Create and update datasets</p> </li>   <li> <p>Create and update email reports</p> </li>   <li> <p>Subscribe to email reports</p> </li>  </ul>  <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>  <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user. </p>  <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>  <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
     ///   - [`external_login_federation_provider_type(impl Into<String>)`](crate::client::fluent_builders::RegisterUser::external_login_federation_provider_type) / [`set_external_login_federation_provider_type(Option<String>)`](crate::client::fluent_builders::RegisterUser::set_external_login_federation_provider_type): <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>  <ul>   <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p> </li>   <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p> </li>  </ul>
     ///   - [`custom_federation_provider_url(impl Into<String>)`](crate::client::fluent_builders::RegisterUser::custom_federation_provider_url) / [`set_custom_federation_provider_url(Option<String>)`](crate::client::fluent_builders::RegisterUser::set_custom_federation_provider_url): <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
     ///   - [`external_login_id(impl Into<String>)`](crate::client::fluent_builders::RegisterUser::external_login_id) / [`set_external_login_id(Option<String>)`](crate::client::fluent_builders::RegisterUser::set_external_login_id): <p>The identity ID for a user in the external login provider.</p>
@@ -1535,6 +1550,23 @@ impl Client {
     /// - On failure, responds with [`SdkError<SearchFoldersError>`](crate::error::SearchFoldersError)
     pub fn search_folders(&self) -> fluent_builders::SearchFolders {
         fluent_builders::SearchFolders::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`SearchGroups`](crate::client::fluent_builders::SearchGroups) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::SearchGroups::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::SearchGroups::set_aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchGroups::set_next_token): <p>A pagination token that can be used in a subsequent request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchGroups::set_max_results): <p>The maximum number of results to return from this request.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::SearchGroups::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::SearchGroups::set_namespace): <p>The namespace that you want to search.</p>
+    ///   - [`filters(Vec<GroupSearchFilter>)`](crate::client::fluent_builders::SearchGroups::filters) / [`set_filters(Option<Vec<GroupSearchFilter>>)`](crate::client::fluent_builders::SearchGroups::set_filters): <p>The structure for the search filters that you want to apply to your search.</p>
+    /// - On success, responds with [`SearchGroupsOutput`](crate::output::SearchGroupsOutput) with field(s):
+    ///   - [`group_list(Option<Vec<Group>>)`](crate::output::SearchGroupsOutput::group_list): <p>A list of groups in a specified namespace that match the filters you set in your <code>SearchGroups</code> request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchGroupsOutput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
+    ///   - [`request_id(Option<String>)`](crate::output::SearchGroupsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
+    ///   - [`status(i32)`](crate::output::SearchGroupsOutput::status): <p>The HTTP status of the request.</p>
+    /// - On failure, responds with [`SdkError<SearchGroupsError>`](crate::error::SearchGroupsError)
+    pub fn search_groups(&self) -> fluent_builders::SearchGroups {
+        fluent_builders::SearchGroups::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
@@ -1801,7 +1833,7 @@ impl Client {
     ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_group_name): <p>The name of the group that you want to update.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_description): <p>The description for the group that you want to update.</p>
     ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_namespace): <p>The namespace of the group that you want to update.</p>
     /// - On success, responds with [`UpdateGroupOutput`](crate::output::UpdateGroupOutput) with field(s):
     ///   - [`group(Option<Group>)`](crate::output::UpdateGroupOutput::group): <p>The name of the group.</p>
     ///   - [`request_id(Option<String>)`](crate::output::UpdateGroupOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -1956,7 +1988,7 @@ impl Client {
     ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     ///   - [`email(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::email) / [`set_email(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_email): <p>The email address of the user that you want to update.</p>
     ///   - [`role(UserRole)`](crate::client::fluent_builders::UpdateUser::role) / [`set_role(Option<UserRole>)`](crate::client::fluent_builders::UpdateUser::set_role): <p>The Amazon QuickSight role of the user. The role can be one of the following default security cohorts:</p>  <ul>   <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>   <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>   <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li>  </ul>  <p>The name of the Amazon QuickSight role is invisible to the user except for the console screens dealing with permissions.</p>
-    ///   - [`custom_permissions_name(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::custom_permissions_name) / [`set_custom_permissions_name(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_custom_permissions_name): <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>  <ul>   <li> <p>Create and update data sources</p> </li>   <li> <p>Create and update datasets</p> </li>   <li> <p>Create and update email reports</p> </li>   <li> <p>Subscribe to email reports</p> </li>  </ul>  <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user. </p>  <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>  <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
+    ///   - [`custom_permissions_name(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::custom_permissions_name) / [`set_custom_permissions_name(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_custom_permissions_name): <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>  <ul>   <li> <p>Create and update data sources</p> </li>   <li> <p>Create and update datasets</p> </li>   <li> <p>Create and update email reports</p> </li>   <li> <p>Subscribe to email reports</p> </li>  </ul>  <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user. </p>  <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>  <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
     ///   - [`unapply_custom_permissions(bool)`](crate::client::fluent_builders::UpdateUser::unapply_custom_permissions) / [`set_unapply_custom_permissions(bool)`](crate::client::fluent_builders::UpdateUser::set_unapply_custom_permissions): <p>A flag that you use to indicate that you want to remove all custom permissions from this user. Using this parameter resets the user to the state it was in before a custom permissions profile was applied. This parameter defaults to NULL and it doesn't accept any other value.</p>
     ///   - [`external_login_federation_provider_type(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::external_login_federation_provider_type) / [`set_external_login_federation_provider_type(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_external_login_federation_provider_type): <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>  <ul>   <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p> </li>   <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p> </li>   <li> <p> <code>NONE</code>: This clears all the previously saved external login information for a user. Use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a> </code> API operation to check the external login information.</p> </li>  </ul>
     ///   - [`custom_federation_provider_url(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::custom_federation_provider_url) / [`set_custom_federation_provider_url(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_custom_federation_provider_url): <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
@@ -3184,9 +3216,14 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGroup`.
     ///
     /// <p>Creates an Amazon QuickSight group.</p>
-    /// <p>The permissions resource is <code>arn:aws:quicksight:us-east-1:<i>
-    /// <relevant-aws-account-id></relevant-aws-account-id></i>:group/default/<i>
-    /// <group-name></group-name></i> </code>.</p>
+    /// <p>The permissions resource is <code>arn:aws:quicksight:
+    /// <your-region>
+    /// :
+    /// <i>
+    /// <relevant-aws-account-id></relevant-aws-account-id></i>:group/default/
+    /// <i>
+    /// <group-name></group-name></i>
+    /// </your-region></code>.</p>
     /// <p>The response is a group object.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGroup {
@@ -3260,12 +3297,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+        /// <p>The namespace that you want the group to be a part of.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+        /// <p>The namespace that you want the group to be a part of.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
@@ -3346,12 +3383,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+        /// <p>The namespace that you want the user to be a part of.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+        /// <p>The namespace that you want the user to be a part of.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
@@ -4728,12 +4765,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+        /// <p>The namespace of the group that you want to delete.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+        /// <p>The namespace of the group that you want to delete.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
@@ -4814,12 +4851,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+        /// <p>The namespace of the group that you want to remove a user from.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+        /// <p>The namespace of the group that you want to remove a user from.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
@@ -6390,12 +6427,98 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+        /// <p>The namespace of the group that you want described.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+        /// <p>The namespace of the group that you want described.</p>
+        pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_namespace(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeGroupMembership`.
+    ///
+    /// <p>Use the <code>DescribeGroupMembership</code> operation to determine if a user is a member of the specified group. If the user exists and is a member of the specified group, an associated <code>GroupMember</code> object is returned.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeGroupMembership {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_group_membership_input::Builder,
+    }
+    impl DescribeGroupMembership {
+        /// Creates a new `DescribeGroupMembership`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeGroupMembershipOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeGroupMembershipError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The user name of the user that you want to search for.</p>
+        pub fn member_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_name(input.into());
+            self
+        }
+        /// <p>The user name of the user that you want to search for.</p>
+        pub fn set_member_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_member_name(input);
+            self
+        }
+        /// <p>The name of the group that you want to search.</p>
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
+            self
+        }
+        /// <p>The name of the group that you want to search.</p>
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_name(input);
+            self
+        }
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
+            self
+        }
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        pub fn set_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_aws_account_id(input);
+            self
+        }
+        /// <p>The namespace that includes the group you are searching within.</p>
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
+            self
+        }
+        /// <p>The namespace that includes the group you are searching within.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
@@ -8411,12 +8534,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+        /// <p>The namespace of the group that you want a list of users from.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+        /// <p>The namespace of the group that you want a list of users from.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
@@ -8497,12 +8620,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+        /// <p>The namespace that you want a list of groups from.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+        /// <p>The namespace that you want a list of groups from.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
@@ -9816,7 +9939,7 @@ pub mod fluent_builders {
         /// <li> <p>Subscribe to email reports</p> </li>
         /// </ul>
         /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
-        /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user. </p>
+        /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user. </p>
         /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
         /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
         pub fn custom_permissions_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9831,7 +9954,7 @@ pub mod fluent_builders {
         /// <li> <p>Subscribe to email reports</p> </li>
         /// </ul>
         /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
-        /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user. </p>
+        /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user. </p>
         /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
         /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
         pub fn set_custom_permissions_name(
@@ -10257,6 +10380,109 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to be returned per request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `SearchGroups`.
+    ///
+    /// <p>Use the <code>SearchGroups</code> operation to search groups in a specified Amazon QuickSight namespace using the supplied filters.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct SearchGroups {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::search_groups_input::Builder,
+    }
+    impl SearchGroups {
+        /// Creates a new `SearchGroups`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SearchGroupsOutput,
+            aws_smithy_http::result::SdkError<crate::error::SearchGroupsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
+            self
+        }
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        pub fn set_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_aws_account_id(input);
+            self
+        }
+        /// <p>A pagination token that can be used in a subsequent request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A pagination token that can be used in a subsequent request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return from this request.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return from this request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The namespace that you want to search.</p>
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
+            self
+        }
+        /// <p>The namespace that you want to search.</p>
+        pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_namespace(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The structure for the search filters that you want to apply to your search.</p>
+        pub fn filters(mut self, input: crate::model::GroupSearchFilter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>The structure for the search filters that you want to apply to your search.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GroupSearchFilter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
             self
         }
     }
@@ -11978,12 +12204,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+        /// <p>The namespace of the group that you want to update.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+        /// <p>The namespace of the group that you want to update.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
@@ -12943,7 +13169,7 @@ pub mod fluent_builders {
         /// <li> <p>Create and update email reports</p> </li>
         /// <li> <p>Subscribe to email reports</p> </li>
         /// </ul>
-        /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user. </p>
+        /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user. </p>
         /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
         /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
         pub fn custom_permissions_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12957,7 +13183,7 @@ pub mod fluent_builders {
         /// <li> <p>Create and update email reports</p> </li>
         /// <li> <p>Subscribe to email reports</p> </li>
         /// </ul>
-        /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user. </p>
+        /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user. </p>
         /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
         /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
         pub fn set_custom_permissions_name(

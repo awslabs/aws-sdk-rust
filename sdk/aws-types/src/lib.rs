@@ -18,6 +18,7 @@ pub mod build_metadata;
 #[deprecated(since = "0.9.0", note = "renamed to sdk_config")]
 pub mod config;
 pub mod credentials;
+pub mod endpoint;
 #[doc(hidden)]
 pub mod os_shim_internal;
 pub mod region;
@@ -50,5 +51,11 @@ impl SigningService {
 impl From<String> for SigningService {
     fn from(service: String) -> Self {
         SigningService(Cow::Owned(service))
+    }
+}
+
+impl From<&'static str> for SigningService {
+    fn from(service: &'static str) -> Self {
+        Self::from_static(service)
     }
 }

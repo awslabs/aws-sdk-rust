@@ -69,20 +69,6 @@ pub(crate) fn lens_structure_crate_output_describe_images_output_image_details(
     Some(input)
 }
 
-pub(crate) fn lens_structure_crate_output_describe_image_scan_findings_output_image_scan_findings_findings(
-    input: crate::output::DescribeImageScanFindingsOutput,
-) -> std::option::Option<std::vec::Vec<crate::model::ImageScanFinding>> {
-    let input = match input.image_scan_findings {
-        None => return None,
-        Some(t) => t,
-    };
-    let input = match input.findings {
-        None => return None,
-        Some(t) => t,
-    };
-    Some(input)
-}
-
 pub(crate) fn lens_structure_crate_output_describe_repositories_output_repositories(
     input: crate::output::DescribeRepositoriesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::Repository>> {

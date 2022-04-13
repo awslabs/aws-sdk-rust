@@ -22,6 +22,8 @@ pub enum CreateBatchInferenceJobErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Could not find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have exceeded the maximum number of tags you can apply to this resource. </p>
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -35,6 +37,7 @@ impl std::fmt::Display for CreateBatchInferenceJobError {
             }
             CreateBatchInferenceJobErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             CreateBatchInferenceJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateBatchInferenceJobErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             CreateBatchInferenceJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -124,6 +127,13 @@ impl CreateBatchInferenceJobError {
             CreateBatchInferenceJobErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateBatchInferenceJobErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBatchInferenceJobErrorKind::TooManyTagsException(_)
+        )
+    }
 }
 impl std::error::Error for CreateBatchInferenceJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -135,6 +145,7 @@ impl std::error::Error for CreateBatchInferenceJobError {
             }
             CreateBatchInferenceJobErrorKind::ResourceInUseException(_inner) => Some(_inner),
             CreateBatchInferenceJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateBatchInferenceJobErrorKind::TooManyTagsException(_inner) => Some(_inner),
             CreateBatchInferenceJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -163,6 +174,8 @@ pub enum CreateBatchSegmentJobErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Could not find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have exceeded the maximum number of tags you can apply to this resource. </p>
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -174,6 +187,7 @@ impl std::fmt::Display for CreateBatchSegmentJobError {
             CreateBatchSegmentJobErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
             CreateBatchSegmentJobErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             CreateBatchSegmentJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateBatchSegmentJobErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             CreateBatchSegmentJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -263,6 +277,13 @@ impl CreateBatchSegmentJobError {
             CreateBatchSegmentJobErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateBatchSegmentJobErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBatchSegmentJobErrorKind::TooManyTagsException(_)
+        )
+    }
 }
 impl std::error::Error for CreateBatchSegmentJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -272,6 +293,7 @@ impl std::error::Error for CreateBatchSegmentJobError {
             CreateBatchSegmentJobErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateBatchSegmentJobErrorKind::ResourceInUseException(_inner) => Some(_inner),
             CreateBatchSegmentJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateBatchSegmentJobErrorKind::TooManyTagsException(_inner) => Some(_inner),
             CreateBatchSegmentJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -300,6 +322,8 @@ pub enum CreateCampaignErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Could not find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have exceeded the maximum number of tags you can apply to this resource. </p>
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -311,6 +335,7 @@ impl std::fmt::Display for CreateCampaignError {
             CreateCampaignErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
             CreateCampaignErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             CreateCampaignErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateCampaignErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             CreateCampaignErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -400,6 +425,10 @@ impl CreateCampaignError {
             CreateCampaignErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateCampaignErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(&self.kind, CreateCampaignErrorKind::TooManyTagsException(_))
+    }
 }
 impl std::error::Error for CreateCampaignError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -409,6 +438,7 @@ impl std::error::Error for CreateCampaignError {
             CreateCampaignErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateCampaignErrorKind::ResourceInUseException(_inner) => Some(_inner),
             CreateCampaignErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateCampaignErrorKind::TooManyTagsException(_inner) => Some(_inner),
             CreateCampaignErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -437,6 +467,8 @@ pub enum CreateDatasetErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Could not find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have exceeded the maximum number of tags you can apply to this resource. </p>
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -448,6 +480,7 @@ impl std::fmt::Display for CreateDatasetError {
             CreateDatasetErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
             CreateDatasetErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             CreateDatasetErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateDatasetErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             CreateDatasetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -534,6 +567,10 @@ impl CreateDatasetError {
             CreateDatasetErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(&self.kind, CreateDatasetErrorKind::TooManyTagsException(_))
+    }
 }
 impl std::error::Error for CreateDatasetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -543,6 +580,7 @@ impl std::error::Error for CreateDatasetError {
             CreateDatasetErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateDatasetErrorKind::ResourceInUseException(_inner) => Some(_inner),
             CreateDatasetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateDatasetErrorKind::TooManyTagsException(_inner) => Some(_inner),
             CreateDatasetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -571,6 +609,8 @@ pub enum CreateDatasetExportJobErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Could not find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have exceeded the maximum number of tags you can apply to this resource. </p>
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -584,6 +624,7 @@ impl std::fmt::Display for CreateDatasetExportJobError {
             }
             CreateDatasetExportJobErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             CreateDatasetExportJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateDatasetExportJobErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             CreateDatasetExportJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -673,6 +714,13 @@ impl CreateDatasetExportJobError {
             CreateDatasetExportJobErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateDatasetExportJobErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDatasetExportJobErrorKind::TooManyTagsException(_)
+        )
+    }
 }
 impl std::error::Error for CreateDatasetExportJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -682,6 +730,7 @@ impl std::error::Error for CreateDatasetExportJobError {
             CreateDatasetExportJobErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateDatasetExportJobErrorKind::ResourceInUseException(_inner) => Some(_inner),
             CreateDatasetExportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateDatasetExportJobErrorKind::TooManyTagsException(_inner) => Some(_inner),
             CreateDatasetExportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -706,6 +755,8 @@ pub enum CreateDatasetGroupErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    /// <p>You have exceeded the maximum number of tags you can apply to this resource. </p>
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -715,6 +766,7 @@ impl std::fmt::Display for CreateDatasetGroupError {
             CreateDatasetGroupErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
             CreateDatasetGroupErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CreateDatasetGroupErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateDatasetGroupErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             CreateDatasetGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -790,6 +842,13 @@ impl CreateDatasetGroupError {
             CreateDatasetGroupErrorKind::ResourceAlreadyExistsException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateDatasetGroupErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDatasetGroupErrorKind::TooManyTagsException(_)
+        )
+    }
 }
 impl std::error::Error for CreateDatasetGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -797,6 +856,7 @@ impl std::error::Error for CreateDatasetGroupError {
             CreateDatasetGroupErrorKind::InvalidInputException(_inner) => Some(_inner),
             CreateDatasetGroupErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateDatasetGroupErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
+            CreateDatasetGroupErrorKind::TooManyTagsException(_inner) => Some(_inner),
             CreateDatasetGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -825,6 +885,8 @@ pub enum CreateDatasetImportJobErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Could not find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have exceeded the maximum number of tags you can apply to this resource. </p>
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -838,6 +900,7 @@ impl std::fmt::Display for CreateDatasetImportJobError {
             }
             CreateDatasetImportJobErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             CreateDatasetImportJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateDatasetImportJobErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             CreateDatasetImportJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -927,6 +990,13 @@ impl CreateDatasetImportJobError {
             CreateDatasetImportJobErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateDatasetImportJobErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDatasetImportJobErrorKind::TooManyTagsException(_)
+        )
+    }
 }
 impl std::error::Error for CreateDatasetImportJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -936,6 +1006,7 @@ impl std::error::Error for CreateDatasetImportJobError {
             CreateDatasetImportJobErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateDatasetImportJobErrorKind::ResourceInUseException(_inner) => Some(_inner),
             CreateDatasetImportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateDatasetImportJobErrorKind::TooManyTagsException(_inner) => Some(_inner),
             CreateDatasetImportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -964,6 +1035,8 @@ pub enum CreateEventTrackerErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Could not find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have exceeded the maximum number of tags you can apply to this resource. </p>
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -975,6 +1048,7 @@ impl std::fmt::Display for CreateEventTrackerError {
             CreateEventTrackerErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
             CreateEventTrackerErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             CreateEventTrackerErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateEventTrackerErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             CreateEventTrackerErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1064,6 +1138,13 @@ impl CreateEventTrackerError {
             CreateEventTrackerErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateEventTrackerErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventTrackerErrorKind::TooManyTagsException(_)
+        )
+    }
 }
 impl std::error::Error for CreateEventTrackerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1073,6 +1154,7 @@ impl std::error::Error for CreateEventTrackerError {
             CreateEventTrackerErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateEventTrackerErrorKind::ResourceInUseException(_inner) => Some(_inner),
             CreateEventTrackerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateEventTrackerErrorKind::TooManyTagsException(_inner) => Some(_inner),
             CreateEventTrackerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1099,6 +1181,8 @@ pub enum CreateFilterErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>Could not find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have exceeded the maximum number of tags you can apply to this resource. </p>
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1109,6 +1193,7 @@ impl std::fmt::Display for CreateFilterError {
             CreateFilterErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CreateFilterErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
             CreateFilterErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateFilterErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             CreateFilterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1185,6 +1270,10 @@ impl CreateFilterError {
             CreateFilterErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateFilterErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(&self.kind, CreateFilterErrorKind::TooManyTagsException(_))
+    }
 }
 impl std::error::Error for CreateFilterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1193,6 +1282,7 @@ impl std::error::Error for CreateFilterError {
             CreateFilterErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateFilterErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateFilterErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateFilterErrorKind::TooManyTagsException(_inner) => Some(_inner),
             CreateFilterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1219,6 +1309,8 @@ pub enum CreateRecommenderErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>Could not find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have exceeded the maximum number of tags you can apply to this resource. </p>
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1229,6 +1321,7 @@ impl std::fmt::Display for CreateRecommenderError {
             CreateRecommenderErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CreateRecommenderErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
             CreateRecommenderErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateRecommenderErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             CreateRecommenderErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1311,6 +1404,13 @@ impl CreateRecommenderError {
             CreateRecommenderErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateRecommenderErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateRecommenderErrorKind::TooManyTagsException(_)
+        )
+    }
 }
 impl std::error::Error for CreateRecommenderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1319,6 +1419,7 @@ impl std::error::Error for CreateRecommenderError {
             CreateRecommenderErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateRecommenderErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateRecommenderErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateRecommenderErrorKind::TooManyTagsException(_inner) => Some(_inner),
             CreateRecommenderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1456,6 +1557,8 @@ pub enum CreateSolutionErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Could not find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have exceeded the maximum number of tags you can apply to this resource. </p>
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1467,6 +1570,7 @@ impl std::fmt::Display for CreateSolutionError {
             CreateSolutionErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
             CreateSolutionErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             CreateSolutionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateSolutionErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             CreateSolutionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1556,6 +1660,10 @@ impl CreateSolutionError {
             CreateSolutionErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateSolutionErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(&self.kind, CreateSolutionErrorKind::TooManyTagsException(_))
+    }
 }
 impl std::error::Error for CreateSolutionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1565,6 +1673,7 @@ impl std::error::Error for CreateSolutionError {
             CreateSolutionErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateSolutionErrorKind::ResourceInUseException(_inner) => Some(_inner),
             CreateSolutionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateSolutionErrorKind::TooManyTagsException(_inner) => Some(_inner),
             CreateSolutionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1591,6 +1700,8 @@ pub enum CreateSolutionVersionErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Could not find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have exceeded the maximum number of tags you can apply to this resource. </p>
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1601,6 +1712,7 @@ impl std::fmt::Display for CreateSolutionVersionError {
             CreateSolutionVersionErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CreateSolutionVersionErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             CreateSolutionVersionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateSolutionVersionErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             CreateSolutionVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1683,6 +1795,13 @@ impl CreateSolutionVersionError {
             CreateSolutionVersionErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateSolutionVersionErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSolutionVersionErrorKind::TooManyTagsException(_)
+        )
+    }
 }
 impl std::error::Error for CreateSolutionVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1691,6 +1810,7 @@ impl std::error::Error for CreateSolutionVersionError {
             CreateSolutionVersionErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateSolutionVersionErrorKind::ResourceInUseException(_inner) => Some(_inner),
             CreateSolutionVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateSolutionVersionErrorKind::TooManyTagsException(_inner) => Some(_inner),
             CreateSolutionVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5817,6 +5937,121 @@ impl std::error::Error for ListSolutionVersionsError {
     }
 }
 
+/// Error type for the `ListTagsForResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListTagsForResourceError {
+    /// Kind of error that occurred.
+    pub kind: ListTagsForResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListTagsForResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListTagsForResourceErrorKind {
+    /// <p>Provide a valid value for the field or parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>Could not find the specified resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListTagsForResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListTagsForResourceErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
+    fn code(&self) -> Option<&str> {
+        ListTagsForResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListTagsForResourceError {
+    /// Creates a new `ListTagsForResourceError`.
+    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for ListTagsForResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListTagsForResourceErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `StopSolutionVersionCreation` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5930,6 +6165,254 @@ impl std::error::Error for StopSolutionVersionCreationError {
             StopSolutionVersionCreationErrorKind::ResourceInUseException(_inner) => Some(_inner),
             StopSolutionVersionCreationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StopSolutionVersionCreationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `TagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct TagResourceError {
+    /// Kind of error that occurred.
+    pub kind: TagResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `TagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum TagResourceErrorKind {
+    /// <p>Provide a valid value for the field or parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The limit on the number of requests per second has been exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>Could not find the specified resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have exceeded the maximum number of tags you can apply to this resource. </p>
+    TooManyTagsException(crate::error::TooManyTagsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for TagResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            TagResourceErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
+    fn code(&self) -> Option<&str> {
+        TagResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl TagResourceError {
+    /// Creates a new `TagResourceError`.
+    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: TagResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::InvalidInputException(_))
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::LimitExceededException(_))
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ResourceInUseException(_))
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::TooManyTagsException(_))
+    }
+}
+impl std::error::Error for TagResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            TagResourceErrorKind::InvalidInputException(_inner) => Some(_inner),
+            TagResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
+            TagResourceErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            TagResourceErrorKind::TooManyTagsException(_inner) => Some(_inner),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UntagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UntagResourceError {
+    /// Kind of error that occurred.
+    pub kind: UntagResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UntagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UntagResourceErrorKind {
+    /// <p>Provide a valid value for the field or parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>Could not find the specified resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request contains more tag keys than can be associated with a resource (50 tag keys per resource). </p>
+    TooManyTagKeysException(crate::error::TooManyTagKeysException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UntagResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UntagResourceErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::TooManyTagKeysException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
+    fn code(&self) -> Option<&str> {
+        UntagResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UntagResourceError {
+    /// Creates a new `UntagResourceError`.
+    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UntagResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::InvalidInputException(_))
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TooManyTagKeysException`.
+    pub fn is_too_many_tag_keys_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::TooManyTagKeysException(_)
+        )
+    }
+}
+impl std::error::Error for UntagResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UntagResourceErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UntagResourceErrorKind::TooManyTagKeysException(_inner) => Some(_inner),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -6356,39 +6839,39 @@ impl InvalidInputException {
     }
 }
 
-/// <p>The token is not valid.</p>
+/// <p>The request contains more tag keys than can be associated with a resource (50 tag keys per resource). </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidNextTokenException {
+pub struct TooManyTagKeysException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidNextTokenException {
+impl std::fmt::Debug for TooManyTagKeysException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidNextTokenException");
+        let mut formatter = f.debug_struct("TooManyTagKeysException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidNextTokenException {
+impl TooManyTagKeysException {
     /// Returns the error message.
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidNextTokenException {
+impl std::fmt::Display for TooManyTagKeysException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidNextTokenException")?;
+        write!(f, "TooManyTagKeysException")?;
         if let Some(inner_4) = &self.message {
             write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidNextTokenException {}
-/// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
-pub mod invalid_next_token_exception {
-    /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
+impl std::error::Error for TooManyTagKeysException {}
+/// See [`TooManyTagKeysException`](crate::error::TooManyTagKeysException)
+pub mod too_many_tag_keys_exception {
+    /// A builder for [`TooManyTagKeysException`](crate::error::TooManyTagKeysException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6405,18 +6888,82 @@ pub mod invalid_next_token_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
-        pub fn build(self) -> crate::error::InvalidNextTokenException {
-            crate::error::InvalidNextTokenException {
+        /// Consumes the builder and constructs a [`TooManyTagKeysException`](crate::error::TooManyTagKeysException)
+        pub fn build(self) -> crate::error::TooManyTagKeysException {
+            crate::error::TooManyTagKeysException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidNextTokenException {
-    /// Creates a new builder-style object to manufacture [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
-    pub fn builder() -> crate::error::invalid_next_token_exception::Builder {
-        crate::error::invalid_next_token_exception::Builder::default()
+impl TooManyTagKeysException {
+    /// Creates a new builder-style object to manufacture [`TooManyTagKeysException`](crate::error::TooManyTagKeysException)
+    pub fn builder() -> crate::error::too_many_tag_keys_exception::Builder {
+        crate::error::too_many_tag_keys_exception::Builder::default()
+    }
+}
+
+/// <p>You have exceeded the maximum number of tags you can apply to this resource. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TooManyTagsException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for TooManyTagsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TooManyTagsException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl TooManyTagsException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyTagsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyTagsException")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyTagsException {}
+/// See [`TooManyTagsException`](crate::error::TooManyTagsException)
+pub mod too_many_tags_exception {
+    /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TooManyTagsException`](crate::error::TooManyTagsException)
+        pub fn build(self) -> crate::error::TooManyTagsException {
+            crate::error::TooManyTagsException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl TooManyTagsException {
+    /// Creates a new builder-style object to manufacture [`TooManyTagsException`](crate::error::TooManyTagsException)
+    pub fn builder() -> crate::error::too_many_tags_exception::Builder {
+        crate::error::too_many_tags_exception::Builder::default()
     }
 }
 
@@ -6443,8 +6990,8 @@ impl LimitExceededException {
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -6484,6 +7031,70 @@ impl LimitExceededException {
     }
 }
 
+/// <p>The token is not valid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidNextTokenException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidNextTokenException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidNextTokenException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidNextTokenException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidNextTokenException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidNextTokenException")?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidNextTokenException {}
+/// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
+pub mod invalid_next_token_exception {
+    /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
+        pub fn build(self) -> crate::error::InvalidNextTokenException {
+            crate::error::InvalidNextTokenException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidNextTokenException {
+    /// Creates a new builder-style object to manufacture [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
+    pub fn builder() -> crate::error::invalid_next_token_exception::Builder {
+        crate::error::invalid_next_token_exception::Builder::default()
+    }
+}
+
 /// <p>The specified resource already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6507,8 +7118,8 @@ impl ResourceAlreadyExistsException {
 impl std::fmt::Display for ResourceAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceAlreadyExistsException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }

@@ -1601,6 +1601,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeGroup {
     }
 }
 
+/// Operation shape for `DescribeGroupMembership`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_group_membership`](crate::client::Client::describe_group_membership).
+///
+/// See [`crate::client::fluent_builders::DescribeGroupMembership`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeGroupMembership {
+    _private: (),
+}
+impl DescribeGroupMembership {
+    /// Creates a new builder-style object to manufacture [`DescribeGroupMembershipInput`](crate::input::DescribeGroupMembershipInput)
+    pub fn builder() -> crate::input::describe_group_membership_input::Builder {
+        crate::input::describe_group_membership_input::Builder::default()
+    }
+    /// Creates a new `DescribeGroupMembership` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeGroupMembership {
+    type Output = std::result::Result<
+        crate::output::DescribeGroupMembershipOutput,
+        crate::error::DescribeGroupMembershipError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_group_membership_error(response)
+        } else {
+            crate::operation_deser::parse_describe_group_membership_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeIAMPolicyAssignment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2992,6 +3026,38 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchFolders {
             crate::operation_deser::parse_search_folders_error(response)
         } else {
             crate::operation_deser::parse_search_folders_response(response)
+        }
+    }
+}
+
+/// Operation shape for `SearchGroups`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`search_groups`](crate::client::Client::search_groups).
+///
+/// See [`crate::client::fluent_builders::SearchGroups`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct SearchGroups {
+    _private: (),
+}
+impl SearchGroups {
+    /// Creates a new builder-style object to manufacture [`SearchGroupsInput`](crate::input::SearchGroupsInput)
+    pub fn builder() -> crate::input::search_groups_input::Builder {
+        crate::input::search_groups_input::Builder::default()
+    }
+    /// Creates a new `SearchGroups` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for SearchGroups {
+    type Output =
+        std::result::Result<crate::output::SearchGroupsOutput, crate::error::SearchGroupsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_search_groups_error(response)
+        } else {
+            crate::operation_deser::parse_search_groups_response(response)
         }
     }
 }

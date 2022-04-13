@@ -374,8 +374,8 @@ impl AsRef<str> for LifeCycleState {
     }
 }
 
-/// <p>Describes a policy used by EFS lifecycle management and EFS intelligent tiering that specifies when to transition files into and out of the file system's Infrequent Access (IA) storage class. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS Intelligent‐Tiering and EFS Lifecycle Management</a>.</p> <note>
-/// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> needs to be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. For more information, see the request examples in <code>PutLifecycleConfiguration</code>.</p>
+/// <p>Describes a policy used by EFS lifecycle management and EFS Intelligent-Tiering that specifies when to transition files into and out of the file system's Infrequent Access (IA) storage class. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS Intelligent‐Tiering and EFS Lifecycle Management</a>.</p> <note>
+/// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. For more information, see the request examples in <code>PutLifecycleConfiguration</code>.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -597,7 +597,7 @@ pub struct BackupPolicy {
     /// <ul>
     /// <li> <p> <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.</p> </li>
     /// <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.</p> </li>
-    /// <li> <p> <b> <code>DISABLED</code> </b> - automatic back ups are turned off for the file system.</p> </li>
+    /// <li> <p> <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.</p> </li>
     /// <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::Status>,
@@ -607,7 +607,7 @@ impl BackupPolicy {
     /// <ul>
     /// <li> <p> <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.</p> </li>
     /// <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.</p> </li>
-    /// <li> <p> <b> <code>DISABLED</code> </b> - automatic back ups are turned off for the file system.</p> </li>
+    /// <li> <p> <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.</p> </li>
     /// <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::Status> {
@@ -634,7 +634,7 @@ pub mod backup_policy {
         /// <ul>
         /// <li> <p> <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.</p> </li>
         /// <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.</p> </li>
-        /// <li> <p> <b> <code>DISABLED</code> </b> - automatic back ups are turned off for the file system.</p> </li>
+        /// <li> <p> <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.</p> </li>
         /// <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -645,7 +645,7 @@ pub mod backup_policy {
         /// <ul>
         /// <li> <p> <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.</p> </li>
         /// <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.</p> </li>
-        /// <li> <p> <b> <code>DISABLED</code> </b> - automatic back ups are turned off for the file system.</p> </li>
+        /// <li> <p> <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.</p> </li>
         /// <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.</p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
@@ -933,13 +933,13 @@ pub struct ReplicationConfigurationDescription {
     pub source_file_system_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
     pub source_file_system_region: std::option::Option<std::string::String>,
-    /// <p>The ARN of the current source file system in the replication configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
     pub source_file_system_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
     pub original_source_file_system_arn: std::option::Option<std::string::String>,
     /// <p>Describes when the replication configuration was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Array of destination objects. Only one destination object is supported.</p>
+    /// <p>An array of destination objects. Only one destination object is supported.</p>
     pub destinations: std::option::Option<std::vec::Vec<crate::model::Destination>>,
 }
 impl ReplicationConfigurationDescription {
@@ -951,7 +951,7 @@ impl ReplicationConfigurationDescription {
     pub fn source_file_system_region(&self) -> std::option::Option<&str> {
         self.source_file_system_region.as_deref()
     }
-    /// <p>The ARN of the current source file system in the replication configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
     pub fn source_file_system_arn(&self) -> std::option::Option<&str> {
         self.source_file_system_arn.as_deref()
     }
@@ -963,7 +963,7 @@ impl ReplicationConfigurationDescription {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>Array of destination objects. Only one destination object is supported.</p>
+    /// <p>An array of destination objects. Only one destination object is supported.</p>
     pub fn destinations(&self) -> std::option::Option<&[crate::model::Destination]> {
         self.destinations.as_deref()
     }
@@ -1023,12 +1023,12 @@ pub mod replication_configuration_description {
             self.source_file_system_region = input;
             self
         }
-        /// <p>The ARN of the current source file system in the replication configuration.</p>
+        /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
         pub fn source_file_system_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_file_system_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the current source file system in the replication configuration.</p>
+        /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
         pub fn set_source_file_system_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1069,14 +1069,14 @@ pub mod replication_configuration_description {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// <p>Array of destination objects. Only one destination object is supported.</p>
+        /// <p>An array of destination objects. Only one destination object is supported.</p>
         pub fn destinations(mut self, input: crate::model::Destination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input);
             self.destinations = Some(v);
             self
         }
-        /// <p>Array of destination objects. Only one destination object is supported.</p>
+        /// <p>An array of destination objects. Only one destination object is supported.</p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Destination>>,
@@ -1108,17 +1108,17 @@ impl ReplicationConfigurationDescription {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Destination {
-    /// <p>Describes the status of the destination Amazon EFS file system.</p>
+    /// <p>Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the destination file system in the replication configuration is in a failed state and is unrecoverable. To access the file system data, restore a backup of the failed file system to a new file system.</p>
     pub status: std::option::Option<crate::model::ReplicationStatus>,
     /// <p>The ID of the destination Amazon EFS file system.</p>
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region in which the destination file system is located.</p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>The time when the most recent sync successfully completed on the destination file system. Any changes to data on the source file system that occurred prior to this time were successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
+    /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
     pub last_replicated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Destination {
-    /// <p>Describes the status of the destination Amazon EFS file system.</p>
+    /// <p>Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the destination file system in the replication configuration is in a failed state and is unrecoverable. To access the file system data, restore a backup of the failed file system to a new file system.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ReplicationStatus> {
         self.status.as_ref()
     }
@@ -1130,7 +1130,7 @@ impl Destination {
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>The time when the most recent sync successfully completed on the destination file system. Any changes to data on the source file system that occurred prior to this time were successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
+    /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
     pub fn last_replicated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_replicated_timestamp.as_ref()
     }
@@ -1157,12 +1157,12 @@ pub mod destination {
         pub(crate) last_replicated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>Describes the status of the destination Amazon EFS file system.</p>
+        /// <p>Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the destination file system in the replication configuration is in a failed state and is unrecoverable. To access the file system data, restore a backup of the failed file system to a new file system.</p>
         pub fn status(mut self, input: crate::model::ReplicationStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>Describes the status of the destination Amazon EFS file system.</p>
+        /// <p>Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the destination file system in the replication configuration is in a failed state and is unrecoverable. To access the file system data, restore a backup of the failed file system to a new file system.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ReplicationStatus>,
@@ -1193,12 +1193,12 @@ pub mod destination {
             self.region = input;
             self
         }
-        /// <p>The time when the most recent sync successfully completed on the destination file system. Any changes to data on the source file system that occurred prior to this time were successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
+        /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
         pub fn last_replicated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_replicated_timestamp = Some(input);
             self
         }
-        /// <p>The time when the most recent sync successfully completed on the destination file system. Any changes to data on the source file system that occurred prior to this time were successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
+        /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
         pub fn set_last_replicated_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2469,34 +2469,34 @@ impl PosixUser {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationToCreate {
-    /// <p>To create a file system that uses regional storage, specify the Amazon Web Services Region in which to create the destination file system.</p>
+    /// <p>To create a file system that uses Regional storage, specify the Amazon Web Services Region in which to create the destination file system.</p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>To create a file system that uses One Zone storage, specify the name of the Availability Zone in which to create the destination file system.</p>
+    /// <p>To create a file system that uses EFS One Zone storage, specify the name of the Availability Zone in which to create the destination file system.</p>
     pub availability_zone_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the KMS key you want to use to encrypt the destination file system. If you do not specify a KMS key, EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p>
+    /// <p>Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p>
     /// <ul>
-    /// <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-    /// <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>Key ID - The unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>ARN - The Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>
-    /// <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
+    /// <li> <p>Key alias ARN - The ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
     /// </ul>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl DestinationToCreate {
-    /// <p>To create a file system that uses regional storage, specify the Amazon Web Services Region in which to create the destination file system.</p>
+    /// <p>To create a file system that uses Regional storage, specify the Amazon Web Services Region in which to create the destination file system.</p>
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>To create a file system that uses One Zone storage, specify the name of the Availability Zone in which to create the destination file system.</p>
+    /// <p>To create a file system that uses EFS One Zone storage, specify the name of the Availability Zone in which to create the destination file system.</p>
     pub fn availability_zone_name(&self) -> std::option::Option<&str> {
         self.availability_zone_name.as_deref()
     }
-    /// <p>Specifies the KMS key you want to use to encrypt the destination file system. If you do not specify a KMS key, EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p>
+    /// <p>Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p>
     /// <ul>
-    /// <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-    /// <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>Key ID - The unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>ARN - The Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>
-    /// <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
+    /// <li> <p>Key alias ARN - The ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
     /// </ul>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
@@ -2522,22 +2522,22 @@ pub mod destination_to_create {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To create a file system that uses regional storage, specify the Amazon Web Services Region in which to create the destination file system.</p>
+        /// <p>To create a file system that uses Regional storage, specify the Amazon Web Services Region in which to create the destination file system.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>To create a file system that uses regional storage, specify the Amazon Web Services Region in which to create the destination file system.</p>
+        /// <p>To create a file system that uses Regional storage, specify the Amazon Web Services Region in which to create the destination file system.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
         }
-        /// <p>To create a file system that uses One Zone storage, specify the name of the Availability Zone in which to create the destination file system.</p>
+        /// <p>To create a file system that uses EFS One Zone storage, specify the name of the Availability Zone in which to create the destination file system.</p>
         pub fn availability_zone_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone_name = Some(input.into());
             self
         }
-        /// <p>To create a file system that uses One Zone storage, specify the name of the Availability Zone in which to create the destination file system.</p>
+        /// <p>To create a file system that uses EFS One Zone storage, specify the name of the Availability Zone in which to create the destination file system.</p>
         pub fn set_availability_zone_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2545,23 +2545,23 @@ pub mod destination_to_create {
             self.availability_zone_name = input;
             self
         }
-        /// <p>Specifies the KMS key you want to use to encrypt the destination file system. If you do not specify a KMS key, EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p>
+        /// <p>Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p>
         /// <ul>
-        /// <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-        /// <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+        /// <li> <p>Key ID - The unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+        /// <li> <p>ARN - The Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
         /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>
-        /// <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
+        /// <li> <p>Key alias ARN - The ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
         /// </ul>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>Specifies the KMS key you want to use to encrypt the destination file system. If you do not specify a KMS key, EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p>
+        /// <p>Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p>
         /// <ul>
-        /// <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-        /// <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+        /// <li> <p>Key ID - The unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+        /// <li> <p>ARN - The Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
         /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>
-        /// <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
+        /// <li> <p>Key alias ARN - The ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
         /// </ul>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;

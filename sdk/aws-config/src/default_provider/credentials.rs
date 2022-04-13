@@ -320,6 +320,7 @@ mod test {
     make_test!(web_identity_token_profile);
     make_test!(profile_name);
     make_test!(profile_overrides_web_identity);
+    make_test!(environment_variables_blank);
     make_test!(imds_token_fail);
 
     make_test!(imds_no_iam_role);

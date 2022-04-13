@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_iottwinmaker::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_iottwinmaker::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_iottwinmaker::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_iottwinmaker::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -289,6 +289,8 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_next_token): <p>The string that specifies the next page of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::GetPropertyValueHistory::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_max_results): <p>The maximum number of results to return.</p>
     ///   - [`order_by_time(OrderByTime)`](crate::client::fluent_builders::GetPropertyValueHistory::order_by_time) / [`set_order_by_time(Option<OrderByTime>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_order_by_time): <p>The time direction to use in the result order.</p>
+    ///   - [`start_time(impl Into<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::start_time) / [`set_start_time(Option<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_start_time): Timestamp represented in ISO 8601 format
+    ///   - [`end_time(impl Into<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::end_time) / [`set_end_time(Option<String>)`](crate::client::fluent_builders::GetPropertyValueHistory::set_end_time): Timestamp represented in ISO 8601 format
     /// - On success, responds with [`GetPropertyValueHistoryOutput`](crate::output::GetPropertyValueHistoryOutput) with field(s):
     ///   - [`property_values(Option<Vec<PropertyValueHistory>>)`](crate::output::GetPropertyValueHistoryOutput::property_values): <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetPropertyValueHistoryOutput::next_token): <p>The string that specifies the next page of results.</p>
@@ -566,9 +568,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateComponentType`.
     ///
-    /// <p>Creates a component type.</p> <important>
-    /// <p> TwinMaker is in public preview and is subject to change. </p>
-    /// </important>
+    /// <p>Creates a component type.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateComponentType {
         handle: std::sync::Arc<super::Handle>,
@@ -1805,6 +1805,26 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::OrderByTime>,
         ) -> Self {
             self.inner = self.inner.set_order_by_time(input);
+            self
+        }
+        /// Timestamp represented in ISO 8601 format
+        pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start_time(input.into());
+            self
+        }
+        /// Timestamp represented in ISO 8601 format
+        pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_start_time(input);
+            self
+        }
+        /// Timestamp represented in ISO 8601 format
+        pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.end_time(input.into());
+            self
+        }
+        /// Timestamp represented in ISO 8601 format
+        pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_end_time(input);
             self
         }
     }

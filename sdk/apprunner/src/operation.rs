@@ -101,6 +101,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConnection {
     }
 }
 
+/// Operation shape for `CreateObservabilityConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_observability_configuration`](crate::client::Client::create_observability_configuration).
+///
+/// See [`crate::client::fluent_builders::CreateObservabilityConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateObservabilityConfiguration {
+    _private: (),
+}
+impl CreateObservabilityConfiguration {
+    /// Creates a new builder-style object to manufacture [`CreateObservabilityConfigurationInput`](crate::input::CreateObservabilityConfigurationInput)
+    pub fn builder() -> crate::input::create_observability_configuration_input::Builder {
+        crate::input::create_observability_configuration_input::Builder::default()
+    }
+    /// Creates a new `CreateObservabilityConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateObservabilityConfiguration {
+    type Output = std::result::Result<
+        crate::output::CreateObservabilityConfigurationOutput,
+        crate::error::CreateObservabilityConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_observability_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_create_observability_configuration_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateService`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -235,6 +269,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConnection {
     }
 }
 
+/// Operation shape for `DeleteObservabilityConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_observability_configuration`](crate::client::Client::delete_observability_configuration).
+///
+/// See [`crate::client::fluent_builders::DeleteObservabilityConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteObservabilityConfiguration {
+    _private: (),
+}
+impl DeleteObservabilityConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeleteObservabilityConfigurationInput`](crate::input::DeleteObservabilityConfigurationInput)
+    pub fn builder() -> crate::input::delete_observability_configuration_input::Builder {
+        crate::input::delete_observability_configuration_input::Builder::default()
+    }
+    /// Creates a new `DeleteObservabilityConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteObservabilityConfiguration {
+    type Output = std::result::Result<
+        crate::output::DeleteObservabilityConfigurationOutput,
+        crate::error::DeleteObservabilityConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_observability_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_delete_observability_configuration_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteService`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -365,6 +433,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomDomains {
             crate::operation_deser::parse_describe_custom_domains_error(response)
         } else {
             crate::operation_deser::parse_describe_custom_domains_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeObservabilityConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_observability_configuration`](crate::client::Client::describe_observability_configuration).
+///
+/// See [`crate::client::fluent_builders::DescribeObservabilityConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeObservabilityConfiguration {
+    _private: (),
+}
+impl DescribeObservabilityConfiguration {
+    /// Creates a new builder-style object to manufacture [`DescribeObservabilityConfigurationInput`](crate::input::DescribeObservabilityConfigurationInput)
+    pub fn builder() -> crate::input::describe_observability_configuration_input::Builder {
+        crate::input::describe_observability_configuration_input::Builder::default()
+    }
+    /// Creates a new `DescribeObservabilityConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeObservabilityConfiguration {
+    type Output = std::result::Result<
+        crate::output::DescribeObservabilityConfigurationOutput,
+        crate::error::DescribeObservabilityConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_observability_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_describe_observability_configuration_response(response)
         }
     }
 }
@@ -535,6 +637,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConnections {
             crate::operation_deser::parse_list_connections_error(response)
         } else {
             crate::operation_deser::parse_list_connections_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListObservabilityConfigurations`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_observability_configurations`](crate::client::Client::list_observability_configurations).
+///
+/// See [`crate::client::fluent_builders::ListObservabilityConfigurations`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListObservabilityConfigurations {
+    _private: (),
+}
+impl ListObservabilityConfigurations {
+    /// Creates a new builder-style object to manufacture [`ListObservabilityConfigurationsInput`](crate::input::ListObservabilityConfigurationsInput)
+    pub fn builder() -> crate::input::list_observability_configurations_input::Builder {
+        crate::input::list_observability_configurations_input::Builder::default()
+    }
+    /// Creates a new `ListObservabilityConfigurations` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListObservabilityConfigurations {
+    type Output = std::result::Result<
+        crate::output::ListObservabilityConfigurationsOutput,
+        crate::error::ListObservabilityConfigurationsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_observability_configurations_error(response)
+        } else {
+            crate::operation_deser::parse_list_observability_configurations_response(response)
         }
     }
 }

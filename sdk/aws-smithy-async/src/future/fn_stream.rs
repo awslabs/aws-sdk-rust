@@ -2,6 +2,9 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
+
+//! Utility to drive a stream with an async function and a channel.
+
 use crate::future::rendezvous;
 use futures_util::StreamExt;
 use pin_project_lite::pin_project;
@@ -45,6 +48,9 @@ pin_project! {
 }
 
 impl<Item, F> FnStream<Item, F> {
+    /// Creates a new function based stream driven by `generator`.
+    ///
+    /// For examples, see the documentation for [`FnStream`]
     pub fn new<T>(generator: T) -> Self
     where
         T: FnOnce(rendezvous::Sender<Item>) -> F,
@@ -80,6 +86,7 @@ where
 /// When flattening paginated results, it's most convenient to produce an iterator where the `Result`
 /// is present in each item. This provides `items()` which can wrap an stream of `Result<Page, Err>`
 /// and produce a stream of `Result<Item, Err>`.
+#[derive(Debug)]
 pub struct TryFlatMap<I>(I);
 
 impl<I> TryFlatMap<I> {
@@ -88,6 +95,7 @@ impl<I> TryFlatMap<I> {
         Self(i)
     }
 
+    /// Produce a new [`Stream`] by mapping this stream with `map` then flattening the result
     pub fn flat_map<M, Item, Iter, Page, Err>(self, map: M) -> impl Stream<Item = Result<Item, Err>>
     where
         I: Stream<Item = Result<Page, Err>>,

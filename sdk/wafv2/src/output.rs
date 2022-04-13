@@ -1269,6 +1269,8 @@ pub struct ListAvailableManagedRuleGroupVersionsOutput {
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The versions that are currently available for the specified managed rule group. </p>
     pub versions: std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupVersion>>,
+    /// <p>The name of the version that's currently set as the default. </p>
+    pub current_default_version: std::option::Option<std::string::String>,
 }
 impl ListAvailableManagedRuleGroupVersionsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
@@ -1279,12 +1281,17 @@ impl ListAvailableManagedRuleGroupVersionsOutput {
     pub fn versions(&self) -> std::option::Option<&[crate::model::ManagedRuleGroupVersion]> {
         self.versions.as_deref()
     }
+    /// <p>The name of the version that's currently set as the default. </p>
+    pub fn current_default_version(&self) -> std::option::Option<&str> {
+        self.current_default_version.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAvailableManagedRuleGroupVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAvailableManagedRuleGroupVersionsOutput");
         formatter.field("next_marker", &self.next_marker);
         formatter.field("versions", &self.versions);
+        formatter.field("current_default_version", &self.current_default_version);
         formatter.finish()
     }
 }
@@ -1297,6 +1304,7 @@ pub mod list_available_managed_rule_group_versions_output {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) versions:
             std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupVersion>>,
+        pub(crate) current_default_version: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
@@ -1328,11 +1336,25 @@ pub mod list_available_managed_rule_group_versions_output {
             self.versions = input;
             self
         }
+        /// <p>The name of the version that's currently set as the default. </p>
+        pub fn current_default_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.current_default_version = Some(input.into());
+            self
+        }
+        /// <p>The name of the version that's currently set as the default. </p>
+        pub fn set_current_default_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.current_default_version = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListAvailableManagedRuleGroupVersionsOutput`](crate::output::ListAvailableManagedRuleGroupVersionsOutput)
         pub fn build(self) -> crate::output::ListAvailableManagedRuleGroupVersionsOutput {
             crate::output::ListAvailableManagedRuleGroupVersionsOutput {
                 next_marker: self.next_marker,
                 versions: self.versions,
+                current_default_version: self.current_default_version,
             }
         }
     }

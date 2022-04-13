@@ -235,10 +235,14 @@ impl AsRef<str> for HomeDirectoryType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowDetails {
     /// <p>A trigger that starts a workflow: the workflow begins to execute after a file is uploaded.</p>
+    /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
+    /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
     pub on_upload: std::option::Option<std::vec::Vec<crate::model::WorkflowDetail>>,
 }
 impl WorkflowDetails {
     /// <p>A trigger that starts a workflow: the workflow begins to execute after a file is uploaded.</p>
+    /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
+    /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
     pub fn on_upload(&self) -> std::option::Option<&[crate::model::WorkflowDetail]> {
         self.on_upload.as_deref()
     }
@@ -264,6 +268,8 @@ pub mod workflow_details {
         /// To override the contents of this collection use [`set_on_upload`](Self::set_on_upload).
         ///
         /// <p>A trigger that starts a workflow: the workflow begins to execute after a file is uploaded.</p>
+        /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
+        /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
         pub fn on_upload(mut self, input: crate::model::WorkflowDetail) -> Self {
             let mut v = self.on_upload.unwrap_or_default();
             v.push(input);
@@ -271,6 +277,8 @@ pub mod workflow_details {
             self
         }
         /// <p>A trigger that starts a workflow: the workflow begins to execute after a file is uploaded.</p>
+        /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
+        /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
         pub fn set_on_upload(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::WorkflowDetail>>,

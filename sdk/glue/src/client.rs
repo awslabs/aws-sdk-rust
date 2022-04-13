@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_glue::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_glue::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_glue::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_glue::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -275,6 +275,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<CancelMLTaskRunError>`](crate::error::CancelMLTaskRunError)
     pub fn cancel_ml_task_run(&self) -> fluent_builders::CancelMLTaskRun {
         fluent_builders::CancelMLTaskRun::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CancelStatement`](crate::client::fluent_builders::CancelStatement) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::CancelStatement::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::CancelStatement::set_session_id): <p>The Session ID of the statement to be cancelled.</p>
+    ///   - [`id(i32)`](crate::client::fluent_builders::CancelStatement::id) / [`set_id(i32)`](crate::client::fluent_builders::CancelStatement::set_id): <p>The ID of the statement to be cancelled.</p>
+    ///   - [`request_origin(impl Into<String>)`](crate::client::fluent_builders::CancelStatement::request_origin) / [`set_request_origin(Option<String>)`](crate::client::fluent_builders::CancelStatement::set_request_origin): <p>The origin of the request to cancel the statement.</p>
+    /// - On success, responds with [`CancelStatementOutput`](crate::output::CancelStatementOutput)
+
+    /// - On failure, responds with [`SdkError<CancelStatementError>`](crate::error::CancelStatementError)
+    pub fn cancel_statement(&self) -> fluent_builders::CancelStatement {
+        fluent_builders::CancelStatement::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CheckSchemaVersionValidity`](crate::client::fluent_builders::CheckSchemaVersionValidity) operation.
     ///
@@ -548,6 +560,30 @@ impl Client {
     pub fn create_security_configuration(&self) -> fluent_builders::CreateSecurityConfiguration {
         fluent_builders::CreateSecurityConfiguration::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateSession`](crate::client::fluent_builders::CreateSession) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::CreateSession::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::CreateSession::set_id): <p>The ID of the session request. </p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateSession::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateSession::set_description): <p>The description of the session. </p>
+    ///   - [`role(impl Into<String>)`](crate::client::fluent_builders::CreateSession::role) / [`set_role(Option<String>)`](crate::client::fluent_builders::CreateSession::set_role): <p>The IAM Role ARN </p>
+    ///   - [`command(SessionCommand)`](crate::client::fluent_builders::CreateSession::command) / [`set_command(Option<SessionCommand>)`](crate::client::fluent_builders::CreateSession::set_command): <p>The <code>SessionCommand</code> that runs the job. </p>
+    ///   - [`timeout(i32)`](crate::client::fluent_builders::CreateSession::timeout) / [`set_timeout(Option<i32>)`](crate::client::fluent_builders::CreateSession::set_timeout): <p>The number of seconds before request times out. </p>
+    ///   - [`idle_timeout(i32)`](crate::client::fluent_builders::CreateSession::idle_timeout) / [`set_idle_timeout(Option<i32>)`](crate::client::fluent_builders::CreateSession::set_idle_timeout): <p>The number of seconds when idle before request times out. </p>
+    ///   - [`default_arguments(HashMap<String, String>)`](crate::client::fluent_builders::CreateSession::default_arguments) / [`set_default_arguments(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSession::set_default_arguments): <p>A map array of key-value pairs. Max is 75 pairs. </p>
+    ///   - [`connections(ConnectionsList)`](crate::client::fluent_builders::CreateSession::connections) / [`set_connections(Option<ConnectionsList>)`](crate::client::fluent_builders::CreateSession::set_connections): <p>The number of connections to use for the session. </p>
+    ///   - [`max_capacity(f64)`](crate::client::fluent_builders::CreateSession::max_capacity) / [`set_max_capacity(Option<f64>)`](crate::client::fluent_builders::CreateSession::set_max_capacity): <p>The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
+    ///   - [`number_of_workers(i32)`](crate::client::fluent_builders::CreateSession::number_of_workers) / [`set_number_of_workers(Option<i32>)`](crate::client::fluent_builders::CreateSession::set_number_of_workers): <p>The number of workers to use for the session. </p>
+    ///   - [`worker_type(WorkerType)`](crate::client::fluent_builders::CreateSession::worker_type) / [`set_worker_type(Option<WorkerType>)`](crate::client::fluent_builders::CreateSession::set_worker_type): <p>The Worker Type. Can be one of G.1X, G.2X, Standard </p>
+    ///   - [`security_configuration(impl Into<String>)`](crate::client::fluent_builders::CreateSession::security_configuration) / [`set_security_configuration(Option<String>)`](crate::client::fluent_builders::CreateSession::set_security_configuration): <p>The name of the SecurityConfiguration structure to be used with the session </p>
+    ///   - [`glue_version(impl Into<String>)`](crate::client::fluent_builders::CreateSession::glue_version) / [`set_glue_version(Option<String>)`](crate::client::fluent_builders::CreateSession::set_glue_version): <p>The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The GlueVersion must be greater than 2.0. </p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSession::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSession::set_tags): <p>The map of key value pairs (tags) belonging to the session.</p>
+    ///   - [`request_origin(impl Into<String>)`](crate::client::fluent_builders::CreateSession::request_origin) / [`set_request_origin(Option<String>)`](crate::client::fluent_builders::CreateSession::set_request_origin): <p>The origin of the request. </p>
+    /// - On success, responds with [`CreateSessionOutput`](crate::output::CreateSessionOutput) with field(s):
+    ///   - [`session(Option<Session>)`](crate::output::CreateSessionOutput::session): <p>Returns the session object in the response.</p>
+    /// - On failure, responds with [`SdkError<CreateSessionError>`](crate::error::CreateSessionError)
+    pub fn create_session(&self) -> fluent_builders::CreateSession {
+        fluent_builders::CreateSession::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateTable`](crate::client::fluent_builders::CreateTable) operation.
     ///
     /// - The fluent builder is configurable:
@@ -801,6 +837,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteSecurityConfigurationError>`](crate::error::DeleteSecurityConfigurationError)
     pub fn delete_security_configuration(&self) -> fluent_builders::DeleteSecurityConfiguration {
         fluent_builders::DeleteSecurityConfiguration::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteSession`](crate::client::fluent_builders::DeleteSession) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteSession::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteSession::set_id): <p>The ID of the session to be deleted.</p>
+    ///   - [`request_origin(impl Into<String>)`](crate::client::fluent_builders::DeleteSession::request_origin) / [`set_request_origin(Option<String>)`](crate::client::fluent_builders::DeleteSession::set_request_origin): <p>The name of the origin of the delete session request.</p>
+    /// - On success, responds with [`DeleteSessionOutput`](crate::output::DeleteSessionOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::DeleteSessionOutput::id): <p>Returns the ID of the deleted session.</p>
+    /// - On failure, responds with [`SdkError<DeleteSessionError>`](crate::error::DeleteSessionError)
+    pub fn delete_session(&self) -> fluent_builders::DeleteSession {
+        fluent_builders::DeleteSession::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteTable`](crate::client::fluent_builders::DeleteTable) operation.
     ///
@@ -1446,6 +1493,29 @@ impl Client {
     pub fn get_security_configurations(&self) -> fluent_builders::GetSecurityConfigurations {
         fluent_builders::GetSecurityConfigurations::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetSession`](crate::client::fluent_builders::GetSession) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetSession::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetSession::set_id): <p>The ID of the session. </p>
+    ///   - [`request_origin(impl Into<String>)`](crate::client::fluent_builders::GetSession::request_origin) / [`set_request_origin(Option<String>)`](crate::client::fluent_builders::GetSession::set_request_origin): <p>The origin of the request. </p>
+    /// - On success, responds with [`GetSessionOutput`](crate::output::GetSessionOutput) with field(s):
+    ///   - [`session(Option<Session>)`](crate::output::GetSessionOutput::session): <p>The session object is returned in the response.</p>
+    /// - On failure, responds with [`SdkError<GetSessionError>`](crate::error::GetSessionError)
+    pub fn get_session(&self) -> fluent_builders::GetSession {
+        fluent_builders::GetSession::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetStatement`](crate::client::fluent_builders::GetStatement) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::GetStatement::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::GetStatement::set_session_id): <p>The Session ID of the statement.</p>
+    ///   - [`id(i32)`](crate::client::fluent_builders::GetStatement::id) / [`set_id(i32)`](crate::client::fluent_builders::GetStatement::set_id): <p>The Id of the statement.</p>
+    ///   - [`request_origin(impl Into<String>)`](crate::client::fluent_builders::GetStatement::request_origin) / [`set_request_origin(Option<String>)`](crate::client::fluent_builders::GetStatement::set_request_origin): <p>The origin of the request.</p>
+    /// - On success, responds with [`GetStatementOutput`](crate::output::GetStatementOutput) with field(s):
+    ///   - [`statement(Option<Statement>)`](crate::output::GetStatementOutput::statement): <p>Returns the statement.</p>
+    /// - On failure, responds with [`SdkError<GetStatementError>`](crate::error::GetStatementError)
+    pub fn get_statement(&self) -> fluent_builders::GetStatement {
+        fluent_builders::GetStatement::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetTable`](crate::client::fluent_builders::GetTable) operation.
     ///
     /// - The fluent builder is configurable:
@@ -1548,7 +1618,7 @@ impl Client {
     ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::set_database_name): (undocumented)
     ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::set_table_name): (undocumented)
     ///   - [`partition_values(Vec<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::partition_values) / [`set_partition_values(Option<Vec<String>>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::set_partition_values): (undocumented)
-    ///   - [`audit_context(AuditContext)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::audit_context) / [`set_audit_context(Option<AuditContext>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::set_audit_context): (undocumented)
+    ///   - [`audit_context(AuditContext)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::audit_context) / [`set_audit_context(Option<AuditContext>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::set_audit_context): <p>A structure containing information for audit.</p>
     ///   - [`supported_permission_types(Vec<PermissionType>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::supported_permission_types) / [`set_supported_permission_types(Option<Vec<PermissionType>>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::set_supported_permission_types): (undocumented)
     /// - On success, responds with [`GetUnfilteredPartitionMetadataOutput`](crate::output::GetUnfilteredPartitionMetadataOutput) with field(s):
     ///   - [`partition(Option<Partition>)`](crate::output::GetUnfilteredPartitionMetadataOutput::partition): <p>Represents a slice of table data.</p>
@@ -1568,7 +1638,7 @@ impl Client {
     ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::set_database_name): (undocumented)
     ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::set_table_name): (undocumented)
     ///   - [`expression(impl Into<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::expression) / [`set_expression(Option<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::set_expression): (undocumented)
-    ///   - [`audit_context(AuditContext)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::audit_context) / [`set_audit_context(Option<AuditContext>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::set_audit_context): (undocumented)
+    ///   - [`audit_context(AuditContext)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::audit_context) / [`set_audit_context(Option<AuditContext>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::set_audit_context): <p>A structure containing information for audit.</p>
     ///   - [`supported_permission_types(Vec<PermissionType>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::supported_permission_types) / [`set_supported_permission_types(Option<Vec<PermissionType>>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::set_supported_permission_types): (undocumented)
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::set_next_token): (undocumented)
     ///   - [`segment(Segment)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::segment) / [`set_segment(Option<Segment>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::set_segment): <p>Defines a non-overlapping region of a table's partitions, allowing multiple requests to be run in parallel.</p>
@@ -1588,7 +1658,7 @@ impl Client {
     ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::set_catalog_id): (undocumented)
     ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::set_database_name): (undocumented)
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::set_name): (undocumented)
-    ///   - [`audit_context(AuditContext)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::audit_context) / [`set_audit_context(Option<AuditContext>)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::set_audit_context): (undocumented)
+    ///   - [`audit_context(AuditContext)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::audit_context) / [`set_audit_context(Option<AuditContext>)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::set_audit_context): <p>A structure containing information for audit.</p>
     ///   - [`supported_permission_types(Vec<PermissionType>)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::supported_permission_types) / [`set_supported_permission_types(Option<Vec<PermissionType>>)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::set_supported_permission_types): (undocumented)
     /// - On success, responds with [`GetUnfilteredTableMetadataOutput`](crate::output::GetUnfilteredTableMetadataOutput) with field(s):
     ///   - [`table(Option<Table>)`](crate::output::GetUnfilteredTableMetadataOutput::table): <p>Represents a collection of related data organized in columns and rows.</p>
@@ -1799,6 +1869,35 @@ impl Client {
     pub fn list_schema_versions(&self) -> fluent_builders::ListSchemaVersions {
         fluent_builders::ListSchemaVersions::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListSessions`](crate::client::fluent_builders::ListSessions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSessions::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSessions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSessions::set_next_token): <p>The token for the next set of results, or null if there are no more result. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSessions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSessions::set_max_results): <p>The maximum number of results. </p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::ListSessions::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ListSessions::set_tags): <p>Tags belonging to the session. </p>
+    ///   - [`request_origin(impl Into<String>)`](crate::client::fluent_builders::ListSessions::request_origin) / [`set_request_origin(Option<String>)`](crate::client::fluent_builders::ListSessions::set_request_origin): <p>The origin of the request. </p>
+    /// - On success, responds with [`ListSessionsOutput`](crate::output::ListSessionsOutput) with field(s):
+    ///   - [`ids(Option<Vec<String>>)`](crate::output::ListSessionsOutput::ids): <p>Returns the Id of the session. </p>
+    ///   - [`sessions(Option<Vec<Session>>)`](crate::output::ListSessionsOutput::sessions): <p>Returns the session object. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSessionsOutput::next_token): <p>The token for the next set of results, or null if there are no more result. </p>
+    /// - On failure, responds with [`SdkError<ListSessionsError>`](crate::error::ListSessionsError)
+    pub fn list_sessions(&self) -> fluent_builders::ListSessions {
+        fluent_builders::ListSessions::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListStatements`](crate::client::fluent_builders::ListStatements) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::ListStatements::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::ListStatements::set_session_id): <p>The Session ID of the statements.</p>
+    ///   - [`request_origin(impl Into<String>)`](crate::client::fluent_builders::ListStatements::request_origin) / [`set_request_origin(Option<String>)`](crate::client::fluent_builders::ListStatements::set_request_origin): <p>The origin of the request to list statements.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStatements::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStatements::set_next_token): (undocumented)
+    /// - On success, responds with [`ListStatementsOutput`](crate::output::ListStatementsOutput) with field(s):
+    ///   - [`statements(Option<Vec<Statement>>)`](crate::output::ListStatementsOutput::statements): <p>Returns the list of statements.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListStatementsOutput::next_token): (undocumented)
+    /// - On failure, responds with [`SdkError<ListStatementsError>`](crate::error::ListStatementsError)
+    pub fn list_statements(&self) -> fluent_builders::ListStatements {
+        fluent_builders::ListStatements::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListTriggers`](crate::client::fluent_builders::ListTriggers) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTriggers::into_paginator).
     ///
@@ -1960,6 +2059,18 @@ impl Client {
     pub fn resume_workflow_run(&self) -> fluent_builders::ResumeWorkflowRun {
         fluent_builders::ResumeWorkflowRun::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`RunStatement`](crate::client::fluent_builders::RunStatement) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::RunStatement::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::RunStatement::set_session_id): <p>The Session Id of the statement to be run.</p>
+    ///   - [`code(impl Into<String>)`](crate::client::fluent_builders::RunStatement::code) / [`set_code(Option<String>)`](crate::client::fluent_builders::RunStatement::set_code): <p>The statement code to be run.</p>
+    ///   - [`request_origin(impl Into<String>)`](crate::client::fluent_builders::RunStatement::request_origin) / [`set_request_origin(Option<String>)`](crate::client::fluent_builders::RunStatement::set_request_origin): <p>The origin of the request.</p>
+    /// - On success, responds with [`RunStatementOutput`](crate::output::RunStatementOutput) with field(s):
+    ///   - [`id(i32)`](crate::output::RunStatementOutput::id): <p>Returns the Id of the statement that was run.</p>
+    /// - On failure, responds with [`SdkError<RunStatementError>`](crate::error::RunStatementError)
+    pub fn run_statement(&self) -> fluent_builders::RunStatement {
+        fluent_builders::RunStatement::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`SearchTables`](crate::client::fluent_builders::SearchTables) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchTables::into_paginator).
     ///
@@ -2115,6 +2226,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<StopCrawlerScheduleError>`](crate::error::StopCrawlerScheduleError)
     pub fn stop_crawler_schedule(&self) -> fluent_builders::StopCrawlerSchedule {
         fluent_builders::StopCrawlerSchedule::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`StopSession`](crate::client::fluent_builders::StopSession) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::StopSession::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::StopSession::set_id): <p>The ID of the session to be stopped.</p>
+    ///   - [`request_origin(impl Into<String>)`](crate::client::fluent_builders::StopSession::request_origin) / [`set_request_origin(Option<String>)`](crate::client::fluent_builders::StopSession::set_request_origin): <p>The origin of the request.</p>
+    /// - On success, responds with [`StopSessionOutput`](crate::output::StopSessionOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::StopSessionOutput::id): <p>Returns the Id of the stopped session.</p>
+    /// - On failure, responds with [`SdkError<StopSessionError>`](crate::error::StopSessionError)
+    pub fn stop_session(&self) -> fluent_builders::StopSession {
+        fluent_builders::StopSession::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`StopTrigger`](crate::client::fluent_builders::StopTrigger) operation.
     ///
@@ -3579,6 +3701,82 @@ pub mod fluent_builders {
         /// <p>A unique identifier for the task run.</p>
         pub fn set_task_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task_run_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CancelStatement`.
+    ///
+    /// <p>Cancels the statement..</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CancelStatement {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::cancel_statement_input::Builder,
+    }
+    impl CancelStatement {
+        /// Creates a new `CancelStatement`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CancelStatementOutput,
+            aws_smithy_http::result::SdkError<crate::error::CancelStatementError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Session ID of the statement to be cancelled.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
+            self
+        }
+        /// <p>The Session ID of the statement to be cancelled.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_session_id(input);
+            self
+        }
+        /// <p>The ID of the statement to be cancelled.</p>
+        pub fn id(mut self, input: i32) -> Self {
+            self.inner = self.inner.id(input);
+            self
+        }
+        /// <p>The ID of the statement to be cancelled.</p>
+        pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The origin of the request to cancel the statement.</p>
+        pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_origin(input.into());
+            self
+        }
+        /// <p>The origin of the request to cancel the statement.</p>
+        pub fn set_request_origin(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_request_origin(input);
             self
         }
     }
@@ -5689,6 +5887,240 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateSession`.
+    ///
+    /// <p>Creates a new session.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateSession {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_session_input::Builder,
+    }
+    impl CreateSession {
+        /// Creates a new `CreateSession`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateSessionOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateSessionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the session request. </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The ID of the session request. </p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The description of the session. </p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>The description of the session. </p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The IAM Role ARN </p>
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
+            self
+        }
+        /// <p>The IAM Role ARN </p>
+        pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role(input);
+            self
+        }
+        /// <p>The <code>SessionCommand</code> that runs the job. </p>
+        pub fn command(mut self, input: crate::model::SessionCommand) -> Self {
+            self.inner = self.inner.command(input);
+            self
+        }
+        /// <p>The <code>SessionCommand</code> that runs the job. </p>
+        pub fn set_command(
+            mut self,
+            input: std::option::Option<crate::model::SessionCommand>,
+        ) -> Self {
+            self.inner = self.inner.set_command(input);
+            self
+        }
+        /// <p>The number of seconds before request times out. </p>
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout(input);
+            self
+        }
+        /// <p>The number of seconds before request times out. </p>
+        pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_timeout(input);
+            self
+        }
+        /// <p>The number of seconds when idle before request times out. </p>
+        pub fn idle_timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.idle_timeout(input);
+            self
+        }
+        /// <p>The number of seconds when idle before request times out. </p>
+        pub fn set_idle_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_idle_timeout(input);
+            self
+        }
+        /// Adds a key-value pair to `DefaultArguments`.
+        ///
+        /// To override the contents of this collection use [`set_default_arguments`](Self::set_default_arguments).
+        ///
+        /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
+        pub fn default_arguments(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.default_arguments(k.into(), v.into());
+            self
+        }
+        /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
+        pub fn set_default_arguments(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_default_arguments(input);
+            self
+        }
+        /// <p>The number of connections to use for the session. </p>
+        pub fn connections(mut self, input: crate::model::ConnectionsList) -> Self {
+            self.inner = self.inner.connections(input);
+            self
+        }
+        /// <p>The number of connections to use for the session. </p>
+        pub fn set_connections(
+            mut self,
+            input: std::option::Option<crate::model::ConnectionsList>,
+        ) -> Self {
+            self.inner = self.inner.set_connections(input);
+            self
+        }
+        /// <p>The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
+        pub fn max_capacity(mut self, input: f64) -> Self {
+            self.inner = self.inner.max_capacity(input);
+            self
+        }
+        /// <p>The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
+        pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
+            self.inner = self.inner.set_max_capacity(input);
+            self
+        }
+        /// <p>The number of workers to use for the session. </p>
+        pub fn number_of_workers(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_workers(input);
+            self
+        }
+        /// <p>The number of workers to use for the session. </p>
+        pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_number_of_workers(input);
+            self
+        }
+        /// <p>The Worker Type. Can be one of G.1X, G.2X, Standard </p>
+        pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
+            self.inner = self.inner.worker_type(input);
+            self
+        }
+        /// <p>The Worker Type. Can be one of G.1X, G.2X, Standard </p>
+        pub fn set_worker_type(
+            mut self,
+            input: std::option::Option<crate::model::WorkerType>,
+        ) -> Self {
+            self.inner = self.inner.set_worker_type(input);
+            self
+        }
+        /// <p>The name of the SecurityConfiguration structure to be used with the session </p>
+        pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_configuration(input.into());
+            self
+        }
+        /// <p>The name of the SecurityConfiguration structure to be used with the session </p>
+        pub fn set_security_configuration(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_security_configuration(input);
+            self
+        }
+        /// <p>The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The GlueVersion must be greater than 2.0. </p>
+        pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.glue_version(input.into());
+            self
+        }
+        /// <p>The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The GlueVersion must be greater than 2.0. </p>
+        pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_glue_version(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The map of key value pairs (tags) belonging to the session.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>The map of key value pairs (tags) belonging to the session.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The origin of the request. </p>
+        pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_origin(input.into());
+            self
+        }
+        /// <p>The origin of the request. </p>
+        pub fn set_request_origin(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_request_origin(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateTable`.
     ///
     /// <p>Creates a new table definition in the Data Catalog.</p>
@@ -7299,6 +7731,72 @@ pub mod fluent_builders {
         /// <p>The name of the security configuration to delete.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteSession`.
+    ///
+    /// <p>Deletes the session.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteSession {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_session_input::Builder,
+    }
+    impl DeleteSession {
+        /// Creates a new `DeleteSession`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteSessionOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteSessionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the session to be deleted.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The ID of the session to be deleted.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The name of the origin of the delete session request.</p>
+        pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_origin(input.into());
+            self
+        }
+        /// <p>The name of the origin of the delete session request.</p>
+        pub fn set_request_origin(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_request_origin(input);
             self
         }
     }
@@ -11037,6 +11535,148 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetSession`.
+    ///
+    /// <p>Retrieves the session.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetSession {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_session_input::Builder,
+    }
+    impl GetSession {
+        /// Creates a new `GetSession`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetSessionOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetSessionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the session. </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The ID of the session. </p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The origin of the request. </p>
+        pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_origin(input.into());
+            self
+        }
+        /// <p>The origin of the request. </p>
+        pub fn set_request_origin(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_request_origin(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetStatement`.
+    ///
+    /// <p>Retrieves the statement.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetStatement {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_statement_input::Builder,
+    }
+    impl GetStatement {
+        /// Creates a new `GetStatement`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetStatementOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetStatementError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Session ID of the statement.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
+            self
+        }
+        /// <p>The Session ID of the statement.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_session_id(input);
+            self
+        }
+        /// <p>The Id of the statement.</p>
+        pub fn id(mut self, input: i32) -> Self {
+            self.inner = self.inner.id(input);
+            self
+        }
+        /// <p>The Id of the statement.</p>
+        pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The origin of the request.</p>
+        pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_origin(input.into());
+            self
+        }
+        /// <p>The origin of the request.</p>
+        pub fn set_request_origin(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_request_origin(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetTable`.
     ///
     /// <p>Retrieves the <code>Table</code> definition in a Data Catalog for a specified table.</p>
@@ -11734,12 +12374,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_partition_values(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A structure containing information for audit.</p>
         pub fn audit_context(mut self, input: crate::model::AuditContext) -> Self {
             self.inner = self.inner.audit_context(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A structure containing information for audit.</p>
         pub fn set_audit_context(
             mut self,
             input: std::option::Option<crate::model::AuditContext>,
@@ -11855,12 +12495,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_expression(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A structure containing information for audit.</p>
         pub fn audit_context(mut self, input: crate::model::AuditContext) -> Self {
             self.inner = self.inner.audit_context(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A structure containing information for audit.</p>
         pub fn set_audit_context(
             mut self,
             input: std::option::Option<crate::model::AuditContext>,
@@ -11990,12 +12630,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A structure containing information for audit.</p>
         pub fn audit_context(mut self, input: crate::model::AuditContext) -> Self {
             self.inner = self.inner.audit_context(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A structure containing information for audit.</p>
         pub fn set_audit_context(
             mut self,
             input: std::option::Option<crate::model::AuditContext>,
@@ -13271,6 +13911,187 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListSessions`.
+    ///
+    /// <p>Retrieve a session..</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListSessions {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_sessions_input::Builder,
+    }
+    impl ListSessions {
+        /// Creates a new `ListSessions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListSessionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListSessionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSessionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSessionsPaginator {
+            crate::paginator::ListSessionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The token for the next set of results, or null if there are no more result. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no more result. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags belonging to the session. </p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>Tags belonging to the session. </p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The origin of the request. </p>
+        pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_origin(input.into());
+            self
+        }
+        /// <p>The origin of the request. </p>
+        pub fn set_request_origin(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_request_origin(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListStatements`.
+    ///
+    /// <p>Lists statements for the session.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListStatements {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_statements_input::Builder,
+    }
+    impl ListStatements {
+        /// Creates a new `ListStatements`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListStatementsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListStatementsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Session ID of the statements.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
+            self
+        }
+        /// <p>The Session ID of the statements.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_session_id(input);
+            self
+        }
+        /// <p>The origin of the request to list statements.</p>
+        pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_origin(input.into());
+            self
+        }
+        /// <p>The origin of the request to list statements.</p>
+        pub fn set_request_origin(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_request_origin(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListTriggers`.
     ///
     /// <p>Retrieves the names of all trigger resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names.</p>
@@ -14232,6 +15053,82 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_node_ids(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `RunStatement`.
+    ///
+    /// <p>Executes the statement.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct RunStatement {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::run_statement_input::Builder,
+    }
+    impl RunStatement {
+        /// Creates a new `RunStatement`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RunStatementOutput,
+            aws_smithy_http::result::SdkError<crate::error::RunStatementError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Session Id of the statement to be run.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
+            self
+        }
+        /// <p>The Session Id of the statement to be run.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_session_id(input);
+            self
+        }
+        /// <p>The statement code to be run.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code(input.into());
+            self
+        }
+        /// <p>The statement code to be run.</p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_code(input);
+            self
+        }
+        /// <p>The origin of the request.</p>
+        pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_origin(input.into());
+            self
+        }
+        /// <p>The origin of the request.</p>
+        pub fn set_request_origin(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_request_origin(input);
             self
         }
     }
@@ -15266,6 +16163,72 @@ pub mod fluent_builders {
         /// <p>Name of the crawler whose schedule state to set.</p>
         pub fn set_crawler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_crawler_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StopSession`.
+    ///
+    /// <p>Stops the session.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StopSession {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::stop_session_input::Builder,
+    }
+    impl StopSession {
+        /// Creates a new `StopSession`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StopSessionOutput,
+            aws_smithy_http::result::SdkError<crate::error::StopSessionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the session to be stopped.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The ID of the session to be stopped.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The origin of the request.</p>
+        pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_origin(input.into());
+            self
+        }
+        /// <p>The origin of the request.</p>
+        pub fn set_request_origin(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_request_origin(input);
             self
         }
     }

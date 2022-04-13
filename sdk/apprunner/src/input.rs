@@ -571,6 +571,197 @@ impl CreateConnectionInput {
     }
 }
 
+/// See [`CreateObservabilityConfigurationInput`](crate::input::CreateObservabilityConfigurationInput)
+pub mod create_observability_configuration_input {
+    /// A builder for [`CreateObservabilityConfigurationInput`](crate::input::CreateObservabilityConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) observability_configuration_name: std::option::Option<std::string::String>,
+        pub(crate) trace_configuration: std::option::Option<crate::model::TraceConfiguration>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>A name for the observability configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
+        /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
+        /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
+        /// </note>
+        pub fn observability_configuration_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.observability_configuration_name = Some(input.into());
+            self
+        }
+        /// <p>A name for the observability configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
+        /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
+        /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
+        /// </note>
+        pub fn set_observability_configuration_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.observability_configuration_name = input;
+            self
+        }
+        /// <p>The configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
+        pub fn trace_configuration(mut self, input: crate::model::TraceConfiguration) -> Self {
+            self.trace_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
+        pub fn set_trace_configuration(
+            mut self,
+            input: std::option::Option<crate::model::TraceConfiguration>,
+        ) -> Self {
+            self.trace_configuration = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of metadata items that you can associate with your observability configuration resource. A tag is a key-value pair.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>A list of metadata items that you can associate with your observability configuration resource. A tag is a key-value pair.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateObservabilityConfigurationInput`](crate::input::CreateObservabilityConfigurationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateObservabilityConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateObservabilityConfigurationInput {
+                observability_configuration_name: self.observability_configuration_name,
+                trace_configuration: self.trace_configuration,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateObservabilityConfigurationInputOperationOutputAlias =
+    crate::operation::CreateObservabilityConfiguration;
+#[doc(hidden)]
+pub type CreateObservabilityConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl CreateObservabilityConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`CreateObservabilityConfiguration`](crate::operation::CreateObservabilityConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateObservabilityConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateObservabilityConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateObservabilityConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AppRunner.CreateObservabilityConfiguration",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_observability_configuration(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateObservabilityConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateObservabilityConfiguration",
+            "apprunner",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateObservabilityConfigurationInput`](crate::input::CreateObservabilityConfigurationInput)
+    pub fn builder() -> crate::input::create_observability_configuration_input::Builder {
+        crate::input::create_observability_configuration_input::Builder::default()
+    }
+}
+
 /// See [`CreateServiceInput`](crate::input::CreateServiceInput)
 pub mod create_service_input {
     /// A builder for [`CreateServiceInput`](crate::input::CreateServiceInput)
@@ -587,6 +778,8 @@ pub mod create_service_input {
             std::option::Option<crate::model::HealthCheckConfiguration>,
         pub(crate) auto_scaling_configuration_arn: std::option::Option<std::string::String>,
         pub(crate) network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
+        pub(crate) observability_configuration:
+            std::option::Option<crate::model::ServiceObservabilityConfiguration>,
     }
     impl Builder {
         /// <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
@@ -612,7 +805,7 @@ pub mod create_service_input {
             self.source_configuration = input;
             self
         }
-        /// <p>The runtime configuration of instances (scaling units) of the App Runner service.</p>
+        /// <p>The runtime configuration of instances (scaling units) of your service.</p>
         pub fn instance_configuration(
             mut self,
             input: crate::model::InstanceConfiguration,
@@ -620,7 +813,7 @@ pub mod create_service_input {
             self.instance_configuration = Some(input);
             self
         }
-        /// <p>The runtime configuration of instances (scaling units) of the App Runner service.</p>
+        /// <p>The runtime configuration of instances (scaling units) of your service.</p>
         pub fn set_instance_configuration(
             mut self,
             input: std::option::Option<crate::model::InstanceConfiguration>,
@@ -679,7 +872,9 @@ pub mod create_service_input {
             self.health_check_configuration = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+        /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code> </p>
+        /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code> </p>
         pub fn auto_scaling_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -687,7 +882,9 @@ pub mod create_service_input {
             self.auto_scaling_configuration_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+        /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code> </p>
+        /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code> </p>
         pub fn set_auto_scaling_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -708,6 +905,22 @@ pub mod create_service_input {
             self.network_configuration = input;
             self
         }
+        /// <p>The observability configuration of your service.</p>
+        pub fn observability_configuration(
+            mut self,
+            input: crate::model::ServiceObservabilityConfiguration,
+        ) -> Self {
+            self.observability_configuration = Some(input);
+            self
+        }
+        /// <p>The observability configuration of your service.</p>
+        pub fn set_observability_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServiceObservabilityConfiguration>,
+        ) -> Self {
+            self.observability_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateServiceInput`](crate::input::CreateServiceInput)
         pub fn build(
             self,
@@ -724,6 +937,7 @@ pub mod create_service_input {
                 health_check_configuration: self.health_check_configuration,
                 auto_scaling_configuration_arn: self.auto_scaling_configuration_arn,
                 network_configuration: self.network_configuration,
+                observability_configuration: self.observability_configuration,
             })
         }
     }
@@ -1342,6 +1556,157 @@ impl DeleteConnectionInput {
     }
 }
 
+/// See [`DeleteObservabilityConfigurationInput`](crate::input::DeleteObservabilityConfigurationInput)
+pub mod delete_observability_configuration_input {
+    /// A builder for [`DeleteObservabilityConfigurationInput`](crate::input::DeleteObservabilityConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) observability_configuration_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want to delete.</p>
+        /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
+        pub fn observability_configuration_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.observability_configuration_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want to delete.</p>
+        /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
+        pub fn set_observability_configuration_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.observability_configuration_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteObservabilityConfigurationInput`](crate::input::DeleteObservabilityConfigurationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteObservabilityConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteObservabilityConfigurationInput {
+                observability_configuration_arn: self.observability_configuration_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteObservabilityConfigurationInputOperationOutputAlias =
+    crate::operation::DeleteObservabilityConfiguration;
+#[doc(hidden)]
+pub type DeleteObservabilityConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteObservabilityConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteObservabilityConfiguration`](crate::operation::DeleteObservabilityConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteObservabilityConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteObservabilityConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteObservabilityConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AppRunner.DeleteObservabilityConfiguration",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_observability_configuration(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteObservabilityConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteObservabilityConfiguration",
+            "apprunner",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteObservabilityConfigurationInput`](crate::input::DeleteObservabilityConfigurationInput)
+    pub fn builder() -> crate::input::delete_observability_configuration_input::Builder {
+        crate::input::delete_observability_configuration_input::Builder::default()
+    }
+}
+
 /// See [`DeleteServiceInput`](crate::input::DeleteServiceInput)
 pub mod delete_service_input {
     /// A builder for [`DeleteServiceInput`](crate::input::DeleteServiceInput)
@@ -1954,6 +2319,157 @@ impl DescribeCustomDomainsInput {
     }
 }
 
+/// See [`DescribeObservabilityConfigurationInput`](crate::input::DescribeObservabilityConfigurationInput)
+pub mod describe_observability_configuration_input {
+    /// A builder for [`DescribeObservabilityConfigurationInput`](crate::input::DescribeObservabilityConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) observability_configuration_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for.</p>
+        /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
+        pub fn observability_configuration_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.observability_configuration_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for.</p>
+        /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
+        pub fn set_observability_configuration_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.observability_configuration_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeObservabilityConfigurationInput`](crate::input::DescribeObservabilityConfigurationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeObservabilityConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeObservabilityConfigurationInput {
+                observability_configuration_arn: self.observability_configuration_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeObservabilityConfigurationInputOperationOutputAlias =
+    crate::operation::DescribeObservabilityConfiguration;
+#[doc(hidden)]
+pub type DescribeObservabilityConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeObservabilityConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeObservabilityConfiguration`](crate::operation::DescribeObservabilityConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeObservabilityConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeObservabilityConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeObservabilityConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AppRunner.DescribeObservabilityConfiguration",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_observability_configuration(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeObservabilityConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeObservabilityConfiguration",
+            "apprunner",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeObservabilityConfigurationInput`](crate::input::DescribeObservabilityConfigurationInput)
+    pub fn builder() -> crate::input::describe_observability_configuration_input::Builder {
+        crate::input::describe_observability_configuration_input::Builder::default()
+    }
+}
+
 /// See [`DescribeServiceInput`](crate::input::DescribeServiceInput)
 pub mod describe_service_input {
     /// A builder for [`DescribeServiceInput`](crate::input::DescribeServiceInput)
@@ -2414,7 +2930,7 @@ pub mod list_auto_scaling_configurations_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all configurations.</p>
+        /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
         pub fn auto_scaling_configuration_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -2422,7 +2938,7 @@ pub mod list_auto_scaling_configurations_input {
             self.auto_scaling_configuration_name = Some(input.into());
             self
         }
-        /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all configurations.</p>
+        /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
         pub fn set_auto_scaling_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2431,15 +2947,15 @@ pub mod list_auto_scaling_configurations_input {
             self
         }
         /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
-        /// <p>Keep as <code>false</code> to list all revisions for each requested configuration name.</p>
-        /// <p>Default: <code>false</code> </p>
+        /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn latest_only(mut self, input: bool) -> Self {
             self.latest_only = Some(input);
             self
         }
         /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
-        /// <p>Keep as <code>false</code> to list all revisions for each requested configuration name.</p>
-        /// <p>Default: <code>false</code> </p>
+        /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn set_latest_only(mut self, input: std::option::Option<bool>) -> Self {
             self.latest_only = input;
             self
@@ -2765,6 +3281,199 @@ impl ListConnectionsInput {
     /// Creates a new builder-style object to manufacture [`ListConnectionsInput`](crate::input::ListConnectionsInput)
     pub fn builder() -> crate::input::list_connections_input::Builder {
         crate::input::list_connections_input::Builder::default()
+    }
+}
+
+/// See [`ListObservabilityConfigurationsInput`](crate::input::ListObservabilityConfigurationsInput)
+pub mod list_observability_configurations_input {
+    /// A builder for [`ListObservabilityConfigurationsInput`](crate::input::ListObservabilityConfigurationsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) observability_configuration_name: std::option::Option<std::string::String>,
+        pub(crate) latest_only: std::option::Option<bool>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the App Runner observability configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
+        pub fn observability_configuration_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.observability_configuration_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the App Runner observability configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
+        pub fn set_observability_configuration_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.observability_configuration_name = input;
+            self
+        }
+        /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
+        /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
+        /// <p>Default: <code>true</code> </p>
+        pub fn latest_only(mut self, input: bool) -> Self {
+            self.latest_only = Some(input);
+            self
+        }
+        /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
+        /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
+        /// <p>Default: <code>true</code> </p>
+        pub fn set_latest_only(mut self, input: std::option::Option<bool>) -> Self {
+            self.latest_only = input;
+            self
+        }
+        /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+        /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+        /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
+        /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
+        /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListObservabilityConfigurationsInput`](crate::input::ListObservabilityConfigurationsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListObservabilityConfigurationsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListObservabilityConfigurationsInput {
+                observability_configuration_name: self.observability_configuration_name,
+                latest_only: self.latest_only.unwrap_or_default(),
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListObservabilityConfigurationsInputOperationOutputAlias =
+    crate::operation::ListObservabilityConfigurations;
+#[doc(hidden)]
+pub type ListObservabilityConfigurationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl ListObservabilityConfigurationsInput {
+    /// Consumes the builder and constructs an Operation<[`ListObservabilityConfigurations`](crate::operation::ListObservabilityConfigurations)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListObservabilityConfigurations,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListObservabilityConfigurationsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListObservabilityConfigurationsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AppRunner.ListObservabilityConfigurations",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_observability_configurations(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListObservabilityConfigurations::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListObservabilityConfigurations",
+            "apprunner",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListObservabilityConfigurationsInput`](crate::input::ListObservabilityConfigurationsInput)
+    pub fn builder() -> crate::input::list_observability_configurations_input::Builder {
+        crate::input::list_observability_configurations_input::Builder::default()
     }
 }
 
@@ -4169,6 +4878,8 @@ pub mod update_service_input {
         pub(crate) health_check_configuration:
             std::option::Option<crate::model::HealthCheckConfiguration>,
         pub(crate) network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
+        pub(crate) observability_configuration:
+            std::option::Option<crate::model::ServiceObservabilityConfiguration>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to update.</p>
@@ -4196,7 +4907,7 @@ pub mod update_service_input {
             self.source_configuration = input;
             self
         }
-        /// <p>The runtime configuration to apply to instances (scaling units) of the App Runner service.</p>
+        /// <p>The runtime configuration to apply to instances (scaling units) of your service.</p>
         pub fn instance_configuration(
             mut self,
             input: crate::model::InstanceConfiguration,
@@ -4204,7 +4915,7 @@ pub mod update_service_input {
             self.instance_configuration = Some(input);
             self
         }
-        /// <p>The runtime configuration to apply to instances (scaling units) of the App Runner service.</p>
+        /// <p>The runtime configuration to apply to instances (scaling units) of your service.</p>
         pub fn set_instance_configuration(
             mut self,
             input: std::option::Option<crate::model::InstanceConfiguration>,
@@ -4257,6 +4968,22 @@ pub mod update_service_input {
             self.network_configuration = input;
             self
         }
+        /// <p>The observability configuration of your service.</p>
+        pub fn observability_configuration(
+            mut self,
+            input: crate::model::ServiceObservabilityConfiguration,
+        ) -> Self {
+            self.observability_configuration = Some(input);
+            self
+        }
+        /// <p>The observability configuration of your service.</p>
+        pub fn set_observability_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServiceObservabilityConfiguration>,
+        ) -> Self {
+            self.observability_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateServiceInput`](crate::input::UpdateServiceInput)
         pub fn build(
             self,
@@ -4271,6 +4998,7 @@ pub mod update_service_input {
                 auto_scaling_configuration_arn: self.auto_scaling_configuration_arn,
                 health_check_configuration: self.health_check_configuration,
                 network_configuration: self.network_configuration,
+                observability_configuration: self.observability_configuration,
             })
         }
     }
@@ -4394,7 +5122,7 @@ pub struct UpdateServiceInput {
     /// <p>The source configuration to apply to the App Runner service.</p>
     /// <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the values to members of the structure that you include.</p>
     pub source_configuration: std::option::Option<crate::model::SourceConfiguration>,
-    /// <p>The runtime configuration to apply to instances (scaling units) of the App Runner service.</p>
+    /// <p>The runtime configuration to apply to instances (scaling units) of your service.</p>
     pub instance_configuration: std::option::Option<crate::model::InstanceConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service.</p>
     pub auto_scaling_configuration_arn: std::option::Option<std::string::String>,
@@ -4402,6 +5130,9 @@ pub struct UpdateServiceInput {
     pub health_check_configuration: std::option::Option<crate::model::HealthCheckConfiguration>,
     /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
+    /// <p>The observability configuration of your service.</p>
+    pub observability_configuration:
+        std::option::Option<crate::model::ServiceObservabilityConfiguration>,
 }
 impl UpdateServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to update.</p>
@@ -4413,7 +5144,7 @@ impl UpdateServiceInput {
     pub fn source_configuration(&self) -> std::option::Option<&crate::model::SourceConfiguration> {
         self.source_configuration.as_ref()
     }
-    /// <p>The runtime configuration to apply to instances (scaling units) of the App Runner service.</p>
+    /// <p>The runtime configuration to apply to instances (scaling units) of your service.</p>
     pub fn instance_configuration(
         &self,
     ) -> std::option::Option<&crate::model::InstanceConfiguration> {
@@ -4435,6 +5166,12 @@ impl UpdateServiceInput {
     ) -> std::option::Option<&crate::model::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
+    /// <p>The observability configuration of your service.</p>
+    pub fn observability_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceObservabilityConfiguration> {
+        self.observability_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4451,6 +5188,10 @@ impl std::fmt::Debug for UpdateServiceInput {
             &self.health_check_configuration,
         );
         formatter.field("network_configuration", &self.network_configuration);
+        formatter.field(
+            "observability_configuration",
+            &self.observability_configuration,
+        );
         formatter.finish()
     }
 }
@@ -4707,6 +5448,59 @@ impl std::fmt::Debug for ListOperationsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListObservabilityConfigurationsInput {
+    /// <p>The name of the App Runner observability configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
+    pub observability_configuration_name: std::option::Option<std::string::String>,
+    /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
+    /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
+    /// <p>Default: <code>true</code> </p>
+    pub latest_only: bool,
+    /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+    /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
+    /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListObservabilityConfigurationsInput {
+    /// <p>The name of the App Runner observability configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
+    pub fn observability_configuration_name(&self) -> std::option::Option<&str> {
+        self.observability_configuration_name.as_deref()
+    }
+    /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
+    /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
+    /// <p>Default: <code>true</code> </p>
+    pub fn latest_only(&self) -> bool {
+        self.latest_only
+    }
+    /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+    /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
+    /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListObservabilityConfigurationsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListObservabilityConfigurationsInput");
+        formatter.field(
+            "observability_configuration_name",
+            &self.observability_configuration_name,
+        );
+        formatter.field("latest_only", &self.latest_only);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectionsInput {
     /// <p>If specified, only this connection is returned. If not specified, the result isn't filtered by name.</p>
     pub connection_name: std::option::Option<std::string::String>,
@@ -4747,11 +5541,11 @@ impl std::fmt::Debug for ListConnectionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAutoScalingConfigurationsInput {
-    /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all configurations.</p>
+    /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
     pub auto_scaling_configuration_name: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
-    /// <p>Keep as <code>false</code> to list all revisions for each requested configuration name.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
+    /// <p>Default: <code>true</code> </p>
     pub latest_only: bool,
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
@@ -4761,13 +5555,13 @@ pub struct ListAutoScalingConfigurationsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAutoScalingConfigurationsInput {
-    /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all configurations.</p>
+    /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
     pub fn auto_scaling_configuration_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_configuration_name.as_deref()
     }
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
-    /// <p>Keep as <code>false</code> to list all revisions for each requested configuration name.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
+    /// <p>Default: <code>true</code> </p>
     pub fn latest_only(&self) -> bool {
         self.latest_only
     }
@@ -4864,6 +5658,32 @@ impl std::fmt::Debug for DescribeServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeServiceInput");
         formatter.field("service_arn", &self.service_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeObservabilityConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for.</p>
+    /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
+    pub observability_configuration_arn: std::option::Option<std::string::String>,
+}
+impl DescribeObservabilityConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for.</p>
+    /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
+    pub fn observability_configuration_arn(&self) -> std::option::Option<&str> {
+        self.observability_configuration_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeObservabilityConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeObservabilityConfigurationInput");
+        formatter.field(
+            "observability_configuration_arn",
+            &self.observability_configuration_arn,
+        );
         formatter.finish()
     }
 }
@@ -4980,6 +5800,32 @@ impl std::fmt::Debug for DeleteServiceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteObservabilityConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want to delete.</p>
+    /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
+    pub observability_configuration_arn: std::option::Option<std::string::String>,
+}
+impl DeleteObservabilityConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want to delete.</p>
+    /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
+    pub fn observability_configuration_arn(&self) -> std::option::Option<&str> {
+        self.observability_configuration_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteObservabilityConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteObservabilityConfigurationInput");
+        formatter.field(
+            "observability_configuration_arn",
+            &self.observability_configuration_arn,
+        );
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner connection that you want to delete.</p>
     pub connection_arn: std::option::Option<std::string::String>,
@@ -5074,7 +5920,7 @@ pub struct CreateServiceInput {
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The source to deploy to the App Runner service. It can be a code or an image repository.</p>
     pub source_configuration: std::option::Option<crate::model::SourceConfiguration>,
-    /// <p>The runtime configuration of instances (scaling units) of the App Runner service.</p>
+    /// <p>The runtime configuration of instances (scaling units) of your service.</p>
     pub instance_configuration: std::option::Option<crate::model::InstanceConfiguration>,
     /// <p>An optional list of metadata items that you can associate with the App Runner service resource. A tag is a key-value pair.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5082,10 +5928,15 @@ pub struct CreateServiceInput {
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
     /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
     pub health_check_configuration: std::option::Option<crate::model::HealthCheckConfiguration>,
-    /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+    /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code> </p>
+    /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code> </p>
     pub auto_scaling_configuration_arn: std::option::Option<std::string::String>,
     /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
+    /// <p>The observability configuration of your service.</p>
+    pub observability_configuration:
+        std::option::Option<crate::model::ServiceObservabilityConfiguration>,
 }
 impl CreateServiceInput {
     /// <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
@@ -5096,7 +5947,7 @@ impl CreateServiceInput {
     pub fn source_configuration(&self) -> std::option::Option<&crate::model::SourceConfiguration> {
         self.source_configuration.as_ref()
     }
-    /// <p>The runtime configuration of instances (scaling units) of the App Runner service.</p>
+    /// <p>The runtime configuration of instances (scaling units) of your service.</p>
     pub fn instance_configuration(
         &self,
     ) -> std::option::Option<&crate::model::InstanceConfiguration> {
@@ -5118,7 +5969,9 @@ impl CreateServiceInput {
     ) -> std::option::Option<&crate::model::HealthCheckConfiguration> {
         self.health_check_configuration.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+    /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code> </p>
+    /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code> </p>
     pub fn auto_scaling_configuration_arn(&self) -> std::option::Option<&str> {
         self.auto_scaling_configuration_arn.as_deref()
     }
@@ -5127,6 +5980,12 @@ impl CreateServiceInput {
         &self,
     ) -> std::option::Option<&crate::model::NetworkConfiguration> {
         self.network_configuration.as_ref()
+    }
+    /// <p>The observability configuration of your service.</p>
+    pub fn observability_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceObservabilityConfiguration> {
+        self.observability_configuration.as_ref()
     }
 }
 impl std::fmt::Debug for CreateServiceInput {
@@ -5146,6 +6005,54 @@ impl std::fmt::Debug for CreateServiceInput {
             &self.auto_scaling_configuration_arn,
         );
         formatter.field("network_configuration", &self.network_configuration);
+        formatter.field(
+            "observability_configuration",
+            &self.observability_configuration,
+        );
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateObservabilityConfigurationInput {
+    /// <p>A name for the observability configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
+    /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
+    /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
+    /// </note>
+    pub observability_configuration_name: std::option::Option<std::string::String>,
+    /// <p>The configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
+    pub trace_configuration: std::option::Option<crate::model::TraceConfiguration>,
+    /// <p>A list of metadata items that you can associate with your observability configuration resource. A tag is a key-value pair.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateObservabilityConfigurationInput {
+    /// <p>A name for the observability configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
+    /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
+    /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
+    /// </note>
+    pub fn observability_configuration_name(&self) -> std::option::Option<&str> {
+        self.observability_configuration_name.as_deref()
+    }
+    /// <p>The configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
+    pub fn trace_configuration(&self) -> std::option::Option<&crate::model::TraceConfiguration> {
+        self.trace_configuration.as_ref()
+    }
+    /// <p>A list of metadata items that you can associate with your observability configuration resource. A tag is a key-value pair.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateObservabilityConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateObservabilityConfigurationInput");
+        formatter.field(
+            "observability_configuration_name",
+            &self.observability_configuration_name,
+        );
+        formatter.field("trace_configuration", &self.trace_configuration);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

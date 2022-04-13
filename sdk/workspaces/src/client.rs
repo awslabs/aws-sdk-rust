@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_workspaces::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_workspaces::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_workspaces::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_workspaces::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -225,6 +225,17 @@ impl Client {
     pub fn create_workspaces(&self) -> fluent_builders::CreateWorkspaces {
         fluent_builders::CreateWorkspaces::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteClientBranding`](crate::client::fluent_builders::DeleteClientBranding) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::DeleteClientBranding::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::DeleteClientBranding::set_resource_id): <p>The directory identifier of the WorkSpace for which you want to delete client branding.</p>
+    ///   - [`platforms(Vec<ClientDeviceType>)`](crate::client::fluent_builders::DeleteClientBranding::platforms) / [`set_platforms(Option<Vec<ClientDeviceType>>)`](crate::client::fluent_builders::DeleteClientBranding::set_platforms): <p>The device type for which you want to delete client branding.</p>
+    /// - On success, responds with [`DeleteClientBrandingOutput`](crate::output::DeleteClientBrandingOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteClientBrandingError>`](crate::error::DeleteClientBrandingError)
+    pub fn delete_client_branding(&self) -> fluent_builders::DeleteClientBranding {
+        fluent_builders::DeleteClientBranding::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteConnectClientAddIn`](crate::client::fluent_builders::DeleteConnectClientAddIn) operation.
     ///
     /// - The fluent builder is configurable:
@@ -318,6 +329,21 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeAccountModificationsError>`](crate::error::DescribeAccountModificationsError)
     pub fn describe_account_modifications(&self) -> fluent_builders::DescribeAccountModifications {
         fluent_builders::DescribeAccountModifications::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeClientBranding`](crate::client::fluent_builders::DescribeClientBranding) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::DescribeClientBranding::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::DescribeClientBranding::set_resource_id): <p>The directory identifier of the WorkSpace for which you want to view client branding information.</p>
+    /// - On success, responds with [`DescribeClientBrandingOutput`](crate::output::DescribeClientBrandingOutput) with field(s):
+    ///   - [`device_type_windows(Option<DefaultClientBrandingAttributes>)`](crate::output::DescribeClientBrandingOutput::device_type_windows): <p>The branding information for Windows devices.</p>
+    ///   - [`device_type_osx(Option<DefaultClientBrandingAttributes>)`](crate::output::DescribeClientBrandingOutput::device_type_osx): <p>The branding information for macOS devices.</p>
+    ///   - [`device_type_android(Option<DefaultClientBrandingAttributes>)`](crate::output::DescribeClientBrandingOutput::device_type_android): <p>The branding information for Android devices.</p>
+    ///   - [`device_type_ios(Option<IosClientBrandingAttributes>)`](crate::output::DescribeClientBrandingOutput::device_type_ios): <p>The branding information for iOS devices.</p>
+    ///   - [`device_type_linux(Option<DefaultClientBrandingAttributes>)`](crate::output::DescribeClientBrandingOutput::device_type_linux): <p>The branding information for Linux devices.</p>
+    ///   - [`device_type_web(Option<DefaultClientBrandingAttributes>)`](crate::output::DescribeClientBrandingOutput::device_type_web): <p>The branding information for Web access.</p>
+    /// - On failure, responds with [`SdkError<DescribeClientBrandingError>`](crate::error::DescribeClientBrandingError)
+    pub fn describe_client_branding(&self) -> fluent_builders::DescribeClientBranding {
+        fluent_builders::DescribeClientBranding::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeClientProperties`](crate::client::fluent_builders::DescribeClientProperties) operation.
     ///
@@ -516,15 +542,36 @@ impl Client {
     pub fn disassociate_ip_groups(&self) -> fluent_builders::DisassociateIpGroups {
         fluent_builders::DisassociateIpGroups::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ImportClientBranding`](crate::client::fluent_builders::ImportClientBranding) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::ImportClientBranding::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::ImportClientBranding::set_resource_id): <p>The directory identifier of the WorkSpace for which you want to import client branding.</p>
+    ///   - [`device_type_windows(DefaultImportClientBrandingAttributes)`](crate::client::fluent_builders::ImportClientBranding::device_type_windows) / [`set_device_type_windows(Option<DefaultImportClientBrandingAttributes>)`](crate::client::fluent_builders::ImportClientBranding::set_device_type_windows): <p>The branding information to import for Windows devices.</p>
+    ///   - [`device_type_osx(DefaultImportClientBrandingAttributes)`](crate::client::fluent_builders::ImportClientBranding::device_type_osx) / [`set_device_type_osx(Option<DefaultImportClientBrandingAttributes>)`](crate::client::fluent_builders::ImportClientBranding::set_device_type_osx): <p>The branding information to import for macOS devices.</p>
+    ///   - [`device_type_android(DefaultImportClientBrandingAttributes)`](crate::client::fluent_builders::ImportClientBranding::device_type_android) / [`set_device_type_android(Option<DefaultImportClientBrandingAttributes>)`](crate::client::fluent_builders::ImportClientBranding::set_device_type_android): <p>The branding information to import for Android devices.</p>
+    ///   - [`device_type_ios(IosImportClientBrandingAttributes)`](crate::client::fluent_builders::ImportClientBranding::device_type_ios) / [`set_device_type_ios(Option<IosImportClientBrandingAttributes>)`](crate::client::fluent_builders::ImportClientBranding::set_device_type_ios): <p>The branding information to import for iOS devices.</p>
+    ///   - [`device_type_linux(DefaultImportClientBrandingAttributes)`](crate::client::fluent_builders::ImportClientBranding::device_type_linux) / [`set_device_type_linux(Option<DefaultImportClientBrandingAttributes>)`](crate::client::fluent_builders::ImportClientBranding::set_device_type_linux): <p>The branding information to import for Linux devices.</p>
+    ///   - [`device_type_web(DefaultImportClientBrandingAttributes)`](crate::client::fluent_builders::ImportClientBranding::device_type_web) / [`set_device_type_web(Option<DefaultImportClientBrandingAttributes>)`](crate::client::fluent_builders::ImportClientBranding::set_device_type_web): <p>The branding information to import for web access.</p>
+    /// - On success, responds with [`ImportClientBrandingOutput`](crate::output::ImportClientBrandingOutput) with field(s):
+    ///   - [`device_type_windows(Option<DefaultClientBrandingAttributes>)`](crate::output::ImportClientBrandingOutput::device_type_windows): <p>The branding information configured for Windows devices.</p>
+    ///   - [`device_type_osx(Option<DefaultClientBrandingAttributes>)`](crate::output::ImportClientBrandingOutput::device_type_osx): <p>The branding information configured for macOS devices.</p>
+    ///   - [`device_type_android(Option<DefaultClientBrandingAttributes>)`](crate::output::ImportClientBrandingOutput::device_type_android): <p>The branding information configured for Android devices.</p>
+    ///   - [`device_type_ios(Option<IosClientBrandingAttributes>)`](crate::output::ImportClientBrandingOutput::device_type_ios): <p>The branding information configured for iOS devices.</p>
+    ///   - [`device_type_linux(Option<DefaultClientBrandingAttributes>)`](crate::output::ImportClientBrandingOutput::device_type_linux): <p>The branding information configured for Linux devices.</p>
+    ///   - [`device_type_web(Option<DefaultClientBrandingAttributes>)`](crate::output::ImportClientBrandingOutput::device_type_web): <p>The branding information configured for web access.</p>
+    /// - On failure, responds with [`SdkError<ImportClientBrandingError>`](crate::error::ImportClientBrandingError)
+    pub fn import_client_branding(&self) -> fluent_builders::ImportClientBranding {
+        fluent_builders::ImportClientBranding::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ImportWorkspaceImage`](crate::client::fluent_builders::ImportWorkspaceImage) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`ec2_image_id(impl Into<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::ec2_image_id) / [`set_ec2_image_id(Option<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_ec2_image_id): <p>The identifier of the EC2 image.</p>
-    ///   - [`ingestion_process(WorkspaceImageIngestionProcess)`](crate::client::fluent_builders::ImportWorkspaceImage::ingestion_process) / [`set_ingestion_process(Option<WorkspaceImageIngestionProcess>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_ingestion_process): <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>  <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+    ///   - [`ingestion_process(WorkspaceImageIngestionProcess)`](crate::client::fluent_builders::ImportWorkspaceImage::ingestion_process) / [`set_ingestion_process(Option<WorkspaceImageIngestionProcess>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_ingestion_process): <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>  <p>For non-GPU-enabled images (bundles other than Graphics.g4dn, GraphicsPro.g4dn, Graphics, or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p> <note>   <p>Use <code>BYOL_GRAPHICS_G4DN</code> ingestion for both Graphics.g4dn and GraphicsPro.g4dn.</p>  </note>
     ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_image_name): <p>The name of the WorkSpace image.</p>
     ///   - [`image_description(impl Into<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::image_description) / [`set_image_description(Option<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_image_description): <p>The description of the WorkSpace image.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::ImportWorkspaceImage::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_tags): <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-    ///   - [`applications(Vec<Application>)`](crate::client::fluent_builders::ImportWorkspaceImage::applications) / [`set_applications(Option<Vec<Application>>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_applications): <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>   <p>Although this parameter is an array, only one item is allowed at this time.</p>  </note>
+    ///   - [`applications(Vec<Application>)`](crate::client::fluent_builders::ImportWorkspaceImage::applications) / [`set_applications(Option<Vec<Application>>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_applications): <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>   <ul>    <li> <p>Although this parameter is an array, only one item is allowed at this time</p> </li>    <li> <p>Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn Bring Your Own License (BYOL) images</p> </li>   </ul>  </note>
     /// - On success, responds with [`ImportWorkspaceImageOutput`](crate::output::ImportWorkspaceImageOutput) with field(s):
     ///   - [`image_id(Option<String>)`](crate::output::ImportWorkspaceImageOutput::image_id): <p>The identifier of the WorkSpace image.</p>
     /// - On failure, responds with [`SdkError<ImportWorkspaceImageError>`](crate::error::ImportWorkspaceImageError)
@@ -1733,6 +1780,77 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteClientBranding`.
+    ///
+    /// <p>Deletes customized client branding. Client branding allows you to customize your WorkSpace's client login portal. You can tailor your login portal company logo, the support email address, support link, link to reset password, and a custom message for users trying to sign in.</p>
+    /// <p>After you delete your customized client branding, your login portal reverts to the default client branding.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteClientBranding {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_client_branding_input::Builder,
+    }
+    impl DeleteClientBranding {
+        /// Creates a new `DeleteClientBranding`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteClientBrandingOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteClientBrandingError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The directory identifier of the WorkSpace for which you want to delete client branding.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
+            self
+        }
+        /// <p>The directory identifier of the WorkSpace for which you want to delete client branding.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
+            self
+        }
+        /// Appends an item to `Platforms`.
+        ///
+        /// To override the contents of this collection use [`set_platforms`](Self::set_platforms).
+        ///
+        /// <p>The device type for which you want to delete client branding.</p>
+        pub fn platforms(mut self, input: crate::model::ClientDeviceType) -> Self {
+            self.inner = self.inner.platforms(input);
+            self
+        }
+        /// <p>The device type for which you want to delete client branding.</p>
+        pub fn set_platforms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ClientDeviceType>>,
+        ) -> Self {
+            self.inner = self.inner.set_platforms(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteConnectClientAddIn`.
     ///
     /// <p>Deletes a client-add-in for Amazon Connect that is configured within a directory.</p>
@@ -2232,6 +2350,61 @@ pub mod fluent_builders {
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeClientBranding`.
+    ///
+    /// <p>Describes the specified client branding. Client branding allows you to customize the log in page of various device types for your users. You can add your company logo, the support email address, support link, link to reset password, and a custom message for users trying to sign in.</p> <note>
+    /// <p>Only device types that have branding information configured will be shown in the response.</p>
+    /// </note>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeClientBranding {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_client_branding_input::Builder,
+    }
+    impl DescribeClientBranding {
+        /// Creates a new `DescribeClientBranding`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeClientBrandingOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeClientBrandingError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The directory identifier of the WorkSpace for which you want to view client branding information.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
+            self
+        }
+        /// <p>The directory identifier of the WorkSpace for which you want to view client branding information.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
             self
         }
     }
@@ -3376,6 +3549,163 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ImportClientBranding`.
+    ///
+    /// <p>Imports client branding. Client branding allows you to customize your WorkSpace's client login portal. You can tailor your login portal company logo, the support email address, support link, link to reset password, and a custom message for users trying to sign in.</p>
+    /// <p>After you import client branding, the default branding experience for the specified platform type is replaced with the imported experience</p> <note>
+    /// <ul>
+    /// <li> <p>You must specify at least one platform type when importing client branding.</p> </li>
+    /// <li> <p>You can import up to 6 MB of data with each request. If your request exceeds this limit, you can import client branding for different platform types using separate requests.</p> </li>
+    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify only one parameter for each platform type, but not both.</p> </li>
+    /// <li> <p>Imported data can take up to a minute to appear in the WorkSpaces client.</p> </li>
+    /// </ul>
+    /// </note>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ImportClientBranding {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::import_client_branding_input::Builder,
+    }
+    impl ImportClientBranding {
+        /// Creates a new `ImportClientBranding`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ImportClientBrandingOutput,
+            aws_smithy_http::result::SdkError<crate::error::ImportClientBrandingError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The directory identifier of the WorkSpace for which you want to import client branding.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
+            self
+        }
+        /// <p>The directory identifier of the WorkSpace for which you want to import client branding.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
+            self
+        }
+        /// <p>The branding information to import for Windows devices.</p>
+        pub fn device_type_windows(
+            mut self,
+            input: crate::model::DefaultImportClientBrandingAttributes,
+        ) -> Self {
+            self.inner = self.inner.device_type_windows(input);
+            self
+        }
+        /// <p>The branding information to import for Windows devices.</p>
+        pub fn set_device_type_windows(
+            mut self,
+            input: std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
+        ) -> Self {
+            self.inner = self.inner.set_device_type_windows(input);
+            self
+        }
+        /// <p>The branding information to import for macOS devices.</p>
+        pub fn device_type_osx(
+            mut self,
+            input: crate::model::DefaultImportClientBrandingAttributes,
+        ) -> Self {
+            self.inner = self.inner.device_type_osx(input);
+            self
+        }
+        /// <p>The branding information to import for macOS devices.</p>
+        pub fn set_device_type_osx(
+            mut self,
+            input: std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
+        ) -> Self {
+            self.inner = self.inner.set_device_type_osx(input);
+            self
+        }
+        /// <p>The branding information to import for Android devices.</p>
+        pub fn device_type_android(
+            mut self,
+            input: crate::model::DefaultImportClientBrandingAttributes,
+        ) -> Self {
+            self.inner = self.inner.device_type_android(input);
+            self
+        }
+        /// <p>The branding information to import for Android devices.</p>
+        pub fn set_device_type_android(
+            mut self,
+            input: std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
+        ) -> Self {
+            self.inner = self.inner.set_device_type_android(input);
+            self
+        }
+        /// <p>The branding information to import for iOS devices.</p>
+        pub fn device_type_ios(
+            mut self,
+            input: crate::model::IosImportClientBrandingAttributes,
+        ) -> Self {
+            self.inner = self.inner.device_type_ios(input);
+            self
+        }
+        /// <p>The branding information to import for iOS devices.</p>
+        pub fn set_device_type_ios(
+            mut self,
+            input: std::option::Option<crate::model::IosImportClientBrandingAttributes>,
+        ) -> Self {
+            self.inner = self.inner.set_device_type_ios(input);
+            self
+        }
+        /// <p>The branding information to import for Linux devices.</p>
+        pub fn device_type_linux(
+            mut self,
+            input: crate::model::DefaultImportClientBrandingAttributes,
+        ) -> Self {
+            self.inner = self.inner.device_type_linux(input);
+            self
+        }
+        /// <p>The branding information to import for Linux devices.</p>
+        pub fn set_device_type_linux(
+            mut self,
+            input: std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
+        ) -> Self {
+            self.inner = self.inner.set_device_type_linux(input);
+            self
+        }
+        /// <p>The branding information to import for web access.</p>
+        pub fn device_type_web(
+            mut self,
+            input: crate::model::DefaultImportClientBrandingAttributes,
+        ) -> Self {
+            self.inner = self.inner.device_type_web(input);
+            self
+        }
+        /// <p>The branding information to import for web access.</p>
+        pub fn set_device_type_web(
+            mut self,
+            input: std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
+        ) -> Self {
+            self.inner = self.inner.set_device_type_web(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ImportWorkspaceImage`.
     ///
     /// <p>Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your Amazon Web Services account, and you must own the image. For more information about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p>
@@ -3429,7 +3759,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
-        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+        /// <p>For non-GPU-enabled images (bundles other than Graphics.g4dn, GraphicsPro.g4dn, Graphics, or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p> <note>
+        /// <p>Use <code>BYOL_GRAPHICS_G4DN</code> ingestion for both Graphics.g4dn and GraphicsPro.g4dn.</p>
+        /// </note>
         pub fn ingestion_process(
             mut self,
             input: crate::model::WorkspaceImageIngestionProcess,
@@ -3438,7 +3770,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
-        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+        /// <p>For non-GPU-enabled images (bundles other than Graphics.g4dn, GraphicsPro.g4dn, Graphics, or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p> <note>
+        /// <p>Use <code>BYOL_GRAPHICS_G4DN</code> ingestion for both Graphics.g4dn and GraphicsPro.g4dn.</p>
+        /// </note>
         pub fn set_ingestion_process(
             mut self,
             input: std::option::Option<crate::model::WorkspaceImageIngestionProcess>,
@@ -3491,14 +3825,20 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_applications`](Self::set_applications).
         ///
         /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
-        /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
+        /// <ul>
+        /// <li> <p>Although this parameter is an array, only one item is allowed at this time</p> </li>
+        /// <li> <p>Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn Bring Your Own License (BYOL) images</p> </li>
+        /// </ul>
         /// </note>
         pub fn applications(mut self, input: crate::model::Application) -> Self {
             self.inner = self.inner.applications(input);
             self
         }
         /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
-        /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
+        /// <ul>
+        /// <li> <p>Although this parameter is an array, only one item is allowed at this time</p> </li>
+        /// <li> <p>Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn Bring Your Own License (BYOL) images</p> </li>
+        /// </ul>
         /// </note>
         pub fn set_applications(
             mut self,

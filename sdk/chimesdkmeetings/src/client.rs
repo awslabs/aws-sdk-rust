@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_chimesdkmeetings::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_chimesdkmeetings::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_chimesdkmeetings::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_chimesdkmeetings::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -123,6 +123,7 @@ impl Client {
     ///   - [`external_meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::external_meeting_id) / [`set_external_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_external_meeting_id): <p>The external meeting ID.</p>
     ///   - [`notifications_configuration(NotificationsConfiguration)`](crate::client::fluent_builders::CreateMeeting::notifications_configuration) / [`set_notifications_configuration(Option<NotificationsConfiguration>)`](crate::client::fluent_builders::CreateMeeting::set_notifications_configuration): <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
     ///   - [`meeting_features(MeetingFeaturesConfiguration)`](crate::client::fluent_builders::CreateMeeting::meeting_features) / [`set_meeting_features(Option<MeetingFeaturesConfiguration>)`](crate::client::fluent_builders::CreateMeeting::set_meeting_features): <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
+    ///   - [`primary_meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::primary_meeting_id) / [`set_primary_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_primary_meeting_id): <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
     /// - On success, responds with [`CreateMeetingOutput`](crate::output::CreateMeetingOutput) with field(s):
     ///   - [`meeting(Option<Meeting>)`](crate::output::CreateMeetingOutput::meeting): <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
     /// - On failure, responds with [`SdkError<CreateMeetingError>`](crate::error::CreateMeetingError)
@@ -139,6 +140,7 @@ impl Client {
     ///   - [`meeting_features(MeetingFeaturesConfiguration)`](crate::client::fluent_builders::CreateMeetingWithAttendees::meeting_features) / [`set_meeting_features(Option<MeetingFeaturesConfiguration>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_meeting_features): <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
     ///   - [`notifications_configuration(NotificationsConfiguration)`](crate::client::fluent_builders::CreateMeetingWithAttendees::notifications_configuration) / [`set_notifications_configuration(Option<NotificationsConfiguration>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_notifications_configuration): <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
     ///   - [`attendees(Vec<CreateAttendeeRequestItem>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::attendees) / [`set_attendees(Option<Vec<CreateAttendeeRequestItem>>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
+    ///   - [`primary_meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::primary_meeting_id) / [`set_primary_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_primary_meeting_id): <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
     /// - On success, responds with [`CreateMeetingWithAttendeesOutput`](crate::output::CreateMeetingWithAttendeesOutput) with field(s):
     ///   - [`meeting(Option<Meeting>)`](crate::output::CreateMeetingWithAttendeesOutput::meeting): <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
     ///   - [`attendees(Option<Vec<Attendee>>)`](crate::output::CreateMeetingWithAttendeesOutput::attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
@@ -496,6 +498,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_meeting_features(input);
             self
         }
+        /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
+        pub fn primary_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.primary_meeting_id(input.into());
+            self
+        }
+        /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
+        pub fn set_primary_meeting_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_primary_meeting_id(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateMeetingWithAttendees`.
     ///
@@ -639,6 +654,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
         ) -> Self {
             self.inner = self.inner.set_attendees(input);
+            self
+        }
+        /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
+        pub fn primary_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.primary_meeting_id(input.into());
+            self
+        }
+        /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
+        pub fn set_primary_meeting_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_primary_meeting_id(input);
             self
         }
     }

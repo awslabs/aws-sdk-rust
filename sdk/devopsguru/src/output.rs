@@ -2039,11 +2039,11 @@ impl DescribeFeedbackOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventSourcesConfigOutput {
-    /// <p>The name of the event source.</p>
+    /// <p>Lists the event sources in the configuration.</p>
     pub event_sources: std::option::Option<crate::model::EventSourcesConfig>,
 }
 impl DescribeEventSourcesConfigOutput {
-    /// <p>The name of the event source.</p>
+    /// <p>Lists the event sources in the configuration.</p>
     pub fn event_sources(&self) -> std::option::Option<&crate::model::EventSourcesConfig> {
         self.event_sources.as_ref()
     }
@@ -2064,12 +2064,12 @@ pub mod describe_event_sources_config_output {
         pub(crate) event_sources: std::option::Option<crate::model::EventSourcesConfig>,
     }
     impl Builder {
-        /// <p>The name of the event source.</p>
+        /// <p>Lists the event sources in the configuration.</p>
         pub fn event_sources(mut self, input: crate::model::EventSourcesConfig) -> Self {
             self.event_sources = Some(input);
             self
         }
-        /// <p>The name of the event source.</p>
+        /// <p>Lists the event sources in the configuration.</p>
         pub fn set_event_sources(
             mut self,
             input: std::option::Option<crate::model::EventSourcesConfig>,
@@ -2377,6 +2377,36 @@ impl DescribeAccountHealthOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountHealthOutput`](crate::output::DescribeAccountHealthOutput)
     pub fn builder() -> crate::output::describe_account_health_output::Builder {
         crate::output::describe_account_health_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteInsightOutput {}
+impl std::fmt::Debug for DeleteInsightOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteInsightOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteInsightOutput`](crate::output::DeleteInsightOutput)
+pub mod delete_insight_output {
+    /// A builder for [`DeleteInsightOutput`](crate::output::DeleteInsightOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteInsightOutput`](crate::output::DeleteInsightOutput)
+        pub fn build(self) -> crate::output::DeleteInsightOutput {
+            crate::output::DeleteInsightOutput {}
+        }
+    }
+}
+impl DeleteInsightOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteInsightOutput`](crate::output::DeleteInsightOutput)
+    pub fn builder() -> crate::output::delete_insight_output::Builder {
+        crate::output::delete_insight_output::Builder::default()
     }
 }
 

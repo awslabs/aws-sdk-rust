@@ -33,6 +33,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRoutingControlState {
     }
 }
 
+/// Operation shape for `ListRoutingControls`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_routing_controls`](crate::client::Client::list_routing_controls).
+///
+/// See [`crate::client::fluent_builders::ListRoutingControls`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListRoutingControls {
+    _private: (),
+}
+impl ListRoutingControls {
+    /// Creates a new builder-style object to manufacture [`ListRoutingControlsInput`](crate::input::ListRoutingControlsInput)
+    pub fn builder() -> crate::input::list_routing_controls_input::Builder {
+        crate::input::list_routing_controls_input::Builder::default()
+    }
+    /// Creates a new `ListRoutingControls` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListRoutingControls {
+    type Output = std::result::Result<
+        crate::output::ListRoutingControlsOutput,
+        crate::error::ListRoutingControlsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_routing_controls_error(response)
+        } else {
+            crate::operation_deser::parse_list_routing_controls_response(response)
+        }
+    }
+}
+
 /// Operation shape for `UpdateRoutingControlState`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

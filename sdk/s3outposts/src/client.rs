@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_s3outposts::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_s3outposts::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_s3outposts::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_s3outposts::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -94,11 +94,11 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateEndpoint`](crate::client::fluent_builders::CreateEndpoint) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_outpost_id): <p>The ID of the AWS Outposts. </p>
-    ///   - [`subnet_id(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::subnet_id) / [`set_subnet_id(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_subnet_id): <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_outpost_id): <p>The ID of the Outposts. </p>
+    ///   - [`subnet_id(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::subnet_id) / [`set_subnet_id(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_subnet_id): <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has Amazon S3 on Outposts provisioned.</p>
     ///   - [`security_group_id(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::security_group_id) / [`set_security_group_id(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_security_group_id): <p>The ID of the security group to use with the endpoint.</p>
-    ///   - [`access_type(EndpointAccessType)`](crate::client::fluent_builders::CreateEndpoint::access_type) / [`set_access_type(Option<EndpointAccessType>)`](crate::client::fluent_builders::CreateEndpoint::set_access_type): <p>The type of access for the on-premise network connectivity for the Outpost endpoint. To access the endpoint from an on-premises network, you must specify the access type and provide the customer owned IPv4 pool.</p>
-    ///   - [`customer_owned_ipv4_pool(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::customer_owned_ipv4_pool) / [`set_customer_owned_ipv4_pool(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_customer_owned_ipv4_pool): <p>The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be allocated from this pool for the endpoint.</p>
+    ///   - [`access_type(EndpointAccessType)`](crate::client::fluent_builders::CreateEndpoint::access_type) / [`set_access_type(Option<EndpointAccessType>)`](crate::client::fluent_builders::CreateEndpoint::set_access_type): <p>The type of access for the network connectivity for the Amazon S3 on Outposts endpoint. To use the Amazon Web Services VPC, choose <code>Private</code>. To use the endpoint with an on-premises network, choose <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>, you must also provide the customer-owned IP address pool (CoIP pool).</p> <note>   <p> <code>Private</code> is the default access type value.</p>  </note>
+    ///   - [`customer_owned_ipv4_pool(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::customer_owned_ipv4_pool) / [`set_customer_owned_ipv4_pool(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_customer_owned_ipv4_pool): <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint. IP addresses are allocated from this pool for the endpoint.</p>
     /// - On success, responds with [`CreateEndpointOutput`](crate::output::CreateEndpointOutput) with field(s):
     ///   - [`endpoint_arn(Option<String>)`](crate::output::CreateEndpointOutput::endpoint_arn): <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     /// - On failure, responds with [`SdkError<CreateEndpointError>`](crate::error::CreateEndpointError)
@@ -109,7 +109,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`endpoint_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEndpoint::endpoint_id) / [`set_endpoint_id(Option<String>)`](crate::client::fluent_builders::DeleteEndpoint::set_endpoint_id): <p>The ID of the endpoint.</p>
-    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEndpoint::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::DeleteEndpoint::set_outpost_id): <p>The ID of the AWS Outposts. </p>
+    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEndpoint::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::DeleteEndpoint::set_outpost_id): <p>The ID of the Outposts. </p>
     /// - On success, responds with [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
 
     /// - On failure, responds with [`SdkError<DeleteEndpointError>`](crate::error::DeleteEndpointError)
@@ -120,14 +120,28 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEndpoints::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEndpoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEndpoints::set_next_token): <p>The next endpoint requested in the list.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEndpoints::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListEndpoints::set_max_results): <p>The max number of endpoints that can be returned on the request.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEndpoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEndpoints::set_next_token): <p>If a previous response from this operation included a <code>NextToken</code> value, provide that value here to retrieve the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEndpoints::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListEndpoints::set_max_results): <p>The maximum number of endpoints that will be returned in the response.</p>
     /// - On success, responds with [`ListEndpointsOutput`](crate::output::ListEndpointsOutput) with field(s):
-    ///   - [`endpoints(Option<Vec<Endpoint>>)`](crate::output::ListEndpointsOutput::endpoints): <p>Returns an array of endpoints associated with AWS Outposts.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListEndpointsOutput::next_token): <p>The next endpoint returned in the list.</p>
+    ///   - [`endpoints(Option<Vec<Endpoint>>)`](crate::output::ListEndpointsOutput::endpoints): <p>The list of endpoints associated with the specified Outpost.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEndpointsOutput::next_token): <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
     /// - On failure, responds with [`SdkError<ListEndpointsError>`](crate::error::ListEndpointsError)
     pub fn list_endpoints(&self) -> fluent_builders::ListEndpoints {
         fluent_builders::ListEndpoints::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListSharedEndpoints`](crate::client::fluent_builders::ListSharedEndpoints) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSharedEndpoints::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSharedEndpoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSharedEndpoints::set_next_token): <p>If a previous response from this operation included a <code>NextToken</code> value, you can provide that value here to retrieve the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSharedEndpoints::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListSharedEndpoints::set_max_results): <p>The maximum number of endpoints that will be returned in the response.</p>
+    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::ListSharedEndpoints::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::ListSharedEndpoints::set_outpost_id): <p>The ID of the Amazon Web Services Outpost.</p>
+    /// - On success, responds with [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput) with field(s):
+    ///   - [`endpoints(Option<Vec<Endpoint>>)`](crate::output::ListSharedEndpointsOutput::endpoints): <p>The list of endpoints associated with the specified Outpost that have been shared by Amazon Web Services Resource Access Manager (RAM).</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSharedEndpointsOutput::next_token): <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
+    /// - On failure, responds with [`SdkError<ListSharedEndpointsError>`](crate::error::ListSharedEndpointsError)
+    pub fn list_shared_endpoints(&self) -> fluent_builders::ListSharedEndpoints {
+        fluent_builders::ListSharedEndpoints::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
@@ -140,9 +154,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateEndpoint`.
     ///
-    /// <p>Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html"> Accessing S3 on Outposts using VPC only access points</a>.</p>
-    /// <p>This action creates an endpoint and associates it with the specified Outposts.</p> <note>
-    /// <p>It can take up to 5 minutes for this action to complete.</p>
+    /// <p>Creates an endpoint and associates it with the specified Outpost.</p> <note>
+    /// <p>It can take up to 5 minutes for this action to finish.</p>
     /// </note>
     /// <p></p>
     /// <p>Related actions include:</p>
@@ -189,22 +202,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the AWS Outposts. </p>
+        /// <p>The ID of the Outposts. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.outpost_id(input.into());
             self
         }
-        /// <p>The ID of the AWS Outposts. </p>
+        /// <p>The ID of the Outposts. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_outpost_id(input);
             self
         }
-        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has Amazon S3 on Outposts provisioned.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subnet_id(input.into());
             self
         }
-        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has Amazon S3 on Outposts provisioned.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subnet_id(input);
             self
@@ -222,12 +235,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_security_group_id(input);
             self
         }
-        /// <p>The type of access for the on-premise network connectivity for the Outpost endpoint. To access the endpoint from an on-premises network, you must specify the access type and provide the customer owned IPv4 pool.</p>
+        /// <p>The type of access for the network connectivity for the Amazon S3 on Outposts endpoint. To use the Amazon Web Services VPC, choose <code>Private</code>. To use the endpoint with an on-premises network, choose <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>, you must also provide the customer-owned IP address pool (CoIP pool).</p> <note>
+        /// <p> <code>Private</code> is the default access type value.</p>
+        /// </note>
         pub fn access_type(mut self, input: crate::model::EndpointAccessType) -> Self {
             self.inner = self.inner.access_type(input);
             self
         }
-        /// <p>The type of access for the on-premise network connectivity for the Outpost endpoint. To access the endpoint from an on-premises network, you must specify the access type and provide the customer owned IPv4 pool.</p>
+        /// <p>The type of access for the network connectivity for the Amazon S3 on Outposts endpoint. To use the Amazon Web Services VPC, choose <code>Private</code>. To use the endpoint with an on-premises network, choose <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>, you must also provide the customer-owned IP address pool (CoIP pool).</p> <note>
+        /// <p> <code>Private</code> is the default access type value.</p>
+        /// </note>
         pub fn set_access_type(
             mut self,
             input: std::option::Option<crate::model::EndpointAccessType>,
@@ -235,12 +252,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_access_type(input);
             self
         }
-        /// <p>The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be allocated from this pool for the endpoint.</p>
+        /// <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint. IP addresses are allocated from this pool for the endpoint.</p>
         pub fn customer_owned_ipv4_pool(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.customer_owned_ipv4_pool(input.into());
             self
         }
-        /// <p>The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be allocated from this pool for the endpoint.</p>
+        /// <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint. IP addresses are allocated from this pool for the endpoint.</p>
         pub fn set_customer_owned_ipv4_pool(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -251,9 +268,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEndpoint`.
     ///
-    /// <p>Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html"> Accessing S3 on Outposts using VPC only access points</a>.</p>
-    /// <p>This action deletes an endpoint.</p> <note>
-    /// <p>It can take up to 5 minutes for this action to complete.</p>
+    /// <p>Deletes an endpoint.</p> <note>
+    /// <p>It can take up to 5 minutes for this action to finish.</p>
     /// </note>
     /// <p></p>
     /// <p>Related actions include:</p>
@@ -310,12 +326,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_id(input);
             self
         }
-        /// <p>The ID of the AWS Outposts. </p>
+        /// <p>The ID of the Outposts. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.outpost_id(input.into());
             self
         }
-        /// <p>The ID of the AWS Outposts. </p>
+        /// <p>The ID of the Outposts. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_outpost_id(input);
             self
@@ -323,9 +339,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEndpoints`.
     ///
-    /// <p>Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html"> Accessing S3 on Outposts using VPC only access points</a>.</p>
-    /// <p>This action lists endpoints associated with the Outposts. </p>
-    /// <p></p>
+    /// <p>Lists endpoints associated with the specified Outpost. </p>
     /// <p>Related actions include:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a> </p> </li>
@@ -376,24 +390,108 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListEndpointsPaginator {
             crate::paginator::ListEndpointsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The next endpoint requested in the list.</p>
+        /// <p>If a previous response from this operation included a <code>NextToken</code> value, provide that value here to retrieve the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The next endpoint requested in the list.</p>
+        /// <p>If a previous response from this operation included a <code>NextToken</code> value, provide that value here to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The max number of endpoints that can be returned on the request.</p>
+        /// <p>The maximum number of endpoints that will be returned in the response.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The max number of endpoints that can be returned on the request.</p>
+        /// <p>The maximum number of endpoints that will be returned in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListSharedEndpoints`.
+    ///
+    /// <p>Lists all endpoints associated with an Outpost that has been shared by Amazon Web Services Resource Access Manager (RAM).</p>
+    /// <p>Related actions include:</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a> </p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListSharedEndpoints {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_shared_endpoints_input::Builder,
+    }
+    impl ListSharedEndpoints {
+        /// Creates a new `ListSharedEndpoints`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListSharedEndpointsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListSharedEndpointsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSharedEndpointsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSharedEndpointsPaginator {
+            crate::paginator::ListSharedEndpointsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If a previous response from this operation included a <code>NextToken</code> value, you can provide that value here to retrieve the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If a previous response from this operation included a <code>NextToken</code> value, you can provide that value here to retrieve the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of endpoints that will be returned in the response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of endpoints that will be returned in the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Outpost.</p>
+        pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.outpost_id(input.into());
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Outpost.</p>
+        pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_outpost_id(input);
             self
         }
     }

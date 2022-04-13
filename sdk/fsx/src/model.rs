@@ -903,7 +903,7 @@ impl OpenZfsNfsExport {
     }
 }
 
-/// <p>Specifies who can mount the file system and the options that can be used while mounting the file system.</p>
+/// <p>Specifies who can mount an OpenZFS file system and the options available while mounting the file system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpenZfsClientConfiguration {
@@ -2040,6 +2040,7 @@ pub struct FileSystem {
     /// <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing file system.</p> </li>
     /// <li> <p> <code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a new file system, Amazon FSx was unable to create the file system.</p> </li>
     /// <li> <p> <code>MISCONFIGURED</code> - The file system is in a failed but recoverable state.</p> </li>
+    /// <li> <p> <code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx for Windows File Server only) The file system is currently unavailable due to a change in your Active Directory configuration.</p> </li>
     /// <li> <p> <code>UPDATING</code> - The file system is undergoing a customer-initiated update.</p> </li>
     /// </ul>
     pub lifecycle: std::option::Option<crate::model::FileSystemLifecycle>,
@@ -2059,20 +2060,26 @@ pub struct FileSystem {
     pub network_interface_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Domain Name System (DNS) name for the file system.</p>
     pub dns_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and <code>PERSISTENT</code> Amazon FSx for Lustre file systems at rest. If this ID isn't specified, the Amazon FSx-managed key for your account is used. The scratch Amazon FSx for Lustre file systems are always encrypted at rest using the Amazon FSx-managed key for your account. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt Amazon FSx file system data. Used as follows with Amazon FSx file system types:</p>
+    /// <ul>
+    /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
+    /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+    /// <li> <p>Amazon FSx for OpenZFS</p> </li>
+    /// <li> <p>Amazon FSx for Windows File Server</p> </li>
+    /// </ul>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the file system resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the file system resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to associate with the file system. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The configuration for this FSx for Windows File Server file system.</p>
+    /// <p>The configuration for this Amazon FSx for Windows File Server file system.</p>
     pub windows_configuration: std::option::Option<crate::model::WindowsFileSystemConfiguration>,
     /// <p>The configuration for the Amazon FSx for Lustre file system.</p>
     pub lustre_configuration: std::option::Option<crate::model::LustreFileSystemConfiguration>,
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system that you have initiated using the <code>UpdateFileSystem</code> operation.</p>
     pub administrative_actions:
         std::option::Option<std::vec::Vec<crate::model::AdministrativeAction>>,
-    /// <p>The configuration for this FSx for ONTAP file system.</p>
+    /// <p>The configuration for this Amazon FSx for NetApp ONTAP file system.</p>
     pub ontap_configuration: std::option::Option<crate::model::OntapFileSystemConfiguration>,
     /// <p>The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or <code>2.12</code>.</p>
     pub file_system_type_version: std::option::Option<std::string::String>,
@@ -2103,6 +2110,7 @@ impl FileSystem {
     /// <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing file system.</p> </li>
     /// <li> <p> <code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a new file system, Amazon FSx was unable to create the file system.</p> </li>
     /// <li> <p> <code>MISCONFIGURED</code> - The file system is in a failed but recoverable state.</p> </li>
+    /// <li> <p> <code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx for Windows File Server only) The file system is currently unavailable due to a change in your Active Directory configuration.</p> </li>
     /// <li> <p> <code>UPDATING</code> - The file system is undergoing a customer-initiated update.</p> </li>
     /// </ul>
     pub fn lifecycle(&self) -> std::option::Option<&crate::model::FileSystemLifecycle> {
@@ -2138,11 +2146,17 @@ impl FileSystem {
     pub fn dns_name(&self) -> std::option::Option<&str> {
         self.dns_name.as_deref()
     }
-    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and <code>PERSISTENT</code> Amazon FSx for Lustre file systems at rest. If this ID isn't specified, the Amazon FSx-managed key for your account is used. The scratch Amazon FSx for Lustre file systems are always encrypted at rest using the Amazon FSx-managed key for your account. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt Amazon FSx file system data. Used as follows with Amazon FSx file system types:</p>
+    /// <ul>
+    /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
+    /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+    /// <li> <p>Amazon FSx for OpenZFS</p> </li>
+    /// <li> <p>Amazon FSx for Windows File Server</p> </li>
+    /// </ul>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the file system resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the file system resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -2150,7 +2164,7 @@ impl FileSystem {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The configuration for this FSx for Windows File Server file system.</p>
+    /// <p>The configuration for this Amazon FSx for Windows File Server file system.</p>
     pub fn windows_configuration(
         &self,
     ) -> std::option::Option<&crate::model::WindowsFileSystemConfiguration> {
@@ -2168,7 +2182,7 @@ impl FileSystem {
     ) -> std::option::Option<&[crate::model::AdministrativeAction]> {
         self.administrative_actions.as_deref()
     }
-    /// <p>The configuration for this FSx for ONTAP file system.</p>
+    /// <p>The configuration for this Amazon FSx for NetApp ONTAP file system.</p>
     pub fn ontap_configuration(
         &self,
     ) -> std::option::Option<&crate::model::OntapFileSystemConfiguration> {
@@ -2302,6 +2316,7 @@ pub mod file_system {
         /// <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing file system.</p> </li>
         /// <li> <p> <code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a new file system, Amazon FSx was unable to create the file system.</p> </li>
         /// <li> <p> <code>MISCONFIGURED</code> - The file system is in a failed but recoverable state.</p> </li>
+        /// <li> <p> <code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx for Windows File Server only) The file system is currently unavailable due to a change in your Active Directory configuration.</p> </li>
         /// <li> <p> <code>UPDATING</code> - The file system is undergoing a customer-initiated update.</p> </li>
         /// </ul>
         pub fn lifecycle(mut self, input: crate::model::FileSystemLifecycle) -> Self {
@@ -2315,6 +2330,7 @@ pub mod file_system {
         /// <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing file system.</p> </li>
         /// <li> <p> <code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a new file system, Amazon FSx was unable to create the file system.</p> </li>
         /// <li> <p> <code>MISCONFIGURED</code> - The file system is in a failed but recoverable state.</p> </li>
+        /// <li> <p> <code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx for Windows File Server only) The file system is currently unavailable due to a change in your Active Directory configuration.</p> </li>
         /// <li> <p> <code>UPDATING</code> - The file system is undergoing a customer-initiated update.</p> </li>
         /// </ul>
         pub fn set_lifecycle(
@@ -2422,22 +2438,34 @@ pub mod file_system {
             self.dns_name = input;
             self
         }
-        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and <code>PERSISTENT</code> Amazon FSx for Lustre file systems at rest. If this ID isn't specified, the Amazon FSx-managed key for your account is used. The scratch Amazon FSx for Lustre file systems are always encrypted at rest using the Amazon FSx-managed key for your account. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+        /// <p>The ID of the Key Management Service (KMS) key used to encrypt Amazon FSx file system data. Used as follows with Amazon FSx file system types:</p>
+        /// <ul>
+        /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
+        /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+        /// <li> <p>Amazon FSx for OpenZFS</p> </li>
+        /// <li> <p>Amazon FSx for Windows File Server</p> </li>
+        /// </ul>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and <code>PERSISTENT</code> Amazon FSx for Lustre file systems at rest. If this ID isn't specified, the Amazon FSx-managed key for your account is used. The scratch Amazon FSx for Lustre file systems are always encrypted at rest using the Amazon FSx-managed key for your account. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+        /// <p>The ID of the Key Management Service (KMS) key used to encrypt Amazon FSx file system data. Used as follows with Amazon FSx file system types:</p>
+        /// <ul>
+        /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
+        /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+        /// <li> <p>Amazon FSx for OpenZFS</p> </li>
+        /// <li> <p>Amazon FSx for Windows File Server</p> </li>
+        /// </ul>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the file system resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of the file system resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the file system resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of the file system resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2461,7 +2489,7 @@ pub mod file_system {
             self.tags = input;
             self
         }
-        /// <p>The configuration for this FSx for Windows File Server file system.</p>
+        /// <p>The configuration for this Amazon FSx for Windows File Server file system.</p>
         pub fn windows_configuration(
             mut self,
             input: crate::model::WindowsFileSystemConfiguration,
@@ -2469,7 +2497,7 @@ pub mod file_system {
             self.windows_configuration = Some(input);
             self
         }
-        /// <p>The configuration for this FSx for Windows File Server file system.</p>
+        /// <p>The configuration for this Amazon FSx for Windows File Server file system.</p>
         pub fn set_windows_configuration(
             mut self,
             input: std::option::Option<crate::model::WindowsFileSystemConfiguration>,
@@ -2512,7 +2540,7 @@ pub mod file_system {
             self.administrative_actions = input;
             self
         }
-        /// <p>The configuration for this FSx for ONTAP file system.</p>
+        /// <p>The configuration for this Amazon FSx for NetApp ONTAP file system.</p>
         pub fn ontap_configuration(
             mut self,
             input: crate::model::OntapFileSystemConfiguration,
@@ -2520,7 +2548,7 @@ pub mod file_system {
             self.ontap_configuration = Some(input);
             self
         }
-        /// <p>The configuration for this FSx for ONTAP file system.</p>
+        /// <p>The configuration for this Amazon FSx for NetApp ONTAP file system.</p>
         pub fn set_ontap_configuration(
             mut self,
             input: std::option::Option<crate::model::OntapFileSystemConfiguration>,
@@ -3053,7 +3081,7 @@ pub struct OntapFileSystemConfiguration {
     pub preferred_subnet_id: std::option::Option<std::string::String>,
     /// <p>The VPC route tables in which your file system's endpoints are created.</p>
     pub route_table_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The sustained throughput of an Amazon FSx file system in MBps.</p>
+    /// <p>The sustained throughput of an Amazon FSx file system in Megabytes per second (MBps).</p>
     pub throughput_capacity: std::option::Option<i32>,
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
@@ -3098,7 +3126,7 @@ impl OntapFileSystemConfiguration {
     pub fn route_table_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.route_table_ids.as_deref()
     }
-    /// <p>The sustained throughput of an Amazon FSx file system in MBps.</p>
+    /// <p>The sustained throughput of an Amazon FSx file system in Megabytes per second (MBps).</p>
     pub fn throughput_capacity(&self) -> std::option::Option<i32> {
         self.throughput_capacity
     }
@@ -3274,12 +3302,12 @@ pub mod ontap_file_system_configuration {
             self.route_table_ids = input;
             self
         }
-        /// <p>The sustained throughput of an Amazon FSx file system in MBps.</p>
+        /// <p>The sustained throughput of an Amazon FSx file system in Megabytes per second (MBps).</p>
         pub fn throughput_capacity(mut self, input: i32) -> Self {
             self.throughput_capacity = Some(input);
             self
         }
-        /// <p>The sustained throughput of an Amazon FSx file system in MBps.</p>
+        /// <p>The sustained throughput of an Amazon FSx file system in Megabytes per second (MBps).</p>
         pub fn set_throughput_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.throughput_capacity = input;
             self
@@ -5947,6 +5975,8 @@ pub enum FileSystemLifecycle {
     #[allow(missing_docs)] // documentation missing in model
     Misconfigured,
     #[allow(missing_docs)] // documentation missing in model
+    MisconfiguredUnavailable,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5959,6 +5989,7 @@ impl std::convert::From<&str> for FileSystemLifecycle {
             "DELETING" => FileSystemLifecycle::Deleting,
             "FAILED" => FileSystemLifecycle::Failed,
             "MISCONFIGURED" => FileSystemLifecycle::Misconfigured,
+            "MISCONFIGURED_UNAVAILABLE" => FileSystemLifecycle::MisconfiguredUnavailable,
             "UPDATING" => FileSystemLifecycle::Updating,
             other => FileSystemLifecycle::Unknown(other.to_owned()),
         }
@@ -5980,6 +6011,7 @@ impl FileSystemLifecycle {
             FileSystemLifecycle::Deleting => "DELETING",
             FileSystemLifecycle::Failed => "FAILED",
             FileSystemLifecycle::Misconfigured => "MISCONFIGURED",
+            FileSystemLifecycle::MisconfiguredUnavailable => "MISCONFIGURED_UNAVAILABLE",
             FileSystemLifecycle::Updating => "UPDATING",
             FileSystemLifecycle::Unknown(s) => s.as_ref(),
         }
@@ -5992,6 +6024,7 @@ impl FileSystemLifecycle {
             "DELETING",
             "FAILED",
             "MISCONFIGURED",
+            "MISCONFIGURED_UNAVAILABLE",
             "UPDATING",
         ]
     }
@@ -7459,7 +7492,7 @@ impl UpdateOntapVolumeConfiguration {
     }
 }
 
-/// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuraton.</p>
+/// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageVirtualMachine {
@@ -8833,6 +8866,8 @@ pub struct UpdateFileSystemOntapConfiguration {
     pub weekly_maintenance_start_time: std::option::Option<std::string::String>,
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of storage. The configuration consists of an IOPS mode (<code>AUTOMATIC</code> or <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned.</p>
     pub disk_iops_configuration: std::option::Option<crate::model::DiskIopsConfiguration>,
+    /// <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, or 2048 MB/s.</p>
+    pub throughput_capacity: std::option::Option<i32>,
 }
 impl UpdateFileSystemOntapConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
@@ -8860,6 +8895,10 @@ impl UpdateFileSystemOntapConfiguration {
     ) -> std::option::Option<&crate::model::DiskIopsConfiguration> {
         self.disk_iops_configuration.as_ref()
     }
+    /// <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, or 2048 MB/s.</p>
+    pub fn throughput_capacity(&self) -> std::option::Option<i32> {
+        self.throughput_capacity
+    }
 }
 impl std::fmt::Debug for UpdateFileSystemOntapConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8878,6 +8917,7 @@ impl std::fmt::Debug for UpdateFileSystemOntapConfiguration {
             &self.weekly_maintenance_start_time,
         );
         formatter.field("disk_iops_configuration", &self.disk_iops_configuration);
+        formatter.field("throughput_capacity", &self.throughput_capacity);
         formatter.finish()
     }
 }
@@ -8893,6 +8933,7 @@ pub mod update_file_system_ontap_configuration {
         pub(crate) weekly_maintenance_start_time: std::option::Option<std::string::String>,
         pub(crate) disk_iops_configuration:
             std::option::Option<crate::model::DiskIopsConfiguration>,
+        pub(crate) throughput_capacity: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
@@ -8975,6 +9016,16 @@ pub mod update_file_system_ontap_configuration {
             self.disk_iops_configuration = input;
             self
         }
+        /// <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, or 2048 MB/s.</p>
+        pub fn throughput_capacity(mut self, input: i32) -> Self {
+            self.throughput_capacity = Some(input);
+            self
+        }
+        /// <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, or 2048 MB/s.</p>
+        pub fn set_throughput_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.throughput_capacity = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateFileSystemOntapConfiguration`](crate::model::UpdateFileSystemOntapConfiguration)
         pub fn build(self) -> crate::model::UpdateFileSystemOntapConfiguration {
             crate::model::UpdateFileSystemOntapConfiguration {
@@ -8983,6 +9034,7 @@ pub mod update_file_system_ontap_configuration {
                 fsx_admin_password: self.fsx_admin_password,
                 weekly_maintenance_start_time: self.weekly_maintenance_start_time,
                 disk_iops_configuration: self.disk_iops_configuration,
+                throughput_capacity: self.throughput_capacity,
             }
         }
     }

@@ -1878,6 +1878,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConformancePackCompli
     }
 }
 
+/// Operation shape for `GetCustomRulePolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_custom_rule_policy`](crate::client::Client::get_custom_rule_policy).
+///
+/// See [`crate::client::fluent_builders::GetCustomRulePolicy`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetCustomRulePolicy {
+    _private: (),
+}
+impl GetCustomRulePolicy {
+    /// Creates a new builder-style object to manufacture [`GetCustomRulePolicyInput`](crate::input::GetCustomRulePolicyInput)
+    pub fn builder() -> crate::input::get_custom_rule_policy_input::Builder {
+        crate::input::get_custom_rule_policy_input::Builder::default()
+    }
+    /// Creates a new `GetCustomRulePolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetCustomRulePolicy {
+    type Output = std::result::Result<
+        crate::output::GetCustomRulePolicyOutput,
+        crate::error::GetCustomRulePolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_custom_rule_policy_error(response)
+        } else {
+            crate::operation_deser::parse_get_custom_rule_policy_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetDiscoveredResourceCounts`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1987,6 +2021,40 @@ impl aws_smithy_http::response::ParseStrictResponse
             crate::operation_deser::parse_get_organization_conformance_pack_detailed_status_response(
                 response,
             )
+        }
+    }
+}
+
+/// Operation shape for `GetOrganizationCustomRulePolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_organization_custom_rule_policy`](crate::client::Client::get_organization_custom_rule_policy).
+///
+/// See [`crate::client::fluent_builders::GetOrganizationCustomRulePolicy`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetOrganizationCustomRulePolicy {
+    _private: (),
+}
+impl GetOrganizationCustomRulePolicy {
+    /// Creates a new builder-style object to manufacture [`GetOrganizationCustomRulePolicyInput`](crate::input::GetOrganizationCustomRulePolicyInput)
+    pub fn builder() -> crate::input::get_organization_custom_rule_policy_input::Builder {
+        crate::input::get_organization_custom_rule_policy_input::Builder::default()
+    }
+    /// Creates a new `GetOrganizationCustomRulePolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetOrganizationCustomRulePolicy {
+    type Output = std::result::Result<
+        crate::output::GetOrganizationCustomRulePolicyOutput,
+        crate::error::GetOrganizationCustomRulePolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_organization_custom_rule_policy_error(response)
+        } else {
+            crate::operation_deser::parse_get_organization_custom_rule_policy_response(response)
         }
     }
 }

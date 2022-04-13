@@ -1315,7 +1315,9 @@ pub struct UpdateCustomMetricOutput {
     pub metric_name: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Number (ARN) of the custom metric. </p>
     pub metric_arn: std::option::Option<std::string::String>,
-    /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
+    /// <p> The type of the custom metric. </p> <important>
+    /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
+    /// </important>
     pub metric_type: std::option::Option<crate::model::CustomMetricType>,
     /// <p> A friendly name in the console for the custom metric </p>
     pub display_name: std::option::Option<std::string::String>,
@@ -1333,7 +1335,9 @@ impl UpdateCustomMetricOutput {
     pub fn metric_arn(&self) -> std::option::Option<&str> {
         self.metric_arn.as_deref()
     }
-    /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
+    /// <p> The type of the custom metric. </p> <important>
+    /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
+    /// </important>
     pub fn metric_type(&self) -> std::option::Option<&crate::model::CustomMetricType> {
         self.metric_type.as_ref()
     }
@@ -1396,12 +1400,16 @@ pub mod update_custom_metric_output {
             self.metric_arn = input;
             self
         }
-        /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
+        /// <p> The type of the custom metric. </p> <important>
+        /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
+        /// </important>
         pub fn metric_type(mut self, input: crate::model::CustomMetricType) -> Self {
             self.metric_type = Some(input);
             self
         }
-        /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
+        /// <p> The type of the custom metric. </p> <important>
+        /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
+        /// </important>
         pub fn set_metric_type(
             mut self,
             input: std::option::Option<crate::model::CustomMetricType>,
@@ -5690,6 +5698,88 @@ impl ListMitigationActionsOutput {
     /// Creates a new builder-style object to manufacture [`ListMitigationActionsOutput`](crate::output::ListMitigationActionsOutput)
     pub fn builder() -> crate::output::list_mitigation_actions_output::Builder {
         crate::output::list_mitigation_actions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMetricValuesOutput {
+    /// <p>The data the thing reports for the metric during the specified time period.</p>
+    pub metric_datum_list: std::option::Option<std::vec::Vec<crate::model::MetricDatum>>,
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMetricValuesOutput {
+    /// <p>The data the thing reports for the metric during the specified time period.</p>
+    pub fn metric_datum_list(&self) -> std::option::Option<&[crate::model::MetricDatum]> {
+        self.metric_datum_list.as_deref()
+    }
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListMetricValuesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMetricValuesOutput");
+        formatter.field("metric_datum_list", &self.metric_datum_list);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListMetricValuesOutput`](crate::output::ListMetricValuesOutput)
+pub mod list_metric_values_output {
+    /// A builder for [`ListMetricValuesOutput`](crate::output::ListMetricValuesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_datum_list: std::option::Option<std::vec::Vec<crate::model::MetricDatum>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `metric_datum_list`.
+        ///
+        /// To override the contents of this collection use [`set_metric_datum_list`](Self::set_metric_datum_list).
+        ///
+        /// <p>The data the thing reports for the metric during the specified time period.</p>
+        pub fn metric_datum_list(mut self, input: crate::model::MetricDatum) -> Self {
+            let mut v = self.metric_datum_list.unwrap_or_default();
+            v.push(input);
+            self.metric_datum_list = Some(v);
+            self
+        }
+        /// <p>The data the thing reports for the metric during the specified time period.</p>
+        pub fn set_metric_datum_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricDatum>>,
+        ) -> Self {
+            self.metric_datum_list = input;
+            self
+        }
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMetricValuesOutput`](crate::output::ListMetricValuesOutput)
+        pub fn build(self) -> crate::output::ListMetricValuesOutput {
+            crate::output::ListMetricValuesOutput {
+                metric_datum_list: self.metric_datum_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListMetricValuesOutput {
+    /// Creates a new builder-style object to manufacture [`ListMetricValuesOutput`](crate::output::ListMetricValuesOutput)
+    pub fn builder() -> crate::output::list_metric_values_output::Builder {
+        crate::output::list_metric_values_output::Builder::default()
     }
 }
 
@@ -13092,7 +13182,9 @@ pub struct DescribeCustomMetricOutput {
     pub metric_name: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Number (ARN) of the custom metric. </p>
     pub metric_arn: std::option::Option<std::string::String>,
-    /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
+    /// <p> The type of the custom metric. </p> <important>
+    /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
+    /// </important>
     pub metric_type: std::option::Option<crate::model::CustomMetricType>,
     /// <p> Field represents a friendly name in the console for the custom metric; doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
     pub display_name: std::option::Option<std::string::String>,
@@ -13110,7 +13202,9 @@ impl DescribeCustomMetricOutput {
     pub fn metric_arn(&self) -> std::option::Option<&str> {
         self.metric_arn.as_deref()
     }
-    /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
+    /// <p> The type of the custom metric. </p> <important>
+    /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
+    /// </important>
     pub fn metric_type(&self) -> std::option::Option<&crate::model::CustomMetricType> {
         self.metric_type.as_ref()
     }
@@ -13173,12 +13267,16 @@ pub mod describe_custom_metric_output {
             self.metric_arn = input;
             self
         }
-        /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
+        /// <p> The type of the custom metric. </p> <important>
+        /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
+        /// </important>
         pub fn metric_type(mut self, input: crate::model::CustomMetricType) -> Self {
             self.metric_type = Some(input);
             self
         }
-        /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
+        /// <p> The type of the custom metric. </p> <important>
+        /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
+        /// </important>
         pub fn set_metric_type(
             mut self,
             input: std::option::Option<crate::model::CustomMetricType>,
@@ -17550,7 +17648,7 @@ impl CreateDimensionOutput {
 pub struct CreateCustomMetricOutput {
     /// <p> The name of the custom metric to be used in the metric report. </p>
     pub metric_name: std::option::Option<std::string::String>,
-    /// <p> The Amazon Resource Number (ARN) of the custom metric, e.g. <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
+    /// <p> The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
     pub metric_arn: std::option::Option<std::string::String>,
 }
 impl CreateCustomMetricOutput {
@@ -17558,7 +17656,7 @@ impl CreateCustomMetricOutput {
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
-    /// <p> The Amazon Resource Number (ARN) of the custom metric, e.g. <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
+    /// <p> The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
     pub fn metric_arn(&self) -> std::option::Option<&str> {
         self.metric_arn.as_deref()
     }
@@ -17591,12 +17689,12 @@ pub mod create_custom_metric_output {
             self.metric_name = input;
             self
         }
-        /// <p> The Amazon Resource Number (ARN) of the custom metric, e.g. <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
+        /// <p> The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
         pub fn metric_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Number (ARN) of the custom metric, e.g. <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
+        /// <p> The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
         pub fn set_metric_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_arn = input;
             self

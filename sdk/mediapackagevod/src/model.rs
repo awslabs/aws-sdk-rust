@@ -1936,6 +1936,8 @@ pub struct DashManifest {
     pub min_buffer_time_seconds: i32,
     /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
     pub profile: std::option::Option<crate::model::Profile>,
+    /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
+    pub scte_markers_source: std::option::Option<crate::model::ScteMarkersSource>,
     /// A StreamSelection configuration.
     pub stream_selection: std::option::Option<crate::model::StreamSelection>,
 }
@@ -1956,6 +1958,10 @@ impl DashManifest {
     pub fn profile(&self) -> std::option::Option<&crate::model::Profile> {
         self.profile.as_ref()
     }
+    /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
+    pub fn scte_markers_source(&self) -> std::option::Option<&crate::model::ScteMarkersSource> {
+        self.scte_markers_source.as_ref()
+    }
     /// A StreamSelection configuration.
     pub fn stream_selection(&self) -> std::option::Option<&crate::model::StreamSelection> {
         self.stream_selection.as_ref()
@@ -1968,6 +1974,7 @@ impl std::fmt::Debug for DashManifest {
         formatter.field("manifest_name", &self.manifest_name);
         formatter.field("min_buffer_time_seconds", &self.min_buffer_time_seconds);
         formatter.field("profile", &self.profile);
+        formatter.field("scte_markers_source", &self.scte_markers_source);
         formatter.field("stream_selection", &self.stream_selection);
         formatter.finish()
     }
@@ -1982,6 +1989,7 @@ pub mod dash_manifest {
         pub(crate) manifest_name: std::option::Option<std::string::String>,
         pub(crate) min_buffer_time_seconds: std::option::Option<i32>,
         pub(crate) profile: std::option::Option<crate::model::Profile>,
+        pub(crate) scte_markers_source: std::option::Option<crate::model::ScteMarkersSource>,
         pub(crate) stream_selection: std::option::Option<crate::model::StreamSelection>,
     }
     impl Builder {
@@ -2031,6 +2039,19 @@ pub mod dash_manifest {
             self.profile = input;
             self
         }
+        /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
+        pub fn scte_markers_source(mut self, input: crate::model::ScteMarkersSource) -> Self {
+            self.scte_markers_source = Some(input);
+            self
+        }
+        /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
+        pub fn set_scte_markers_source(
+            mut self,
+            input: std::option::Option<crate::model::ScteMarkersSource>,
+        ) -> Self {
+            self.scte_markers_source = input;
+            self
+        }
         /// A StreamSelection configuration.
         pub fn stream_selection(mut self, input: crate::model::StreamSelection) -> Self {
             self.stream_selection = Some(input);
@@ -2051,6 +2072,7 @@ pub mod dash_manifest {
                 manifest_name: self.manifest_name,
                 min_buffer_time_seconds: self.min_buffer_time_seconds.unwrap_or_default(),
                 profile: self.profile,
+                scte_markers_source: self.scte_markers_source,
                 stream_selection: self.stream_selection,
             }
         }
@@ -2060,6 +2082,61 @@ impl DashManifest {
     /// Creates a new builder-style object to manufacture [`DashManifest`](crate::model::DashManifest)
     pub fn builder() -> crate::model::dash_manifest::Builder {
         crate::model::dash_manifest::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ScteMarkersSource {
+    #[allow(missing_docs)] // documentation missing in model
+    Manifest,
+    #[allow(missing_docs)] // documentation missing in model
+    Segments,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ScteMarkersSource {
+    fn from(s: &str) -> Self {
+        match s {
+            "MANIFEST" => ScteMarkersSource::Manifest,
+            "SEGMENTS" => ScteMarkersSource::Segments,
+            other => ScteMarkersSource::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ScteMarkersSource {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ScteMarkersSource::from(s))
+    }
+}
+impl ScteMarkersSource {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ScteMarkersSource::Manifest => "MANIFEST",
+            ScteMarkersSource::Segments => "SEGMENTS",
+            ScteMarkersSource::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["MANIFEST", "SEGMENTS"]
+    }
+}
+impl AsRef<str> for ScteMarkersSource {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

@@ -2,18 +2,100 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListEndpointsOutput {
-    /// <p>Returns an array of endpoints associated with AWS Outposts.</p>
+pub struct ListSharedEndpointsOutput {
+    /// <p>The list of endpoints associated with the specified Outpost that have been shared by Amazon Web Services Resource Access Manager (RAM).</p>
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
-    /// <p>The next endpoint returned in the list.</p>
+    /// <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
-impl ListEndpointsOutput {
-    /// <p>Returns an array of endpoints associated with AWS Outposts.</p>
+impl ListSharedEndpointsOutput {
+    /// <p>The list of endpoints associated with the specified Outpost that have been shared by Amazon Web Services Resource Access Manager (RAM).</p>
     pub fn endpoints(&self) -> std::option::Option<&[crate::model::Endpoint]> {
         self.endpoints.as_deref()
     }
-    /// <p>The next endpoint returned in the list.</p>
+    /// <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListSharedEndpointsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListSharedEndpointsOutput");
+        formatter.field("endpoints", &self.endpoints);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput)
+pub mod list_shared_endpoints_output {
+    /// A builder for [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
+        ///
+        /// <p>The list of endpoints associated with the specified Outpost that have been shared by Amazon Web Services Resource Access Manager (RAM).</p>
+        pub fn endpoints(mut self, input: crate::model::Endpoint) -> Self {
+            let mut v = self.endpoints.unwrap_or_default();
+            v.push(input);
+            self.endpoints = Some(v);
+            self
+        }
+        /// <p>The list of endpoints associated with the specified Outpost that have been shared by Amazon Web Services Resource Access Manager (RAM).</p>
+        pub fn set_endpoints(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
+        ) -> Self {
+            self.endpoints = input;
+            self
+        }
+        /// <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput)
+        pub fn build(self) -> crate::output::ListSharedEndpointsOutput {
+            crate::output::ListSharedEndpointsOutput {
+                endpoints: self.endpoints,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListSharedEndpointsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput)
+    pub fn builder() -> crate::output::list_shared_endpoints_output::Builder {
+        crate::output::list_shared_endpoints_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListEndpointsOutput {
+    /// <p>The list of endpoints associated with the specified Outpost.</p>
+    pub endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
+    /// <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEndpointsOutput {
+    /// <p>The list of endpoints associated with the specified Outpost.</p>
+    pub fn endpoints(&self) -> std::option::Option<&[crate::model::Endpoint]> {
+        self.endpoints.as_deref()
+    }
+    /// <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -40,14 +122,14 @@ pub mod list_endpoints_output {
         ///
         /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
         ///
-        /// <p>Returns an array of endpoints associated with AWS Outposts.</p>
+        /// <p>The list of endpoints associated with the specified Outpost.</p>
         pub fn endpoints(mut self, input: crate::model::Endpoint) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
             v.push(input);
             self.endpoints = Some(v);
             self
         }
-        /// <p>Returns an array of endpoints associated with AWS Outposts.</p>
+        /// <p>The list of endpoints associated with the specified Outpost.</p>
         pub fn set_endpoints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
@@ -55,12 +137,12 @@ pub mod list_endpoints_output {
             self.endpoints = input;
             self
         }
-        /// <p>The next endpoint returned in the list.</p>
+        /// <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next endpoint returned in the list.</p>
+        /// <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

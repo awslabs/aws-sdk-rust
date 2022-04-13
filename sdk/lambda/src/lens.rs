@@ -59,6 +59,16 @@ pub(crate) fn reflens_structure_crate_output_list_functions_by_code_signing_conf
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_function_url_configs_output_next_marker(
+    input: &crate::output::ListFunctionUrlConfigsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_marker {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_layers_output_next_marker(
     input: &crate::output::ListLayersOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -153,6 +163,16 @@ pub(crate) fn lens_structure_crate_output_list_functions_by_code_signing_config_
     input: crate::output::ListFunctionsByCodeSigningConfigOutput,
 ) -> std::option::Option<std::vec::Vec<std::string::String>> {
     let input = match input.function_arns {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_function_url_configs_output_function_url_configs(
+    input: crate::output::ListFunctionUrlConfigsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::FunctionUrlConfig>> {
+    let input = match input.function_url_configs {
         None => return None,
         Some(t) => t,
     };

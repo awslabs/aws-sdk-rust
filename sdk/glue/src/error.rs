@@ -1879,6 +1879,154 @@ impl std::error::Error for CancelMLTaskRunError {
     }
 }
 
+/// Error type for the `CancelStatement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CancelStatementError {
+    /// Kind of error that occurred.
+    pub kind: CancelStatementErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CancelStatement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CancelStatementErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>The session is in an invalid state to perform a requested operation.</p>
+    IllegalSessionStateException(crate::error::IllegalSessionStateException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CancelStatementError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CancelStatementErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CancelStatementErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            CancelStatementErrorKind::IllegalSessionStateException(_inner) => _inner.fmt(f),
+            CancelStatementErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            CancelStatementErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CancelStatementErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            CancelStatementErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CancelStatementError {
+    fn code(&self) -> Option<&str> {
+        CancelStatementError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CancelStatementError {
+    /// Creates a new `CancelStatementError`.
+    pub fn new(kind: CancelStatementErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CancelStatementError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CancelStatementErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CancelStatementError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CancelStatementErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CancelStatementErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelStatementErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelStatementErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelStatementErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelStatementErrorKind::IllegalSessionStateException`.
+    pub fn is_illegal_session_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelStatementErrorKind::IllegalSessionStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelStatementErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelStatementErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelStatementErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelStatementErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelStatementErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelStatementErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for CancelStatementError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CancelStatementErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CancelStatementErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            CancelStatementErrorKind::IllegalSessionStateException(_inner) => Some(_inner),
+            CancelStatementErrorKind::InternalServiceException(_inner) => Some(_inner),
+            CancelStatementErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CancelStatementErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            CancelStatementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CheckSchemaVersionValidity` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4030,6 +4178,167 @@ impl std::error::Error for CreateSecurityConfigurationError {
                 Some(_inner)
             }
             CreateSecurityConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateSession` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateSessionError {
+    /// Kind of error that occurred.
+    pub kind: CreateSessionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateSession` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateSessionErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A resource to be created or added already exists.</p>
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    /// <p>The same unique identifier was associated with two different records.</p>
+    IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>A resource numerical limit was exceeded.</p>
+    ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
+    /// <p>A value could not be validated.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateSessionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateSessionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateSessionErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateSessionErrorKind::IdempotentParameterMismatchException(_inner) => _inner.fmt(f),
+            CreateSessionErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            CreateSessionErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateSessionErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            CreateSessionErrorKind::ResourceNumberLimitExceededException(_inner) => _inner.fmt(f),
+            CreateSessionErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreateSessionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateSessionError {
+    fn code(&self) -> Option<&str> {
+        CreateSessionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateSessionError {
+    /// Creates a new `CreateSessionError`.
+    pub fn new(kind: CreateSessionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateSessionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateSessionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateSessionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateSessionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateSessionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, CreateSessionErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `CreateSessionErrorKind::AlreadyExistsException`.
+    pub fn is_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSessionErrorKind::AlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateSessionErrorKind::IdempotentParameterMismatchException`.
+    pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSessionErrorKind::IdempotentParameterMismatchException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateSessionErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSessionErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateSessionErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, CreateSessionErrorKind::InvalidInputException(_))
+    }
+    /// Returns `true` if the error kind is `CreateSessionErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSessionErrorKind::OperationTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateSessionErrorKind::ResourceNumberLimitExceededException`.
+    pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSessionErrorKind::ResourceNumberLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateSessionErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, CreateSessionErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for CreateSessionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateSessionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateSessionErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            CreateSessionErrorKind::IdempotentParameterMismatchException(_inner) => Some(_inner),
+            CreateSessionErrorKind::InternalServiceException(_inner) => Some(_inner),
+            CreateSessionErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateSessionErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            CreateSessionErrorKind::ResourceNumberLimitExceededException(_inner) => Some(_inner),
+            CreateSessionErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateSessionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -6848,6 +7157,148 @@ impl std::error::Error for DeleteSecurityConfigurationError {
             DeleteSecurityConfigurationErrorKind::InvalidInputException(_inner) => Some(_inner),
             DeleteSecurityConfigurationErrorKind::OperationTimeoutException(_inner) => Some(_inner),
             DeleteSecurityConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteSession` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteSessionError {
+    /// Kind of error that occurred.
+    pub kind: DeleteSessionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteSession` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteSessionErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Two processes are trying to modify a resource simultaneously.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>The session is in an invalid state to perform a requested operation.</p>
+    IllegalSessionStateException(crate::error::IllegalSessionStateException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteSessionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteSessionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteSessionErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            DeleteSessionErrorKind::IllegalSessionStateException(_inner) => _inner.fmt(f),
+            DeleteSessionErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            DeleteSessionErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DeleteSessionErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            DeleteSessionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteSessionError {
+    fn code(&self) -> Option<&str> {
+        DeleteSessionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteSessionError {
+    /// Creates a new `DeleteSessionError`.
+    pub fn new(kind: DeleteSessionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteSessionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteSessionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteSessionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteSessionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteSessionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, DeleteSessionErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteSessionErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSessionErrorKind::ConcurrentModificationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteSessionErrorKind::IllegalSessionStateException`.
+    pub fn is_illegal_session_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSessionErrorKind::IllegalSessionStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteSessionErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSessionErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteSessionErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, DeleteSessionErrorKind::InvalidInputException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteSessionErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSessionErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteSessionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteSessionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteSessionErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            DeleteSessionErrorKind::IllegalSessionStateException(_inner) => Some(_inner),
+            DeleteSessionErrorKind::InternalServiceException(_inner) => Some(_inner),
+            DeleteSessionErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DeleteSessionErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            DeleteSessionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -12592,6 +13043,273 @@ impl std::error::Error for GetSecurityConfigurationsError {
     }
 }
 
+/// Error type for the `GetSession` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetSessionError {
+    /// Kind of error that occurred.
+    pub kind: GetSessionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetSession` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetSessionErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetSessionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetSessionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetSessionErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            GetSessionErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            GetSessionErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetSessionErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            GetSessionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetSessionError {
+    fn code(&self) -> Option<&str> {
+        GetSessionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetSessionError {
+    /// Creates a new `GetSessionError`.
+    pub fn new(kind: GetSessionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetSessionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetSessionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetSessionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetSessionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetSessionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, GetSessionErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetSessionErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetSessionErrorKind::EntityNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `GetSessionErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(&self.kind, GetSessionErrorKind::InternalServiceException(_))
+    }
+    /// Returns `true` if the error kind is `GetSessionErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, GetSessionErrorKind::InvalidInputException(_))
+    }
+    /// Returns `true` if the error kind is `GetSessionErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSessionErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for GetSessionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetSessionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetSessionErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            GetSessionErrorKind::InternalServiceException(_inner) => Some(_inner),
+            GetSessionErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetSessionErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            GetSessionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetStatement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetStatementError {
+    /// Kind of error that occurred.
+    pub kind: GetStatementErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetStatement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetStatementErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>The session is in an invalid state to perform a requested operation.</p>
+    IllegalSessionStateException(crate::error::IllegalSessionStateException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetStatementError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetStatementErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetStatementErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            GetStatementErrorKind::IllegalSessionStateException(_inner) => _inner.fmt(f),
+            GetStatementErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            GetStatementErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetStatementErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            GetStatementErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetStatementError {
+    fn code(&self) -> Option<&str> {
+        GetStatementError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetStatementError {
+    /// Creates a new `GetStatementError`.
+    pub fn new(kind: GetStatementErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetStatementError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetStatementErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetStatementError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetStatementErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetStatementErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, GetStatementErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetStatementErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetStatementErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetStatementErrorKind::IllegalSessionStateException`.
+    pub fn is_illegal_session_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetStatementErrorKind::IllegalSessionStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetStatementErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetStatementErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetStatementErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, GetStatementErrorKind::InvalidInputException(_))
+    }
+    /// Returns `true` if the error kind is `GetStatementErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetStatementErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for GetStatementError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetStatementErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetStatementErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            GetStatementErrorKind::IllegalSessionStateException(_inner) => Some(_inner),
+            GetStatementErrorKind::InternalServiceException(_inner) => Some(_inner),
+            GetStatementErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetStatementErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            GetStatementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetTable` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -15773,6 +16491,274 @@ impl std::error::Error for ListSchemaVersionsError {
     }
 }
 
+/// Error type for the `ListSessions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListSessionsError {
+    /// Kind of error that occurred.
+    pub kind: ListSessionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListSessions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListSessionsErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListSessionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListSessionsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListSessionsErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            ListSessionsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListSessionsErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            ListSessionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListSessionsError {
+    fn code(&self) -> Option<&str> {
+        ListSessionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListSessionsError {
+    /// Creates a new `ListSessionsError`.
+    pub fn new(kind: ListSessionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListSessionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListSessionsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListSessionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListSessionsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListSessionsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, ListSessionsErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `ListSessionsErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSessionsErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSessionsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, ListSessionsErrorKind::InvalidInputException(_))
+    }
+    /// Returns `true` if the error kind is `ListSessionsErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSessionsErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for ListSessionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListSessionsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListSessionsErrorKind::InternalServiceException(_inner) => Some(_inner),
+            ListSessionsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListSessionsErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            ListSessionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListStatements` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListStatementsError {
+    /// Kind of error that occurred.
+    pub kind: ListStatementsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListStatements` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListStatementsErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>The session is in an invalid state to perform a requested operation.</p>
+    IllegalSessionStateException(crate::error::IllegalSessionStateException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListStatementsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListStatementsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListStatementsErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            ListStatementsErrorKind::IllegalSessionStateException(_inner) => _inner.fmt(f),
+            ListStatementsErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            ListStatementsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListStatementsErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            ListStatementsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListStatementsError {
+    fn code(&self) -> Option<&str> {
+        ListStatementsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListStatementsError {
+    /// Creates a new `ListStatementsError`.
+    pub fn new(kind: ListStatementsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListStatementsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListStatementsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListStatementsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListStatementsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListStatementsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStatementsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListStatementsErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStatementsErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListStatementsErrorKind::IllegalSessionStateException`.
+    pub fn is_illegal_session_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStatementsErrorKind::IllegalSessionStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListStatementsErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStatementsErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListStatementsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStatementsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListStatementsErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStatementsErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for ListStatementsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListStatementsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListStatementsErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            ListStatementsErrorKind::IllegalSessionStateException(_inner) => Some(_inner),
+            ListStatementsErrorKind::InternalServiceException(_inner) => Some(_inner),
+            ListStatementsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListStatementsErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            ListStatementsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListTriggers` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -17237,6 +18223,167 @@ impl std::error::Error for ResumeWorkflowRunError {
             ResumeWorkflowRunErrorKind::InvalidInputException(_inner) => Some(_inner),
             ResumeWorkflowRunErrorKind::OperationTimeoutException(_inner) => Some(_inner),
             ResumeWorkflowRunErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `RunStatement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct RunStatementError {
+    /// Kind of error that occurred.
+    pub kind: RunStatementErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `RunStatement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum RunStatementErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>The session is in an invalid state to perform a requested operation.</p>
+    IllegalSessionStateException(crate::error::IllegalSessionStateException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>A resource numerical limit was exceeded.</p>
+    ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
+    /// <p>A value could not be validated.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for RunStatementError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            RunStatementErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            RunStatementErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            RunStatementErrorKind::IllegalSessionStateException(_inner) => _inner.fmt(f),
+            RunStatementErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            RunStatementErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            RunStatementErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            RunStatementErrorKind::ResourceNumberLimitExceededException(_inner) => _inner.fmt(f),
+            RunStatementErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            RunStatementErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for RunStatementError {
+    fn code(&self) -> Option<&str> {
+        RunStatementError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl RunStatementError {
+    /// Creates a new `RunStatementError`.
+    pub fn new(kind: RunStatementErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `RunStatementError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: RunStatementErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `RunStatementError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: RunStatementErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `RunStatementErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, RunStatementErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `RunStatementErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RunStatementErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RunStatementErrorKind::IllegalSessionStateException`.
+    pub fn is_illegal_session_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RunStatementErrorKind::IllegalSessionStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RunStatementErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RunStatementErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RunStatementErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, RunStatementErrorKind::InvalidInputException(_))
+    }
+    /// Returns `true` if the error kind is `RunStatementErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RunStatementErrorKind::OperationTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RunStatementErrorKind::ResourceNumberLimitExceededException`.
+    pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RunStatementErrorKind::ResourceNumberLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RunStatementErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, RunStatementErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for RunStatementError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            RunStatementErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            RunStatementErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            RunStatementErrorKind::IllegalSessionStateException(_inner) => Some(_inner),
+            RunStatementErrorKind::InternalServiceException(_inner) => Some(_inner),
+            RunStatementErrorKind::InvalidInputException(_inner) => Some(_inner),
+            RunStatementErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            RunStatementErrorKind::ResourceNumberLimitExceededException(_inner) => Some(_inner),
+            RunStatementErrorKind::ValidationException(_inner) => Some(_inner),
+            RunStatementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -19022,6 +20169,148 @@ impl std::error::Error for StopCrawlerScheduleError {
             StopCrawlerScheduleErrorKind::SchedulerNotRunningException(_inner) => Some(_inner),
             StopCrawlerScheduleErrorKind::SchedulerTransitioningException(_inner) => Some(_inner),
             StopCrawlerScheduleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `StopSession` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StopSessionError {
+    /// Kind of error that occurred.
+    pub kind: StopSessionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StopSession` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StopSessionErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Two processes are trying to modify a resource simultaneously.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>The session is in an invalid state to perform a requested operation.</p>
+    IllegalSessionStateException(crate::error::IllegalSessionStateException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StopSessionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StopSessionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            StopSessionErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            StopSessionErrorKind::IllegalSessionStateException(_inner) => _inner.fmt(f),
+            StopSessionErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            StopSessionErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            StopSessionErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            StopSessionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StopSessionError {
+    fn code(&self) -> Option<&str> {
+        StopSessionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StopSessionError {
+    /// Creates a new `StopSessionError`.
+    pub fn new(kind: StopSessionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StopSessionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StopSessionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StopSessionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StopSessionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StopSessionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, StopSessionErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `StopSessionErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopSessionErrorKind::ConcurrentModificationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopSessionErrorKind::IllegalSessionStateException`.
+    pub fn is_illegal_session_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopSessionErrorKind::IllegalSessionStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopSessionErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopSessionErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopSessionErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, StopSessionErrorKind::InvalidInputException(_))
+    }
+    /// Returns `true` if the error kind is `StopSessionErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopSessionErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for StopSessionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StopSessionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            StopSessionErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            StopSessionErrorKind::IllegalSessionStateException(_inner) => Some(_inner),
+            StopSessionErrorKind::InternalServiceException(_inner) => Some(_inner),
+            StopSessionErrorKind::InvalidInputException(_inner) => Some(_inner),
+            StopSessionErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            StopSessionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -22371,7 +23660,7 @@ impl ConcurrentModificationException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlueEncryptionException {
-    /// <p>A message describing the problem.</p>
+    /// <p>The message describing the problem.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GlueEncryptionException {
@@ -22406,12 +23695,12 @@ pub mod glue_encryption_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A message describing the problem.</p>
+        /// <p>The message describing the problem.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>A message describing the problem.</p>
+        /// <p>The message describing the problem.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -23007,6 +24296,70 @@ impl IllegalWorkflowStateException {
     }
 }
 
+/// <p>The session is in an invalid state to perform a requested operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IllegalSessionStateException {
+    /// <p>A message describing the problem.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for IllegalSessionStateException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IllegalSessionStateException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl IllegalSessionStateException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for IllegalSessionStateException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "IllegalSessionStateException")?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for IllegalSessionStateException {}
+/// See [`IllegalSessionStateException`](crate::error::IllegalSessionStateException)
+pub mod illegal_session_state_exception {
+    /// A builder for [`IllegalSessionStateException`](crate::error::IllegalSessionStateException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the problem.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the problem.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IllegalSessionStateException`](crate::error::IllegalSessionStateException)
+        pub fn build(self) -> crate::error::IllegalSessionStateException {
+            crate::error::IllegalSessionStateException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl IllegalSessionStateException {
+    /// Creates a new builder-style object to manufacture [`IllegalSessionStateException`](crate::error::IllegalSessionStateException)
+    pub fn builder() -> crate::error::illegal_session_state_exception::Builder {
+        crate::error::illegal_session_state_exception::Builder::default()
+    }
+}
+
 /// <p>The specified scheduler is not running.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -23030,8 +24383,8 @@ impl SchedulerNotRunningException {
 impl std::fmt::Display for SchedulerNotRunningException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SchedulerNotRunningException")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
@@ -23094,8 +24447,8 @@ impl CrawlerStoppingException {
 impl std::fmt::Display for CrawlerStoppingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CrawlerStoppingException")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
@@ -23158,8 +24511,8 @@ impl CrawlerNotRunningException {
 impl std::fmt::Display for CrawlerNotRunningException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CrawlerNotRunningException")?;
-        if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
@@ -23222,8 +24575,8 @@ impl ConcurrentRunsExceededException {
 impl std::fmt::Display for ConcurrentRunsExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConcurrentRunsExceededException")?;
-        if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+        if let Some(inner_20) = &self.message {
+            write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
@@ -23289,8 +24642,8 @@ impl std::fmt::Display for MlTransformNotReadyException {
             f,
             "MlTransformNotReadyException [MLTransformNotReadyException]"
         )?;
-        if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+        if let Some(inner_21) = &self.message {
+            write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
@@ -23353,8 +24706,8 @@ impl SchedulerRunningException {
 impl std::fmt::Display for SchedulerRunningException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SchedulerRunningException")?;
-        if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+        if let Some(inner_22) = &self.message {
+            write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
@@ -23417,8 +24770,8 @@ impl NoScheduleException {
 impl std::fmt::Display for NoScheduleException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoScheduleException")?;
-        if let Some(inner_22) = &self.message {
-            write!(f, ": {}", inner_22)?;
+        if let Some(inner_23) = &self.message {
+            write!(f, ": {}", inner_23)?;
         }
         Ok(())
     }
@@ -23481,8 +24834,8 @@ impl AlreadyExistsException {
 impl std::fmt::Display for AlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AlreadyExistsException")?;
-        if let Some(inner_23) = &self.message {
-            write!(f, ": {}", inner_23)?;
+        if let Some(inner_24) = &self.message {
+            write!(f, ": {}", inner_24)?;
         }
         Ok(())
     }
@@ -23545,8 +24898,8 @@ impl ConditionCheckFailureException {
 impl std::fmt::Display for ConditionCheckFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConditionCheckFailureException")?;
-        if let Some(inner_24) = &self.message {
-            write!(f, ": {}", inner_24)?;
+        if let Some(inner_25) = &self.message {
+            write!(f, ": {}", inner_25)?;
         }
         Ok(())
     }
@@ -23609,8 +24962,8 @@ impl PermissionTypeMismatchException {
 impl std::fmt::Display for PermissionTypeMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PermissionTypeMismatchException")?;
-        if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
+        if let Some(inner_26) = &self.message {
+            write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
@@ -23673,8 +25026,8 @@ impl InvalidStateException {
 impl std::fmt::Display for InvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidStateException")?;
-        if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+        if let Some(inner_27) = &self.message {
+            write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
@@ -23737,8 +25090,8 @@ impl ConflictException {
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
-        if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+        if let Some(inner_28) = &self.message {
+            write!(f, ": {}", inner_28)?;
         }
         Ok(())
     }
@@ -23801,8 +25154,8 @@ impl IdempotentParameterMismatchException {
 impl std::fmt::Display for IdempotentParameterMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IdempotentParameterMismatchException")?;
-        if let Some(inner_28) = &self.message {
-            write!(f, ": {}", inner_28)?;
+        if let Some(inner_29) = &self.message {
+            write!(f, ": {}", inner_29)?;
         }
         Ok(())
     }

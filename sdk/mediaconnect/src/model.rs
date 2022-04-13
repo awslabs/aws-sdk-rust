@@ -4228,6 +4228,8 @@ pub struct Flow {
     pub status: std::option::Option<crate::model::Status>,
     /// The VPC Interfaces for this flow.
     pub vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterface>>,
+    /// The maintenance setting of a flow
+    pub maintenance: std::option::Option<crate::model::Maintenance>,
 }
 impl Flow {
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.
@@ -4282,6 +4284,10 @@ impl Flow {
     pub fn vpc_interfaces(&self) -> std::option::Option<&[crate::model::VpcInterface]> {
         self.vpc_interfaces.as_deref()
     }
+    /// The maintenance setting of a flow
+    pub fn maintenance(&self) -> std::option::Option<&crate::model::Maintenance> {
+        self.maintenance.as_ref()
+    }
 }
 impl std::fmt::Debug for Flow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4299,6 +4305,7 @@ impl std::fmt::Debug for Flow {
         formatter.field("sources", &self.sources);
         formatter.field("status", &self.status);
         formatter.field("vpc_interfaces", &self.vpc_interfaces);
+        formatter.field("maintenance", &self.maintenance);
         formatter.finish()
     }
 }
@@ -4321,6 +4328,7 @@ pub mod flow {
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
         pub(crate) status: std::option::Option<crate::model::Status>,
         pub(crate) vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterface>>,
+        pub(crate) maintenance: std::option::Option<crate::model::Maintenance>,
     }
     impl Builder {
         /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.
@@ -4503,6 +4511,19 @@ pub mod flow {
             self.vpc_interfaces = input;
             self
         }
+        /// The maintenance setting of a flow
+        pub fn maintenance(mut self, input: crate::model::Maintenance) -> Self {
+            self.maintenance = Some(input);
+            self
+        }
+        /// The maintenance setting of a flow
+        pub fn set_maintenance(
+            mut self,
+            input: std::option::Option<crate::model::Maintenance>,
+        ) -> Self {
+            self.maintenance = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Flow`](crate::model::Flow)
         pub fn build(self) -> crate::model::Flow {
             crate::model::Flow {
@@ -4519,6 +4540,7 @@ pub mod flow {
                 sources: self.sources,
                 status: self.status,
                 vpc_interfaces: self.vpc_interfaces,
+                maintenance: self.maintenance,
             }
         }
     }
@@ -4527,6 +4549,215 @@ impl Flow {
     /// Creates a new builder-style object to manufacture [`Flow`](crate::model::Flow)
     pub fn builder() -> crate::model::flow::Builder {
         crate::model::flow::Builder::default()
+    }
+}
+
+/// The maintenance setting of a flow
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Maintenance {
+    /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+    pub maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
+    /// The Maintenance has to be performed before this deadline in ISO UTC format. Example: 2021-01-30T08:30:00Z.
+    pub maintenance_deadline: std::option::Option<std::string::String>,
+    /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
+    pub maintenance_scheduled_date: std::option::Option<std::string::String>,
+    /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
+    pub maintenance_start_hour: std::option::Option<std::string::String>,
+}
+impl Maintenance {
+    /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+    pub fn maintenance_day(&self) -> std::option::Option<&crate::model::MaintenanceDay> {
+        self.maintenance_day.as_ref()
+    }
+    /// The Maintenance has to be performed before this deadline in ISO UTC format. Example: 2021-01-30T08:30:00Z.
+    pub fn maintenance_deadline(&self) -> std::option::Option<&str> {
+        self.maintenance_deadline.as_deref()
+    }
+    /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
+    pub fn maintenance_scheduled_date(&self) -> std::option::Option<&str> {
+        self.maintenance_scheduled_date.as_deref()
+    }
+    /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
+    pub fn maintenance_start_hour(&self) -> std::option::Option<&str> {
+        self.maintenance_start_hour.as_deref()
+    }
+}
+impl std::fmt::Debug for Maintenance {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Maintenance");
+        formatter.field("maintenance_day", &self.maintenance_day);
+        formatter.field("maintenance_deadline", &self.maintenance_deadline);
+        formatter.field(
+            "maintenance_scheduled_date",
+            &self.maintenance_scheduled_date,
+        );
+        formatter.field("maintenance_start_hour", &self.maintenance_start_hour);
+        formatter.finish()
+    }
+}
+/// See [`Maintenance`](crate::model::Maintenance)
+pub mod maintenance {
+    /// A builder for [`Maintenance`](crate::model::Maintenance)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
+        pub(crate) maintenance_deadline: std::option::Option<std::string::String>,
+        pub(crate) maintenance_scheduled_date: std::option::Option<std::string::String>,
+        pub(crate) maintenance_start_hour: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+        pub fn maintenance_day(mut self, input: crate::model::MaintenanceDay) -> Self {
+            self.maintenance_day = Some(input);
+            self
+        }
+        /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+        pub fn set_maintenance_day(
+            mut self,
+            input: std::option::Option<crate::model::MaintenanceDay>,
+        ) -> Self {
+            self.maintenance_day = input;
+            self
+        }
+        /// The Maintenance has to be performed before this deadline in ISO UTC format. Example: 2021-01-30T08:30:00Z.
+        pub fn maintenance_deadline(mut self, input: impl Into<std::string::String>) -> Self {
+            self.maintenance_deadline = Some(input.into());
+            self
+        }
+        /// The Maintenance has to be performed before this deadline in ISO UTC format. Example: 2021-01-30T08:30:00Z.
+        pub fn set_maintenance_deadline(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.maintenance_deadline = input;
+            self
+        }
+        /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
+        pub fn maintenance_scheduled_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.maintenance_scheduled_date = Some(input.into());
+            self
+        }
+        /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
+        pub fn set_maintenance_scheduled_date(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.maintenance_scheduled_date = input;
+            self
+        }
+        /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
+        pub fn maintenance_start_hour(mut self, input: impl Into<std::string::String>) -> Self {
+            self.maintenance_start_hour = Some(input.into());
+            self
+        }
+        /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
+        pub fn set_maintenance_start_hour(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.maintenance_start_hour = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Maintenance`](crate::model::Maintenance)
+        pub fn build(self) -> crate::model::Maintenance {
+            crate::model::Maintenance {
+                maintenance_day: self.maintenance_day,
+                maintenance_deadline: self.maintenance_deadline,
+                maintenance_scheduled_date: self.maintenance_scheduled_date,
+                maintenance_start_hour: self.maintenance_start_hour,
+            }
+        }
+    }
+}
+impl Maintenance {
+    /// Creates a new builder-style object to manufacture [`Maintenance`](crate::model::Maintenance)
+    pub fn builder() -> crate::model::maintenance::Builder {
+        crate::model::maintenance::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MaintenanceDay {
+    #[allow(missing_docs)] // documentation missing in model
+    Friday,
+    #[allow(missing_docs)] // documentation missing in model
+    Monday,
+    #[allow(missing_docs)] // documentation missing in model
+    Saturday,
+    #[allow(missing_docs)] // documentation missing in model
+    Sunday,
+    #[allow(missing_docs)] // documentation missing in model
+    Thursday,
+    #[allow(missing_docs)] // documentation missing in model
+    Tuesday,
+    #[allow(missing_docs)] // documentation missing in model
+    Wednesday,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MaintenanceDay {
+    fn from(s: &str) -> Self {
+        match s {
+            "Friday" => MaintenanceDay::Friday,
+            "Monday" => MaintenanceDay::Monday,
+            "Saturday" => MaintenanceDay::Saturday,
+            "Sunday" => MaintenanceDay::Sunday,
+            "Thursday" => MaintenanceDay::Thursday,
+            "Tuesday" => MaintenanceDay::Tuesday,
+            "Wednesday" => MaintenanceDay::Wednesday,
+            other => MaintenanceDay::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MaintenanceDay {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MaintenanceDay::from(s))
+    }
+}
+impl MaintenanceDay {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MaintenanceDay::Friday => "Friday",
+            MaintenanceDay::Monday => "Monday",
+            MaintenanceDay::Saturday => "Saturday",
+            MaintenanceDay::Sunday => "Sunday",
+            MaintenanceDay::Thursday => "Thursday",
+            MaintenanceDay::Tuesday => "Tuesday",
+            MaintenanceDay::Wednesday => "Wednesday",
+            MaintenanceDay::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Friday",
+            "Monday",
+            "Saturday",
+            "Sunday",
+            "Thursday",
+            "Tuesday",
+            "Wednesday",
+        ]
+    }
+}
+impl AsRef<str> for MaintenanceDay {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -5115,6 +5346,110 @@ impl FailoverMode {
 impl AsRef<str> for FailoverMode {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// Update maintenance setting for a flow
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateMaintenance {
+    /// A day of a week when the maintenance will happen. use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+    pub maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
+    /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
+    pub maintenance_scheduled_date: std::option::Option<std::string::String>,
+    /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
+    pub maintenance_start_hour: std::option::Option<std::string::String>,
+}
+impl UpdateMaintenance {
+    /// A day of a week when the maintenance will happen. use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+    pub fn maintenance_day(&self) -> std::option::Option<&crate::model::MaintenanceDay> {
+        self.maintenance_day.as_ref()
+    }
+    /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
+    pub fn maintenance_scheduled_date(&self) -> std::option::Option<&str> {
+        self.maintenance_scheduled_date.as_deref()
+    }
+    /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
+    pub fn maintenance_start_hour(&self) -> std::option::Option<&str> {
+        self.maintenance_start_hour.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateMaintenance {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateMaintenance");
+        formatter.field("maintenance_day", &self.maintenance_day);
+        formatter.field(
+            "maintenance_scheduled_date",
+            &self.maintenance_scheduled_date,
+        );
+        formatter.field("maintenance_start_hour", &self.maintenance_start_hour);
+        formatter.finish()
+    }
+}
+/// See [`UpdateMaintenance`](crate::model::UpdateMaintenance)
+pub mod update_maintenance {
+    /// A builder for [`UpdateMaintenance`](crate::model::UpdateMaintenance)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
+        pub(crate) maintenance_scheduled_date: std::option::Option<std::string::String>,
+        pub(crate) maintenance_start_hour: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// A day of a week when the maintenance will happen. use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+        pub fn maintenance_day(mut self, input: crate::model::MaintenanceDay) -> Self {
+            self.maintenance_day = Some(input);
+            self
+        }
+        /// A day of a week when the maintenance will happen. use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+        pub fn set_maintenance_day(
+            mut self,
+            input: std::option::Option<crate::model::MaintenanceDay>,
+        ) -> Self {
+            self.maintenance_day = input;
+            self
+        }
+        /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
+        pub fn maintenance_scheduled_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.maintenance_scheduled_date = Some(input.into());
+            self
+        }
+        /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
+        pub fn set_maintenance_scheduled_date(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.maintenance_scheduled_date = input;
+            self
+        }
+        /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
+        pub fn maintenance_start_hour(mut self, input: impl Into<std::string::String>) -> Self {
+            self.maintenance_start_hour = Some(input.into());
+            self
+        }
+        /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
+        pub fn set_maintenance_start_hour(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.maintenance_start_hour = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateMaintenance`](crate::model::UpdateMaintenance)
+        pub fn build(self) -> crate::model::UpdateMaintenance {
+            crate::model::UpdateMaintenance {
+                maintenance_day: self.maintenance_day,
+                maintenance_scheduled_date: self.maintenance_scheduled_date,
+                maintenance_start_hour: self.maintenance_start_hour,
+            }
+        }
+    }
+}
+impl UpdateMaintenance {
+    /// Creates a new builder-style object to manufacture [`UpdateMaintenance`](crate::model::UpdateMaintenance)
+    pub fn builder() -> crate::model::update_maintenance::Builder {
+        crate::model::update_maintenance::Builder::default()
     }
 }
 
@@ -6067,6 +6402,8 @@ pub struct ListedFlow {
     pub source_type: std::option::Option<crate::model::SourceType>,
     /// The current status of the flow.
     pub status: std::option::Option<crate::model::Status>,
+    /// The maintenance setting of a flow
+    pub maintenance: std::option::Option<crate::model::Maintenance>,
 }
 impl ListedFlow {
     /// The Availability Zone that the flow was created in.
@@ -6093,6 +6430,10 @@ impl ListedFlow {
     pub fn status(&self) -> std::option::Option<&crate::model::Status> {
         self.status.as_ref()
     }
+    /// The maintenance setting of a flow
+    pub fn maintenance(&self) -> std::option::Option<&crate::model::Maintenance> {
+        self.maintenance.as_ref()
+    }
 }
 impl std::fmt::Debug for ListedFlow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6103,6 +6444,7 @@ impl std::fmt::Debug for ListedFlow {
         formatter.field("name", &self.name);
         formatter.field("source_type", &self.source_type);
         formatter.field("status", &self.status);
+        formatter.field("maintenance", &self.maintenance);
         formatter.finish()
     }
 }
@@ -6118,6 +6460,7 @@ pub mod listed_flow {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) source_type: std::option::Option<crate::model::SourceType>,
         pub(crate) status: std::option::Option<crate::model::Status>,
+        pub(crate) maintenance: std::option::Option<crate::model::Maintenance>,
     }
     impl Builder {
         /// The Availability Zone that the flow was created in.
@@ -6186,6 +6529,19 @@ pub mod listed_flow {
             self.status = input;
             self
         }
+        /// The maintenance setting of a flow
+        pub fn maintenance(mut self, input: crate::model::Maintenance) -> Self {
+            self.maintenance = Some(input);
+            self
+        }
+        /// The maintenance setting of a flow
+        pub fn set_maintenance(
+            mut self,
+            input: std::option::Option<crate::model::Maintenance>,
+        ) -> Self {
+            self.maintenance = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListedFlow`](crate::model::ListedFlow)
         pub fn build(self) -> crate::model::ListedFlow {
             crate::model::ListedFlow {
@@ -6195,6 +6551,7 @@ pub mod listed_flow {
                 name: self.name,
                 source_type: self.source_type,
                 status: self.status,
+                maintenance: self.maintenance,
             }
         }
     }
@@ -6599,6 +6956,85 @@ impl Messages {
     /// Creates a new builder-style object to manufacture [`Messages`](crate::model::Messages)
     pub fn builder() -> crate::model::messages::Builder {
         crate::model::messages::Builder::default()
+    }
+}
+
+/// Create maintenance setting for a flow
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AddMaintenance {
+    /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+    pub maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
+    /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
+    pub maintenance_start_hour: std::option::Option<std::string::String>,
+}
+impl AddMaintenance {
+    /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+    pub fn maintenance_day(&self) -> std::option::Option<&crate::model::MaintenanceDay> {
+        self.maintenance_day.as_ref()
+    }
+    /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
+    pub fn maintenance_start_hour(&self) -> std::option::Option<&str> {
+        self.maintenance_start_hour.as_deref()
+    }
+}
+impl std::fmt::Debug for AddMaintenance {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AddMaintenance");
+        formatter.field("maintenance_day", &self.maintenance_day);
+        formatter.field("maintenance_start_hour", &self.maintenance_start_hour);
+        formatter.finish()
+    }
+}
+/// See [`AddMaintenance`](crate::model::AddMaintenance)
+pub mod add_maintenance {
+    /// A builder for [`AddMaintenance`](crate::model::AddMaintenance)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
+        pub(crate) maintenance_start_hour: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+        pub fn maintenance_day(mut self, input: crate::model::MaintenanceDay) -> Self {
+            self.maintenance_day = Some(input);
+            self
+        }
+        /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+        pub fn set_maintenance_day(
+            mut self,
+            input: std::option::Option<crate::model::MaintenanceDay>,
+        ) -> Self {
+            self.maintenance_day = input;
+            self
+        }
+        /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
+        pub fn maintenance_start_hour(mut self, input: impl Into<std::string::String>) -> Self {
+            self.maintenance_start_hour = Some(input.into());
+            self
+        }
+        /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
+        pub fn set_maintenance_start_hour(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.maintenance_start_hour = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AddMaintenance`](crate::model::AddMaintenance)
+        pub fn build(self) -> crate::model::AddMaintenance {
+            crate::model::AddMaintenance {
+                maintenance_day: self.maintenance_day,
+                maintenance_start_hour: self.maintenance_start_hour,
+            }
+        }
+    }
+}
+impl AddMaintenance {
+    /// Creates a new builder-style object to manufacture [`AddMaintenance`](crate::model::AddMaintenance)
+    pub fn builder() -> crate::model::add_maintenance::Builder {
+        crate::model::add_maintenance::Builder::default()
     }
 }
 

@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_organizations::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_organizations::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_organizations::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_organizations::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -122,16 +122,26 @@ impl Client {
     pub fn cancel_handshake(&self) -> fluent_builders::CancelHandshake {
         fluent_builders::CancelHandshake::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CloseAccount`](crate::client::fluent_builders::CloseAccount) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CloseAccount::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CloseAccount::set_account_id): <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request. </p>
+    /// - On success, responds with [`CloseAccountOutput`](crate::output::CloseAccountOutput)
+
+    /// - On failure, responds with [`SdkError<CloseAccountError>`](crate::error::CloseAccountError)
+    pub fn close_account(&self) -> fluent_builders::CloseAccount {
+        fluent_builders::CloseAccount::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateAccount`](crate::client::fluent_builders::CreateAccount) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`email(impl Into<String>)`](crate::client::fluent_builders::CreateAccount::email) / [`set_email(Option<String>)`](crate::client::fluent_builders::CreateAccount::set_email): <p>The email address of the owner to assign to the new member account. This email address must not already be associated with another AWS account. You must use a valid email address to complete account creation. You can't access the root user of the account or remove an account that was created with an invalid email address.</p>
+    ///   - [`email(impl Into<String>)`](crate::client::fluent_builders::CreateAccount::email) / [`set_email(Option<String>)`](crate::client::fluent_builders::CreateAccount::set_email): <p>The email address of the owner to assign to the new member account. This email address must not already be associated with another Amazon Web Services account. You must use a valid email address to complete account creation.</p>  <p>The rules for a valid email address:</p>  <ul>   <li> <p>The address must be a minimum of 6 and a maximum of 64 characters long.</p> </li>   <li> <p>All characters must be 7-bit ASCII characters.</p> </li>   <li> <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p> </li>   <li> <p>The local name can't contain any of the following characters:</p> <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p> </li>   <li> <p>The local name can't begin with a dot (.)</p> </li>   <li> <p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p> </li>   <li> <p>The domain name can't begin or end with a hyphen (-) or dot (.)</p> </li>   <li> <p>The domain name must contain at least one dot</p> </li>  </ul>  <p>You can't access the root user of the account or remove an account that was created with an invalid email address.</p>
     ///   - [`account_name(impl Into<String>)`](crate::client::fluent_builders::CreateAccount::account_name) / [`set_account_name(Option<String>)`](crate::client::fluent_builders::CreateAccount::set_account_name): <p>The friendly name of the member account.</p>
-    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::CreateAccount::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::CreateAccount::set_role_name): <p>(Optional)</p>  <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>  <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>  <p>For more information about how to use this role to access the member account, see the following links:</p>  <ul>   <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User Guide</i> </p> </li>   <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i> </p> </li>  </ul>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
-    ///   - [`iam_user_access_to_billing(IamUserAccessToBilling)`](crate::client::fluent_builders::CreateAccount::iam_user_access_to_billing) / [`set_iam_user_access_to_billing(Option<IamUserAccessToBilling>)`](crate::client::fluent_builders::CreateAccount::set_iam_user_access_to_billing): <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>  <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAccount::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAccount::set_tags): <p>A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>   <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and the account is not created.</p>  </note>
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::CreateAccount::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::CreateAccount::set_role_name): <p>(Optional)</p>  <p>The name of an IAM role that Organizations automatically preconfigures in the new member account. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>  <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>  <p>For more information about how to use this role to access the member account, see the following links:</p>  <ul>   <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>Organizations User Guide</i> </p> </li>   <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the <i>IAM User Guide</i> </p> </li>  </ul>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
+    ///   - [`iam_user_access_to_billing(IamUserAccessToBilling)`](crate::client::fluent_builders::CreateAccount::iam_user_access_to_billing) / [`set_iam_user_access_to_billing(Option<IamUserAccessToBilling>)`](crate::client::fluent_builders::CreateAccount::set_iam_user_access_to_billing): <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>  <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAccount::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAccount::set_tags): <p>A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>   <p>If any one of the tags is invalid or if you exceed the maximum allowed number of tags for an account, then the entire request fails and the account is not created.</p>  </note>
     /// - On success, responds with [`CreateAccountOutput`](crate::output::CreateAccountOutput) with field(s):
-    ///   - [`create_account_status(Option<CreateAccountStatus>)`](crate::output::CreateAccountOutput::create_account_status): <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the AWS CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>AWS Organizations User Guide</i>.</p>
+    ///   - [`create_account_status(Option<CreateAccountStatus>)`](crate::output::CreateAccountOutput::create_account_status): <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<CreateAccountError>`](crate::error::CreateAccountError)
     pub fn create_account(&self) -> fluent_builders::CreateAccount {
         fluent_builders::CreateAccount::new(self.handle.clone())
@@ -139,13 +149,13 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateGovCloudAccount`](crate::client::fluent_builders::CreateGovCloudAccount) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`email(impl Into<String>)`](crate::client::fluent_builders::CreateGovCloudAccount::email) / [`set_email(Option<String>)`](crate::client::fluent_builders::CreateGovCloudAccount::set_email): <p>The email address of the owner to assign to the new member account in the commercial Region. This email address must not already be associated with another AWS account. You must use a valid email address to complete account creation. You can't access the root user of the account or remove an account that was created with an invalid email address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request for the email address for the AWS GovCloud (US) account originates from the commercial Region, not from the AWS GovCloud (US) Region.</p>
+    ///   - [`email(impl Into<String>)`](crate::client::fluent_builders::CreateGovCloudAccount::email) / [`set_email(Option<String>)`](crate::client::fluent_builders::CreateGovCloudAccount::set_email): <p>Specifies the email address of the owner to assign to the new member account in the commercial Region. This email address must not already be associated with another Amazon Web Services account. You must use a valid email address to complete account creation.</p>  <p>The rules for a valid email address:</p>  <ul>   <li> <p>The address must be a minimum of 6 and a maximum of 64 characters long.</p> </li>   <li> <p>All characters must be 7-bit ASCII characters.</p> </li>   <li> <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p> </li>   <li> <p>The local name can't contain any of the following characters:</p> <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p> </li>   <li> <p>The local name can't begin with a dot (.)</p> </li>   <li> <p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p> </li>   <li> <p>The domain name can't begin or end with a hyphen (-) or dot (.)</p> </li>   <li> <p>The domain name must contain at least one dot</p> </li>  </ul>  <p>You can't access the root user of the account or remove an account that was created with an invalid email address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request for the email address for the Amazon Web Services GovCloud (US) account originates from the commercial Region, not from the Amazon Web Services GovCloud (US) Region.</p>
     ///   - [`account_name(impl Into<String>)`](crate::client::fluent_builders::CreateGovCloudAccount::account_name) / [`set_account_name(Option<String>)`](crate::client::fluent_builders::CreateGovCloudAccount::set_account_name): <p>The friendly name of the member account.</p>
-    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::CreateGovCloudAccount::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::CreateGovCloudAccount::set_role_name): <p>(Optional)</p>  <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member accounts in both the AWS GovCloud (US) Region and in the commercial Region. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>  <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>  <p>For more information about how to use this role to access the member account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User Guide</i> and steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i> </p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
-    ///   - [`iam_user_access_to_billing(IamUserAccessToBilling)`](crate::client::fluent_builders::CreateGovCloudAccount::iam_user_access_to_billing) / [`set_iam_user_access_to_billing(Option<IamUserAccessToBilling>)`](crate::client::fluent_builders::CreateGovCloudAccount::set_iam_user_access_to_billing): <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User Guide.</i> </p>  <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateGovCloudAccount::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateGovCloudAccount::set_tags): <p>A list of tags that you want to attach to the newly created account. These tags are attached to the commercial account associated with the GovCloud account, and not to the GovCloud account itself. To add tags to the actual GovCloud account, call the <code>TagResource</code> operation in the GovCloud region after the new GovCloud account exists.</p>  <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>   <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and the account is not created.</p>  </note>
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::CreateGovCloudAccount::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::CreateGovCloudAccount::set_role_name): <p>(Optional)</p>  <p>The name of an IAM role that Organizations automatically preconfigures in the new member accounts in both the Amazon Web Services GovCloud (US) Region and in the commercial Region. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>  <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>  <p>For more information about how to use this role to access the member account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>Organizations User Guide</i> and steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the <i>IAM User Guide.</i> </p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
+    ///   - [`iam_user_access_to_billing(IamUserAccessToBilling)`](crate::client::fluent_builders::CreateGovCloudAccount::iam_user_access_to_billing) / [`set_iam_user_access_to_billing(Option<IamUserAccessToBilling>)`](crate::client::fluent_builders::CreateGovCloudAccount::set_iam_user_access_to_billing): <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide.</i> </p>  <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateGovCloudAccount::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateGovCloudAccount::set_tags): <p>A list of tags that you want to attach to the newly created account. These tags are attached to the commercial account associated with the GovCloud account, and not to the GovCloud account itself. To add tags to the actual GovCloud account, call the <code>TagResource</code> operation in the GovCloud region after the new GovCloud account exists.</p>  <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>   <p>If any one of the tags is invalid or if you exceed the maximum allowed number of tags for an account, then the entire request fails and the account is not created.</p>  </note>
     /// - On success, responds with [`CreateGovCloudAccountOutput`](crate::output::CreateGovCloudAccountOutput) with field(s):
-    ///   - [`create_account_status(Option<CreateAccountStatus>)`](crate::output::CreateGovCloudAccountOutput::create_account_status): <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an AWS account or an AWS GovCloud (US) account in an organization.</p>
+    ///   - [`create_account_status(Option<CreateAccountStatus>)`](crate::output::CreateGovCloudAccountOutput::create_account_status): <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.</p>
     /// - On failure, responds with [`SdkError<CreateGovCloudAccountError>`](crate::error::CreateGovCloudAccountError)
     pub fn create_gov_cloud_account(&self) -> fluent_builders::CreateGovCloudAccount {
         fluent_builders::CreateGovCloudAccount::new(self.handle.clone())
@@ -153,7 +163,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateOrganization`](crate::client::fluent_builders::CreateOrganization) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`feature_set(OrganizationFeatureSet)`](crate::client::fluent_builders::CreateOrganization::feature_set) / [`set_feature_set(Option<OrganizationFeatureSet>)`](crate::client::fluent_builders::CreateOrganization::set_feature_set): <p>Specifies the feature set supported by the new organization. Each feature set supports different levels of functionality.</p>  <ul>   <li> <p> <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the management account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated billing</a> in the <i>AWS Organizations User Guide.</i> </p> <p> The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.</p> </li>   <li> <p> <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the management account can also apply any policy type to any member account in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All features</a> in the <i>AWS Organizations User Guide.</i> </p> </li>  </ul>
+    ///   - [`feature_set(OrganizationFeatureSet)`](crate::client::fluent_builders::CreateOrganization::feature_set) / [`set_feature_set(Option<OrganizationFeatureSet>)`](crate::client::fluent_builders::CreateOrganization::set_feature_set): <p>Specifies the feature set supported by the new organization. Each feature set supports different levels of functionality.</p>  <ul>   <li> <p> <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the management account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated billing</a> in the <i>Organizations User Guide.</i> </p> <p> The consolidated billing feature subset isn't available for organizations in the Amazon Web Services GovCloud (US) Region.</p> </li>   <li> <p> <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the management account can also apply any policy type to any member account in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All features</a> in the <i>Organizations User Guide.</i> </p> </li>  </ul>
     /// - On success, responds with [`CreateOrganizationOutput`](crate::output::CreateOrganizationOutput) with field(s):
     ///   - [`organization(Option<Organization>)`](crate::output::CreateOrganizationOutput::organization): <p>A structure that contains details about the newly created organization.</p>
     /// - On failure, responds with [`SdkError<CreateOrganizationError>`](crate::error::CreateOrganizationError)
@@ -165,7 +175,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`parent_id(impl Into<String>)`](crate::client::fluent_builders::CreateOrganizationalUnit::parent_id) / [`set_parent_id(Option<String>)`](crate::client::fluent_builders::CreateOrganizationalUnit::set_parent_id): <p>The unique identifier (ID) of the parent root or OU that you want to create the new OU in.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>  <ul>   <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>   <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>  </ul>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateOrganizationalUnit::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateOrganizationalUnit::set_name): <p>The friendly name to assign to the new OU.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateOrganizationalUnit::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateOrganizationalUnit::set_tags): <p>A list of tags that you want to attach to the newly created OU. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>   <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an OU, then the entire request fails and the OU is not created.</p>  </note>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateOrganizationalUnit::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateOrganizationalUnit::set_tags): <p>A list of tags that you want to attach to the newly created OU. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>   <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an OU, then the entire request fails and the OU is not created.</p>  </note>
     /// - On success, responds with [`CreateOrganizationalUnitOutput`](crate::output::CreateOrganizationalUnitOutput) with field(s):
     ///   - [`organizational_unit(Option<OrganizationalUnit>)`](crate::output::CreateOrganizationalUnitOutput::organizational_unit): <p>A structure that contains details about the newly created OU.</p>
     /// - On failure, responds with [`SdkError<CreateOrganizationalUnitError>`](crate::error::CreateOrganizationalUnitError)
@@ -179,7 +189,7 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreatePolicy::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreatePolicy::set_description): <p>An optional description to assign to the policy.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreatePolicy::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreatePolicy::set_name): <p>The friendly name to assign to the policy.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     ///   - [`r#type(PolicyType)`](crate::client::fluent_builders::CreatePolicy::type) / [`set_type(Option<PolicyType>)`](crate::client::fluent_builders::CreatePolicy::set_type): <p>The type of policy to create. You can specify one of the following values:</p>  <ul>   <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>   <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>   <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>   <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>  </ul>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreatePolicy::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreatePolicy::set_tags): <p>A list of tags that you want to attach to the newly created policy. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>   <p>If any one of the tags is invalid or if you exceed the allowed number of tags for a policy, then the entire request fails and the policy is not created.</p>  </note>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreatePolicy::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreatePolicy::set_tags): <p>A list of tags that you want to attach to the newly created policy. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>   <p>If any one of the tags is invalid or if you exceed the allowed number of tags for a policy, then the entire request fails and the policy is not created.</p>  </note>
     /// - On success, responds with [`CreatePolicyOutput`](crate::output::CreatePolicyOutput) with field(s):
     ///   - [`policy(Option<Policy>)`](crate::output::CreatePolicyOutput::policy): <p>A structure that contains details about the newly created policy.</p>
     /// - On failure, responds with [`SdkError<CreatePolicyError>`](crate::error::CreatePolicyError)
@@ -230,7 +240,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeregisterDelegatedAdministrator::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeregisterDelegatedAdministrator::set_account_id): <p>The account ID number of the member account in the organization that you want to deregister as a delegated administrator.</p>
-    ///   - [`service_principal(impl Into<String>)`](crate::client::fluent_builders::DeregisterDelegatedAdministrator::service_principal) / [`set_service_principal(Option<String>)`](crate::client::fluent_builders::DeregisterDelegatedAdministrator::set_service_principal): <p>The service principal name of an AWS service for which the account is a delegated administrator.</p>  <p>Delegated administrator privileges are revoked for only the specified AWS service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
+    ///   - [`service_principal(impl Into<String>)`](crate::client::fluent_builders::DeregisterDelegatedAdministrator::service_principal) / [`set_service_principal(Option<String>)`](crate::client::fluent_builders::DeregisterDelegatedAdministrator::set_service_principal): <p>The service principal name of an Amazon Web Services service for which the account is a delegated administrator.</p>  <p>Delegated administrator privileges are revoked for only the specified Amazon Web Services service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
     /// - On success, responds with [`DeregisterDelegatedAdministratorOutput`](crate::output::DeregisterDelegatedAdministratorOutput)
 
     /// - On failure, responds with [`SdkError<DeregisterDelegatedAdministratorError>`](crate::error::DeregisterDelegatedAdministratorError)
@@ -242,7 +252,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeAccount`](crate::client::fluent_builders::DescribeAccount) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAccount::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeAccount::set_account_id): <p>The unique identifier (ID) of the AWS account that you want information about. You can get the ID from the <code>ListAccounts</code> or <code>ListAccountsForParent</code> operations.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAccount::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeAccount::set_account_id): <p>The unique identifier (ID) of the Amazon Web Services account that you want information about. You can get the ID from the <code>ListAccounts</code> or <code>ListAccountsForParent</code> operations.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     /// - On success, responds with [`DescribeAccountOutput`](crate::output::DescribeAccountOutput) with field(s):
     ///   - [`account(Option<Account>)`](crate::output::DescribeAccountOutput::account): <p>A structure that contains information about the requested account.</p>
     /// - On failure, responds with [`SdkError<DescribeAccountError>`](crate::error::DescribeAccountError)
@@ -324,7 +334,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DisableAWSServiceAccess`](crate::client::fluent_builders::DisableAWSServiceAccess) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_principal(impl Into<String>)`](crate::client::fluent_builders::DisableAWSServiceAccess::service_principal) / [`set_service_principal(Option<String>)`](crate::client::fluent_builders::DisableAWSServiceAccess::set_service_principal): <p>The service principal name of the AWS service for which you want to disable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+    ///   - [`service_principal(impl Into<String>)`](crate::client::fluent_builders::DisableAWSServiceAccess::service_principal) / [`set_service_principal(Option<String>)`](crate::client::fluent_builders::DisableAWSServiceAccess::set_service_principal): <p>The service principal name of the Amazon Web Services service for which you want to disable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
     /// - On success, responds with [`DisableAwsServiceAccessOutput`](crate::output::DisableAwsServiceAccessOutput)
 
     /// - On failure, responds with [`SdkError<DisableAWSServiceAccessError>`](crate::error::DisableAWSServiceAccessError)
@@ -355,7 +365,7 @@ impl Client {
     /// Constructs a fluent builder for the [`EnableAWSServiceAccess`](crate::client::fluent_builders::EnableAWSServiceAccess) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_principal(impl Into<String>)`](crate::client::fluent_builders::EnableAWSServiceAccess::service_principal) / [`set_service_principal(Option<String>)`](crate::client::fluent_builders::EnableAWSServiceAccess::set_service_principal): <p>The service principal name of the AWS service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+    ///   - [`service_principal(impl Into<String>)`](crate::client::fluent_builders::EnableAWSServiceAccess::service_principal) / [`set_service_principal(Option<String>)`](crate::client::fluent_builders::EnableAWSServiceAccess::set_service_principal): <p>The service principal name of the Amazon Web Services service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
     /// - On success, responds with [`EnableAwsServiceAccessOutput`](crate::output::EnableAwsServiceAccessOutput)
 
     /// - On failure, responds with [`SdkError<EnableAWSServiceAccessError>`](crate::error::EnableAWSServiceAccessError)
@@ -376,9 +386,9 @@ impl Client {
     /// Constructs a fluent builder for the [`InviteAccountToOrganization`](crate::client::fluent_builders::InviteAccountToOrganization) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`target(HandshakeParty)`](crate::client::fluent_builders::InviteAccountToOrganization::target) / [`set_target(Option<HandshakeParty>)`](crate::client::fluent_builders::InviteAccountToOrganization::set_target): <p>The identifier (ID) of the AWS account that you want to invite to join your organization. This is a JSON object that contains the following elements:</p>  <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code> </p>  <p>If you use the AWS CLI, you can submit this as a single string, similar to the following example:</p>  <p> <code>--target Id=123456789012,Type=ACCOUNT</code> </p>  <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>  <p> <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
+    ///   - [`target(HandshakeParty)`](crate::client::fluent_builders::InviteAccountToOrganization::target) / [`set_target(Option<HandshakeParty>)`](crate::client::fluent_builders::InviteAccountToOrganization::set_target): <p>The identifier (ID) of the Amazon Web Services account that you want to invite to join your organization. This is a JSON object that contains the following elements:</p>  <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code> </p>  <p>If you use the CLI, you can submit this as a single string, similar to the following example:</p>  <p> <code>--target Id=123456789012,Type=ACCOUNT</code> </p>  <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>  <p> <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
     ///   - [`notes(impl Into<String>)`](crate::client::fluent_builders::InviteAccountToOrganization::notes) / [`set_notes(Option<String>)`](crate::client::fluent_builders::InviteAccountToOrganization::set_notes): <p>Additional information that you want to include in the generated email to the recipient account owner.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::InviteAccountToOrganization::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::InviteAccountToOrganization::set_tags): <p>A list of tags that you want to attach to the account when it becomes a member of the organization. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <important>   <p>Any tags in the request are checked for compliance with any applicable tag policies when the request is made. The request is rejected if the tags in the request don't match the requirements of the policy at that time. Tag policy compliance is <i> <b>not</b> </i> checked again when the invitation is accepted and the tags are actually attached to the account. That means that if the tag policy changes between the invitation and the acceptance, then that tags could potentially be non-compliant.</p>  </important> <note>   <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and invitations are not sent.</p>  </note>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::InviteAccountToOrganization::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::InviteAccountToOrganization::set_tags): <p>A list of tags that you want to attach to the account when it becomes a member of the organization. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <important>   <p>Any tags in the request are checked for compliance with any applicable tag policies when the request is made. The request is rejected if the tags in the request don't match the requirements of the policy at that time. Tag policy compliance is <i> <b>not</b> </i> checked again when the invitation is accepted and the tags are actually attached to the account. That means that if the tag policy changes between the invitation and the acceptance, then that tags could potentially be non-compliant.</p>  </important> <note>   <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and invitations are not sent.</p>  </note>
     /// - On success, responds with [`InviteAccountToOrganizationOutput`](crate::output::InviteAccountToOrganizationOutput) with field(s):
     ///   - [`handshake(Option<Handshake>)`](crate::output::InviteAccountToOrganizationOutput::handshake): <p>A structure that contains details about the handshake that is created to support this invitation request.</p>
     /// - On failure, responds with [`SdkError<InviteAccountToOrganizationError>`](crate::error::InviteAccountToOrganizationError)
@@ -429,7 +439,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAWSServiceAccessForOrganization::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAWSServiceAccessForOrganization::set_next_token): <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAWSServiceAccessForOrganization::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAWSServiceAccessForOrganization::set_max_results): <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     /// - On success, responds with [`ListAwsServiceAccessForOrganizationOutput`](crate::output::ListAwsServiceAccessForOrganizationOutput) with field(s):
-    ///   - [`enabled_service_principals(Option<Vec<EnabledServicePrincipal>>)`](crate::output::ListAwsServiceAccessForOrganizationOutput::enabled_service_principals): <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with AWS Organizations.</p>
+    ///   - [`enabled_service_principals(Option<Vec<EnabledServicePrincipal>>)`](crate::output::ListAwsServiceAccessForOrganizationOutput::enabled_service_principals): <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with Organizations.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAwsServiceAccessForOrganizationOutput::next_token): <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListAWSServiceAccessForOrganizationError>`](crate::error::ListAWSServiceAccessForOrganizationError)
     pub fn list_aws_service_access_for_organization(
@@ -602,7 +612,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_id): <p>The ID of the resource with the tags to list.</p>  <p>You can specify any of the following taggable resources.</p>  <ul>   <li> <p>AWS account – specify the account ID number.</p> </li>   <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>   <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>   <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>  </ul>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_id): <p>The ID of the resource with the tags to list.</p>  <p>You can specify any of the following taggable resources.</p>  <ul>   <li> <p>Amazon Web Services account – specify the account ID number.</p> </li>   <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>   <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>   <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>  </ul>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_token): <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags that are assigned to the resource.</p>
@@ -641,7 +651,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::RegisterDelegatedAdministrator::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::RegisterDelegatedAdministrator::set_account_id): <p>The account ID number of the member account in the organization to register as a delegated administrator.</p>
-    ///   - [`service_principal(impl Into<String>)`](crate::client::fluent_builders::RegisterDelegatedAdministrator::service_principal) / [`set_service_principal(Option<String>)`](crate::client::fluent_builders::RegisterDelegatedAdministrator::set_service_principal): <p>The service principal of the AWS service for which you want to make the member account a delegated administrator.</p>
+    ///   - [`service_principal(impl Into<String>)`](crate::client::fluent_builders::RegisterDelegatedAdministrator::service_principal) / [`set_service_principal(Option<String>)`](crate::client::fluent_builders::RegisterDelegatedAdministrator::set_service_principal): <p>The service principal of the Amazon Web Services service for which you want to make the member account a delegated administrator.</p>
     /// - On success, responds with [`RegisterDelegatedAdministratorOutput`](crate::output::RegisterDelegatedAdministratorOutput)
 
     /// - On failure, responds with [`SdkError<RegisterDelegatedAdministratorError>`](crate::error::RegisterDelegatedAdministratorError)
@@ -665,8 +675,8 @@ impl Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_id): <p>The ID of the resource to add a tag to.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of tags to add to the specified resource.</p>  <p>You can specify any of the following taggable resources.</p>  <ul>   <li> <p>AWS account – specify the account ID number.</p> </li>   <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>   <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>   <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>  </ul>  <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>.</p> <note>   <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account user, then the entire request fails and the account is not created.</p>  </note>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_id): <p>The ID of the resource to add a tag to.</p>  <p>You can specify any of the following taggable resources.</p>  <ul>   <li> <p>Amazon Web Services account – specify the account ID number.</p> </li>   <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>   <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>   <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>  </ul>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of tags to add to the specified resource.</p>  <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p> <note>   <p>If any one of the tags is invalid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>  </note>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -676,7 +686,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_id): <p>The ID of the resource to remove a tag from.</p>  <p>You can specify any of the following taggable resources.</p>  <ul>   <li> <p>AWS account – specify the account ID number.</p> </li>   <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>   <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>   <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>  </ul>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_id): <p>The ID of the resource to remove a tag from.</p>  <p>You can specify any of the following taggable resources.</p>  <ul>   <li> <p>Amazon Web Services account – specify the account ID number.</p> </li>   <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>   <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>   <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>  </ul>
     ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The list of keys for tags to remove from the specified resource.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
@@ -701,7 +711,7 @@ impl Client {
     ///   - [`policy_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePolicy::policy_id) / [`set_policy_id(Option<String>)`](crate::client::fluent_builders::UpdatePolicy::set_policy_id): <p>The unique identifier (ID) of the policy that you want to update.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdatePolicy::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdatePolicy::set_name): <p>If provided, the new name for the policy.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdatePolicy::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdatePolicy::set_description): <p>If provided, the new description for the policy.</p>
-    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::UpdatePolicy::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::UpdatePolicy::set_content): <p>If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the syntax for the policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::UpdatePolicy::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::UpdatePolicy::set_content): <p>If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the syntax for the policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
     /// - On success, responds with [`UpdatePolicyOutput`](crate::output::UpdatePolicyOutput) with field(s):
     ///   - [`policy(Option<Policy>)`](crate::output::UpdatePolicyOutput::policy): <p>A structure that contains details about the updated policy, showing the requested changes.</p>
     /// - On failure, responds with [`SdkError<UpdatePolicyError>`](crate::error::UpdatePolicyError)
@@ -722,8 +732,8 @@ pub mod fluent_builders {
     /// <p>Sends a response to the originator of a handshake agreeing to the action proposed by the handshake request.</p>
     /// <p>This operation can be called only by the following principals when they also have the relevant IAM permissions:</p>
     /// <ul>
-    /// <li> <p> <b>Invitation to join</b> or <b>Approve all features request</b> handshakes: only a principal from the member account.</p> <p>The user who calls the API for an invitation to join must have the <code>organizations:AcceptHandshake</code> permission. If you enabled all features in the organization, the user must also have the <code>iam:CreateServiceLinkedRole</code> permission so that AWS Organizations can create the required service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles">AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide</i>.</p> </li>
-    /// <li> <p> <b>Enable all features final confirmation</b> handshake: only a principal from the management account.</p> <p>For more information about invitations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting an AWS Account to Join Your Organization</a> in the <i>AWS Organizations User Guide.</i> For more information about requests to enable all features in the organization, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide.</i> </p> </li>
+    /// <li> <p> <b>Invitation to join</b> or <b>Approve all features request</b> handshakes: only a principal from the member account.</p> <p>The user who calls the API for an invitation to join must have the <code>organizations:AcceptHandshake</code> permission. If you enabled all features in the organization, the user must also have the <code>iam:CreateServiceLinkedRole</code> permission so that Organizations can create the required service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles">Organizations and Service-Linked Roles</a> in the <i>Organizations User Guide</i>.</p> </li>
+    /// <li> <p> <b>Enable all features final confirmation</b> handshake: only a principal from the management account.</p> <p>For more information about invitations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting an Amazon Web Services account to join your organization</a> in the <i>Organizations User Guide.</i> For more information about requests to enable all features in the organization, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling all features in your organization</a> in the <i>Organizations User Guide.</i> </p> </li>
     /// </ul>
     /// <p>After you accept a handshake, it continues to appear in the results of relevant APIs for only 30 days. After that, it's deleted.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -780,7 +790,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AttachPolicy`.
     ///
-    /// <p>Attaches a policy to a root, an organizational unit (OU), or an individual account. How the policy affects accounts depends on the type of policy. Refer to the <i>AWS Organizations User Guide</i> for information about each policy type:</p>
+    /// <p>Attaches a policy to a root, an organizational unit (OU), or an individual account. How the policy affects accounts depends on the type of policy. Refer to the <i>Organizations User Guide</i> for information about each policy type:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
@@ -919,23 +929,76 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CloseAccount`.
+    ///
+    /// <p>Closes an Amazon Web Services account that is now a part of an Organizations, either created within the organization, or invited to join the organization.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CloseAccount {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::close_account_input::Builder,
+    }
+    impl CloseAccount {
+        /// Creates a new `CloseAccount`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CloseAccountOutput,
+            aws_smithy_http::result::SdkError<crate::error::CloseAccountError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request. </p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
+            self
+        }
+        /// <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request. </p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateAccount`.
     ///
-    /// <p>Creates an AWS account that is automatically a member of the organization whose credentials made the request. This is an asynchronous request that AWS performs in the background. Because <code>CreateAccount</code> operates asynchronously, it can return a successful completion message even though account initialization might still be in progress. You might need to wait a few minutes before you can successfully access the account. To check the status of the request, do one of the following:</p>
+    /// <p>Creates an Amazon Web Services account that is automatically a member of the organization whose credentials made the request. This is an asynchronous request that Amazon Web Services performs in the background. Because <code>CreateAccount</code> operates asynchronously, it can return a successful completion message even though account initialization might still be in progress. You might need to wait a few minutes before you can successfully access the account. To check the status of the request, do one of the following:</p>
     /// <ul>
     /// <li> <p>Use the <code>Id</code> member of the <code>CreateAccountStatus</code> response element from this operation to provide as a parameter to the <code>DescribeCreateAccountStatus</code> operation.</p> </li>
-    /// <li> <p>Check the AWS CloudTrail log for the <code>CreateAccountResult</code> event. For information on using AWS CloudTrail with AWS Organizations, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html#orgs_cloudtrail-integration">Logging and monitoring in AWS Organizations</a> in the <i>AWS Organizations User Guide.</i> </p> </li>
+    /// <li> <p>Check the CloudTrail log for the <code>CreateAccountResult</code> event. For information on using CloudTrail with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html#orgs_cloudtrail-integration">Logging and monitoring in Organizations</a> in the <i>Organizations User Guide.</i> </p> </li>
     /// </ul>
-    /// <p>The user who calls the API to create an account must have the <code>organizations:CreateAccount</code> permission. If you enabled all features in the organization, AWS Organizations creates the required service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide</i>.</p>
+    /// <p>The user who calls the API to create an account must have the <code>organizations:CreateAccount</code> permission. If you enabled all features in the organization, Organizations creates the required service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">Organizations and Service-Linked Roles</a> in the <i>Organizations User Guide</i>.</p>
     /// <p>If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.</p>
-    /// <p>AWS Organizations preconfigures the new member account with a role (named <code>OrganizationAccountAccessRole</code> by default) that grants users in the management account administrator permissions in the new member account. Principals in the management account can assume the role. AWS Organizations clones the company name and address information for the new account from the organization's management account.</p>
+    /// <p>Organizations preconfigures the new member account with a role (named <code>OrganizationAccountAccessRole</code> by default) that grants users in the management account administrator permissions in the new member account. Principals in the management account can assume the role. Organizations clones the company name and address information for the new account from the organization's management account.</p>
     /// <p>This operation can be called only from the organization's management account.</p>
-    /// <p>For more information about creating accounts, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating an AWS Account in Your Organization</a> in the <i>AWS Organizations User Guide.</i> </p> <important>
+    /// <p>For more information about creating accounts, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating an Amazon Web Services account in Your Organization</a> in the <i>Organizations User Guide.</i> </p> <important>
     /// <ul>
-    /// <li> <p>When you create an account in an organization using the AWS Organizations console, API, or CLI commands, the information required for the account to operate as a standalone account, such as a payment method and signing the end user license agreement (EULA) is <i>not</i> automatically collected. If you must remove an account from your organization later, you can do so only after you provide the missing information. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"> To leave an organization as a member account</a> in the <i>AWS Organizations User Guide</i>.</p> </li>
-    /// <li> <p>If you get an exception that indicates that you exceeded your account limits for the organization, contact <a href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.</p> </li>
-    /// <li> <p>If you get an exception that indicates that the operation failed because your organization is still initializing, wait one hour and then try again. If the error persists, contact <a href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.</p> </li>
-    /// <li> <p>Using <code>CreateAccount</code> to create multiple temporary accounts isn't recommended. You can only close an account from the Billing and Cost Management Console, and you must be signed in as the root user. For information on the requirements and process for closing an account, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing an AWS Account</a> in the <i>AWS Organizations User Guide</i>.</p> </li>
+    /// <li> <p>When you create an account in an organization using the Organizations console, API, or CLI commands, the information required for the account to operate as a standalone account, such as a payment method and signing the end user license agreement (EULA) is <i>not</i> automatically collected. If you must remove an account from your organization later, you can do so only after you provide the missing information. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"> To leave an organization as a member account</a> in the <i>Organizations User Guide</i>.</p> </li>
+    /// <li> <p>If you get an exception that indicates that you exceeded your account limits for the organization, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p> </li>
+    /// <li> <p>If you get an exception that indicates that the operation failed because your organization is still initializing, wait one hour and then try again. If the error persists, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p> </li>
+    /// <li> <p>Using <code>CreateAccount</code> to create multiple temporary accounts isn't recommended. You can only close an account from the Billing and Cost Management console, and you must be signed in as the root user. For information on the requirements and process for closing an account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing an Amazon Web Services account</a> in the <i>Organizations User Guide</i>.</p> </li>
     /// </ul>
     /// </important> <note>
     /// <p>When you create a member account with this operation, you can choose whether to create the account with the <b>IAM User and Role Access to Billing Information</b> switch enabled. If you enable it, IAM users and roles that have appropriate permissions can view billing information for the account. If you disable it, only the account root user can access billing information. For information about how to disable this switch for an account, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting Access to Your Billing Information and Tools</a>.</p>
@@ -979,12 +1042,36 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The email address of the owner to assign to the new member account. This email address must not already be associated with another AWS account. You must use a valid email address to complete account creation. You can't access the root user of the account or remove an account that was created with an invalid email address.</p>
+        /// <p>The email address of the owner to assign to the new member account. This email address must not already be associated with another Amazon Web Services account. You must use a valid email address to complete account creation.</p>
+        /// <p>The rules for a valid email address:</p>
+        /// <ul>
+        /// <li> <p>The address must be a minimum of 6 and a maximum of 64 characters long.</p> </li>
+        /// <li> <p>All characters must be 7-bit ASCII characters.</p> </li>
+        /// <li> <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p> </li>
+        /// <li> <p>The local name can't contain any of the following characters:</p> <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p> </li>
+        /// <li> <p>The local name can't begin with a dot (.)</p> </li>
+        /// <li> <p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p> </li>
+        /// <li> <p>The domain name can't begin or end with a hyphen (-) or dot (.)</p> </li>
+        /// <li> <p>The domain name must contain at least one dot</p> </li>
+        /// </ul>
+        /// <p>You can't access the root user of the account or remove an account that was created with an invalid email address.</p>
         pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email(input.into());
             self
         }
-        /// <p>The email address of the owner to assign to the new member account. This email address must not already be associated with another AWS account. You must use a valid email address to complete account creation. You can't access the root user of the account or remove an account that was created with an invalid email address.</p>
+        /// <p>The email address of the owner to assign to the new member account. This email address must not already be associated with another Amazon Web Services account. You must use a valid email address to complete account creation.</p>
+        /// <p>The rules for a valid email address:</p>
+        /// <ul>
+        /// <li> <p>The address must be a minimum of 6 and a maximum of 64 characters long.</p> </li>
+        /// <li> <p>All characters must be 7-bit ASCII characters.</p> </li>
+        /// <li> <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p> </li>
+        /// <li> <p>The local name can't contain any of the following characters:</p> <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p> </li>
+        /// <li> <p>The local name can't begin with a dot (.)</p> </li>
+        /// <li> <p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p> </li>
+        /// <li> <p>The domain name can't begin or end with a hyphen (-) or dot (.)</p> </li>
+        /// <li> <p>The domain name must contain at least one dot</p> </li>
+        /// </ul>
+        /// <p>You can't access the root user of the account or remove an account that was created with an invalid email address.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_email(input);
             self
@@ -1000,12 +1087,12 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Optional)</p>
-        /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
+        /// <p>The name of an IAM role that Organizations automatically preconfigures in the new member account. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
         /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
         /// <p>For more information about how to use this role to access the member account, see the following links:</p>
         /// <ul>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User Guide</i> </p> </li>
-        /// <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>Organizations User Guide</i> </p> </li>
+        /// <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the <i>IAM User Guide</i> </p> </li>
         /// </ul>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1013,19 +1100,19 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Optional)</p>
-        /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
+        /// <p>The name of an IAM role that Organizations automatically preconfigures in the new member account. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
         /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
         /// <p>For more information about how to use this role to access the member account, see the following links:</p>
         /// <ul>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User Guide</i> </p> </li>
-        /// <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>Organizations User Guide</i> </p> </li>
+        /// <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the <i>IAM User Guide</i> </p> </li>
         /// </ul>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_name(input);
             self
         }
-        /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
+        /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
         /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
         pub fn iam_user_access_to_billing(
             mut self,
@@ -1034,7 +1121,7 @@ pub mod fluent_builders {
             self.inner = self.inner.iam_user_access_to_billing(input);
             self
         }
-        /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
+        /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
         /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
         pub fn set_iam_user_access_to_billing(
             mut self,
@@ -1047,15 +1134,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
-        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and the account is not created.</p>
+        /// <p>A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>
+        /// <p>If any one of the tags is invalid or if you exceed the maximum allowed number of tags for an account, then the entire request fails and the account is not created.</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
-        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and the account is not created.</p>
+        /// <p>A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>
+        /// <p>If any one of the tags is invalid or if you exceed the maximum allowed number of tags for an account, then the entire request fails and the account is not created.</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -1069,33 +1156,33 @@ pub mod fluent_builders {
     ///
     /// <p>This action is available if all of the following are true:</p>
     /// <ul>
-    /// <li> <p>You're authorized to create accounts in the AWS GovCloud (US) Region. For more information on the AWS GovCloud (US) Region, see the <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/welcome.html"> <i>AWS GovCloud User Guide</i>.</a> </p> </li>
-    /// <li> <p>You already have an account in the AWS GovCloud (US) Region that is paired with a management account of an organization in the commercial Region.</p> </li>
+    /// <li> <p>You're authorized to create accounts in the Amazon Web Services GovCloud (US) Region. For more information on the Amazon Web Services GovCloud (US) Region, see the <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/welcome.html"> <i>Amazon Web Services GovCloud User Guide</i>.</a> </p> </li>
+    /// <li> <p>You already have an account in the Amazon Web Services GovCloud (US) Region that is paired with a management account of an organization in the commercial Region.</p> </li>
     /// <li> <p>You call this action from the management account of your organization in the commercial Region.</p> </li>
     /// <li> <p>You have the <code>organizations:CreateGovCloudAccount</code> permission. </p> </li>
     /// </ul>
-    /// <p>AWS Organizations automatically creates the required service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide.</i> </p>
-    /// <p>AWS automatically enables AWS CloudTrail for AWS GovCloud (US) accounts, but you should also do the following:</p>
+    /// <p>Organizations automatically creates the required service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">Organizations and Service-Linked Roles</a> in the <i>Organizations User Guide.</i> </p>
+    /// <p>Amazon Web Services automatically enables CloudTrail for Amazon Web Services GovCloud (US) accounts, but you should also do the following:</p>
     /// <ul>
-    /// <li> <p>Verify that AWS CloudTrail is enabled to store logs.</p> </li>
-    /// <li> <p>Create an S3 bucket for AWS CloudTrail log storage.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/verifying-cloudtrail.html">Verifying AWS CloudTrail Is Enabled</a> in the <i>AWS GovCloud User Guide</i>. </p> </li>
+    /// <li> <p>Verify that CloudTrail is enabled to store logs.</p> </li>
+    /// <li> <p>Create an Amazon S3 bucket for CloudTrail log storage.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/verifying-cloudtrail.html">Verifying CloudTrail Is Enabled</a> in the <i>Amazon Web Services GovCloud User Guide</i>. </p> </li>
     /// </ul>
     /// <p>If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission. The tags are attached to the commercial account associated with the GovCloud account, rather than the GovCloud account itself. To add tags to the GovCloud account, call the <code>TagResource</code> operation in the GovCloud Region after the new GovCloud account exists.</p>
-    /// <p>You call this action from the management account of your organization in the commercial Region to create a standalone AWS account in the AWS GovCloud (US) Region. After the account is created, the management account of an organization in the AWS GovCloud (US) Region can invite it to that organization. For more information on inviting standalone accounts in the AWS GovCloud (US) to join an organization, see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS Organizations</a> in the <i>AWS GovCloud User Guide.</i> </p>
-    /// <p>Calling <code>CreateGovCloudAccount</code> is an asynchronous request that AWS performs in the background. Because <code>CreateGovCloudAccount</code> operates asynchronously, it can return a successful completion message even though account initialization might still be in progress. You might need to wait a few minutes before you can successfully access the account. To check the status of the request, do one of the following:</p>
+    /// <p>You call this action from the management account of your organization in the commercial Region to create a standalone Amazon Web Services account in the Amazon Web Services GovCloud (US) Region. After the account is created, the management account of an organization in the Amazon Web Services GovCloud (US) Region can invite it to that organization. For more information on inviting standalone accounts in the Amazon Web Services GovCloud (US) to join an organization, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">Organizations</a> in the <i>Amazon Web Services GovCloud User Guide.</i> </p>
+    /// <p>Calling <code>CreateGovCloudAccount</code> is an asynchronous request that Amazon Web Services performs in the background. Because <code>CreateGovCloudAccount</code> operates asynchronously, it can return a successful completion message even though account initialization might still be in progress. You might need to wait a few minutes before you can successfully access the account. To check the status of the request, do one of the following:</p>
     /// <ul>
     /// <li> <p>Use the <code>OperationId</code> response element from this operation to provide as a parameter to the <code>DescribeCreateAccountStatus</code> operation.</p> </li>
-    /// <li> <p>Check the AWS CloudTrail log for the <code>CreateAccountResult</code> event. For information on using AWS CloudTrail with Organizations, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>AWS Organizations User Guide.</i> </p> </li>
+    /// <li> <p>Check the CloudTrail log for the <code>CreateAccountResult</code> event. For information on using CloudTrail with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>Organizations User Guide.</i> </p> </li>
     /// </ul>
     /// <p></p>
-    /// <p>When you call the <code>CreateGovCloudAccount</code> action, you create two accounts: a standalone account in the AWS GovCloud (US) Region and an associated account in the commercial Region for billing and support purposes. The account in the commercial Region is automatically a member of the organization whose credentials made the request. Both accounts are associated with the same email address.</p>
-    /// <p>A role is created in the new account in the commercial Region that allows the management account in the organization in the commercial Region to assume it. An AWS GovCloud (US) account is then created and associated with the commercial account that you just created. A role is also created in the new AWS GovCloud (US) account that can be assumed by the AWS GovCloud (US) account that is associated with the management account of the commercial organization. For more information and to view a diagram that explains how account access works, see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS Organizations</a> in the <i>AWS GovCloud User Guide.</i> </p>
-    /// <p>For more information about creating accounts, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating an AWS Account in Your Organization</a> in the <i>AWS Organizations User Guide.</i> </p> <important>
+    /// <p>When you call the <code>CreateGovCloudAccount</code> action, you create two accounts: a standalone account in the Amazon Web Services GovCloud (US) Region and an associated account in the commercial Region for billing and support purposes. The account in the commercial Region is automatically a member of the organization whose credentials made the request. Both accounts are associated with the same email address.</p>
+    /// <p>A role is created in the new account in the commercial Region that allows the management account in the organization in the commercial Region to assume it. An Amazon Web Services GovCloud (US) account is then created and associated with the commercial account that you just created. A role is also created in the new Amazon Web Services GovCloud (US) account that can be assumed by the Amazon Web Services GovCloud (US) account that is associated with the management account of the commercial organization. For more information and to view a diagram that explains how account access works, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">Organizations</a> in the <i>Amazon Web Services GovCloud User Guide.</i> </p>
+    /// <p>For more information about creating accounts, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating an Amazon Web Services account in Your Organization</a> in the <i>Organizations User Guide.</i> </p> <important>
     /// <ul>
-    /// <li> <p>When you create an account in an organization using the AWS Organizations console, API, or CLI commands, the information required for the account to operate as a standalone account is <i>not</i> automatically collected. This includes a payment method and signing the end user license agreement (EULA). If you must remove an account from your organization later, you can do so only after you provide the missing information. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"> To leave an organization as a member account</a> in the <i>AWS Organizations User Guide.</i> </p> </li>
-    /// <li> <p>If you get an exception that indicates that you exceeded your account limits for the organization, contact <a href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.</p> </li>
-    /// <li> <p>If you get an exception that indicates that the operation failed because your organization is still initializing, wait one hour and then try again. If the error persists, contact <a href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.</p> </li>
-    /// <li> <p>Using <code>CreateGovCloudAccount</code> to create multiple temporary accounts isn't recommended. You can only close an account from the AWS Billing and Cost Management console, and you must be signed in as the root user. For information on the requirements and process for closing an account, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing an AWS Account</a> in the <i>AWS Organizations User Guide</i>.</p> </li>
+    /// <li> <p>When you create an account in an organization using the Organizations console, API, or CLI commands, the information required for the account to operate as a standalone account is <i>not</i> automatically collected. This includes a payment method and signing the end user license agreement (EULA). If you must remove an account from your organization later, you can do so only after you provide the missing information. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"> To leave an organization as a member account</a> in the <i>Organizations User Guide.</i> </p> </li>
+    /// <li> <p>If you get an exception that indicates that you exceeded your account limits for the organization, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p> </li>
+    /// <li> <p>If you get an exception that indicates that the operation failed because your organization is still initializing, wait one hour and then try again. If the error persists, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p> </li>
+    /// <li> <p>Using <code>CreateGovCloudAccount</code> to create multiple temporary accounts isn't recommended. You can only close an account from the Amazon Web Services Billing and Cost Management console, and you must be signed in as the root user. For information on the requirements and process for closing an account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing an Amazon Web Services account</a> in the <i>Organizations User Guide</i>.</p> </li>
     /// </ul>
     /// </important> <note>
     /// <p>When you create a member account with this operation, you can choose whether to create the account with the <b>IAM User and Role Access to Billing Information</b> switch enabled. If you enable it, IAM users and roles that have appropriate permissions can view billing information for the account. If you disable it, only the account root user can access billing information. For information about how to disable this switch for an account, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting Access to Your Billing Information and Tools</a>.</p>
@@ -1139,12 +1226,36 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The email address of the owner to assign to the new member account in the commercial Region. This email address must not already be associated with another AWS account. You must use a valid email address to complete account creation. You can't access the root user of the account or remove an account that was created with an invalid email address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request for the email address for the AWS GovCloud (US) account originates from the commercial Region, not from the AWS GovCloud (US) Region.</p>
+        /// <p>Specifies the email address of the owner to assign to the new member account in the commercial Region. This email address must not already be associated with another Amazon Web Services account. You must use a valid email address to complete account creation.</p>
+        /// <p>The rules for a valid email address:</p>
+        /// <ul>
+        /// <li> <p>The address must be a minimum of 6 and a maximum of 64 characters long.</p> </li>
+        /// <li> <p>All characters must be 7-bit ASCII characters.</p> </li>
+        /// <li> <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p> </li>
+        /// <li> <p>The local name can't contain any of the following characters:</p> <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p> </li>
+        /// <li> <p>The local name can't begin with a dot (.)</p> </li>
+        /// <li> <p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p> </li>
+        /// <li> <p>The domain name can't begin or end with a hyphen (-) or dot (.)</p> </li>
+        /// <li> <p>The domain name must contain at least one dot</p> </li>
+        /// </ul>
+        /// <p>You can't access the root user of the account or remove an account that was created with an invalid email address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request for the email address for the Amazon Web Services GovCloud (US) account originates from the commercial Region, not from the Amazon Web Services GovCloud (US) Region.</p>
         pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email(input.into());
             self
         }
-        /// <p>The email address of the owner to assign to the new member account in the commercial Region. This email address must not already be associated with another AWS account. You must use a valid email address to complete account creation. You can't access the root user of the account or remove an account that was created with an invalid email address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request for the email address for the AWS GovCloud (US) account originates from the commercial Region, not from the AWS GovCloud (US) Region.</p>
+        /// <p>Specifies the email address of the owner to assign to the new member account in the commercial Region. This email address must not already be associated with another Amazon Web Services account. You must use a valid email address to complete account creation.</p>
+        /// <p>The rules for a valid email address:</p>
+        /// <ul>
+        /// <li> <p>The address must be a minimum of 6 and a maximum of 64 characters long.</p> </li>
+        /// <li> <p>All characters must be 7-bit ASCII characters.</p> </li>
+        /// <li> <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p> </li>
+        /// <li> <p>The local name can't contain any of the following characters:</p> <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p> </li>
+        /// <li> <p>The local name can't begin with a dot (.)</p> </li>
+        /// <li> <p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p> </li>
+        /// <li> <p>The domain name can't begin or end with a hyphen (-) or dot (.)</p> </li>
+        /// <li> <p>The domain name must contain at least one dot</p> </li>
+        /// </ul>
+        /// <p>You can't access the root user of the account or remove an account that was created with an invalid email address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request for the email address for the Amazon Web Services GovCloud (US) account originates from the commercial Region, not from the Amazon Web Services GovCloud (US) Region.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_email(input);
             self
@@ -1160,24 +1271,24 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Optional)</p>
-        /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member accounts in both the AWS GovCloud (US) Region and in the commercial Region. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
+        /// <p>The name of an IAM role that Organizations automatically preconfigures in the new member accounts in both the Amazon Web Services GovCloud (US) Region and in the commercial Region. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
         /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
-        /// <p>For more information about how to use this role to access the member account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User Guide</i> and steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i> </p>
+        /// <p>For more information about how to use this role to access the member account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>Organizations User Guide</i> and steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the <i>IAM User Guide.</i> </p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>(Optional)</p>
-        /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member accounts in both the AWS GovCloud (US) Region and in the commercial Region. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
+        /// <p>The name of an IAM role that Organizations automatically preconfigures in the new member accounts in both the Amazon Web Services GovCloud (US) Region and in the commercial Region. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
         /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
-        /// <p>For more information about how to use this role to access the member account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User Guide</i> and steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i> </p>
+        /// <p>For more information about how to use this role to access the member account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>Organizations User Guide</i> and steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the <i>IAM User Guide.</i> </p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_name(input);
             self
         }
-        /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User Guide.</i> </p>
+        /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide.</i> </p>
         /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
         pub fn iam_user_access_to_billing(
             mut self,
@@ -1186,7 +1297,7 @@ pub mod fluent_builders {
             self.inner = self.inner.iam_user_access_to_billing(input);
             self
         }
-        /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User Guide.</i> </p>
+        /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide.</i> </p>
         /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
         pub fn set_iam_user_access_to_billing(
             mut self,
@@ -1200,16 +1311,16 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags that you want to attach to the newly created account. These tags are attached to the commercial account associated with the GovCloud account, and not to the GovCloud account itself. To add tags to the actual GovCloud account, call the <code>TagResource</code> operation in the GovCloud region after the new GovCloud account exists.</p>
-        /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
-        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and the account is not created.</p>
+        /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>
+        /// <p>If any one of the tags is invalid or if you exceed the maximum allowed number of tags for an account, then the entire request fails and the account is not created.</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags that you want to attach to the newly created account. These tags are attached to the commercial account associated with the GovCloud account, and not to the GovCloud account itself. To add tags to the actual GovCloud account, call the <code>TagResource</code> operation in the GovCloud region after the new GovCloud account exists.</p>
-        /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
-        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and the account is not created.</p>
+        /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>
+        /// <p>If any one of the tags is invalid or if you exceed the maximum allowed number of tags for an account, then the entire request fails and the account is not created.</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -1221,7 +1332,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateOrganization`.
     ///
-    /// <p>Creates an AWS organization. The account whose user is calling the <code>CreateOrganization</code> operation automatically becomes the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">management account</a> of the new organization.</p>
+    /// <p>Creates an Amazon Web Services organization. The account whose user is calling the <code>CreateOrganization</code> operation automatically becomes the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">management account</a> of the new organization.</p>
     /// <p>This operation must be called using credentials from the account that is to become the new organization's management account. The principal must also have the relevant IAM permissions.</p>
     /// <p>By default (or if you set the <code>FeatureSet</code> parameter to <code>ALL</code>), the new organization is created with all features enabled and service control policies automatically enabled in the root. If you instead choose to create the organization supporting only the consolidated billing features by setting the <code>FeatureSet</code> parameter to <code>CONSOLIDATED_BILLING"</code>, no policy types are enabled by default, and you can't use organization policies</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1265,8 +1376,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the feature set supported by the new organization. Each feature set supports different levels of functionality.</p>
         /// <ul>
-        /// <li> <p> <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the management account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated billing</a> in the <i>AWS Organizations User Guide.</i> </p> <p> The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.</p> </li>
-        /// <li> <p> <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the management account can also apply any policy type to any member account in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All features</a> in the <i>AWS Organizations User Guide.</i> </p> </li>
+        /// <li> <p> <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the management account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated billing</a> in the <i>Organizations User Guide.</i> </p> <p> The consolidated billing feature subset isn't available for organizations in the Amazon Web Services GovCloud (US) Region.</p> </li>
+        /// <li> <p> <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the management account can also apply any policy type to any member account in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All features</a> in the <i>Organizations User Guide.</i> </p> </li>
         /// </ul>
         pub fn feature_set(mut self, input: crate::model::OrganizationFeatureSet) -> Self {
             self.inner = self.inner.feature_set(input);
@@ -1274,8 +1385,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the feature set supported by the new organization. Each feature set supports different levels of functionality.</p>
         /// <ul>
-        /// <li> <p> <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the management account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated billing</a> in the <i>AWS Organizations User Guide.</i> </p> <p> The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.</p> </li>
-        /// <li> <p> <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the management account can also apply any policy type to any member account in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All features</a> in the <i>AWS Organizations User Guide.</i> </p> </li>
+        /// <li> <p> <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the management account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated billing</a> in the <i>Organizations User Guide.</i> </p> <p> The consolidated billing feature subset isn't available for organizations in the Amazon Web Services GovCloud (US) Region.</p> </li>
+        /// <li> <p> <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the management account can also apply any policy type to any member account in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All features</a> in the <i>Organizations User Guide.</i> </p> </li>
         /// </ul>
         pub fn set_feature_set(
             mut self,
@@ -1288,7 +1399,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateOrganizationalUnit`.
     ///
     /// <p>Creates an organizational unit (OU) within a root or parent OU. An OU is a container for accounts that enables you to organize your accounts to apply policies according to your business requirements. The number of levels deep that you can nest OUs is dependent upon the policy types enabled for that root. For service control policies, the limit is five.</p>
-    /// <p>For more information about OUs, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing Organizational Units</a> in the <i>AWS Organizations User Guide.</i> </p>
+    /// <p>For more information about OUs, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing Organizational Units</a> in the <i>Organizations User Guide.</i> </p>
     /// <p>If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.</p>
     /// <p>This operation can be called only from the organization's management account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1364,14 +1475,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags that you want to attach to the newly created OU. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+        /// <p>A list of tags that you want to attach to the newly created OU. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>
         /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an OU, then the entire request fails and the OU is not created.</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tags that you want to attach to the newly created OU. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+        /// <p>A list of tags that you want to attach to the newly created OU. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>
         /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an OU, then the entire request fails and the OU is not created.</p>
         /// </note>
         pub fn set_tags(
@@ -1384,7 +1495,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePolicy`.
     ///
-    /// <p>Creates a policy of a specified type that you can attach to a root, an organizational unit (OU), or an individual AWS account.</p>
+    /// <p>Creates a policy of a specified type that you can attach to a root, an organizational unit (OU), or an individual Amazon Web Services account.</p>
     /// <p>For more information about policies and their use, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing Organization Policies</a>.</p>
     /// <p>If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.</p>
     /// <p>This operation can be called only from the organization's management account.</p>
@@ -1485,14 +1596,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags that you want to attach to the newly created policy. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+        /// <p>A list of tags that you want to attach to the newly created policy. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>
         /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for a policy, then the entire request fails and the policy is not created.</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tags that you want to attach to the newly created policy. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+        /// <p>A list of tags that you want to attach to the newly created policy. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>
         /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for a policy, then the entire request fails and the policy is not created.</p>
         /// </note>
         pub fn set_tags(
@@ -1720,10 +1831,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterDelegatedAdministrator`.
     ///
-    /// <p>Removes the specified member AWS account as a delegated administrator for the specified AWS service.</p> <important>
-    /// <p>Deregistering a delegated administrator can have unintended impacts on the functionality of the enabled AWS service. See the documentation for the enabled service before you deregister a delegated administrator so that you understand any potential impacts.</p>
+    /// <p>Removes the specified member Amazon Web Services account as a delegated administrator for the specified Amazon Web Services service.</p> <important>
+    /// <p>Deregistering a delegated administrator can have unintended impacts on the functionality of the enabled Amazon Web Services service. See the documentation for the enabled service before you deregister a delegated administrator so that you understand any potential impacts.</p>
     /// </important>
-    /// <p>You can run this action only for AWS services that support this feature. For a current list of services that support it, see the column <i>Supports Delegated Administrator</i> in the table at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services_list.html">AWS Services that you can use with AWS Organizations</a> in the <i>AWS Organizations User Guide.</i> </p>
+    /// <p>You can run this action only for Amazon Web Services services that support this feature. For a current list of services that support it, see the column <i>Supports Delegated Administrator</i> in the table at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services_list.html">Amazon Web Services Services that you can use with Organizations</a> in the <i>Organizations User Guide.</i> </p>
     /// <p>This operation can be called only from the organization's management account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterDelegatedAdministrator {
@@ -1774,14 +1885,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_account_id(input);
             self
         }
-        /// <p>The service principal name of an AWS service for which the account is a delegated administrator.</p>
-        /// <p>Delegated administrator privileges are revoked for only the specified AWS service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
+        /// <p>The service principal name of an Amazon Web Services service for which the account is a delegated administrator.</p>
+        /// <p>Delegated administrator privileges are revoked for only the specified Amazon Web Services service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
         pub fn service_principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_principal(input.into());
             self
         }
-        /// <p>The service principal name of an AWS service for which the account is a delegated administrator.</p>
-        /// <p>Delegated administrator privileges are revoked for only the specified AWS service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
+        /// <p>The service principal name of an Amazon Web Services service for which the account is a delegated administrator.</p>
+        /// <p>Delegated administrator privileges are revoked for only the specified Amazon Web Services service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
         pub fn set_service_principal(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1792,8 +1903,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAccount`.
     ///
-    /// <p>Retrieves AWS Organizations-related information about the specified account.</p>
-    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p>
+    /// <p>Retrieves Organizations-related information about the specified account.</p>
+    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccount {
         handle: std::sync::Arc<super::Handle>,
@@ -1833,13 +1944,13 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier (ID) of the AWS account that you want information about. You can get the ID from the <code>ListAccounts</code> or <code>ListAccountsForParent</code> operations.</p>
+        /// <p>The unique identifier (ID) of the Amazon Web Services account that you want information about. You can get the ID from the <code>ListAccounts</code> or <code>ListAccountsForParent</code> operations.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the AWS account that you want information about. You can get the ID from the <code>ListAccounts</code> or <code>ListAccountsForParent</code> operations.</p>
+        /// <p>The unique identifier (ID) of the Amazon Web Services account that you want information about. You can get the ID from the <code>ListAccounts</code> or <code>ListAccountsForParent</code> operations.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
@@ -1849,7 +1960,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCreateAccountStatus`.
     ///
     /// <p>Retrieves the current status of an asynchronous request to create an account.</p>
-    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p>
+    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCreateAccountStatus {
         handle: std::sync::Arc<super::Handle>,
@@ -1909,8 +2020,8 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the contents of the effective policy for specified policy type and account. The effective policy is the aggregation of any policies of the specified type that the account inherits, plus any policy of that type that is directly attached to the account.</p>
     /// <p>This operation applies only to policy types <i>other</i> than service control policies (SCPs).</p>
-    /// <p>For more information about policy inheritance, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies-inheritance.html">How Policy Inheritance Works</a> in the <i>AWS Organizations User Guide</i>.</p>
-    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p>
+    /// <p>For more information about policy inheritance, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies-inheritance.html">How Policy Inheritance Works</a> in the <i>Organizations User Guide</i>.</p>
+    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEffectivePolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -2090,7 +2201,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeOrganizationalUnit`.
     ///
     /// <p>Retrieves information about an organizational unit (OU).</p>
-    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p>
+    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationalUnit {
         handle: std::sync::Arc<super::Handle>,
@@ -2149,7 +2260,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePolicy`.
     ///
     /// <p>Retrieves information about a policy.</p>
-    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p>
+    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -2205,7 +2316,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetachPolicy`.
     ///
     /// <p>Detaches a policy from a target root, organizational unit (OU), or account.</p> <important>
-    /// <p>If the policy being detached is a service control policy (SCP), the changes to permissions for AWS Identity and Access Management (IAM) users and roles in affected accounts are immediate.</p>
+    /// <p>If the policy being detached is a service control policy (SCP), the changes to permissions for Identity and Access Management (IAM) users and roles in affected accounts are immediate.</p>
     /// </important>
     /// <p>Every root, OU, and account must have at least one SCP attached. If you want to replace the default <code>FullAWSAccess</code> policy with an SCP that limits the permissions that can be delegated, you must attach the replacement SCP before you can remove the default SCP. This is the authorization strategy of an "<a href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_allowlist">allow list</a>". If you instead attach a second SCP and leave the <code>FullAWSAccess</code> SCP still attached, and specify <code>"Effect": "Deny"</code> in the second SCP to override the <code>"Effect": "Allow"</code> in the <code>FullAWSAccess</code> policy (or any other attached SCP), you're using the authorization strategy of a "<a href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_denylist">deny list</a>".</p>
     /// <p>This operation can be called only from the organization's management account.</p>
@@ -2285,19 +2396,19 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableAWSServiceAccess`.
     ///
-    /// <p>Disables the integration of an AWS service (the service that is specified by <code>ServicePrincipal</code>) with AWS Organizations. When you disable integration, the specified service no longer can create a <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked role</a> in <i>new</i> accounts in your organization. This means the service can't perform operations on your behalf on any new accounts in your organization. The service can still perform operations in older accounts until the service completes its clean-up from AWS Organizations.</p> <important>
-    /// <p>We <b> <i>strongly recommend</i> </b> that you don't use this command to disable integration between AWS Organizations and the specified AWS service. Instead, use the console or commands that are provided by the specified service. This lets the trusted service perform any required initialization when enabling trusted access, such as creating any required resources and any required clean up of resources when disabling trusted access. </p>
-    /// <p>For information about how to disable trusted service access to your organization using the trusted service, see the <b>Learn more</b> link under the <b>Supports Trusted Access</b> column at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services_list.html">AWS services that you can use with AWS Organizations</a>. on this page.</p>
+    /// <p>Disables the integration of an Amazon Web Services service (the service that is specified by <code>ServicePrincipal</code>) with Organizations. When you disable integration, the specified service no longer can create a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked role</a> in <i>new</i> accounts in your organization. This means the service can't perform operations on your behalf on any new accounts in your organization. The service can still perform operations in older accounts until the service completes its clean-up from Organizations.</p> <important>
+    /// <p>We <b> <i>strongly recommend</i> </b> that you don't use this command to disable integration between Organizations and the specified Amazon Web Services service. Instead, use the console or commands that are provided by the specified service. This lets the trusted service perform any required initialization when enabling trusted access, such as creating any required resources and any required clean up of resources when disabling trusted access. </p>
+    /// <p>For information about how to disable trusted service access to your organization using the trusted service, see the <b>Learn more</b> link under the <b>Supports Trusted Access</b> column at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services_list.html">Amazon Web Services services that you can use with Organizations</a>. on this page.</p>
     /// <p>If you disable access by using this command, it causes the following actions to occur:</p>
     /// <ul>
-    /// <li> <p>The service can no longer create a service-linked role in the accounts in your organization. This means that the service can't perform operations on your behalf on any new accounts in your organization. The service can still perform operations in older accounts until the service completes its clean-up from AWS Organizations. </p> </li>
+    /// <li> <p>The service can no longer create a service-linked role in the accounts in your organization. This means that the service can't perform operations on your behalf on any new accounts in your organization. The service can still perform operations in older accounts until the service completes its clean-up from Organizations. </p> </li>
     /// <li> <p>The service can no longer perform tasks in the member accounts in the organization, unless those operations are explicitly permitted by the IAM policies that are attached to your roles. This includes any data aggregation from the member accounts to the management account, or to a delegated administrator account, where relevant.</p> </li>
     /// <li> <p>Some services detect this and clean up any remaining data or resources related to the integration, while other services stop accessing the organization but leave any historical data and configuration in place to support a possible re-enabling of the integration.</p> </li>
     /// </ul>
-    /// <p>Using the other service's console or commands to disable the integration ensures that the other service is aware that it can clean up any resources that are required only for the integration. How the service cleans up its resources in the organization's accounts depends on that service. For more information, see the documentation for the other AWS service. </p>
+    /// <p>Using the other service's console or commands to disable the integration ensures that the other service is aware that it can clean up any resources that are required only for the integration. How the service cleans up its resources in the organization's accounts depends on that service. For more information, see the documentation for the other Amazon Web Services service. </p>
     /// </important>
     /// <p>After you perform the <code>DisableAWSServiceAccess</code> operation, the specified service can no longer perform operations in your organization's accounts </p>
-    /// <p>For more information about integrating other services with AWS Organizations, including the list of services that work with Organizations, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating AWS Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide.</i> </p>
+    /// <p>For more information about integrating other services with Organizations, including the list of services that work with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating Organizations with Other Amazon Web Services Services</a> in the <i>Organizations User Guide.</i> </p>
     /// <p>This operation can be called only from the organization's management account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableAWSServiceAccess {
@@ -2338,12 +2449,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The service principal name of the AWS service for which you want to disable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+        /// <p>The service principal name of the Amazon Web Services service for which you want to disable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
         pub fn service_principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_principal(input.into());
             self
         }
-        /// <p>The service principal name of the AWS service for which you want to disable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+        /// <p>The service principal name of the Amazon Web Services service for which you want to disable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
         pub fn set_service_principal(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2355,7 +2466,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisablePolicyType`.
     ///
     /// <p>Disables an organizational policy type in a root. A policy of a certain type can be attached to entities in a root only if that type is enabled in the root. After you perform this operation, you no longer can attach policies of the specified type to that root or to any organizational unit (OU) or account in that root. You can undo this by using the <code>EnablePolicyType</code> operation.</p>
-    /// <p>This is an asynchronous request that AWS performs in the background. If you disable a policy type for a root, it still appears enabled for the organization if <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features</a> are enabled for the organization. AWS recommends that you first use <code>ListRoots</code> to see the status of policy types for a specified root, and then use this operation.</p>
+    /// <p>This is an asynchronous request that Amazon Web Services performs in the background. If you disable a policy type for a root, it still appears enabled for the organization if <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features</a> are enabled for the organization. Amazon Web Services recommends that you first use <code>ListRoots</code> to see the status of policy types for a specified root, and then use this operation.</p>
     /// <p>This operation can be called only from the organization's management account.</p>
     /// <p> To view the status of available policy types in the organization, use <code>DescribeOrganization</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2437,7 +2548,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableAllFeatures`.
     ///
-    /// <p>Enables all features in an organization. This enables the use of organization policies that can restrict the services and actions that can be called in each account. Until you enable all features, you have access only to consolidated billing, and you can't use any of the advanced account administration features that AWS Organizations supports. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide.</i> </p> <important>
+    /// <p>Enables all features in an organization. This enables the use of organization policies that can restrict the services and actions that can be called in each account. Until you enable all features, you have access only to consolidated billing, and you can't use any of the advanced account administration features that Organizations supports. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>Organizations User Guide.</i> </p> <important>
     /// <p>This operation is required only for organizations that were created explicitly with only the consolidated billing features enabled. Calling this operation sends a handshake to every invited account in the organization. The feature set change can be finalized and the additional features enabled only after all administrators in the invited accounts approve the change by accepting the handshake.</p>
     /// </important>
     /// <p>After you enable all features, you can separately enable or disable individual policy types in a root using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. To see the status of policy types in a root, use <code>ListRoots</code>.</p>
@@ -2486,11 +2597,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableAWSServiceAccess`.
     ///
-    /// <p>Enables the integration of an AWS service (the service that is specified by <code>ServicePrincipal</code>) with AWS Organizations. When you enable integration, you allow the specified service to create a <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked role</a> in all the accounts in your organization. This allows the service to perform operations on your behalf in your organization and its accounts.</p> <important>
-    /// <p>We recommend that you enable integration between AWS Organizations and the specified AWS service by using the console or commands that are provided by the specified service. Doing so ensures that the service is aware that it can create the resources that are required for the integration. How the service creates those resources in the organization's accounts depends on that service. For more information, see the documentation for the other AWS service.</p>
+    /// <p>Enables the integration of an Amazon Web Services service (the service that is specified by <code>ServicePrincipal</code>) with Organizations. When you enable integration, you allow the specified service to create a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked role</a> in all the accounts in your organization. This allows the service to perform operations on your behalf in your organization and its accounts.</p> <important>
+    /// <p>We recommend that you enable integration between Organizations and the specified Amazon Web Services service by using the console or commands that are provided by the specified service. Doing so ensures that the service is aware that it can create the resources that are required for the integration. How the service creates those resources in the organization's accounts depends on that service. For more information, see the documentation for the other Amazon Web Services service.</p>
     /// </important>
-    /// <p>For more information about enabling services to integrate with AWS Organizations, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating AWS Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide.</i> </p>
-    /// <p>This operation can be called only from the organization's management account and only if the organization has <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled all features</a>.</p>
+    /// <p>For more information about enabling services to integrate with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating Organizations with Other Amazon Web Services Services</a> in the <i>Organizations User Guide.</i> </p>
+    /// <p>This operation can be called only from the organization's management account and only if the organization has <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled all features</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableAWSServiceAccess {
         handle: std::sync::Arc<super::Handle>,
@@ -2530,12 +2641,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The service principal name of the AWS service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+        /// <p>The service principal name of the Amazon Web Services service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
         pub fn service_principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_principal(input.into());
             self
         }
-        /// <p>The service principal name of the AWS service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+        /// <p>The service principal name of the Amazon Web Services service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
         pub fn set_service_principal(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2547,7 +2658,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EnablePolicyType`.
     ///
     /// <p>Enables a policy type in a root. After you enable a policy type in a root, you can attach policies of that type to the root, any organizational unit (OU), or account in that root. You can undo this by using the <code>DisablePolicyType</code> operation.</p>
-    /// <p>This is an asynchronous request that AWS performs in the background. AWS recommends that you first use <code>ListRoots</code> to see the status of policy types for a specified root, and then use this operation.</p>
+    /// <p>This is an asynchronous request that Amazon Web Services performs in the background. Amazon Web Services recommends that you first use <code>ListRoots</code> to see the status of policy types for a specified root, and then use this operation.</p>
     /// <p>This operation can be called only from the organization's management account.</p>
     /// <p>You can enable a policy type in a root only if that policy type is available in the organization. To view the status of available policy types in the organization, use <code>DescribeOrganization</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2629,10 +2740,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `InviteAccountToOrganization`.
     ///
-    /// <p>Sends an invitation to another account to join your organization as a member account. AWS Organizations sends email on your behalf to the email address that is associated with the other account's owner. The invitation is implemented as a <code>Handshake</code> whose details are in the response.</p> <important>
+    /// <p>Sends an invitation to another account to join your organization as a member account. Organizations sends email on your behalf to the email address that is associated with the other account's owner. The invitation is implemented as a <code>Handshake</code> whose details are in the response.</p> <important>
     /// <ul>
-    /// <li> <p>You can invite AWS accounts only from the same seller as the management account. For example, if your organization's management account was created by Amazon Internet Services Pvt. Ltd (AISPL), an AWS seller in India, you can invite only other AISPL accounts to your organization. You can't combine accounts from AISPL and AWS or from any other AWS seller. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated Billing in India</a>.</p> </li>
-    /// <li> <p>If you receive an exception that indicates that you exceeded your account limits for the organization or that the operation failed because your organization is still initializing, wait one hour and then try again. If the error persists after an hour, contact <a href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.</p> </li>
+    /// <li> <p>You can invite Amazon Web Services accounts only from the same seller as the management account. For example, if your organization's management account was created by Amazon Internet Services Pvt. Ltd (AISPL), an Amazon Web Services seller in India, you can invite only other AISPL accounts to your organization. You can't combine accounts from AISPL and Amazon Web Services or from any other Amazon Web Services seller. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated Billing in India</a>.</p> </li>
+    /// <li> <p>If you receive an exception that indicates that you exceeded your account limits for the organization or that the operation failed because your organization is still initializing, wait one hour and then try again. If the error persists after an hour, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p> </li>
     /// </ul>
     /// </important>
     /// <p>If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.</p>
@@ -2676,21 +2787,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier (ID) of the AWS account that you want to invite to join your organization. This is a JSON object that contains the following elements:</p>
+        /// <p>The identifier (ID) of the Amazon Web Services account that you want to invite to join your organization. This is a JSON object that contains the following elements:</p>
         /// <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code> </p>
-        /// <p>If you use the AWS CLI, you can submit this as a single string, similar to the following example:</p>
+        /// <p>If you use the CLI, you can submit this as a single string, similar to the following example:</p>
         /// <p> <code>--target Id=123456789012,Type=ACCOUNT</code> </p>
-        /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>
+        /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>
         /// <p> <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
         pub fn target(mut self, input: crate::model::HandshakeParty) -> Self {
             self.inner = self.inner.target(input);
             self
         }
-        /// <p>The identifier (ID) of the AWS account that you want to invite to join your organization. This is a JSON object that contains the following elements:</p>
+        /// <p>The identifier (ID) of the Amazon Web Services account that you want to invite to join your organization. This is a JSON object that contains the following elements:</p>
         /// <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code> </p>
-        /// <p>If you use the AWS CLI, you can submit this as a single string, similar to the following example:</p>
+        /// <p>If you use the CLI, you can submit this as a single string, similar to the following example:</p>
         /// <p> <code>--target Id=123456789012,Type=ACCOUNT</code> </p>
-        /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>
+        /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>
         /// <p> <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
         pub fn set_target(
             mut self,
@@ -2713,7 +2824,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags that you want to attach to the account when it becomes a member of the organization. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <important>
+        /// <p>A list of tags that you want to attach to the account when it becomes a member of the organization. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <important>
         /// <p>Any tags in the request are checked for compliance with any applicable tag policies when the request is made. The request is rejected if the tags in the request don't match the requirements of the policy at that time. Tag policy compliance is <i> <b>not</b> </i> checked again when the invitation is accepted and the tags are actually attached to the account. That means that if the tag policy changes between the invitation and the acceptance, then that tags could potentially be non-compliant.</p>
         /// </important> <note>
         /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and invitations are not sent.</p>
@@ -2722,7 +2833,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tags that you want to attach to the account when it becomes a member of the organization. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <important>
+        /// <p>A list of tags that you want to attach to the account when it becomes a member of the organization. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <important>
         /// <p>Any tags in the request are checked for compliance with any applicable tag policies when the request is made. The request is rejected if the tags in the request don't match the requirements of the policy at that time. Tag policy compliance is <i> <b>not</b> </i> checked again when the invitation is accepted and the tags are actually attached to the account. That means that if the tag policy changes between the invitation and the acceptance, then that tags could potentially be non-compliant.</p>
         /// </important> <note>
         /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and invitations are not sent.</p>
@@ -2741,15 +2852,15 @@ pub mod fluent_builders {
     /// <p>This operation can be called only from a member account in the organization.</p> <important>
     /// <ul>
     /// <li> <p>The management account in an organization with all features enabled can set service control policies (SCPs) that can restrict what administrators of member accounts can do. This includes preventing them from successfully calling <code>LeaveOrganization</code> and leaving the organization.</p> </li>
-    /// <li> <p>You can leave an organization as a member account only if the account is configured with the information required to operate as a standalone account. When you create an account in an organization using the AWS Organizations console, API, or CLI commands, the information required of standalone accounts is <i>not</i> automatically collected. For each account that you want to make standalone, you must perform the following steps. If any of the steps are already completed for this account, that step doesn't appear.</p>
+    /// <li> <p>You can leave an organization as a member account only if the account is configured with the information required to operate as a standalone account. When you create an account in an organization using the Organizations console, API, or CLI commands, the information required of standalone accounts is <i>not</i> automatically collected. For each account that you want to make standalone, you must perform the following steps. If any of the steps are already completed for this account, that step doesn't appear.</p>
     /// <ul>
     /// <li> <p>Choose a support plan</p> </li>
     /// <li> <p>Provide and verify the required contact information</p> </li>
     /// <li> <p>Provide a current payment method</p> </li>
-    /// </ul> <p>AWS uses the payment method to charge for any billable (not free tier) AWS activity that occurs while the account isn't attached to an organization. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"> To leave an organization when all required account information has not yet been provided</a> in the <i>AWS Organizations User Guide.</i> </p> </li>
-    /// <li> <p>The account that you want to leave must not be a delegated administrator account for any AWS service enabled for your organization. If the account is a delegated administrator, you must first change the delegated administrator account to another account that is remaining in the organization.</p> </li>
-    /// <li> <p>You can leave an organization only after you enable IAM user access to billing in your account. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User Guide.</i> </p> </li>
-    /// <li> <p>After the account leaves the organization, all tags that were attached to the account object in the organization are deleted. AWS accounts outside of an organization do not support tags.</p> </li>
+    /// </ul> <p>Amazon Web Services uses the payment method to charge for any billable (not free tier) Amazon Web Services activity that occurs while the account isn't attached to an organization. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"> To leave an organization when all required account information has not yet been provided</a> in the <i>Organizations User Guide.</i> </p> </li>
+    /// <li> <p>The account that you want to leave must not be a delegated administrator account for any Amazon Web Services service enabled for your organization. If the account is a delegated administrator, you must first change the delegated administrator account to another account that is remaining in the organization.</p> </li>
+    /// <li> <p>You can leave an organization only after you enable IAM user access to billing in your account. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide.</i> </p> </li>
+    /// <li> <p>After the account leaves the organization, all tags that were attached to the account object in the organization are deleted. Amazon Web Services accounts outside of an organization do not support tags.</p> </li>
     /// <li> <p>A newly created account has a waiting period before it can be removed from its organization. If you get an error that indicates that a wait period is required, then try again in a few days.</p> </li>
     /// </ul>
     /// </important>
@@ -2798,7 +2909,7 @@ pub mod fluent_builders {
     /// <p>Lists all the accounts in the organization. To request only the accounts in a specified root or organizational unit (OU), use the <code>ListAccountsForParent</code> operation instead.</p> <note>
     /// <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value when calling a <code>List*</code> operation. These operations can occasionally return an empty set of results even when there are more results available. The <code>NextToken</code> response parameter value is <code>null</code> <i>only</i> when there are no more results to display.</p>
     /// </note>
-    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p>
+    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccounts {
         handle: std::sync::Arc<super::Handle>,
@@ -2870,7 +2981,7 @@ pub mod fluent_builders {
     /// <p>Lists the accounts in an organization that are contained by the specified target root or organizational unit (OU). If you specify the root, you get a list of all the accounts that aren't in any OU. If you specify an OU, you get a list of all the accounts in only that OU and not in any child OUs. To get a list of all accounts in the organization, use the <code>ListAccounts</code> operation.</p> <note>
     /// <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value when calling a <code>List*</code> operation. These operations can occasionally return an empty set of results even when there are more results available. The <code>NextToken</code> response parameter value is <code>null</code> <i>only</i> when there are no more results to display.</p>
     /// </note>
-    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p>
+    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountsForParent {
         handle: std::sync::Arc<super::Handle>,
@@ -2949,9 +3060,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAWSServiceAccessForOrganization`.
     ///
-    /// <p>Returns a list of the AWS services that you enabled to integrate with your organization. After a service on this list creates the resources that it requires for the integration, it can perform operations on your organization and its accounts.</p>
-    /// <p>For more information about integrating other services with AWS Organizations, including the list of services that currently work with Organizations, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating AWS Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide.</i> </p>
-    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p>
+    /// <p>Returns a list of the Amazon Web Services services that you enabled to integrate with your organization. After a service on this list creates the resources that it requires for the integration, it can perform operations on your organization and its accounts.</p>
+    /// <p>For more information about integrating other services with Organizations, including the list of services that currently work with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating Organizations with Other Amazon Web Services Services</a> in the <i>Organizations User Guide.</i> </p>
+    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAWSServiceAccessForOrganization {
         handle: std::sync::Arc<super::Handle>,
@@ -3030,7 +3141,7 @@ pub mod fluent_builders {
     /// <p>Lists all of the organizational units (OUs) or accounts that are contained in the specified parent OU or root. This operation, along with <code>ListParents</code> enables you to traverse the tree structure that makes up this root.</p> <note>
     /// <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value when calling a <code>List*</code> operation. These operations can occasionally return an empty set of results even when there are more results available. The <code>NextToken</code> response parameter value is <code>null</code> <i>only</i> when there are no more results to display.</p>
     /// </note>
-    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p>
+    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChildren {
         handle: std::sync::Arc<super::Handle>,
@@ -3135,7 +3246,7 @@ pub mod fluent_builders {
     /// <p>Lists the account creation requests that match the specified status that is currently being tracked for the organization.</p> <note>
     /// <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value when calling a <code>List*</code> operation. These operations can occasionally return an empty set of results even when there are more results available. The <code>NextToken</code> response parameter value is <code>null</code> <i>only</i> when there are no more results to display.</p>
     /// </note>
-    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p>
+    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCreateAccountStatus {
         handle: std::sync::Arc<super::Handle>,
@@ -3221,8 +3332,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDelegatedAdministrators`.
     ///
-    /// <p>Lists the AWS accounts that are designated as delegated administrators in this organization.</p>
-    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p>
+    /// <p>Lists the Amazon Web Services accounts that are designated as delegated administrators in this organization.</p>
+    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDelegatedAdministrators {
         handle: std::sync::Arc<super::Handle>,
@@ -3306,8 +3417,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDelegatedServicesForAccount`.
     ///
-    /// <p>List the AWS services for which the specified account is a delegated administrator.</p>
-    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p>
+    /// <p>List the Amazon Web Services services for which the specified account is a delegated administrator.</p>
+    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDelegatedServicesForAccount {
         handle: std::sync::Arc<super::Handle>,
@@ -3387,7 +3498,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListHandshakesForAccount`.
     ///
     /// <p>Lists the current handshakes that are associated with the account of the requesting user.</p>
-    /// <p>Handshakes that are <code>ACCEPTED</code>, <code>DECLINED</code>, or <code>CANCELED</code> appear in the results of this API for only 30 days after changing to that state. After that, they're deleted and no longer accessible.</p> <note>
+    /// <p>Handshakes that are <code>ACCEPTED</code>, <code>DECLINED</code>, <code>CANCELED</code>, or <code>EXPIRED</code> appear in the results of this API for only 30 days after changing to that state. After that, they're deleted and no longer accessible.</p> <note>
     /// <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value when calling a <code>List*</code> operation. These operations can occasionally return an empty set of results even when there are more results available. The <code>NextToken</code> response parameter value is <code>null</code> <i>only</i> when there are no more results to display.</p>
     /// </note>
     /// <p>This operation can be called from any account in the organization.</p>
@@ -3473,10 +3584,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListHandshakesForOrganization`.
     ///
     /// <p>Lists the handshakes that are associated with the organization that the requesting user is part of. The <code>ListHandshakesForOrganization</code> operation returns a list of handshake structures. Each structure contains details and status about a handshake.</p>
-    /// <p>Handshakes that are <code>ACCEPTED</code>, <code>DECLINED</code>, or <code>CANCELED</code> appear in the results of this API for only 30 days after changing to that state. After that, they're deleted and no longer accessible.</p> <note>
+    /// <p>Handshakes that are <code>ACCEPTED</code>, <code>DECLINED</code>, <code>CANCELED</code>, or <code>EXPIRED</code> appear in the results of this API for only 30 days after changing to that state. After that, they're deleted and no longer accessible.</p> <note>
     /// <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value when calling a <code>List*</code> operation. These operations can occasionally return an empty set of results even when there are more results available. The <code>NextToken</code> response parameter value is <code>null</code> <i>only</i> when there are no more results to display.</p>
     /// </note>
-    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p>
+    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHandshakesForOrganization {
         handle: std::sync::Arc<super::Handle>,
@@ -3561,7 +3672,7 @@ pub mod fluent_builders {
     /// <p>Lists the organizational units (OUs) in a parent organizational unit or root.</p> <note>
     /// <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value when calling a <code>List*</code> operation. These operations can occasionally return an empty set of results even when there are more results available. The <code>NextToken</code> response parameter value is <code>null</code> <i>only</i> when there are no more results to display.</p>
     /// </note>
-    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p>
+    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOrganizationalUnitsForParent {
         handle: std::sync::Arc<super::Handle>,
@@ -3656,7 +3767,7 @@ pub mod fluent_builders {
     /// <p>Lists the root or organizational units (OUs) that serve as the immediate parent of the specified child OU or account. This operation, along with <code>ListChildren</code> enables you to traverse the tree structure that makes up this root.</p> <note>
     /// <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value when calling a <code>List*</code> operation. These operations can occasionally return an empty set of results even when there are more results available. The <code>NextToken</code> response parameter value is <code>null</code> <i>only</i> when there are no more results to display.</p>
     /// </note>
-    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p> <note>
+    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p> <note>
     /// <p>In the current release, a child can have only a single parent.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -3750,7 +3861,7 @@ pub mod fluent_builders {
     /// <p>Retrieves the list of all policies in an organization of a specified type.</p> <note>
     /// <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value when calling a <code>List*</code> operation. These operations can occasionally return an empty set of results even when there are more results available. The <code>NextToken</code> response parameter value is <code>null</code> <i>only</i> when there are no more results to display.</p>
     /// </note>
-    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p>
+    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPolicies {
         handle: std::sync::Arc<super::Handle>,
@@ -3844,7 +3955,7 @@ pub mod fluent_builders {
     /// <p>Lists the policies that are directly attached to the specified target root, organizational unit (OU), or account. You must specify the policy type that you want included in the returned list.</p> <note>
     /// <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value when calling a <code>List*</code> operation. These operations can occasionally return an empty set of results even when there are more results available. The <code>NextToken</code> response parameter value is <code>null</code> <i>only</i> when there are no more results to display.</p>
     /// </note>
-    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p>
+    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPoliciesForTarget {
         handle: std::sync::Arc<super::Handle>,
@@ -3960,7 +4071,7 @@ pub mod fluent_builders {
     /// <p>Lists the roots that are defined in the current organization.</p> <note>
     /// <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value when calling a <code>List*</code> operation. These operations can occasionally return an empty set of results even when there are more results available. The <code>NextToken</code> response parameter value is <code>null</code> <i>only</i> when there are no more results to display.</p>
     /// </note>
-    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p> <note>
+    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p> <note>
     /// <p>Policy types can be enabled and disabled in roots. This is distinct from whether they're available in the organization. When you enable all features, you make policy types available for use in that organization. Individual policy types can then be enabled and disabled in a root. To see the availability of a policy type in an organization, use <code>DescribeOrganization</code>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -4032,14 +4143,14 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists tags that are attached to the specified resource.</p>
-    /// <p>You can attach tags to the following resources in AWS Organizations.</p>
+    /// <p>You can attach tags to the following resources in Organizations.</p>
     /// <ul>
-    /// <li> <p>AWS account</p> </li>
+    /// <li> <p>Amazon Web Services account</p> </li>
     /// <li> <p>Organization root</p> </li>
     /// <li> <p>Organizational unit (OU)</p> </li>
     /// <li> <p>Policy (any type)</p> </li>
     /// </ul>
-    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p>
+    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource {
         handle: std::sync::Arc<super::Handle>,
@@ -4088,7 +4199,7 @@ pub mod fluent_builders {
         /// <p>The ID of the resource with the tags to list.</p>
         /// <p>You can specify any of the following taggable resources.</p>
         /// <ul>
-        /// <li> <p>AWS account – specify the account ID number.</p> </li>
+        /// <li> <p>Amazon Web Services account – specify the account ID number.</p> </li>
         /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
         /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
         /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
@@ -4100,7 +4211,7 @@ pub mod fluent_builders {
         /// <p>The ID of the resource with the tags to list.</p>
         /// <p>You can specify any of the following taggable resources.</p>
         /// <ul>
-        /// <li> <p>AWS account – specify the account ID number.</p> </li>
+        /// <li> <p>Amazon Web Services account – specify the account ID number.</p> </li>
         /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
         /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
         /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
@@ -4125,7 +4236,7 @@ pub mod fluent_builders {
     /// <p>Lists all the roots, organizational units (OUs), and accounts that the specified policy is attached to.</p> <note>
     /// <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value when calling a <code>List*</code> operation. These operations can occasionally return an empty set of results even when there are more results available. The <code>NextToken</code> response parameter value is <code>null</code> <i>only</i> when there are no more results to display.</p>
     /// </note>
-    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an AWS service.</p>
+    /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTargetsForPolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -4308,8 +4419,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterDelegatedAdministrator`.
     ///
-    /// <p>Enables the specified member account to administer the Organizations features of the specified AWS service. It grants read-only access to AWS Organizations service data. The account still requires IAM permissions to access and administer the AWS service.</p>
-    /// <p>You can run this action only for AWS services that support this feature. For a current list of services that support it, see the column <i>Supports Delegated Administrator</i> in the table at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services_list.html">AWS Services that you can use with AWS Organizations</a> in the <i>AWS Organizations User Guide.</i> </p>
+    /// <p>Enables the specified member account to administer the Organizations features of the specified Amazon Web Services service. It grants read-only access to Organizations service data. The account still requires IAM permissions to access and administer the Amazon Web Services service.</p>
+    /// <p>You can run this action only for Amazon Web Services services that support this feature. For a current list of services that support it, see the column <i>Supports Delegated Administrator</i> in the table at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services_list.html">Amazon Web Services Services that you can use with Organizations</a> in the <i>Organizations User Guide.</i> </p>
     /// <p>This operation can be called only from the organization's management account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterDelegatedAdministrator {
@@ -4360,12 +4471,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_account_id(input);
             self
         }
-        /// <p>The service principal of the AWS service for which you want to make the member account a delegated administrator.</p>
+        /// <p>The service principal of the Amazon Web Services service for which you want to make the member account a delegated administrator.</p>
         pub fn service_principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_principal(input.into());
             self
         }
-        /// <p>The service principal of the AWS service for which you want to make the member account a delegated administrator.</p>
+        /// <p>The service principal of the Amazon Web Services service for which you want to make the member account a delegated administrator.</p>
         pub fn set_service_principal(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4380,9 +4491,9 @@ pub mod fluent_builders {
     /// <p>The removed account becomes a standalone account that isn't a member of any organization. It's no longer subject to any policies and is responsible for its own bill payments. The organization's management account is no longer charged for any expenses accrued by the member account after it's removed from the organization.</p>
     /// <p>This operation can be called only from the organization's management account. Member accounts can remove themselves with <code>LeaveOrganization</code> instead.</p> <important>
     /// <ul>
-    /// <li> <p>You can remove an account from your organization only if the account is configured with the information required to operate as a standalone account. When you create an account in an organization using the AWS Organizations console, API, or CLI commands, the information required of standalone accounts is <i>not</i> automatically collected. For an account that you want to make standalone, you must choose a support plan, provide and verify the required contact information, and provide a current payment method. AWS uses the payment method to charge for any billable (not free tier) AWS activity that occurs while the account isn't attached to an organization. To remove an account that doesn't yet have this information, you must sign in as the member account and follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"> To leave an organization when all required account information has not yet been provided</a> in the <i>AWS Organizations User Guide.</i> </p> </li>
-    /// <li> <p>The account that you want to leave must not be a delegated administrator account for any AWS service enabled for your organization. If the account is a delegated administrator, you must first change the delegated administrator account to another account that is remaining in the organization.</p> </li>
-    /// <li> <p>After the account leaves the organization, all tags that were attached to the account object in the organization are deleted. AWS accounts outside of an organization do not support tags.</p> </li>
+    /// <li> <p>You can remove an account from your organization only if the account is configured with the information required to operate as a standalone account. When you create an account in an organization using the Organizations console, API, or CLI commands, the information required of standalone accounts is <i>not</i> automatically collected. For an account that you want to make standalone, you must choose a support plan, provide and verify the required contact information, and provide a current payment method. Amazon Web Services uses the payment method to charge for any billable (not free tier) Amazon Web Services activity that occurs while the account isn't attached to an organization. To remove an account that doesn't yet have this information, you must sign in as the member account and follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"> To leave an organization when all required account information has not yet been provided</a> in the <i>Organizations User Guide.</i> </p> </li>
+    /// <li> <p>The account that you want to leave must not be a delegated administrator account for any Amazon Web Services service enabled for your organization. If the account is a delegated administrator, you must first change the delegated administrator account to another account that is remaining in the organization.</p> </li>
+    /// <li> <p>After the account leaves the organization, all tags that were attached to the account object in the organization are deleted. Amazon Web Services accounts outside of an organization do not support tags.</p> </li>
     /// </ul>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -4440,9 +4551,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds one or more tags to the specified resource.</p>
-    /// <p>Currently, you can attach tags to the following resources in AWS Organizations.</p>
+    /// <p>Currently, you can attach tags to the following resources in Organizations.</p>
     /// <ul>
-    /// <li> <p>AWS account</p> </li>
+    /// <li> <p>Amazon Web Services account</p> </li>
     /// <li> <p>Organization root</p> </li>
     /// <li> <p>Organizational unit (OU)</p> </li>
     /// <li> <p>Policy (any type)</p> </li>
@@ -4488,11 +4599,25 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to add a tag to.</p>
+        /// <p>You can specify any of the following taggable resources.</p>
+        /// <ul>
+        /// <li> <p>Amazon Web Services account – specify the account ID number.</p> </li>
+        /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
+        /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
+        /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
+        /// </ul>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the resource to add a tag to.</p>
+        /// <p>You can specify any of the following taggable resources.</p>
+        /// <ul>
+        /// <li> <p>Amazon Web Services account – specify the account ID number.</p> </li>
+        /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
+        /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
+        /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
+        /// </ul>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
             self
@@ -4502,30 +4627,16 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to add to the specified resource.</p>
-        /// <p>You can specify any of the following taggable resources.</p>
-        /// <ul>
-        /// <li> <p>AWS account – specify the account ID number.</p> </li>
-        /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
-        /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
-        /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
-        /// </ul>
-        /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>.</p> <note>
-        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account user, then the entire request fails and the account is not created.</p>
+        /// <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p> <note>
+        /// <p>If any one of the tags is invalid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to add to the specified resource.</p>
-        /// <p>You can specify any of the following taggable resources.</p>
-        /// <ul>
-        /// <li> <p>AWS account – specify the account ID number.</p> </li>
-        /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
-        /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
-        /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
-        /// </ul>
-        /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>.</p> <note>
-        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account user, then the entire request fails and the account is not created.</p>
+        /// <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p> <note>
+        /// <p>If any one of the tags is invalid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -4538,9 +4649,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes any tags with the specified keys from the specified resource.</p>
-    /// <p>You can attach tags to the following resources in AWS Organizations.</p>
+    /// <p>You can attach tags to the following resources in Organizations.</p>
     /// <ul>
-    /// <li> <p>AWS account</p> </li>
+    /// <li> <p>Amazon Web Services account</p> </li>
     /// <li> <p>Organization root</p> </li>
     /// <li> <p>Organizational unit (OU)</p> </li>
     /// <li> <p>Policy (any type)</p> </li>
@@ -4588,7 +4699,7 @@ pub mod fluent_builders {
         /// <p>The ID of the resource to remove a tag from.</p>
         /// <p>You can specify any of the following taggable resources.</p>
         /// <ul>
-        /// <li> <p>AWS account – specify the account ID number.</p> </li>
+        /// <li> <p>Amazon Web Services account – specify the account ID number.</p> </li>
         /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
         /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
         /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
@@ -4600,7 +4711,7 @@ pub mod fluent_builders {
         /// <p>The ID of the resource to remove a tag from.</p>
         /// <p>You can specify any of the following taggable resources.</p>
         /// <ul>
-        /// <li> <p>AWS account – specify the account ID number.</p> </li>
+        /// <li> <p>Amazon Web Services account – specify the account ID number.</p> </li>
         /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
         /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
         /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
@@ -4775,12 +4886,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the syntax for the policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
+        /// <p>If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the syntax for the policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.content(input.into());
             self
         }
-        /// <p>If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the syntax for the policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
+        /// <p>If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the syntax for the policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content(input);
             self

@@ -120,6 +120,118 @@ pub fn parse_associate_admin_account_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_associate_third_party_firewall_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AssociateThirdPartyFirewallOutput,
+    crate::error::AssociateThirdPartyFirewallError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::AssociateThirdPartyFirewallError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::AssociateThirdPartyFirewallError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalErrorException" => crate::error::AssociateThirdPartyFirewallError {
+            meta: generic,
+            kind: crate::error::AssociateThirdPartyFirewallErrorKind::InternalErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateThirdPartyFirewallError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInputException" => crate::error::AssociateThirdPartyFirewallError {
+            meta: generic,
+            kind: crate::error::AssociateThirdPartyFirewallErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateThirdPartyFirewallError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidOperationException" => crate::error::AssociateThirdPartyFirewallError {
+            meta: generic,
+            kind: crate::error::AssociateThirdPartyFirewallErrorKind::InvalidOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateThirdPartyFirewallError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::AssociateThirdPartyFirewallError {
+            meta: generic,
+            kind: crate::error::AssociateThirdPartyFirewallErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateThirdPartyFirewallError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::AssociateThirdPartyFirewallError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_associate_third_party_firewall_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AssociateThirdPartyFirewallOutput,
+    crate::error::AssociateThirdPartyFirewallError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::associate_third_party_firewall_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_associate_third_party_firewall(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::AssociateThirdPartyFirewallError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_apps_list_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteAppsListOutput, crate::error::DeleteAppsListError> {
@@ -575,6 +687,122 @@ pub fn parse_disassociate_admin_account_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disassociate_admin_account_output::Builder::default();
         let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_disassociate_third_party_firewall_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DisassociateThirdPartyFirewallOutput,
+    crate::error::DisassociateThirdPartyFirewallError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DisassociateThirdPartyFirewallError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DisassociateThirdPartyFirewallError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalErrorException" => crate::error::DisassociateThirdPartyFirewallError {
+            meta: generic,
+            kind: crate::error::DisassociateThirdPartyFirewallErrorKind::InternalErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateThirdPartyFirewallError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInputException" => crate::error::DisassociateThirdPartyFirewallError {
+            meta: generic,
+            kind: crate::error::DisassociateThirdPartyFirewallErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateThirdPartyFirewallError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidOperationException" => crate::error::DisassociateThirdPartyFirewallError {
+            meta: generic,
+            kind: crate::error::DisassociateThirdPartyFirewallErrorKind::InvalidOperationException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_operation_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateThirdPartyFirewallError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ResourceNotFoundException" => crate::error::DisassociateThirdPartyFirewallError {
+            meta: generic,
+            kind: crate::error::DisassociateThirdPartyFirewallErrorKind::ResourceNotFoundException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateThirdPartyFirewallError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::DisassociateThirdPartyFirewallError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_disassociate_third_party_firewall_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DisassociateThirdPartyFirewallOutput,
+    crate::error::DisassociateThirdPartyFirewallError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::disassociate_third_party_firewall_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_disassociate_third_party_firewall(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DisassociateThirdPartyFirewallError::unhandled)?;
         output.build()
     })
 }
@@ -1233,6 +1461,103 @@ pub fn parse_get_protocols_list_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_third_party_firewall_association_status_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetThirdPartyFirewallAssociationStatusOutput,
+    crate::error::GetThirdPartyFirewallAssociationStatusError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetThirdPartyFirewallAssociationStatusError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::GetThirdPartyFirewallAssociationStatusError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalErrorException" => crate::error::GetThirdPartyFirewallAssociationStatusError { meta: generic, kind: crate::error::GetThirdPartyFirewallAssociationStatusErrorKind::InternalErrorException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetThirdPartyFirewallAssociationStatusError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidInputException" => crate::error::GetThirdPartyFirewallAssociationStatusError { meta: generic, kind: crate::error::GetThirdPartyFirewallAssociationStatusErrorKind::InvalidInputException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetThirdPartyFirewallAssociationStatusError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidOperationException" => crate::error::GetThirdPartyFirewallAssociationStatusError { meta: generic, kind: crate::error::GetThirdPartyFirewallAssociationStatusErrorKind::InvalidOperationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetThirdPartyFirewallAssociationStatusError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotFoundException" => crate::error::GetThirdPartyFirewallAssociationStatusError { meta: generic, kind: crate::error::GetThirdPartyFirewallAssociationStatusErrorKind::ResourceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetThirdPartyFirewallAssociationStatusError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::GetThirdPartyFirewallAssociationStatusError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_third_party_firewall_association_status_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetThirdPartyFirewallAssociationStatusOutput,
+    crate::error::GetThirdPartyFirewallAssociationStatusError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::get_third_party_firewall_association_status_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_third_party_firewall_association_status(response.body().as_ref(), output).map_err(crate::error::GetThirdPartyFirewallAssociationStatusError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_violation_details_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -1870,6 +2195,103 @@ pub fn parse_list_tags_for_resource_response(
             output,
         )
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_third_party_firewall_firewall_policies_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListThirdPartyFirewallFirewallPoliciesOutput,
+    crate::error::ListThirdPartyFirewallFirewallPoliciesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListThirdPartyFirewallFirewallPoliciesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::ListThirdPartyFirewallFirewallPoliciesError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalErrorException" => crate::error::ListThirdPartyFirewallFirewallPoliciesError { meta: generic, kind: crate::error::ListThirdPartyFirewallFirewallPoliciesErrorKind::InternalErrorException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListThirdPartyFirewallFirewallPoliciesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidInputException" => crate::error::ListThirdPartyFirewallFirewallPoliciesError { meta: generic, kind: crate::error::ListThirdPartyFirewallFirewallPoliciesErrorKind::InvalidInputException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListThirdPartyFirewallFirewallPoliciesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidOperationException" => crate::error::ListThirdPartyFirewallFirewallPoliciesError { meta: generic, kind: crate::error::ListThirdPartyFirewallFirewallPoliciesErrorKind::InvalidOperationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListThirdPartyFirewallFirewallPoliciesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotFoundException" => crate::error::ListThirdPartyFirewallFirewallPoliciesError { meta: generic, kind: crate::error::ListThirdPartyFirewallFirewallPoliciesErrorKind::ResourceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListThirdPartyFirewallFirewallPoliciesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::ListThirdPartyFirewallFirewallPoliciesError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_third_party_firewall_firewall_policies_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListThirdPartyFirewallFirewallPoliciesOutput,
+    crate::error::ListThirdPartyFirewallFirewallPoliciesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::list_third_party_firewall_firewall_policies_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_third_party_firewall_firewall_policies(response.body().as_ref(), output).map_err(crate::error::ListThirdPartyFirewallFirewallPoliciesError::unhandled)?;
         output.build()
     })
 }

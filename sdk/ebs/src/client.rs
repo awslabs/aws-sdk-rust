@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_ebs::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_ebs::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_ebs::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_ebs::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -108,9 +108,9 @@ impl Client {
     /// Constructs a fluent builder for the [`GetSnapshotBlock`](crate::client::fluent_builders::GetSnapshotBlock) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`snapshot_id(impl Into<String>)`](crate::client::fluent_builders::GetSnapshotBlock::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::client::fluent_builders::GetSnapshotBlock::set_snapshot_id): <p>The ID of the snapshot containing the block from which to get data.</p>
-    ///   - [`block_index(i32)`](crate::client::fluent_builders::GetSnapshotBlock::block_index) / [`set_block_index(Option<i32>)`](crate::client::fluent_builders::GetSnapshotBlock::set_block_index): <p>The block index of the block from which to get data.</p>  <p>Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
-    ///   - [`block_token(impl Into<String>)`](crate::client::fluent_builders::GetSnapshotBlock::block_token) / [`set_block_token(Option<String>)`](crate::client::fluent_builders::GetSnapshotBlock::set_block_token): <p>The block token of the block from which to get data.</p>  <p>Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
+    ///   - [`snapshot_id(impl Into<String>)`](crate::client::fluent_builders::GetSnapshotBlock::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::client::fluent_builders::GetSnapshotBlock::set_snapshot_id): <p>The ID of the snapshot containing the block from which to get data.</p> <important>   <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>  </important>
+    ///   - [`block_index(i32)`](crate::client::fluent_builders::GetSnapshotBlock::block_index) / [`set_block_index(Option<i32>)`](crate::client::fluent_builders::GetSnapshotBlock::set_block_index): <p>The block index of the block in which to read the data. A block index is a logical index in units of <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be <code>512</code> KiB aligned.</p>
+    ///   - [`block_token(impl Into<String>)`](crate::client::fluent_builders::GetSnapshotBlock::block_token) / [`set_block_token(Option<String>)`](crate::client::fluent_builders::GetSnapshotBlock::set_block_token): <p>The block token of the block from which to get data. You can obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
     /// - On success, responds with [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput) with field(s):
     ///   - [`data_length(Option<i32>)`](crate::output::GetSnapshotBlockOutput::data_length): <p>The size of the data in the block.</p>
     ///   - [`block_data(byte_stream::ByteStream)`](crate::output::GetSnapshotBlockOutput::block_data): <p>The data content of the block.</p>
@@ -160,7 +160,7 @@ impl Client {
     /// Constructs a fluent builder for the [`PutSnapshotBlock`](crate::client::fluent_builders::PutSnapshotBlock) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`snapshot_id(impl Into<String>)`](crate::client::fluent_builders::PutSnapshotBlock::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::client::fluent_builders::PutSnapshotBlock::set_snapshot_id): <p>The ID of the snapshot.</p>
+    ///   - [`snapshot_id(impl Into<String>)`](crate::client::fluent_builders::PutSnapshotBlock::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::client::fluent_builders::PutSnapshotBlock::set_snapshot_id): <p>The ID of the snapshot.</p> <important>   <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>  </important>
     ///   - [`block_index(i32)`](crate::client::fluent_builders::PutSnapshotBlock::block_index) / [`set_block_index(Option<i32>)`](crate::client::fluent_builders::PutSnapshotBlock::set_block_index): <p>The block index of the block in which to write the data. A block index is a logical index in units of <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be <code>512</code> KiB aligned.</p>
     ///   - [`block_data(byte_stream::ByteStream)`](crate::client::fluent_builders::PutSnapshotBlock::block_data) / [`set_block_data(byte_stream::ByteStream)`](crate::client::fluent_builders::PutSnapshotBlock::set_block_data): <p>The data to write to the block.</p>  <p>The block data is not signed as part of the Signature Version 4 signing process. As a result, you must generate and provide a Base64-encoded SHA256 checksum for the block data using the <b>x-amz-Checksum</b> header. Also, you must specify the checksum algorithm using the <b>x-amz-Checksum-Algorithm</b> header. The checksum that you provide is part of the Signature Version 4 signing process. It is validated against a checksum generated by Amazon EBS to ensure the validity and authenticity of the data. If the checksums do not correspond, the request fails. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-checksums"> Using checksums with the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     ///   - [`data_length(i32)`](crate::client::fluent_builders::PutSnapshotBlock::data_length) / [`set_data_length(Option<i32>)`](crate::client::fluent_builders::PutSnapshotBlock::set_data_length): <p>The size of the data to write to the block, in bytes. Currently, the only supported size is <code>524288</code> bytes.</p>  <p>Valid values: <code>524288</code> </p>
@@ -178,12 +178,12 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`volume_size(i64)`](crate::client::fluent_builders::StartSnapshot::volume_size) / [`set_volume_size(Option<i64>)`](crate::client::fluent_builders::StartSnapshot::set_volume_size): <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB (64 TiB).</p>
-    ///   - [`parent_snapshot_id(impl Into<String>)`](crate::client::fluent_builders::StartSnapshot::parent_snapshot_id) / [`set_parent_snapshot_id(Option<String>)`](crate::client::fluent_builders::StartSnapshot::set_parent_snapshot_id): <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are creating the first snapshot for an on-premises volume, omit this parameter.</p>  <p>If your account is enabled for encryption by default, you cannot use an unencrypted snapshot as a parent snapshot. You must first create an encrypted copy of the parent snapshot using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
+    ///   - [`parent_snapshot_id(impl Into<String>)`](crate::client::fluent_builders::StartSnapshot::parent_snapshot_id) / [`set_parent_snapshot_id(Option<String>)`](crate::client::fluent_builders::StartSnapshot::set_parent_snapshot_id): <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are creating the first snapshot for an on-premises volume, omit this parameter.</p>  <p>You can't specify <b>ParentSnapshotId</b> and <b>Encrypted</b> in the same request. If you specify both parameters, the request fails with <code>ValidationException</code>.</p>  <p>The encryption status of the snapshot depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>, and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is enabled for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default"> encryption by default</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <important>   <p>If you specify an encrypted parent snapshot, you must have permission to use the KMS key that was used to encrypt the parent snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions"> Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>  </important>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::StartSnapshot::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::StartSnapshot::set_tags): <p>The tags to apply to the snapshot.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::StartSnapshot::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::StartSnapshot::set_description): <p>A description for the snapshot.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartSnapshot::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartSnapshot::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully. The subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>  <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html"> Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    ///   - [`encrypted(bool)`](crate::client::fluent_builders::StartSnapshot::encrypted) / [`set_encrypted(Option<bool>)`](crate::client::fluent_builders::StartSnapshot::set_encrypted): <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot, specify <code>true</code>. To create an unencrypted snapshot, omit this parameter.</p>  <p>If you specify a value for <b>ParentSnapshotId</b>, omit this parameter.</p>  <p>If you specify <code>true</code>, the snapshot is encrypted using the KMS key specified using the <b>KmsKeyArn</b> parameter. If no value is specified for <b>KmsKeyArn</b>, the default KMS key for your account is used. If no default KMS key has been specified for your account, the Amazon Web Services managed KMS key is used. To set a default KMS key for your account, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html"> ModifyEbsDefaultKmsKeyId</a>.</p>  <p>If your account is enabled for encryption by default, you cannot set this parameter to <code>false</code>. In this case, you can omit this parameter.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    ///   - [`kms_key_arn(impl Into<String>)`](crate::client::fluent_builders::StartSnapshot::kms_key_arn) / [`set_kms_key_arn(Option<String>)`](crate::client::fluent_builders::StartSnapshot::set_kms_key_arn): <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be used to encrypt the snapshot. If you do not specify a KMS key, the default Amazon Web Services managed KMS key is used.</p>  <p>If you specify a <b>ParentSnapshotId</b>, omit this parameter; the snapshot will be encrypted using the same KMS key that was used to encrypt the parent snapshot.</p>  <p>If <b>Encrypted</b> is set to <code>true</code>, you must specify a KMS key ARN. </p>
+    ///   - [`encrypted(bool)`](crate::client::fluent_builders::StartSnapshot::encrypted) / [`set_encrypted(Option<bool>)`](crate::client::fluent_builders::StartSnapshot::set_encrypted): <p>Indicates whether to encrypt the snapshot.</p>  <p>You can't specify <b>Encrypted</b> and <b> ParentSnapshotId</b> in the same request. If you specify both parameters, the request fails with <code>ValidationException</code>.</p>  <p>The encryption status of the snapshot depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>, and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is enabled for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default"> encryption by default</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <important>   <p>To create an encrypted snapshot, you must have permission to use the KMS key. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions"> Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>  </important>
+    ///   - [`kms_key_arn(impl Into<String>)`](crate::client::fluent_builders::StartSnapshot::kms_key_arn) / [`set_kms_key_arn(Option<String>)`](crate::client::fluent_builders::StartSnapshot::set_kms_key_arn): <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be used to encrypt the snapshot.</p>  <p>The encryption status of the snapshot depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>, and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is enabled for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default"> encryption by default</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <important>   <p>To create an encrypted snapshot, you must have permission to use the KMS key. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions"> Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>  </important>
     ///   - [`timeout(i32)`](crate::client::fluent_builders::StartSnapshot::timeout) / [`set_timeout(Option<i32>)`](crate::client::fluent_builders::StartSnapshot::set_timeout): <p>The amount of time (in minutes) after which the snapshot is automatically cancelled if:</p>  <ul>   <li> <p>No blocks are written to the snapshot.</p> </li>   <li> <p>The snapshot is not completed after writing the last block of data.</p> </li>  </ul>  <p>If no value is specified, the timeout defaults to <code>60</code> minutes.</p>
     /// - On success, responds with [`StartSnapshotOutput`](crate::output::StartSnapshotOutput) with field(s):
     ///   - [`description(Option<String>)`](crate::output::StartSnapshotOutput::description): <p>The description of the snapshot.</p>
@@ -355,36 +355,36 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the snapshot containing the block from which to get data.</p>
+        /// <p>The ID of the snapshot containing the block from which to get data.</p> <important>
+        /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// </important>
         pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.snapshot_id(input.into());
             self
         }
-        /// <p>The ID of the snapshot containing the block from which to get data.</p>
+        /// <p>The ID of the snapshot containing the block from which to get data.</p> <important>
+        /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// </important>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_snapshot_id(input);
             self
         }
-        /// <p>The block index of the block from which to get data.</p>
-        /// <p>Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
+        /// <p>The block index of the block in which to read the data. A block index is a logical index in units of <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be <code>512</code> KiB aligned.</p>
         pub fn block_index(mut self, input: i32) -> Self {
             self.inner = self.inner.block_index(input);
             self
         }
-        /// <p>The block index of the block from which to get data.</p>
-        /// <p>Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
+        /// <p>The block index of the block in which to read the data. A block index is a logical index in units of <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be <code>512</code> KiB aligned.</p>
         pub fn set_block_index(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_block_index(input);
             self
         }
-        /// <p>The block token of the block from which to get data.</p>
-        /// <p>Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
+        /// <p>The block token of the block from which to get data. You can obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
         pub fn block_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.block_token(input.into());
             self
         }
-        /// <p>The block token of the block from which to get data.</p>
-        /// <p>Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
+        /// <p>The block token of the block from which to get data. You can obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
         pub fn set_block_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_block_token(input);
             self
@@ -653,12 +653,16 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the snapshot.</p>
+        /// <p>The ID of the snapshot.</p> <important>
+        /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
+        /// </important>
         pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.snapshot_id(input.into());
             self
         }
-        /// <p>The ID of the snapshot.</p>
+        /// <p>The ID of the snapshot.</p> <important>
+        /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
+        /// </important>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_snapshot_id(input);
             self
@@ -788,13 +792,19 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are creating the first snapshot for an on-premises volume, omit this parameter.</p>
-        /// <p>If your account is enabled for encryption by default, you cannot use an unencrypted snapshot as a parent snapshot. You must first create an encrypted copy of the parent snapshot using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
+        /// <p>You can't specify <b>ParentSnapshotId</b> and <b>Encrypted</b> in the same request. If you specify both parameters, the request fails with <code>ValidationException</code>.</p>
+        /// <p>The encryption status of the snapshot depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>, and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is enabled for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default"> encryption by default</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <important>
+        /// <p>If you specify an encrypted parent snapshot, you must have permission to use the KMS key that was used to encrypt the parent snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions"> Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// </important>
         pub fn parent_snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.parent_snapshot_id(input.into());
             self
         }
         /// <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are creating the first snapshot for an on-premises volume, omit this parameter.</p>
-        /// <p>If your account is enabled for encryption by default, you cannot use an unencrypted snapshot as a parent snapshot. You must first create an encrypted copy of the parent snapshot using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
+        /// <p>You can't specify <b>ParentSnapshotId</b> and <b>Encrypted</b> in the same request. If you specify both parameters, the request fails with <code>ValidationException</code>.</p>
+        /// <p>The encryption status of the snapshot depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>, and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is enabled for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default"> encryption by default</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <important>
+        /// <p>If you specify an encrypted parent snapshot, you must have permission to use the KMS key that was used to encrypt the parent snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions"> Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// </important>
         pub fn set_parent_snapshot_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -843,34 +853,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot, specify <code>true</code>. To create an unencrypted snapshot, omit this parameter.</p>
-        /// <p>If you specify a value for <b>ParentSnapshotId</b>, omit this parameter.</p>
-        /// <p>If you specify <code>true</code>, the snapshot is encrypted using the KMS key specified using the <b>KmsKeyArn</b> parameter. If no value is specified for <b>KmsKeyArn</b>, the default KMS key for your account is used. If no default KMS key has been specified for your account, the Amazon Web Services managed KMS key is used. To set a default KMS key for your account, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html"> ModifyEbsDefaultKmsKeyId</a>.</p>
-        /// <p>If your account is enabled for encryption by default, you cannot set this parameter to <code>false</code>. In this case, you can omit this parameter.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>Indicates whether to encrypt the snapshot.</p>
+        /// <p>You can't specify <b>Encrypted</b> and <b> ParentSnapshotId</b> in the same request. If you specify both parameters, the request fails with <code>ValidationException</code>.</p>
+        /// <p>The encryption status of the snapshot depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>, and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is enabled for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default"> encryption by default</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <important>
+        /// <p>To create an encrypted snapshot, you must have permission to use the KMS key. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions"> Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// </important>
         pub fn encrypted(mut self, input: bool) -> Self {
             self.inner = self.inner.encrypted(input);
             self
         }
-        /// <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot, specify <code>true</code>. To create an unencrypted snapshot, omit this parameter.</p>
-        /// <p>If you specify a value for <b>ParentSnapshotId</b>, omit this parameter.</p>
-        /// <p>If you specify <code>true</code>, the snapshot is encrypted using the KMS key specified using the <b>KmsKeyArn</b> parameter. If no value is specified for <b>KmsKeyArn</b>, the default KMS key for your account is used. If no default KMS key has been specified for your account, the Amazon Web Services managed KMS key is used. To set a default KMS key for your account, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html"> ModifyEbsDefaultKmsKeyId</a>.</p>
-        /// <p>If your account is enabled for encryption by default, you cannot set this parameter to <code>false</code>. In this case, you can omit this parameter.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>Indicates whether to encrypt the snapshot.</p>
+        /// <p>You can't specify <b>Encrypted</b> and <b> ParentSnapshotId</b> in the same request. If you specify both parameters, the request fails with <code>ValidationException</code>.</p>
+        /// <p>The encryption status of the snapshot depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>, and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is enabled for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default"> encryption by default</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <important>
+        /// <p>To create an encrypted snapshot, you must have permission to use the KMS key. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions"> Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// </important>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_encrypted(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be used to encrypt the snapshot. If you do not specify a KMS key, the default Amazon Web Services managed KMS key is used.</p>
-        /// <p>If you specify a <b>ParentSnapshotId</b>, omit this parameter; the snapshot will be encrypted using the same KMS key that was used to encrypt the parent snapshot.</p>
-        /// <p>If <b>Encrypted</b> is set to <code>true</code>, you must specify a KMS key ARN. </p>
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be used to encrypt the snapshot.</p>
+        /// <p>The encryption status of the snapshot depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>, and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is enabled for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default"> encryption by default</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <important>
+        /// <p>To create an encrypted snapshot, you must have permission to use the KMS key. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions"> Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// </important>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be used to encrypt the snapshot. If you do not specify a KMS key, the default Amazon Web Services managed KMS key is used.</p>
-        /// <p>If you specify a <b>ParentSnapshotId</b>, omit this parameter; the snapshot will be encrypted using the same KMS key that was used to encrypt the parent snapshot.</p>
-        /// <p>If <b>Encrypted</b> is set to <code>true</code>, you must specify a KMS key ARN. </p>
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be used to encrypt the snapshot.</p>
+        /// <p>The encryption status of the snapshot depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>, and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is enabled for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default"> encryption by default</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <important>
+        /// <p>To create an encrypted snapshot, you must have permission to use the KMS key. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions"> Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// </important>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_arn(input);
             self

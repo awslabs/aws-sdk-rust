@@ -15,6 +15,10 @@ pub enum Error {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Could not find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request contains more tag keys than can be associated with a resource (50 tag keys per resource). </p>
+    TooManyTagKeysException(crate::error::TooManyTagKeysException),
+    /// <p>You have exceeded the maximum number of tags you can apply to this resource. </p>
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -27,6 +31,8 @@ impl std::fmt::Display for Error {
             Error::ResourceAlreadyExistsException(inner) => inner.fmt(f),
             Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::TooManyTagKeysException(inner) => inner.fmt(f),
+            Error::TooManyTagsException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -56,6 +62,9 @@ where
                 crate::error::CreateBatchInferenceJobErrorKind::ResourceNotFoundException(
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
+                crate::error::CreateBatchInferenceJobErrorKind::TooManyTagsException(inner) => {
+                    Error::TooManyTagsException(inner)
+                }
                 crate::error::CreateBatchInferenceJobErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -89,6 +98,9 @@ where
                 crate::error::CreateBatchSegmentJobErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
+                crate::error::CreateBatchSegmentJobErrorKind::TooManyTagsException(inner) => {
+                    Error::TooManyTagsException(inner)
+                }
                 crate::error::CreateBatchSegmentJobErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -119,6 +131,9 @@ where
                 crate::error::CreateCampaignErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
+                crate::error::CreateCampaignErrorKind::TooManyTagsException(inner) => {
+                    Error::TooManyTagsException(inner)
+                }
                 crate::error::CreateCampaignErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -146,6 +161,9 @@ where
                 }
                 crate::error::CreateDatasetErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
+                }
+                crate::error::CreateDatasetErrorKind::TooManyTagsException(inner) => {
+                    Error::TooManyTagsException(inner)
                 }
                 crate::error::CreateDatasetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -178,6 +196,9 @@ where
                 crate::error::CreateDatasetExportJobErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
+                crate::error::CreateDatasetExportJobErrorKind::TooManyTagsException(inner) => {
+                    Error::TooManyTagsException(inner)
+                }
                 crate::error::CreateDatasetExportJobErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -204,6 +225,9 @@ where
                 crate::error::CreateDatasetGroupErrorKind::ResourceAlreadyExistsException(
                     inner,
                 ) => Error::ResourceAlreadyExistsException(inner),
+                crate::error::CreateDatasetGroupErrorKind::TooManyTagsException(inner) => {
+                    Error::TooManyTagsException(inner)
+                }
                 crate::error::CreateDatasetGroupErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -237,6 +261,9 @@ where
                 crate::error::CreateDatasetImportJobErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
+                crate::error::CreateDatasetImportJobErrorKind::TooManyTagsException(inner) => {
+                    Error::TooManyTagsException(inner)
+                }
                 crate::error::CreateDatasetImportJobErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -269,6 +296,9 @@ where
                 crate::error::CreateEventTrackerErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
+                crate::error::CreateEventTrackerErrorKind::TooManyTagsException(inner) => {
+                    Error::TooManyTagsException(inner)
+                }
                 crate::error::CreateEventTrackerErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -296,6 +326,9 @@ where
                 crate::error::CreateFilterErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
+                crate::error::CreateFilterErrorKind::TooManyTagsException(inner) => {
+                    Error::TooManyTagsException(inner)
+                }
                 crate::error::CreateFilterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -322,6 +355,9 @@ where
                 }
                 crate::error::CreateRecommenderErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
+                }
+                crate::error::CreateRecommenderErrorKind::TooManyTagsException(inner) => {
+                    Error::TooManyTagsException(inner)
                 }
                 crate::error::CreateRecommenderErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -375,6 +411,9 @@ where
                 crate::error::CreateSolutionErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
+                crate::error::CreateSolutionErrorKind::TooManyTagsException(inner) => {
+                    Error::TooManyTagsException(inner)
+                }
                 crate::error::CreateSolutionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -402,6 +441,9 @@ where
                 }
                 crate::error::CreateSolutionVersionErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
+                }
+                crate::error::CreateSolutionVersionErrorKind::TooManyTagsException(inner) => {
+                    Error::TooManyTagsException(inner)
                 }
                 crate::error::CreateSolutionVersionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1285,6 +1327,32 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListTagsForResourceErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::ListTagsForResourceErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
+                }
+                crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopSolutionVersionCreationError, R>>
     for Error
 where
@@ -1307,6 +1375,59 @@ where
                 crate::error::StopSolutionVersionCreationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::TagResourceErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::TagResourceErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::TagResourceErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
+                }
+                crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
+                    Error::TooManyTagsException(inner)
+                }
+                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UntagResourceErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::UntagResourceErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
+                }
+                crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::UntagResourceErrorKind::TooManyTagKeysException(inner) => {
+                    Error::TooManyTagKeysException(inner)
+                }
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

@@ -33,6 +33,38 @@ impl aws_smithy_http::response::ParseStrictResponse for AddNotificationChannel {
     }
 }
 
+/// Operation shape for `DeleteInsight`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_insight`](crate::client::Client::delete_insight).
+///
+/// See [`crate::client::fluent_builders::DeleteInsight`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteInsight {
+    _private: (),
+}
+impl DeleteInsight {
+    /// Creates a new builder-style object to manufacture [`DeleteInsightInput`](crate::input::DeleteInsightInput)
+    pub fn builder() -> crate::input::delete_insight_input::Builder {
+        crate::input::delete_insight_input::Builder::default()
+    }
+    /// Creates a new `DeleteInsight` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteInsight {
+    type Output =
+        std::result::Result<crate::output::DeleteInsightOutput, crate::error::DeleteInsightError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_insight_error(response)
+        } else {
+            crate::operation_deser::parse_delete_insight_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeAccountHealth`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

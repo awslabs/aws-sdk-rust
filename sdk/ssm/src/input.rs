@@ -15529,12 +15529,12 @@ pub mod get_patch_baseline_for_patch_group_input {
             self.patch_group = input;
             self
         }
-        /// <p>Returns he operating system rule specified for patch groups using the patch baseline.</p>
+        /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
         pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
             self.operating_system = Some(input);
             self
         }
-        /// <p>Returns he operating system rule specified for patch groups using the patch baseline.</p>
+        /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
         pub fn set_operating_system(
             mut self,
             input: std::option::Option<crate::model::OperatingSystem>,
@@ -19636,8 +19636,7 @@ pub mod put_parameter_input {
         /// <li> <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p> </li>
         /// </ul>
         /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
-        /// <p>The maximum length constraint listed below includes capacity for additional system attributes that aren't part of the name. The maximum length for a parameter name, including the full length of the parameter ARN, is 1011 characters. For example, the length of the following parameter name is 65 characters, not 20 characters:</p>
-        /// <p> <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code> </p>
+        /// <p>The maximum length constraint of 2048 characters listed below includes 1037 characters reserved for internal use by Systems Manager. The maximum length for a parameter name that you create is 1011 characters. This includes the characters in the ARN that precede the name you specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>
         /// </note>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -19654,8 +19653,7 @@ pub mod put_parameter_input {
         /// <li> <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p> </li>
         /// </ul>
         /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
-        /// <p>The maximum length constraint listed below includes capacity for additional system attributes that aren't part of the name. The maximum length for a parameter name, including the full length of the parameter ARN, is 1011 characters. For example, the length of the following parameter name is 65 characters, not 20 characters:</p>
-        /// <p> <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code> </p>
+        /// <p>The maximum length constraint of 2048 characters listed below includes 1037 characters reserved for internal use by Systems Manager. The maximum length for a parameter name that you create is 1011 characters. This includes the characters in the ARN that precede the name you specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>
         /// </note>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
@@ -23111,7 +23109,7 @@ pub mod start_session_input {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>Reserved for future use.</p>
+        /// <p>The values you want to specify for the parameters defined in the Session document.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -23122,7 +23120,7 @@ pub mod start_session_input {
             self.parameters = Some(hash_map);
             self
         }
-        /// <p>Reserved for future use.</p>
+        /// <p>The values you want to specify for the parameters defined in the Session document.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -23996,13 +23994,15 @@ pub mod update_association_input {
             self
         }
         /// <p>By default, when you update an association, the system runs it immediately after it is updated and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you update it. This parameter isn't supported for rate expressions.</p>
-        /// <p>Also, if you specified this option when you created the association, you can reset it. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
+        /// <p>If you chose this option when you created an association and later you edit that association or you make changes to the SSM document on which that association is based (by using the Documents page in the console), State Manager applies the association at the next specified cron interval. For example, if you chose the <code>Latest</code> version of an SSM document when you created an association and you edit the association by choosing a different document version on the Documents page, State Manager applies the association at the next specified cron interval if you previously selected this option. If this option wasn't selected, State Manager immediately runs the association.</p>
+        /// <p>You can reset this option. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
         pub fn apply_only_at_cron_interval(mut self, input: bool) -> Self {
             self.apply_only_at_cron_interval = Some(input);
             self
         }
         /// <p>By default, when you update an association, the system runs it immediately after it is updated and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you update it. This parameter isn't supported for rate expressions.</p>
-        /// <p>Also, if you specified this option when you created the association, you can reset it. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
+        /// <p>If you chose this option when you created an association and later you edit that association or you make changes to the SSM document on which that association is based (by using the Documents page in the console), State Manager applies the association at the next specified cron interval. For example, if you chose the <code>Latest</code> version of an SSM document when you created an association and you edit the association by choosing a different document version on the Documents page, State Manager applies the association at the next specified cron interval if you previously selected this option. If this option wasn't selected, State Manager immediately runs the association.</p>
+        /// <p>You can reset this option. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
         pub fn set_apply_only_at_cron_interval(mut self, input: std::option::Option<bool>) -> Self {
             self.apply_only_at_cron_interval = input;
             self
@@ -24431,12 +24431,16 @@ pub mod update_document_input {
             self.version_name = input;
             self
         }
-        /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p>
+        /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p> <note>
+        /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
+        /// </note>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_version = Some(input.into());
             self
         }
-        /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p>
+        /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p> <note>
+        /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
+        /// </note>
         pub fn set_document_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28190,7 +28194,9 @@ pub struct UpdateDocumentInput {
     pub display_name: std::option::Option<std::string::String>,
     /// <p>An optional field specifying the version of the artifact you are updating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
     pub version_name: std::option::Option<std::string::String>,
-    /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p>
+    /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p> <note>
+    /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
+    /// </note>
     pub document_version: std::option::Option<std::string::String>,
     /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
     pub document_format: std::option::Option<crate::model::DocumentFormat>,
@@ -28218,7 +28224,9 @@ impl UpdateDocumentInput {
     pub fn version_name(&self) -> std::option::Option<&str> {
         self.version_name.as_deref()
     }
-    /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p>
+    /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p> <note>
+    /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
+    /// </note>
     pub fn document_version(&self) -> std::option::Option<&str> {
         self.document_version.as_deref()
     }
@@ -28328,7 +28336,8 @@ pub struct UpdateAssociationInput {
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
     pub sync_compliance: std::option::Option<crate::model::AssociationSyncCompliance>,
     /// <p>By default, when you update an association, the system runs it immediately after it is updated and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you update it. This parameter isn't supported for rate expressions.</p>
-    /// <p>Also, if you specified this option when you created the association, you can reset it. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
+    /// <p>If you chose this option when you created an association and later you edit that association or you make changes to the SSM document on which that association is based (by using the Documents page in the console), State Manager applies the association at the next specified cron interval. For example, if you chose the <code>Latest</code> version of an SSM document when you created an association and you edit the association by choosing a different document version on the Documents page, State Manager applies the association at the next specified cron interval if you previously selected this option. If this option wasn't selected, State Manager immediately runs the association.</p>
+    /// <p>You can reset this option. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
     pub apply_only_at_cron_interval: bool,
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -28413,7 +28422,8 @@ impl UpdateAssociationInput {
         self.sync_compliance.as_ref()
     }
     /// <p>By default, when you update an association, the system runs it immediately after it is updated and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you update it. This parameter isn't supported for rate expressions.</p>
-    /// <p>Also, if you specified this option when you created the association, you can reset it. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
+    /// <p>If you chose this option when you created an association and later you edit that association or you make changes to the SSM document on which that association is based (by using the Documents page in the console), State Manager applies the association at the next specified cron interval. For example, if you chose the <code>Latest</code> version of an SSM document when you created an association and you edit the association by choosing a different document version on the Documents page, State Manager applies the association at the next specified cron interval if you previously selected this option. If this option wasn't selected, State Manager immediately runs the association.</p>
+    /// <p>You can reset this option. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
     pub fn apply_only_at_cron_interval(&self) -> bool {
         self.apply_only_at_cron_interval
     }
@@ -28550,7 +28560,7 @@ pub struct StartSessionInput {
     pub document_name: std::option::Option<std::string::String>,
     /// <p>The reason for connecting to the instance. This value is included in the details for the Amazon CloudWatch Events event created when you start the session.</p>
     pub reason: std::option::Option<std::string::String>,
-    /// <p>Reserved for future use.</p>
+    /// <p>The values you want to specify for the parameters defined in the Session document.</p>
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -28568,7 +28578,7 @@ impl StartSessionInput {
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
-    /// <p>Reserved for future use.</p>
+    /// <p>The values you want to specify for the parameters defined in the Session document.</p>
     pub fn parameters(
         &self,
     ) -> std::option::Option<
@@ -29607,8 +29617,7 @@ pub struct PutParameterInput {
     /// <li> <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p> </li>
     /// </ul>
     /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
-    /// <p>The maximum length constraint listed below includes capacity for additional system attributes that aren't part of the name. The maximum length for a parameter name, including the full length of the parameter ARN, is 1011 characters. For example, the length of the following parameter name is 65 characters, not 20 characters:</p>
-    /// <p> <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code> </p>
+    /// <p>The maximum length constraint of 2048 characters listed below includes 1037 characters reserved for internal use by Systems Manager. The maximum length for a parameter name that you create is 1011 characters. This includes the characters in the ARN that precede the name you specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>
     /// </note>
     pub name: std::option::Option<std::string::String>,
     /// <p>Information about the parameter that you want to add to the system. Optional but recommended.</p> <important>
@@ -29694,8 +29703,7 @@ impl PutParameterInput {
     /// <li> <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p> </li>
     /// </ul>
     /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
-    /// <p>The maximum length constraint listed below includes capacity for additional system attributes that aren't part of the name. The maximum length for a parameter name, including the full length of the parameter ARN, is 1011 characters. For example, the length of the following parameter name is 65 characters, not 20 characters:</p>
-    /// <p> <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code> </p>
+    /// <p>The maximum length constraint of 2048 characters listed below includes 1037 characters reserved for internal use by Systems Manager. The maximum length for a parameter name that you create is 1011 characters. This includes the characters in the ARN that precede the name you specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>
     /// </note>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
@@ -30694,7 +30702,7 @@ impl std::fmt::Debug for GetServiceSettingInput {
 pub struct GetPatchBaselineForPatchGroupInput {
     /// <p>The name of the patch group whose patch baseline should be retrieved.</p>
     pub patch_group: std::option::Option<std::string::String>,
-    /// <p>Returns he operating system rule specified for patch groups using the patch baseline.</p>
+    /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
 }
 impl GetPatchBaselineForPatchGroupInput {
@@ -30702,7 +30710,7 @@ impl GetPatchBaselineForPatchGroupInput {
     pub fn patch_group(&self) -> std::option::Option<&str> {
         self.patch_group.as_deref()
     }
-    /// <p>Returns he operating system rule specified for patch groups using the patch baseline.</p>
+    /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
     pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
         self.operating_system.as_ref()
     }

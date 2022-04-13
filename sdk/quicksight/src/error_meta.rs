@@ -1632,6 +1632,45 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGroupMembershipError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeGroupMembershipError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeGroupMembershipErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::DescribeGroupMembershipErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::DescribeGroupMembershipErrorKind::InvalidParameterValueException(
+                    inner,
+                ) => Error::InvalidParameterValueException(inner),
+                crate::error::DescribeGroupMembershipErrorKind::PreconditionNotMetException(
+                    inner,
+                ) => Error::PreconditionNotMetException(inner),
+                crate::error::DescribeGroupMembershipErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::DescribeGroupMembershipErrorKind::ResourceUnavailableException(
+                    inner,
+                ) => Error::ResourceUnavailableException(inner),
+                crate::error::DescribeGroupMembershipErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DescribeGroupMembershipErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeIAMPolicyAssignmentError, R>>
     for Error
 where
@@ -2989,6 +3028,43 @@ where
                     Error::UnsupportedUserEditionException(inner)
                 }
                 crate::error::SearchFoldersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchGroupsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::SearchGroupsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::SearchGroupsErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::SearchGroupsErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::SearchGroupsErrorKind::InvalidNextTokenException(inner) => {
+                    Error::InvalidNextTokenException(inner)
+                }
+                crate::error::SearchGroupsErrorKind::InvalidParameterValueException(inner) => {
+                    Error::InvalidParameterValueException(inner)
+                }
+                crate::error::SearchGroupsErrorKind::PreconditionNotMetException(inner) => {
+                    Error::PreconditionNotMetException(inner)
+                }
+                crate::error::SearchGroupsErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::SearchGroupsErrorKind::ResourceUnavailableException(inner) => {
+                    Error::ResourceUnavailableException(inner)
+                }
+                crate::error::SearchGroupsErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::SearchGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

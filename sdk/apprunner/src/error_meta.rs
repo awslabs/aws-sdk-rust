@@ -105,6 +105,29 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::CreateObservabilityConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::CreateObservabilityConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateObservabilityConfigurationErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+                crate::error::CreateObservabilityConfigurationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::CreateObservabilityConfigurationErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+                crate::error::CreateObservabilityConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateServiceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -198,6 +221,29 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DeleteObservabilityConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DeleteObservabilityConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeleteObservabilityConfigurationErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+                crate::error::DeleteObservabilityConfigurationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::DeleteObservabilityConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DeleteObservabilityConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -299,6 +345,30 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::error::DescribeObservabilityConfigurationError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeObservabilityConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeObservabilityConfigurationErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+                crate::error::DescribeObservabilityConfigurationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::DescribeObservabilityConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DescribeObservabilityConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -415,6 +485,28 @@ where
                 }
                 crate::error::ListConnectionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::ListObservabilityConfigurationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ListObservabilityConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListObservabilityConfigurationsErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+                crate::error::ListObservabilityConfigurationsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::ListObservabilityConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

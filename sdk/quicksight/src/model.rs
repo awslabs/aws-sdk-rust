@@ -9626,6 +9626,206 @@ impl Tag {
     }
 }
 
+/// <p>A <code>GroupSearchFilter</code> object that you want to apply to your search.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GroupSearchFilter {
+    /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is <code>StartsWith</code>.</p>
+    pub operator: std::option::Option<crate::model::GroupFilterOperator>,
+    /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is <code>GROUP_NAME</code>.</p>
+    pub name: std::option::Option<crate::model::GroupFilterAttribute>,
+    /// <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you want to use as a filter.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl GroupSearchFilter {
+    /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is <code>StartsWith</code>.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::GroupFilterOperator> {
+        self.operator.as_ref()
+    }
+    /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is <code>GROUP_NAME</code>.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::GroupFilterAttribute> {
+        self.name.as_ref()
+    }
+    /// <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you want to use as a filter.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for GroupSearchFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GroupSearchFilter");
+        formatter.field("operator", &self.operator);
+        formatter.field("name", &self.name);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`GroupSearchFilter`](crate::model::GroupSearchFilter)
+pub mod group_search_filter {
+    /// A builder for [`GroupSearchFilter`](crate::model::GroupSearchFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) operator: std::option::Option<crate::model::GroupFilterOperator>,
+        pub(crate) name: std::option::Option<crate::model::GroupFilterAttribute>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is <code>StartsWith</code>.</p>
+        pub fn operator(mut self, input: crate::model::GroupFilterOperator) -> Self {
+            self.operator = Some(input);
+            self
+        }
+        /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is <code>StartsWith</code>.</p>
+        pub fn set_operator(
+            mut self,
+            input: std::option::Option<crate::model::GroupFilterOperator>,
+        ) -> Self {
+            self.operator = input;
+            self
+        }
+        /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is <code>GROUP_NAME</code>.</p>
+        pub fn name(mut self, input: crate::model::GroupFilterAttribute) -> Self {
+            self.name = Some(input);
+            self
+        }
+        /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is <code>GROUP_NAME</code>.</p>
+        pub fn set_name(
+            mut self,
+            input: std::option::Option<crate::model::GroupFilterAttribute>,
+        ) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you want to use as a filter.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you want to use as a filter.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GroupSearchFilter`](crate::model::GroupSearchFilter)
+        pub fn build(self) -> crate::model::GroupSearchFilter {
+            crate::model::GroupSearchFilter {
+                operator: self.operator,
+                name: self.name,
+                value: self.value,
+            }
+        }
+    }
+}
+impl GroupSearchFilter {
+    /// Creates a new builder-style object to manufacture [`GroupSearchFilter`](crate::model::GroupSearchFilter)
+    pub fn builder() -> crate::model::group_search_filter::Builder {
+        crate::model::group_search_filter::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum GroupFilterAttribute {
+    #[allow(missing_docs)] // documentation missing in model
+    GroupName,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for GroupFilterAttribute {
+    fn from(s: &str) -> Self {
+        match s {
+            "GROUP_NAME" => GroupFilterAttribute::GroupName,
+            other => GroupFilterAttribute::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for GroupFilterAttribute {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(GroupFilterAttribute::from(s))
+    }
+}
+impl GroupFilterAttribute {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            GroupFilterAttribute::GroupName => "GROUP_NAME",
+            GroupFilterAttribute::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["GROUP_NAME"]
+    }
+}
+impl AsRef<str> for GroupFilterAttribute {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum GroupFilterOperator {
+    #[allow(missing_docs)] // documentation missing in model
+    StartsWith,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for GroupFilterOperator {
+    fn from(s: &str) -> Self {
+        match s {
+            "StartsWith" => GroupFilterOperator::StartsWith,
+            other => GroupFilterOperator::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for GroupFilterOperator {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(GroupFilterOperator::from(s))
+    }
+}
+impl GroupFilterOperator {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            GroupFilterOperator::StartsWith => "StartsWith",
+            GroupFilterOperator::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["StartsWith"]
+    }
+}
+impl AsRef<str> for GroupFilterOperator {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>A summary of information about an existing Amazon QuickSight folder. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

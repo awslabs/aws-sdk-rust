@@ -11020,6 +11020,951 @@ impl AsRef<str> for CatalogEncryptionMode {
     }
 }
 
+/// <p>The statement or request for a particular action to occur in a session.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Statement {
+    /// <p>The ID of the statement.</p>
+    pub id: i32,
+    /// <p>The execution code of the statement.</p>
+    pub code: std::option::Option<std::string::String>,
+    /// <p>The state while request is actioned.</p>
+    pub state: std::option::Option<crate::model::StatementState>,
+    /// <p>The output in JSON.</p>
+    pub output: std::option::Option<crate::model::StatementOutput>,
+    /// <p>The code execution progress.</p>
+    pub progress: f64,
+    /// <p>The unix time and date that the job definition was started.</p>
+    pub started_on: i64,
+    /// <p>The unix time and date that the job definition was completed.</p>
+    pub completed_on: i64,
+}
+impl Statement {
+    /// <p>The ID of the statement.</p>
+    pub fn id(&self) -> i32 {
+        self.id
+    }
+    /// <p>The execution code of the statement.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The state while request is actioned.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::StatementState> {
+        self.state.as_ref()
+    }
+    /// <p>The output in JSON.</p>
+    pub fn output(&self) -> std::option::Option<&crate::model::StatementOutput> {
+        self.output.as_ref()
+    }
+    /// <p>The code execution progress.</p>
+    pub fn progress(&self) -> f64 {
+        self.progress
+    }
+    /// <p>The unix time and date that the job definition was started.</p>
+    pub fn started_on(&self) -> i64 {
+        self.started_on
+    }
+    /// <p>The unix time and date that the job definition was completed.</p>
+    pub fn completed_on(&self) -> i64 {
+        self.completed_on
+    }
+}
+impl std::fmt::Debug for Statement {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Statement");
+        formatter.field("id", &self.id);
+        formatter.field("code", &self.code);
+        formatter.field("state", &self.state);
+        formatter.field("output", &self.output);
+        formatter.field("progress", &self.progress);
+        formatter.field("started_on", &self.started_on);
+        formatter.field("completed_on", &self.completed_on);
+        formatter.finish()
+    }
+}
+/// See [`Statement`](crate::model::Statement)
+pub mod statement {
+    /// A builder for [`Statement`](crate::model::Statement)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<i32>,
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::StatementState>,
+        pub(crate) output: std::option::Option<crate::model::StatementOutput>,
+        pub(crate) progress: std::option::Option<f64>,
+        pub(crate) started_on: std::option::Option<i64>,
+        pub(crate) completed_on: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The ID of the statement.</p>
+        pub fn id(mut self, input: i32) -> Self {
+            self.id = Some(input);
+            self
+        }
+        /// <p>The ID of the statement.</p>
+        pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The execution code of the statement.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        /// <p>The execution code of the statement.</p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>The state while request is actioned.</p>
+        pub fn state(mut self, input: crate::model::StatementState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The state while request is actioned.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::StatementState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The output in JSON.</p>
+        pub fn output(mut self, input: crate::model::StatementOutput) -> Self {
+            self.output = Some(input);
+            self
+        }
+        /// <p>The output in JSON.</p>
+        pub fn set_output(
+            mut self,
+            input: std::option::Option<crate::model::StatementOutput>,
+        ) -> Self {
+            self.output = input;
+            self
+        }
+        /// <p>The code execution progress.</p>
+        pub fn progress(mut self, input: f64) -> Self {
+            self.progress = Some(input);
+            self
+        }
+        /// <p>The code execution progress.</p>
+        pub fn set_progress(mut self, input: std::option::Option<f64>) -> Self {
+            self.progress = input;
+            self
+        }
+        /// <p>The unix time and date that the job definition was started.</p>
+        pub fn started_on(mut self, input: i64) -> Self {
+            self.started_on = Some(input);
+            self
+        }
+        /// <p>The unix time and date that the job definition was started.</p>
+        pub fn set_started_on(mut self, input: std::option::Option<i64>) -> Self {
+            self.started_on = input;
+            self
+        }
+        /// <p>The unix time and date that the job definition was completed.</p>
+        pub fn completed_on(mut self, input: i64) -> Self {
+            self.completed_on = Some(input);
+            self
+        }
+        /// <p>The unix time and date that the job definition was completed.</p>
+        pub fn set_completed_on(mut self, input: std::option::Option<i64>) -> Self {
+            self.completed_on = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Statement`](crate::model::Statement)
+        pub fn build(self) -> crate::model::Statement {
+            crate::model::Statement {
+                id: self.id.unwrap_or_default(),
+                code: self.code,
+                state: self.state,
+                output: self.output,
+                progress: self.progress.unwrap_or_default(),
+                started_on: self.started_on.unwrap_or_default(),
+                completed_on: self.completed_on.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl Statement {
+    /// Creates a new builder-style object to manufacture [`Statement`](crate::model::Statement)
+    pub fn builder() -> crate::model::statement::Builder {
+        crate::model::statement::Builder::default()
+    }
+}
+
+/// <p>The code execution output in JSON format.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StatementOutput {
+    /// <p>The code execution output.</p>
+    pub data: std::option::Option<crate::model::StatementOutputData>,
+    /// <p>The execution count of the output.</p>
+    pub execution_count: i32,
+    /// <p>The status of the code execution output.</p>
+    pub status: std::option::Option<crate::model::StatementState>,
+    /// <p>The name of the error in the output.</p>
+    pub error_name: std::option::Option<std::string::String>,
+    /// <p>The error value of the output.</p>
+    pub error_value: std::option::Option<std::string::String>,
+    /// <p>The traceback of the output.</p>
+    pub traceback: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl StatementOutput {
+    /// <p>The code execution output.</p>
+    pub fn data(&self) -> std::option::Option<&crate::model::StatementOutputData> {
+        self.data.as_ref()
+    }
+    /// <p>The execution count of the output.</p>
+    pub fn execution_count(&self) -> i32 {
+        self.execution_count
+    }
+    /// <p>The status of the code execution output.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatementState> {
+        self.status.as_ref()
+    }
+    /// <p>The name of the error in the output.</p>
+    pub fn error_name(&self) -> std::option::Option<&str> {
+        self.error_name.as_deref()
+    }
+    /// <p>The error value of the output.</p>
+    pub fn error_value(&self) -> std::option::Option<&str> {
+        self.error_value.as_deref()
+    }
+    /// <p>The traceback of the output.</p>
+    pub fn traceback(&self) -> std::option::Option<&[std::string::String]> {
+        self.traceback.as_deref()
+    }
+}
+impl std::fmt::Debug for StatementOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StatementOutput");
+        formatter.field("data", &self.data);
+        formatter.field("execution_count", &self.execution_count);
+        formatter.field("status", &self.status);
+        formatter.field("error_name", &self.error_name);
+        formatter.field("error_value", &self.error_value);
+        formatter.field("traceback", &self.traceback);
+        formatter.finish()
+    }
+}
+/// See [`StatementOutput`](crate::model::StatementOutput)
+pub mod statement_output {
+    /// A builder for [`StatementOutput`](crate::model::StatementOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data: std::option::Option<crate::model::StatementOutputData>,
+        pub(crate) execution_count: std::option::Option<i32>,
+        pub(crate) status: std::option::Option<crate::model::StatementState>,
+        pub(crate) error_name: std::option::Option<std::string::String>,
+        pub(crate) error_value: std::option::Option<std::string::String>,
+        pub(crate) traceback: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The code execution output.</p>
+        pub fn data(mut self, input: crate::model::StatementOutputData) -> Self {
+            self.data = Some(input);
+            self
+        }
+        /// <p>The code execution output.</p>
+        pub fn set_data(
+            mut self,
+            input: std::option::Option<crate::model::StatementOutputData>,
+        ) -> Self {
+            self.data = input;
+            self
+        }
+        /// <p>The execution count of the output.</p>
+        pub fn execution_count(mut self, input: i32) -> Self {
+            self.execution_count = Some(input);
+            self
+        }
+        /// <p>The execution count of the output.</p>
+        pub fn set_execution_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.execution_count = input;
+            self
+        }
+        /// <p>The status of the code execution output.</p>
+        pub fn status(mut self, input: crate::model::StatementState) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the code execution output.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::StatementState>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The name of the error in the output.</p>
+        pub fn error_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the error in the output.</p>
+        pub fn set_error_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_name = input;
+            self
+        }
+        /// <p>The error value of the output.</p>
+        pub fn error_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_value = Some(input.into());
+            self
+        }
+        /// <p>The error value of the output.</p>
+        pub fn set_error_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_value = input;
+            self
+        }
+        /// Appends an item to `traceback`.
+        ///
+        /// To override the contents of this collection use [`set_traceback`](Self::set_traceback).
+        ///
+        /// <p>The traceback of the output.</p>
+        pub fn traceback(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.traceback.unwrap_or_default();
+            v.push(input.into());
+            self.traceback = Some(v);
+            self
+        }
+        /// <p>The traceback of the output.</p>
+        pub fn set_traceback(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.traceback = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StatementOutput`](crate::model::StatementOutput)
+        pub fn build(self) -> crate::model::StatementOutput {
+            crate::model::StatementOutput {
+                data: self.data,
+                execution_count: self.execution_count.unwrap_or_default(),
+                status: self.status,
+                error_name: self.error_name,
+                error_value: self.error_value,
+                traceback: self.traceback,
+            }
+        }
+    }
+}
+impl StatementOutput {
+    /// Creates a new builder-style object to manufacture [`StatementOutput`](crate::model::StatementOutput)
+    pub fn builder() -> crate::model::statement_output::Builder {
+        crate::model::statement_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum StatementState {
+    #[allow(missing_docs)] // documentation missing in model
+    Available,
+    #[allow(missing_docs)] // documentation missing in model
+    Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
+    Cancelling,
+    #[allow(missing_docs)] // documentation missing in model
+    Error,
+    #[allow(missing_docs)] // documentation missing in model
+    Running,
+    #[allow(missing_docs)] // documentation missing in model
+    Waiting,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for StatementState {
+    fn from(s: &str) -> Self {
+        match s {
+            "AVAILABLE" => StatementState::Available,
+            "CANCELLED" => StatementState::Cancelled,
+            "CANCELLING" => StatementState::Cancelling,
+            "ERROR" => StatementState::Error,
+            "RUNNING" => StatementState::Running,
+            "WAITING" => StatementState::Waiting,
+            other => StatementState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for StatementState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(StatementState::from(s))
+    }
+}
+impl StatementState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            StatementState::Available => "AVAILABLE",
+            StatementState::Cancelled => "CANCELLED",
+            StatementState::Cancelling => "CANCELLING",
+            StatementState::Error => "ERROR",
+            StatementState::Running => "RUNNING",
+            StatementState::Waiting => "WAITING",
+            StatementState::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AVAILABLE",
+            "CANCELLED",
+            "CANCELLING",
+            "ERROR",
+            "RUNNING",
+            "WAITING",
+        ]
+    }
+}
+impl AsRef<str> for StatementState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The code execution output in JSON format.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StatementOutputData {
+    /// <p>The code execution output in text format.</p>
+    pub text_plain: std::option::Option<std::string::String>,
+}
+impl StatementOutputData {
+    /// <p>The code execution output in text format.</p>
+    pub fn text_plain(&self) -> std::option::Option<&str> {
+        self.text_plain.as_deref()
+    }
+}
+impl std::fmt::Debug for StatementOutputData {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StatementOutputData");
+        formatter.field("text_plain", &self.text_plain);
+        formatter.finish()
+    }
+}
+/// See [`StatementOutputData`](crate::model::StatementOutputData)
+pub mod statement_output_data {
+    /// A builder for [`StatementOutputData`](crate::model::StatementOutputData)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) text_plain: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The code execution output in text format.</p>
+        pub fn text_plain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.text_plain = Some(input.into());
+            self
+        }
+        /// <p>The code execution output in text format.</p>
+        pub fn set_text_plain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.text_plain = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StatementOutputData`](crate::model::StatementOutputData)
+        pub fn build(self) -> crate::model::StatementOutputData {
+            crate::model::StatementOutputData {
+                text_plain: self.text_plain,
+            }
+        }
+    }
+}
+impl StatementOutputData {
+    /// Creates a new builder-style object to manufacture [`StatementOutputData`](crate::model::StatementOutputData)
+    pub fn builder() -> crate::model::statement_output_data::Builder {
+        crate::model::statement_output_data::Builder::default()
+    }
+}
+
+/// <p>The period in which a remote Spark runtime environment is running.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Session {
+    /// <p>The ID of the session.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The time and date when the session was created.</p>
+    pub created_on: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The session status. </p>
+    pub status: std::option::Option<crate::model::SessionStatus>,
+    /// <p>The error message displayed during the session.</p>
+    pub error_message: std::option::Option<std::string::String>,
+    /// <p>The description of the session.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with the Session.</p>
+    pub role: std::option::Option<std::string::String>,
+    /// <p>The command object.See SessionCommand.</p>
+    pub command: std::option::Option<crate::model::SessionCommand>,
+    /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
+    pub default_arguments:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The number of connections used for the session.</p>
+    pub connections: std::option::Option<crate::model::ConnectionsList>,
+    /// <p>The code execution progress of the session.</p>
+    pub progress: f64,
+    /// <p>The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
+    pub max_capacity: std::option::Option<f64>,
+    /// <p>The name of the SecurityConfiguration structure to be used with the session.</p>
+    pub security_configuration: std::option::Option<std::string::String>,
+    /// <p>The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The GlueVersion must be greater than 2.0.</p>
+    pub glue_version: std::option::Option<std::string::String>,
+}
+impl Session {
+    /// <p>The ID of the session.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The time and date when the session was created.</p>
+    pub fn created_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_on.as_ref()
+    }
+    /// <p>The session status. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SessionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The error message displayed during the session.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The description of the session.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with the Session.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>The command object.See SessionCommand.</p>
+    pub fn command(&self) -> std::option::Option<&crate::model::SessionCommand> {
+        self.command.as_ref()
+    }
+    /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
+    pub fn default_arguments(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.default_arguments.as_ref()
+    }
+    /// <p>The number of connections used for the session.</p>
+    pub fn connections(&self) -> std::option::Option<&crate::model::ConnectionsList> {
+        self.connections.as_ref()
+    }
+    /// <p>The code execution progress of the session.</p>
+    pub fn progress(&self) -> f64 {
+        self.progress
+    }
+    /// <p>The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
+    pub fn max_capacity(&self) -> std::option::Option<f64> {
+        self.max_capacity
+    }
+    /// <p>The name of the SecurityConfiguration structure to be used with the session.</p>
+    pub fn security_configuration(&self) -> std::option::Option<&str> {
+        self.security_configuration.as_deref()
+    }
+    /// <p>The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The GlueVersion must be greater than 2.0.</p>
+    pub fn glue_version(&self) -> std::option::Option<&str> {
+        self.glue_version.as_deref()
+    }
+}
+impl std::fmt::Debug for Session {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Session");
+        formatter.field("id", &self.id);
+        formatter.field("created_on", &self.created_on);
+        formatter.field("status", &self.status);
+        formatter.field("error_message", &self.error_message);
+        formatter.field("description", &self.description);
+        formatter.field("role", &self.role);
+        formatter.field("command", &self.command);
+        formatter.field("default_arguments", &self.default_arguments);
+        formatter.field("connections", &self.connections);
+        formatter.field("progress", &self.progress);
+        formatter.field("max_capacity", &self.max_capacity);
+        formatter.field("security_configuration", &self.security_configuration);
+        formatter.field("glue_version", &self.glue_version);
+        formatter.finish()
+    }
+}
+/// See [`Session`](crate::model::Session)
+pub mod session {
+    /// A builder for [`Session`](crate::model::Session)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) created_on: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) status: std::option::Option<crate::model::SessionStatus>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) role: std::option::Option<std::string::String>,
+        pub(crate) command: std::option::Option<crate::model::SessionCommand>,
+        pub(crate) default_arguments: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) connections: std::option::Option<crate::model::ConnectionsList>,
+        pub(crate) progress: std::option::Option<f64>,
+        pub(crate) max_capacity: std::option::Option<f64>,
+        pub(crate) security_configuration: std::option::Option<std::string::String>,
+        pub(crate) glue_version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the session.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the session.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The time and date when the session was created.</p>
+        pub fn created_on(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_on = Some(input);
+            self
+        }
+        /// <p>The time and date when the session was created.</p>
+        pub fn set_created_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_on = input;
+            self
+        }
+        /// <p>The session status. </p>
+        pub fn status(mut self, input: crate::model::SessionStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The session status. </p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::SessionStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The error message displayed during the session.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        /// <p>The error message displayed during the session.</p>
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// <p>The description of the session.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the session.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with the Session.</p>
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role = Some(input.into());
+            self
+        }
+        /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with the Session.</p>
+        pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role = input;
+            self
+        }
+        /// <p>The command object.See SessionCommand.</p>
+        pub fn command(mut self, input: crate::model::SessionCommand) -> Self {
+            self.command = Some(input);
+            self
+        }
+        /// <p>The command object.See SessionCommand.</p>
+        pub fn set_command(
+            mut self,
+            input: std::option::Option<crate::model::SessionCommand>,
+        ) -> Self {
+            self.command = input;
+            self
+        }
+        /// Adds a key-value pair to `default_arguments`.
+        ///
+        /// To override the contents of this collection use [`set_default_arguments`](Self::set_default_arguments).
+        ///
+        /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
+        pub fn default_arguments(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.default_arguments.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.default_arguments = Some(hash_map);
+            self
+        }
+        /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
+        pub fn set_default_arguments(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.default_arguments = input;
+            self
+        }
+        /// <p>The number of connections used for the session.</p>
+        pub fn connections(mut self, input: crate::model::ConnectionsList) -> Self {
+            self.connections = Some(input);
+            self
+        }
+        /// <p>The number of connections used for the session.</p>
+        pub fn set_connections(
+            mut self,
+            input: std::option::Option<crate::model::ConnectionsList>,
+        ) -> Self {
+            self.connections = input;
+            self
+        }
+        /// <p>The code execution progress of the session.</p>
+        pub fn progress(mut self, input: f64) -> Self {
+            self.progress = Some(input);
+            self
+        }
+        /// <p>The code execution progress of the session.</p>
+        pub fn set_progress(mut self, input: std::option::Option<f64>) -> Self {
+            self.progress = input;
+            self
+        }
+        /// <p>The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
+        pub fn max_capacity(mut self, input: f64) -> Self {
+            self.max_capacity = Some(input);
+            self
+        }
+        /// <p>The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
+        pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
+            self.max_capacity = input;
+            self
+        }
+        /// <p>The name of the SecurityConfiguration structure to be used with the session.</p>
+        pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.security_configuration = Some(input.into());
+            self
+        }
+        /// <p>The name of the SecurityConfiguration structure to be used with the session.</p>
+        pub fn set_security_configuration(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.security_configuration = input;
+            self
+        }
+        /// <p>The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The GlueVersion must be greater than 2.0.</p>
+        pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.glue_version = Some(input.into());
+            self
+        }
+        /// <p>The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The GlueVersion must be greater than 2.0.</p>
+        pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.glue_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Session`](crate::model::Session)
+        pub fn build(self) -> crate::model::Session {
+            crate::model::Session {
+                id: self.id,
+                created_on: self.created_on,
+                status: self.status,
+                error_message: self.error_message,
+                description: self.description,
+                role: self.role,
+                command: self.command,
+                default_arguments: self.default_arguments,
+                connections: self.connections,
+                progress: self.progress.unwrap_or_default(),
+                max_capacity: self.max_capacity,
+                security_configuration: self.security_configuration,
+                glue_version: self.glue_version,
+            }
+        }
+    }
+}
+impl Session {
+    /// Creates a new builder-style object to manufacture [`Session`](crate::model::Session)
+    pub fn builder() -> crate::model::session::Builder {
+        crate::model::session::Builder::default()
+    }
+}
+
+/// <p>The <code>SessionCommand</code> that runs the job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SessionCommand {
+    /// <p>Specifies the name of the SessionCommand.Can be 'glueetl' or 'gluestreaming'.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.</p>
+    pub python_version: std::option::Option<std::string::String>,
+}
+impl SessionCommand {
+    /// <p>Specifies the name of the SessionCommand.Can be 'glueetl' or 'gluestreaming'.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.</p>
+    pub fn python_version(&self) -> std::option::Option<&str> {
+        self.python_version.as_deref()
+    }
+}
+impl std::fmt::Debug for SessionCommand {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SessionCommand");
+        formatter.field("name", &self.name);
+        formatter.field("python_version", &self.python_version);
+        formatter.finish()
+    }
+}
+/// See [`SessionCommand`](crate::model::SessionCommand)
+pub mod session_command {
+    /// A builder for [`SessionCommand`](crate::model::SessionCommand)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) python_version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the name of the SessionCommand.Can be 'glueetl' or 'gluestreaming'.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>Specifies the name of the SessionCommand.Can be 'glueetl' or 'gluestreaming'.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.</p>
+        pub fn python_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.python_version = Some(input.into());
+            self
+        }
+        /// <p>Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.</p>
+        pub fn set_python_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.python_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SessionCommand`](crate::model::SessionCommand)
+        pub fn build(self) -> crate::model::SessionCommand {
+            crate::model::SessionCommand {
+                name: self.name,
+                python_version: self.python_version,
+            }
+        }
+    }
+}
+impl SessionCommand {
+    /// Creates a new builder-style object to manufacture [`SessionCommand`](crate::model::SessionCommand)
+    pub fn builder() -> crate::model::session_command::Builder {
+        crate::model::session_command::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SessionStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Provisioning,
+    #[allow(missing_docs)] // documentation missing in model
+    Ready,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopped,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopping,
+    #[allow(missing_docs)] // documentation missing in model
+    Timeout,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SessionStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => SessionStatus::Failed,
+            "PROVISIONING" => SessionStatus::Provisioning,
+            "READY" => SessionStatus::Ready,
+            "STOPPED" => SessionStatus::Stopped,
+            "STOPPING" => SessionStatus::Stopping,
+            "TIMEOUT" => SessionStatus::Timeout,
+            other => SessionStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SessionStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SessionStatus::from(s))
+    }
+}
+impl SessionStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SessionStatus::Failed => "FAILED",
+            SessionStatus::Provisioning => "PROVISIONING",
+            SessionStatus::Ready => "READY",
+            SessionStatus::Stopped => "STOPPED",
+            SessionStatus::Stopping => "STOPPING",
+            SessionStatus::Timeout => "TIMEOUT",
+            SessionStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "FAILED",
+            "PROVISIONING",
+            "READY",
+            "STOPPED",
+            "STOPPING",
+            "TIMEOUT",
+        ]
+    }
+}
+impl AsRef<str> for SessionStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>An object containing the details about a schema version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -14805,23 +15750,37 @@ impl AsRef<str> for PermissionType {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>A structure containing information for audit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuditContext {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The context for the audit..</p>
     pub additional_audit_context: std::option::Option<std::string::String>,
+    /// <p>The requested columns for audit.</p>
+    pub requested_columns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>All columns request for audit.</p>
+    pub all_columns_requested: std::option::Option<bool>,
 }
 impl AuditContext {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The context for the audit..</p>
     pub fn additional_audit_context(&self) -> std::option::Option<&str> {
         self.additional_audit_context.as_deref()
+    }
+    /// <p>The requested columns for audit.</p>
+    pub fn requested_columns(&self) -> std::option::Option<&[std::string::String]> {
+        self.requested_columns.as_deref()
+    }
+    /// <p>All columns request for audit.</p>
+    pub fn all_columns_requested(&self) -> std::option::Option<bool> {
+        self.all_columns_requested
     }
 }
 impl std::fmt::Debug for AuditContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuditContext");
         formatter.field("additional_audit_context", &self.additional_audit_context);
+        formatter.field("requested_columns", &self.requested_columns);
+        formatter.field("all_columns_requested", &self.all_columns_requested);
         formatter.finish()
     }
 }
@@ -14832,14 +15791,16 @@ pub mod audit_context {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) additional_audit_context: std::option::Option<std::string::String>,
+        pub(crate) requested_columns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) all_columns_requested: std::option::Option<bool>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The context for the audit..</p>
         pub fn additional_audit_context(mut self, input: impl Into<std::string::String>) -> Self {
             self.additional_audit_context = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The context for the audit..</p>
         pub fn set_additional_audit_context(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14847,10 +15808,41 @@ pub mod audit_context {
             self.additional_audit_context = input;
             self
         }
+        /// Appends an item to `requested_columns`.
+        ///
+        /// To override the contents of this collection use [`set_requested_columns`](Self::set_requested_columns).
+        ///
+        /// <p>The requested columns for audit.</p>
+        pub fn requested_columns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.requested_columns.unwrap_or_default();
+            v.push(input.into());
+            self.requested_columns = Some(v);
+            self
+        }
+        /// <p>The requested columns for audit.</p>
+        pub fn set_requested_columns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.requested_columns = input;
+            self
+        }
+        /// <p>All columns request for audit.</p>
+        pub fn all_columns_requested(mut self, input: bool) -> Self {
+            self.all_columns_requested = Some(input);
+            self
+        }
+        /// <p>All columns request for audit.</p>
+        pub fn set_all_columns_requested(mut self, input: std::option::Option<bool>) -> Self {
+            self.all_columns_requested = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AuditContext`](crate::model::AuditContext)
         pub fn build(self) -> crate::model::AuditContext {
             crate::model::AuditContext {
                 additional_audit_context: self.additional_audit_context,
+                requested_columns: self.requested_columns,
+                all_columns_requested: self.all_columns_requested,
             }
         }
     }

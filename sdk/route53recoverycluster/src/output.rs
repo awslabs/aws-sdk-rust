@@ -62,14 +62,99 @@ impl UpdateRoutingControlStateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListRoutingControlsOutput {
+    /// <p>The list of routing controls.</p>
+    pub routing_controls: std::option::Option<std::vec::Vec<crate::model::RoutingControl>>,
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRoutingControlsOutput {
+    /// <p>The list of routing controls.</p>
+    pub fn routing_controls(&self) -> std::option::Option<&[crate::model::RoutingControl]> {
+        self.routing_controls.as_deref()
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListRoutingControlsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListRoutingControlsOutput");
+        formatter.field("routing_controls", &self.routing_controls);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput)
+pub mod list_routing_controls_output {
+    /// A builder for [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) routing_controls:
+            std::option::Option<std::vec::Vec<crate::model::RoutingControl>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `routing_controls`.
+        ///
+        /// To override the contents of this collection use [`set_routing_controls`](Self::set_routing_controls).
+        ///
+        /// <p>The list of routing controls.</p>
+        pub fn routing_controls(mut self, input: crate::model::RoutingControl) -> Self {
+            let mut v = self.routing_controls.unwrap_or_default();
+            v.push(input);
+            self.routing_controls = Some(v);
+            self
+        }
+        /// <p>The list of routing controls.</p>
+        pub fn set_routing_controls(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RoutingControl>>,
+        ) -> Self {
+            self.routing_controls = input;
+            self
+        }
+        /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput)
+        pub fn build(self) -> crate::output::ListRoutingControlsOutput {
+            crate::output::ListRoutingControlsOutput {
+                routing_controls: self.routing_controls,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListRoutingControlsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput)
+    pub fn builder() -> crate::output::list_routing_controls_output::Builder {
+        crate::output::list_routing_controls_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRoutingControlStateOutput {
-    /// <p>The Amazon Resource Number (ARN) of the response.</p>
+    /// <p>The Amazon Resource Name (ARN) of the response.</p>
     pub routing_control_arn: std::option::Option<std::string::String>,
     /// <p>The state of the routing control.</p>
     pub routing_control_state: std::option::Option<crate::model::RoutingControlState>,
+    /// <p>The routing control name.</p>
+    pub routing_control_name: std::option::Option<std::string::String>,
 }
 impl GetRoutingControlStateOutput {
-    /// <p>The Amazon Resource Number (ARN) of the response.</p>
+    /// <p>The Amazon Resource Name (ARN) of the response.</p>
     pub fn routing_control_arn(&self) -> std::option::Option<&str> {
         self.routing_control_arn.as_deref()
     }
@@ -77,12 +162,17 @@ impl GetRoutingControlStateOutput {
     pub fn routing_control_state(&self) -> std::option::Option<&crate::model::RoutingControlState> {
         self.routing_control_state.as_ref()
     }
+    /// <p>The routing control name.</p>
+    pub fn routing_control_name(&self) -> std::option::Option<&str> {
+        self.routing_control_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRoutingControlStateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRoutingControlStateOutput");
         formatter.field("routing_control_arn", &self.routing_control_arn);
         formatter.field("routing_control_state", &self.routing_control_state);
+        formatter.field("routing_control_name", &self.routing_control_name);
         formatter.finish()
     }
 }
@@ -94,14 +184,15 @@ pub mod get_routing_control_state_output {
     pub struct Builder {
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,
         pub(crate) routing_control_state: std::option::Option<crate::model::RoutingControlState>,
+        pub(crate) routing_control_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Number (ARN) of the response.</p>
+        /// <p>The Amazon Resource Name (ARN) of the response.</p>
         pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.routing_control_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of the response.</p>
+        /// <p>The Amazon Resource Name (ARN) of the response.</p>
         pub fn set_routing_control_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -122,11 +213,25 @@ pub mod get_routing_control_state_output {
             self.routing_control_state = input;
             self
         }
+        /// <p>The routing control name.</p>
+        pub fn routing_control_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.routing_control_name = Some(input.into());
+            self
+        }
+        /// <p>The routing control name.</p>
+        pub fn set_routing_control_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.routing_control_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput)
         pub fn build(self) -> crate::output::GetRoutingControlStateOutput {
             crate::output::GetRoutingControlStateOutput {
                 routing_control_arn: self.routing_control_arn,
                 routing_control_state: self.routing_control_state,
+                routing_control_name: self.routing_control_name,
             }
         }
     }

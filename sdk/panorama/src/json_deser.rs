@@ -956,6 +956,18 @@ pub fn deser_operation_crate_operation_describe_device(
                             .transpose()?,
                         );
                     }
+                    "Brand" => {
+                        builder = builder.set_brand(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::model::DeviceBrand::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                        );
+                    }
                     "CreatedTime" => {
                         builder = builder.set_created_time(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -4864,6 +4876,18 @@ where
                                         tokens.next(),
                                         aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
+                                );
+                            }
+                            "Brand" => {
+                                builder = builder.set_brand(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::DeviceBrand::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

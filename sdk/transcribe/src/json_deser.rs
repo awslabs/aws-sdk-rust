@@ -3801,6 +3801,14 @@ where
                                     crate::json_deser::deser_list_com_amazonaws_transcribe_subtitle_file_uris(tokens)?
                                 );
                             }
+                            "OutputStartIndex" => {
+                                builder = builder.set_output_start_index(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

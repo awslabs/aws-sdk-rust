@@ -2217,6 +2217,8 @@ pub enum InstanceAttributeType {
     #[allow(missing_docs)] // documentation missing in model
     InboundCalls,
     #[allow(missing_docs)] // documentation missing in model
+    MultiPartyConference,
+    #[allow(missing_docs)] // documentation missing in model
     OutboundCalls,
     #[allow(missing_docs)] // documentation missing in model
     UseCustomTtsVoices,
@@ -2231,6 +2233,7 @@ impl std::convert::From<&str> for InstanceAttributeType {
             "CONTACT_LENS" => InstanceAttributeType::ContactLens,
             "EARLY_MEDIA" => InstanceAttributeType::EarlyMedia,
             "INBOUND_CALLS" => InstanceAttributeType::InboundCalls,
+            "MULTI_PARTY_CONFERENCE" => InstanceAttributeType::MultiPartyConference,
             "OUTBOUND_CALLS" => InstanceAttributeType::OutboundCalls,
             "USE_CUSTOM_TTS_VOICES" => InstanceAttributeType::UseCustomTtsVoices,
             other => InstanceAttributeType::Unknown(other.to_owned()),
@@ -2253,6 +2256,7 @@ impl InstanceAttributeType {
             InstanceAttributeType::ContactLens => "CONTACT_LENS",
             InstanceAttributeType::EarlyMedia => "EARLY_MEDIA",
             InstanceAttributeType::InboundCalls => "INBOUND_CALLS",
+            InstanceAttributeType::MultiPartyConference => "MULTI_PARTY_CONFERENCE",
             InstanceAttributeType::OutboundCalls => "OUTBOUND_CALLS",
             InstanceAttributeType::UseCustomTtsVoices => "USE_CUSTOM_TTS_VOICES",
             InstanceAttributeType::Unknown(s) => s.as_ref(),
@@ -2266,6 +2270,7 @@ impl InstanceAttributeType {
             "CONTACT_LENS",
             "EARLY_MEDIA",
             "INBOUND_CALLS",
+            "MULTI_PARTY_CONFERENCE",
             "OUTBOUND_CALLS",
             "USE_CUSTOM_TTS_VOICES",
         ]

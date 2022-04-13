@@ -10,6 +10,495 @@
     std::fmt::Debug,
     std::hash::Hash,
 )]
+pub enum EndpointState {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    Creating,
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EndpointState {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => EndpointState::Active,
+            "CREATE_FAILED" => EndpointState::CreateFailed,
+            "CREATING" => EndpointState::Creating,
+            "DELETE_FAILED" => EndpointState::DeleteFailed,
+            "DELETING" => EndpointState::Deleting,
+            "UPDATE_FAILED" => EndpointState::UpdateFailed,
+            "UPDATING" => EndpointState::Updating,
+            other => EndpointState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EndpointState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EndpointState::from(s))
+    }
+}
+impl EndpointState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EndpointState::Active => "ACTIVE",
+            EndpointState::CreateFailed => "CREATE_FAILED",
+            EndpointState::Creating => "CREATING",
+            EndpointState::DeleteFailed => "DELETE_FAILED",
+            EndpointState::Deleting => "DELETING",
+            EndpointState::UpdateFailed => "UPDATE_FAILED",
+            EndpointState::Updating => "UPDATING",
+            EndpointState::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "CREATE_FAILED",
+            "CREATING",
+            "DELETE_FAILED",
+            "DELETING",
+            "UPDATE_FAILED",
+            "UPDATING",
+        ]
+    }
+}
+impl AsRef<str> for EndpointState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The event buses the endpoint is associated with.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EndpointEventBus {
+    /// <p>The ARN of the event bus the endpoint is associated with.</p>
+    pub event_bus_arn: std::option::Option<std::string::String>,
+}
+impl EndpointEventBus {
+    /// <p>The ARN of the event bus the endpoint is associated with.</p>
+    pub fn event_bus_arn(&self) -> std::option::Option<&str> {
+        self.event_bus_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for EndpointEventBus {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EndpointEventBus");
+        formatter.field("event_bus_arn", &self.event_bus_arn);
+        formatter.finish()
+    }
+}
+/// See [`EndpointEventBus`](crate::model::EndpointEventBus)
+pub mod endpoint_event_bus {
+    /// A builder for [`EndpointEventBus`](crate::model::EndpointEventBus)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_bus_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the event bus the endpoint is associated with.</p>
+        pub fn event_bus_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_bus_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the event bus the endpoint is associated with.</p>
+        pub fn set_event_bus_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_bus_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EndpointEventBus`](crate::model::EndpointEventBus)
+        pub fn build(self) -> crate::model::EndpointEventBus {
+            crate::model::EndpointEventBus {
+                event_bus_arn: self.event_bus_arn,
+            }
+        }
+    }
+}
+impl EndpointEventBus {
+    /// Creates a new builder-style object to manufacture [`EndpointEventBus`](crate::model::EndpointEventBus)
+    pub fn builder() -> crate::model::endpoint_event_bus::Builder {
+        crate::model::endpoint_event_bus::Builder::default()
+    }
+}
+
+/// <p>Endpoints can replicate all events to the secondary Region.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReplicationConfig {
+    /// <p>The state of event replication.</p>
+    pub state: std::option::Option<crate::model::ReplicationState>,
+}
+impl ReplicationConfig {
+    /// <p>The state of event replication.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ReplicationState> {
+        self.state.as_ref()
+    }
+}
+impl std::fmt::Debug for ReplicationConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReplicationConfig");
+        formatter.field("state", &self.state);
+        formatter.finish()
+    }
+}
+/// See [`ReplicationConfig`](crate::model::ReplicationConfig)
+pub mod replication_config {
+    /// A builder for [`ReplicationConfig`](crate::model::ReplicationConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) state: std::option::Option<crate::model::ReplicationState>,
+    }
+    impl Builder {
+        /// <p>The state of event replication.</p>
+        pub fn state(mut self, input: crate::model::ReplicationState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The state of event replication.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReplicationConfig`](crate::model::ReplicationConfig)
+        pub fn build(self) -> crate::model::ReplicationConfig {
+            crate::model::ReplicationConfig { state: self.state }
+        }
+    }
+}
+impl ReplicationConfig {
+    /// Creates a new builder-style object to manufacture [`ReplicationConfig`](crate::model::ReplicationConfig)
+    pub fn builder() -> crate::model::replication_config::Builder {
+        crate::model::replication_config::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ReplicationState {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ReplicationState {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => ReplicationState::Disabled,
+            "ENABLED" => ReplicationState::Enabled,
+            other => ReplicationState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ReplicationState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ReplicationState::from(s))
+    }
+}
+impl ReplicationState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ReplicationState::Disabled => "DISABLED",
+            ReplicationState::Enabled => "ENABLED",
+            ReplicationState::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for ReplicationState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The routing configuration of the endpoint.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RoutingConfig {
+    /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
+    pub failover_config: std::option::Option<crate::model::FailoverConfig>,
+}
+impl RoutingConfig {
+    /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
+    pub fn failover_config(&self) -> std::option::Option<&crate::model::FailoverConfig> {
+        self.failover_config.as_ref()
+    }
+}
+impl std::fmt::Debug for RoutingConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RoutingConfig");
+        formatter.field("failover_config", &self.failover_config);
+        formatter.finish()
+    }
+}
+/// See [`RoutingConfig`](crate::model::RoutingConfig)
+pub mod routing_config {
+    /// A builder for [`RoutingConfig`](crate::model::RoutingConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) failover_config: std::option::Option<crate::model::FailoverConfig>,
+    }
+    impl Builder {
+        /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
+        pub fn failover_config(mut self, input: crate::model::FailoverConfig) -> Self {
+            self.failover_config = Some(input);
+            self
+        }
+        /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
+        pub fn set_failover_config(
+            mut self,
+            input: std::option::Option<crate::model::FailoverConfig>,
+        ) -> Self {
+            self.failover_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RoutingConfig`](crate::model::RoutingConfig)
+        pub fn build(self) -> crate::model::RoutingConfig {
+            crate::model::RoutingConfig {
+                failover_config: self.failover_config,
+            }
+        }
+    }
+}
+impl RoutingConfig {
+    /// Creates a new builder-style object to manufacture [`RoutingConfig`](crate::model::RoutingConfig)
+    pub fn builder() -> crate::model::routing_config::Builder {
+        crate::model::routing_config::Builder::default()
+    }
+}
+
+/// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FailoverConfig {
+    /// <p>The main Region of the endpoint.</p>
+    pub primary: std::option::Option<crate::model::Primary>,
+    /// <p>The Region that events are routed to when failover is triggered or event replication is enabled.</p>
+    pub secondary: std::option::Option<crate::model::Secondary>,
+}
+impl FailoverConfig {
+    /// <p>The main Region of the endpoint.</p>
+    pub fn primary(&self) -> std::option::Option<&crate::model::Primary> {
+        self.primary.as_ref()
+    }
+    /// <p>The Region that events are routed to when failover is triggered or event replication is enabled.</p>
+    pub fn secondary(&self) -> std::option::Option<&crate::model::Secondary> {
+        self.secondary.as_ref()
+    }
+}
+impl std::fmt::Debug for FailoverConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FailoverConfig");
+        formatter.field("primary", &self.primary);
+        formatter.field("secondary", &self.secondary);
+        formatter.finish()
+    }
+}
+/// See [`FailoverConfig`](crate::model::FailoverConfig)
+pub mod failover_config {
+    /// A builder for [`FailoverConfig`](crate::model::FailoverConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) primary: std::option::Option<crate::model::Primary>,
+        pub(crate) secondary: std::option::Option<crate::model::Secondary>,
+    }
+    impl Builder {
+        /// <p>The main Region of the endpoint.</p>
+        pub fn primary(mut self, input: crate::model::Primary) -> Self {
+            self.primary = Some(input);
+            self
+        }
+        /// <p>The main Region of the endpoint.</p>
+        pub fn set_primary(mut self, input: std::option::Option<crate::model::Primary>) -> Self {
+            self.primary = input;
+            self
+        }
+        /// <p>The Region that events are routed to when failover is triggered or event replication is enabled.</p>
+        pub fn secondary(mut self, input: crate::model::Secondary) -> Self {
+            self.secondary = Some(input);
+            self
+        }
+        /// <p>The Region that events are routed to when failover is triggered or event replication is enabled.</p>
+        pub fn set_secondary(
+            mut self,
+            input: std::option::Option<crate::model::Secondary>,
+        ) -> Self {
+            self.secondary = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FailoverConfig`](crate::model::FailoverConfig)
+        pub fn build(self) -> crate::model::FailoverConfig {
+            crate::model::FailoverConfig {
+                primary: self.primary,
+                secondary: self.secondary,
+            }
+        }
+    }
+}
+impl FailoverConfig {
+    /// Creates a new builder-style object to manufacture [`FailoverConfig`](crate::model::FailoverConfig)
+    pub fn builder() -> crate::model::failover_config::Builder {
+        crate::model::failover_config::Builder::default()
+    }
+}
+
+/// <p>The secondary Region that processes events when failover is triggered or replication is enabled.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Secondary {
+    /// <p>Defines the secondary Region.</p>
+    pub route: std::option::Option<std::string::String>,
+}
+impl Secondary {
+    /// <p>Defines the secondary Region.</p>
+    pub fn route(&self) -> std::option::Option<&str> {
+        self.route.as_deref()
+    }
+}
+impl std::fmt::Debug for Secondary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Secondary");
+        formatter.field("route", &self.route);
+        formatter.finish()
+    }
+}
+/// See [`Secondary`](crate::model::Secondary)
+pub mod secondary {
+    /// A builder for [`Secondary`](crate::model::Secondary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) route: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Defines the secondary Region.</p>
+        pub fn route(mut self, input: impl Into<std::string::String>) -> Self {
+            self.route = Some(input.into());
+            self
+        }
+        /// <p>Defines the secondary Region.</p>
+        pub fn set_route(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.route = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Secondary`](crate::model::Secondary)
+        pub fn build(self) -> crate::model::Secondary {
+            crate::model::Secondary { route: self.route }
+        }
+    }
+}
+impl Secondary {
+    /// Creates a new builder-style object to manufacture [`Secondary`](crate::model::Secondary)
+    pub fn builder() -> crate::model::secondary::Builder {
+        crate::model::secondary::Builder::default()
+    }
+}
+
+/// <p>The primary Region of the endpoint.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Primary {
+    /// <p>The ARN of the health check used by the endpoint to determine whether failover is triggered.</p>
+    pub health_check: std::option::Option<std::string::String>,
+}
+impl Primary {
+    /// <p>The ARN of the health check used by the endpoint to determine whether failover is triggered.</p>
+    pub fn health_check(&self) -> std::option::Option<&str> {
+        self.health_check.as_deref()
+    }
+}
+impl std::fmt::Debug for Primary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Primary");
+        formatter.field("health_check", &self.health_check);
+        formatter.finish()
+    }
+}
+/// See [`Primary`](crate::model::Primary)
+pub mod primary {
+    /// A builder for [`Primary`](crate::model::Primary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) health_check: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the health check used by the endpoint to determine whether failover is triggered.</p>
+        pub fn health_check(mut self, input: impl Into<std::string::String>) -> Self {
+            self.health_check = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the health check used by the endpoint to determine whether failover is triggered.</p>
+        pub fn set_health_check(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.health_check = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Primary`](crate::model::Primary)
+        pub fn build(self) -> crate::model::Primary {
+            crate::model::Primary {
+                health_check: self.health_check,
+            }
+        }
+    }
+}
+impl Primary {
+    /// Creates a new builder-style object to manufacture [`Primary`](crate::model::Primary)
+    pub fn builder() -> crate::model::primary::Builder {
+        crate::model::primary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ConnectionState {
     #[allow(missing_docs)] // documentation missing in model
     Authorized,
@@ -5059,9 +5548,11 @@ pub struct PutEventsRequestEntry {
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Free-form string used to decide what fields to expect in the event detail.</p>
     pub detail_type: std::option::Option<std::string::String>,
-    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
+    /// <p>A valid JSON object. There is no other schema imposed. The JSON object may contain fields and nested subobjects.</p>
     pub detail: std::option::Option<std::string::String>,
-    /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are used to match the event. If you omit this, the default event bus is used.</p>
+    /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are used to match the event. If you omit this, the default event bus is used.</p> <note>
+    /// <p>If you're using a global endpoint with a custom bus, you must enter the name, not the ARN, of the event bus in either the primary or secondary Region here and the corresponding event bus in the other Region will be determined based on the endpoint referenced by the <code>EndpointId</code>.</p>
+    /// </note>
     pub event_bus_name: std::option::Option<std::string::String>,
     /// <p>An X-Ray trace header, which is an http header (X-Amzn-Trace-Id) that contains the trace-id associated with the event.</p>
     /// <p>To learn more about X-Ray trace headers, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the X-Ray Developer Guide.</p>
@@ -5084,11 +5575,13 @@ impl PutEventsRequestEntry {
     pub fn detail_type(&self) -> std::option::Option<&str> {
         self.detail_type.as_deref()
     }
-    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
+    /// <p>A valid JSON object. There is no other schema imposed. The JSON object may contain fields and nested subobjects.</p>
     pub fn detail(&self) -> std::option::Option<&str> {
         self.detail.as_deref()
     }
-    /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are used to match the event. If you omit this, the default event bus is used.</p>
+    /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are used to match the event. If you omit this, the default event bus is used.</p> <note>
+    /// <p>If you're using a global endpoint with a custom bus, you must enter the name, not the ARN, of the event bus in either the primary or secondary Region here and the corresponding event bus in the other Region will be determined based on the endpoint referenced by the <code>EndpointId</code>.</p>
+    /// </note>
     pub fn event_bus_name(&self) -> std::option::Option<&str> {
         self.event_bus_name.as_deref()
     }
@@ -5175,22 +5668,26 @@ pub mod put_events_request_entry {
             self.detail_type = input;
             self
         }
-        /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
+        /// <p>A valid JSON object. There is no other schema imposed. The JSON object may contain fields and nested subobjects.</p>
         pub fn detail(mut self, input: impl Into<std::string::String>) -> Self {
             self.detail = Some(input.into());
             self
         }
-        /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
+        /// <p>A valid JSON object. There is no other schema imposed. The JSON object may contain fields and nested subobjects.</p>
         pub fn set_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detail = input;
             self
         }
-        /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are used to match the event. If you omit this, the default event bus is used.</p>
+        /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are used to match the event. If you omit this, the default event bus is used.</p> <note>
+        /// <p>If you're using a global endpoint with a custom bus, you must enter the name, not the ARN, of the event bus in either the primary or secondary Region here and the corresponding event bus in the other Region will be determined based on the endpoint referenced by the <code>EndpointId</code>.</p>
+        /// </note>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_bus_name = Some(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are used to match the event. If you omit this, the default event bus is used.</p>
+        /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are used to match the event. If you omit this, the default event bus is used.</p> <note>
+        /// <p>If you're using a global endpoint with a custom bus, you must enter the name, not the ARN, of the event bus in either the primary or secondary Region here and the corresponding event bus in the other Region will be determined based on the endpoint referenced by the <code>EndpointId</code>.</p>
+        /// </note>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6173,6 +6670,312 @@ impl EventBus {
     /// Creates a new builder-style object to manufacture [`EventBus`](crate::model::EventBus)
     pub fn builder() -> crate::model::event_bus::Builder {
         crate::model::event_bus::Builder::default()
+    }
+}
+
+/// <p>An global endpoint used to improve your application's availability by making it regional-fault tolerant. For more information about global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making applications Regional-fault tolerant with global endpoints and event replication</a> in the Amazon EventBridge User Guide..</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Endpoint {
+    /// <p>The name of the endpoint.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A description for the endpoint.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The ARN of the endpoint.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The routing configuration of the endpoint.</p>
+    pub routing_config: std::option::Option<crate::model::RoutingConfig>,
+    /// <p>Whether event replication was enabled or disabled for this endpoint.</p>
+    pub replication_config: std::option::Option<crate::model::ReplicationConfig>,
+    /// <p>The event buses being used by the endpoint.</p>
+    pub event_buses: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
+    /// <p>The ARN of the role used by event replication for the endpoint.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p>
+    pub endpoint_id: std::option::Option<std::string::String>,
+    /// <p>The URL of the endpoint.</p>
+    pub endpoint_url: std::option::Option<std::string::String>,
+    /// <p>The current state of the endpoint.</p>
+    pub state: std::option::Option<crate::model::EndpointState>,
+    /// <p>The reason the endpoint is in its current state.</p>
+    pub state_reason: std::option::Option<std::string::String>,
+    /// <p>The time the endpoint was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The last time the endpoint was modified.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl Endpoint {
+    /// <p>The name of the endpoint.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description for the endpoint.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the endpoint.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The routing configuration of the endpoint.</p>
+    pub fn routing_config(&self) -> std::option::Option<&crate::model::RoutingConfig> {
+        self.routing_config.as_ref()
+    }
+    /// <p>Whether event replication was enabled or disabled for this endpoint.</p>
+    pub fn replication_config(&self) -> std::option::Option<&crate::model::ReplicationConfig> {
+        self.replication_config.as_ref()
+    }
+    /// <p>The event buses being used by the endpoint.</p>
+    pub fn event_buses(&self) -> std::option::Option<&[crate::model::EndpointEventBus]> {
+        self.event_buses.as_deref()
+    }
+    /// <p>The ARN of the role used by event replication for the endpoint.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+    /// <p>The URL of the endpoint.</p>
+    pub fn endpoint_url(&self) -> std::option::Option<&str> {
+        self.endpoint_url.as_deref()
+    }
+    /// <p>The current state of the endpoint.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::EndpointState> {
+        self.state.as_ref()
+    }
+    /// <p>The reason the endpoint is in its current state.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>The time the endpoint was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the endpoint was modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+}
+impl std::fmt::Debug for Endpoint {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Endpoint");
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("arn", &self.arn);
+        formatter.field("routing_config", &self.routing_config);
+        formatter.field("replication_config", &self.replication_config);
+        formatter.field("event_buses", &self.event_buses);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("endpoint_id", &self.endpoint_id);
+        formatter.field("endpoint_url", &self.endpoint_url);
+        formatter.field("state", &self.state);
+        formatter.field("state_reason", &self.state_reason);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.finish()
+    }
+}
+/// See [`Endpoint`](crate::model::Endpoint)
+pub mod endpoint {
+    /// A builder for [`Endpoint`](crate::model::Endpoint)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) routing_config: std::option::Option<crate::model::RoutingConfig>,
+        pub(crate) replication_config: std::option::Option<crate::model::ReplicationConfig>,
+        pub(crate) event_buses: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) endpoint_id: std::option::Option<std::string::String>,
+        pub(crate) endpoint_url: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::EndpointState>,
+        pub(crate) state_reason: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The name of the endpoint.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the endpoint.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A description for the endpoint.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description for the endpoint.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The ARN of the endpoint.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the endpoint.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The routing configuration of the endpoint.</p>
+        pub fn routing_config(mut self, input: crate::model::RoutingConfig) -> Self {
+            self.routing_config = Some(input);
+            self
+        }
+        /// <p>The routing configuration of the endpoint.</p>
+        pub fn set_routing_config(
+            mut self,
+            input: std::option::Option<crate::model::RoutingConfig>,
+        ) -> Self {
+            self.routing_config = input;
+            self
+        }
+        /// <p>Whether event replication was enabled or disabled for this endpoint.</p>
+        pub fn replication_config(mut self, input: crate::model::ReplicationConfig) -> Self {
+            self.replication_config = Some(input);
+            self
+        }
+        /// <p>Whether event replication was enabled or disabled for this endpoint.</p>
+        pub fn set_replication_config(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationConfig>,
+        ) -> Self {
+            self.replication_config = input;
+            self
+        }
+        /// Appends an item to `event_buses`.
+        ///
+        /// To override the contents of this collection use [`set_event_buses`](Self::set_event_buses).
+        ///
+        /// <p>The event buses being used by the endpoint.</p>
+        pub fn event_buses(mut self, input: crate::model::EndpointEventBus) -> Self {
+            let mut v = self.event_buses.unwrap_or_default();
+            v.push(input);
+            self.event_buses = Some(v);
+            self
+        }
+        /// <p>The event buses being used by the endpoint.</p>
+        pub fn set_event_buses(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
+        ) -> Self {
+            self.event_buses = input;
+            self
+        }
+        /// <p>The ARN of the role used by event replication for the endpoint.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the role used by event replication for the endpoint.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p>
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_id = Some(input.into());
+            self
+        }
+        /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p>
+        pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_id = input;
+            self
+        }
+        /// <p>The URL of the endpoint.</p>
+        pub fn endpoint_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_url = Some(input.into());
+            self
+        }
+        /// <p>The URL of the endpoint.</p>
+        pub fn set_endpoint_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_url = input;
+            self
+        }
+        /// <p>The current state of the endpoint.</p>
+        pub fn state(mut self, input: crate::model::EndpointState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The current state of the endpoint.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::EndpointState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The reason the endpoint is in its current state.</p>
+        pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state_reason = Some(input.into());
+            self
+        }
+        /// <p>The reason the endpoint is in its current state.</p>
+        pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_reason = input;
+            self
+        }
+        /// <p>The time the endpoint was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The time the endpoint was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The last time the endpoint was modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The last time the endpoint was modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Endpoint`](crate::model::Endpoint)
+        pub fn build(self) -> crate::model::Endpoint {
+            crate::model::Endpoint {
+                name: self.name,
+                description: self.description,
+                arn: self.arn,
+                routing_config: self.routing_config,
+                replication_config: self.replication_config,
+                event_buses: self.event_buses,
+                role_arn: self.role_arn,
+                endpoint_id: self.endpoint_id,
+                endpoint_url: self.endpoint_url,
+                state: self.state,
+                state_reason: self.state_reason,
+                creation_time: self.creation_time,
+                last_modified_time: self.last_modified_time,
+            }
+        }
+    }
+}
+impl Endpoint {
+    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint)
+    pub fn builder() -> crate::model::endpoint::Builder {
+        crate::model::endpoint::Builder::default()
     }
 }
 

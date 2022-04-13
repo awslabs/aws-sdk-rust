@@ -9,12 +9,12 @@ pub mod get_routing_control_state_input {
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Number (ARN) for the routing control that you want to get the state for.</p>
+        /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
         pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.routing_control_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) for the routing control that you want to get the state for.</p>
+        /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
         pub fn set_routing_control_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -147,6 +147,175 @@ impl GetRoutingControlStateInput {
     }
 }
 
+/// See [`ListRoutingControlsInput`](crate::input::ListRoutingControlsInput)
+pub mod list_routing_controls_input {
+    /// A builder for [`ListRoutingControlsInput`](crate::input::ListRoutingControlsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) control_panel_arn: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
+        pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.control_panel_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
+        pub fn set_control_panel_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.control_panel_arn = input;
+            self
+        }
+        /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The number of routing controls objects that you want to return with this call. The default value is 500.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The number of routing controls objects that you want to return with this call. The default value is 500.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListRoutingControlsInput`](crate::input::ListRoutingControlsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListRoutingControlsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListRoutingControlsInput {
+                control_panel_arn: self.control_panel_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListRoutingControlsInputOperationOutputAlias = crate::operation::ListRoutingControls;
+#[doc(hidden)]
+pub type ListRoutingControlsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListRoutingControlsInput {
+    /// Consumes the builder and constructs an Operation<[`ListRoutingControls`](crate::operation::ListRoutingControls)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListRoutingControls,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListRoutingControlsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListRoutingControlsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "ToggleCustomerAPI.ListRoutingControls",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_routing_controls(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListRoutingControls::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListRoutingControls",
+            "route53recoverycluster",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListRoutingControlsInput`](crate::input::ListRoutingControlsInput)
+    pub fn builder() -> crate::input::list_routing_controls_input::Builder {
+        crate::input::list_routing_controls_input::Builder::default()
+    }
+}
+
 /// See [`UpdateRoutingControlStateInput`](crate::input::UpdateRoutingControlStateInput)
 pub mod update_routing_control_state_input {
     /// A builder for [`UpdateRoutingControlStateInput`](crate::input::UpdateRoutingControlStateInput)
@@ -159,12 +328,12 @@ pub mod update_routing_control_state_input {
             std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Number (ARN) for the routing control that you want to update the state for.</p>
+        /// <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
         pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.routing_control_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) for the routing control that you want to update the state for.</p>
+        /// <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
         pub fn set_routing_control_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -189,7 +358,7 @@ pub mod update_routing_control_state_input {
         ///
         /// To override the contents of this collection use [`set_safety_rules_to_override`](Self::set_safety_rules_to_override).
         ///
-        /// <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
+        /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
         pub fn safety_rules_to_override(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.safety_rules_to_override.unwrap_or_default();
@@ -197,7 +366,7 @@ pub mod update_routing_control_state_input {
             self.safety_rules_to_override = Some(v);
             self
         }
-        /// <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
+        /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
         pub fn set_safety_rules_to_override(
             mut self,
@@ -374,7 +543,7 @@ pub mod update_routing_control_states_input {
         ///
         /// To override the contents of this collection use [`set_safety_rules_to_override`](Self::set_safety_rules_to_override).
         ///
-        /// <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
+        /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
         pub fn safety_rules_to_override(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.safety_rules_to_override.unwrap_or_default();
@@ -382,7 +551,7 @@ pub mod update_routing_control_states_input {
             self.safety_rules_to_override = Some(v);
             self
         }
-        /// <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
+        /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
         pub fn set_safety_rules_to_override(
             mut self,
@@ -522,7 +691,7 @@ pub struct UpdateRoutingControlStatesInput {
     /// <p>A set of routing control entries that you want to update.</p>
     pub update_routing_control_state_entries:
         std::option::Option<std::vec::Vec<crate::model::UpdateRoutingControlStateEntry>>,
-    /// <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     pub safety_rules_to_override: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -533,7 +702,7 @@ impl UpdateRoutingControlStatesInput {
     ) -> std::option::Option<&[crate::model::UpdateRoutingControlStateEntry]> {
         self.update_routing_control_state_entries.as_deref()
     }
-    /// <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     pub fn safety_rules_to_override(&self) -> std::option::Option<&[std::string::String]> {
         self.safety_rules_to_override.as_deref()
@@ -555,16 +724,16 @@ impl std::fmt::Debug for UpdateRoutingControlStatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRoutingControlStateInput {
-    /// <p>The Amazon Resource Number (ARN) for the routing control that you want to update the state for.</p>
+    /// <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
     pub routing_control_arn: std::option::Option<std::string::String>,
     /// <p>The state of the routing control. You can set the value to be On or Off.</p>
     pub routing_control_state: std::option::Option<crate::model::RoutingControlState>,
-    /// <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     pub safety_rules_to_override: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateRoutingControlStateInput {
-    /// <p>The Amazon Resource Number (ARN) for the routing control that you want to update the state for.</p>
+    /// <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
     pub fn routing_control_arn(&self) -> std::option::Option<&str> {
         self.routing_control_arn.as_deref()
     }
@@ -572,7 +741,7 @@ impl UpdateRoutingControlStateInput {
     pub fn routing_control_state(&self) -> std::option::Option<&crate::model::RoutingControlState> {
         self.routing_control_state.as_ref()
     }
-    /// <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     pub fn safety_rules_to_override(&self) -> std::option::Option<&[std::string::String]> {
         self.safety_rules_to_override.as_deref()
@@ -591,12 +760,47 @@ impl std::fmt::Debug for UpdateRoutingControlStateInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListRoutingControlsInput {
+    /// <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
+    pub control_panel_arn: std::option::Option<std::string::String>,
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The number of routing controls objects that you want to return with this call. The default value is 500.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListRoutingControlsInput {
+    /// <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
+    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
+        self.control_panel_arn.as_deref()
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of routing controls objects that you want to return with this call. The default value is 500.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListRoutingControlsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListRoutingControlsInput");
+        formatter.field("control_panel_arn", &self.control_panel_arn);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRoutingControlStateInput {
-    /// <p>The Amazon Resource Number (ARN) for the routing control that you want to get the state for.</p>
+    /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
     pub routing_control_arn: std::option::Option<std::string::String>,
 }
 impl GetRoutingControlStateInput {
-    /// <p>The Amazon Resource Number (ARN) for the routing control that you want to get the state for.</p>
+    /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
     pub fn routing_control_arn(&self) -> std::option::Option<&str> {
         self.routing_control_arn.as_deref()
     }

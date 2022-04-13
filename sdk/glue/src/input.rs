@@ -2584,6 +2584,175 @@ impl CancelMlTaskRunInput {
     }
 }
 
+/// See [`CancelStatementInput`](crate::input::CancelStatementInput)
+pub mod cancel_statement_input {
+    /// A builder for [`CancelStatementInput`](crate::input::CancelStatementInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session_id: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<i32>,
+        pub(crate) request_origin: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Session ID of the statement to be cancelled.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The Session ID of the statement to be cancelled.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// <p>The ID of the statement to be cancelled.</p>
+        pub fn id(mut self, input: i32) -> Self {
+            self.id = Some(input);
+            self
+        }
+        /// <p>The ID of the statement to be cancelled.</p>
+        pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The origin of the request to cancel the statement.</p>
+        pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_origin = Some(input.into());
+            self
+        }
+        /// <p>The origin of the request to cancel the statement.</p>
+        pub fn set_request_origin(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_origin = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CancelStatementInput`](crate::input::CancelStatementInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CancelStatementInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CancelStatementInput {
+                session_id: self.session_id,
+                id: self.id.unwrap_or_default(),
+                request_origin: self.request_origin,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CancelStatementInputOperationOutputAlias = crate::operation::CancelStatement;
+#[doc(hidden)]
+pub type CancelStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CancelStatementInput {
+    /// Consumes the builder and constructs an Operation<[`CancelStatement`](crate::operation::CancelStatement)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CancelStatement,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CancelStatementInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CancelStatementInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.CancelStatement",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_cancel_statement(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CancelStatement::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CancelStatement",
+            "glue",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CancelStatementInput`](crate::input::CancelStatementInput)
+    pub fn builder() -> crate::input::cancel_statement_input::Builder {
+        crate::input::cancel_statement_input::Builder::default()
+    }
+}
+
 /// See [`CheckSchemaVersionValidityInput`](crate::input::CheckSchemaVersionValidityInput)
 pub mod check_schema_version_validity_input {
     /// A builder for [`CheckSchemaVersionValidityInput`](crate::input::CheckSchemaVersionValidityInput)
@@ -6248,6 +6417,365 @@ impl CreateSecurityConfigurationInput {
     }
 }
 
+/// See [`CreateSessionInput`](crate::input::CreateSessionInput)
+pub mod create_session_input {
+    /// A builder for [`CreateSessionInput`](crate::input::CreateSessionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) role: std::option::Option<std::string::String>,
+        pub(crate) command: std::option::Option<crate::model::SessionCommand>,
+        pub(crate) timeout: std::option::Option<i32>,
+        pub(crate) idle_timeout: std::option::Option<i32>,
+        pub(crate) default_arguments: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) connections: std::option::Option<crate::model::ConnectionsList>,
+        pub(crate) max_capacity: std::option::Option<f64>,
+        pub(crate) number_of_workers: std::option::Option<i32>,
+        pub(crate) worker_type: std::option::Option<crate::model::WorkerType>,
+        pub(crate) security_configuration: std::option::Option<std::string::String>,
+        pub(crate) glue_version: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) request_origin: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the session request. </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the session request. </p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The description of the session. </p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the session. </p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The IAM Role ARN </p>
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role = Some(input.into());
+            self
+        }
+        /// <p>The IAM Role ARN </p>
+        pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role = input;
+            self
+        }
+        /// <p>The <code>SessionCommand</code> that runs the job. </p>
+        pub fn command(mut self, input: crate::model::SessionCommand) -> Self {
+            self.command = Some(input);
+            self
+        }
+        /// <p>The <code>SessionCommand</code> that runs the job. </p>
+        pub fn set_command(
+            mut self,
+            input: std::option::Option<crate::model::SessionCommand>,
+        ) -> Self {
+            self.command = input;
+            self
+        }
+        /// <p>The number of seconds before request times out. </p>
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.timeout = Some(input);
+            self
+        }
+        /// <p>The number of seconds before request times out. </p>
+        pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout = input;
+            self
+        }
+        /// <p>The number of seconds when idle before request times out. </p>
+        pub fn idle_timeout(mut self, input: i32) -> Self {
+            self.idle_timeout = Some(input);
+            self
+        }
+        /// <p>The number of seconds when idle before request times out. </p>
+        pub fn set_idle_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.idle_timeout = input;
+            self
+        }
+        /// Adds a key-value pair to `default_arguments`.
+        ///
+        /// To override the contents of this collection use [`set_default_arguments`](Self::set_default_arguments).
+        ///
+        /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
+        pub fn default_arguments(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.default_arguments.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.default_arguments = Some(hash_map);
+            self
+        }
+        /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
+        pub fn set_default_arguments(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.default_arguments = input;
+            self
+        }
+        /// <p>The number of connections to use for the session. </p>
+        pub fn connections(mut self, input: crate::model::ConnectionsList) -> Self {
+            self.connections = Some(input);
+            self
+        }
+        /// <p>The number of connections to use for the session. </p>
+        pub fn set_connections(
+            mut self,
+            input: std::option::Option<crate::model::ConnectionsList>,
+        ) -> Self {
+            self.connections = input;
+            self
+        }
+        /// <p>The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
+        pub fn max_capacity(mut self, input: f64) -> Self {
+            self.max_capacity = Some(input);
+            self
+        }
+        /// <p>The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
+        pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
+            self.max_capacity = input;
+            self
+        }
+        /// <p>The number of workers to use for the session. </p>
+        pub fn number_of_workers(mut self, input: i32) -> Self {
+            self.number_of_workers = Some(input);
+            self
+        }
+        /// <p>The number of workers to use for the session. </p>
+        pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_workers = input;
+            self
+        }
+        /// <p>The Worker Type. Can be one of G.1X, G.2X, Standard </p>
+        pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
+            self.worker_type = Some(input);
+            self
+        }
+        /// <p>The Worker Type. Can be one of G.1X, G.2X, Standard </p>
+        pub fn set_worker_type(
+            mut self,
+            input: std::option::Option<crate::model::WorkerType>,
+        ) -> Self {
+            self.worker_type = input;
+            self
+        }
+        /// <p>The name of the SecurityConfiguration structure to be used with the session </p>
+        pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.security_configuration = Some(input.into());
+            self
+        }
+        /// <p>The name of the SecurityConfiguration structure to be used with the session </p>
+        pub fn set_security_configuration(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.security_configuration = input;
+            self
+        }
+        /// <p>The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The GlueVersion must be greater than 2.0. </p>
+        pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.glue_version = Some(input.into());
+            self
+        }
+        /// <p>The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The GlueVersion must be greater than 2.0. </p>
+        pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.glue_version = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The map of key value pairs (tags) belonging to the session.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The map of key value pairs (tags) belonging to the session.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The origin of the request. </p>
+        pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_origin = Some(input.into());
+            self
+        }
+        /// <p>The origin of the request. </p>
+        pub fn set_request_origin(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_origin = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateSessionInput`](crate::input::CreateSessionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateSessionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateSessionInput {
+                id: self.id,
+                description: self.description,
+                role: self.role,
+                command: self.command,
+                timeout: self.timeout,
+                idle_timeout: self.idle_timeout,
+                default_arguments: self.default_arguments,
+                connections: self.connections,
+                max_capacity: self.max_capacity,
+                number_of_workers: self.number_of_workers,
+                worker_type: self.worker_type,
+                security_configuration: self.security_configuration,
+                glue_version: self.glue_version,
+                tags: self.tags,
+                request_origin: self.request_origin,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateSessionInputOperationOutputAlias = crate::operation::CreateSession;
+#[doc(hidden)]
+pub type CreateSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateSessionInput {
+    /// Consumes the builder and constructs an Operation<[`CreateSession`](crate::operation::CreateSession)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateSession,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateSessionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateSessionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.CreateSession",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_session(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateSession::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateSession",
+            "glue",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateSessionInput`](crate::input::CreateSessionInput)
+    pub fn builder() -> crate::input::create_session_input::Builder {
+        crate::input::create_session_input::Builder::default()
+    }
+}
+
 /// See [`CreateTableInput`](crate::input::CreateTableInput)
 pub mod create_table_input {
     /// A builder for [`CreateTableInput`](crate::input::CreateTableInput)
@@ -9810,6 +10338,163 @@ impl DeleteSecurityConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteSecurityConfigurationInput`](crate::input::DeleteSecurityConfigurationInput)
     pub fn builder() -> crate::input::delete_security_configuration_input::Builder {
         crate::input::delete_security_configuration_input::Builder::default()
+    }
+}
+
+/// See [`DeleteSessionInput`](crate::input::DeleteSessionInput)
+pub mod delete_session_input {
+    /// A builder for [`DeleteSessionInput`](crate::input::DeleteSessionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) request_origin: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the session to be deleted.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the session to be deleted.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The name of the origin of the delete session request.</p>
+        pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_origin = Some(input.into());
+            self
+        }
+        /// <p>The name of the origin of the delete session request.</p>
+        pub fn set_request_origin(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_origin = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteSessionInput`](crate::input::DeleteSessionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteSessionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteSessionInput {
+                id: self.id,
+                request_origin: self.request_origin,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteSessionInputOperationOutputAlias = crate::operation::DeleteSession;
+#[doc(hidden)]
+pub type DeleteSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteSessionInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteSession`](crate::operation::DeleteSession)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteSession,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteSessionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteSessionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.DeleteSession",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_session(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteSession::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteSession",
+            "glue",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteSessionInput`](crate::input::DeleteSessionInput)
+    pub fn builder() -> crate::input::delete_session_input::Builder {
+        crate::input::delete_session_input::Builder::default()
     }
 }
 
@@ -17787,6 +18472,332 @@ impl GetSecurityConfigurationsInput {
     }
 }
 
+/// See [`GetSessionInput`](crate::input::GetSessionInput)
+pub mod get_session_input {
+    /// A builder for [`GetSessionInput`](crate::input::GetSessionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) request_origin: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the session. </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the session. </p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The origin of the request. </p>
+        pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_origin = Some(input.into());
+            self
+        }
+        /// <p>The origin of the request. </p>
+        pub fn set_request_origin(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_origin = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetSessionInput`](crate::input::GetSessionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetSessionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetSessionInput {
+                id: self.id,
+                request_origin: self.request_origin,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetSessionInputOperationOutputAlias = crate::operation::GetSession;
+#[doc(hidden)]
+pub type GetSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetSessionInput {
+    /// Consumes the builder and constructs an Operation<[`GetSession`](crate::operation::GetSession)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetSession,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetSessionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetSessionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.GetSession",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_session(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetSession::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetSession",
+            "glue",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetSessionInput`](crate::input::GetSessionInput)
+    pub fn builder() -> crate::input::get_session_input::Builder {
+        crate::input::get_session_input::Builder::default()
+    }
+}
+
+/// See [`GetStatementInput`](crate::input::GetStatementInput)
+pub mod get_statement_input {
+    /// A builder for [`GetStatementInput`](crate::input::GetStatementInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session_id: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<i32>,
+        pub(crate) request_origin: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Session ID of the statement.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The Session ID of the statement.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// <p>The Id of the statement.</p>
+        pub fn id(mut self, input: i32) -> Self {
+            self.id = Some(input);
+            self
+        }
+        /// <p>The Id of the statement.</p>
+        pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The origin of the request.</p>
+        pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_origin = Some(input.into());
+            self
+        }
+        /// <p>The origin of the request.</p>
+        pub fn set_request_origin(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_origin = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetStatementInput`](crate::input::GetStatementInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetStatementInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetStatementInput {
+                session_id: self.session_id,
+                id: self.id.unwrap_or_default(),
+                request_origin: self.request_origin,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetStatementInputOperationOutputAlias = crate::operation::GetStatement;
+#[doc(hidden)]
+pub type GetStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetStatementInput {
+    /// Consumes the builder and constructs an Operation<[`GetStatement`](crate::operation::GetStatement)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetStatement,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetStatementInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetStatementInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.GetStatement",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_statement(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetStatement::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetStatement",
+            "glue",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetStatementInput`](crate::input::GetStatementInput)
+    pub fn builder() -> crate::input::get_statement_input::Builder {
+        crate::input::get_statement_input::Builder::default()
+    }
+}
+
 /// See [`GetTableInput`](crate::input::GetTableInput)
 pub mod get_table_input {
     /// A builder for [`GetTableInput`](crate::input::GetTableInput)
@@ -19084,12 +20095,12 @@ pub mod get_unfiltered_partition_metadata_input {
             self.partition_values = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A structure containing information for audit.</p>
         pub fn audit_context(mut self, input: crate::model::AuditContext) -> Self {
             self.audit_context = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A structure containing information for audit.</p>
         pub fn set_audit_context(
             mut self,
             input: std::option::Option<crate::model::AuditContext>,
@@ -19305,12 +20316,12 @@ pub mod get_unfiltered_partitions_metadata_input {
             self.expression = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A structure containing information for audit.</p>
         pub fn audit_context(mut self, input: crate::model::AuditContext) -> Self {
             self.audit_context = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A structure containing information for audit.</p>
         pub fn set_audit_context(
             mut self,
             input: std::option::Option<crate::model::AuditContext>,
@@ -19545,12 +20556,12 @@ pub mod get_unfiltered_table_metadata_input {
             self.name = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A structure containing information for audit.</p>
         pub fn audit_context(mut self, input: crate::model::AuditContext) -> Self {
             self.audit_context = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A structure containing information for audit.</p>
         pub fn set_audit_context(
             mut self,
             input: std::option::Option<crate::model::AuditContext>,
@@ -22309,6 +23320,373 @@ impl ListSchemaVersionsInput {
     }
 }
 
+/// See [`ListSessionsInput`](crate::input::ListSessionsInput)
+pub mod list_sessions_input {
+    /// A builder for [`ListSessionsInput`](crate::input::ListSessionsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) request_origin: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The token for the next set of results, or null if there are no more result. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no more result. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags belonging to the session. </p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>Tags belonging to the session. </p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The origin of the request. </p>
+        pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_origin = Some(input.into());
+            self
+        }
+        /// <p>The origin of the request. </p>
+        pub fn set_request_origin(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_origin = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSessionsInput`](crate::input::ListSessionsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListSessionsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListSessionsInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                tags: self.tags,
+                request_origin: self.request_origin,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListSessionsInputOperationOutputAlias = crate::operation::ListSessions;
+#[doc(hidden)]
+pub type ListSessionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListSessionsInput {
+    /// Consumes the builder and constructs an Operation<[`ListSessions`](crate::operation::ListSessions)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListSessions,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListSessionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListSessionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.ListSessions",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_sessions(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListSessions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListSessions",
+            "glue",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListSessionsInput`](crate::input::ListSessionsInput)
+    pub fn builder() -> crate::input::list_sessions_input::Builder {
+        crate::input::list_sessions_input::Builder::default()
+    }
+}
+
+/// See [`ListStatementsInput`](crate::input::ListStatementsInput)
+pub mod list_statements_input {
+    /// A builder for [`ListStatementsInput`](crate::input::ListStatementsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session_id: std::option::Option<std::string::String>,
+        pub(crate) request_origin: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Session ID of the statements.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The Session ID of the statements.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// <p>The origin of the request to list statements.</p>
+        pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_origin = Some(input.into());
+            self
+        }
+        /// <p>The origin of the request to list statements.</p>
+        pub fn set_request_origin(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_origin = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListStatementsInput`](crate::input::ListStatementsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListStatementsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListStatementsInput {
+                session_id: self.session_id,
+                request_origin: self.request_origin,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListStatementsInputOperationOutputAlias = crate::operation::ListStatements;
+#[doc(hidden)]
+pub type ListStatementsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListStatementsInput {
+    /// Consumes the builder and constructs an Operation<[`ListStatements`](crate::operation::ListStatements)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListStatements,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListStatementsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListStatementsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.ListStatements",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_statements(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListStatements::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListStatements",
+            "glue",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListStatementsInput`](crate::input::ListStatementsInput)
+    pub fn builder() -> crate::input::list_statements_input::Builder {
+        crate::input::list_statements_input::Builder::default()
+    }
+}
+
 /// See [`ListTriggersInput`](crate::input::ListTriggersInput)
 pub mod list_triggers_input {
     /// A builder for [`ListTriggersInput`](crate::input::ListTriggersInput)
@@ -24309,6 +25687,175 @@ impl ResumeWorkflowRunInput {
     /// Creates a new builder-style object to manufacture [`ResumeWorkflowRunInput`](crate::input::ResumeWorkflowRunInput)
     pub fn builder() -> crate::input::resume_workflow_run_input::Builder {
         crate::input::resume_workflow_run_input::Builder::default()
+    }
+}
+
+/// See [`RunStatementInput`](crate::input::RunStatementInput)
+pub mod run_statement_input {
+    /// A builder for [`RunStatementInput`](crate::input::RunStatementInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session_id: std::option::Option<std::string::String>,
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) request_origin: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Session Id of the statement to be run.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The Session Id of the statement to be run.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// <p>The statement code to be run.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        /// <p>The statement code to be run.</p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>The origin of the request.</p>
+        pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_origin = Some(input.into());
+            self
+        }
+        /// <p>The origin of the request.</p>
+        pub fn set_request_origin(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_origin = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RunStatementInput`](crate::input::RunStatementInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::RunStatementInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::RunStatementInput {
+                session_id: self.session_id,
+                code: self.code,
+                request_origin: self.request_origin,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type RunStatementInputOperationOutputAlias = crate::operation::RunStatement;
+#[doc(hidden)]
+pub type RunStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl RunStatementInput {
+    /// Consumes the builder and constructs an Operation<[`RunStatement`](crate::operation::RunStatement)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RunStatement,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::RunStatementInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RunStatementInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.RunStatement",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_run_statement(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RunStatement::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RunStatement",
+            "glue",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`RunStatementInput`](crate::input::RunStatementInput)
+    pub fn builder() -> crate::input::run_statement_input::Builder {
+        crate::input::run_statement_input::Builder::default()
     }
 }
 
@@ -26545,6 +28092,163 @@ impl StopCrawlerScheduleInput {
     /// Creates a new builder-style object to manufacture [`StopCrawlerScheduleInput`](crate::input::StopCrawlerScheduleInput)
     pub fn builder() -> crate::input::stop_crawler_schedule_input::Builder {
         crate::input::stop_crawler_schedule_input::Builder::default()
+    }
+}
+
+/// See [`StopSessionInput`](crate::input::StopSessionInput)
+pub mod stop_session_input {
+    /// A builder for [`StopSessionInput`](crate::input::StopSessionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) request_origin: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the session to be stopped.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the session to be stopped.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The origin of the request.</p>
+        pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_origin = Some(input.into());
+            self
+        }
+        /// <p>The origin of the request.</p>
+        pub fn set_request_origin(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_origin = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopSessionInput`](crate::input::StopSessionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StopSessionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StopSessionInput {
+                id: self.id,
+                request_origin: self.request_origin,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StopSessionInputOperationOutputAlias = crate::operation::StopSession;
+#[doc(hidden)]
+pub type StopSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl StopSessionInput {
+    /// Consumes the builder and constructs an Operation<[`StopSession`](crate::operation::StopSession)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StopSession,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StopSessionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StopSessionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.StopSession",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_stop_session(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StopSession::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StopSession",
+            "glue",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StopSessionInput`](crate::input::StopSessionInput)
+    pub fn builder() -> crate::input::stop_session_input::Builder {
+        crate::input::stop_session_input::Builder::default()
     }
 }
 
@@ -31822,6 +33526,34 @@ impl std::fmt::Debug for StopTriggerInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopSessionInput {
+    /// <p>The ID of the session to be stopped.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The origin of the request.</p>
+    pub request_origin: std::option::Option<std::string::String>,
+}
+impl StopSessionInput {
+    /// <p>The ID of the session to be stopped.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The origin of the request.</p>
+    pub fn request_origin(&self) -> std::option::Option<&str> {
+        self.request_origin.as_deref()
+    }
+}
+impl std::fmt::Debug for StopSessionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopSessionInput");
+        formatter.field("id", &self.id);
+        formatter.field("request_origin", &self.request_origin);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopCrawlerScheduleInput {
     /// <p>Name of the crawler whose schedule state to set.</p>
     pub crawler_name: std::option::Option<std::string::String>,
@@ -32303,6 +34035,41 @@ impl std::fmt::Debug for SearchTablesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RunStatementInput {
+    /// <p>The Session Id of the statement to be run.</p>
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>The statement code to be run.</p>
+    pub code: std::option::Option<std::string::String>,
+    /// <p>The origin of the request.</p>
+    pub request_origin: std::option::Option<std::string::String>,
+}
+impl RunStatementInput {
+    /// <p>The Session Id of the statement to be run.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The statement code to be run.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The origin of the request.</p>
+    pub fn request_origin(&self) -> std::option::Option<&str> {
+        self.request_origin.as_deref()
+    }
+}
+impl std::fmt::Debug for RunStatementInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RunStatementInput");
+        formatter.field("session_id", &self.session_id);
+        formatter.field("code", &self.code);
+        formatter.field("request_origin", &self.request_origin);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResumeWorkflowRunInput {
     /// <p>The name of the workflow to resume.</p>
     pub name: std::option::Option<std::string::String>,
@@ -32741,6 +34508,87 @@ impl std::fmt::Debug for ListTriggersInput {
         formatter.field("dependent_job_name", &self.dependent_job_name);
         formatter.field("max_results", &self.max_results);
         formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListStatementsInput {
+    /// <p>The Session ID of the statements.</p>
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>The origin of the request to list statements.</p>
+    pub request_origin: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListStatementsInput {
+    /// <p>The Session ID of the statements.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The origin of the request to list statements.</p>
+    pub fn request_origin(&self) -> std::option::Option<&str> {
+        self.request_origin.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListStatementsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListStatementsInput");
+        formatter.field("session_id", &self.session_id);
+        formatter.field("request_origin", &self.request_origin);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListSessionsInput {
+    /// <p>The token for the next set of results, or null if there are no more result. </p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results. </p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>Tags belonging to the session. </p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The origin of the request. </p>
+    pub request_origin: std::option::Option<std::string::String>,
+}
+impl ListSessionsInput {
+    /// <p>The token for the next set of results, or null if there are no more result. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Tags belonging to the session. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The origin of the request. </p>
+    pub fn request_origin(&self) -> std::option::Option<&str> {
+        self.request_origin.as_deref()
+    }
+}
+impl std::fmt::Debug for ListSessionsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListSessionsInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("tags", &self.tags);
+        formatter.field("request_origin", &self.request_origin);
         formatter.finish()
     }
 }
@@ -33308,7 +35156,7 @@ pub struct GetUnfilteredTableMetadataInput {
     pub database_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub name: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A structure containing information for audit.</p>
     pub audit_context: std::option::Option<crate::model::AuditContext>,
     #[allow(missing_docs)] // documentation missing in model
     pub supported_permission_types:
@@ -33327,7 +35175,7 @@ impl GetUnfilteredTableMetadataInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A structure containing information for audit.</p>
     pub fn audit_context(&self) -> std::option::Option<&crate::model::AuditContext> {
         self.audit_context.as_ref()
     }
@@ -33365,7 +35213,7 @@ pub struct GetUnfilteredPartitionsMetadataInput {
     pub table_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub expression: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A structure containing information for audit.</p>
     pub audit_context: std::option::Option<crate::model::AuditContext>,
     #[allow(missing_docs)] // documentation missing in model
     pub supported_permission_types:
@@ -33394,7 +35242,7 @@ impl GetUnfilteredPartitionsMetadataInput {
     pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A structure containing information for audit.</p>
     pub fn audit_context(&self) -> std::option::Option<&crate::model::AuditContext> {
         self.audit_context.as_ref()
     }
@@ -33448,7 +35296,7 @@ pub struct GetUnfilteredPartitionMetadataInput {
     pub table_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A structure containing information for audit.</p>
     pub audit_context: std::option::Option<crate::model::AuditContext>,
     #[allow(missing_docs)] // documentation missing in model
     pub supported_permission_types:
@@ -33471,7 +35319,7 @@ impl GetUnfilteredPartitionMetadataInput {
     pub fn partition_values(&self) -> std::option::Option<&[std::string::String]> {
         self.partition_values.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A structure containing information for audit.</p>
     pub fn audit_context(&self) -> std::option::Option<&crate::model::AuditContext> {
         self.audit_context.as_ref()
     }
@@ -33774,6 +35622,69 @@ impl std::fmt::Debug for GetTableInput {
         formatter.field("name", &self.name);
         formatter.field("transaction_id", &self.transaction_id);
         formatter.field("query_as_of_time", &self.query_as_of_time);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetStatementInput {
+    /// <p>The Session ID of the statement.</p>
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>The Id of the statement.</p>
+    pub id: i32,
+    /// <p>The origin of the request.</p>
+    pub request_origin: std::option::Option<std::string::String>,
+}
+impl GetStatementInput {
+    /// <p>The Session ID of the statement.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The Id of the statement.</p>
+    pub fn id(&self) -> i32 {
+        self.id
+    }
+    /// <p>The origin of the request.</p>
+    pub fn request_origin(&self) -> std::option::Option<&str> {
+        self.request_origin.as_deref()
+    }
+}
+impl std::fmt::Debug for GetStatementInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetStatementInput");
+        formatter.field("session_id", &self.session_id);
+        formatter.field("id", &self.id);
+        formatter.field("request_origin", &self.request_origin);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetSessionInput {
+    /// <p>The ID of the session. </p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The origin of the request. </p>
+    pub request_origin: std::option::Option<std::string::String>,
+}
+impl GetSessionInput {
+    /// <p>The ID of the session. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The origin of the request. </p>
+    pub fn request_origin(&self) -> std::option::Option<&str> {
+        self.request_origin.as_deref()
+    }
+}
+impl std::fmt::Debug for GetSessionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetSessionInput");
+        formatter.field("id", &self.id);
+        formatter.field("request_origin", &self.request_origin);
         formatter.finish()
     }
 }
@@ -35522,6 +37433,34 @@ impl std::fmt::Debug for DeleteTableInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteSessionInput {
+    /// <p>The ID of the session to be deleted.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The name of the origin of the delete session request.</p>
+    pub request_origin: std::option::Option<std::string::String>,
+}
+impl DeleteSessionInput {
+    /// <p>The ID of the session to be deleted.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the origin of the delete session request.</p>
+    pub fn request_origin(&self) -> std::option::Option<&str> {
+        self.request_origin.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteSessionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteSessionInput");
+        formatter.field("id", &self.id);
+        formatter.field("request_origin", &self.request_origin);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSecurityConfigurationInput {
     /// <p>The name of the security configuration to delete.</p>
     pub name: std::option::Option<std::string::String>,
@@ -36234,6 +38173,133 @@ impl std::fmt::Debug for CreateTableInput {
         formatter.field("table_input", &self.table_input);
         formatter.field("partition_indexes", &self.partition_indexes);
         formatter.field("transaction_id", &self.transaction_id);
+        formatter.finish()
+    }
+}
+
+/// <p>Request to create a new session.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateSessionInput {
+    /// <p>The ID of the session request. </p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The description of the session. </p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The IAM Role ARN </p>
+    pub role: std::option::Option<std::string::String>,
+    /// <p>The <code>SessionCommand</code> that runs the job. </p>
+    pub command: std::option::Option<crate::model::SessionCommand>,
+    /// <p>The number of seconds before request times out. </p>
+    pub timeout: std::option::Option<i32>,
+    /// <p>The number of seconds when idle before request times out. </p>
+    pub idle_timeout: std::option::Option<i32>,
+    /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
+    pub default_arguments:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The number of connections to use for the session. </p>
+    pub connections: std::option::Option<crate::model::ConnectionsList>,
+    /// <p>The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
+    pub max_capacity: std::option::Option<f64>,
+    /// <p>The number of workers to use for the session. </p>
+    pub number_of_workers: std::option::Option<i32>,
+    /// <p>The Worker Type. Can be one of G.1X, G.2X, Standard </p>
+    pub worker_type: std::option::Option<crate::model::WorkerType>,
+    /// <p>The name of the SecurityConfiguration structure to be used with the session </p>
+    pub security_configuration: std::option::Option<std::string::String>,
+    /// <p>The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The GlueVersion must be greater than 2.0. </p>
+    pub glue_version: std::option::Option<std::string::String>,
+    /// <p>The map of key value pairs (tags) belonging to the session.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The origin of the request. </p>
+    pub request_origin: std::option::Option<std::string::String>,
+}
+impl CreateSessionInput {
+    /// <p>The ID of the session request. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The description of the session. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The IAM Role ARN </p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>The <code>SessionCommand</code> that runs the job. </p>
+    pub fn command(&self) -> std::option::Option<&crate::model::SessionCommand> {
+        self.command.as_ref()
+    }
+    /// <p>The number of seconds before request times out. </p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>The number of seconds when idle before request times out. </p>
+    pub fn idle_timeout(&self) -> std::option::Option<i32> {
+        self.idle_timeout
+    }
+    /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
+    pub fn default_arguments(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.default_arguments.as_ref()
+    }
+    /// <p>The number of connections to use for the session. </p>
+    pub fn connections(&self) -> std::option::Option<&crate::model::ConnectionsList> {
+        self.connections.as_ref()
+    }
+    /// <p>The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
+    pub fn max_capacity(&self) -> std::option::Option<f64> {
+        self.max_capacity
+    }
+    /// <p>The number of workers to use for the session. </p>
+    pub fn number_of_workers(&self) -> std::option::Option<i32> {
+        self.number_of_workers
+    }
+    /// <p>The Worker Type. Can be one of G.1X, G.2X, Standard </p>
+    pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
+        self.worker_type.as_ref()
+    }
+    /// <p>The name of the SecurityConfiguration structure to be used with the session </p>
+    pub fn security_configuration(&self) -> std::option::Option<&str> {
+        self.security_configuration.as_deref()
+    }
+    /// <p>The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The GlueVersion must be greater than 2.0. </p>
+    pub fn glue_version(&self) -> std::option::Option<&str> {
+        self.glue_version.as_deref()
+    }
+    /// <p>The map of key value pairs (tags) belonging to the session.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The origin of the request. </p>
+    pub fn request_origin(&self) -> std::option::Option<&str> {
+        self.request_origin.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateSessionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateSessionInput");
+        formatter.field("id", &self.id);
+        formatter.field("description", &self.description);
+        formatter.field("role", &self.role);
+        formatter.field("command", &self.command);
+        formatter.field("timeout", &self.timeout);
+        formatter.field("idle_timeout", &self.idle_timeout);
+        formatter.field("default_arguments", &self.default_arguments);
+        formatter.field("connections", &self.connections);
+        formatter.field("max_capacity", &self.max_capacity);
+        formatter.field("number_of_workers", &self.number_of_workers);
+        formatter.field("worker_type", &self.worker_type);
+        formatter.field("security_configuration", &self.security_configuration);
+        formatter.field("glue_version", &self.glue_version);
+        formatter.field("tags", &self.tags);
+        formatter.field("request_origin", &self.request_origin);
         formatter.finish()
     }
 }
@@ -37350,6 +39416,41 @@ impl std::fmt::Debug for CheckSchemaVersionValidityInput {
         let mut formatter = f.debug_struct("CheckSchemaVersionValidityInput");
         formatter.field("data_format", &self.data_format);
         formatter.field("schema_definition", &self.schema_definition);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CancelStatementInput {
+    /// <p>The Session ID of the statement to be cancelled.</p>
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the statement to be cancelled.</p>
+    pub id: i32,
+    /// <p>The origin of the request to cancel the statement.</p>
+    pub request_origin: std::option::Option<std::string::String>,
+}
+impl CancelStatementInput {
+    /// <p>The Session ID of the statement to be cancelled.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The ID of the statement to be cancelled.</p>
+    pub fn id(&self) -> i32 {
+        self.id
+    }
+    /// <p>The origin of the request to cancel the statement.</p>
+    pub fn request_origin(&self) -> std::option::Option<&str> {
+        self.request_origin.as_deref()
+    }
+}
+impl std::fmt::Debug for CancelStatementInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CancelStatementInput");
+        formatter.field("session_id", &self.session_id);
+        formatter.field("id", &self.id);
+        formatter.field("request_origin", &self.request_origin);
         formatter.finish()
     }
 }

@@ -55,7 +55,7 @@ pub struct DbCluster {
     pub storage_encrypted: bool,
     /// <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
     pub db_cluster_resource_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the cluster.</p>
     pub db_cluster_arn: std::option::Option<std::string::String>,
@@ -172,7 +172,7 @@ impl DbCluster {
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
     pub fn db_cluster_resource_id(&self) -> std::option::Option<&str> {
         self.db_cluster_resource_id.as_deref()
     }
@@ -626,12 +626,12 @@ pub mod db_cluster {
             self.kms_key_id = input;
             self
         }
-        /// <p>The Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
+        /// <p>The Amazon Web Services Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
         pub fn db_cluster_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_resource_id = Some(input.into());
             self
         }
-        /// <p>The Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
+        /// <p>The Amazon Web Services Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
         pub fn set_db_cluster_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1700,7 +1700,7 @@ impl EventSubscription {
 pub struct GlobalCluster {
     /// <p>Contains a user-supplied global cluster identifier. This identifier is the unique key that identifies a global cluster. </p>
     pub global_cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The Region-unique, immutable identifier for the global database cluster. This identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the cluster is accessed. </p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the cluster is accessed. </p>
     pub global_cluster_resource_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the global cluster.</p>
     pub global_cluster_arn: std::option::Option<std::string::String>,
@@ -1725,7 +1725,7 @@ impl GlobalCluster {
     pub fn global_cluster_identifier(&self) -> std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
     }
-    /// <p>The Region-unique, immutable identifier for the global database cluster. This identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the cluster is accessed. </p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the cluster is accessed. </p>
     pub fn global_cluster_resource_id(&self) -> std::option::Option<&str> {
         self.global_cluster_resource_id.as_deref()
     }
@@ -1815,12 +1815,12 @@ pub mod global_cluster {
             self.global_cluster_identifier = input;
             self
         }
-        /// <p>The Region-unique, immutable identifier for the global database cluster. This identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the cluster is accessed. </p>
+        /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the cluster is accessed. </p>
         pub fn global_cluster_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.global_cluster_resource_id = Some(input.into());
             self
         }
-        /// <p>The Region-unique, immutable identifier for the global database cluster. This identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the cluster is accessed. </p>
+        /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the cluster is accessed. </p>
         pub fn set_global_cluster_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2101,7 +2101,7 @@ pub struct DbInstance {
     pub storage_encrypted: bool,
     /// <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted instance. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is accessed.</p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is accessed.</p>
     pub dbi_resource_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the CA certificate for this DB instance.</p>
     pub ca_certificate_identifier: std::option::Option<std::string::String>,
@@ -2201,7 +2201,7 @@ impl DbInstance {
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is accessed.</p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is accessed.</p>
     pub fn dbi_resource_id(&self) -> std::option::Option<&str> {
         self.dbi_resource_id.as_deref()
     }
@@ -2574,12 +2574,12 @@ pub mod db_instance {
             self.kms_key_id = input;
             self
         }
-        /// <p>The Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is accessed.</p>
+        /// <p>The Amazon Web Services Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is accessed.</p>
         pub fn dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.dbi_resource_id = Some(input.into());
             self
         }
-        /// <p>The Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is accessed.</p>
+        /// <p>The Amazon Web Services Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is accessed.</p>
         pub fn set_dbi_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3752,25 +3752,25 @@ impl DbClusterSnapshotAttributesResult {
 }
 
 /// <p>Contains the name and values of a manual cluster snapshot attribute.</p>
-/// <p>Manual cluster snapshot attributes are used to authorize other accounts to restore a manual cluster snapshot.</p>
+/// <p>Manual cluster snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual cluster snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterSnapshotAttribute {
     /// <p>The name of the manual cluster snapshot attribute.</p>
-    /// <p>The attribute named <code>restore</code> refers to the list of accounts that have permission to copy or restore the manual cluster snapshot.</p>
+    /// <p>The attribute named <code>restore</code> refers to the list of Amazon Web Services accounts that have permission to copy or restore the manual cluster snapshot.</p>
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The values for the manual cluster snapshot attribute.</p>
-    /// <p>If the <code>AttributeName</code> field is set to <code>restore</code>, then this element returns a list of IDs of the accounts that are authorized to copy or restore the manual cluster snapshot. If a value of <code>all</code> is in the list, then the manual cluster snapshot is public and available for any account to copy or restore.</p>
+    /// <p>If the <code>AttributeName</code> field is set to <code>restore</code>, then this element returns a list of IDs of the Amazon Web Services accounts that are authorized to copy or restore the manual cluster snapshot. If a value of <code>all</code> is in the list, then the manual cluster snapshot is public and available for any Amazon Web Services account to copy or restore.</p>
     pub attribute_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DbClusterSnapshotAttribute {
     /// <p>The name of the manual cluster snapshot attribute.</p>
-    /// <p>The attribute named <code>restore</code> refers to the list of accounts that have permission to copy or restore the manual cluster snapshot.</p>
+    /// <p>The attribute named <code>restore</code> refers to the list of Amazon Web Services accounts that have permission to copy or restore the manual cluster snapshot.</p>
     pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
     /// <p>The values for the manual cluster snapshot attribute.</p>
-    /// <p>If the <code>AttributeName</code> field is set to <code>restore</code>, then this element returns a list of IDs of the accounts that are authorized to copy or restore the manual cluster snapshot. If a value of <code>all</code> is in the list, then the manual cluster snapshot is public and available for any account to copy or restore.</p>
+    /// <p>If the <code>AttributeName</code> field is set to <code>restore</code>, then this element returns a list of IDs of the Amazon Web Services accounts that are authorized to copy or restore the manual cluster snapshot. If a value of <code>all</code> is in the list, then the manual cluster snapshot is public and available for any Amazon Web Services account to copy or restore.</p>
     pub fn attribute_values(&self) -> std::option::Option<&[std::string::String]> {
         self.attribute_values.as_deref()
     }
@@ -3794,13 +3794,13 @@ pub mod db_cluster_snapshot_attribute {
     }
     impl Builder {
         /// <p>The name of the manual cluster snapshot attribute.</p>
-        /// <p>The attribute named <code>restore</code> refers to the list of accounts that have permission to copy or restore the manual cluster snapshot.</p>
+        /// <p>The attribute named <code>restore</code> refers to the list of Amazon Web Services accounts that have permission to copy or restore the manual cluster snapshot.</p>
         pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.attribute_name = Some(input.into());
             self
         }
         /// <p>The name of the manual cluster snapshot attribute.</p>
-        /// <p>The attribute named <code>restore</code> refers to the list of accounts that have permission to copy or restore the manual cluster snapshot.</p>
+        /// <p>The attribute named <code>restore</code> refers to the list of Amazon Web Services accounts that have permission to copy or restore the manual cluster snapshot.</p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3813,7 +3813,7 @@ pub mod db_cluster_snapshot_attribute {
         /// To override the contents of this collection use [`set_attribute_values`](Self::set_attribute_values).
         ///
         /// <p>The values for the manual cluster snapshot attribute.</p>
-        /// <p>If the <code>AttributeName</code> field is set to <code>restore</code>, then this element returns a list of IDs of the accounts that are authorized to copy or restore the manual cluster snapshot. If a value of <code>all</code> is in the list, then the manual cluster snapshot is public and available for any account to copy or restore.</p>
+        /// <p>If the <code>AttributeName</code> field is set to <code>restore</code>, then this element returns a list of IDs of the Amazon Web Services accounts that are authorized to copy or restore the manual cluster snapshot. If a value of <code>all</code> is in the list, then the manual cluster snapshot is public and available for any Amazon Web Services account to copy or restore.</p>
         pub fn attribute_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attribute_values.unwrap_or_default();
             v.push(input.into());
@@ -3821,7 +3821,7 @@ pub mod db_cluster_snapshot_attribute {
             self
         }
         /// <p>The values for the manual cluster snapshot attribute.</p>
-        /// <p>If the <code>AttributeName</code> field is set to <code>restore</code>, then this element returns a list of IDs of the accounts that are authorized to copy or restore the manual cluster snapshot. If a value of <code>all</code> is in the list, then the manual cluster snapshot is public and available for any account to copy or restore.</p>
+        /// <p>If the <code>AttributeName</code> field is set to <code>restore</code>, then this element returns a list of IDs of the Amazon Web Services accounts that are authorized to copy or restore the manual cluster snapshot. If a value of <code>all</code> is in the list, then the manual cluster snapshot is public and available for any Amazon Web Services account to copy or restore.</p>
         pub fn set_attribute_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5775,7 +5775,7 @@ impl DbClusterParameterGroup {
     }
 }
 
-/// <p>A certificate authority (CA) certificate for an account.</p>
+/// <p>A certificate authority (CA) certificate for an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Certificate {

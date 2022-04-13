@@ -16,7 +16,7 @@ pub struct ProgressEvent {
     pub operation: std::option::Option<crate::model::Operation>,
     /// <p>The current status of the resource operation request.</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code>: The resource operation has not yet started.</p> </li>
+    /// <li> <p> <code>PENDING</code>: The resource operation hasn't yet started.</p> </li>
     /// <li> <p> <code>IN_PROGRESS</code>: The resource operation is currently in progress.</p> </li>
     /// <li> <p> <code>SUCCESS</code>: The resource operation has successfully completed.</p> </li>
     /// <li> <p> <code>FAILED</code>: The resource operation has failed. Refer to the error code and status message for more information.</p> </li>
@@ -58,7 +58,7 @@ impl ProgressEvent {
     }
     /// <p>The current status of the resource operation request.</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code>: The resource operation has not yet started.</p> </li>
+    /// <li> <p> <code>PENDING</code>: The resource operation hasn't yet started.</p> </li>
     /// <li> <p> <code>IN_PROGRESS</code>: The resource operation is currently in progress.</p> </li>
     /// <li> <p> <code>SUCCESS</code>: The resource operation has successfully completed.</p> </li>
     /// <li> <p> <code>FAILED</code>: The resource operation has failed. Refer to the error code and status message for more information.</p> </li>
@@ -178,7 +178,7 @@ pub mod progress_event {
         }
         /// <p>The current status of the resource operation request.</p>
         /// <ul>
-        /// <li> <p> <code>PENDING</code>: The resource operation has not yet started.</p> </li>
+        /// <li> <p> <code>PENDING</code>: The resource operation hasn't yet started.</p> </li>
         /// <li> <p> <code>IN_PROGRESS</code>: The resource operation is currently in progress.</p> </li>
         /// <li> <p> <code>SUCCESS</code>: The resource operation has successfully completed.</p> </li>
         /// <li> <p> <code>FAILED</code>: The resource operation has failed. Refer to the error code and status message for more information.</p> </li>
@@ -191,7 +191,7 @@ pub mod progress_event {
         }
         /// <p>The current status of the resource operation request.</p>
         /// <ul>
-        /// <li> <p> <code>PENDING</code>: The resource operation has not yet started.</p> </li>
+        /// <li> <p> <code>PENDING</code>: The resource operation hasn't yet started.</p> </li>
         /// <li> <p> <code>IN_PROGRESS</code>: The resource operation is currently in progress.</p> </li>
         /// <li> <p> <code>SUCCESS</code>: The resource operation has successfully completed.</p> </li>
         /// <li> <p> <code>FAILED</code>: The resource operation has failed. Refer to the error code and status message for more information.</p> </li>
@@ -642,10 +642,10 @@ pub struct ResourceRequestStatusFilter {
     /// <p>The operation statuses to include in the filter.</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code>: The operation has been requested, but not yet initiated.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code>: The operation is currently in progress.</p> </li>
-    /// <li> <p> <code>SUCCESS</code>: The operation has successfully completed.</p> </li>
-    /// <li> <p> <code>FAILED</code>: The operation has failed.</p> </li>
-    /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is currently in the process of being canceled.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The operation is in progress.</p> </li>
+    /// <li> <p> <code>SUCCESS</code>: The operation completed.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The operation failed.</p> </li>
+    /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p> </li>
     /// <li> <p> <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p> </li>
     /// </ul>
     pub operation_statuses: std::option::Option<std::vec::Vec<crate::model::OperationStatus>>,
@@ -658,10 +658,10 @@ impl ResourceRequestStatusFilter {
     /// <p>The operation statuses to include in the filter.</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code>: The operation has been requested, but not yet initiated.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code>: The operation is currently in progress.</p> </li>
-    /// <li> <p> <code>SUCCESS</code>: The operation has successfully completed.</p> </li>
-    /// <li> <p> <code>FAILED</code>: The operation has failed.</p> </li>
-    /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is currently in the process of being canceled.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The operation is in progress.</p> </li>
+    /// <li> <p> <code>SUCCESS</code>: The operation completed.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The operation failed.</p> </li>
+    /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p> </li>
     /// <li> <p> <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p> </li>
     /// </ul>
     pub fn operation_statuses(&self) -> std::option::Option<&[crate::model::OperationStatus]> {
@@ -713,10 +713,10 @@ pub mod resource_request_status_filter {
         /// <p>The operation statuses to include in the filter.</p>
         /// <ul>
         /// <li> <p> <code>PENDING</code>: The operation has been requested, but not yet initiated.</p> </li>
-        /// <li> <p> <code>IN_PROGRESS</code>: The operation is currently in progress.</p> </li>
-        /// <li> <p> <code>SUCCESS</code>: The operation has successfully completed.</p> </li>
-        /// <li> <p> <code>FAILED</code>: The operation has failed.</p> </li>
-        /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is currently in the process of being canceled.</p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code>: The operation is in progress.</p> </li>
+        /// <li> <p> <code>SUCCESS</code>: The operation completed.</p> </li>
+        /// <li> <p> <code>FAILED</code>: The operation failed.</p> </li>
+        /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p> </li>
         /// <li> <p> <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p> </li>
         /// </ul>
         pub fn operation_statuses(mut self, input: crate::model::OperationStatus) -> Self {
@@ -728,10 +728,10 @@ pub mod resource_request_status_filter {
         /// <p>The operation statuses to include in the filter.</p>
         /// <ul>
         /// <li> <p> <code>PENDING</code>: The operation has been requested, but not yet initiated.</p> </li>
-        /// <li> <p> <code>IN_PROGRESS</code>: The operation is currently in progress.</p> </li>
-        /// <li> <p> <code>SUCCESS</code>: The operation has successfully completed.</p> </li>
-        /// <li> <p> <code>FAILED</code>: The operation has failed.</p> </li>
-        /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is currently in the process of being canceled.</p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code>: The operation is in progress.</p> </li>
+        /// <li> <p> <code>SUCCESS</code>: The operation completed.</p> </li>
+        /// <li> <p> <code>FAILED</code>: The operation failed.</p> </li>
+        /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p> </li>
         /// <li> <p> <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p> </li>
         /// </ul>
         pub fn set_operation_statuses(

@@ -856,6 +856,10 @@ pub enum Compute {
     #[allow(missing_docs)] // documentation missing in model
     Graphicspro,
     #[allow(missing_docs)] // documentation missing in model
+    GraphicsproG4Dn,
+    #[allow(missing_docs)] // documentation missing in model
+    GraphicsG4Dn,
+    #[allow(missing_docs)] // documentation missing in model
     Performance,
     #[allow(missing_docs)] // documentation missing in model
     Power,
@@ -873,6 +877,8 @@ impl std::convert::From<&str> for Compute {
         match s {
             "GRAPHICS" => Compute::Graphics,
             "GRAPHICSPRO" => Compute::Graphicspro,
+            "GRAPHICSPRO_G4DN" => Compute::GraphicsproG4Dn,
+            "GRAPHICS_G4DN" => Compute::GraphicsG4Dn,
             "PERFORMANCE" => Compute::Performance,
             "POWER" => Compute::Power,
             "POWERPRO" => Compute::Powerpro,
@@ -895,6 +901,8 @@ impl Compute {
         match self {
             Compute::Graphics => "GRAPHICS",
             Compute::Graphicspro => "GRAPHICSPRO",
+            Compute::GraphicsproG4Dn => "GRAPHICSPRO_G4DN",
+            Compute::GraphicsG4Dn => "GRAPHICS_G4DN",
             Compute::Performance => "PERFORMANCE",
             Compute::Power => "POWER",
             Compute::Powerpro => "POWERPRO",
@@ -908,6 +916,8 @@ impl Compute {
         &[
             "GRAPHICS",
             "GRAPHICSPRO",
+            "GRAPHICSPRO_G4DN",
+            "GRAPHICS_G4DN",
             "PERFORMANCE",
             "POWER",
             "POWERPRO",
@@ -1815,6 +1825,8 @@ pub enum WorkspaceImageIngestionProcess {
     #[allow(missing_docs)] // documentation missing in model
     ByolGraphicspro,
     #[allow(missing_docs)] // documentation missing in model
+    ByolGraphicsG4Dn,
+    #[allow(missing_docs)] // documentation missing in model
     ByolRegular,
     #[allow(missing_docs)] // documentation missing in model
     ByolRegularWsp,
@@ -1826,6 +1838,7 @@ impl std::convert::From<&str> for WorkspaceImageIngestionProcess {
         match s {
             "BYOL_GRAPHICS" => WorkspaceImageIngestionProcess::ByolGraphics,
             "BYOL_GRAPHICSPRO" => WorkspaceImageIngestionProcess::ByolGraphicspro,
+            "BYOL_GRAPHICS_G4DN" => WorkspaceImageIngestionProcess::ByolGraphicsG4Dn,
             "BYOL_REGULAR" => WorkspaceImageIngestionProcess::ByolRegular,
             "BYOL_REGULAR_WSP" => WorkspaceImageIngestionProcess::ByolRegularWsp,
             other => WorkspaceImageIngestionProcess::Unknown(other.to_owned()),
@@ -1845,6 +1858,7 @@ impl WorkspaceImageIngestionProcess {
         match self {
             WorkspaceImageIngestionProcess::ByolGraphics => "BYOL_GRAPHICS",
             WorkspaceImageIngestionProcess::ByolGraphicspro => "BYOL_GRAPHICSPRO",
+            WorkspaceImageIngestionProcess::ByolGraphicsG4Dn => "BYOL_GRAPHICS_G4DN",
             WorkspaceImageIngestionProcess::ByolRegular => "BYOL_REGULAR",
             WorkspaceImageIngestionProcess::ByolRegularWsp => "BYOL_REGULAR_WSP",
             WorkspaceImageIngestionProcess::Unknown(s) => s.as_ref(),
@@ -1855,6 +1869,7 @@ impl WorkspaceImageIngestionProcess {
         &[
             "BYOL_GRAPHICS",
             "BYOL_GRAPHICSPRO",
+            "BYOL_GRAPHICS_G4DN",
             "BYOL_REGULAR",
             "BYOL_REGULAR_WSP",
         ]
@@ -1863,6 +1878,910 @@ impl WorkspaceImageIngestionProcess {
 impl AsRef<str> for WorkspaceImageIngestionProcess {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Returns default client branding attributes that were imported. These attributes display on the client login screen.</p> <important>
+/// <p>Client branding attributes are public facing. Ensure that you don't include sensitive information.</p>
+/// </important>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DefaultClientBrandingAttributes {
+    /// <p>The logo URL. This is the link where users can download the logo image. The only supported image format is <code>.png</code>.</p>
+    pub logo_url: std::option::Option<std::string::String>,
+    /// <p>The support email. The company's customer support email address.</p> <note>
+    /// <ul>
+    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+    /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// </ul>
+    /// </note>
+    pub support_email: std::option::Option<std::string::String>,
+    /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
+    /// <ul>
+    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive.You can specify one parameter for each platform type, but not both.</p> </li>
+    /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// </ul>
+    /// </note>
+    pub support_link: std::option::Option<std::string::String>,
+    /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+    pub forgot_password_link: std::option::Option<std::string::String>,
+    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+    pub login_message:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DefaultClientBrandingAttributes {
+    /// <p>The logo URL. This is the link where users can download the logo image. The only supported image format is <code>.png</code>.</p>
+    pub fn logo_url(&self) -> std::option::Option<&str> {
+        self.logo_url.as_deref()
+    }
+    /// <p>The support email. The company's customer support email address.</p> <note>
+    /// <ul>
+    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+    /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn support_email(&self) -> std::option::Option<&str> {
+        self.support_email.as_deref()
+    }
+    /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
+    /// <ul>
+    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive.You can specify one parameter for each platform type, but not both.</p> </li>
+    /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn support_link(&self) -> std::option::Option<&str> {
+        self.support_link.as_deref()
+    }
+    /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+    pub fn forgot_password_link(&self) -> std::option::Option<&str> {
+        self.forgot_password_link.as_deref()
+    }
+    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+    pub fn login_message(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.login_message.as_ref()
+    }
+}
+impl std::fmt::Debug for DefaultClientBrandingAttributes {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DefaultClientBrandingAttributes");
+        formatter.field("logo_url", &self.logo_url);
+        formatter.field("support_email", &self.support_email);
+        formatter.field("support_link", &self.support_link);
+        formatter.field("forgot_password_link", &self.forgot_password_link);
+        formatter.field("login_message", &self.login_message);
+        formatter.finish()
+    }
+}
+/// See [`DefaultClientBrandingAttributes`](crate::model::DefaultClientBrandingAttributes)
+pub mod default_client_branding_attributes {
+    /// A builder for [`DefaultClientBrandingAttributes`](crate::model::DefaultClientBrandingAttributes)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) logo_url: std::option::Option<std::string::String>,
+        pub(crate) support_email: std::option::Option<std::string::String>,
+        pub(crate) support_link: std::option::Option<std::string::String>,
+        pub(crate) forgot_password_link: std::option::Option<std::string::String>,
+        pub(crate) login_message: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The logo URL. This is the link where users can download the logo image. The only supported image format is <code>.png</code>.</p>
+        pub fn logo_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logo_url = Some(input.into());
+            self
+        }
+        /// <p>The logo URL. This is the link where users can download the logo image. The only supported image format is <code>.png</code>.</p>
+        pub fn set_logo_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.logo_url = input;
+            self
+        }
+        /// <p>The support email. The company's customer support email address.</p> <note>
+        /// <ul>
+        /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+        /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+        /// </ul>
+        /// </note>
+        pub fn support_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.support_email = Some(input.into());
+            self
+        }
+        /// <p>The support email. The company's customer support email address.</p> <note>
+        /// <ul>
+        /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+        /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+        /// </ul>
+        /// </note>
+        pub fn set_support_email(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.support_email = input;
+            self
+        }
+        /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
+        /// <ul>
+        /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive.You can specify one parameter for each platform type, but not both.</p> </li>
+        /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+        /// </ul>
+        /// </note>
+        pub fn support_link(mut self, input: impl Into<std::string::String>) -> Self {
+            self.support_link = Some(input.into());
+            self
+        }
+        /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
+        /// <ul>
+        /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive.You can specify one parameter for each platform type, but not both.</p> </li>
+        /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+        /// </ul>
+        /// </note>
+        pub fn set_support_link(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.support_link = input;
+            self
+        }
+        /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+        pub fn forgot_password_link(mut self, input: impl Into<std::string::String>) -> Self {
+            self.forgot_password_link = Some(input.into());
+            self
+        }
+        /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+        pub fn set_forgot_password_link(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.forgot_password_link = input;
+            self
+        }
+        /// Adds a key-value pair to `login_message`.
+        ///
+        /// To override the contents of this collection use [`set_login_message`](Self::set_login_message).
+        ///
+        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+        pub fn login_message(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.login_message.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.login_message = Some(hash_map);
+            self
+        }
+        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+        pub fn set_login_message(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.login_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DefaultClientBrandingAttributes`](crate::model::DefaultClientBrandingAttributes)
+        pub fn build(self) -> crate::model::DefaultClientBrandingAttributes {
+            crate::model::DefaultClientBrandingAttributes {
+                logo_url: self.logo_url,
+                support_email: self.support_email,
+                support_link: self.support_link,
+                forgot_password_link: self.forgot_password_link,
+                login_message: self.login_message,
+            }
+        }
+    }
+}
+impl DefaultClientBrandingAttributes {
+    /// Creates a new builder-style object to manufacture [`DefaultClientBrandingAttributes`](crate::model::DefaultClientBrandingAttributes)
+    pub fn builder() -> crate::model::default_client_branding_attributes::Builder {
+        crate::model::default_client_branding_attributes::Builder::default()
+    }
+}
+
+/// <p>The client branding attributes for iOS device types. These attributes are displayed on the iOS client login screen only.</p> <important>
+/// <p>Client branding attributes are public facing. Ensure you do not include sensitive information.</p>
+/// </important>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IosClientBrandingAttributes {
+    /// <p>The logo. This is the link where users can download the logo image. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point.</p>
+    pub logo_url: std::option::Option<std::string::String>,
+    /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x).</p> <note>
+    /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+    /// </note>
+    pub logo2x_url: std::option::Option<std::string::String>,
+    /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).</p> <note>
+    /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+    /// </note>
+    pub logo3x_url: std::option::Option<std::string::String>,
+    /// <p>The support email. The company's customer support email address.</p> <note>
+    /// <ul>
+    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+    /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// </ul>
+    /// </note>
+    pub support_email: std::option::Option<std::string::String>,
+    /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
+    /// <ul>
+    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+    /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// </ul>
+    /// </note>
+    pub support_link: std::option::Option<std::string::String>,
+    /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+    pub forgot_password_link: std::option::Option<std::string::String>,
+    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+    pub login_message:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl IosClientBrandingAttributes {
+    /// <p>The logo. This is the link where users can download the logo image. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point.</p>
+    pub fn logo_url(&self) -> std::option::Option<&str> {
+        self.logo_url.as_deref()
+    }
+    /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x).</p> <note>
+    /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+    /// </note>
+    pub fn logo2x_url(&self) -> std::option::Option<&str> {
+        self.logo2x_url.as_deref()
+    }
+    /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).</p> <note>
+    /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+    /// </note>
+    pub fn logo3x_url(&self) -> std::option::Option<&str> {
+        self.logo3x_url.as_deref()
+    }
+    /// <p>The support email. The company's customer support email address.</p> <note>
+    /// <ul>
+    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+    /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn support_email(&self) -> std::option::Option<&str> {
+        self.support_email.as_deref()
+    }
+    /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
+    /// <ul>
+    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+    /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn support_link(&self) -> std::option::Option<&str> {
+        self.support_link.as_deref()
+    }
+    /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+    pub fn forgot_password_link(&self) -> std::option::Option<&str> {
+        self.forgot_password_link.as_deref()
+    }
+    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+    pub fn login_message(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.login_message.as_ref()
+    }
+}
+impl std::fmt::Debug for IosClientBrandingAttributes {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IosClientBrandingAttributes");
+        formatter.field("logo_url", &self.logo_url);
+        formatter.field("logo2x_url", &self.logo2x_url);
+        formatter.field("logo3x_url", &self.logo3x_url);
+        formatter.field("support_email", &self.support_email);
+        formatter.field("support_link", &self.support_link);
+        formatter.field("forgot_password_link", &self.forgot_password_link);
+        formatter.field("login_message", &self.login_message);
+        formatter.finish()
+    }
+}
+/// See [`IosClientBrandingAttributes`](crate::model::IosClientBrandingAttributes)
+pub mod ios_client_branding_attributes {
+    /// A builder for [`IosClientBrandingAttributes`](crate::model::IosClientBrandingAttributes)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) logo_url: std::option::Option<std::string::String>,
+        pub(crate) logo2x_url: std::option::Option<std::string::String>,
+        pub(crate) logo3x_url: std::option::Option<std::string::String>,
+        pub(crate) support_email: std::option::Option<std::string::String>,
+        pub(crate) support_link: std::option::Option<std::string::String>,
+        pub(crate) forgot_password_link: std::option::Option<std::string::String>,
+        pub(crate) login_message: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The logo. This is the link where users can download the logo image. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point.</p>
+        pub fn logo_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logo_url = Some(input.into());
+            self
+        }
+        /// <p>The logo. This is the link where users can download the logo image. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point.</p>
+        pub fn set_logo_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.logo_url = input;
+            self
+        }
+        /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x).</p> <note>
+        /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+        /// </note>
+        pub fn logo2x_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logo2x_url = Some(input.into());
+            self
+        }
+        /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x).</p> <note>
+        /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+        /// </note>
+        pub fn set_logo2x_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.logo2x_url = input;
+            self
+        }
+        /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).</p> <note>
+        /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+        /// </note>
+        pub fn logo3x_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logo3x_url = Some(input.into());
+            self
+        }
+        /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).</p> <note>
+        /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+        /// </note>
+        pub fn set_logo3x_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.logo3x_url = input;
+            self
+        }
+        /// <p>The support email. The company's customer support email address.</p> <note>
+        /// <ul>
+        /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+        /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+        /// </ul>
+        /// </note>
+        pub fn support_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.support_email = Some(input.into());
+            self
+        }
+        /// <p>The support email. The company's customer support email address.</p> <note>
+        /// <ul>
+        /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+        /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+        /// </ul>
+        /// </note>
+        pub fn set_support_email(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.support_email = input;
+            self
+        }
+        /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
+        /// <ul>
+        /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+        /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+        /// </ul>
+        /// </note>
+        pub fn support_link(mut self, input: impl Into<std::string::String>) -> Self {
+            self.support_link = Some(input.into());
+            self
+        }
+        /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
+        /// <ul>
+        /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+        /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+        /// </ul>
+        /// </note>
+        pub fn set_support_link(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.support_link = input;
+            self
+        }
+        /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+        pub fn forgot_password_link(mut self, input: impl Into<std::string::String>) -> Self {
+            self.forgot_password_link = Some(input.into());
+            self
+        }
+        /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+        pub fn set_forgot_password_link(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.forgot_password_link = input;
+            self
+        }
+        /// Adds a key-value pair to `login_message`.
+        ///
+        /// To override the contents of this collection use [`set_login_message`](Self::set_login_message).
+        ///
+        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+        pub fn login_message(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.login_message.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.login_message = Some(hash_map);
+            self
+        }
+        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+        pub fn set_login_message(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.login_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IosClientBrandingAttributes`](crate::model::IosClientBrandingAttributes)
+        pub fn build(self) -> crate::model::IosClientBrandingAttributes {
+            crate::model::IosClientBrandingAttributes {
+                logo_url: self.logo_url,
+                logo2x_url: self.logo2x_url,
+                logo3x_url: self.logo3x_url,
+                support_email: self.support_email,
+                support_link: self.support_link,
+                forgot_password_link: self.forgot_password_link,
+                login_message: self.login_message,
+            }
+        }
+    }
+}
+impl IosClientBrandingAttributes {
+    /// Creates a new builder-style object to manufacture [`IosClientBrandingAttributes`](crate::model::IosClientBrandingAttributes)
+    pub fn builder() -> crate::model::ios_client_branding_attributes::Builder {
+        crate::model::ios_client_branding_attributes::Builder::default()
+    }
+}
+
+/// <p>The default client branding attributes to be imported. These attributes display on the client login screen.</p> <important>
+/// <p>Client branding attributes are public facing. Ensure that you do not include sensitive information.</p>
+/// </important>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DefaultImportClientBrandingAttributes {
+    /// <p>The logo. This is the link where users can download the logo image. The only image format accepted is <code>.png</code>.</p>
+    pub logo: std::option::Option<aws_smithy_types::Blob>,
+    /// <p>The support email. The company's customer support email address.</p> <note>
+    /// <ul>
+    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+    /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// </ul>
+    /// </note>
+    pub support_email: std::option::Option<std::string::String>,
+    /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
+    /// <ul>
+    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+    /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// </ul>
+    /// </note>
+    pub support_link: std::option::Option<std::string::String>,
+    /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+    pub forgot_password_link: std::option::Option<std::string::String>,
+    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+    pub login_message:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DefaultImportClientBrandingAttributes {
+    /// <p>The logo. This is the link where users can download the logo image. The only image format accepted is <code>.png</code>.</p>
+    pub fn logo(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.logo.as_ref()
+    }
+    /// <p>The support email. The company's customer support email address.</p> <note>
+    /// <ul>
+    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+    /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn support_email(&self) -> std::option::Option<&str> {
+        self.support_email.as_deref()
+    }
+    /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
+    /// <ul>
+    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+    /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn support_link(&self) -> std::option::Option<&str> {
+        self.support_link.as_deref()
+    }
+    /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+    pub fn forgot_password_link(&self) -> std::option::Option<&str> {
+        self.forgot_password_link.as_deref()
+    }
+    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+    pub fn login_message(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.login_message.as_ref()
+    }
+}
+impl std::fmt::Debug for DefaultImportClientBrandingAttributes {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DefaultImportClientBrandingAttributes");
+        formatter.field("logo", &self.logo);
+        formatter.field("support_email", &self.support_email);
+        formatter.field("support_link", &self.support_link);
+        formatter.field("forgot_password_link", &self.forgot_password_link);
+        formatter.field("login_message", &self.login_message);
+        formatter.finish()
+    }
+}
+/// See [`DefaultImportClientBrandingAttributes`](crate::model::DefaultImportClientBrandingAttributes)
+pub mod default_import_client_branding_attributes {
+    /// A builder for [`DefaultImportClientBrandingAttributes`](crate::model::DefaultImportClientBrandingAttributes)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) logo: std::option::Option<aws_smithy_types::Blob>,
+        pub(crate) support_email: std::option::Option<std::string::String>,
+        pub(crate) support_link: std::option::Option<std::string::String>,
+        pub(crate) forgot_password_link: std::option::Option<std::string::String>,
+        pub(crate) login_message: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The logo. This is the link where users can download the logo image. The only image format accepted is <code>.png</code>.</p>
+        pub fn logo(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.logo = Some(input);
+            self
+        }
+        /// <p>The logo. This is the link where users can download the logo image. The only image format accepted is <code>.png</code>.</p>
+        pub fn set_logo(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.logo = input;
+            self
+        }
+        /// <p>The support email. The company's customer support email address.</p> <note>
+        /// <ul>
+        /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+        /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+        /// </ul>
+        /// </note>
+        pub fn support_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.support_email = Some(input.into());
+            self
+        }
+        /// <p>The support email. The company's customer support email address.</p> <note>
+        /// <ul>
+        /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+        /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+        /// </ul>
+        /// </note>
+        pub fn set_support_email(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.support_email = input;
+            self
+        }
+        /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
+        /// <ul>
+        /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+        /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+        /// </ul>
+        /// </note>
+        pub fn support_link(mut self, input: impl Into<std::string::String>) -> Self {
+            self.support_link = Some(input.into());
+            self
+        }
+        /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
+        /// <ul>
+        /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+        /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+        /// </ul>
+        /// </note>
+        pub fn set_support_link(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.support_link = input;
+            self
+        }
+        /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+        pub fn forgot_password_link(mut self, input: impl Into<std::string::String>) -> Self {
+            self.forgot_password_link = Some(input.into());
+            self
+        }
+        /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+        pub fn set_forgot_password_link(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.forgot_password_link = input;
+            self
+        }
+        /// Adds a key-value pair to `login_message`.
+        ///
+        /// To override the contents of this collection use [`set_login_message`](Self::set_login_message).
+        ///
+        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+        pub fn login_message(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.login_message.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.login_message = Some(hash_map);
+            self
+        }
+        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+        pub fn set_login_message(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.login_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DefaultImportClientBrandingAttributes`](crate::model::DefaultImportClientBrandingAttributes)
+        pub fn build(self) -> crate::model::DefaultImportClientBrandingAttributes {
+            crate::model::DefaultImportClientBrandingAttributes {
+                logo: self.logo,
+                support_email: self.support_email,
+                support_link: self.support_link,
+                forgot_password_link: self.forgot_password_link,
+                login_message: self.login_message,
+            }
+        }
+    }
+}
+impl DefaultImportClientBrandingAttributes {
+    /// Creates a new builder-style object to manufacture [`DefaultImportClientBrandingAttributes`](crate::model::DefaultImportClientBrandingAttributes)
+    pub fn builder() -> crate::model::default_import_client_branding_attributes::Builder {
+        crate::model::default_import_client_branding_attributes::Builder::default()
+    }
+}
+
+/// <p>The client branding attributes to import for iOS device types. These attributes are displayed on the iOS client login screen.</p> <important>
+/// <p>Client branding attributes are public facing. Ensure you do not include sensitive information.</p>
+/// </important>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IosImportClientBrandingAttributes {
+    /// <p>The logo. This is the link where users can download the logo image. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point.</p>
+    pub logo: std::option::Option<aws_smithy_types::Blob>,
+    /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x).</p> <note>
+    /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+    /// </note>
+    pub logo2x: std::option::Option<aws_smithy_types::Blob>,
+    /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).</p> <note>
+    /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+    /// </note>
+    pub logo3x: std::option::Option<aws_smithy_types::Blob>,
+    /// <p>The support email. The company's customer support email address.</p> <note>
+    /// <ul>
+    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+    /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// </ul>
+    /// </note>
+    pub support_email: std::option::Option<std::string::String>,
+    /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
+    /// <ul>
+    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+    /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// </ul>
+    /// </note>
+    pub support_link: std::option::Option<std::string::String>,
+    /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+    pub forgot_password_link: std::option::Option<std::string::String>,
+    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+    pub login_message:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl IosImportClientBrandingAttributes {
+    /// <p>The logo. This is the link where users can download the logo image. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point.</p>
+    pub fn logo(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.logo.as_ref()
+    }
+    /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x).</p> <note>
+    /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+    /// </note>
+    pub fn logo2x(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.logo2x.as_ref()
+    }
+    /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).</p> <note>
+    /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+    /// </note>
+    pub fn logo3x(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.logo3x.as_ref()
+    }
+    /// <p>The support email. The company's customer support email address.</p> <note>
+    /// <ul>
+    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+    /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn support_email(&self) -> std::option::Option<&str> {
+        self.support_email.as_deref()
+    }
+    /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
+    /// <ul>
+    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+    /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn support_link(&self) -> std::option::Option<&str> {
+        self.support_link.as_deref()
+    }
+    /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+    pub fn forgot_password_link(&self) -> std::option::Option<&str> {
+        self.forgot_password_link.as_deref()
+    }
+    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+    pub fn login_message(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.login_message.as_ref()
+    }
+}
+impl std::fmt::Debug for IosImportClientBrandingAttributes {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IosImportClientBrandingAttributes");
+        formatter.field("logo", &self.logo);
+        formatter.field("logo2x", &self.logo2x);
+        formatter.field("logo3x", &self.logo3x);
+        formatter.field("support_email", &self.support_email);
+        formatter.field("support_link", &self.support_link);
+        formatter.field("forgot_password_link", &self.forgot_password_link);
+        formatter.field("login_message", &self.login_message);
+        formatter.finish()
+    }
+}
+/// See [`IosImportClientBrandingAttributes`](crate::model::IosImportClientBrandingAttributes)
+pub mod ios_import_client_branding_attributes {
+    /// A builder for [`IosImportClientBrandingAttributes`](crate::model::IosImportClientBrandingAttributes)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) logo: std::option::Option<aws_smithy_types::Blob>,
+        pub(crate) logo2x: std::option::Option<aws_smithy_types::Blob>,
+        pub(crate) logo3x: std::option::Option<aws_smithy_types::Blob>,
+        pub(crate) support_email: std::option::Option<std::string::String>,
+        pub(crate) support_link: std::option::Option<std::string::String>,
+        pub(crate) forgot_password_link: std::option::Option<std::string::String>,
+        pub(crate) login_message: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The logo. This is the link where users can download the logo image. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point.</p>
+        pub fn logo(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.logo = Some(input);
+            self
+        }
+        /// <p>The logo. This is the link where users can download the logo image. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point.</p>
+        pub fn set_logo(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.logo = input;
+            self
+        }
+        /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x).</p> <note>
+        /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+        /// </note>
+        pub fn logo2x(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.logo2x = Some(input);
+            self
+        }
+        /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x).</p> <note>
+        /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+        /// </note>
+        pub fn set_logo2x(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.logo2x = input;
+            self
+        }
+        /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).</p> <note>
+        /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+        /// </note>
+        pub fn logo3x(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.logo3x = Some(input);
+            self
+        }
+        /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).</p> <note>
+        /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+        /// </note>
+        pub fn set_logo3x(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.logo3x = input;
+            self
+        }
+        /// <p>The support email. The company's customer support email address.</p> <note>
+        /// <ul>
+        /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+        /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+        /// </ul>
+        /// </note>
+        pub fn support_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.support_email = Some(input.into());
+            self
+        }
+        /// <p>The support email. The company's customer support email address.</p> <note>
+        /// <ul>
+        /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+        /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+        /// </ul>
+        /// </note>
+        pub fn set_support_email(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.support_email = input;
+            self
+        }
+        /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
+        /// <ul>
+        /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+        /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+        /// </ul>
+        /// </note>
+        pub fn support_link(mut self, input: impl Into<std::string::String>) -> Self {
+            self.support_link = Some(input.into());
+            self
+        }
+        /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
+        /// <ul>
+        /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
+        /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+        /// </ul>
+        /// </note>
+        pub fn set_support_link(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.support_link = input;
+            self
+        }
+        /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+        pub fn forgot_password_link(mut self, input: impl Into<std::string::String>) -> Self {
+            self.forgot_password_link = Some(input.into());
+            self
+        }
+        /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
+        pub fn set_forgot_password_link(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.forgot_password_link = input;
+            self
+        }
+        /// Adds a key-value pair to `login_message`.
+        ///
+        /// To override the contents of this collection use [`set_login_message`](Self::set_login_message).
+        ///
+        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+        pub fn login_message(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.login_message.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.login_message = Some(hash_map);
+            self
+        }
+        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+        pub fn set_login_message(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.login_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IosImportClientBrandingAttributes`](crate::model::IosImportClientBrandingAttributes)
+        pub fn build(self) -> crate::model::IosImportClientBrandingAttributes {
+            crate::model::IosImportClientBrandingAttributes {
+                logo: self.logo,
+                logo2x: self.logo2x,
+                logo3x: self.logo3x,
+                support_email: self.support_email,
+                support_link: self.support_link,
+                forgot_password_link: self.forgot_password_link,
+                login_message: self.login_message,
+            }
+        }
+    }
+}
+impl IosImportClientBrandingAttributes {
+    /// Creates a new builder-style object to manufacture [`IosImportClientBrandingAttributes`](crate::model::IosImportClientBrandingAttributes)
+    pub fn builder() -> crate::model::ios_import_client_branding_attributes::Builder {
+        crate::model::ios_import_client_branding_attributes::Builder::default()
     }
 }
 
@@ -5608,6 +6527,84 @@ impl DedicatedTenancyModificationStateEnum {
     }
 }
 impl AsRef<str> for DedicatedTenancyModificationStateEnum {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ClientDeviceType {
+    #[allow(missing_docs)] // documentation missing in model
+    DeviceTypeAndroid,
+    #[allow(missing_docs)] // documentation missing in model
+    DeviceTypeIos,
+    #[allow(missing_docs)] // documentation missing in model
+    DeviceTypeLinux,
+    #[allow(missing_docs)] // documentation missing in model
+    DeviceTypeOsx,
+    #[allow(missing_docs)] // documentation missing in model
+    DeviceTypeWeb,
+    #[allow(missing_docs)] // documentation missing in model
+    DeviceTypeWindows,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ClientDeviceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "DeviceTypeAndroid" => ClientDeviceType::DeviceTypeAndroid,
+            "DeviceTypeIos" => ClientDeviceType::DeviceTypeIos,
+            "DeviceTypeLinux" => ClientDeviceType::DeviceTypeLinux,
+            "DeviceTypeOsx" => ClientDeviceType::DeviceTypeOsx,
+            "DeviceTypeWeb" => ClientDeviceType::DeviceTypeWeb,
+            "DeviceTypeWindows" => ClientDeviceType::DeviceTypeWindows,
+            other => ClientDeviceType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ClientDeviceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ClientDeviceType::from(s))
+    }
+}
+impl ClientDeviceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ClientDeviceType::DeviceTypeAndroid => "DeviceTypeAndroid",
+            ClientDeviceType::DeviceTypeIos => "DeviceTypeIos",
+            ClientDeviceType::DeviceTypeLinux => "DeviceTypeLinux",
+            ClientDeviceType::DeviceTypeOsx => "DeviceTypeOsx",
+            ClientDeviceType::DeviceTypeWeb => "DeviceTypeWeb",
+            ClientDeviceType::DeviceTypeWindows => "DeviceTypeWindows",
+            ClientDeviceType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "DeviceTypeAndroid",
+            "DeviceTypeIos",
+            "DeviceTypeLinux",
+            "DeviceTypeOsx",
+            "DeviceTypeWeb",
+            "DeviceTypeWindows",
+        ]
+    }
+}
+impl AsRef<str> for ClientDeviceType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

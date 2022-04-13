@@ -6,6 +6,7 @@
 //! Provides an [`AsyncSleep`] trait that returns a future that sleeps for a given duration,
 //! and implementations of `AsyncSleep` for different async runtimes.
 
+use std::fmt::{Debug, Formatter};
 use std::future::Future;
 use std::pin::Pin;
 use std::sync::Arc;
@@ -45,6 +46,7 @@ pub fn default_async_sleep() -> Option<Arc<dyn AsyncSleep>> {
 }
 
 #[cfg(not(feature = "rt-tokio"))]
+/// Returns a default sleep implementation based on the features enabled
 pub fn default_async_sleep() -> Option<Arc<dyn AsyncSleep>> {
     None
 }
@@ -53,7 +55,16 @@ pub fn default_async_sleep() -> Option<Arc<dyn AsyncSleep>> {
 #[non_exhaustive]
 pub struct Sleep(Pin<Box<dyn Future<Output = ()> + Send + 'static>>);
 
+impl Debug for Sleep {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        write!(f, "Sleep")
+    }
+}
+
 impl Sleep {
+    /// Create a new [`Sleep`] future
+    ///
+    /// The provided future will be Boxed.
     pub fn new(future: impl Future<Output = ()> + Send + 'static) -> Sleep {
         Sleep(Box::pin(future))
     }
@@ -75,6 +86,7 @@ pub struct TokioSleep;
 
 #[cfg(feature = "rt-tokio")]
 impl TokioSleep {
+    /// Create a new [`AsyncSleep`] implementation using the Tokio hashed wheel sleep implementation
     pub fn new() -> TokioSleep {
         Default::default()
     }

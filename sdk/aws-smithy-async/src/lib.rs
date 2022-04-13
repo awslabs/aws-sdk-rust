@@ -3,6 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#![warn(
+    missing_debug_implementations,
+    missing_docs,
+    rustdoc::all,
+    rust_2018_idioms
+)]
+
 //! Future utilities and runtime-agnostic abstractions for smithy-rs.
 //!
 //! Async runtime specific code is abstracted behind async traits, and implementations are

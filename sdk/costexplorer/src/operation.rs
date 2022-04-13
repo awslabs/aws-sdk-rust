@@ -880,6 +880,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCostCategoryDefiniti
     }
 }
 
+/// Operation shape for `ListTagsForResource`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+///
+/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListTagsForResource {
+    _private: (),
+}
+impl ListTagsForResource {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
+        crate::input::list_tags_for_resource_input::Builder::default()
+    }
+    /// Creates a new `ListTagsForResource` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
+    type Output = std::result::Result<
+        crate::output::ListTagsForResourceOutput,
+        crate::error::ListTagsForResourceError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
+        } else {
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ProvideAnomalyFeedback`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -910,6 +944,70 @@ impl aws_smithy_http::response::ParseStrictResponse for ProvideAnomalyFeedback {
             crate::operation_deser::parse_provide_anomaly_feedback_error(response)
         } else {
             crate::operation_deser::parse_provide_anomaly_feedback_response(response)
+        }
+    }
+}
+
+/// Operation shape for `TagResource`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`tag_resource`](crate::client::Client::tag_resource).
+///
+/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct TagResource {
+    _private: (),
+}
+impl TagResource {
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    pub fn builder() -> crate::input::tag_resource_input::Builder {
+        crate::input::tag_resource_input::Builder::default()
+    }
+    /// Creates a new `TagResource` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for TagResource {
+    type Output =
+        std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_tag_resource_error(response)
+        } else {
+            crate::operation_deser::parse_tag_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UntagResource`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`untag_resource`](crate::client::Client::untag_resource).
+///
+/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UntagResource {
+    _private: (),
+}
+impl UntagResource {
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    pub fn builder() -> crate::input::untag_resource_input::Builder {
+        crate::input::untag_resource_input::Builder::default()
+    }
+    /// Creates a new `UntagResource` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
+    type Output =
+        std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_untag_resource_error(response)
+        } else {
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }

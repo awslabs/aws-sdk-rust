@@ -272,6 +272,7 @@ pub mod add_permission_input {
         pub(crate) qualifier: std::option::Option<std::string::String>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
         pub(crate) principal_org_id: std::option::Option<std::string::String>,
+        pub(crate) function_url_auth_type: std::option::Option<crate::model::FunctionUrlAuthType>,
     }
     impl Builder {
         /// <p>The name of the Lambda function, version, or alias.</p>
@@ -402,6 +403,19 @@ pub mod add_permission_input {
             self.principal_org_id = input;
             self
         }
+        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+        pub fn function_url_auth_type(mut self, input: crate::model::FunctionUrlAuthType) -> Self {
+            self.function_url_auth_type = Some(input);
+            self
+        }
+        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+        pub fn set_function_url_auth_type(
+            mut self,
+            input: std::option::Option<crate::model::FunctionUrlAuthType>,
+        ) -> Self {
+            self.function_url_auth_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AddPermissionInput`](crate::input::AddPermissionInput)
         pub fn build(
             self,
@@ -420,6 +434,7 @@ pub mod add_permission_input {
                 qualifier: self.qualifier,
                 revision_id: self.revision_id,
                 principal_org_id: self.principal_org_id,
+                function_url_auth_type: self.function_url_auth_type,
             })
         }
     }
@@ -1472,6 +1487,7 @@ pub mod create_function_input {
         pub(crate) image_config: std::option::Option<crate::model::ImageConfig>,
         pub(crate) code_signing_config_arn: std::option::Option<std::string::String>,
         pub(crate) architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        pub(crate) ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
@@ -1764,6 +1780,19 @@ pub mod create_function_input {
             self.architectures = input;
             self
         }
+        /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+        pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
+            self.ephemeral_storage = Some(input);
+            self
+        }
+        /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+        pub fn set_ephemeral_storage(
+            mut self,
+            input: std::option::Option<crate::model::EphemeralStorage>,
+        ) -> Self {
+            self.ephemeral_storage = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateFunctionInput`](crate::input::CreateFunctionInput)
         pub fn build(
             self,
@@ -1793,6 +1822,7 @@ pub mod create_function_input {
                 image_config: self.image_config,
                 code_signing_config_arn: self.code_signing_config_arn,
                 architectures: self.architectures,
+                ephemeral_storage: self.ephemeral_storage,
             })
         }
     }
@@ -1902,6 +1932,232 @@ impl CreateFunctionInput {
     }
 }
 
+/// See [`CreateFunctionUrlConfigInput`](crate::input::CreateFunctionUrlConfigInput)
+pub mod create_function_url_config_input {
+    /// A builder for [`CreateFunctionUrlConfigInput`](crate::input::CreateFunctionUrlConfigInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) function_name: std::option::Option<std::string::String>,
+        pub(crate) qualifier: std::option::Option<std::string::String>,
+        pub(crate) auth_type: std::option::Option<crate::model::FunctionUrlAuthType>,
+        pub(crate) cors: std::option::Option<crate::model::Cors>,
+    }
+    impl Builder {
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.function_name = input;
+            self
+        }
+        /// <p>The alias name.</p>
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.qualifier = Some(input.into());
+            self
+        }
+        /// <p>The alias name.</p>
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.qualifier = input;
+            self
+        }
+        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+        pub fn auth_type(mut self, input: crate::model::FunctionUrlAuthType) -> Self {
+            self.auth_type = Some(input);
+            self
+        }
+        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+        pub fn set_auth_type(
+            mut self,
+            input: std::option::Option<crate::model::FunctionUrlAuthType>,
+        ) -> Self {
+            self.auth_type = input;
+            self
+        }
+        /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+        pub fn cors(mut self, input: crate::model::Cors) -> Self {
+            self.cors = Some(input);
+            self
+        }
+        /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+        pub fn set_cors(mut self, input: std::option::Option<crate::model::Cors>) -> Self {
+            self.cors = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateFunctionUrlConfigInput`](crate::input::CreateFunctionUrlConfigInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateFunctionUrlConfigInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateFunctionUrlConfigInput {
+                function_name: self.function_name,
+                qualifier: self.qualifier,
+                auth_type: self.auth_type,
+                cors: self.cors,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateFunctionUrlConfigInputOperationOutputAlias =
+    crate::operation::CreateFunctionUrlConfig;
+#[doc(hidden)]
+pub type CreateFunctionUrlConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateFunctionUrlConfigInput {
+    /// Consumes the builder and constructs an Operation<[`CreateFunctionUrlConfig`](crate::operation::CreateFunctionUrlConfig)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateFunctionUrlConfig,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateFunctionUrlConfigInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_7 = &_input.function_name;
+                let input_7 = input_7.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "function_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let function_name = aws_smithy_http::label::fmt_string(input_7, false);
+                if function_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "function_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/2021-10-31/functions/{FunctionName}/url",
+                    FunctionName = function_name
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::CreateFunctionUrlConfigInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_8) = &_input.qualifier {
+                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_8));
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateFunctionUrlConfigInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_function_url_config(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateFunctionUrlConfig::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateFunctionUrlConfig",
+            "lambda",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateFunctionUrlConfigInput`](crate::input::CreateFunctionUrlConfigInput)
+    pub fn builder() -> crate::input::create_function_url_config_input::Builder {
+        crate::input::create_function_url_config_input::Builder::default()
+    }
+}
+
 /// See [`DeleteAliasInput`](crate::input::DeleteAliasInput)
 pub mod delete_alias_input {
     /// A builder for [`DeleteAliasInput`](crate::input::DeleteAliasInput)
@@ -1987,28 +2243,28 @@ impl DeleteAliasInput {
                 _input: &crate::input::DeleteAliasInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_7 = &_input.function_name;
-                let input_7 = input_7.as_ref().ok_or(
+                let input_9 = &_input.function_name;
+                let input_9 = input_9.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_7, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_9, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_8 = &_input.name;
-                let input_8 = input_8.as_ref().ok_or(
+                let input_10 = &_input.name;
+                let input_10 = input_10.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let name = aws_smithy_http::label::fmt_string(input_8, false);
+                let name = aws_smithy_http::label::fmt_string(input_10, false);
                 if name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
@@ -2148,14 +2404,14 @@ impl DeleteCodeSigningConfigInput {
                 _input: &crate::input::DeleteCodeSigningConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_9 = &_input.code_signing_config_arn;
-                let input_9 = input_9.as_ref().ok_or(
+                let input_11 = &_input.code_signing_config_arn;
+                let input_11 = input_11.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "code_signing_config_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let code_signing_config_arn = aws_smithy_http::label::fmt_string(input_9, false);
+                let code_signing_config_arn = aws_smithy_http::label::fmt_string(input_11, false);
                 if code_signing_config_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "code_signing_config_arn",
@@ -2289,14 +2545,14 @@ impl DeleteEventSourceMappingInput {
                 _input: &crate::input::DeleteEventSourceMappingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_10 = &_input.uuid;
-                let input_10 = input_10.as_ref().ok_or(
+                let input_12 = &_input.uuid;
+                let input_12 = input_12.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "uuid",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let uuid = aws_smithy_http::label::fmt_string(input_10, false);
+                let uuid = aws_smithy_http::label::fmt_string(input_12, false);
                 if uuid.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "uuid",
@@ -2460,14 +2716,14 @@ impl DeleteFunctionInput {
                 _input: &crate::input::DeleteFunctionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_11 = &_input.function_name;
-                let input_11 = input_11.as_ref().ok_or(
+                let input_13 = &_input.function_name;
+                let input_13 = input_13.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_11, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_13, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -2487,8 +2743,8 @@ impl DeleteFunctionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_12) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_12));
+                if let Some(inner_14) = &_input.qualifier {
+                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_14));
                 }
                 Ok(())
             }
@@ -2632,14 +2888,14 @@ impl DeleteFunctionCodeSigningConfigInput {
                 _input: &crate::input::DeleteFunctionCodeSigningConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_13 = &_input.function_name;
-                let input_13 = input_13.as_ref().ok_or(
+                let input_15 = &_input.function_name;
+                let input_15 = input_15.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_13, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_15, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -2792,14 +3048,14 @@ impl DeleteFunctionConcurrencyInput {
                 _input: &crate::input::DeleteFunctionConcurrencyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_14 = &_input.function_name;
-                let input_14 = input_14.as_ref().ok_or(
+                let input_16 = &_input.function_name;
+                let input_16 = input_16.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_14, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_16, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -2965,14 +3221,14 @@ impl DeleteFunctionEventInvokeConfigInput {
                 _input: &crate::input::DeleteFunctionEventInvokeConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_15 = &_input.function_name;
-                let input_15 = input_15.as_ref().ok_or(
+                let input_17 = &_input.function_name;
+                let input_17 = input_17.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_15, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_17, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -2992,8 +3248,8 @@ impl DeleteFunctionEventInvokeConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_16) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_16));
+                if let Some(inner_18) = &_input.qualifier {
+                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_18));
                 }
                 Ok(())
             }
@@ -3059,6 +3315,189 @@ impl DeleteFunctionEventInvokeConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteFunctionEventInvokeConfigInput`](crate::input::DeleteFunctionEventInvokeConfigInput)
     pub fn builder() -> crate::input::delete_function_event_invoke_config_input::Builder {
         crate::input::delete_function_event_invoke_config_input::Builder::default()
+    }
+}
+
+/// See [`DeleteFunctionUrlConfigInput`](crate::input::DeleteFunctionUrlConfigInput)
+pub mod delete_function_url_config_input {
+    /// A builder for [`DeleteFunctionUrlConfigInput`](crate::input::DeleteFunctionUrlConfigInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) function_name: std::option::Option<std::string::String>,
+        pub(crate) qualifier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.function_name = input;
+            self
+        }
+        /// <p>The alias name.</p>
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.qualifier = Some(input.into());
+            self
+        }
+        /// <p>The alias name.</p>
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.qualifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteFunctionUrlConfigInput`](crate::input::DeleteFunctionUrlConfigInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteFunctionUrlConfigInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteFunctionUrlConfigInput {
+                function_name: self.function_name,
+                qualifier: self.qualifier,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteFunctionUrlConfigInputOperationOutputAlias =
+    crate::operation::DeleteFunctionUrlConfig;
+#[doc(hidden)]
+pub type DeleteFunctionUrlConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteFunctionUrlConfigInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteFunctionUrlConfig`](crate::operation::DeleteFunctionUrlConfig)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteFunctionUrlConfig,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteFunctionUrlConfigInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_19 = &_input.function_name;
+                let input_19 = input_19.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "function_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let function_name = aws_smithy_http::label::fmt_string(input_19, false);
+                if function_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "function_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/2021-10-31/functions/{FunctionName}/url",
+                    FunctionName = function_name
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::DeleteFunctionUrlConfigInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_20) = &_input.qualifier {
+                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_20));
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteFunctionUrlConfigInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteFunctionUrlConfig::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteFunctionUrlConfig",
+            "lambda",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteFunctionUrlConfigInput`](crate::input::DeleteFunctionUrlConfigInput)
+    pub fn builder() -> crate::input::delete_function_url_config_input::Builder {
+        crate::input::delete_function_url_config_input::Builder::default()
     }
 }
 
@@ -3130,23 +3569,23 @@ impl DeleteLayerVersionInput {
                 _input: &crate::input::DeleteLayerVersionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_17 = &_input.layer_name;
-                let input_17 = input_17.as_ref().ok_or(
+                let input_21 = &_input.layer_name;
+                let input_21 = input_21.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "layer_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let layer_name = aws_smithy_http::label::fmt_string(input_17, false);
+                let layer_name = aws_smithy_http::label::fmt_string(input_21, false);
                 if layer_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "layer_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_18 = &_input.version_number;
+                let input_22 = &_input.version_number;
                 let mut version_number_encoder =
-                    aws_smithy_types::primitive::Encoder::from(*input_18);
+                    aws_smithy_types::primitive::Encoder::from(*input_22);
                 let version_number = version_number_encoder.encode();
                 if version_number.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
@@ -3314,14 +3753,14 @@ impl DeleteProvisionedConcurrencyConfigInput {
                 _input: &crate::input::DeleteProvisionedConcurrencyConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_19 = &_input.function_name;
-                let input_19 = input_19.as_ref().ok_or(
+                let input_23 = &_input.function_name;
+                let input_23 = input_23.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_19, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_23, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -3341,8 +3780,8 @@ impl DeleteProvisionedConcurrencyConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_20) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_20));
+                if let Some(inner_24) = &_input.qualifier {
+                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_24));
                 }
                 Ok(())
             }
@@ -3603,28 +4042,28 @@ impl GetAliasInput {
                 _input: &crate::input::GetAliasInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_21 = &_input.function_name;
-                let input_21 = input_21.as_ref().ok_or(
+                let input_25 = &_input.function_name;
+                let input_25 = input_25.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_21, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_25, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_22 = &_input.name;
-                let input_22 = input_22.as_ref().ok_or(
+                let input_26 = &_input.name;
+                let input_26 = input_26.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let name = aws_smithy_http::label::fmt_string(input_22, false);
+                let name = aws_smithy_http::label::fmt_string(input_26, false);
                 if name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
@@ -3760,14 +4199,14 @@ impl GetCodeSigningConfigInput {
                 _input: &crate::input::GetCodeSigningConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_23 = &_input.code_signing_config_arn;
-                let input_23 = input_23.as_ref().ok_or(
+                let input_27 = &_input.code_signing_config_arn;
+                let input_27 = input_27.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "code_signing_config_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let code_signing_config_arn = aws_smithy_http::label::fmt_string(input_23, false);
+                let code_signing_config_arn = aws_smithy_http::label::fmt_string(input_27, false);
                 if code_signing_config_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "code_signing_config_arn",
@@ -3900,14 +4339,14 @@ impl GetEventSourceMappingInput {
                 _input: &crate::input::GetEventSourceMappingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_24 = &_input.uuid;
-                let input_24 = input_24.as_ref().ok_or(
+                let input_28 = &_input.uuid;
+                let input_28 = input_28.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "uuid",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let uuid = aws_smithy_http::label::fmt_string(input_24, false);
+                let uuid = aws_smithy_http::label::fmt_string(input_28, false);
                 if uuid.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "uuid",
@@ -4071,14 +4510,14 @@ impl GetFunctionInput {
                 _input: &crate::input::GetFunctionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_25 = &_input.function_name;
-                let input_25 = input_25.as_ref().ok_or(
+                let input_29 = &_input.function_name;
+                let input_29 = input_29.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_25, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_29, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -4098,8 +4537,8 @@ impl GetFunctionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_26) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_26));
+                if let Some(inner_30) = &_input.qualifier {
+                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_30));
                 }
                 Ok(())
             }
@@ -4243,14 +4682,14 @@ impl GetFunctionCodeSigningConfigInput {
                 _input: &crate::input::GetFunctionCodeSigningConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_27 = &_input.function_name;
-                let input_27 = input_27.as_ref().ok_or(
+                let input_31 = &_input.function_name;
+                let input_31 = input_31.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_27, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_31, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -4402,14 +4841,14 @@ impl GetFunctionConcurrencyInput {
                 _input: &crate::input::GetFunctionConcurrencyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_28 = &_input.function_name;
-                let input_28 = input_28.as_ref().ok_or(
+                let input_32 = &_input.function_name;
+                let input_32 = input_32.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_28, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_32, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -4574,14 +5013,14 @@ impl GetFunctionConfigurationInput {
                 _input: &crate::input::GetFunctionConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_29 = &_input.function_name;
-                let input_29 = input_29.as_ref().ok_or(
+                let input_33 = &_input.function_name;
+                let input_33 = input_33.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_29, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_33, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -4601,8 +5040,8 @@ impl GetFunctionConfigurationInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_30) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_30));
+                if let Some(inner_34) = &_input.qualifier {
+                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_34));
                 }
                 Ok(())
             }
@@ -4758,14 +5197,14 @@ impl GetFunctionEventInvokeConfigInput {
                 _input: &crate::input::GetFunctionEventInvokeConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_31 = &_input.function_name;
-                let input_31 = input_31.as_ref().ok_or(
+                let input_35 = &_input.function_name;
+                let input_35 = input_35.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_31, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_35, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -4785,8 +5224,8 @@ impl GetFunctionEventInvokeConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_32) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_32));
+                if let Some(inner_36) = &_input.qualifier {
+                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_36));
                 }
                 Ok(())
             }
@@ -4852,6 +5291,188 @@ impl GetFunctionEventInvokeConfigInput {
     /// Creates a new builder-style object to manufacture [`GetFunctionEventInvokeConfigInput`](crate::input::GetFunctionEventInvokeConfigInput)
     pub fn builder() -> crate::input::get_function_event_invoke_config_input::Builder {
         crate::input::get_function_event_invoke_config_input::Builder::default()
+    }
+}
+
+/// See [`GetFunctionUrlConfigInput`](crate::input::GetFunctionUrlConfigInput)
+pub mod get_function_url_config_input {
+    /// A builder for [`GetFunctionUrlConfigInput`](crate::input::GetFunctionUrlConfigInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) function_name: std::option::Option<std::string::String>,
+        pub(crate) qualifier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.function_name = input;
+            self
+        }
+        /// <p>The alias name.</p>
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.qualifier = Some(input.into());
+            self
+        }
+        /// <p>The alias name.</p>
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.qualifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetFunctionUrlConfigInput`](crate::input::GetFunctionUrlConfigInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetFunctionUrlConfigInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetFunctionUrlConfigInput {
+                function_name: self.function_name,
+                qualifier: self.qualifier,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetFunctionUrlConfigInputOperationOutputAlias = crate::operation::GetFunctionUrlConfig;
+#[doc(hidden)]
+pub type GetFunctionUrlConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetFunctionUrlConfigInput {
+    /// Consumes the builder and constructs an Operation<[`GetFunctionUrlConfig`](crate::operation::GetFunctionUrlConfig)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetFunctionUrlConfig,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetFunctionUrlConfigInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_37 = &_input.function_name;
+                let input_37 = input_37.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "function_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let function_name = aws_smithy_http::label::fmt_string(input_37, false);
+                if function_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "function_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/2021-10-31/functions/{FunctionName}/url",
+                    FunctionName = function_name
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::GetFunctionUrlConfigInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_38) = &_input.qualifier {
+                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_38));
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetFunctionUrlConfigInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetFunctionUrlConfig::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetFunctionUrlConfig",
+            "lambda",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetFunctionUrlConfigInput`](crate::input::GetFunctionUrlConfigInput)
+    pub fn builder() -> crate::input::get_function_url_config_input::Builder {
+        crate::input::get_function_url_config_input::Builder::default()
     }
 }
 
@@ -4923,23 +5544,23 @@ impl GetLayerVersionInput {
                 _input: &crate::input::GetLayerVersionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_33 = &_input.layer_name;
-                let input_33 = input_33.as_ref().ok_or(
+                let input_39 = &_input.layer_name;
+                let input_39 = input_39.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "layer_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let layer_name = aws_smithy_http::label::fmt_string(input_33, false);
+                let layer_name = aws_smithy_http::label::fmt_string(input_39, false);
                 if layer_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "layer_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_34 = &_input.version_number;
+                let input_40 = &_input.version_number;
                 let mut version_number_encoder =
-                    aws_smithy_types::primitive::Encoder::from(*input_34);
+                    aws_smithy_types::primitive::Encoder::from(*input_40);
                 let version_number = version_number_encoder.encode();
                 if version_number.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
@@ -5083,8 +5704,8 @@ impl GetLayerVersionByArnInput {
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("find", "LayerVersion");
-                if let Some(inner_35) = &_input.arn {
-                    query.push_kv("Arn", &aws_smithy_http::query::fmt_string(&inner_35));
+                if let Some(inner_41) = &_input.arn {
+                    query.push_kv("Arn", &aws_smithy_http::query::fmt_string(&inner_41));
                 }
                 Ok(())
             }
@@ -5221,23 +5842,23 @@ impl GetLayerVersionPolicyInput {
                 _input: &crate::input::GetLayerVersionPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_36 = &_input.layer_name;
-                let input_36 = input_36.as_ref().ok_or(
+                let input_42 = &_input.layer_name;
+                let input_42 = input_42.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "layer_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let layer_name = aws_smithy_http::label::fmt_string(input_36, false);
+                let layer_name = aws_smithy_http::label::fmt_string(input_42, false);
                 if layer_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "layer_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_37 = &_input.version_number;
+                let input_43 = &_input.version_number;
                 let mut version_number_encoder =
-                    aws_smithy_types::primitive::Encoder::from(*input_37);
+                    aws_smithy_types::primitive::Encoder::from(*input_43);
                 let version_number = version_number_encoder.encode();
                 if version_number.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
@@ -5401,14 +6022,14 @@ impl GetPolicyInput {
                 _input: &crate::input::GetPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_38 = &_input.function_name;
-                let input_38 = input_38.as_ref().ok_or(
+                let input_44 = &_input.function_name;
+                let input_44 = input_44.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_38, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_44, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -5428,8 +6049,8 @@ impl GetPolicyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_39) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_39));
+                if let Some(inner_45) = &_input.qualifier {
+                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_45));
                 }
                 Ok(())
             }
@@ -5583,14 +6204,14 @@ impl GetProvisionedConcurrencyConfigInput {
                 _input: &crate::input::GetProvisionedConcurrencyConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_40 = &_input.function_name;
-                let input_40 = input_40.as_ref().ok_or(
+                let input_46 = &_input.function_name;
+                let input_46 = input_46.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_40, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_46, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -5610,8 +6231,8 @@ impl GetProvisionedConcurrencyConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_41) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_41));
+                if let Some(inner_47) = &_input.qualifier {
+                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_47));
                 }
                 Ok(())
             }
@@ -5829,14 +6450,14 @@ impl InvokeInput {
                 _input: &crate::input::InvokeInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_42 = &_input.function_name;
-                let input_42 = input_42.as_ref().ok_or(
+                let input_48 = &_input.function_name;
+                let input_48 = input_48.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_42, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_48, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -5856,8 +6477,8 @@ impl InvokeInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_43) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_43));
+                if let Some(inner_49) = &_input.qualifier {
+                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_49));
                 }
                 Ok(())
             }
@@ -6026,14 +6647,14 @@ impl InvokeAsyncInput {
                 _input: &crate::input::InvokeAsyncInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_44 = &_input.function_name;
-                let input_44 = input_44.as_ref().ok_or(
+                let input_50 = &_input.function_name;
+                let input_50 = input_50.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_44, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_50, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -6239,14 +6860,14 @@ impl ListAliasesInput {
                 _input: &crate::input::ListAliasesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_45 = &_input.function_name;
-                let input_45 = input_45.as_ref().ok_or(
+                let input_51 = &_input.function_name;
+                let input_51 = input_51.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_45, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_51, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -6266,19 +6887,19 @@ impl ListAliasesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_46) = &_input.function_version {
+                if let Some(inner_52) = &_input.function_version {
                     query.push_kv(
                         "FunctionVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_46),
+                        &aws_smithy_http::query::fmt_string(&inner_52),
                     );
                 }
-                if let Some(inner_47) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_47));
+                if let Some(inner_53) = &_input.marker {
+                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_53));
                 }
-                if let Some(inner_48) = &_input.max_items {
+                if let Some(inner_54) = &_input.max_items {
                     query.push_kv(
                         "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_48).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
                     );
                 }
                 Ok(())
@@ -6425,13 +7046,13 @@ impl ListCodeSigningConfigsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_49) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_49));
+                if let Some(inner_55) = &_input.marker {
+                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_55));
                 }
-                if let Some(inner_50) = &_input.max_items {
+                if let Some(inner_56) = &_input.max_items {
                     query.push_kv(
                         "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_50).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_56).encode(),
                     );
                 }
                 Ok(())
@@ -6637,25 +7258,25 @@ impl ListEventSourceMappingsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_51) = &_input.event_source_arn {
+                if let Some(inner_57) = &_input.event_source_arn {
                     query.push_kv(
                         "EventSourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_51),
+                        &aws_smithy_http::query::fmt_string(&inner_57),
                     );
                 }
-                if let Some(inner_52) = &_input.function_name {
+                if let Some(inner_58) = &_input.function_name {
                     query.push_kv(
                         "FunctionName",
-                        &aws_smithy_http::query::fmt_string(&inner_52),
+                        &aws_smithy_http::query::fmt_string(&inner_58),
                     );
                 }
-                if let Some(inner_53) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_53));
+                if let Some(inner_59) = &_input.marker {
+                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_59));
                 }
-                if let Some(inner_54) = &_input.max_items {
+                if let Some(inner_60) = &_input.max_items {
                     query.push_kv(
                         "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_60).encode(),
                     );
                 }
                 Ok(())
@@ -6824,14 +7445,14 @@ impl ListFunctionEventInvokeConfigsInput {
                 _input: &crate::input::ListFunctionEventInvokeConfigsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_55 = &_input.function_name;
-                let input_55 = input_55.as_ref().ok_or(
+                let input_61 = &_input.function_name;
+                let input_61 = input_61.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_55, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_61, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -6851,13 +7472,13 @@ impl ListFunctionEventInvokeConfigsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_56) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_56));
+                if let Some(inner_62) = &_input.marker {
+                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_62));
                 }
-                if let Some(inner_57) = &_input.max_items {
+                if let Some(inner_63) = &_input.max_items {
                     query.push_kv(
                         "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_57).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_63).encode(),
                     );
                 }
                 Ok(())
@@ -7033,25 +7654,25 @@ impl ListFunctionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_58) = &_input.master_region {
+                if let Some(inner_64) = &_input.master_region {
                     query.push_kv(
                         "MasterRegion",
-                        &aws_smithy_http::query::fmt_string(&inner_58),
+                        &aws_smithy_http::query::fmt_string(&inner_64),
                     );
                 }
-                if let Some(inner_59) = &_input.function_version {
+                if let Some(inner_65) = &_input.function_version {
                     query.push_kv(
                         "FunctionVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_59),
+                        &aws_smithy_http::query::fmt_string(&inner_65),
                     );
                 }
-                if let Some(inner_60) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_60));
+                if let Some(inner_66) = &_input.marker {
+                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_66));
                 }
-                if let Some(inner_61) = &_input.max_items {
+                if let Some(inner_67) = &_input.max_items {
                     query.push_kv(
                         "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_61).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_67).encode(),
                     );
                 }
                 Ok(())
@@ -7206,14 +7827,14 @@ impl ListFunctionsByCodeSigningConfigInput {
                 _input: &crate::input::ListFunctionsByCodeSigningConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_62 = &_input.code_signing_config_arn;
-                let input_62 = input_62.as_ref().ok_or(
+                let input_68 = &_input.code_signing_config_arn;
+                let input_68 = input_68.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "code_signing_config_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let code_signing_config_arn = aws_smithy_http::label::fmt_string(input_62, false);
+                let code_signing_config_arn = aws_smithy_http::label::fmt_string(input_68, false);
                 if code_signing_config_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "code_signing_config_arn",
@@ -7233,13 +7854,13 @@ impl ListFunctionsByCodeSigningConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_63) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_63));
+                if let Some(inner_69) = &_input.marker {
+                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_69));
                 }
-                if let Some(inner_64) = &_input.max_items {
+                if let Some(inner_70) = &_input.max_items {
                     query.push_kv(
                         "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_64).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_70).encode(),
                     );
                 }
                 Ok(())
@@ -7306,6 +7927,206 @@ impl ListFunctionsByCodeSigningConfigInput {
     /// Creates a new builder-style object to manufacture [`ListFunctionsByCodeSigningConfigInput`](crate::input::ListFunctionsByCodeSigningConfigInput)
     pub fn builder() -> crate::input::list_functions_by_code_signing_config_input::Builder {
         crate::input::list_functions_by_code_signing_config_input::Builder::default()
+    }
+}
+
+/// See [`ListFunctionUrlConfigsInput`](crate::input::ListFunctionUrlConfigsInput)
+pub mod list_function_url_configs_input {
+    /// A builder for [`ListFunctionUrlConfigsInput`](crate::input::ListFunctionUrlConfigsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) function_name: std::option::Option<std::string::String>,
+        pub(crate) marker: std::option::Option<std::string::String>,
+        pub(crate) max_items: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.function_name = input;
+            self
+        }
+        /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
+            self
+        }
+        /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
+            self
+        }
+        /// <p>The maximum number of function URLs to return in the response. Note that <code>ListFunctionUrlConfigs</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
+            self
+        }
+        /// <p>The maximum number of function URLs to return in the response. Note that <code>ListFunctionUrlConfigs</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListFunctionUrlConfigsInput`](crate::input::ListFunctionUrlConfigsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListFunctionUrlConfigsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListFunctionUrlConfigsInput {
+                function_name: self.function_name,
+                marker: self.marker,
+                max_items: self.max_items,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListFunctionUrlConfigsInputOperationOutputAlias = crate::operation::ListFunctionUrlConfigs;
+#[doc(hidden)]
+pub type ListFunctionUrlConfigsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListFunctionUrlConfigsInput {
+    /// Consumes the builder and constructs an Operation<[`ListFunctionUrlConfigs`](crate::operation::ListFunctionUrlConfigs)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListFunctionUrlConfigs,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListFunctionUrlConfigsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_71 = &_input.function_name;
+                let input_71 = input_71.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "function_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let function_name = aws_smithy_http::label::fmt_string(input_71, false);
+                if function_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "function_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/2021-10-31/functions/{FunctionName}/urls",
+                    FunctionName = function_name
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListFunctionUrlConfigsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_72) = &_input.marker {
+                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_72));
+                }
+                if let Some(inner_73) = &_input.max_items {
+                    query.push_kv(
+                        "MaxItems",
+                        aws_smithy_types::primitive::Encoder::from(*inner_73).encode(),
+                    );
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListFunctionUrlConfigsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListFunctionUrlConfigs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListFunctionUrlConfigs",
+            "lambda",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListFunctionUrlConfigsInput`](crate::input::ListFunctionUrlConfigsInput)
+    pub fn builder() -> crate::input::list_function_url_configs_input::Builder {
+        crate::input::list_function_url_configs_input::Builder::default()
     }
 }
 
@@ -7415,25 +8236,25 @@ impl ListLayersInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_65) = &_input.compatible_runtime {
+                if let Some(inner_74) = &_input.compatible_runtime {
                     query.push_kv(
                         "CompatibleRuntime",
-                        &aws_smithy_http::query::fmt_string(&inner_65),
+                        &aws_smithy_http::query::fmt_string(&inner_74),
                     );
                 }
-                if let Some(inner_66) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_66));
+                if let Some(inner_75) = &_input.marker {
+                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_75));
                 }
-                if let Some(inner_67) = &_input.max_items {
+                if let Some(inner_76) = &_input.max_items {
                     query.push_kv(
                         "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_67).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_76).encode(),
                     );
                 }
-                if let Some(inner_68) = &_input.compatible_architecture {
+                if let Some(inner_77) = &_input.compatible_architecture {
                     query.push_kv(
                         "CompatibleArchitecture",
-                        &aws_smithy_http::query::fmt_string(&inner_68),
+                        &aws_smithy_http::query::fmt_string(&inner_77),
                     );
                 }
                 Ok(())
@@ -7613,14 +8434,14 @@ impl ListLayerVersionsInput {
                 _input: &crate::input::ListLayerVersionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_69 = &_input.layer_name;
-                let input_69 = input_69.as_ref().ok_or(
+                let input_78 = &_input.layer_name;
+                let input_78 = input_78.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "layer_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let layer_name = aws_smithy_http::label::fmt_string(input_69, false);
+                let layer_name = aws_smithy_http::label::fmt_string(input_78, false);
                 if layer_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "layer_name",
@@ -7640,25 +8461,25 @@ impl ListLayerVersionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_70) = &_input.compatible_runtime {
+                if let Some(inner_79) = &_input.compatible_runtime {
                     query.push_kv(
                         "CompatibleRuntime",
-                        &aws_smithy_http::query::fmt_string(&inner_70),
+                        &aws_smithy_http::query::fmt_string(&inner_79),
                     );
                 }
-                if let Some(inner_71) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_71));
+                if let Some(inner_80) = &_input.marker {
+                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_80));
                 }
-                if let Some(inner_72) = &_input.max_items {
+                if let Some(inner_81) = &_input.max_items {
                     query.push_kv(
                         "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_72).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_81).encode(),
                     );
                 }
-                if let Some(inner_73) = &_input.compatible_architecture {
+                if let Some(inner_82) = &_input.compatible_architecture {
                     query.push_kv(
                         "CompatibleArchitecture",
-                        &aws_smithy_http::query::fmt_string(&inner_73),
+                        &aws_smithy_http::query::fmt_string(&inner_82),
                     );
                 }
                 Ok(())
@@ -7827,14 +8648,14 @@ impl ListProvisionedConcurrencyConfigsInput {
                 _input: &crate::input::ListProvisionedConcurrencyConfigsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_74 = &_input.function_name;
-                let input_74 = input_74.as_ref().ok_or(
+                let input_83 = &_input.function_name;
+                let input_83 = input_83.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_74, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_83, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -7855,13 +8676,13 @@ impl ListProvisionedConcurrencyConfigsInput {
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("List", "ALL");
-                if let Some(inner_75) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_75));
+                if let Some(inner_84) = &_input.marker {
+                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_84));
                 }
-                if let Some(inner_76) = &_input.max_items {
+                if let Some(inner_85) = &_input.max_items {
                     query.push_kv(
                         "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_76).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_85).encode(),
                     );
                 }
                 Ok(())
@@ -7985,14 +8806,14 @@ impl ListTagsInput {
                 _input: &crate::input::ListTagsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_77 = &_input.resource;
-                let input_77 = input_77.as_ref().ok_or(
+                let input_86 = &_input.resource;
+                let input_86 = input_86.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource = aws_smithy_http::label::fmt_string(input_77, false);
+                let resource = aws_smithy_http::label::fmt_string(input_86, false);
                 if resource.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource",
@@ -8161,14 +8982,14 @@ impl ListVersionsByFunctionInput {
                 _input: &crate::input::ListVersionsByFunctionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_78 = &_input.function_name;
-                let input_78 = input_78.as_ref().ok_or(
+                let input_87 = &_input.function_name;
+                let input_87 = input_87.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_78, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_87, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -8188,13 +9009,13 @@ impl ListVersionsByFunctionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_79) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_79));
+                if let Some(inner_88) = &_input.marker {
+                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_88));
                 }
-                if let Some(inner_80) = &_input.max_items {
+                if let Some(inner_89) = &_input.max_items {
                     query.push_kv(
                         "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_80).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_89).encode(),
                     );
                 }
                 Ok(())
@@ -8412,14 +9233,14 @@ impl PublishLayerVersionInput {
                 _input: &crate::input::PublishLayerVersionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_81 = &_input.layer_name;
-                let input_81 = input_81.as_ref().ok_or(
+                let input_90 = &_input.layer_name;
+                let input_90 = input_90.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "layer_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let layer_name = aws_smithy_http::label::fmt_string(input_81, false);
+                let layer_name = aws_smithy_http::label::fmt_string(input_90, false);
                 if layer_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "layer_name",
@@ -8621,14 +9442,14 @@ impl PublishVersionInput {
                 _input: &crate::input::PublishVersionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_82 = &_input.function_name;
-                let input_82 = input_82.as_ref().ok_or(
+                let input_91 = &_input.function_name;
+                let input_91 = input_91.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_82, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_91, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -8811,14 +9632,14 @@ impl PutFunctionCodeSigningConfigInput {
                 _input: &crate::input::PutFunctionCodeSigningConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_83 = &_input.function_name;
-                let input_83 = input_83.as_ref().ok_or(
+                let input_92 = &_input.function_name;
+                let input_92 = input_92.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_83, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_92, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -8998,14 +9819,14 @@ impl PutFunctionConcurrencyInput {
                 _input: &crate::input::PutFunctionConcurrencyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_84 = &_input.function_name;
-                let input_84 = input_84.as_ref().ok_or(
+                let input_93 = &_input.function_name;
+                let input_93 = input_93.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_84, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_93, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -9240,14 +10061,14 @@ impl PutFunctionEventInvokeConfigInput {
                 _input: &crate::input::PutFunctionEventInvokeConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_85 = &_input.function_name;
-                let input_85 = input_85.as_ref().ok_or(
+                let input_94 = &_input.function_name;
+                let input_94 = input_94.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_85, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_94, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -9267,8 +10088,8 @@ impl PutFunctionEventInvokeConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_86) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_86));
+                if let Some(inner_95) = &_input.qualifier {
+                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_95));
                 }
                 Ok(())
             }
@@ -9452,14 +10273,14 @@ impl PutProvisionedConcurrencyConfigInput {
                 _input: &crate::input::PutProvisionedConcurrencyConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_87 = &_input.function_name;
-                let input_87 = input_87.as_ref().ok_or(
+                let input_96 = &_input.function_name;
+                let input_96 = input_96.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_87, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_96, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -9479,8 +10300,8 @@ impl PutProvisionedConcurrencyConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_88) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_88));
+                if let Some(inner_97) = &_input.qualifier {
+                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_97));
                 }
                 Ok(())
             }
@@ -9656,23 +10477,23 @@ impl RemoveLayerVersionPermissionInput {
                 _input: &crate::input::RemoveLayerVersionPermissionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_89 = &_input.layer_name;
-                let input_89 = input_89.as_ref().ok_or(
+                let input_98 = &_input.layer_name;
+                let input_98 = input_98.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "layer_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let layer_name = aws_smithy_http::label::fmt_string(input_89, false);
+                let layer_name = aws_smithy_http::label::fmt_string(input_98, false);
                 if layer_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "layer_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_90 = &_input.version_number;
+                let input_99 = &_input.version_number;
                 let mut version_number_encoder =
-                    aws_smithy_types::primitive::Encoder::from(*input_90);
+                    aws_smithy_types::primitive::Encoder::from(*input_99);
                 let version_number = version_number_encoder.encode();
                 if version_number.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
@@ -9680,14 +10501,14 @@ impl RemoveLayerVersionPermissionInput {
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_91 = &_input.statement_id;
-                let input_91 = input_91.as_ref().ok_or(
+                let input_100 = &_input.statement_id;
+                let input_100 = input_100.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "statement_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let statement_id = aws_smithy_http::label::fmt_string(input_91, false);
+                let statement_id = aws_smithy_http::label::fmt_string(input_100, false);
                 if statement_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "statement_id",
@@ -9709,8 +10530,11 @@ impl RemoveLayerVersionPermissionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_92) = &_input.revision_id {
-                    query.push_kv("RevisionId", &aws_smithy_http::query::fmt_string(&inner_92));
+                if let Some(inner_101) = &_input.revision_id {
+                    query.push_kv(
+                        "RevisionId",
+                        &aws_smithy_http::query::fmt_string(&inner_101),
+                    );
                 }
                 Ok(())
             }
@@ -9888,28 +10712,28 @@ impl RemovePermissionInput {
                 _input: &crate::input::RemovePermissionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_93 = &_input.function_name;
-                let input_93 = input_93.as_ref().ok_or(
+                let input_102 = &_input.function_name;
+                let input_102 = input_102.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_93, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_102, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_94 = &_input.statement_id;
-                let input_94 = input_94.as_ref().ok_or(
+                let input_103 = &_input.statement_id;
+                let input_103 = input_103.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "statement_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let statement_id = aws_smithy_http::label::fmt_string(input_94, false);
+                let statement_id = aws_smithy_http::label::fmt_string(input_103, false);
                 if statement_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "statement_id",
@@ -9930,11 +10754,14 @@ impl RemovePermissionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_95) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_95));
+                if let Some(inner_104) = &_input.qualifier {
+                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_104));
                 }
-                if let Some(inner_96) = &_input.revision_id {
-                    query.push_kv("RevisionId", &aws_smithy_http::query::fmt_string(&inner_96));
+                if let Some(inner_105) = &_input.revision_id {
+                    query.push_kv(
+                        "RevisionId",
+                        &aws_smithy_http::query::fmt_string(&inner_105),
+                    );
                 }
                 Ok(())
             }
@@ -10088,14 +10915,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_97 = &_input.resource;
-                let input_97 = input_97.as_ref().ok_or(
+                let input_106 = &_input.resource;
+                let input_106 = input_106.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource = aws_smithy_http::label::fmt_string(input_97, false);
+                let resource = aws_smithy_http::label::fmt_string(input_106, false);
                 if resource.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource",
@@ -10261,14 +11088,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_98 = &_input.resource;
-                let input_98 = input_98.as_ref().ok_or(
+                let input_107 = &_input.resource;
+                let input_107 = input_107.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource = aws_smithy_http::label::fmt_string(input_98, false);
+                let resource = aws_smithy_http::label::fmt_string(input_107, false);
                 if resource.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource",
@@ -10284,9 +11111,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_99) = &_input.tag_keys {
-                    for inner_100 in inner_99 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_100));
+                if let Some(inner_108) = &_input.tag_keys {
+                    for inner_109 in inner_108 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_109));
                     }
                 }
                 Ok(())
@@ -10495,28 +11322,28 @@ impl UpdateAliasInput {
                 _input: &crate::input::UpdateAliasInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_101 = &_input.function_name;
-                let input_101 = input_101.as_ref().ok_or(
+                let input_110 = &_input.function_name;
+                let input_110 = input_110.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_101, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_110, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_102 = &_input.name;
-                let input_102 = input_102.as_ref().ok_or(
+                let input_111 = &_input.name;
+                let input_111 = input_111.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let name = aws_smithy_http::label::fmt_string(input_102, false);
+                let name = aws_smithy_http::label::fmt_string(input_111, false);
                 if name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
@@ -10712,14 +11539,14 @@ impl UpdateCodeSigningConfigInput {
                 _input: &crate::input::UpdateCodeSigningConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_103 = &_input.code_signing_config_arn;
-                let input_103 = input_103.as_ref().ok_or(
+                let input_112 = &_input.code_signing_config_arn;
+                let input_112 = input_112.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "code_signing_config_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let code_signing_config_arn = aws_smithy_http::label::fmt_string(input_103, false);
+                let code_signing_config_arn = aws_smithy_http::label::fmt_string(input_112, false);
                 if code_signing_config_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "code_signing_config_arn",
@@ -11109,14 +11936,14 @@ impl UpdateEventSourceMappingInput {
                 _input: &crate::input::UpdateEventSourceMappingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_104 = &_input.uuid;
-                let input_104 = input_104.as_ref().ok_or(
+                let input_113 = &_input.uuid;
+                let input_113 = input_113.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "uuid",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let uuid = aws_smithy_http::label::fmt_string(input_104, false);
+                let uuid = aws_smithy_http::label::fmt_string(input_113, false);
                 if uuid.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "uuid",
@@ -11404,14 +12231,14 @@ impl UpdateFunctionCodeInput {
                 _input: &crate::input::UpdateFunctionCodeInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_105 = &_input.function_name;
-                let input_105 = input_105.as_ref().ok_or(
+                let input_114 = &_input.function_name;
+                let input_114 = input_114.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_105, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_114, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -11527,6 +12354,7 @@ pub mod update_function_configuration_input {
         pub(crate) file_system_configs:
             std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
         pub(crate) image_config: std::option::Option<crate::model::ImageConfig>,
+        pub(crate) ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
@@ -11739,6 +12567,19 @@ pub mod update_function_configuration_input {
             self.image_config = input;
             self
         }
+        /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+        pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
+            self.ephemeral_storage = Some(input);
+            self
+        }
+        /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+        pub fn set_ephemeral_storage(
+            mut self,
+            input: std::option::Option<crate::model::EphemeralStorage>,
+        ) -> Self {
+            self.ephemeral_storage = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateFunctionConfigurationInput`](crate::input::UpdateFunctionConfigurationInput)
         pub fn build(
             self,
@@ -11763,6 +12604,7 @@ pub mod update_function_configuration_input {
                 layers: self.layers,
                 file_system_configs: self.file_system_configs,
                 image_config: self.image_config,
+                ephemeral_storage: self.ephemeral_storage,
             })
         }
     }
@@ -11792,14 +12634,14 @@ impl UpdateFunctionConfigurationInput {
                 _input: &crate::input::UpdateFunctionConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_106 = &_input.function_name;
-                let input_106 = input_106.as_ref().ok_or(
+                let input_115 = &_input.function_name;
+                let input_115 = input_115.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_106, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_115, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -12031,14 +12873,14 @@ impl UpdateFunctionEventInvokeConfigInput {
                 _input: &crate::input::UpdateFunctionEventInvokeConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_107 = &_input.function_name;
-                let input_107 = input_107.as_ref().ok_or(
+                let input_116 = &_input.function_name;
+                let input_116 = input_116.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_107, false);
+                let function_name = aws_smithy_http::label::fmt_string(input_116, false);
                 if function_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "function_name",
@@ -12058,8 +12900,8 @@ impl UpdateFunctionEventInvokeConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_108) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_108));
+                if let Some(inner_117) = &_input.qualifier {
+                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_117));
                 }
                 Ok(())
             }
@@ -12138,6 +12980,288 @@ impl UpdateFunctionEventInvokeConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateFunctionEventInvokeConfigInput`](crate::input::UpdateFunctionEventInvokeConfigInput)
     pub fn builder() -> crate::input::update_function_event_invoke_config_input::Builder {
         crate::input::update_function_event_invoke_config_input::Builder::default()
+    }
+}
+
+/// See [`UpdateFunctionUrlConfigInput`](crate::input::UpdateFunctionUrlConfigInput)
+pub mod update_function_url_config_input {
+    /// A builder for [`UpdateFunctionUrlConfigInput`](crate::input::UpdateFunctionUrlConfigInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) function_name: std::option::Option<std::string::String>,
+        pub(crate) qualifier: std::option::Option<std::string::String>,
+        pub(crate) auth_type: std::option::Option<crate::model::FunctionUrlAuthType>,
+        pub(crate) cors: std::option::Option<crate::model::Cors>,
+    }
+    impl Builder {
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.function_name = input;
+            self
+        }
+        /// <p>The alias name.</p>
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.qualifier = Some(input.into());
+            self
+        }
+        /// <p>The alias name.</p>
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.qualifier = input;
+            self
+        }
+        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+        pub fn auth_type(mut self, input: crate::model::FunctionUrlAuthType) -> Self {
+            self.auth_type = Some(input);
+            self
+        }
+        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+        pub fn set_auth_type(
+            mut self,
+            input: std::option::Option<crate::model::FunctionUrlAuthType>,
+        ) -> Self {
+            self.auth_type = input;
+            self
+        }
+        /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+        pub fn cors(mut self, input: crate::model::Cors) -> Self {
+            self.cors = Some(input);
+            self
+        }
+        /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+        pub fn set_cors(mut self, input: std::option::Option<crate::model::Cors>) -> Self {
+            self.cors = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateFunctionUrlConfigInput`](crate::input::UpdateFunctionUrlConfigInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateFunctionUrlConfigInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateFunctionUrlConfigInput {
+                function_name: self.function_name,
+                qualifier: self.qualifier,
+                auth_type: self.auth_type,
+                cors: self.cors,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateFunctionUrlConfigInputOperationOutputAlias =
+    crate::operation::UpdateFunctionUrlConfig;
+#[doc(hidden)]
+pub type UpdateFunctionUrlConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateFunctionUrlConfigInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateFunctionUrlConfig`](crate::operation::UpdateFunctionUrlConfig)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateFunctionUrlConfig,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateFunctionUrlConfigInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_118 = &_input.function_name;
+                let input_118 = input_118.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "function_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let function_name = aws_smithy_http::label::fmt_string(input_118, false);
+                if function_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "function_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/2021-10-31/functions/{FunctionName}/url",
+                    FunctionName = function_name
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::UpdateFunctionUrlConfigInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_119) = &_input.qualifier {
+                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_119));
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateFunctionUrlConfigInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_function_url_config(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFunctionUrlConfig::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateFunctionUrlConfig",
+            "lambda",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateFunctionUrlConfigInput`](crate::input::UpdateFunctionUrlConfigInput)
+    pub fn builder() -> crate::input::update_function_url_config_input::Builder {
+        crate::input::update_function_url_config_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFunctionUrlConfigInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub function_name: std::option::Option<std::string::String>,
+    /// <p>The alias name.</p>
+    pub qualifier: std::option::Option<std::string::String>,
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+    pub auth_type: std::option::Option<crate::model::FunctionUrlAuthType>,
+    /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+    pub cors: std::option::Option<crate::model::Cors>,
+}
+impl UpdateFunctionUrlConfigInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The alias name.</p>
+    pub fn qualifier(&self) -> std::option::Option<&str> {
+        self.qualifier.as_deref()
+    }
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+    pub fn auth_type(&self) -> std::option::Option<&crate::model::FunctionUrlAuthType> {
+        self.auth_type.as_ref()
+    }
+    /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+    pub fn cors(&self) -> std::option::Option<&crate::model::Cors> {
+        self.cors.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateFunctionUrlConfigInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateFunctionUrlConfigInput");
+        formatter.field("function_name", &self.function_name);
+        formatter.field("qualifier", &self.qualifier);
+        formatter.field("auth_type", &self.auth_type);
+        formatter.field("cors", &self.cors);
+        formatter.finish()
     }
 }
 
@@ -12264,6 +13388,8 @@ pub struct UpdateFunctionConfigurationInput {
     pub file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
     /// <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
     pub image_config: std::option::Option<crate::model::ImageConfig>,
+    /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+    pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
 }
 impl UpdateFunctionConfigurationInput {
     /// <p>The name of the Lambda function.</p>
@@ -12337,6 +13463,10 @@ impl UpdateFunctionConfigurationInput {
     pub fn image_config(&self) -> std::option::Option<&crate::model::ImageConfig> {
         self.image_config.as_ref()
     }
+    /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
+        self.ephemeral_storage.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateFunctionConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12357,6 +13487,7 @@ impl std::fmt::Debug for UpdateFunctionConfigurationInput {
         formatter.field("layers", &self.layers);
         formatter.field("file_system_configs", &self.file_system_configs);
         formatter.field("image_config", &self.image_config);
+        formatter.field("ephemeral_storage", &self.ephemeral_storage);
         formatter.finish()
     }
 }
@@ -13454,6 +14585,55 @@ impl std::fmt::Debug for ListLayersInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListFunctionUrlConfigsInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub function_name: std::option::Option<std::string::String>,
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub marker: std::option::Option<std::string::String>,
+    /// <p>The maximum number of function URLs to return in the response. Note that <code>ListFunctionUrlConfigs</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
+    pub max_items: std::option::Option<i32>,
+}
+impl ListFunctionUrlConfigsInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of function URLs to return in the response. Note that <code>ListFunctionUrlConfigs</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
+impl std::fmt::Debug for ListFunctionUrlConfigsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListFunctionUrlConfigsInput");
+        formatter.field("function_name", &self.function_name);
+        formatter.field("marker", &self.marker);
+        formatter.field("max_items", &self.max_items);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFunctionsByCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     pub code_signing_config_arn: std::option::Option<std::string::String>,
@@ -14018,6 +15198,48 @@ impl std::fmt::Debug for GetLayerVersionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetFunctionUrlConfigInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub function_name: std::option::Option<std::string::String>,
+    /// <p>The alias name.</p>
+    pub qualifier: std::option::Option<std::string::String>,
+}
+impl GetFunctionUrlConfigInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The alias name.</p>
+    pub fn qualifier(&self) -> std::option::Option<&str> {
+        self.qualifier.as_deref()
+    }
+}
+impl std::fmt::Debug for GetFunctionUrlConfigInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetFunctionUrlConfigInput");
+        formatter.field("function_name", &self.function_name);
+        formatter.field("qualifier", &self.qualifier);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFunctionEventInvokeConfigInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14379,6 +15601,48 @@ impl std::fmt::Debug for DeleteLayerVersionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteFunctionUrlConfigInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub function_name: std::option::Option<std::string::String>,
+    /// <p>The alias name.</p>
+    pub qualifier: std::option::Option<std::string::String>,
+}
+impl DeleteFunctionUrlConfigInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The alias name.</p>
+    pub fn qualifier(&self) -> std::option::Option<&str> {
+        self.qualifier.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteFunctionUrlConfigInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteFunctionUrlConfigInput");
+        formatter.field("function_name", &self.function_name);
+        formatter.field("qualifier", &self.qualifier);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFunctionEventInvokeConfigInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14617,6 +15881,62 @@ impl std::fmt::Debug for DeleteAliasInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateFunctionUrlConfigInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub function_name: std::option::Option<std::string::String>,
+    /// <p>The alias name.</p>
+    pub qualifier: std::option::Option<std::string::String>,
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+    pub auth_type: std::option::Option<crate::model::FunctionUrlAuthType>,
+    /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+    pub cors: std::option::Option<crate::model::Cors>,
+}
+impl CreateFunctionUrlConfigInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The alias name.</p>
+    pub fn qualifier(&self) -> std::option::Option<&str> {
+        self.qualifier.as_deref()
+    }
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+    pub fn auth_type(&self) -> std::option::Option<&crate::model::FunctionUrlAuthType> {
+        self.auth_type.as_ref()
+    }
+    /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+    pub fn cors(&self) -> std::option::Option<&crate::model::Cors> {
+        self.cors.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateFunctionUrlConfigInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateFunctionUrlConfigInput");
+        formatter.field("function_name", &self.function_name);
+        formatter.field("qualifier", &self.qualifier);
+        formatter.field("auth_type", &self.auth_type);
+        formatter.field("cors", &self.cors);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFunctionInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14668,6 +15988,8 @@ pub struct CreateFunctionInput {
     pub code_signing_config_arn: std::option::Option<std::string::String>,
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+    /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+    pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
 }
 impl CreateFunctionInput {
     /// <p>The name of the Lambda function.</p>
@@ -14764,6 +16086,10 @@ impl CreateFunctionInput {
     pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.architectures.as_deref()
     }
+    /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
+        self.ephemeral_storage.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14789,6 +16115,7 @@ impl std::fmt::Debug for CreateFunctionInput {
         formatter.field("image_config", &self.image_config);
         formatter.field("code_signing_config_arn", &self.code_signing_config_arn);
         formatter.field("architectures", &self.architectures);
+        formatter.field("ephemeral_storage", &self.ephemeral_storage);
         formatter.finish()
     }
 }
@@ -15146,6 +16473,8 @@ pub struct AddPermissionInput {
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The identifier for your organization in Organizations. Use this to grant permissions to all the Amazon Web Services accounts under this organization.</p>
     pub principal_org_id: std::option::Option<std::string::String>,
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+    pub function_url_auth_type: std::option::Option<crate::model::FunctionUrlAuthType>,
 }
 impl AddPermissionInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
@@ -15196,6 +16525,12 @@ impl AddPermissionInput {
     pub fn principal_org_id(&self) -> std::option::Option<&str> {
         self.principal_org_id.as_deref()
     }
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+    pub fn function_url_auth_type(
+        &self,
+    ) -> std::option::Option<&crate::model::FunctionUrlAuthType> {
+        self.function_url_auth_type.as_ref()
+    }
 }
 impl std::fmt::Debug for AddPermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15210,6 +16545,7 @@ impl std::fmt::Debug for AddPermissionInput {
         formatter.field("qualifier", &self.qualifier);
         formatter.field("revision_id", &self.revision_id);
         formatter.field("principal_org_id", &self.principal_org_id);
+        formatter.field("function_url_auth_type", &self.function_url_auth_type);
         formatter.finish()
     }
 }

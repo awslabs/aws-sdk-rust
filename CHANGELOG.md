@@ -1,4 +1,22 @@
 <!-- Do not manually edit this file, use `update-changelogs` -->
+0.10.0 (April 13th, 2022)
+=========================
+**Breaking Changes:**
+- ⚠ ([aws-sdk-rust#490](https://github.com/awslabs/aws-sdk-rust/issues/490)) Update all SDK and runtime crates to [edition 2021](https://blog.rust-lang.org/2021/10/21/Rust-1.56.0.html)
+
+**New this release:**
+- ([smithy-rs#1262](https://github.com/awslabs/smithy-rs/issues/1262), @liubin) Fix link to Developer Guide in crate's README.md
+- 🐛 ([aws-sdk-rust#1271](https://github.com/awslabs/aws-sdk-rust/issues/1271), @elrob) Treat blank environment variable credentials (`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`) as missing instead of attempting to use them to sign requests.
+- ([aws-sdk-rust#479](https://github.com/awslabs/aws-sdk-rust/issues/479), [smithy-rs#1296](https://github.com/awslabs/smithy-rs/issues/1296)) Add support for configuring the session length in [AssumeRoleProvider](https://docs.rs/aws-config/latest/aws_config/sts/struct.AssumeRoleProvider.html)
+- ([smithy-rs#1296](https://github.com/awslabs/smithy-rs/issues/1296)) Add caching to [AssumeRoleProvider](https://docs.rs/aws-config/latest/aws_config/sts/struct.AssumeRoleProvider.html)
+- ([smithy-rs#1300](https://github.com/awslabs/smithy-rs/issues/1300), @benesch) Add endpoint resolver to SdkConfig. This enables overriding the endpoint resolver for all services build from a single SdkConfig.
+
+**Contributors**
+Thank you for your contributions! ❤
+- @benesch ([smithy-rs#1300](https://github.com/awslabs/smithy-rs/issues/1300))
+- @elrob ([aws-sdk-rust#1271](https://github.com/awslabs/aws-sdk-rust/issues/1271))
+- @liubin ([smithy-rs#1262](https://github.com/awslabs/smithy-rs/issues/1262))
+
 0.9.0 (March 17, 2022)
 ======================
 **Breaking Changes:**

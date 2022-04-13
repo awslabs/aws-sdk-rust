@@ -7470,6 +7470,169 @@ impl std::error::Error for DescribeGroupError {
     }
 }
 
+/// Error type for the `DescribeGroupMembership` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeGroupMembershipError {
+    /// Kind of error that occurred.
+    pub kind: DescribeGroupMembershipErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeGroupMembership` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeGroupMembershipErrorKind {
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal failure occurred.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>One or more parameters has a value that isn't valid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>One or more preconditions aren't met.</p>
+    PreconditionNotMetException(crate::error::PreconditionNotMetException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>This resource is currently unavailable.</p>
+    ResourceUnavailableException(crate::error::ResourceUnavailableException),
+    /// <p>Access is throttled.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeGroupMembershipError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeGroupMembershipErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeGroupMembershipErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            DescribeGroupMembershipErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeGroupMembershipErrorKind::PreconditionNotMetException(_inner) => _inner.fmt(f),
+            DescribeGroupMembershipErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeGroupMembershipErrorKind::ResourceUnavailableException(_inner) => _inner.fmt(f),
+            DescribeGroupMembershipErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeGroupMembershipErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeGroupMembershipError {
+    fn code(&self) -> Option<&str> {
+        DescribeGroupMembershipError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeGroupMembershipError {
+    /// Creates a new `DescribeGroupMembershipError`.
+    pub fn new(kind: DescribeGroupMembershipErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeGroupMembershipError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeGroupMembershipErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeGroupMembershipError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeGroupMembershipErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeGroupMembershipErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeGroupMembershipErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeGroupMembershipErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeGroupMembershipErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeGroupMembershipErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeGroupMembershipErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeGroupMembershipErrorKind::PreconditionNotMetException`.
+    pub fn is_precondition_not_met_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeGroupMembershipErrorKind::PreconditionNotMetException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeGroupMembershipErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeGroupMembershipErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeGroupMembershipErrorKind::ResourceUnavailableException`.
+    pub fn is_resource_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeGroupMembershipErrorKind::ResourceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeGroupMembershipErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeGroupMembershipErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeGroupMembershipError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeGroupMembershipErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeGroupMembershipErrorKind::InternalFailureException(_inner) => Some(_inner),
+            DescribeGroupMembershipErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            DescribeGroupMembershipErrorKind::PreconditionNotMetException(_inner) => Some(_inner),
+            DescribeGroupMembershipErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeGroupMembershipErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
+            DescribeGroupMembershipErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeGroupMembershipErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeIAMPolicyAssignment` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -14027,6 +14190,170 @@ impl std::error::Error for SearchFoldersError {
             SearchFoldersErrorKind::ThrottlingException(_inner) => Some(_inner),
             SearchFoldersErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
             SearchFoldersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `SearchGroups` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SearchGroupsError {
+    /// Kind of error that occurred.
+    pub kind: SearchGroupsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `SearchGroups` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SearchGroupsErrorKind {
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal failure occurred.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>The <code>NextToken</code> value isn't valid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>One or more parameters has a value that isn't valid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>One or more preconditions aren't met.</p>
+    PreconditionNotMetException(crate::error::PreconditionNotMetException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>This resource is currently unavailable.</p>
+    ResourceUnavailableException(crate::error::ResourceUnavailableException),
+    /// <p>Access is throttled.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for SearchGroupsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SearchGroupsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            SearchGroupsErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            SearchGroupsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            SearchGroupsErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            SearchGroupsErrorKind::PreconditionNotMetException(_inner) => _inner.fmt(f),
+            SearchGroupsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            SearchGroupsErrorKind::ResourceUnavailableException(_inner) => _inner.fmt(f),
+            SearchGroupsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            SearchGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for SearchGroupsError {
+    fn code(&self) -> Option<&str> {
+        SearchGroupsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SearchGroupsError {
+    /// Creates a new `SearchGroupsError`.
+    pub fn new(kind: SearchGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `SearchGroupsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SearchGroupsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `SearchGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SearchGroupsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `SearchGroupsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, SearchGroupsErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `SearchGroupsErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchGroupsErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchGroupsErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchGroupsErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchGroupsErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchGroupsErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchGroupsErrorKind::PreconditionNotMetException`.
+    pub fn is_precondition_not_met_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchGroupsErrorKind::PreconditionNotMetException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchGroupsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchGroupsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchGroupsErrorKind::ResourceUnavailableException`.
+    pub fn is_resource_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchGroupsErrorKind::ResourceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchGroupsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, SearchGroupsErrorKind::ThrottlingException(_))
+    }
+}
+impl std::error::Error for SearchGroupsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SearchGroupsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            SearchGroupsErrorKind::InternalFailureException(_inner) => Some(_inner),
+            SearchGroupsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            SearchGroupsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            SearchGroupsErrorKind::PreconditionNotMetException(_inner) => Some(_inner),
+            SearchGroupsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            SearchGroupsErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
+            SearchGroupsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            SearchGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

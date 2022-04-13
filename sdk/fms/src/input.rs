@@ -147,6 +147,151 @@ impl AssociateAdminAccountInput {
     }
 }
 
+/// See [`AssociateThirdPartyFirewallInput`](crate::input::AssociateThirdPartyFirewallInput)
+pub mod associate_third_party_firewall_input {
+    /// A builder for [`AssociateThirdPartyFirewallInput`](crate::input::AssociateThirdPartyFirewallInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) third_party_firewall: std::option::Option<crate::model::ThirdPartyFirewall>,
+    }
+    impl Builder {
+        /// <p>The name of the third-party firewall vendor.</p>
+        pub fn third_party_firewall(mut self, input: crate::model::ThirdPartyFirewall) -> Self {
+            self.third_party_firewall = Some(input);
+            self
+        }
+        /// <p>The name of the third-party firewall vendor.</p>
+        pub fn set_third_party_firewall(
+            mut self,
+            input: std::option::Option<crate::model::ThirdPartyFirewall>,
+        ) -> Self {
+            self.third_party_firewall = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateThirdPartyFirewallInput`](crate::input::AssociateThirdPartyFirewallInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::AssociateThirdPartyFirewallInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::AssociateThirdPartyFirewallInput {
+                third_party_firewall: self.third_party_firewall,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type AssociateThirdPartyFirewallInputOperationOutputAlias =
+    crate::operation::AssociateThirdPartyFirewall;
+#[doc(hidden)]
+pub type AssociateThirdPartyFirewallInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl AssociateThirdPartyFirewallInput {
+    /// Consumes the builder and constructs an Operation<[`AssociateThirdPartyFirewall`](crate::operation::AssociateThirdPartyFirewall)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AssociateThirdPartyFirewall,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::AssociateThirdPartyFirewallInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AssociateThirdPartyFirewallInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSFMS_20180101.AssociateThirdPartyFirewall",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_associate_third_party_firewall(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssociateThirdPartyFirewall::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AssociateThirdPartyFirewall",
+            "fms",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`AssociateThirdPartyFirewallInput`](crate::input::AssociateThirdPartyFirewallInput)
+    pub fn builder() -> crate::input::associate_third_party_firewall_input::Builder {
+        crate::input::associate_third_party_firewall_input::Builder::default()
+    }
+}
+
 /// See [`DeleteAppsListInput`](crate::input::DeleteAppsListInput)
 pub mod delete_apps_list_input {
     /// A builder for [`DeleteAppsListInput`](crate::input::DeleteAppsListInput)
@@ -854,6 +999,152 @@ impl DisassociateAdminAccountInput {
     /// Creates a new builder-style object to manufacture [`DisassociateAdminAccountInput`](crate::input::DisassociateAdminAccountInput)
     pub fn builder() -> crate::input::disassociate_admin_account_input::Builder {
         crate::input::disassociate_admin_account_input::Builder::default()
+    }
+}
+
+/// See [`DisassociateThirdPartyFirewallInput`](crate::input::DisassociateThirdPartyFirewallInput)
+pub mod disassociate_third_party_firewall_input {
+    /// A builder for [`DisassociateThirdPartyFirewallInput`](crate::input::DisassociateThirdPartyFirewallInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) third_party_firewall: std::option::Option<crate::model::ThirdPartyFirewall>,
+    }
+    impl Builder {
+        /// <p>The name of the third-party firewall vendor.</p>
+        pub fn third_party_firewall(mut self, input: crate::model::ThirdPartyFirewall) -> Self {
+            self.third_party_firewall = Some(input);
+            self
+        }
+        /// <p>The name of the third-party firewall vendor.</p>
+        pub fn set_third_party_firewall(
+            mut self,
+            input: std::option::Option<crate::model::ThirdPartyFirewall>,
+        ) -> Self {
+            self.third_party_firewall = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisassociateThirdPartyFirewallInput`](crate::input::DisassociateThirdPartyFirewallInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DisassociateThirdPartyFirewallInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DisassociateThirdPartyFirewallInput {
+                third_party_firewall: self.third_party_firewall,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DisassociateThirdPartyFirewallInputOperationOutputAlias =
+    crate::operation::DisassociateThirdPartyFirewall;
+#[doc(hidden)]
+pub type DisassociateThirdPartyFirewallInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DisassociateThirdPartyFirewallInput {
+    /// Consumes the builder and constructs an Operation<[`DisassociateThirdPartyFirewall`](crate::operation::DisassociateThirdPartyFirewall)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DisassociateThirdPartyFirewall,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DisassociateThirdPartyFirewallInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DisassociateThirdPartyFirewallInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSFMS_20180101.DisassociateThirdPartyFirewall",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_third_party_firewall(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisassociateThirdPartyFirewall::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DisassociateThirdPartyFirewall",
+            "fms",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DisassociateThirdPartyFirewallInput`](crate::input::DisassociateThirdPartyFirewallInput)
+    pub fn builder() -> crate::input::disassociate_third_party_firewall_input::Builder {
+        crate::input::disassociate_third_party_firewall_input::Builder::default()
     }
 }
 
@@ -1912,6 +2203,152 @@ impl GetProtocolsListInput {
     /// Creates a new builder-style object to manufacture [`GetProtocolsListInput`](crate::input::GetProtocolsListInput)
     pub fn builder() -> crate::input::get_protocols_list_input::Builder {
         crate::input::get_protocols_list_input::Builder::default()
+    }
+}
+
+/// See [`GetThirdPartyFirewallAssociationStatusInput`](crate::input::GetThirdPartyFirewallAssociationStatusInput)
+pub mod get_third_party_firewall_association_status_input {
+    /// A builder for [`GetThirdPartyFirewallAssociationStatusInput`](crate::input::GetThirdPartyFirewallAssociationStatusInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) third_party_firewall: std::option::Option<crate::model::ThirdPartyFirewall>,
+    }
+    impl Builder {
+        /// <p>The name of the third-party firewall vendor.</p>
+        pub fn third_party_firewall(mut self, input: crate::model::ThirdPartyFirewall) -> Self {
+            self.third_party_firewall = Some(input);
+            self
+        }
+        /// <p>The name of the third-party firewall vendor.</p>
+        pub fn set_third_party_firewall(
+            mut self,
+            input: std::option::Option<crate::model::ThirdPartyFirewall>,
+        ) -> Self {
+            self.third_party_firewall = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetThirdPartyFirewallAssociationStatusInput`](crate::input::GetThirdPartyFirewallAssociationStatusInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetThirdPartyFirewallAssociationStatusInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetThirdPartyFirewallAssociationStatusInput {
+                third_party_firewall: self.third_party_firewall,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetThirdPartyFirewallAssociationStatusInputOperationOutputAlias =
+    crate::operation::GetThirdPartyFirewallAssociationStatus;
+#[doc(hidden)]
+pub type GetThirdPartyFirewallAssociationStatusInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl GetThirdPartyFirewallAssociationStatusInput {
+    /// Consumes the builder and constructs an Operation<[`GetThirdPartyFirewallAssociationStatus`](crate::operation::GetThirdPartyFirewallAssociationStatus)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetThirdPartyFirewallAssociationStatus,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetThirdPartyFirewallAssociationStatusInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetThirdPartyFirewallAssociationStatusInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSFMS_20180101.GetThirdPartyFirewallAssociationStatus",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_third_party_firewall_association_status(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetThirdPartyFirewallAssociationStatus::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetThirdPartyFirewallAssociationStatus",
+            "fms",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetThirdPartyFirewallAssociationStatusInput`](crate::input::GetThirdPartyFirewallAssociationStatusInput)
+    pub fn builder() -> crate::input::get_third_party_firewall_association_status_input::Builder {
+        crate::input::get_third_party_firewall_association_status_input::Builder::default()
     }
 }
 
@@ -3052,6 +3489,178 @@ impl ListTagsForResourceInput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
+    }
+}
+
+/// See [`ListThirdPartyFirewallFirewallPoliciesInput`](crate::input::ListThirdPartyFirewallFirewallPoliciesInput)
+pub mod list_third_party_firewall_firewall_policies_input {
+    /// A builder for [`ListThirdPartyFirewallFirewallPoliciesInput`](crate::input::ListThirdPartyFirewallFirewallPoliciesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) third_party_firewall: std::option::Option<crate::model::ThirdPartyFirewall>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The name of the third-party firewall vendor.</p>
+        pub fn third_party_firewall(mut self, input: crate::model::ThirdPartyFirewall) -> Self {
+            self.third_party_firewall = Some(input);
+            self
+        }
+        /// <p>The name of the third-party firewall vendor.</p>
+        pub fn set_third_party_firewall(
+            mut self,
+            input: std::option::Option<crate::model::ThirdPartyFirewall>,
+        ) -> Self {
+            self.third_party_firewall = input;
+            self
+        }
+        /// <p>If the previous response included a <code>NextToken</code> element, the specified third-party firewall vendor is associated with more third-party firewall policies. To get more third-party firewall policies, submit another <code>ListThirdPartyFirewallFirewallPoliciesRequest</code> request.</p>
+        /// <p> For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response. If the previous response didn't include a <code>NextToken</code> element, there are no more third-party firewall policies to get. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the previous response included a <code>NextToken</code> element, the specified third-party firewall vendor is associated with more third-party firewall policies. To get more third-party firewall policies, submit another <code>ListThirdPartyFirewallFirewallPoliciesRequest</code> request.</p>
+        /// <p> For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response. If the previous response didn't include a <code>NextToken</code> element, there are no more third-party firewall policies to get. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of third-party firewall policies that you want Firewall Manager to return. If the specified third-party firewall vendor is associated with more than <code>MaxResults</code> firewall policies, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first third-party firewall policies that Firewall Manager will return if you submit another request.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of third-party firewall policies that you want Firewall Manager to return. If the specified third-party firewall vendor is associated with more than <code>MaxResults</code> firewall policies, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first third-party firewall policies that Firewall Manager will return if you submit another request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListThirdPartyFirewallFirewallPoliciesInput`](crate::input::ListThirdPartyFirewallFirewallPoliciesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListThirdPartyFirewallFirewallPoliciesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListThirdPartyFirewallFirewallPoliciesInput {
+                third_party_firewall: self.third_party_firewall,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListThirdPartyFirewallFirewallPoliciesInputOperationOutputAlias =
+    crate::operation::ListThirdPartyFirewallFirewallPolicies;
+#[doc(hidden)]
+pub type ListThirdPartyFirewallFirewallPoliciesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl ListThirdPartyFirewallFirewallPoliciesInput {
+    /// Consumes the builder and constructs an Operation<[`ListThirdPartyFirewallFirewallPolicies`](crate::operation::ListThirdPartyFirewallFirewallPolicies)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListThirdPartyFirewallFirewallPolicies,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListThirdPartyFirewallFirewallPoliciesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListThirdPartyFirewallFirewallPoliciesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSFMS_20180101.ListThirdPartyFirewallFirewallPolicies",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_third_party_firewall_firewall_policies(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListThirdPartyFirewallFirewallPolicies::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListThirdPartyFirewallFirewallPolicies",
+            "fms",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListThirdPartyFirewallFirewallPoliciesInput`](crate::input::ListThirdPartyFirewallFirewallPoliciesInput)
+    pub fn builder() -> crate::input::list_third_party_firewall_firewall_policies_input::Builder {
+        crate::input::list_third_party_firewall_firewall_policies_input::Builder::default()
     }
 }
 
@@ -4205,6 +4814,43 @@ impl std::fmt::Debug for PutAppsListInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListThirdPartyFirewallFirewallPoliciesInput {
+    /// <p>The name of the third-party firewall vendor.</p>
+    pub third_party_firewall: std::option::Option<crate::model::ThirdPartyFirewall>,
+    /// <p>If the previous response included a <code>NextToken</code> element, the specified third-party firewall vendor is associated with more third-party firewall policies. To get more third-party firewall policies, submit another <code>ListThirdPartyFirewallFirewallPoliciesRequest</code> request.</p>
+    /// <p> For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response. If the previous response didn't include a <code>NextToken</code> element, there are no more third-party firewall policies to get. </p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of third-party firewall policies that you want Firewall Manager to return. If the specified third-party firewall vendor is associated with more than <code>MaxResults</code> firewall policies, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first third-party firewall policies that Firewall Manager will return if you submit another request.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListThirdPartyFirewallFirewallPoliciesInput {
+    /// <p>The name of the third-party firewall vendor.</p>
+    pub fn third_party_firewall(&self) -> std::option::Option<&crate::model::ThirdPartyFirewall> {
+        self.third_party_firewall.as_ref()
+    }
+    /// <p>If the previous response included a <code>NextToken</code> element, the specified third-party firewall vendor is associated with more third-party firewall policies. To get more third-party firewall policies, submit another <code>ListThirdPartyFirewallFirewallPoliciesRequest</code> request.</p>
+    /// <p> For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response. If the previous response didn't include a <code>NextToken</code> element, there are no more third-party firewall policies to get. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of third-party firewall policies that you want Firewall Manager to return. If the specified third-party firewall vendor is associated with more than <code>MaxResults</code> firewall policies, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first third-party firewall policies that Firewall Manager will return if you submit another request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListThirdPartyFirewallFirewallPoliciesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListThirdPartyFirewallFirewallPoliciesInput");
+        formatter.field("third_party_firewall", &self.third_party_firewall);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
     pub resource_arn: std::option::Option<std::string::String>,
@@ -4433,6 +5079,27 @@ impl std::fmt::Debug for GetViolationDetailsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetThirdPartyFirewallAssociationStatusInput {
+    /// <p>The name of the third-party firewall vendor.</p>
+    pub third_party_firewall: std::option::Option<crate::model::ThirdPartyFirewall>,
+}
+impl GetThirdPartyFirewallAssociationStatusInput {
+    /// <p>The name of the third-party firewall vendor.</p>
+    pub fn third_party_firewall(&self) -> std::option::Option<&crate::model::ThirdPartyFirewall> {
+        self.third_party_firewall.as_ref()
+    }
+}
+impl std::fmt::Debug for GetThirdPartyFirewallAssociationStatusInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetThirdPartyFirewallAssociationStatusInput");
+        formatter.field("third_party_firewall", &self.third_party_firewall);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProtocolsListInput {
     /// <p>The ID of the Firewall Manager protocols list that you want the details for.</p>
     pub list_id: std::option::Option<std::string::String>,
@@ -4616,6 +5283,27 @@ impl std::fmt::Debug for GetAdminAccountInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateThirdPartyFirewallInput {
+    /// <p>The name of the third-party firewall vendor.</p>
+    pub third_party_firewall: std::option::Option<crate::model::ThirdPartyFirewall>,
+}
+impl DisassociateThirdPartyFirewallInput {
+    /// <p>The name of the third-party firewall vendor.</p>
+    pub fn third_party_firewall(&self) -> std::option::Option<&crate::model::ThirdPartyFirewall> {
+        self.third_party_firewall.as_ref()
+    }
+}
+impl std::fmt::Debug for DisassociateThirdPartyFirewallInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateThirdPartyFirewallInput");
+        formatter.field("third_party_firewall", &self.third_party_firewall);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateAdminAccountInput {}
 impl std::fmt::Debug for DisassociateAdminAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4728,6 +5416,27 @@ impl std::fmt::Debug for DeleteAppsListInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAppsListInput");
         formatter.field("list_id", &self.list_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateThirdPartyFirewallInput {
+    /// <p>The name of the third-party firewall vendor.</p>
+    pub third_party_firewall: std::option::Option<crate::model::ThirdPartyFirewall>,
+}
+impl AssociateThirdPartyFirewallInput {
+    /// <p>The name of the third-party firewall vendor.</p>
+    pub fn third_party_firewall(&self) -> std::option::Option<&crate::model::ThirdPartyFirewall> {
+        self.third_party_firewall.as_ref()
+    }
+}
+impl std::fmt::Debug for AssociateThirdPartyFirewallInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateThirdPartyFirewallInput");
+        formatter.field("third_party_firewall", &self.third_party_firewall);
         formatter.finish()
     }
 }

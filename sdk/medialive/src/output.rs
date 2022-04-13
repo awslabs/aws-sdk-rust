@@ -1014,6 +1014,8 @@ pub struct StopChannelOutput {
     pub input_specification: std::option::Option<crate::model::InputSpecification>,
     /// The log level being written to CloudWatch Logs.
     pub log_level: std::option::Option<crate::model::LogLevel>,
+    /// Maintenance settings for this channel.
+    pub maintenance: std::option::Option<crate::model::MaintenanceStatus>,
     /// The name of the channel. (user-mutable)
     pub name: std::option::Option<std::string::String>,
     /// Runtime details for the pipelines of a running channel.
@@ -1073,6 +1075,10 @@ impl StopChannelOutput {
     pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
         self.log_level.as_ref()
     }
+    /// Maintenance settings for this channel.
+    pub fn maintenance(&self) -> std::option::Option<&crate::model::MaintenanceStatus> {
+        self.maintenance.as_ref()
+    }
     /// The name of the channel. (user-mutable)
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
@@ -1118,6 +1124,7 @@ impl std::fmt::Debug for StopChannelOutput {
         formatter.field("input_attachments", &self.input_attachments);
         formatter.field("input_specification", &self.input_specification);
         formatter.field("log_level", &self.log_level);
+        formatter.field("maintenance", &self.maintenance);
         formatter.field("name", &self.name);
         formatter.field("pipeline_details", &self.pipeline_details);
         formatter.field("pipelines_running_count", &self.pipelines_running_count);
@@ -1148,6 +1155,7 @@ pub mod stop_channel_output {
             std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
         pub(crate) input_specification: std::option::Option<crate::model::InputSpecification>,
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
+        pub(crate) maintenance: std::option::Option<crate::model::MaintenanceStatus>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) pipeline_details:
             std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
@@ -1302,6 +1310,19 @@ pub mod stop_channel_output {
             self.log_level = input;
             self
         }
+        /// Maintenance settings for this channel.
+        pub fn maintenance(mut self, input: crate::model::MaintenanceStatus) -> Self {
+            self.maintenance = Some(input);
+            self
+        }
+        /// Maintenance settings for this channel.
+        pub fn set_maintenance(
+            mut self,
+            input: std::option::Option<crate::model::MaintenanceStatus>,
+        ) -> Self {
+            self.maintenance = input;
+            self
+        }
         /// The name of the channel. (user-mutable)
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -1412,6 +1433,7 @@ pub mod stop_channel_output {
                 input_attachments: self.input_attachments,
                 input_specification: self.input_specification,
                 log_level: self.log_level,
+                maintenance: self.maintenance,
                 name: self.name,
                 pipeline_details: self.pipeline_details,
                 pipelines_running_count: self.pipelines_running_count.unwrap_or_default(),
@@ -1725,6 +1747,8 @@ pub struct StartChannelOutput {
     pub input_specification: std::option::Option<crate::model::InputSpecification>,
     /// The log level being written to CloudWatch Logs.
     pub log_level: std::option::Option<crate::model::LogLevel>,
+    /// Maintenance settings for this channel.
+    pub maintenance: std::option::Option<crate::model::MaintenanceStatus>,
     /// The name of the channel. (user-mutable)
     pub name: std::option::Option<std::string::String>,
     /// Runtime details for the pipelines of a running channel.
@@ -1784,6 +1808,10 @@ impl StartChannelOutput {
     pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
         self.log_level.as_ref()
     }
+    /// Maintenance settings for this channel.
+    pub fn maintenance(&self) -> std::option::Option<&crate::model::MaintenanceStatus> {
+        self.maintenance.as_ref()
+    }
     /// The name of the channel. (user-mutable)
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
@@ -1829,6 +1857,7 @@ impl std::fmt::Debug for StartChannelOutput {
         formatter.field("input_attachments", &self.input_attachments);
         formatter.field("input_specification", &self.input_specification);
         formatter.field("log_level", &self.log_level);
+        formatter.field("maintenance", &self.maintenance);
         formatter.field("name", &self.name);
         formatter.field("pipeline_details", &self.pipeline_details);
         formatter.field("pipelines_running_count", &self.pipelines_running_count);
@@ -1859,6 +1888,7 @@ pub mod start_channel_output {
             std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
         pub(crate) input_specification: std::option::Option<crate::model::InputSpecification>,
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
+        pub(crate) maintenance: std::option::Option<crate::model::MaintenanceStatus>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) pipeline_details:
             std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
@@ -2013,6 +2043,19 @@ pub mod start_channel_output {
             self.log_level = input;
             self
         }
+        /// Maintenance settings for this channel.
+        pub fn maintenance(mut self, input: crate::model::MaintenanceStatus) -> Self {
+            self.maintenance = Some(input);
+            self
+        }
+        /// Maintenance settings for this channel.
+        pub fn set_maintenance(
+            mut self,
+            input: std::option::Option<crate::model::MaintenanceStatus>,
+        ) -> Self {
+            self.maintenance = input;
+            self
+        }
         /// The name of the channel. (user-mutable)
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -2123,6 +2166,7 @@ pub mod start_channel_output {
                 input_attachments: self.input_attachments,
                 input_specification: self.input_specification,
                 log_level: self.log_level,
+                maintenance: self.maintenance,
                 name: self.name,
                 pipeline_details: self.pipeline_details,
                 pipelines_running_count: self.pipelines_running_count.unwrap_or_default(),
@@ -5353,6 +5397,8 @@ pub struct DescribeChannelOutput {
     pub input_specification: std::option::Option<crate::model::InputSpecification>,
     /// The log level being written to CloudWatch Logs.
     pub log_level: std::option::Option<crate::model::LogLevel>,
+    /// Maintenance settings for this channel.
+    pub maintenance: std::option::Option<crate::model::MaintenanceStatus>,
     /// The name of the channel. (user-mutable)
     pub name: std::option::Option<std::string::String>,
     /// Runtime details for the pipelines of a running channel.
@@ -5412,6 +5458,10 @@ impl DescribeChannelOutput {
     pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
         self.log_level.as_ref()
     }
+    /// Maintenance settings for this channel.
+    pub fn maintenance(&self) -> std::option::Option<&crate::model::MaintenanceStatus> {
+        self.maintenance.as_ref()
+    }
     /// The name of the channel. (user-mutable)
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
@@ -5457,6 +5507,7 @@ impl std::fmt::Debug for DescribeChannelOutput {
         formatter.field("input_attachments", &self.input_attachments);
         formatter.field("input_specification", &self.input_specification);
         formatter.field("log_level", &self.log_level);
+        formatter.field("maintenance", &self.maintenance);
         formatter.field("name", &self.name);
         formatter.field("pipeline_details", &self.pipeline_details);
         formatter.field("pipelines_running_count", &self.pipelines_running_count);
@@ -5487,6 +5538,7 @@ pub mod describe_channel_output {
             std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
         pub(crate) input_specification: std::option::Option<crate::model::InputSpecification>,
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
+        pub(crate) maintenance: std::option::Option<crate::model::MaintenanceStatus>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) pipeline_details:
             std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
@@ -5641,6 +5693,19 @@ pub mod describe_channel_output {
             self.log_level = input;
             self
         }
+        /// Maintenance settings for this channel.
+        pub fn maintenance(mut self, input: crate::model::MaintenanceStatus) -> Self {
+            self.maintenance = Some(input);
+            self
+        }
+        /// Maintenance settings for this channel.
+        pub fn set_maintenance(
+            mut self,
+            input: std::option::Option<crate::model::MaintenanceStatus>,
+        ) -> Self {
+            self.maintenance = input;
+            self
+        }
         /// The name of the channel. (user-mutable)
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -5751,6 +5816,7 @@ pub mod describe_channel_output {
                 input_attachments: self.input_attachments,
                 input_specification: self.input_specification,
                 log_level: self.log_level,
+                maintenance: self.maintenance,
                 name: self.name,
                 pipeline_details: self.pipeline_details,
                 pipelines_running_count: self.pipelines_running_count.unwrap_or_default(),
@@ -6777,6 +6843,8 @@ pub struct DeleteChannelOutput {
     pub input_specification: std::option::Option<crate::model::InputSpecification>,
     /// The log level being written to CloudWatch Logs.
     pub log_level: std::option::Option<crate::model::LogLevel>,
+    /// Maintenance settings for this channel.
+    pub maintenance: std::option::Option<crate::model::MaintenanceStatus>,
     /// The name of the channel. (user-mutable)
     pub name: std::option::Option<std::string::String>,
     /// Runtime details for the pipelines of a running channel.
@@ -6836,6 +6904,10 @@ impl DeleteChannelOutput {
     pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
         self.log_level.as_ref()
     }
+    /// Maintenance settings for this channel.
+    pub fn maintenance(&self) -> std::option::Option<&crate::model::MaintenanceStatus> {
+        self.maintenance.as_ref()
+    }
     /// The name of the channel. (user-mutable)
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
@@ -6881,6 +6953,7 @@ impl std::fmt::Debug for DeleteChannelOutput {
         formatter.field("input_attachments", &self.input_attachments);
         formatter.field("input_specification", &self.input_specification);
         formatter.field("log_level", &self.log_level);
+        formatter.field("maintenance", &self.maintenance);
         formatter.field("name", &self.name);
         formatter.field("pipeline_details", &self.pipeline_details);
         formatter.field("pipelines_running_count", &self.pipelines_running_count);
@@ -6911,6 +6984,7 @@ pub mod delete_channel_output {
             std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
         pub(crate) input_specification: std::option::Option<crate::model::InputSpecification>,
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
+        pub(crate) maintenance: std::option::Option<crate::model::MaintenanceStatus>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) pipeline_details:
             std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
@@ -7065,6 +7139,19 @@ pub mod delete_channel_output {
             self.log_level = input;
             self
         }
+        /// Maintenance settings for this channel.
+        pub fn maintenance(mut self, input: crate::model::MaintenanceStatus) -> Self {
+            self.maintenance = Some(input);
+            self
+        }
+        /// Maintenance settings for this channel.
+        pub fn set_maintenance(
+            mut self,
+            input: std::option::Option<crate::model::MaintenanceStatus>,
+        ) -> Self {
+            self.maintenance = input;
+            self
+        }
         /// The name of the channel. (user-mutable)
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -7175,6 +7262,7 @@ pub mod delete_channel_output {
                 input_attachments: self.input_attachments,
                 input_specification: self.input_specification,
                 log_level: self.log_level,
+                maintenance: self.maintenance,
                 name: self.name,
                 pipeline_details: self.pipeline_details,
                 pipelines_running_count: self.pipelines_running_count.unwrap_or_default(),

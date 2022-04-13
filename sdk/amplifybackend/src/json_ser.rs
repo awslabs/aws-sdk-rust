@@ -638,6 +638,11 @@ pub fn serialize_structure_crate_model_create_backend_auth_user_pool_config(
     if let Some(var_110) = &input.user_pool_name {
         object.key("userPoolName").string(var_110.as_str());
     }
+    if let Some(var_111) = &input.verification_message {
+        let mut object_112 = object.key("verificationMessage").start_object();
+        crate::json_ser::serialize_structure_crate_model_create_backend_auth_verification_message_config(&mut object_112, var_111)?;
+        object_112.finish();
+    }
     Ok(())
 }
 
@@ -645,23 +650,23 @@ pub fn serialize_structure_crate_model_backend_storage_permissions(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BackendStoragePermissions,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_111) = &input.authenticated {
-        let mut array_112 = object.key("authenticated").start_array();
-        for item_113 in var_111 {
+    if let Some(var_113) = &input.authenticated {
+        let mut array_114 = object.key("authenticated").start_array();
+        for item_115 in var_113 {
             {
-                array_112.value().string(item_113.as_str());
+                array_114.value().string(item_115.as_str());
             }
         }
-        array_112.finish();
+        array_114.finish();
     }
-    if let Some(var_114) = &input.un_authenticated {
-        let mut array_115 = object.key("unAuthenticated").start_array();
-        for item_116 in var_114 {
+    if let Some(var_116) = &input.un_authenticated {
+        let mut array_117 = object.key("unAuthenticated").start_array();
+        for item_118 in var_116 {
             {
-                array_115.value().string(item_116.as_str());
+                array_117.value().string(item_118.as_str());
             }
         }
-        array_115.finish();
+        array_117.finish();
     }
     Ok(())
 }
@@ -682,31 +687,36 @@ pub fn serialize_structure_crate_model_update_backend_auth_user_pool_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateBackendAuthUserPoolConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_117) = &input.forgot_password {
-        let mut object_118 = object.key("forgotPassword").start_object();
-        crate::json_ser::serialize_structure_crate_model_update_backend_auth_forgot_password_config(&mut object_118, var_117)?;
-        object_118.finish();
-    }
-    if let Some(var_119) = &input.mfa {
-        let mut object_120 = object.key("mfa").start_object();
-        crate::json_ser::serialize_structure_crate_model_update_backend_auth_mfa_config(
-            &mut object_120,
-            var_119,
-        )?;
+    if let Some(var_119) = &input.forgot_password {
+        let mut object_120 = object.key("forgotPassword").start_object();
+        crate::json_ser::serialize_structure_crate_model_update_backend_auth_forgot_password_config(&mut object_120, var_119)?;
         object_120.finish();
     }
-    if let Some(var_121) = &input.o_auth {
-        let mut object_122 = object.key("oAuth").start_object();
-        crate::json_ser::serialize_structure_crate_model_update_backend_auth_o_auth_config(
+    if let Some(var_121) = &input.mfa {
+        let mut object_122 = object.key("mfa").start_object();
+        crate::json_ser::serialize_structure_crate_model_update_backend_auth_mfa_config(
             &mut object_122,
             var_121,
         )?;
         object_122.finish();
     }
-    if let Some(var_123) = &input.password_policy {
-        let mut object_124 = object.key("passwordPolicy").start_object();
-        crate::json_ser::serialize_structure_crate_model_update_backend_auth_password_policy_config(&mut object_124, var_123)?;
+    if let Some(var_123) = &input.o_auth {
+        let mut object_124 = object.key("oAuth").start_object();
+        crate::json_ser::serialize_structure_crate_model_update_backend_auth_o_auth_config(
+            &mut object_124,
+            var_123,
+        )?;
         object_124.finish();
+    }
+    if let Some(var_125) = &input.password_policy {
+        let mut object_126 = object.key("passwordPolicy").start_object();
+        crate::json_ser::serialize_structure_crate_model_update_backend_auth_password_policy_config(&mut object_126, var_125)?;
+        object_126.finish();
+    }
+    if let Some(var_127) = &input.verification_message {
+        let mut object_128 = object.key("verificationMessage").start_object();
+        crate::json_ser::serialize_structure_crate_model_update_backend_auth_verification_message_config(&mut object_128, var_127)?;
+        object_128.finish();
     }
     Ok(())
 }
@@ -715,11 +725,11 @@ pub fn serialize_structure_crate_model_backend_api_app_sync_auth_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BackendApiAppSyncAuthSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_125) = &input.cognito_user_pool_id {
-        object.key("cognitoUserPoolId").string(var_125.as_str());
+    if let Some(var_129) = &input.cognito_user_pool_id {
+        object.key("cognitoUserPoolId").string(var_129.as_str());
     }
-    if let Some(var_126) = &input.description {
-        object.key("description").string(var_126.as_str());
+    if let Some(var_130) = &input.description {
+        object.key("description").string(var_130.as_str());
     }
     if input.expiration_time != 0.0 {
         object.key("expirationTime").number(
@@ -727,20 +737,20 @@ pub fn serialize_structure_crate_model_backend_api_app_sync_auth_settings(
             aws_smithy_types::Number::Float((input.expiration_time).into()),
         );
     }
-    if let Some(var_127) = &input.open_id_auth_ttl {
-        object.key("openIDAuthTTL").string(var_127.as_str());
+    if let Some(var_131) = &input.open_id_auth_ttl {
+        object.key("openIDAuthTTL").string(var_131.as_str());
     }
-    if let Some(var_128) = &input.open_id_client_id {
-        object.key("openIDClientId").string(var_128.as_str());
+    if let Some(var_132) = &input.open_id_client_id {
+        object.key("openIDClientId").string(var_132.as_str());
     }
-    if let Some(var_129) = &input.open_id_iat_ttl {
-        object.key("openIDIatTTL").string(var_129.as_str());
+    if let Some(var_133) = &input.open_id_iat_ttl {
+        object.key("openIDIatTTL").string(var_133.as_str());
     }
-    if let Some(var_130) = &input.open_id_issue_url {
-        object.key("openIDIssueURL").string(var_130.as_str());
+    if let Some(var_134) = &input.open_id_issue_url {
+        object.key("openIDIssueURL").string(var_134.as_str());
     }
-    if let Some(var_131) = &input.open_id_provider_name {
-        object.key("openIDProviderName").string(var_131.as_str());
+    if let Some(var_135) = &input.open_id_provider_name {
+        object.key("openIDProviderName").string(var_135.as_str());
     }
     Ok(())
 }
@@ -749,18 +759,18 @@ pub fn serialize_structure_crate_model_create_backend_auth_forgot_password_confi
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateBackendAuthForgotPasswordConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_132) = &input.delivery_method {
-        object.key("deliveryMethod").string(var_132.as_str());
+    if let Some(var_136) = &input.delivery_method {
+        object.key("deliveryMethod").string(var_136.as_str());
     }
-    if let Some(var_133) = &input.email_settings {
-        let mut object_134 = object.key("emailSettings").start_object();
-        crate::json_ser::serialize_structure_crate_model_email_settings(&mut object_134, var_133)?;
-        object_134.finish();
+    if let Some(var_137) = &input.email_settings {
+        let mut object_138 = object.key("emailSettings").start_object();
+        crate::json_ser::serialize_structure_crate_model_email_settings(&mut object_138, var_137)?;
+        object_138.finish();
     }
-    if let Some(var_135) = &input.sms_settings {
-        let mut object_136 = object.key("smsSettings").start_object();
-        crate::json_ser::serialize_structure_crate_model_sms_settings(&mut object_136, var_135)?;
-        object_136.finish();
+    if let Some(var_139) = &input.sms_settings {
+        let mut object_140 = object.key("smsSettings").start_object();
+        crate::json_ser::serialize_structure_crate_model_sms_settings(&mut object_140, var_139)?;
+        object_140.finish();
     }
     Ok(())
 }
@@ -769,13 +779,13 @@ pub fn serialize_structure_crate_model_create_backend_auth_mfa_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateBackendAuthMfaConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_137) = &input.mfa_mode {
-        object.key("MFAMode").string(var_137.as_str());
+    if let Some(var_141) = &input.mfa_mode {
+        object.key("MFAMode").string(var_141.as_str());
     }
-    if let Some(var_138) = &input.settings {
-        let mut object_139 = object.key("settings").start_object();
-        crate::json_ser::serialize_structure_crate_model_settings(&mut object_139, var_138)?;
-        object_139.finish();
+    if let Some(var_142) = &input.settings {
+        let mut object_143 = object.key("settings").start_object();
+        crate::json_ser::serialize_structure_crate_model_settings(&mut object_143, var_142)?;
+        object_143.finish();
     }
     Ok(())
 }
@@ -784,46 +794,46 @@ pub fn serialize_structure_crate_model_create_backend_auth_o_auth_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateBackendAuthOAuthConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_140) = &input.domain_prefix {
-        object.key("domainPrefix").string(var_140.as_str());
+    if let Some(var_144) = &input.domain_prefix {
+        object.key("domainPrefix").string(var_144.as_str());
     }
-    if let Some(var_141) = &input.o_auth_grant_type {
-        object.key("oAuthGrantType").string(var_141.as_str());
+    if let Some(var_145) = &input.o_auth_grant_type {
+        object.key("oAuthGrantType").string(var_145.as_str());
     }
-    if let Some(var_142) = &input.o_auth_scopes {
-        let mut array_143 = object.key("oAuthScopes").start_array();
-        for item_144 in var_142 {
+    if let Some(var_146) = &input.o_auth_scopes {
+        let mut array_147 = object.key("oAuthScopes").start_array();
+        for item_148 in var_146 {
             {
-                array_143.value().string(item_144.as_str());
+                array_147.value().string(item_148.as_str());
             }
         }
-        array_143.finish();
+        array_147.finish();
     }
-    if let Some(var_145) = &input.redirect_sign_in_ur_is {
-        let mut array_146 = object.key("redirectSignInURIs").start_array();
-        for item_147 in var_145 {
+    if let Some(var_149) = &input.redirect_sign_in_ur_is {
+        let mut array_150 = object.key("redirectSignInURIs").start_array();
+        for item_151 in var_149 {
             {
-                array_146.value().string(item_147.as_str());
+                array_150.value().string(item_151.as_str());
             }
         }
-        array_146.finish();
+        array_150.finish();
     }
-    if let Some(var_148) = &input.redirect_sign_out_ur_is {
-        let mut array_149 = object.key("redirectSignOutURIs").start_array();
-        for item_150 in var_148 {
+    if let Some(var_152) = &input.redirect_sign_out_ur_is {
+        let mut array_153 = object.key("redirectSignOutURIs").start_array();
+        for item_154 in var_152 {
             {
-                array_149.value().string(item_150.as_str());
+                array_153.value().string(item_154.as_str());
             }
         }
-        array_149.finish();
+        array_153.finish();
     }
-    if let Some(var_151) = &input.social_provider_settings {
-        let mut object_152 = object.key("socialProviderSettings").start_object();
+    if let Some(var_155) = &input.social_provider_settings {
+        let mut object_156 = object.key("socialProviderSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_social_provider_settings(
-            &mut object_152,
-            var_151,
+            &mut object_156,
+            var_155,
         )?;
-        object_152.finish();
+        object_156.finish();
     }
     Ok(())
 }
@@ -832,14 +842,14 @@ pub fn serialize_structure_crate_model_create_backend_auth_password_policy_confi
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateBackendAuthPasswordPolicyConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_153) = &input.additional_constraints {
-        let mut array_154 = object.key("additionalConstraints").start_array();
-        for item_155 in var_153 {
+    if let Some(var_157) = &input.additional_constraints {
+        let mut array_158 = object.key("additionalConstraints").start_array();
+        for item_159 in var_157 {
             {
-                array_154.value().string(item_155.as_str());
+                array_158.value().string(item_159.as_str());
             }
         }
-        array_154.finish();
+        array_158.finish();
     }
     {
         object.key("minimumLength").number(
@@ -850,22 +860,42 @@ pub fn serialize_structure_crate_model_create_backend_auth_password_policy_confi
     Ok(())
 }
 
+pub fn serialize_structure_crate_model_create_backend_auth_verification_message_config(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::CreateBackendAuthVerificationMessageConfig,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_160) = &input.delivery_method {
+        object.key("deliveryMethod").string(var_160.as_str());
+    }
+    if let Some(var_161) = &input.email_settings {
+        let mut object_162 = object.key("emailSettings").start_object();
+        crate::json_ser::serialize_structure_crate_model_email_settings(&mut object_162, var_161)?;
+        object_162.finish();
+    }
+    if let Some(var_163) = &input.sms_settings {
+        let mut object_164 = object.key("smsSettings").start_object();
+        crate::json_ser::serialize_structure_crate_model_sms_settings(&mut object_164, var_163)?;
+        object_164.finish();
+    }
+    Ok(())
+}
+
 pub fn serialize_structure_crate_model_update_backend_auth_forgot_password_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateBackendAuthForgotPasswordConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_156) = &input.delivery_method {
-        object.key("deliveryMethod").string(var_156.as_str());
+    if let Some(var_165) = &input.delivery_method {
+        object.key("deliveryMethod").string(var_165.as_str());
     }
-    if let Some(var_157) = &input.email_settings {
-        let mut object_158 = object.key("emailSettings").start_object();
-        crate::json_ser::serialize_structure_crate_model_email_settings(&mut object_158, var_157)?;
-        object_158.finish();
+    if let Some(var_166) = &input.email_settings {
+        let mut object_167 = object.key("emailSettings").start_object();
+        crate::json_ser::serialize_structure_crate_model_email_settings(&mut object_167, var_166)?;
+        object_167.finish();
     }
-    if let Some(var_159) = &input.sms_settings {
-        let mut object_160 = object.key("smsSettings").start_object();
-        crate::json_ser::serialize_structure_crate_model_sms_settings(&mut object_160, var_159)?;
-        object_160.finish();
+    if let Some(var_168) = &input.sms_settings {
+        let mut object_169 = object.key("smsSettings").start_object();
+        crate::json_ser::serialize_structure_crate_model_sms_settings(&mut object_169, var_168)?;
+        object_169.finish();
     }
     Ok(())
 }
@@ -874,13 +904,13 @@ pub fn serialize_structure_crate_model_update_backend_auth_mfa_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateBackendAuthMfaConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_161) = &input.mfa_mode {
-        object.key("MFAMode").string(var_161.as_str());
+    if let Some(var_170) = &input.mfa_mode {
+        object.key("MFAMode").string(var_170.as_str());
     }
-    if let Some(var_162) = &input.settings {
-        let mut object_163 = object.key("settings").start_object();
-        crate::json_ser::serialize_structure_crate_model_settings(&mut object_163, var_162)?;
-        object_163.finish();
+    if let Some(var_171) = &input.settings {
+        let mut object_172 = object.key("settings").start_object();
+        crate::json_ser::serialize_structure_crate_model_settings(&mut object_172, var_171)?;
+        object_172.finish();
     }
     Ok(())
 }
@@ -889,46 +919,46 @@ pub fn serialize_structure_crate_model_update_backend_auth_o_auth_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateBackendAuthOAuthConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_164) = &input.domain_prefix {
-        object.key("domainPrefix").string(var_164.as_str());
+    if let Some(var_173) = &input.domain_prefix {
+        object.key("domainPrefix").string(var_173.as_str());
     }
-    if let Some(var_165) = &input.o_auth_grant_type {
-        object.key("oAuthGrantType").string(var_165.as_str());
+    if let Some(var_174) = &input.o_auth_grant_type {
+        object.key("oAuthGrantType").string(var_174.as_str());
     }
-    if let Some(var_166) = &input.o_auth_scopes {
-        let mut array_167 = object.key("oAuthScopes").start_array();
-        for item_168 in var_166 {
+    if let Some(var_175) = &input.o_auth_scopes {
+        let mut array_176 = object.key("oAuthScopes").start_array();
+        for item_177 in var_175 {
             {
-                array_167.value().string(item_168.as_str());
+                array_176.value().string(item_177.as_str());
             }
         }
-        array_167.finish();
+        array_176.finish();
     }
-    if let Some(var_169) = &input.redirect_sign_in_ur_is {
-        let mut array_170 = object.key("redirectSignInURIs").start_array();
-        for item_171 in var_169 {
+    if let Some(var_178) = &input.redirect_sign_in_ur_is {
+        let mut array_179 = object.key("redirectSignInURIs").start_array();
+        for item_180 in var_178 {
             {
-                array_170.value().string(item_171.as_str());
+                array_179.value().string(item_180.as_str());
             }
         }
-        array_170.finish();
+        array_179.finish();
     }
-    if let Some(var_172) = &input.redirect_sign_out_ur_is {
-        let mut array_173 = object.key("redirectSignOutURIs").start_array();
-        for item_174 in var_172 {
+    if let Some(var_181) = &input.redirect_sign_out_ur_is {
+        let mut array_182 = object.key("redirectSignOutURIs").start_array();
+        for item_183 in var_181 {
             {
-                array_173.value().string(item_174.as_str());
+                array_182.value().string(item_183.as_str());
             }
         }
-        array_173.finish();
+        array_182.finish();
     }
-    if let Some(var_175) = &input.social_provider_settings {
-        let mut object_176 = object.key("socialProviderSettings").start_object();
+    if let Some(var_184) = &input.social_provider_settings {
+        let mut object_185 = object.key("socialProviderSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_social_provider_settings(
-            &mut object_176,
-            var_175,
+            &mut object_185,
+            var_184,
         )?;
-        object_176.finish();
+        object_185.finish();
     }
     Ok(())
 }
@@ -937,14 +967,14 @@ pub fn serialize_structure_crate_model_update_backend_auth_password_policy_confi
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateBackendAuthPasswordPolicyConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_177) = &input.additional_constraints {
-        let mut array_178 = object.key("additionalConstraints").start_array();
-        for item_179 in var_177 {
+    if let Some(var_186) = &input.additional_constraints {
+        let mut array_187 = object.key("additionalConstraints").start_array();
+        for item_188 in var_186 {
             {
-                array_178.value().string(item_179.as_str());
+                array_187.value().string(item_188.as_str());
             }
         }
-        array_178.finish();
+        array_187.finish();
     }
     if input.minimum_length != 0.0 {
         object.key("minimumLength").number(
@@ -955,15 +985,35 @@ pub fn serialize_structure_crate_model_update_backend_auth_password_policy_confi
     Ok(())
 }
 
+pub fn serialize_structure_crate_model_update_backend_auth_verification_message_config(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::UpdateBackendAuthVerificationMessageConfig,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_189) = &input.delivery_method {
+        object.key("deliveryMethod").string(var_189.as_str());
+    }
+    if let Some(var_190) = &input.email_settings {
+        let mut object_191 = object.key("emailSettings").start_object();
+        crate::json_ser::serialize_structure_crate_model_email_settings(&mut object_191, var_190)?;
+        object_191.finish();
+    }
+    if let Some(var_192) = &input.sms_settings {
+        let mut object_193 = object.key("smsSettings").start_object();
+        crate::json_ser::serialize_structure_crate_model_sms_settings(&mut object_193, var_192)?;
+        object_193.finish();
+    }
+    Ok(())
+}
+
 pub fn serialize_structure_crate_model_email_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EmailSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_180) = &input.email_message {
-        object.key("emailMessage").string(var_180.as_str());
+    if let Some(var_194) = &input.email_message {
+        object.key("emailMessage").string(var_194.as_str());
     }
-    if let Some(var_181) = &input.email_subject {
-        object.key("emailSubject").string(var_181.as_str());
+    if let Some(var_195) = &input.email_subject {
+        object.key("emailSubject").string(var_195.as_str());
     }
     Ok(())
 }
@@ -972,8 +1022,8 @@ pub fn serialize_structure_crate_model_sms_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SmsSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_182) = &input.sms_message {
-        object.key("smsMessage").string(var_182.as_str());
+    if let Some(var_196) = &input.sms_message {
+        object.key("smsMessage").string(var_196.as_str());
     }
     Ok(())
 }
@@ -982,17 +1032,17 @@ pub fn serialize_structure_crate_model_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Settings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_183) = &input.mfa_types {
-        let mut array_184 = object.key("mfaTypes").start_array();
-        for item_185 in var_183 {
+    if let Some(var_197) = &input.mfa_types {
+        let mut array_198 = object.key("mfaTypes").start_array();
+        for item_199 in var_197 {
             {
-                array_184.value().string(item_185.as_str());
+                array_198.value().string(item_199.as_str());
             }
         }
-        array_184.finish();
+        array_198.finish();
     }
-    if let Some(var_186) = &input.sms_message {
-        object.key("smsMessage").string(var_186.as_str());
+    if let Some(var_200) = &input.sms_message {
+        object.key("smsMessage").string(var_200.as_str());
     }
     Ok(())
 }
@@ -1001,37 +1051,37 @@ pub fn serialize_structure_crate_model_social_provider_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SocialProviderSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_187) = &input.facebook {
-        let mut object_188 = object.key("Facebook").start_object();
+    if let Some(var_201) = &input.facebook {
+        let mut object_202 = object.key("Facebook").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_auth_social_provider_config(
-            &mut object_188,
-            var_187,
+            &mut object_202,
+            var_201,
         )?;
-        object_188.finish();
+        object_202.finish();
     }
-    if let Some(var_189) = &input.google {
-        let mut object_190 = object.key("Google").start_object();
+    if let Some(var_203) = &input.google {
+        let mut object_204 = object.key("Google").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_auth_social_provider_config(
-            &mut object_190,
-            var_189,
+            &mut object_204,
+            var_203,
         )?;
-        object_190.finish();
+        object_204.finish();
     }
-    if let Some(var_191) = &input.login_with_amazon {
-        let mut object_192 = object.key("LoginWithAmazon").start_object();
+    if let Some(var_205) = &input.login_with_amazon {
+        let mut object_206 = object.key("LoginWithAmazon").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_auth_social_provider_config(
-            &mut object_192,
-            var_191,
+            &mut object_206,
+            var_205,
         )?;
-        object_192.finish();
+        object_206.finish();
     }
-    if let Some(var_193) = &input.sign_in_with_apple {
-        let mut object_194 = object.key("SignInWithApple").start_object();
+    if let Some(var_207) = &input.sign_in_with_apple {
+        let mut object_208 = object.key("SignInWithApple").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_auth_apple_provider_config(
-            &mut object_194,
-            var_193,
+            &mut object_208,
+            var_207,
         )?;
-        object_194.finish();
+        object_208.finish();
     }
     Ok(())
 }
@@ -1040,11 +1090,11 @@ pub fn serialize_structure_crate_model_backend_auth_social_provider_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BackendAuthSocialProviderConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_195) = &input.client_id {
-        object.key("client_id").string(var_195.as_str());
+    if let Some(var_209) = &input.client_id {
+        object.key("client_id").string(var_209.as_str());
     }
-    if let Some(var_196) = &input.client_secret {
-        object.key("client_secret").string(var_196.as_str());
+    if let Some(var_210) = &input.client_secret {
+        object.key("client_secret").string(var_210.as_str());
     }
     Ok(())
 }
@@ -1053,17 +1103,17 @@ pub fn serialize_structure_crate_model_backend_auth_apple_provider_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BackendAuthAppleProviderConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_197) = &input.client_id {
-        object.key("client_id").string(var_197.as_str());
+    if let Some(var_211) = &input.client_id {
+        object.key("client_id").string(var_211.as_str());
     }
-    if let Some(var_198) = &input.key_id {
-        object.key("key_id").string(var_198.as_str());
+    if let Some(var_212) = &input.key_id {
+        object.key("key_id").string(var_212.as_str());
     }
-    if let Some(var_199) = &input.private_key {
-        object.key("private_key").string(var_199.as_str());
+    if let Some(var_213) = &input.private_key {
+        object.key("private_key").string(var_213.as_str());
     }
-    if let Some(var_200) = &input.team_id {
-        object.key("team_id").string(var_200.as_str());
+    if let Some(var_214) = &input.team_id {
+        object.key("team_id").string(var_214.as_str());
     }
     Ok(())
 }

@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_amplifybackend::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_amplifybackend::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_amplifybackend::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_amplifybackend::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -114,7 +114,7 @@ impl Client {
     ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::CreateBackend::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::CreateBackend::set_app_id): <p>The app ID.</p>
     ///   - [`app_name(impl Into<String>)`](crate::client::fluent_builders::CreateBackend::app_name) / [`set_app_name(Option<String>)`](crate::client::fluent_builders::CreateBackend::set_app_name): <p>The name of the app.</p>
     ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::CreateBackend::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::CreateBackend::set_backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`resource_config(ResourceConfig)`](crate::client::fluent_builders::CreateBackend::resource_config) / [`set_resource_config(Option<ResourceConfig>)`](crate::client::fluent_builders::CreateBackend::set_resource_config): <p>The resource configuration for creating backend storage.</p>
+    ///   - [`resource_config(ResourceConfig)`](crate::client::fluent_builders::CreateBackend::resource_config) / [`set_resource_config(Option<ResourceConfig>)`](crate::client::fluent_builders::CreateBackend::set_resource_config): <p>The resource configuration for creating a backend.</p>
     ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::CreateBackend::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::CreateBackend::set_resource_name): <p>The name of the resource.</p>
     /// - On success, responds with [`CreateBackendOutput`](crate::output::CreateBackendOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::CreateBackendOutput::app_id): <p>The app ID.</p>
@@ -751,12 +751,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backend_environment_name(input);
             self
         }
-        /// <p>The resource configuration for creating backend storage.</p>
+        /// <p>The resource configuration for creating a backend.</p>
         pub fn resource_config(mut self, input: crate::model::ResourceConfig) -> Self {
             self.inner = self.inner.resource_config(input);
             self
         }
-        /// <p>The resource configuration for creating backend storage.</p>
+        /// <p>The resource configuration for creating a backend.</p>
         pub fn set_resource_config(
             mut self,
             input: std::option::Option<crate::model::ResourceConfig>,

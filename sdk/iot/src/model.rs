@@ -2379,7 +2379,7 @@ pub struct AddThingsToThingGroupParams {
     /// <p>The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.</p>
     pub thing_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.</p>
-    pub override_dynamic_groups: bool,
+    pub override_dynamic_groups: std::option::Option<bool>,
 }
 impl AddThingsToThingGroupParams {
     /// <p>The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.</p>
@@ -2387,7 +2387,7 @@ impl AddThingsToThingGroupParams {
         self.thing_group_names.as_deref()
     }
     /// <p>Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.</p>
-    pub fn override_dynamic_groups(&self) -> bool {
+    pub fn override_dynamic_groups(&self) -> std::option::Option<bool> {
         self.override_dynamic_groups
     }
 }
@@ -2442,7 +2442,7 @@ pub mod add_things_to_thing_group_params {
         pub fn build(self) -> crate::model::AddThingsToThingGroupParams {
             crate::model::AddThingsToThingGroupParams {
                 thing_group_names: self.thing_group_names,
-                override_dynamic_groups: self.override_dynamic_groups.unwrap_or_default(),
+                override_dynamic_groups: self.override_dynamic_groups,
             }
         }
     }
@@ -15426,6 +15426,82 @@ impl MitigationActionType {
 impl AsRef<str> for MitigationActionType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>A metric.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MetricDatum {
+    /// <p>The time the metric value was reported.</p>
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The value reported for the metric.</p>
+    pub value: std::option::Option<crate::model::MetricValue>,
+}
+impl MetricDatum {
+    /// <p>The time the metric value was reported.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.timestamp.as_ref()
+    }
+    /// <p>The value reported for the metric.</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::MetricValue> {
+        self.value.as_ref()
+    }
+}
+impl std::fmt::Debug for MetricDatum {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MetricDatum");
+        formatter.field("timestamp", &self.timestamp);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`MetricDatum`](crate::model::MetricDatum)
+pub mod metric_datum {
+    /// A builder for [`MetricDatum`](crate::model::MetricDatum)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) value: std::option::Option<crate::model::MetricValue>,
+    }
+    impl Builder {
+        /// <p>The time the metric value was reported.</p>
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.timestamp = Some(input);
+            self
+        }
+        /// <p>The time the metric value was reported.</p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.timestamp = input;
+            self
+        }
+        /// <p>The value reported for the metric.</p>
+        pub fn value(mut self, input: crate::model::MetricValue) -> Self {
+            self.value = Some(input);
+            self
+        }
+        /// <p>The value reported for the metric.</p>
+        pub fn set_value(mut self, input: std::option::Option<crate::model::MetricValue>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MetricDatum`](crate::model::MetricDatum)
+        pub fn build(self) -> crate::model::MetricDatum {
+            crate::model::MetricDatum {
+                timestamp: self.timestamp,
+                value: self.value,
+            }
+        }
+    }
+}
+impl MetricDatum {
+    /// Creates a new builder-style object to manufacture [`MetricDatum`](crate::model::MetricDatum)
+    pub fn builder() -> crate::model::metric_datum::Builder {
+        crate::model::metric_datum::Builder::default()
     }
 }
 

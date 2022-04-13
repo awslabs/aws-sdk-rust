@@ -127,7 +127,7 @@ impl AddTagsToStreamInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -296,7 +296,7 @@ impl CreateStreamInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -451,7 +451,7 @@ impl DecreaseStreamRetentionPeriodInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -605,7 +605,7 @@ impl DeleteStreamInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -777,7 +777,7 @@ impl DeregisterStreamConsumerInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -898,7 +898,7 @@ impl DescribeLimitsInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1071,7 +1071,7 @@ impl DescribeStreamInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1242,7 +1242,7 @@ impl DescribeStreamConsumerInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1386,7 +1386,7 @@ impl DescribeStreamSummaryInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1577,7 +1577,7 @@ impl DisableEnhancedMonitoringInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1768,7 +1768,7 @@ impl EnableEnhancedMonitoringInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1925,7 +1925,7 @@ impl GetRecordsInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2140,7 +2140,7 @@ impl GetShardIteratorInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2295,7 +2295,7 @@ impl IncreaseStreamRetentionPeriodInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2530,7 +2530,7 @@ impl ListShardsInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2721,7 +2721,7 @@ impl ListStreamConsumersInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2881,7 +2881,7 @@ impl ListStreamsInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3050,7 +3050,7 @@ impl ListTagsForStreamInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3222,7 +3222,7 @@ impl MergeShardsInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3422,7 +3422,7 @@ impl PutRecordInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3584,7 +3584,7 @@ impl PutRecordsInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3743,7 +3743,7 @@ impl RegisterStreamConsumerInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3908,7 +3908,7 @@ impl RemoveTagsFromStreamInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4080,7 +4080,7 @@ impl SplitShardInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4265,7 +4265,7 @@ impl StartStreamEncryptionInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4450,7 +4450,7 @@ impl StopStreamEncryptionInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4631,7 +4631,7 @@ impl UpdateShardCountInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4788,7 +4788,7 @@ impl UpdateStreamModeInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),

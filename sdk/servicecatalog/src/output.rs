@@ -3772,6 +3772,9 @@ pub struct DescribeProvisioningParametersOutput {
     /// <p>The output of the provisioning artifact.</p>
     pub provisioning_artifact_outputs:
         std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>,
+    /// <p>A list of the keys and descriptions of the outputs. These outputs can be referenced from a provisioned product launched from this provisioning artifact.</p>
+    pub provisioning_artifact_output_keys:
+        std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>,
 }
 impl DescribeProvisioningParametersOutput {
     /// <p>Information about the parameters used to provision the product.</p>
@@ -3804,6 +3807,12 @@ impl DescribeProvisioningParametersOutput {
     ) -> std::option::Option<&[crate::model::ProvisioningArtifactOutput]> {
         self.provisioning_artifact_outputs.as_deref()
     }
+    /// <p>A list of the keys and descriptions of the outputs. These outputs can be referenced from a provisioned product launched from this provisioning artifact.</p>
+    pub fn provisioning_artifact_output_keys(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProvisioningArtifactOutput]> {
+        self.provisioning_artifact_output_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeProvisioningParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3822,6 +3831,10 @@ impl std::fmt::Debug for DescribeProvisioningParametersOutput {
         formatter.field(
             "provisioning_artifact_outputs",
             &self.provisioning_artifact_outputs,
+        );
+        formatter.field(
+            "provisioning_artifact_output_keys",
+            &self.provisioning_artifact_output_keys,
         );
         formatter.finish()
     }
@@ -3842,6 +3855,8 @@ pub mod describe_provisioning_parameters_output {
         pub(crate) provisioning_artifact_preferences:
             std::option::Option<crate::model::ProvisioningArtifactPreferences>,
         pub(crate) provisioning_artifact_outputs:
+            std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>,
+        pub(crate) provisioning_artifact_output_keys:
             std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>,
     }
     impl Builder {
@@ -3962,6 +3977,28 @@ pub mod describe_provisioning_parameters_output {
             self.provisioning_artifact_outputs = input;
             self
         }
+        /// Appends an item to `provisioning_artifact_output_keys`.
+        ///
+        /// To override the contents of this collection use [`set_provisioning_artifact_output_keys`](Self::set_provisioning_artifact_output_keys).
+        ///
+        /// <p>A list of the keys and descriptions of the outputs. These outputs can be referenced from a provisioned product launched from this provisioning artifact.</p>
+        pub fn provisioning_artifact_output_keys(
+            mut self,
+            input: crate::model::ProvisioningArtifactOutput,
+        ) -> Self {
+            let mut v = self.provisioning_artifact_output_keys.unwrap_or_default();
+            v.push(input);
+            self.provisioning_artifact_output_keys = Some(v);
+            self
+        }
+        /// <p>A list of the keys and descriptions of the outputs. These outputs can be referenced from a provisioned product launched from this provisioning artifact.</p>
+        pub fn set_provisioning_artifact_output_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>,
+        ) -> Self {
+            self.provisioning_artifact_output_keys = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeProvisioningParametersOutput`](crate::output::DescribeProvisioningParametersOutput)
         pub fn build(self) -> crate::output::DescribeProvisioningParametersOutput {
             crate::output::DescribeProvisioningParametersOutput {
@@ -3971,6 +4008,7 @@ pub mod describe_provisioning_parameters_output {
                 tag_options: self.tag_options,
                 provisioning_artifact_preferences: self.provisioning_artifact_preferences,
                 provisioning_artifact_outputs: self.provisioning_artifact_outputs,
+                provisioning_artifact_output_keys: self.provisioning_artifact_output_keys,
             }
         }
     }

@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_efs::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_efs::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_efs::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_efs::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -98,7 +98,7 @@ impl Client {
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAccessPoint::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAccessPoint::set_tags): <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPoint::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::CreateAccessPoint::set_file_system_id): <p>The ID of the EFS file system that the access point provides access to.</p>
     ///   - [`posix_user(PosixUser)`](crate::client::fluent_builders::CreateAccessPoint::posix_user) / [`set_posix_user(Option<PosixUser>)`](crate::client::fluent_builders::CreateAccessPoint::set_posix_user): <p>The operating system user and group applied to all file system requests made using the access point.</p>
-    ///   - [`root_directory(RootDirectory)`](crate::client::fluent_builders::CreateAccessPoint::root_directory) / [`set_root_directory(Option<RootDirectory>)`](crate::client::fluent_builders::CreateAccessPoint::set_root_directory): <p>Specifies the directory on the Amazon EFS file system that the access point exposes as the root directory of your file system to NFS clients using the access point. The clients using the access point can only access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When specifying a <code>RootDirectory</code>, you need to provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>  <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p>
+    ///   - [`root_directory(RootDirectory)`](crate::client::fluent_builders::CreateAccessPoint::root_directory) / [`set_root_directory(Option<RootDirectory>)`](crate::client::fluent_builders::CreateAccessPoint::set_root_directory): <p>Specifies the directory on the Amazon EFS file system that the access point exposes as the root directory of your file system to NFS clients using the access point. The clients using the access point can only access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When specifying a <code>RootDirectory</code>, you must provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>  <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p>
     /// - On success, responds with [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput) with field(s):
     ///   - [`client_token(Option<String>)`](crate::output::CreateAccessPointOutput::client_token): <p>The opaque string specified in the request to ensure idempotent creation.</p>
     ///   - [`name(Option<String>)`](crate::output::CreateAccessPointOutput::name): <p>The name of the access point. This is the value of the <code>Name</code> tag.</p>
@@ -120,7 +120,7 @@ impl Client {
     ///   - [`creation_token(impl Into<String>)`](crate::client::fluent_builders::CreateFileSystem::creation_token) / [`set_creation_token(Option<String>)`](crate::client::fluent_builders::CreateFileSystem::set_creation_token): <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
     ///   - [`performance_mode(PerformanceMode)`](crate::client::fluent_builders::CreateFileSystem::performance_mode) / [`set_performance_mode(Option<PerformanceMode>)`](crate::client::fluent_builders::CreateFileSystem::set_performance_mode): <p>The performance mode of the file system. We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second with a tradeoff of slightly higher latencies for most file operations. The performance mode can't be changed after the file system has been created.</p> <note>   <p>The <code>maxIO</code> mode is not supported on file systems using One Zone storage classes.</p>  </note>
     ///   - [`encrypted(bool)`](crate::client::fluent_builders::CreateFileSystem::encrypted) / [`set_encrypted(Option<bool>)`](crate::client::fluent_builders::CreateFileSystem::set_encrypted): <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying an existing Key Management Service key (KMS key). If you don't specify a KMS key, then the default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateFileSystem::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateFileSystem::set_kms_key_id): <p>The ID of the KMS key that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default KMS key for Amazon EFS is used. You can specify a KMS key ID using the following formats:</p>  <ul>   <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>   <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>   <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>   <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>  </ul>  <p>If you use <code>KmsKeyId</code>, you must set the <code>CreateFileSystemRequest$Encrypted</code> parameter to true.</p> <important>   <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with Amazon EFS file systems.</p>  </important>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateFileSystem::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateFileSystem::set_kms_key_id): <p>The ID of the KMS key that you want to use to protect the encrypted file system. This parameter is required only if you want to use a non-default KMS key. If this parameter is not specified, the default KMS key for Amazon EFS is used. You can specify a KMS key ID using the following formats:</p>  <ul>   <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>   <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>   <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>   <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>  </ul>  <p>If you use <code>KmsKeyId</code>, you must set the <code>CreateFileSystemRequest$Encrypted</code> parameter to true.</p> <important>   <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with Amazon EFS file systems.</p>  </important>
     ///   - [`throughput_mode(ThroughputMode)`](crate::client::fluent_builders::CreateFileSystem::throughput_mode) / [`set_throughput_mode(Option<ThroughputMode>)`](crate::client::fluent_builders::CreateFileSystem::set_throughput_mode): <p>Specifies the throughput mode for the file system, either <code>bursting</code> or <code>provisioned</code>. If you set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes, as long as it’s been more than 24 hours since the last decrease or throughput mode change. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>  <p>Default is <code>bursting</code>.</p>
     ///   - [`provisioned_throughput_in_mibps(f64)`](crate::client::fluent_builders::CreateFileSystem::provisioned_throughput_in_mibps) / [`set_provisioned_throughput_in_mibps(Option<f64>)`](crate::client::fluent_builders::CreateFileSystem::set_provisioned_throughput_in_mibps): <p>The throughput, measured in MiB/s, that you want to provision for a file system that you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
     ///   - [`availability_zone_name(impl Into<String>)`](crate::client::fluent_builders::CreateFileSystem::availability_zone_name) / [`set_availability_zone_name(Option<String>)`](crate::client::fluent_builders::CreateFileSystem::set_availability_zone_name): <p>Used to create a file system that uses One Zone storage classes. It specifies the Amazon Web Services Availability Zone in which to create the file system. Use the format <code>us-east-1a</code> to specify the Availability Zone. For more information about One Zone storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> <note>   <p>One Zone storage classes are not available in all Availability Zones in Amazon Web Services Regions where Amazon EFS is available.</p>  </note>
@@ -178,10 +178,10 @@ impl Client {
     /// - On success, responds with [`CreateReplicationConfigurationOutput`](crate::output::CreateReplicationConfigurationOutput) with field(s):
     ///   - [`source_file_system_id(Option<String>)`](crate::output::CreateReplicationConfigurationOutput::source_file_system_id): <p>The ID of the source Amazon EFS file system that is being replicated.</p>
     ///   - [`source_file_system_region(Option<String>)`](crate::output::CreateReplicationConfigurationOutput::source_file_system_region): <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
-    ///   - [`source_file_system_arn(Option<String>)`](crate::output::CreateReplicationConfigurationOutput::source_file_system_arn): <p>The ARN of the current source file system in the replication configuration.</p>
+    ///   - [`source_file_system_arn(Option<String>)`](crate::output::CreateReplicationConfigurationOutput::source_file_system_arn): <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
     ///   - [`original_source_file_system_arn(Option<String>)`](crate::output::CreateReplicationConfigurationOutput::original_source_file_system_arn): <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateReplicationConfigurationOutput::creation_time): <p>Describes when the replication configuration was created.</p>
-    ///   - [`destinations(Option<Vec<Destination>>)`](crate::output::CreateReplicationConfigurationOutput::destinations): <p>Array of destination objects. Only one destination object is supported.</p>
+    ///   - [`destinations(Option<Vec<Destination>>)`](crate::output::CreateReplicationConfigurationOutput::destinations): <p>An array of destination objects. Only one destination object is supported.</p>
     /// - On failure, responds with [`SdkError<CreateReplicationConfigurationError>`](crate::error::CreateReplicationConfigurationError)
     pub fn create_replication_configuration(
         &self,
@@ -294,7 +294,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBackupPolicy::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::DescribeBackupPolicy::set_file_system_id): <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
     /// - On success, responds with [`DescribeBackupPolicyOutput`](crate::output::DescribeBackupPolicyOutput) with field(s):
-    ///   - [`backup_policy(Option<BackupPolicy>)`](crate::output::DescribeBackupPolicyOutput::backup_policy): <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off..</p>
+    ///   - [`backup_policy(Option<BackupPolicy>)`](crate::output::DescribeBackupPolicyOutput::backup_policy): <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
     /// - On failure, responds with [`SdkError<DescribeBackupPolicyError>`](crate::error::DescribeBackupPolicyError)
     pub fn describe_backup_policy(&self) -> fluent_builders::DescribeBackupPolicy {
         fluent_builders::DescribeBackupPolicy::new(self.handle.clone())
@@ -369,11 +369,11 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeReplicationConfigurations`](crate::client::fluent_builders::DescribeReplicationConfigurations) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::DescribeReplicationConfigurations::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::DescribeReplicationConfigurations::set_file_system_id): <p>You can retrieve replication configurations for a specific file system by providing a file system ID.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeReplicationConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeReplicationConfigurations::set_next_token): <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in a subsequent request to fetch the next page of output.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeReplicationConfigurations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeReplicationConfigurations::set_max_results): <p>(Optional) You can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::DescribeReplicationConfigurations::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::DescribeReplicationConfigurations::set_file_system_id): <p>You can retrieve the replication configuration for a specific file system by providing its file system ID.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeReplicationConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeReplicationConfigurations::set_next_token): <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextToken</code> in a subsequent request to fetch the next page of output.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeReplicationConfigurations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeReplicationConfigurations::set_max_results): <p>(Optional) To limit the number of objects returned in a response, you can specify the <code>MaxItems</code> parameter. The default value is 100. </p>
     /// - On success, responds with [`DescribeReplicationConfigurationsOutput`](crate::output::DescribeReplicationConfigurationsOutput) with field(s):
-    ///   - [`replications(Option<Vec<ReplicationConfigurationDescription>>)`](crate::output::DescribeReplicationConfigurationsOutput::replications): <p>The collection of replication configurations returned.</p>
+    ///   - [`replications(Option<Vec<ReplicationConfigurationDescription>>)`](crate::output::DescribeReplicationConfigurationsOutput::replications): <p>The collection of replication configurations that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeReplicationConfigurationsOutput::next_token): <p>You can use the <code>NextToken</code> from the previous response in a subsequent request to fetch the additional descriptions.</p>
     /// - On failure, responds with [`SdkError<DescribeReplicationConfigurationsError>`](crate::error::DescribeReplicationConfigurationsError)
     pub fn describe_replication_configurations(
@@ -426,7 +426,7 @@ impl Client {
     /// Constructs a fluent builder for the [`PutAccountPreferences`](crate::client::fluent_builders::PutAccountPreferences) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_id_type(ResourceIdType)`](crate::client::fluent_builders::PutAccountPreferences::resource_id_type) / [`set_resource_id_type(Option<ResourceIdType>)`](crate::client::fluent_builders::PutAccountPreferences::set_resource_id_type): <p>Specifies the EFS resource ID preference to set for the user's Amazon Web Services account, in the current Amazon Web Services Region, either <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8 characters).</p> <note>   <p>Starting in October, 2021, you will receive an error when setting the account preference to <code>SHORT_ID</code>. Contact Amazon Web Services support if you receive an error and need to use short IDs for file system and mount target resources.</p>  </note>
+    ///   - [`resource_id_type(ResourceIdType)`](crate::client::fluent_builders::PutAccountPreferences::resource_id_type) / [`set_resource_id_type(Option<ResourceIdType>)`](crate::client::fluent_builders::PutAccountPreferences::set_resource_id_type): <p>Specifies the EFS resource ID preference to set for the user's Amazon Web Services account, in the current Amazon Web Services Region, either <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8 characters).</p> <note>   <p>Starting in October, 2021, you will receive an error when setting the account preference to <code>SHORT_ID</code>. Contact Amazon Web Services support if you receive an error and must use short IDs for file system and mount target resources.</p>  </note>
     /// - On success, responds with [`PutAccountPreferencesOutput`](crate::output::PutAccountPreferencesOutput) with field(s):
     ///   - [`resource_id_preference(Option<ResourceIdPreference>)`](crate::output::PutAccountPreferencesOutput::resource_id_preference): <p>Describes the resource type and its ID preference for the user's Amazon Web Services account, in the current Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<PutAccountPreferencesError>`](crate::error::PutAccountPreferencesError)
@@ -439,7 +439,7 @@ impl Client {
     ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::PutBackupPolicy::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::PutBackupPolicy::set_file_system_id): <p>Specifies which EFS file system to update the backup policy for.</p>
     ///   - [`backup_policy(BackupPolicy)`](crate::client::fluent_builders::PutBackupPolicy::backup_policy) / [`set_backup_policy(Option<BackupPolicy>)`](crate::client::fluent_builders::PutBackupPolicy::set_backup_policy): <p>The backup policy included in the <code>PutBackupPolicy</code> request.</p>
     /// - On success, responds with [`PutBackupPolicyOutput`](crate::output::PutBackupPolicyOutput) with field(s):
-    ///   - [`backup_policy(Option<BackupPolicy>)`](crate::output::PutBackupPolicyOutput::backup_policy): <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off..</p>
+    ///   - [`backup_policy(Option<BackupPolicy>)`](crate::output::PutBackupPolicyOutput::backup_policy): <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
     /// - On failure, responds with [`SdkError<PutBackupPolicyError>`](crate::error::PutBackupPolicyError)
     pub fn put_backup_policy(&self) -> fluent_builders::PutBackupPolicy {
         fluent_builders::PutBackupPolicy::new(self.handle.clone())
@@ -449,7 +449,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::PutFileSystemPolicy::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::PutFileSystemPolicy::set_file_system_id): <p>The ID of the EFS file system that you want to create or update the <code>FileSystemPolicy</code> for.</p>
     ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutFileSystemPolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutFileSystemPolicy::set_policy): <p>The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. EFS file system policies have a 20,000 character limit. To find out more about the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS Resource-based Policies</a>. </p>
-    ///   - [`bypass_policy_lockout_safety_check(bool)`](crate::client::fluent_builders::PutFileSystemPolicy::bypass_policy_lockout_safety_check) / [`set_bypass_policy_lockout_safety_check(bool)`](crate::client::fluent_builders::PutFileSystemPolicy::set_bypass_policy_lockout_safety_check): <p>(Optional) A flag to indicate whether to bypass the <code>FileSystemPolicy</code> lockout safety check. The policy lockout safety check determines whether the policy in the request will prevent the principal making the request will be locked out from making future <code>PutFileSystemPolicy</code> requests on the file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the principal that is making the request from making a subsequent <code>PutFileSystemPolicy</code> request on the file system. The default value is False. </p>
+    ///   - [`bypass_policy_lockout_safety_check(bool)`](crate::client::fluent_builders::PutFileSystemPolicy::bypass_policy_lockout_safety_check) / [`set_bypass_policy_lockout_safety_check(bool)`](crate::client::fluent_builders::PutFileSystemPolicy::set_bypass_policy_lockout_safety_check): <p>(Optional) A boolean that specifies whether or not to bypass the <code>FileSystemPolicy</code> lockout safety check. The lockout safety check determines whether the policy in the request will lock out, or prevent, the IAM principal that is making the request from making future <code>PutFileSystemPolicy</code> requests on this file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the IAM principal that is making the request from making subsequent <code>PutFileSystemPolicy</code> requests on this file system. The default value is <code>False</code>. </p>
     /// - On success, responds with [`PutFileSystemPolicyOutput`](crate::output::PutFileSystemPolicyOutput) with field(s):
     ///   - [`file_system_id(Option<String>)`](crate::output::PutFileSystemPolicyOutput::file_system_id): <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
     ///   - [`policy(Option<String>)`](crate::output::PutFileSystemPolicyOutput::policy): <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
@@ -461,7 +461,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::PutLifecycleConfiguration::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::PutLifecycleConfiguration::set_file_system_id): <p>The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).</p>
-    ///   - [`lifecycle_policies(Vec<LifecyclePolicy>)`](crate::client::fluent_builders::PutLifecycleConfiguration::lifecycle_policies) / [`set_lifecycle_policies(Option<Vec<LifecyclePolicy>>)`](crate::client::fluent_builders::PutLifecycleConfiguration::set_lifecycle_policies): <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS lifecycle management and intelligent tiering of the following:</p>  <ul>   <li> <p>When to move files in the file system from primary storage to the IA storage class.</p> </li>   <li> <p>When to move files that are in IA storage to primary storage.</p> </li>  </ul> <note>   <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> needs to be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>  </note>
+    ///   - [`lifecycle_policies(Vec<LifecyclePolicy>)`](crate::client::fluent_builders::PutLifecycleConfiguration::lifecycle_policies) / [`set_lifecycle_policies(Option<Vec<LifecyclePolicy>>)`](crate::client::fluent_builders::PutLifecycleConfiguration::set_lifecycle_policies): <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS lifecycle management and EFS Intelligent-Tiering of the following:</p>  <ul>   <li> <p>When to move files in the file system from primary storage to the IA storage class.</p> </li>   <li> <p>When to move files that are in IA storage to primary storage.</p> </li>  </ul> <note>   <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>  </note>
     /// - On success, responds with [`PutLifecycleConfigurationOutput`](crate::output::PutLifecycleConfigurationOutput) with field(s):
     ///   - [`lifecycle_policies(Option<Vec<LifecyclePolicy>>)`](crate::output::PutLifecycleConfigurationOutput::lifecycle_policies): <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
     /// - On failure, responds with [`SdkError<PutLifecycleConfigurationError>`](crate::error::PutLifecycleConfigurationError)
@@ -529,7 +529,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateAccessPoint`.
     ///
-    /// <p>Creates an EFS access point. An access point is an application-specific view into an EFS file system that applies an operating system user and group, and a file system path, to any file system request made through the access point. The operating system user and group override any identity information provided by the NFS client. The file system path is exposed as the access point's root directory. Applications using the access point can only access data in its own directory and below. To learn more, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting a file system using EFS access points</a>.</p>
+    /// <p>Creates an EFS access point. An access point is an application-specific view into an EFS file system that applies an operating system user and group, and a file system path, to any file system request made through the access point. The operating system user and group override any identity information provided by the NFS client. The file system path is exposed as the access point's root directory. Applications using the access point can only access data in the application's own directory and any subdirectories. To learn more, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting a file system using EFS access points</a>.</p>
     /// <p>This operation requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAccessPoint {
@@ -623,13 +623,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_posix_user(input);
             self
         }
-        /// <p>Specifies the directory on the Amazon EFS file system that the access point exposes as the root directory of your file system to NFS clients using the access point. The clients using the access point can only access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When specifying a <code>RootDirectory</code>, you need to provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>
+        /// <p>Specifies the directory on the Amazon EFS file system that the access point exposes as the root directory of your file system to NFS clients using the access point. The clients using the access point can only access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When specifying a <code>RootDirectory</code>, you must provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>
         /// <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p>
         pub fn root_directory(mut self, input: crate::model::RootDirectory) -> Self {
             self.inner = self.inner.root_directory(input);
             self
         }
-        /// <p>Specifies the directory on the Amazon EFS file system that the access point exposes as the root directory of your file system to NFS clients using the access point. The clients using the access point can only access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When specifying a <code>RootDirectory</code>, you need to provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>
+        /// <p>Specifies the directory on the Amazon EFS file system that the access point exposes as the root directory of your file system to NFS clients using the access point. The clients using the access point can only access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When specifying a <code>RootDirectory</code>, you must provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>
         /// <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p>
         pub fn set_root_directory(
             mut self,
@@ -736,7 +736,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encrypted(input);
             self
         }
-        /// <p>The ID of the KMS key that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default KMS key for Amazon EFS is used. You can specify a KMS key ID using the following formats:</p>
+        /// <p>The ID of the KMS key that you want to use to protect the encrypted file system. This parameter is required only if you want to use a non-default KMS key. If this parameter is not specified, the default KMS key for Amazon EFS is used. You can specify a KMS key ID using the following formats:</p>
         /// <ul>
         /// <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
         /// <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
@@ -750,7 +750,7 @@ pub mod fluent_builders {
             self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The ID of the KMS key that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default KMS key for Amazon EFS is used. You can specify a KMS key ID using the following formats:</p>
+        /// <p>The ID of the KMS key that you want to use to protect the encrypted file system. This parameter is required only if you want to use a non-default KMS key. If this parameter is not specified, the default KMS key for Amazon EFS is used. You can specify a KMS key ID using the following formats:</p>
         /// <ul>
         /// <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
         /// <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
@@ -982,27 +982,29 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateReplicationConfiguration`.
     ///
-    /// <p>Creates a replication configuration that replicates an existing EFS file system to a new, read-only file system. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon EFS replication</a>. The replication configuration specifies the following:</p>
+    /// <p>Creates a replication configuration that replicates an existing EFS file system to a new, read-only file system. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon EFS replication</a> in the <i>Amazon EFS User Guide</i>. The replication configuration specifies the following:</p>
     /// <ul>
-    /// <li> <p> <b>Source file system</b> - an existing EFS file system that you want replicated. The source file system cannot be a destination file system in an existing replication configuration.</p> </li>
-    /// <li> <p> <b>Destination file system configuration</b> - the configuration of the destination file system to which the source file system will be replicated. There can only be one destination file system in a replication configuration.</p>
+    /// <li> <p> <b>Source file system</b> - An existing EFS file system that you want replicated. The source file system cannot be a destination file system in an existing replication configuration.</p> </li>
+    /// <li> <p> <b>Destination file system configuration</b> - The configuration of the destination file system to which the source file system will be replicated. There can only be one destination file system in a replication configuration. The destination file system configuration consists of the following properties:</p>
     /// <ul>
-    /// <li> <p> <b>Amazon Web Services Region</b> - The Amazon Web Services Region in which the destination file system is created. EFS Replication is available in all Amazon Web Services Region that Amazon EFS is available in, except the following regions: Asia Pacific (Hong Kong) Europe (Milan), Middle East (Bahrain), Africa (Cape Town), and Asia Pacific (Jakarta).</p> </li>
-    /// <li> <p> <b>Availability zone</b> - If you want the destination file system to use One Zone availability and durability, you must specify the Availability Zone to create the file system in. For more information about EFS storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html"> Amazon EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> </li>
-    /// <li> <p> <b>Encryption</b> - All destination file systems are created with encryption at rest enabled. You can specify the KMS key that is used to encrypt the destination file system. Your service-managed KMS key for Amazon EFS is used if you don't specify a KMS key. You cannot change this after the file system is created.</p> </li>
+    /// <li> <p> <b>Amazon Web Services Region</b> - The Amazon Web Services Region in which the destination file system is created. Amazon EFS replication is available in all Amazon Web Services Regions that Amazon EFS is available in, except Africa (Cape Town), Asia Pacific (Hong Kong), Asia Pacific (Jakarta), Europe (Milan), and Middle East (Bahrain).</p> </li>
+    /// <li> <p> <b>Availability Zone</b> - If you want the destination file system to use EFS One Zone availability and durability, you must specify the Availability Zone to create the file system in. For more information about EFS storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html"> Amazon EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> </li>
+    /// <li> <p> <b>Encryption</b> - All destination file systems are created with encryption at rest enabled. You can specify the Key Management Service (KMS) key that is used to encrypt the destination file system. If you don't specify a KMS key, your service-managed KMS key for Amazon EFS is used. </p> <note>
+    /// <p>After the file system is created, you cannot change the KMS key.</p>
+    /// </note> </li>
     /// </ul> </li>
     /// </ul>
     /// <p>The following properties are set by default:</p>
     /// <ul>
-    /// <li> <p> <b>Performance mode</b> - The destination file system's performance mode will match that of the source file system, unless the destination file system uses One Zone storage. In that case, the <i>General Purpose</i> performance mode is used. The Performance mode cannot be changed.</p> </li>
-    /// <li> <p> <b>Throughput mode</b> - The destination file system use the Bursting throughput mode by default. You can modify the throughput mode once the file system is created.</p> </li>
+    /// <li> <p> <b>Performance mode</b> - The destination file system's performance mode matches that of the source file system, unless the destination file system uses EFS One Zone storage. In that case, the General Purpose performance mode is used. The performance mode cannot be changed.</p> </li>
+    /// <li> <p> <b>Throughput mode</b> - The destination file system uses the Bursting Throughput mode by default. After the file system is created, you can modify the throughput mode.</p> </li>
     /// </ul>
     /// <p>The following properties are turned off by default:</p>
     /// <ul>
-    /// <li> <p> <b>Lifecycle management</b> - EFS lifecycle management and intelligent tiering are not enabled on the destination file system. You can enable EFS lifecycle management and intelligent tiering after the destination file system is created.</p> </li>
-    /// <li> <p> <b>Automatic backups</b> - Automatic daily backups not enabled on the destination file system. You can change this setting after the file system is created.</p> </li>
+    /// <li> <p> <b>Lifecycle management</b> - EFS lifecycle management and EFS Intelligent-Tiering are not enabled on the destination file system. After the destination file system is created, you can enable EFS lifecycle management and EFS Intelligent-Tiering.</p> </li>
+    /// <li> <p> <b>Automatic backups</b> - Automatic daily backups not enabled on the destination file system. After the file system is created, you can change this setting.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon EFS replication</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon EFS replication</a> in the <i>Amazon EFS User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReplicationConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -1076,7 +1078,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateTags`.
     ///
     /// <note>
-    /// <p>DEPRECATED - CreateTags is deprecated and not maintained. Please use the API action to create tags for EFS resources.</p>
+    /// <p>DEPRECATED - <code>CreateTags</code> is deprecated and not maintained. To create tags for EFS resources, use the API action.</p>
     /// </note>
     /// <p>Creates or overwrites tags associated with a file system. Each tag is a key-value pair. If a tag key specified in the request already exists on the file system, this operation overwrites its value with the value provided in the request. If you add the <code>Name</code> tag to your file system, Amazon EFS returns it in the response to the <code>DescribeFileSystems</code> operation. </p>
     /// <p>This operation requires permission for the <code>elasticfilesystem:CreateTags</code> action.</p>
@@ -1210,6 +1212,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFileSystem`.
     ///
     /// <p>Deletes a file system, permanently severing access to its contents. Upon return, the file system no longer exists and you can't access any contents of the deleted file system.</p>
+    /// <p>You need to manually delete mount targets attached to a file system before you can delete an EFS file system. This step is performed for you when you use the Amazon Web Services console to delete a file system.</p> <note>
+    /// <p>You cannot delete a file system that is part of an EFS Replication configuration. You need to delete the replication configuration first.</p>
+    /// </note>
     /// <p> You can't delete a file system that is in use. That is, if the file system has any mount targets, you must first delete them. For more information, see <code>DescribeMountTargets</code> and <code>DeleteMountTarget</code>. </p> <note>
     /// <p>The <code>DeleteFileSystem</code> call returns while the file system state is still <code>deleting</code>. You can check the file system deletion status by calling the <code>DescribeFileSystems</code> operation, which returns a list of file systems in your account. If you pass file system ID or creation token for the deleted file system, the <code>DescribeFileSystems</code> returns a <code>404 FileSystemNotFound</code> error.</p>
     /// </note>
@@ -1393,7 +1398,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteReplicationConfiguration`.
     ///
-    /// <p>Deletes an existing replication configuration. To delete a replication configuration, you must make the request from the Amazon Web Services Region in which the destination file system is located. Deleting a replication configuration ends the replication process. You can write to the destination file system once it's status becomes <code>Writeable</code>.</p>
+    /// <p>Deletes an existing replication configuration. To delete a replication configuration, you must make the request from the Amazon Web Services Region in which the destination file system is located. Deleting a replication configuration ends the replication process. After a replication configuration is deleted, the destination file system is no longer read-only. You can write to the destination file system after its status becomes <code>Writeable</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReplicationConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -1450,7 +1455,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTags`.
     ///
     /// <note>
-    /// <p>DEPRECATED - DeleteTags is deprecated and not maintained. Please use the API action to remove tags from EFS resources.</p>
+    /// <p>DEPRECATED - <code>DeleteTags</code> is deprecated and not maintained. To remove tags from EFS resources, use the API action.</p>
     /// </note>
     /// <p>Deletes the specified tags from a file system. If the <code>DeleteTags</code> request includes a tag key that doesn't exist, Amazon EFS ignores it and doesn't cause an error. For more information about tags and related restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Tag restrictions</a> in the <i>Billing and Cost Management User Guide</i>.</p>
     /// <p>This operation requires permissions for the <code>elasticfilesystem:DeleteTags</code> action.</p>
@@ -1898,7 +1903,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLifecycleConfiguration`.
     ///
     /// <p>Returns the current <code>LifecycleConfiguration</code> object for the specified Amazon EFS file system. EFS lifecycle management uses the <code>LifecycleConfiguration</code> object to identify which files to move to the EFS Infrequent Access (IA) storage class. For a file system without a <code>LifecycleConfiguration</code> object, the call returns an empty array in the response.</p>
-    /// <p>When EFS Intelligent Tiering is enabled, <code>TransitionToPrimaryStorageClass</code> has a value of <code>AFTER_1_ACCESS</code>.</p>
+    /// <p>When EFS Intelligent-Tiering is enabled, <code>TransitionToPrimaryStorageClass</code> has a value of <code>AFTER_1_ACCESS</code>.</p>
     /// <p>This operation requires permissions for the <code>elasticfilesystem:DescribeLifecycleConfiguration</code> operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLifecycleConfiguration {
@@ -2119,7 +2124,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeReplicationConfigurations`.
     ///
-    /// <p>Retrieves the replication configurations for either a specific file system, or all configurations for the Amazon Web Services account in an Amazon Web Services Region if a file system is not specified.</p>
+    /// <p>Retrieves the replication configuration for a specific file system. If a file system is not specified, all of the replication configurations for the Amazon Web Services account in an Amazon Web Services Region are retrieved.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplicationConfigurations {
         handle: std::sync::Arc<super::Handle>,
@@ -2159,12 +2164,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>You can retrieve replication configurations for a specific file system by providing a file system ID.</p>
+        /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID.</p>
         pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.file_system_id(input.into());
             self
         }
-        /// <p>You can retrieve replication configurations for a specific file system by providing a file system ID.</p>
+        /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID.</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2172,22 +2177,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_system_id(input);
             self
         }
-        /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in a subsequent request to fetch the next page of output.</p>
+        /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextToken</code> in a subsequent request to fetch the next page of output.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in a subsequent request to fetch the next page of output.</p>
+        /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextToken</code> in a subsequent request to fetch the next page of output.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>(Optional) You can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
+        /// <p>(Optional) To limit the number of objects returned in a response, you can specify the <code>MaxItems</code> parameter. The default value is 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>(Optional) You can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
+        /// <p>(Optional) To limit the number of objects returned in a response, you can specify the <code>MaxItems</code> parameter. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2196,7 +2201,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTags`.
     ///
     /// <note>
-    /// <p>DEPRECATED - The DeleteTags action is deprecated and not maintained. Please use the API action to remove tags from EFS resources.</p>
+    /// <p>DEPRECATED - The <code>DescribeTags</code> action is deprecated and not maintained. To view tags associated with EFS resources, use the <code>ListTagsForResource</code> API action.</p>
     /// </note>
     /// <p>Returns the tags associated with a file system. The order of tags returned in the response of one <code>DescribeTags</code> call and the order of tags returned across the responses of a multiple-call iteration (when using pagination) is unspecified. </p>
     /// <p> This operation requires permissions for the <code>elasticfilesystem:DescribeTags</code> action. </p>
@@ -2441,7 +2446,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAccountPreferences`.
     ///
     /// <p>Use this operation to set the account preference in the current Amazon Web Services Region to use long 17 character (63 bit) or short 8 character (32 bit) resource IDs for new EFS file system and mount target resources. All existing resource IDs are not affected by any changes you make. You can set the ID preference during the opt-in period as EFS transitions to long resource IDs. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon EFS resource IDs</a>.</p> <note>
-    /// <p>Starting in October, 2021, you will receive an error if you try to set the account preference to use the short 8 character format resource ID. Contact Amazon Web Services support if you receive an error and need to use short IDs for file system and mount target resources.</p>
+    /// <p>Starting in October, 2021, you will receive an error if you try to set the account preference to use the short 8 character format resource ID. Contact Amazon Web Services support if you receive an error and must use short IDs for file system and mount target resources.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccountPreferences {
@@ -2483,14 +2488,14 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the EFS resource ID preference to set for the user's Amazon Web Services account, in the current Amazon Web Services Region, either <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8 characters).</p> <note>
-        /// <p>Starting in October, 2021, you will receive an error when setting the account preference to <code>SHORT_ID</code>. Contact Amazon Web Services support if you receive an error and need to use short IDs for file system and mount target resources.</p>
+        /// <p>Starting in October, 2021, you will receive an error when setting the account preference to <code>SHORT_ID</code>. Contact Amazon Web Services support if you receive an error and must use short IDs for file system and mount target resources.</p>
         /// </note>
         pub fn resource_id_type(mut self, input: crate::model::ResourceIdType) -> Self {
             self.inner = self.inner.resource_id_type(input);
             self
         }
         /// <p>Specifies the EFS resource ID preference to set for the user's Amazon Web Services account, in the current Amazon Web Services Region, either <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8 characters).</p> <note>
-        /// <p>Starting in October, 2021, you will receive an error when setting the account preference to <code>SHORT_ID</code>. Contact Amazon Web Services support if you receive an error and need to use short IDs for file system and mount target resources.</p>
+        /// <p>Starting in October, 2021, you will receive an error when setting the account preference to <code>SHORT_ID</code>. Contact Amazon Web Services support if you receive an error and must use short IDs for file system and mount target resources.</p>
         /// </note>
         pub fn set_resource_id_type(
             mut self,
@@ -2637,12 +2642,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy(input);
             self
         }
-        /// <p>(Optional) A flag to indicate whether to bypass the <code>FileSystemPolicy</code> lockout safety check. The policy lockout safety check determines whether the policy in the request will prevent the principal making the request will be locked out from making future <code>PutFileSystemPolicy</code> requests on the file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the principal that is making the request from making a subsequent <code>PutFileSystemPolicy</code> request on the file system. The default value is False. </p>
+        /// <p>(Optional) A boolean that specifies whether or not to bypass the <code>FileSystemPolicy</code> lockout safety check. The lockout safety check determines whether the policy in the request will lock out, or prevent, the IAM principal that is making the request from making future <code>PutFileSystemPolicy</code> requests on this file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the IAM principal that is making the request from making subsequent <code>PutFileSystemPolicy</code> requests on this file system. The default value is <code>False</code>. </p>
         pub fn bypass_policy_lockout_safety_check(mut self, input: bool) -> Self {
             self.inner = self.inner.bypass_policy_lockout_safety_check(input);
             self
         }
-        /// <p>(Optional) A flag to indicate whether to bypass the <code>FileSystemPolicy</code> lockout safety check. The policy lockout safety check determines whether the policy in the request will prevent the principal making the request will be locked out from making future <code>PutFileSystemPolicy</code> requests on the file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the principal that is making the request from making a subsequent <code>PutFileSystemPolicy</code> request on the file system. The default value is False. </p>
+        /// <p>(Optional) A boolean that specifies whether or not to bypass the <code>FileSystemPolicy</code> lockout safety check. The lockout safety check determines whether the policy in the request will lock out, or prevent, the IAM principal that is making the request from making future <code>PutFileSystemPolicy</code> requests on this file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the IAM principal that is making the request from making subsequent <code>PutFileSystemPolicy</code> requests on this file system. The default value is <code>False</code>. </p>
         pub fn set_bypass_policy_lockout_safety_check(
             mut self,
             input: std::option::Option<bool>,
@@ -2653,15 +2658,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutLifecycleConfiguration`.
     ///
-    /// <p>Enables lifecycle management by creating a new <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object defines when files in an Amazon EFS file system are automatically transitioned to the lower-cost EFS Infrequent Access (IA) storage class. To enable EFS Intelligent Tiering, set the value of <code>TransitionToPrimaryStorageClass</code> to <code>AFTER_1_ACCESS</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS Lifecycle Management</a>.</p>
-    /// <p>Each Amazon EFS file system supports one lifecycle configuration, which applies to all files in the file system. If a <code>LifecycleConfiguration</code> object already exists for the specified file system, a <code>PutLifecycleConfiguration</code> call modifies the existing configuration. A <code>PutLifecycleConfiguration</code> call with an empty <code>LifecyclePolicies</code> array in the request body deletes any existing <code>LifecycleConfiguration</code> and turns off lifecycle management for the file system.</p>
+    /// <p>Use this action to manage EFS lifecycle management and intelligent tiering. A <code>LifecycleConfiguration</code> consists of one or more <code>LifecyclePolicy</code> objects that define the following:</p>
+    /// <ul>
+    /// <li> <p> <b>EFS Lifecycle management</b> - When Amazon EFS automatically transitions files in a file system into the lower-cost Infrequent Access (IA) storage class.</p> <p>To enable EFS Lifecycle management, set the value of <code>TransitionToIA</code> to one of the available options.</p> </li>
+    /// <li> <p> <b>EFS Intelligent tiering</b> - When Amazon EFS automatically transitions files from IA back into the file system's primary storage class (Standard or One Zone Standard.</p> <p>To enable EFS Intelligent Tiering, set the value of <code>TransitionToPrimaryStorageClass</code> to <code>AFTER_1_ACCESS</code>.</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS Lifecycle Management</a>.</p>
+    /// <p>Each Amazon EFS file system supports one lifecycle configuration, which applies to all files in the file system. If a <code>LifecycleConfiguration</code> object already exists for the specified file system, a <code>PutLifecycleConfiguration</code> call modifies the existing configuration. A <code>PutLifecycleConfiguration</code> call with an empty <code>LifecyclePolicies</code> array in the request body deletes any existing <code>LifecycleConfiguration</code> and turns off lifecycle management and intelligent tiering for the file system.</p>
     /// <p>In the request, specify the following: </p>
     /// <ul>
-    /// <li> <p>The ID for the file system for which you are enabling, disabling, or modifying lifecycle management.</p> </li>
-    /// <li> <p>A <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects that define when files are moved to the IA storage class. Amazon EFS requires that each <code>LifecyclePolicy</code> object have only have a single transition, so the <code>LifecyclePolicies</code> array needs to be structured with separate <code>LifecyclePolicy</code> objects. See the example requests in the following section for more information.</p> </li>
+    /// <li> <p>The ID for the file system for which you are enabling, disabling, or modifying lifecycle management and intelligent tiering.</p> </li>
+    /// <li> <p>A <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects that define when files are moved into IA storage, and when they are moved back to Standard storage.</p> <note>
+    /// <p>Amazon EFS requires that each <code>LifecyclePolicy</code> object have only have a single transition, so the <code>LifecyclePolicies</code> array needs to be structured with separate <code>LifecyclePolicy</code> objects. See the example requests in the following section for more information.</p>
+    /// </note> </li>
     /// </ul>
     /// <p>This operation requires permissions for the <code>elasticfilesystem:PutLifecycleConfiguration</code> operation.</p>
-    /// <p>To apply a <code>LifecycleConfiguration</code> object to an encrypted file system, you need the same Key Management Service permissions as when you created the encrypted file system. </p>
+    /// <p>To apply a <code>LifecycleConfiguration</code> object to an encrypted file system, you need the same Key Management Service permissions as when you created the encrypted file system.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLifecycleConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -2718,23 +2730,23 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_lifecycle_policies`](Self::set_lifecycle_policies).
         ///
-        /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS lifecycle management and intelligent tiering of the following:</p>
+        /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS lifecycle management and EFS Intelligent-Tiering of the following:</p>
         /// <ul>
         /// <li> <p>When to move files in the file system from primary storage to the IA storage class.</p> </li>
         /// <li> <p>When to move files that are in IA storage to primary storage.</p> </li>
         /// </ul> <note>
-        /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> needs to be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>
+        /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>
         /// </note>
         pub fn lifecycle_policies(mut self, input: crate::model::LifecyclePolicy) -> Self {
             self.inner = self.inner.lifecycle_policies(input);
             self
         }
-        /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS lifecycle management and intelligent tiering of the following:</p>
+        /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS lifecycle management and EFS Intelligent-Tiering of the following:</p>
         /// <ul>
         /// <li> <p>When to move files in the file system from primary storage to the IA storage class.</p> </li>
         /// <li> <p>When to move files that are in IA storage to primary storage.</p> </li>
         /// </ul> <note>
-        /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> needs to be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>
+        /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>
         /// </note>
         pub fn set_lifecycle_policies(
             mut self,

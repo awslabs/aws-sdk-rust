@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_connect::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_connect::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_connect::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_connect::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -10975,7 +10975,6 @@ pub mod fluent_builders {
     ///
     /// <p>Ends the specified contact. This call does not work for the following initiation methods:</p>
     /// <ul>
-    /// <li> <p>CALLBACK</p> </li>
     /// <li> <p>DISCONNECT</p> </li>
     /// <li> <p>TRANSFER</p> </li>
     /// <li> <p>QUEUE_TRANSFER</p> </li>

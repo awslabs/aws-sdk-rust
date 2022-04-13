@@ -612,7 +612,7 @@ impl UpdateBackendAuthResourceConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBackendAuthUserPoolConfig {
-    /// <p>Describes the forgot password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+    /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub forgot_password: std::option::Option<crate::model::UpdateBackendAuthForgotPasswordConfig>,
     /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
     pub mfa: std::option::Option<crate::model::UpdateBackendAuthMfaConfig>,
@@ -620,9 +620,12 @@ pub struct UpdateBackendAuthUserPoolConfig {
     pub o_auth: std::option::Option<crate::model::UpdateBackendAuthOAuthConfig>,
     /// <p>Describes the password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub password_policy: std::option::Option<crate::model::UpdateBackendAuthPasswordPolicyConfig>,
+    /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+    pub verification_message:
+        std::option::Option<crate::model::UpdateBackendAuthVerificationMessageConfig>,
 }
 impl UpdateBackendAuthUserPoolConfig {
-    /// <p>Describes the forgot password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+    /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn forgot_password(
         &self,
     ) -> std::option::Option<&crate::model::UpdateBackendAuthForgotPasswordConfig> {
@@ -642,6 +645,12 @@ impl UpdateBackendAuthUserPoolConfig {
     ) -> std::option::Option<&crate::model::UpdateBackendAuthPasswordPolicyConfig> {
         self.password_policy.as_ref()
     }
+    /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+    pub fn verification_message(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateBackendAuthVerificationMessageConfig> {
+        self.verification_message.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateBackendAuthUserPoolConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -650,6 +659,7 @@ impl std::fmt::Debug for UpdateBackendAuthUserPoolConfig {
         formatter.field("mfa", &self.mfa);
         formatter.field("o_auth", &self.o_auth);
         formatter.field("password_policy", &self.password_policy);
+        formatter.field("verification_message", &self.verification_message);
         formatter.finish()
     }
 }
@@ -665,9 +675,11 @@ pub mod update_backend_auth_user_pool_config {
         pub(crate) o_auth: std::option::Option<crate::model::UpdateBackendAuthOAuthConfig>,
         pub(crate) password_policy:
             std::option::Option<crate::model::UpdateBackendAuthPasswordPolicyConfig>,
+        pub(crate) verification_message:
+            std::option::Option<crate::model::UpdateBackendAuthVerificationMessageConfig>,
     }
     impl Builder {
-        /// <p>Describes the forgot password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+        /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
         pub fn forgot_password(
             mut self,
             input: crate::model::UpdateBackendAuthForgotPasswordConfig,
@@ -675,7 +687,7 @@ pub mod update_backend_auth_user_pool_config {
             self.forgot_password = Some(input);
             self
         }
-        /// <p>Describes the forgot password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+        /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
         pub fn set_forgot_password(
             mut self,
             input: std::option::Option<crate::model::UpdateBackendAuthForgotPasswordConfig>,
@@ -725,6 +737,22 @@ pub mod update_backend_auth_user_pool_config {
             self.password_policy = input;
             self
         }
+        /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+        pub fn verification_message(
+            mut self,
+            input: crate::model::UpdateBackendAuthVerificationMessageConfig,
+        ) -> Self {
+            self.verification_message = Some(input);
+            self
+        }
+        /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+        pub fn set_verification_message(
+            mut self,
+            input: std::option::Option<crate::model::UpdateBackendAuthVerificationMessageConfig>,
+        ) -> Self {
+            self.verification_message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateBackendAuthUserPoolConfig`](crate::model::UpdateBackendAuthUserPoolConfig)
         pub fn build(self) -> crate::model::UpdateBackendAuthUserPoolConfig {
             crate::model::UpdateBackendAuthUserPoolConfig {
@@ -732,6 +760,7 @@ pub mod update_backend_auth_user_pool_config {
                 mfa: self.mfa,
                 o_auth: self.o_auth,
                 password_policy: self.password_policy,
+                verification_message: self.verification_message,
             }
         }
     }
@@ -740,6 +769,295 @@ impl UpdateBackendAuthUserPoolConfig {
     /// Creates a new builder-style object to manufacture [`UpdateBackendAuthUserPoolConfig`](crate::model::UpdateBackendAuthUserPoolConfig)
     pub fn builder() -> crate::model::update_backend_auth_user_pool_config::Builder {
         crate::model::update_backend_auth_user_pool_config::Builder::default()
+    }
+}
+
+/// <p>Updates the configuration of the email or SMS message for the auth resource configured for your Amplify project.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateBackendAuthVerificationMessageConfig {
+    /// <p>The type of verification message to send.</p>
+    pub delivery_method: std::option::Option<crate::model::DeliveryMethod>,
+    /// <p>The settings for the email message.</p>
+    pub email_settings: std::option::Option<crate::model::EmailSettings>,
+    /// <p>The settings for the SMS message.</p>
+    pub sms_settings: std::option::Option<crate::model::SmsSettings>,
+}
+impl UpdateBackendAuthVerificationMessageConfig {
+    /// <p>The type of verification message to send.</p>
+    pub fn delivery_method(&self) -> std::option::Option<&crate::model::DeliveryMethod> {
+        self.delivery_method.as_ref()
+    }
+    /// <p>The settings for the email message.</p>
+    pub fn email_settings(&self) -> std::option::Option<&crate::model::EmailSettings> {
+        self.email_settings.as_ref()
+    }
+    /// <p>The settings for the SMS message.</p>
+    pub fn sms_settings(&self) -> std::option::Option<&crate::model::SmsSettings> {
+        self.sms_settings.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateBackendAuthVerificationMessageConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateBackendAuthVerificationMessageConfig");
+        formatter.field("delivery_method", &self.delivery_method);
+        formatter.field("email_settings", &self.email_settings);
+        formatter.field("sms_settings", &self.sms_settings);
+        formatter.finish()
+    }
+}
+/// See [`UpdateBackendAuthVerificationMessageConfig`](crate::model::UpdateBackendAuthVerificationMessageConfig)
+pub mod update_backend_auth_verification_message_config {
+    /// A builder for [`UpdateBackendAuthVerificationMessageConfig`](crate::model::UpdateBackendAuthVerificationMessageConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) delivery_method: std::option::Option<crate::model::DeliveryMethod>,
+        pub(crate) email_settings: std::option::Option<crate::model::EmailSettings>,
+        pub(crate) sms_settings: std::option::Option<crate::model::SmsSettings>,
+    }
+    impl Builder {
+        /// <p>The type of verification message to send.</p>
+        pub fn delivery_method(mut self, input: crate::model::DeliveryMethod) -> Self {
+            self.delivery_method = Some(input);
+            self
+        }
+        /// <p>The type of verification message to send.</p>
+        pub fn set_delivery_method(
+            mut self,
+            input: std::option::Option<crate::model::DeliveryMethod>,
+        ) -> Self {
+            self.delivery_method = input;
+            self
+        }
+        /// <p>The settings for the email message.</p>
+        pub fn email_settings(mut self, input: crate::model::EmailSettings) -> Self {
+            self.email_settings = Some(input);
+            self
+        }
+        /// <p>The settings for the email message.</p>
+        pub fn set_email_settings(
+            mut self,
+            input: std::option::Option<crate::model::EmailSettings>,
+        ) -> Self {
+            self.email_settings = input;
+            self
+        }
+        /// <p>The settings for the SMS message.</p>
+        pub fn sms_settings(mut self, input: crate::model::SmsSettings) -> Self {
+            self.sms_settings = Some(input);
+            self
+        }
+        /// <p>The settings for the SMS message.</p>
+        pub fn set_sms_settings(
+            mut self,
+            input: std::option::Option<crate::model::SmsSettings>,
+        ) -> Self {
+            self.sms_settings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateBackendAuthVerificationMessageConfig`](crate::model::UpdateBackendAuthVerificationMessageConfig)
+        pub fn build(self) -> crate::model::UpdateBackendAuthVerificationMessageConfig {
+            crate::model::UpdateBackendAuthVerificationMessageConfig {
+                delivery_method: self.delivery_method,
+                email_settings: self.email_settings,
+                sms_settings: self.sms_settings,
+            }
+        }
+    }
+}
+impl UpdateBackendAuthVerificationMessageConfig {
+    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthVerificationMessageConfig`](crate::model::UpdateBackendAuthVerificationMessageConfig)
+    pub fn builder() -> crate::model::update_backend_auth_verification_message_config::Builder {
+        crate::model::update_backend_auth_verification_message_config::Builder::default()
+    }
+}
+
+/// <p>SMS settings for authentication.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SmsSettings {
+    /// <p>The contents of the SMS message.</p>
+    pub sms_message: std::option::Option<std::string::String>,
+}
+impl SmsSettings {
+    /// <p>The contents of the SMS message.</p>
+    pub fn sms_message(&self) -> std::option::Option<&str> {
+        self.sms_message.as_deref()
+    }
+}
+impl std::fmt::Debug for SmsSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SmsSettings");
+        formatter.field("sms_message", &self.sms_message);
+        formatter.finish()
+    }
+}
+/// See [`SmsSettings`](crate::model::SmsSettings)
+pub mod sms_settings {
+    /// A builder for [`SmsSettings`](crate::model::SmsSettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) sms_message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The contents of the SMS message.</p>
+        pub fn sms_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sms_message = Some(input.into());
+            self
+        }
+        /// <p>The contents of the SMS message.</p>
+        pub fn set_sms_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sms_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SmsSettings`](crate::model::SmsSettings)
+        pub fn build(self) -> crate::model::SmsSettings {
+            crate::model::SmsSettings {
+                sms_message: self.sms_message,
+            }
+        }
+    }
+}
+impl SmsSettings {
+    /// Creates a new builder-style object to manufacture [`SmsSettings`](crate::model::SmsSettings)
+    pub fn builder() -> crate::model::sms_settings::Builder {
+        crate::model::sms_settings::Builder::default()
+    }
+}
+
+/// <p>The configuration for the email sent when an app user forgets their password.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EmailSettings {
+    /// <p>The contents of the email message.</p>
+    pub email_message: std::option::Option<std::string::String>,
+    /// <p>The contents of the subject line of the email message.</p>
+    pub email_subject: std::option::Option<std::string::String>,
+}
+impl EmailSettings {
+    /// <p>The contents of the email message.</p>
+    pub fn email_message(&self) -> std::option::Option<&str> {
+        self.email_message.as_deref()
+    }
+    /// <p>The contents of the subject line of the email message.</p>
+    pub fn email_subject(&self) -> std::option::Option<&str> {
+        self.email_subject.as_deref()
+    }
+}
+impl std::fmt::Debug for EmailSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EmailSettings");
+        formatter.field("email_message", &self.email_message);
+        formatter.field("email_subject", &self.email_subject);
+        formatter.finish()
+    }
+}
+/// See [`EmailSettings`](crate::model::EmailSettings)
+pub mod email_settings {
+    /// A builder for [`EmailSettings`](crate::model::EmailSettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) email_message: std::option::Option<std::string::String>,
+        pub(crate) email_subject: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The contents of the email message.</p>
+        pub fn email_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_message = Some(input.into());
+            self
+        }
+        /// <p>The contents of the email message.</p>
+        pub fn set_email_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_message = input;
+            self
+        }
+        /// <p>The contents of the subject line of the email message.</p>
+        pub fn email_subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_subject = Some(input.into());
+            self
+        }
+        /// <p>The contents of the subject line of the email message.</p>
+        pub fn set_email_subject(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_subject = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EmailSettings`](crate::model::EmailSettings)
+        pub fn build(self) -> crate::model::EmailSettings {
+            crate::model::EmailSettings {
+                email_message: self.email_message,
+                email_subject: self.email_subject,
+            }
+        }
+    }
+}
+impl EmailSettings {
+    /// Creates a new builder-style object to manufacture [`EmailSettings`](crate::model::EmailSettings)
+    pub fn builder() -> crate::model::email_settings::Builder {
+        crate::model::email_settings::Builder::default()
+    }
+}
+
+/// <p>The type of verification message to send.</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DeliveryMethod {
+    #[allow(missing_docs)] // documentation missing in model
+    Email,
+    #[allow(missing_docs)] // documentation missing in model
+    Sms,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DeliveryMethod {
+    fn from(s: &str) -> Self {
+        match s {
+            "EMAIL" => DeliveryMethod::Email,
+            "SMS" => DeliveryMethod::Sms,
+            other => DeliveryMethod::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DeliveryMethod {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DeliveryMethod::from(s))
+    }
+}
+impl DeliveryMethod {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DeliveryMethod::Email => "EMAIL",
+            DeliveryMethod::Sms => "SMS",
+            DeliveryMethod::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["EMAIL", "SMS"]
+    }
+}
+impl AsRef<str> for DeliveryMethod {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1811,27 +2129,27 @@ impl AsRef<str> for MfaMode {
     }
 }
 
-/// <p>Describes the forgot password policy for authenticating into the Amplify app.</p>
+/// <p><b>(DEPRECATED)</b> Describes the forgot password policy for authenticating into the Amplify app.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBackendAuthForgotPasswordConfig {
-    /// <p>Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their password.</p>
+    /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their password.</p>
     pub delivery_method: std::option::Option<crate::model::DeliveryMethod>,
-    /// <p>The configuration for the email sent when an app user forgets their password.</p>
+    /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
     pub email_settings: std::option::Option<crate::model::EmailSettings>,
-    /// <p>The configuration for the SMS message sent when an Amplify app user forgets their password.</p>
+    /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an Amplify app user forgets their password.</p>
     pub sms_settings: std::option::Option<crate::model::SmsSettings>,
 }
 impl UpdateBackendAuthForgotPasswordConfig {
-    /// <p>Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their password.</p>
+    /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their password.</p>
     pub fn delivery_method(&self) -> std::option::Option<&crate::model::DeliveryMethod> {
         self.delivery_method.as_ref()
     }
-    /// <p>The configuration for the email sent when an app user forgets their password.</p>
+    /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
     pub fn email_settings(&self) -> std::option::Option<&crate::model::EmailSettings> {
         self.email_settings.as_ref()
     }
-    /// <p>The configuration for the SMS message sent when an Amplify app user forgets their password.</p>
+    /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an Amplify app user forgets their password.</p>
     pub fn sms_settings(&self) -> std::option::Option<&crate::model::SmsSettings> {
         self.sms_settings.as_ref()
     }
@@ -1856,12 +2174,12 @@ pub mod update_backend_auth_forgot_password_config {
         pub(crate) sms_settings: std::option::Option<crate::model::SmsSettings>,
     }
     impl Builder {
-        /// <p>Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their password.</p>
+        /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their password.</p>
         pub fn delivery_method(mut self, input: crate::model::DeliveryMethod) -> Self {
             self.delivery_method = Some(input);
             self
         }
-        /// <p>Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their password.</p>
+        /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their password.</p>
         pub fn set_delivery_method(
             mut self,
             input: std::option::Option<crate::model::DeliveryMethod>,
@@ -1869,12 +2187,12 @@ pub mod update_backend_auth_forgot_password_config {
             self.delivery_method = input;
             self
         }
-        /// <p>The configuration for the email sent when an app user forgets their password.</p>
+        /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
         pub fn email_settings(mut self, input: crate::model::EmailSettings) -> Self {
             self.email_settings = Some(input);
             self
         }
-        /// <p>The configuration for the email sent when an app user forgets their password.</p>
+        /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
         pub fn set_email_settings(
             mut self,
             input: std::option::Option<crate::model::EmailSettings>,
@@ -1882,12 +2200,12 @@ pub mod update_backend_auth_forgot_password_config {
             self.email_settings = input;
             self
         }
-        /// <p>The configuration for the SMS message sent when an Amplify app user forgets their password.</p>
+        /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an Amplify app user forgets their password.</p>
         pub fn sms_settings(mut self, input: crate::model::SmsSettings) -> Self {
             self.sms_settings = Some(input);
             self
         }
-        /// <p>The configuration for the SMS message sent when an Amplify app user forgets their password.</p>
+        /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an Amplify app user forgets their password.</p>
         pub fn set_sms_settings(
             mut self,
             input: std::option::Option<crate::model::SmsSettings>,
@@ -1909,194 +2227,6 @@ impl UpdateBackendAuthForgotPasswordConfig {
     /// Creates a new builder-style object to manufacture [`UpdateBackendAuthForgotPasswordConfig`](crate::model::UpdateBackendAuthForgotPasswordConfig)
     pub fn builder() -> crate::model::update_backend_auth_forgot_password_config::Builder {
         crate::model::update_backend_auth_forgot_password_config::Builder::default()
-    }
-}
-
-/// <p>SMS settings for authentication.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SmsSettings {
-    /// <p>The body of the SMS message.</p>
-    pub sms_message: std::option::Option<std::string::String>,
-}
-impl SmsSettings {
-    /// <p>The body of the SMS message.</p>
-    pub fn sms_message(&self) -> std::option::Option<&str> {
-        self.sms_message.as_deref()
-    }
-}
-impl std::fmt::Debug for SmsSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmsSettings");
-        formatter.field("sms_message", &self.sms_message);
-        formatter.finish()
-    }
-}
-/// See [`SmsSettings`](crate::model::SmsSettings)
-pub mod sms_settings {
-    /// A builder for [`SmsSettings`](crate::model::SmsSettings)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) sms_message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The body of the SMS message.</p>
-        pub fn sms_message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.sms_message = Some(input.into());
-            self
-        }
-        /// <p>The body of the SMS message.</p>
-        pub fn set_sms_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sms_message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`SmsSettings`](crate::model::SmsSettings)
-        pub fn build(self) -> crate::model::SmsSettings {
-            crate::model::SmsSettings {
-                sms_message: self.sms_message,
-            }
-        }
-    }
-}
-impl SmsSettings {
-    /// Creates a new builder-style object to manufacture [`SmsSettings`](crate::model::SmsSettings)
-    pub fn builder() -> crate::model::sms_settings::Builder {
-        crate::model::sms_settings::Builder::default()
-    }
-}
-
-/// <p>The configuration for the email sent when an app user forgets their password.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EmailSettings {
-    /// <p>The body of the email.</p>
-    pub email_message: std::option::Option<std::string::String>,
-    /// <p>The subject of the email.</p>
-    pub email_subject: std::option::Option<std::string::String>,
-}
-impl EmailSettings {
-    /// <p>The body of the email.</p>
-    pub fn email_message(&self) -> std::option::Option<&str> {
-        self.email_message.as_deref()
-    }
-    /// <p>The subject of the email.</p>
-    pub fn email_subject(&self) -> std::option::Option<&str> {
-        self.email_subject.as_deref()
-    }
-}
-impl std::fmt::Debug for EmailSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmailSettings");
-        formatter.field("email_message", &self.email_message);
-        formatter.field("email_subject", &self.email_subject);
-        formatter.finish()
-    }
-}
-/// See [`EmailSettings`](crate::model::EmailSettings)
-pub mod email_settings {
-    /// A builder for [`EmailSettings`](crate::model::EmailSettings)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) email_message: std::option::Option<std::string::String>,
-        pub(crate) email_subject: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The body of the email.</p>
-        pub fn email_message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.email_message = Some(input.into());
-            self
-        }
-        /// <p>The body of the email.</p>
-        pub fn set_email_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.email_message = input;
-            self
-        }
-        /// <p>The subject of the email.</p>
-        pub fn email_subject(mut self, input: impl Into<std::string::String>) -> Self {
-            self.email_subject = Some(input.into());
-            self
-        }
-        /// <p>The subject of the email.</p>
-        pub fn set_email_subject(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.email_subject = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`EmailSettings`](crate::model::EmailSettings)
-        pub fn build(self) -> crate::model::EmailSettings {
-            crate::model::EmailSettings {
-                email_message: self.email_message,
-                email_subject: self.email_subject,
-            }
-        }
-    }
-}
-impl EmailSettings {
-    /// Creates a new builder-style object to manufacture [`EmailSettings`](crate::model::EmailSettings)
-    pub fn builder() -> crate::model::email_settings::Builder {
-        crate::model::email_settings::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum DeliveryMethod {
-    #[allow(missing_docs)] // documentation missing in model
-    Email,
-    #[allow(missing_docs)] // documentation missing in model
-    Sms,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for DeliveryMethod {
-    fn from(s: &str) -> Self {
-        match s {
-            "EMAIL" => DeliveryMethod::Email,
-            "SMS" => DeliveryMethod::Sms,
-            other => DeliveryMethod::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for DeliveryMethod {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeliveryMethod::from(s))
-    }
-}
-impl DeliveryMethod {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeliveryMethod::Email => "EMAIL",
-            DeliveryMethod::Sms => "SMS",
-            DeliveryMethod::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["EMAIL", "SMS"]
-    }
-}
-impl AsRef<str> for DeliveryMethod {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
@@ -3425,7 +3555,7 @@ impl CreateBackendAuthResourceConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackendAuthUserPoolConfig {
-    /// <p>Describes the forgotten password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+    /// <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub forgot_password: std::option::Option<crate::model::CreateBackendAuthForgotPasswordConfig>,
     /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
     pub mfa: std::option::Option<crate::model::CreateBackendAuthMfaConfig>,
@@ -3440,9 +3570,12 @@ pub struct CreateBackendAuthUserPoolConfig {
     pub sign_in_method: std::option::Option<crate::model::SignInMethod>,
     /// <p>The Amazon Cognito user pool name.</p>
     pub user_pool_name: std::option::Option<std::string::String>,
+    /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+    pub verification_message:
+        std::option::Option<crate::model::CreateBackendAuthVerificationMessageConfig>,
 }
 impl CreateBackendAuthUserPoolConfig {
-    /// <p>Describes the forgotten password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+    /// <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn forgot_password(
         &self,
     ) -> std::option::Option<&crate::model::CreateBackendAuthForgotPasswordConfig> {
@@ -3476,6 +3609,12 @@ impl CreateBackendAuthUserPoolConfig {
     pub fn user_pool_name(&self) -> std::option::Option<&str> {
         self.user_pool_name.as_deref()
     }
+    /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+    pub fn verification_message(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateBackendAuthVerificationMessageConfig> {
+        self.verification_message.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateBackendAuthUserPoolConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3490,6 +3629,7 @@ impl std::fmt::Debug for CreateBackendAuthUserPoolConfig {
         );
         formatter.field("sign_in_method", &self.sign_in_method);
         formatter.field("user_pool_name", &self.user_pool_name);
+        formatter.field("verification_message", &self.verification_message);
         formatter.finish()
     }
 }
@@ -3509,9 +3649,11 @@ pub mod create_backend_auth_user_pool_config {
             std::option::Option<std::vec::Vec<crate::model::RequiredSignUpAttributesElement>>,
         pub(crate) sign_in_method: std::option::Option<crate::model::SignInMethod>,
         pub(crate) user_pool_name: std::option::Option<std::string::String>,
+        pub(crate) verification_message:
+            std::option::Option<crate::model::CreateBackendAuthVerificationMessageConfig>,
     }
     impl Builder {
-        /// <p>Describes the forgotten password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+        /// <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
         pub fn forgot_password(
             mut self,
             input: crate::model::CreateBackendAuthForgotPasswordConfig,
@@ -3519,7 +3661,7 @@ pub mod create_backend_auth_user_pool_config {
             self.forgot_password = Some(input);
             self
         }
-        /// <p>Describes the forgotten password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+        /// <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
         pub fn set_forgot_password(
             mut self,
             input: std::option::Option<crate::model::CreateBackendAuthForgotPasswordConfig>,
@@ -3619,6 +3761,22 @@ pub mod create_backend_auth_user_pool_config {
             self.user_pool_name = input;
             self
         }
+        /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+        pub fn verification_message(
+            mut self,
+            input: crate::model::CreateBackendAuthVerificationMessageConfig,
+        ) -> Self {
+            self.verification_message = Some(input);
+            self
+        }
+        /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+        pub fn set_verification_message(
+            mut self,
+            input: std::option::Option<crate::model::CreateBackendAuthVerificationMessageConfig>,
+        ) -> Self {
+            self.verification_message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateBackendAuthUserPoolConfig`](crate::model::CreateBackendAuthUserPoolConfig)
         pub fn build(self) -> crate::model::CreateBackendAuthUserPoolConfig {
             crate::model::CreateBackendAuthUserPoolConfig {
@@ -3629,6 +3787,7 @@ pub mod create_backend_auth_user_pool_config {
                 required_sign_up_attributes: self.required_sign_up_attributes,
                 sign_in_method: self.sign_in_method,
                 user_pool_name: self.user_pool_name,
+                verification_message: self.verification_message,
             }
         }
     }
@@ -3637,6 +3796,107 @@ impl CreateBackendAuthUserPoolConfig {
     /// Creates a new builder-style object to manufacture [`CreateBackendAuthUserPoolConfig`](crate::model::CreateBackendAuthUserPoolConfig)
     pub fn builder() -> crate::model::create_backend_auth_user_pool_config::Builder {
         crate::model::create_backend_auth_user_pool_config::Builder::default()
+    }
+}
+
+/// <p>Creates an email or SMS verification message for the auth resource configured for your Amplify project.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateBackendAuthVerificationMessageConfig {
+    /// <p>The type of verification message to send.</p>
+    pub delivery_method: std::option::Option<crate::model::DeliveryMethod>,
+    /// <p>The settings for the email message.</p>
+    pub email_settings: std::option::Option<crate::model::EmailSettings>,
+    /// <p>The settings for the SMS message.</p>
+    pub sms_settings: std::option::Option<crate::model::SmsSettings>,
+}
+impl CreateBackendAuthVerificationMessageConfig {
+    /// <p>The type of verification message to send.</p>
+    pub fn delivery_method(&self) -> std::option::Option<&crate::model::DeliveryMethod> {
+        self.delivery_method.as_ref()
+    }
+    /// <p>The settings for the email message.</p>
+    pub fn email_settings(&self) -> std::option::Option<&crate::model::EmailSettings> {
+        self.email_settings.as_ref()
+    }
+    /// <p>The settings for the SMS message.</p>
+    pub fn sms_settings(&self) -> std::option::Option<&crate::model::SmsSettings> {
+        self.sms_settings.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateBackendAuthVerificationMessageConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateBackendAuthVerificationMessageConfig");
+        formatter.field("delivery_method", &self.delivery_method);
+        formatter.field("email_settings", &self.email_settings);
+        formatter.field("sms_settings", &self.sms_settings);
+        formatter.finish()
+    }
+}
+/// See [`CreateBackendAuthVerificationMessageConfig`](crate::model::CreateBackendAuthVerificationMessageConfig)
+pub mod create_backend_auth_verification_message_config {
+    /// A builder for [`CreateBackendAuthVerificationMessageConfig`](crate::model::CreateBackendAuthVerificationMessageConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) delivery_method: std::option::Option<crate::model::DeliveryMethod>,
+        pub(crate) email_settings: std::option::Option<crate::model::EmailSettings>,
+        pub(crate) sms_settings: std::option::Option<crate::model::SmsSettings>,
+    }
+    impl Builder {
+        /// <p>The type of verification message to send.</p>
+        pub fn delivery_method(mut self, input: crate::model::DeliveryMethod) -> Self {
+            self.delivery_method = Some(input);
+            self
+        }
+        /// <p>The type of verification message to send.</p>
+        pub fn set_delivery_method(
+            mut self,
+            input: std::option::Option<crate::model::DeliveryMethod>,
+        ) -> Self {
+            self.delivery_method = input;
+            self
+        }
+        /// <p>The settings for the email message.</p>
+        pub fn email_settings(mut self, input: crate::model::EmailSettings) -> Self {
+            self.email_settings = Some(input);
+            self
+        }
+        /// <p>The settings for the email message.</p>
+        pub fn set_email_settings(
+            mut self,
+            input: std::option::Option<crate::model::EmailSettings>,
+        ) -> Self {
+            self.email_settings = input;
+            self
+        }
+        /// <p>The settings for the SMS message.</p>
+        pub fn sms_settings(mut self, input: crate::model::SmsSettings) -> Self {
+            self.sms_settings = Some(input);
+            self
+        }
+        /// <p>The settings for the SMS message.</p>
+        pub fn set_sms_settings(
+            mut self,
+            input: std::option::Option<crate::model::SmsSettings>,
+        ) -> Self {
+            self.sms_settings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateBackendAuthVerificationMessageConfig`](crate::model::CreateBackendAuthVerificationMessageConfig)
+        pub fn build(self) -> crate::model::CreateBackendAuthVerificationMessageConfig {
+            crate::model::CreateBackendAuthVerificationMessageConfig {
+                delivery_method: self.delivery_method,
+                email_settings: self.email_settings,
+                sms_settings: self.sms_settings,
+            }
+        }
+    }
+}
+impl CreateBackendAuthVerificationMessageConfig {
+    /// Creates a new builder-style object to manufacture [`CreateBackendAuthVerificationMessageConfig`](crate::model::CreateBackendAuthVerificationMessageConfig)
+    pub fn builder() -> crate::model::create_backend_auth_verification_message_config::Builder {
+        crate::model::create_backend_auth_verification_message_config::Builder::default()
     }
 }
 
@@ -4195,27 +4455,27 @@ impl CreateBackendAuthMfaConfig {
     }
 }
 
-/// <p>Describes the forgot password policy for authenticating into the Amplify app.</p>
+/// <p><b>(DEPRECATED)</b> Describes the forgot password policy for authenticating into the Amplify app.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackendAuthForgotPasswordConfig {
-    /// <p>Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
+    /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
     pub delivery_method: std::option::Option<crate::model::DeliveryMethod>,
-    /// <p>The configuration for the email sent when an app user forgets their password.</p>
+    /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
     pub email_settings: std::option::Option<crate::model::EmailSettings>,
-    /// <p>The configuration for the SMS message sent when an app user forgets their password.</p>
+    /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an app user forgets their password.</p>
     pub sms_settings: std::option::Option<crate::model::SmsSettings>,
 }
 impl CreateBackendAuthForgotPasswordConfig {
-    /// <p>Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
+    /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
     pub fn delivery_method(&self) -> std::option::Option<&crate::model::DeliveryMethod> {
         self.delivery_method.as_ref()
     }
-    /// <p>The configuration for the email sent when an app user forgets their password.</p>
+    /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
     pub fn email_settings(&self) -> std::option::Option<&crate::model::EmailSettings> {
         self.email_settings.as_ref()
     }
-    /// <p>The configuration for the SMS message sent when an app user forgets their password.</p>
+    /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an app user forgets their password.</p>
     pub fn sms_settings(&self) -> std::option::Option<&crate::model::SmsSettings> {
         self.sms_settings.as_ref()
     }
@@ -4240,12 +4500,12 @@ pub mod create_backend_auth_forgot_password_config {
         pub(crate) sms_settings: std::option::Option<crate::model::SmsSettings>,
     }
     impl Builder {
-        /// <p>Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
+        /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
         pub fn delivery_method(mut self, input: crate::model::DeliveryMethod) -> Self {
             self.delivery_method = Some(input);
             self
         }
-        /// <p>Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
+        /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
         pub fn set_delivery_method(
             mut self,
             input: std::option::Option<crate::model::DeliveryMethod>,
@@ -4253,12 +4513,12 @@ pub mod create_backend_auth_forgot_password_config {
             self.delivery_method = input;
             self
         }
-        /// <p>The configuration for the email sent when an app user forgets their password.</p>
+        /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
         pub fn email_settings(mut self, input: crate::model::EmailSettings) -> Self {
             self.email_settings = Some(input);
             self
         }
-        /// <p>The configuration for the email sent when an app user forgets their password.</p>
+        /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
         pub fn set_email_settings(
             mut self,
             input: std::option::Option<crate::model::EmailSettings>,
@@ -4266,12 +4526,12 @@ pub mod create_backend_auth_forgot_password_config {
             self.email_settings = input;
             self
         }
-        /// <p>The configuration for the SMS message sent when an app user forgets their password.</p>
+        /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an app user forgets their password.</p>
         pub fn sms_settings(mut self, input: crate::model::SmsSettings) -> Self {
             self.sms_settings = Some(input);
             self
         }
-        /// <p>The configuration for the SMS message sent when an app user forgets their password.</p>
+        /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an app user forgets their password.</p>
         pub fn set_sms_settings(
             mut self,
             input: std::option::Option<crate::model::SmsSettings>,

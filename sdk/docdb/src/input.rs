@@ -527,8 +527,8 @@ pub mod copy_db_cluster_parameter_group_input {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must specify a valid cluster parameter group.</p> </li>
-        /// <li> <p>If the source cluster parameter group is in the same Region as the copy, specify a valid parameter group identifier; for example, <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li>
-        /// <li> <p>If the source parameter group is in a different Region than the copy, specify a valid cluster parameter group ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.</p> </li>
+        /// <li> <p>If the source cluster parameter group is in the same Amazon Web Services Region as the copy, specify a valid parameter group identifier; for example, <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li>
+        /// <li> <p>If the source parameter group is in a different Amazon Web Services Region than the copy, specify a valid cluster parameter group ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.</p> </li>
         /// </ul>
         pub fn source_db_cluster_parameter_group_identifier(
             mut self,
@@ -541,8 +541,8 @@ pub mod copy_db_cluster_parameter_group_input {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must specify a valid cluster parameter group.</p> </li>
-        /// <li> <p>If the source cluster parameter group is in the same Region as the copy, specify a valid parameter group identifier; for example, <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li>
-        /// <li> <p>If the source parameter group is in a different Region than the copy, specify a valid cluster parameter group ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.</p> </li>
+        /// <li> <p>If the source cluster parameter group is in the same Amazon Web Services Region as the copy, specify a valid parameter group identifier; for example, <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li>
+        /// <li> <p>If the source parameter group is in a different Amazon Web Services Region than the copy, specify a valid cluster parameter group ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.</p> </li>
         /// </ul>
         pub fn set_source_db_cluster_parameter_group_identifier(
             mut self,
@@ -760,8 +760,8 @@ pub mod copy_db_cluster_snapshot_input {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must specify a valid system snapshot in the <i>available</i> state.</p> </li>
-        /// <li> <p>If the source snapshot is in the same Region as the copy, specify a valid snapshot identifier.</p> </li>
-        /// <li> <p>If the source snapshot is in a different Region than the copy, specify a valid cluster snapshot ARN.</p> </li>
+        /// <li> <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.</p> </li>
+        /// <li> <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid cluster snapshot ARN.</p> </li>
         /// </ul>
         /// <p>Example: <code>my-cluster-snapshot1</code> </p>
         pub fn source_db_cluster_snapshot_identifier(
@@ -775,8 +775,8 @@ pub mod copy_db_cluster_snapshot_input {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must specify a valid system snapshot in the <i>available</i> state.</p> </li>
-        /// <li> <p>If the source snapshot is in the same Region as the copy, specify a valid snapshot identifier.</p> </li>
-        /// <li> <p>If the source snapshot is in a different Region than the copy, specify a valid cluster snapshot ARN.</p> </li>
+        /// <li> <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.</p> </li>
+        /// <li> <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid cluster snapshot ARN.</p> </li>
         /// </ul>
         /// <p>Example: <code>my-cluster-snapshot1</code> </p>
         pub fn set_source_db_cluster_snapshot_identifier(
@@ -817,41 +817,41 @@ pub mod copy_db_cluster_snapshot_input {
             self
         }
         /// <p>The KMS key ID for an encrypted cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key. </p>
-        /// <p>If you copy an encrypted cluster snapshot from your account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the cluster snapshot is encrypted with the same KMS key as the source cluster snapshot.</p>
-        /// <p>If you copy an encrypted cluster snapshot that is shared from another account, then you must specify a value for <code>KmsKeyId</code>.</p>
-        /// <p>To copy an encrypted cluster snapshot to another Region, set <code>KmsKeyId</code> to the KMS key ID that you want to use to encrypt the copy of the cluster snapshot in the destination Region. KMS encryption keys are specific to the Region that they are created in, and you can't use encryption keys from one Region in another Region.</p>
+        /// <p>If you copy an encrypted cluster snapshot from your Amazon Web Services account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the cluster snapshot is encrypted with the same KMS key as the source cluster snapshot.</p>
+        /// <p>If you copy an encrypted cluster snapshot that is shared from another Amazon Web Services account, then you must specify a value for <code>KmsKeyId</code>.</p>
+        /// <p>To copy an encrypted cluster snapshot to another Amazon Web Services Region, set <code>KmsKeyId</code> to the KMS key ID that you want to use to encrypt the copy of the cluster snapshot in the destination Region. KMS encryption keys are specific to the Amazon Web Services Region that they are created in, and you can't use encryption keys from one Amazon Web Services Region in another Amazon Web Services Region.</p>
         /// <p>If you copy an unencrypted cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter, an error is returned.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
         /// <p>The KMS key ID for an encrypted cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key. </p>
-        /// <p>If you copy an encrypted cluster snapshot from your account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the cluster snapshot is encrypted with the same KMS key as the source cluster snapshot.</p>
-        /// <p>If you copy an encrypted cluster snapshot that is shared from another account, then you must specify a value for <code>KmsKeyId</code>.</p>
-        /// <p>To copy an encrypted cluster snapshot to another Region, set <code>KmsKeyId</code> to the KMS key ID that you want to use to encrypt the copy of the cluster snapshot in the destination Region. KMS encryption keys are specific to the Region that they are created in, and you can't use encryption keys from one Region in another Region.</p>
+        /// <p>If you copy an encrypted cluster snapshot from your Amazon Web Services account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the cluster snapshot is encrypted with the same KMS key as the source cluster snapshot.</p>
+        /// <p>If you copy an encrypted cluster snapshot that is shared from another Amazon Web Services account, then you must specify a value for <code>KmsKeyId</code>.</p>
+        /// <p>To copy an encrypted cluster snapshot to another Amazon Web Services Region, set <code>KmsKeyId</code> to the KMS key ID that you want to use to encrypt the copy of the cluster snapshot in the destination Region. KMS encryption keys are specific to the Amazon Web Services Region that they are created in, and you can't use encryption keys from one Amazon Web Services Region in another Amazon Web Services Region.</p>
         /// <p>If you copy an unencrypted cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter, an error is returned.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
-        /// <p>The URL that contains a Signature Version 4 signed request for the<code>CopyDBClusterSnapshot</code> API action in the Region that contains the source cluster snapshot to copy. You must use the <code>PreSignedUrl</code> parameter when copying a cluster snapshot from another Region.</p>
-        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Region.</p>
-        /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Region that contains the cluster snapshot to be copied. The presigned URL request must contain the following parameter values:</p>
+        /// <p>The URL that contains a Signature Version 4 signed request for the<code>CopyDBClusterSnapshot</code> API action in the Amazon Web Services Region that contains the source cluster snapshot to copy. You must use the <code>PreSignedUrl</code> parameter when copying a cluster snapshot from another Amazon Web Services Region.</p>
+        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
+        /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Amazon Web Services Region that contains the cluster snapshot to be copied. The presigned URL request must contain the following parameter values:</p>
         /// <ul>
         /// <li> <p> <code>SourceRegion</code> - The ID of the region that contains the snapshot to be copied.</p> </li>
-        /// <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The identifier for the the encrypted cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Region. For example, if you are copying an encrypted cluster snapshot from the us-east-1 Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks something like the following: <code>arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot</code>.</p> </li>
+        /// <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The identifier for the the encrypted cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted cluster snapshot from the us-east-1 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks something like the following: <code>arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot</code>.</p> </li>
         /// <li> <p> <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new cluster snapshot to be created. This parameter isn't case sensitive.</p> </li>
         /// </ul>
         pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.pre_signed_url = Some(input.into());
             self
         }
-        /// <p>The URL that contains a Signature Version 4 signed request for the<code>CopyDBClusterSnapshot</code> API action in the Region that contains the source cluster snapshot to copy. You must use the <code>PreSignedUrl</code> parameter when copying a cluster snapshot from another Region.</p>
-        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Region.</p>
-        /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Region that contains the cluster snapshot to be copied. The presigned URL request must contain the following parameter values:</p>
+        /// <p>The URL that contains a Signature Version 4 signed request for the<code>CopyDBClusterSnapshot</code> API action in the Amazon Web Services Region that contains the source cluster snapshot to copy. You must use the <code>PreSignedUrl</code> parameter when copying a cluster snapshot from another Amazon Web Services Region.</p>
+        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
+        /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Amazon Web Services Region that contains the cluster snapshot to be copied. The presigned URL request must contain the following parameter values:</p>
         /// <ul>
         /// <li> <p> <code>SourceRegion</code> - The ID of the region that contains the snapshot to be copied.</p> </li>
-        /// <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The identifier for the the encrypted cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Region. For example, if you are copying an encrypted cluster snapshot from the us-east-1 Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks something like the following: <code>arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot</code>.</p> </li>
+        /// <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The identifier for the the encrypted cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted cluster snapshot from the us-east-1 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks something like the following: <code>arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot</code>.</p> </li>
         /// <li> <p> <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new cluster snapshot to be created. This parameter isn't case sensitive.</p> </li>
         /// </ul>
         pub fn set_pre_signed_url(
@@ -1238,7 +1238,7 @@ pub mod create_db_cluster_input {
             self
         }
         /// <p>The daily time range during which automated backups are created if automated backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region. </p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. </p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
@@ -1251,7 +1251,7 @@ pub mod create_db_cluster_input {
             self
         }
         /// <p>The daily time range during which automated backups are created if automated backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region. </p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. </p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
@@ -1268,7 +1268,7 @@ pub mod create_db_cluster_input {
         }
         /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
         /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region, occurring on a random day of the week.</p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
         /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
         pub fn preferred_maintenance_window(
@@ -1280,7 +1280,7 @@ pub mod create_db_cluster_input {
         }
         /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
         /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region, occurring on a random day of the week.</p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
         /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
         pub fn set_preferred_maintenance_window(
@@ -1320,23 +1320,23 @@ pub mod create_db_cluster_input {
             self
         }
         /// <p>The KMS key identifier for an encrypted cluster.</p>
-        /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same account that owns the KMS encryption key that is used to encrypt the new cluster, you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
+        /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon Web Services account that owns the KMS encryption key that is used to encrypt the new cluster, you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
         /// <p>If an encryption key is not specified in <code>KmsKeyId</code>: </p>
         /// <ul>
         /// <li> <p>If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default encryption key. </p> </li>
         /// </ul>
-        /// <p>KMS creates the default encryption key for your account. Your account has a different default encryption key for each Regions.</p>
+        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Regions.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
         /// <p>The KMS key identifier for an encrypted cluster.</p>
-        /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same account that owns the KMS encryption key that is used to encrypt the new cluster, you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
+        /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon Web Services account that owns the KMS encryption key that is used to encrypt the new cluster, you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
         /// <p>If an encryption key is not specified in <code>KmsKeyId</code>: </p>
         /// <ul>
         /// <li> <p>If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default encryption key. </p> </li>
         /// </ul>
-        /// <p>KMS creates the default encryption key for your account. Your account has a different default encryption key for each Regions.</p>
+        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Regions.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -1961,6 +1961,8 @@ pub mod create_db_instance_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) promotion_tier: std::option::Option<i32>,
+        pub(crate) enable_performance_insights: std::option::Option<bool>,
+        pub(crate) performance_insights_kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
@@ -2016,14 +2018,14 @@ pub mod create_db_instance_input {
             self
         }
         /// <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
-        /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Region.</p>
+        /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
         /// <p>Example: <code>us-east-1d</code> </p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone = Some(input.into());
             self
         }
         /// <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
-        /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Region.</p>
+        /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
         /// <p>Example: <code>us-east-1d</code> </p>
         pub fn set_availability_zone(
             mut self,
@@ -2034,7 +2036,7 @@ pub mod create_db_instance_input {
         }
         /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
         /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region, occurring on a random day of the week. </p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. </p>
         /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
         pub fn preferred_maintenance_window(
@@ -2046,7 +2048,7 @@ pub mod create_db_instance_input {
         }
         /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
         /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region, occurring on a random day of the week. </p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. </p>
         /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
         pub fn set_preferred_maintenance_window(
@@ -2114,6 +2116,36 @@ pub mod create_db_instance_input {
             self.promotion_tier = input;
             self
         }
+        /// <p>A value that indicates whether to enable Performance Insights for the DB Instance. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using Amazon Performance Insights</a>.</p>
+        pub fn enable_performance_insights(mut self, input: bool) -> Self {
+            self.enable_performance_insights = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether to enable Performance Insights for the DB Instance. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using Amazon Performance Insights</a>.</p>
+        pub fn set_enable_performance_insights(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_performance_insights = input;
+            self
+        }
+        /// <p>The KMS key identifier for encryption of Performance Insights data.</p>
+        /// <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+        /// <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>
+        pub fn performance_insights_kms_key_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.performance_insights_kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The KMS key identifier for encryption of Performance Insights data.</p>
+        /// <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+        /// <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>
+        pub fn set_performance_insights_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.performance_insights_kms_key_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDbInstanceInput`](crate::input::CreateDbInstanceInput)
         pub fn build(
             self,
@@ -2131,6 +2163,8 @@ pub mod create_db_instance_input {
                 tags: self.tags,
                 db_cluster_identifier: self.db_cluster_identifier,
                 promotion_tier: self.promotion_tier,
+                enable_performance_insights: self.enable_performance_insights,
+                performance_insights_kms_key_id: self.performance_insights_kms_key_id,
             })
         }
     }
@@ -5054,9 +5088,9 @@ pub mod describe_db_cluster_snapshots_input {
         }
         /// <p>The type of cluster snapshots to be returned. You can specify one of the following values:</p>
         /// <ul>
-        /// <li> <p> <code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has automatically created for your account.</p> </li>
-        /// <li> <p> <code>manual</code> - Return all cluster snapshots that you have manually created for your account.</p> </li>
-        /// <li> <p> <code>shared</code> - Return all manual cluster snapshots that have been shared to your account.</p> </li>
+        /// <li> <p> <code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has automatically created for your Amazon Web Services account.</p> </li>
+        /// <li> <p> <code>manual</code> - Return all cluster snapshots that you have manually created for your Amazon Web Services account.</p> </li>
+        /// <li> <p> <code>shared</code> - Return all manual cluster snapshots that have been shared to your Amazon Web Services account.</p> </li>
         /// <li> <p> <code>public</code> - Return all cluster snapshots that have been marked as public.</p> </li>
         /// </ul>
         /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual cluster snapshots are returned. You can include shared cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public cluster snapshots with these results by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>
@@ -5067,9 +5101,9 @@ pub mod describe_db_cluster_snapshots_input {
         }
         /// <p>The type of cluster snapshots to be returned. You can specify one of the following values:</p>
         /// <ul>
-        /// <li> <p> <code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has automatically created for your account.</p> </li>
-        /// <li> <p> <code>manual</code> - Return all cluster snapshots that you have manually created for your account.</p> </li>
-        /// <li> <p> <code>shared</code> - Return all manual cluster snapshots that have been shared to your account.</p> </li>
+        /// <li> <p> <code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has automatically created for your Amazon Web Services account.</p> </li>
+        /// <li> <p> <code>manual</code> - Return all cluster snapshots that you have manually created for your Amazon Web Services account.</p> </li>
+        /// <li> <p> <code>shared</code> - Return all manual cluster snapshots that have been shared to your Amazon Web Services account.</p> </li>
         /// <li> <p> <code>public</code> - Return all cluster snapshots that have been marked as public.</p> </li>
         /// </ul>
         /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual cluster snapshots are returned. You can include shared cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public cluster snapshots with these results by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>
@@ -5124,22 +5158,22 @@ pub mod describe_db_cluster_snapshots_input {
             self.marker = input;
             self
         }
-        /// <p>Set to <code>true</code> to include shared manual cluster snapshots from other accounts that this account has been given permission to copy or restore, and otherwise <code>false</code>. The default is <code>false</code>.</p>
+        /// <p>Set to <code>true</code> to include shared manual cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore, and otherwise <code>false</code>. The default is <code>false</code>.</p>
         pub fn include_shared(mut self, input: bool) -> Self {
             self.include_shared = Some(input);
             self
         }
-        /// <p>Set to <code>true</code> to include shared manual cluster snapshots from other accounts that this account has been given permission to copy or restore, and otherwise <code>false</code>. The default is <code>false</code>.</p>
+        /// <p>Set to <code>true</code> to include shared manual cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore, and otherwise <code>false</code>. The default is <code>false</code>.</p>
         pub fn set_include_shared(mut self, input: std::option::Option<bool>) -> Self {
             self.include_shared = input;
             self
         }
-        /// <p>Set to <code>true</code> to include manual cluster snapshots that are public and can be copied or restored by any account, and otherwise <code>false</code>. The default is <code>false</code>.</p>
+        /// <p>Set to <code>true</code> to include manual cluster snapshots that are public and can be copied or restored by any Amazon Web Services account, and otherwise <code>false</code>. The default is <code>false</code>.</p>
         pub fn include_public(mut self, input: bool) -> Self {
             self.include_public = Some(input);
             self
         }
-        /// <p>Set to <code>true</code> to include manual cluster snapshots that are public and can be copied or restored by any account, and otherwise <code>false</code>. The default is <code>false</code>.</p>
+        /// <p>Set to <code>true</code> to include manual cluster snapshots that are public and can be copied or restored by any Amazon Web Services account, and otherwise <code>false</code>. The default is <code>false</code>.</p>
         pub fn set_include_public(mut self, input: std::option::Option<bool>) -> Self {
             self.include_public = input;
             self
@@ -7904,7 +7938,7 @@ pub mod modify_db_cluster_input {
             self
         }
         /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. </p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region. </p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. </p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
@@ -7917,7 +7951,7 @@ pub mod modify_db_cluster_input {
             self
         }
         /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. </p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region. </p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. </p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
@@ -7934,7 +7968,7 @@ pub mod modify_db_cluster_input {
         }
         /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
         /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region, occurring on a random day of the week. </p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. </p>
         /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
         pub fn preferred_maintenance_window(
@@ -7946,7 +7980,7 @@ pub mod modify_db_cluster_input {
         }
         /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
         /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region, occurring on a random day of the week. </p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. </p>
         /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
         pub fn set_preferred_maintenance_window(
@@ -8319,13 +8353,13 @@ pub mod modify_db_cluster_snapshot_attribute_input {
             self
         }
         /// <p>The name of the cluster snapshot attribute to modify.</p>
-        /// <p>To manage authorization for other accounts to copy or restore a manual cluster snapshot, set this value to <code>restore</code>.</p>
+        /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual cluster snapshot, set this value to <code>restore</code>.</p>
         pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.attribute_name = Some(input.into());
             self
         }
         /// <p>The name of the cluster snapshot attribute to modify.</p>
-        /// <p>To manage authorization for other accounts to copy or restore a manual cluster snapshot, set this value to <code>restore</code>.</p>
+        /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual cluster snapshot, set this value to <code>restore</code>.</p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8338,7 +8372,7 @@ pub mod modify_db_cluster_snapshot_attribute_input {
         /// To override the contents of this collection use [`set_values_to_add`](Self::set_values_to_add).
         ///
         /// <p>A list of cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>.</p>
-        /// <p>To authorize other accounts to copy or restore a manual cluster snapshot, set this list to include one or more account IDs. To make the manual cluster snapshot restorable by any account, set it to <code>all</code>. Do not add the <code>all</code> value for any manual cluster snapshots that contain private information that you don't want to be available to all accounts.</p>
+        /// <p>To authorize other Amazon Web Services accounts to copy or restore a manual cluster snapshot, set this list to include one or more Amazon Web Services account IDs. To make the manual cluster snapshot restorable by any Amazon Web Services account, set it to <code>all</code>. Do not add the <code>all</code> value for any manual cluster snapshots that contain private information that you don't want to be available to all Amazon Web Services accounts.</p>
         pub fn values_to_add(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values_to_add.unwrap_or_default();
             v.push(input.into());
@@ -8346,7 +8380,7 @@ pub mod modify_db_cluster_snapshot_attribute_input {
             self
         }
         /// <p>A list of cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>.</p>
-        /// <p>To authorize other accounts to copy or restore a manual cluster snapshot, set this list to include one or more account IDs. To make the manual cluster snapshot restorable by any account, set it to <code>all</code>. Do not add the <code>all</code> value for any manual cluster snapshots that contain private information that you don't want to be available to all accounts.</p>
+        /// <p>To authorize other Amazon Web Services accounts to copy or restore a manual cluster snapshot, set this list to include one or more Amazon Web Services account IDs. To make the manual cluster snapshot restorable by any Amazon Web Services account, set it to <code>all</code>. Do not add the <code>all</code> value for any manual cluster snapshots that contain private information that you don't want to be available to all Amazon Web Services accounts.</p>
         pub fn set_values_to_add(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8359,7 +8393,7 @@ pub mod modify_db_cluster_snapshot_attribute_input {
         /// To override the contents of this collection use [`set_values_to_remove`](Self::set_values_to_remove).
         ///
         /// <p>A list of cluster snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.</p>
-        /// <p>To remove authorization for other accounts to copy or restore a manual cluster snapshot, set this list to include one or more account identifiers. To remove authorization for any account to copy or restore the cluster snapshot, set it to <code>all</code> . If you specify <code>all</code>, an account whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore a manual cluster snapshot.</p>
+        /// <p>To remove authorization for other Amazon Web Services accounts to copy or restore a manual cluster snapshot, set this list to include one or more Amazon Web Services account identifiers. To remove authorization for any Amazon Web Services account to copy or restore the cluster snapshot, set it to <code>all</code> . If you specify <code>all</code>, an Amazon Web Services account whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore a manual cluster snapshot.</p>
         pub fn values_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values_to_remove.unwrap_or_default();
             v.push(input.into());
@@ -8367,7 +8401,7 @@ pub mod modify_db_cluster_snapshot_attribute_input {
             self
         }
         /// <p>A list of cluster snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.</p>
-        /// <p>To remove authorization for other accounts to copy or restore a manual cluster snapshot, set this list to include one or more account identifiers. To remove authorization for any account to copy or restore the cluster snapshot, set it to <code>all</code> . If you specify <code>all</code>, an account whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore a manual cluster snapshot.</p>
+        /// <p>To remove authorization for other Amazon Web Services accounts to copy or restore a manual cluster snapshot, set this list to include one or more Amazon Web Services account identifiers. To remove authorization for any Amazon Web Services account to copy or restore the cluster snapshot, set it to <code>all</code> . If you specify <code>all</code>, an Amazon Web Services account whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore a manual cluster snapshot.</p>
         pub fn set_values_to_remove(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8511,6 +8545,8 @@ pub mod modify_db_instance_input {
         pub(crate) new_db_instance_identifier: std::option::Option<std::string::String>,
         pub(crate) ca_certificate_identifier: std::option::Option<std::string::String>,
         pub(crate) promotion_tier: std::option::Option<i32>,
+        pub(crate) enable_performance_insights: std::option::Option<bool>,
+        pub(crate) performance_insights_kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The instance identifier. This value is stored as a lowercase string.</p>
@@ -8534,14 +8570,14 @@ pub mod modify_db_instance_input {
             self.db_instance_identifier = input;
             self
         }
-        /// <p>The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>. Not all instance classes are available in all Regions. </p>
+        /// <p>The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>. Not all instance classes are available in all Amazon Web Services Regions. </p>
         /// <p>If you modify the instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this request. </p>
         /// <p>Default: Uses existing setting.</p>
         pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_instance_class = Some(input.into());
             self
         }
-        /// <p>The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>. Not all instance classes are available in all Regions. </p>
+        /// <p>The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>. Not all instance classes are available in all Amazon Web Services Regions. </p>
         /// <p>If you modify the instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this request. </p>
         /// <p>Default: Uses existing setting.</p>
         pub fn set_db_instance_class(
@@ -8653,6 +8689,36 @@ pub mod modify_db_instance_input {
             self.promotion_tier = input;
             self
         }
+        /// <p>A value that indicates whether to enable Performance Insights for the DB Instance. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using Amazon Performance Insights</a>.</p>
+        pub fn enable_performance_insights(mut self, input: bool) -> Self {
+            self.enable_performance_insights = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether to enable Performance Insights for the DB Instance. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using Amazon Performance Insights</a>.</p>
+        pub fn set_enable_performance_insights(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_performance_insights = input;
+            self
+        }
+        /// <p>The KMS key identifier for encryption of Performance Insights data.</p>
+        /// <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+        /// <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>
+        pub fn performance_insights_kms_key_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.performance_insights_kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The KMS key identifier for encryption of Performance Insights data.</p>
+        /// <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+        /// <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>
+        pub fn set_performance_insights_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.performance_insights_kms_key_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ModifyDbInstanceInput`](crate::input::ModifyDbInstanceInput)
         pub fn build(
             self,
@@ -8669,6 +8735,8 @@ pub mod modify_db_instance_input {
                 new_db_instance_identifier: self.new_db_instance_identifier,
                 ca_certificate_identifier: self.ca_certificate_identifier,
                 promotion_tier: self.promotion_tier,
+                enable_performance_insights: self.enable_performance_insights,
+                performance_insights_kms_key_id: self.performance_insights_kms_key_id,
             })
         }
     }
@@ -10357,7 +10425,7 @@ pub mod restore_db_cluster_from_snapshot_input {
             self
         }
         /// <p>The KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster snapshot.</p>
-        /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
+        /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same Amazon Web Services account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
         /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
         /// <ul>
         /// <li> <p>If the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored cluster is encrypted using the KMS key that was used to encrypt the snapshot or the cluster snapshot.</p> </li>
@@ -10368,7 +10436,7 @@ pub mod restore_db_cluster_from_snapshot_input {
             self
         }
         /// <p>The KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster snapshot.</p>
-        /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
+        /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same Amazon Web Services account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
         /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
         /// <ul>
         /// <li> <p>If the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored cluster is encrypted using the KMS key that was used to encrypt the snapshot or the cluster snapshot.</p> </li>
@@ -10724,7 +10792,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
             self
         }
         /// <p>The KMS key identifier to use when restoring an encrypted cluster from an encrypted cluster.</p>
-        /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
+        /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same Amazon Web Services account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
         /// <p>You can restore to a new cluster and encrypt the new cluster with an KMS key that is different from the KMS key used to encrypt the source cluster. The new DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.</p>
         /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
         /// <ul>
@@ -10737,7 +10805,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
             self
         }
         /// <p>The KMS key identifier to use when restoring an encrypted cluster from an encrypted cluster.</p>
-        /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
+        /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same Amazon Web Services account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
         /// <p>You can restore to a new cluster and encrypt the new cluster with an KMS key that is different from the KMS key used to encrypt the source cluster. The new DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.</p>
         /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
         /// <ul>
@@ -11278,7 +11346,7 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>The tags to be assigned to the restored cluster.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The KMS key identifier to use when restoring an encrypted cluster from an encrypted cluster.</p>
-    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same Amazon Web Services account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>You can restore to a new cluster and encrypt the new cluster with an KMS key that is different from the KMS key used to encrypt the source cluster. The new DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.</p>
     /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
     /// <ul>
@@ -11351,7 +11419,7 @@ impl RestoreDbClusterToPointInTimeInput {
         self.tags.as_deref()
     }
     /// <p>The KMS key identifier to use when restoring an encrypted cluster from an encrypted cluster.</p>
-    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same Amazon Web Services account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>You can restore to a new cluster and encrypt the new cluster with an KMS key that is different from the KMS key used to encrypt the source cluster. The new DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.</p>
     /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
     /// <ul>
@@ -11439,7 +11507,7 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>The tags to be assigned to the restored cluster.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster snapshot.</p>
-    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same Amazon Web Services account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
     /// <ul>
     /// <li> <p>If the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored cluster is encrypted using the KMS key that was used to encrypt the snapshot or the cluster snapshot.</p> </li>
@@ -11507,7 +11575,7 @@ impl RestoreDbClusterFromSnapshotInput {
         self.tags.as_deref()
     }
     /// <p>The KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster snapshot.</p>
-    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same Amazon Web Services account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
     /// <ul>
     /// <li> <p>If the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored cluster is encrypted using the KMS key that was used to encrypt the snapshot or the cluster snapshot.</p> </li>
@@ -11864,7 +11932,7 @@ pub struct ModifyDbInstanceInput {
     /// <li> <p>Must match the identifier of an existing <code>DBInstance</code>.</p> </li>
     /// </ul>
     pub db_instance_identifier: std::option::Option<std::string::String>,
-    /// <p>The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>. Not all instance classes are available in all Regions. </p>
+    /// <p>The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>. Not all instance classes are available in all Amazon Web Services Regions. </p>
     /// <p>If you modify the instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this request. </p>
     /// <p>Default: Uses existing setting.</p>
     pub db_instance_class: std::option::Option<std::string::String>,
@@ -11895,6 +11963,12 @@ pub struct ModifyDbInstanceInput {
     /// <p>Default: 1</p>
     /// <p>Valid values: 0-15</p>
     pub promotion_tier: std::option::Option<i32>,
+    /// <p>A value that indicates whether to enable Performance Insights for the DB Instance. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using Amazon Performance Insights</a>.</p>
+    pub enable_performance_insights: std::option::Option<bool>,
+    /// <p>The KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>
+    pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
 }
 impl ModifyDbInstanceInput {
     /// <p>The instance identifier. This value is stored as a lowercase string.</p>
@@ -11905,7 +11979,7 @@ impl ModifyDbInstanceInput {
     pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
-    /// <p>The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>. Not all instance classes are available in all Regions. </p>
+    /// <p>The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>. Not all instance classes are available in all Amazon Web Services Regions. </p>
     /// <p>If you modify the instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this request. </p>
     /// <p>Default: Uses existing setting.</p>
     pub fn db_instance_class(&self) -> std::option::Option<&str> {
@@ -11950,6 +12024,16 @@ impl ModifyDbInstanceInput {
     pub fn promotion_tier(&self) -> std::option::Option<i32> {
         self.promotion_tier
     }
+    /// <p>A value that indicates whether to enable Performance Insights for the DB Instance. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using Amazon Performance Insights</a>.</p>
+    pub fn enable_performance_insights(&self) -> std::option::Option<bool> {
+        self.enable_performance_insights
+    }
+    /// <p>The KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>
+    pub fn performance_insights_kms_key_id(&self) -> std::option::Option<&str> {
+        self.performance_insights_kms_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyDbInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11971,6 +12055,14 @@ impl std::fmt::Debug for ModifyDbInstanceInput {
         );
         formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
         formatter.field("promotion_tier", &self.promotion_tier);
+        formatter.field(
+            "enable_performance_insights",
+            &self.enable_performance_insights,
+        );
+        formatter.field(
+            "performance_insights_kms_key_id",
+            &self.performance_insights_kms_key_id,
+        );
         formatter.finish()
     }
 }
@@ -11982,13 +12074,13 @@ pub struct ModifyDbClusterSnapshotAttributeInput {
     /// <p>The identifier for the cluster snapshot to modify the attributes for.</p>
     pub db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The name of the cluster snapshot attribute to modify.</p>
-    /// <p>To manage authorization for other accounts to copy or restore a manual cluster snapshot, set this value to <code>restore</code>.</p>
+    /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual cluster snapshot, set this value to <code>restore</code>.</p>
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>A list of cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>.</p>
-    /// <p>To authorize other accounts to copy or restore a manual cluster snapshot, set this list to include one or more account IDs. To make the manual cluster snapshot restorable by any account, set it to <code>all</code>. Do not add the <code>all</code> value for any manual cluster snapshots that contain private information that you don't want to be available to all accounts.</p>
+    /// <p>To authorize other Amazon Web Services accounts to copy or restore a manual cluster snapshot, set this list to include one or more Amazon Web Services account IDs. To make the manual cluster snapshot restorable by any Amazon Web Services account, set it to <code>all</code>. Do not add the <code>all</code> value for any manual cluster snapshots that contain private information that you don't want to be available to all Amazon Web Services accounts.</p>
     pub values_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of cluster snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.</p>
-    /// <p>To remove authorization for other accounts to copy or restore a manual cluster snapshot, set this list to include one or more account identifiers. To remove authorization for any account to copy or restore the cluster snapshot, set it to <code>all</code> . If you specify <code>all</code>, an account whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore a manual cluster snapshot.</p>
+    /// <p>To remove authorization for other Amazon Web Services accounts to copy or restore a manual cluster snapshot, set this list to include one or more Amazon Web Services account identifiers. To remove authorization for any Amazon Web Services account to copy or restore the cluster snapshot, set it to <code>all</code> . If you specify <code>all</code>, an Amazon Web Services account whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore a manual cluster snapshot.</p>
     pub values_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ModifyDbClusterSnapshotAttributeInput {
@@ -11997,17 +12089,17 @@ impl ModifyDbClusterSnapshotAttributeInput {
         self.db_cluster_snapshot_identifier.as_deref()
     }
     /// <p>The name of the cluster snapshot attribute to modify.</p>
-    /// <p>To manage authorization for other accounts to copy or restore a manual cluster snapshot, set this value to <code>restore</code>.</p>
+    /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual cluster snapshot, set this value to <code>restore</code>.</p>
     pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
     /// <p>A list of cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>.</p>
-    /// <p>To authorize other accounts to copy or restore a manual cluster snapshot, set this list to include one or more account IDs. To make the manual cluster snapshot restorable by any account, set it to <code>all</code>. Do not add the <code>all</code> value for any manual cluster snapshots that contain private information that you don't want to be available to all accounts.</p>
+    /// <p>To authorize other Amazon Web Services accounts to copy or restore a manual cluster snapshot, set this list to include one or more Amazon Web Services account IDs. To make the manual cluster snapshot restorable by any Amazon Web Services account, set it to <code>all</code>. Do not add the <code>all</code> value for any manual cluster snapshots that contain private information that you don't want to be available to all Amazon Web Services accounts.</p>
     pub fn values_to_add(&self) -> std::option::Option<&[std::string::String]> {
         self.values_to_add.as_deref()
     }
     /// <p>A list of cluster snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.</p>
-    /// <p>To remove authorization for other accounts to copy or restore a manual cluster snapshot, set this list to include one or more account identifiers. To remove authorization for any account to copy or restore the cluster snapshot, set it to <code>all</code> . If you specify <code>all</code>, an account whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore a manual cluster snapshot.</p>
+    /// <p>To remove authorization for other Amazon Web Services accounts to copy or restore a manual cluster snapshot, set this list to include one or more Amazon Web Services account identifiers. To remove authorization for any Amazon Web Services account to copy or restore the cluster snapshot, set it to <code>all</code> . If you specify <code>all</code>, an Amazon Web Services account whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore a manual cluster snapshot.</p>
     pub fn values_to_remove(&self) -> std::option::Option<&[std::string::String]> {
         self.values_to_remove.as_deref()
     }
@@ -12099,7 +12191,7 @@ pub struct ModifyDbClusterInput {
     /// <p>Constraints: Must contain from 8 to 100 characters.</p>
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. </p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region. </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. </p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
@@ -12110,7 +12202,7 @@ pub struct ModifyDbClusterInput {
     pub preferred_backup_window: std::option::Option<std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region, occurring on a random day of the week. </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. </p>
     /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
@@ -12177,7 +12269,7 @@ impl ModifyDbClusterInput {
         self.master_user_password.as_deref()
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. </p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region. </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. </p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
@@ -12190,7 +12282,7 @@ impl ModifyDbClusterInput {
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region, occurring on a random day of the week. </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. </p>
     /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
@@ -12933,9 +13025,9 @@ pub struct DescribeDbClusterSnapshotsInput {
     pub db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The type of cluster snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has automatically created for your account.</p> </li>
-    /// <li> <p> <code>manual</code> - Return all cluster snapshots that you have manually created for your account.</p> </li>
-    /// <li> <p> <code>shared</code> - Return all manual cluster snapshots that have been shared to your account.</p> </li>
+    /// <li> <p> <code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has automatically created for your Amazon Web Services account.</p> </li>
+    /// <li> <p> <code>manual</code> - Return all cluster snapshots that you have manually created for your Amazon Web Services account.</p> </li>
+    /// <li> <p> <code>shared</code> - Return all manual cluster snapshots that have been shared to your Amazon Web Services account.</p> </li>
     /// <li> <p> <code>public</code> - Return all cluster snapshots that have been marked as public.</p> </li>
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual cluster snapshots are returned. You can include shared cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public cluster snapshots with these results by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>
@@ -12949,9 +13041,9 @@ pub struct DescribeDbClusterSnapshotsInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>Set to <code>true</code> to include shared manual cluster snapshots from other accounts that this account has been given permission to copy or restore, and otherwise <code>false</code>. The default is <code>false</code>.</p>
+    /// <p>Set to <code>true</code> to include shared manual cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore, and otherwise <code>false</code>. The default is <code>false</code>.</p>
     pub include_shared: bool,
-    /// <p>Set to <code>true</code> to include manual cluster snapshots that are public and can be copied or restored by any account, and otherwise <code>false</code>. The default is <code>false</code>.</p>
+    /// <p>Set to <code>true</code> to include manual cluster snapshots that are public and can be copied or restored by any Amazon Web Services account, and otherwise <code>false</code>. The default is <code>false</code>.</p>
     pub include_public: bool,
 }
 impl DescribeDbClusterSnapshotsInput {
@@ -12974,9 +13066,9 @@ impl DescribeDbClusterSnapshotsInput {
     }
     /// <p>The type of cluster snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has automatically created for your account.</p> </li>
-    /// <li> <p> <code>manual</code> - Return all cluster snapshots that you have manually created for your account.</p> </li>
-    /// <li> <p> <code>shared</code> - Return all manual cluster snapshots that have been shared to your account.</p> </li>
+    /// <li> <p> <code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has automatically created for your Amazon Web Services account.</p> </li>
+    /// <li> <p> <code>manual</code> - Return all cluster snapshots that you have manually created for your Amazon Web Services account.</p> </li>
+    /// <li> <p> <code>shared</code> - Return all manual cluster snapshots that have been shared to your Amazon Web Services account.</p> </li>
     /// <li> <p> <code>public</code> - Return all cluster snapshots that have been marked as public.</p> </li>
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual cluster snapshots are returned. You can include shared cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public cluster snapshots with these results by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>
@@ -12998,11 +13090,11 @@ impl DescribeDbClusterSnapshotsInput {
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>Set to <code>true</code> to include shared manual cluster snapshots from other accounts that this account has been given permission to copy or restore, and otherwise <code>false</code>. The default is <code>false</code>.</p>
+    /// <p>Set to <code>true</code> to include shared manual cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore, and otherwise <code>false</code>. The default is <code>false</code>.</p>
     pub fn include_shared(&self) -> bool {
         self.include_shared
     }
-    /// <p>Set to <code>true</code> to include manual cluster snapshots that are public and can be copied or restored by any account, and otherwise <code>false</code>. The default is <code>false</code>.</p>
+    /// <p>Set to <code>true</code> to include manual cluster snapshots that are public and can be copied or restored by any Amazon Web Services account, and otherwise <code>false</code>. The default is <code>false</code>.</p>
     pub fn include_public(&self) -> bool {
         self.include_public
     }
@@ -13743,12 +13835,12 @@ pub struct CreateDbInstanceInput {
     /// <p>Valid value: <code>docdb</code> </p>
     pub engine: std::option::Option<std::string::String>,
     /// <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
-    /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Region.</p>
+    /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>Example: <code>us-east-1d</code> </p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region, occurring on a random day of the week. </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. </p>
     /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
@@ -13763,6 +13855,12 @@ pub struct CreateDbInstanceInput {
     /// <p>Default: 1</p>
     /// <p>Valid values: 0-15</p>
     pub promotion_tier: std::option::Option<i32>,
+    /// <p>A value that indicates whether to enable Performance Insights for the DB Instance. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using Amazon Performance Insights</a>.</p>
+    pub enable_performance_insights: std::option::Option<bool>,
+    /// <p>The KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>
+    pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
 }
 impl CreateDbInstanceInput {
     /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
@@ -13786,14 +13884,14 @@ impl CreateDbInstanceInput {
         self.engine.as_deref()
     }
     /// <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
-    /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Region.</p>
+    /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>Example: <code>us-east-1d</code> </p>
     pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region, occurring on a random day of the week. </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. </p>
     /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
@@ -13818,6 +13916,16 @@ impl CreateDbInstanceInput {
     pub fn promotion_tier(&self) -> std::option::Option<i32> {
         self.promotion_tier
     }
+    /// <p>A value that indicates whether to enable Performance Insights for the DB Instance. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using Amazon Performance Insights</a>.</p>
+    pub fn enable_performance_insights(&self) -> std::option::Option<bool> {
+        self.enable_performance_insights
+    }
+    /// <p>The KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>
+    pub fn performance_insights_kms_key_id(&self) -> std::option::Option<&str> {
+        self.performance_insights_kms_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDbInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13837,6 +13945,14 @@ impl std::fmt::Debug for CreateDbInstanceInput {
         formatter.field("tags", &self.tags);
         formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
         formatter.field("promotion_tier", &self.promotion_tier);
+        formatter.field(
+            "enable_performance_insights",
+            &self.enable_performance_insights,
+        );
+        formatter.field(
+            "performance_insights_kms_key_id",
+            &self.performance_insights_kms_key_id,
+        );
         formatter.finish()
     }
 }
@@ -14009,7 +14125,7 @@ pub struct CreateDbClusterInput {
     /// <p>Constraints: Must contain from 8 to 100 characters.</p>
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region. </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. </p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
@@ -14020,7 +14136,7 @@ pub struct CreateDbClusterInput {
     pub preferred_backup_window: std::option::Option<std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region, occurring on a random day of the week.</p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
@@ -14029,12 +14145,12 @@ pub struct CreateDbClusterInput {
     /// <p>Specifies whether the cluster is encrypted.</p>
     pub storage_encrypted: std::option::Option<bool>,
     /// <p>The KMS key identifier for an encrypted cluster.</p>
-    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same account that owns the KMS encryption key that is used to encrypt the new cluster, you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon Web Services account that owns the KMS encryption key that is used to encrypt the new cluster, you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If an encryption key is not specified in <code>KmsKeyId</code>: </p>
     /// <ul>
     /// <li> <p>If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default encryption key. </p> </li>
     /// </ul>
-    /// <p>KMS creates the default encryption key for your account. Your account has a different default encryption key for each Regions.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Regions.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Not currently supported. </p>
     pub pre_signed_url: std::option::Option<std::string::String>,
@@ -14113,7 +14229,7 @@ impl CreateDbClusterInput {
         self.master_user_password.as_deref()
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region. </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. </p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
@@ -14126,7 +14242,7 @@ impl CreateDbClusterInput {
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region, occurring on a random day of the week.</p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
@@ -14141,12 +14257,12 @@ impl CreateDbClusterInput {
         self.storage_encrypted
     }
     /// <p>The KMS key identifier for an encrypted cluster.</p>
-    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same account that owns the KMS encryption key that is used to encrypt the new cluster, you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon Web Services account that owns the KMS encryption key that is used to encrypt the new cluster, you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If an encryption key is not specified in <code>KmsKeyId</code>: </p>
     /// <ul>
     /// <li> <p>If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default encryption key. </p> </li>
     /// </ul>
-    /// <p>KMS creates the default encryption key for your account. Your account has a different default encryption key for each Regions.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Regions.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -14211,8 +14327,8 @@ pub struct CopyDbClusterSnapshotInput {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must specify a valid system snapshot in the <i>available</i> state.</p> </li>
-    /// <li> <p>If the source snapshot is in the same Region as the copy, specify a valid snapshot identifier.</p> </li>
-    /// <li> <p>If the source snapshot is in a different Region than the copy, specify a valid cluster snapshot ARN.</p> </li>
+    /// <li> <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.</p> </li>
+    /// <li> <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid cluster snapshot ARN.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code> </p>
     pub source_db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
@@ -14226,17 +14342,17 @@ pub struct CopyDbClusterSnapshotInput {
     /// <p>Example: <code>my-cluster-snapshot2</code> </p>
     pub target_db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The KMS key ID for an encrypted cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key. </p>
-    /// <p>If you copy an encrypted cluster snapshot from your account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the cluster snapshot is encrypted with the same KMS key as the source cluster snapshot.</p>
-    /// <p>If you copy an encrypted cluster snapshot that is shared from another account, then you must specify a value for <code>KmsKeyId</code>.</p>
-    /// <p>To copy an encrypted cluster snapshot to another Region, set <code>KmsKeyId</code> to the KMS key ID that you want to use to encrypt the copy of the cluster snapshot in the destination Region. KMS encryption keys are specific to the Region that they are created in, and you can't use encryption keys from one Region in another Region.</p>
+    /// <p>If you copy an encrypted cluster snapshot from your Amazon Web Services account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the cluster snapshot is encrypted with the same KMS key as the source cluster snapshot.</p>
+    /// <p>If you copy an encrypted cluster snapshot that is shared from another Amazon Web Services account, then you must specify a value for <code>KmsKeyId</code>.</p>
+    /// <p>To copy an encrypted cluster snapshot to another Amazon Web Services Region, set <code>KmsKeyId</code> to the KMS key ID that you want to use to encrypt the copy of the cluster snapshot in the destination Region. KMS encryption keys are specific to the Amazon Web Services Region that they are created in, and you can't use encryption keys from one Amazon Web Services Region in another Amazon Web Services Region.</p>
     /// <p>If you copy an unencrypted cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter, an error is returned.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The URL that contains a Signature Version 4 signed request for the<code>CopyDBClusterSnapshot</code> API action in the Region that contains the source cluster snapshot to copy. You must use the <code>PreSignedUrl</code> parameter when copying a cluster snapshot from another Region.</p>
-    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Region.</p>
-    /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Region that contains the cluster snapshot to be copied. The presigned URL request must contain the following parameter values:</p>
+    /// <p>The URL that contains a Signature Version 4 signed request for the<code>CopyDBClusterSnapshot</code> API action in the Amazon Web Services Region that contains the source cluster snapshot to copy. You must use the <code>PreSignedUrl</code> parameter when copying a cluster snapshot from another Amazon Web Services Region.</p>
+    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
+    /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Amazon Web Services Region that contains the cluster snapshot to be copied. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
     /// <li> <p> <code>SourceRegion</code> - The ID of the region that contains the snapshot to be copied.</p> </li>
-    /// <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The identifier for the the encrypted cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Region. For example, if you are copying an encrypted cluster snapshot from the us-east-1 Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks something like the following: <code>arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot</code>.</p> </li>
+    /// <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The identifier for the the encrypted cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted cluster snapshot from the us-east-1 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks something like the following: <code>arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot</code>.</p> </li>
     /// <li> <p> <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new cluster snapshot to be created. This parameter isn't case sensitive.</p> </li>
     /// </ul>
     pub pre_signed_url: std::option::Option<std::string::String>,
@@ -14250,8 +14366,8 @@ impl CopyDbClusterSnapshotInput {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must specify a valid system snapshot in the <i>available</i> state.</p> </li>
-    /// <li> <p>If the source snapshot is in the same Region as the copy, specify a valid snapshot identifier.</p> </li>
-    /// <li> <p>If the source snapshot is in a different Region than the copy, specify a valid cluster snapshot ARN.</p> </li>
+    /// <li> <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.</p> </li>
+    /// <li> <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid cluster snapshot ARN.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code> </p>
     pub fn source_db_cluster_snapshot_identifier(&self) -> std::option::Option<&str> {
@@ -14269,19 +14385,19 @@ impl CopyDbClusterSnapshotInput {
         self.target_db_cluster_snapshot_identifier.as_deref()
     }
     /// <p>The KMS key ID for an encrypted cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key. </p>
-    /// <p>If you copy an encrypted cluster snapshot from your account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the cluster snapshot is encrypted with the same KMS key as the source cluster snapshot.</p>
-    /// <p>If you copy an encrypted cluster snapshot that is shared from another account, then you must specify a value for <code>KmsKeyId</code>.</p>
-    /// <p>To copy an encrypted cluster snapshot to another Region, set <code>KmsKeyId</code> to the KMS key ID that you want to use to encrypt the copy of the cluster snapshot in the destination Region. KMS encryption keys are specific to the Region that they are created in, and you can't use encryption keys from one Region in another Region.</p>
+    /// <p>If you copy an encrypted cluster snapshot from your Amazon Web Services account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the cluster snapshot is encrypted with the same KMS key as the source cluster snapshot.</p>
+    /// <p>If you copy an encrypted cluster snapshot that is shared from another Amazon Web Services account, then you must specify a value for <code>KmsKeyId</code>.</p>
+    /// <p>To copy an encrypted cluster snapshot to another Amazon Web Services Region, set <code>KmsKeyId</code> to the KMS key ID that you want to use to encrypt the copy of the cluster snapshot in the destination Region. KMS encryption keys are specific to the Amazon Web Services Region that they are created in, and you can't use encryption keys from one Amazon Web Services Region in another Amazon Web Services Region.</p>
     /// <p>If you copy an unencrypted cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter, an error is returned.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The URL that contains a Signature Version 4 signed request for the<code>CopyDBClusterSnapshot</code> API action in the Region that contains the source cluster snapshot to copy. You must use the <code>PreSignedUrl</code> parameter when copying a cluster snapshot from another Region.</p>
-    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Region.</p>
-    /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Region that contains the cluster snapshot to be copied. The presigned URL request must contain the following parameter values:</p>
+    /// <p>The URL that contains a Signature Version 4 signed request for the<code>CopyDBClusterSnapshot</code> API action in the Amazon Web Services Region that contains the source cluster snapshot to copy. You must use the <code>PreSignedUrl</code> parameter when copying a cluster snapshot from another Amazon Web Services Region.</p>
+    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
+    /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Amazon Web Services Region that contains the cluster snapshot to be copied. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
     /// <li> <p> <code>SourceRegion</code> - The ID of the region that contains the snapshot to be copied.</p> </li>
-    /// <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The identifier for the the encrypted cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Region. For example, if you are copying an encrypted cluster snapshot from the us-east-1 Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks something like the following: <code>arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot</code>.</p> </li>
+    /// <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The identifier for the the encrypted cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted cluster snapshot from the us-east-1 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks something like the following: <code>arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot</code>.</p> </li>
     /// <li> <p> <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new cluster snapshot to be created. This parameter isn't case sensitive.</p> </li>
     /// </ul>
     pub fn pre_signed_url(&self) -> std::option::Option<&str> {
@@ -14323,8 +14439,8 @@ pub struct CopyDbClusterParameterGroupInput {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must specify a valid cluster parameter group.</p> </li>
-    /// <li> <p>If the source cluster parameter group is in the same Region as the copy, specify a valid parameter group identifier; for example, <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li>
-    /// <li> <p>If the source parameter group is in a different Region than the copy, specify a valid cluster parameter group ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.</p> </li>
+    /// <li> <p>If the source cluster parameter group is in the same Amazon Web Services Region as the copy, specify a valid parameter group identifier; for example, <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li>
+    /// <li> <p>If the source parameter group is in a different Amazon Web Services Region than the copy, specify a valid cluster parameter group ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.</p> </li>
     /// </ul>
     pub source_db_cluster_parameter_group_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier for the copied cluster parameter group.</p>
@@ -14347,8 +14463,8 @@ impl CopyDbClusterParameterGroupInput {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must specify a valid cluster parameter group.</p> </li>
-    /// <li> <p>If the source cluster parameter group is in the same Region as the copy, specify a valid parameter group identifier; for example, <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li>
-    /// <li> <p>If the source parameter group is in a different Region than the copy, specify a valid cluster parameter group ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.</p> </li>
+    /// <li> <p>If the source cluster parameter group is in the same Amazon Web Services Region as the copy, specify a valid parameter group identifier; for example, <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li>
+    /// <li> <p>If the source parameter group is in a different Amazon Web Services Region than the copy, specify a valid cluster parameter group ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.</p> </li>
     /// </ul>
     pub fn source_db_cluster_parameter_group_identifier(&self) -> std::option::Option<&str> {
         self.source_db_cluster_parameter_group_identifier.as_deref()

@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_polly::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_polly::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_polly::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_polly::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -207,7 +207,7 @@ impl Client {
     ///   - [`voice_id(VoiceId)`](crate::client::fluent_builders::SynthesizeSpeech::voice_id) / [`set_voice_id(Option<VoiceId>)`](crate::client::fluent_builders::SynthesizeSpeech::set_voice_id): <p> Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation. </p>
     /// - On success, responds with [`SynthesizeSpeechOutput`](crate::output::SynthesizeSpeechOutput) with field(s):
     ///   - [`audio_stream(byte_stream::ByteStream)`](crate::output::SynthesizeSpeechOutput::audio_stream): <p> Stream containing the synthesized speech. </p>
-    ///   - [`content_type(Option<String>)`](crate::output::SynthesizeSpeechOutput::content_type): <p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p>  <ul>   <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li>   <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li>   <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li>   <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li>  </ul>  <p> </p>
+    ///   - [`content_type(Option<String>)`](crate::output::SynthesizeSpeechOutput::content_type): <p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p>  <ul>   <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li>   <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li>   <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li>   <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is application/x-json-stream.</p> </li>  </ul>  <p> </p>
     ///   - [`request_characters(i32)`](crate::output::SynthesizeSpeechOutput::request_characters): <p>Number of characters synthesized.</p>
     /// - On failure, responds with [`SdkError<SynthesizeSpeechError>`](crate::error::SynthesizeSpeechError)
     pub fn synthesize_speech(&self) -> fluent_builders::SynthesizeSpeech {

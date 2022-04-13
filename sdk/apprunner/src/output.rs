@@ -644,6 +644,103 @@ impl ListOperationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListObservabilityConfigurationsOutput {
+    /// <p>A list of summary information records for observability configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    pub observability_configuration_summary_list:
+        std::option::Option<std::vec::Vec<crate::model::ObservabilityConfigurationSummary>>,
+    /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListObservabilityConfigurationsOutput {
+    /// <p>A list of summary information records for observability configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    pub fn observability_configuration_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ObservabilityConfigurationSummary]> {
+        self.observability_configuration_summary_list.as_deref()
+    }
+    /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListObservabilityConfigurationsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListObservabilityConfigurationsOutput");
+        formatter.field(
+            "observability_configuration_summary_list",
+            &self.observability_configuration_summary_list,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListObservabilityConfigurationsOutput`](crate::output::ListObservabilityConfigurationsOutput)
+pub mod list_observability_configurations_output {
+    /// A builder for [`ListObservabilityConfigurationsOutput`](crate::output::ListObservabilityConfigurationsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) observability_configuration_summary_list:
+            std::option::Option<std::vec::Vec<crate::model::ObservabilityConfigurationSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `observability_configuration_summary_list`.
+        ///
+        /// To override the contents of this collection use [`set_observability_configuration_summary_list`](Self::set_observability_configuration_summary_list).
+        ///
+        /// <p>A list of summary information records for observability configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+        pub fn observability_configuration_summary_list(
+            mut self,
+            input: crate::model::ObservabilityConfigurationSummary,
+        ) -> Self {
+            let mut v = self
+                .observability_configuration_summary_list
+                .unwrap_or_default();
+            v.push(input);
+            self.observability_configuration_summary_list = Some(v);
+            self
+        }
+        /// <p>A list of summary information records for observability configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+        pub fn set_observability_configuration_summary_list(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::ObservabilityConfigurationSummary>,
+            >,
+        ) -> Self {
+            self.observability_configuration_summary_list = input;
+            self
+        }
+        /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListObservabilityConfigurationsOutput`](crate::output::ListObservabilityConfigurationsOutput)
+        pub fn build(self) -> crate::output::ListObservabilityConfigurationsOutput {
+            crate::output::ListObservabilityConfigurationsOutput {
+                observability_configuration_summary_list: self
+                    .observability_configuration_summary_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListObservabilityConfigurationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListObservabilityConfigurationsOutput`](crate::output::ListObservabilityConfigurationsOutput)
+    pub fn builder() -> crate::output::list_observability_configurations_output::Builder {
+        crate::output::list_observability_configurations_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectionsOutput {
     /// <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     pub connection_summary_list:
@@ -1033,6 +1130,72 @@ impl DescribeServiceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeObservabilityConfigurationOutput {
+    /// <p>A full description of the App Runner observability configuration that you specified in this request.</p>
+    pub observability_configuration: std::option::Option<crate::model::ObservabilityConfiguration>,
+}
+impl DescribeObservabilityConfigurationOutput {
+    /// <p>A full description of the App Runner observability configuration that you specified in this request.</p>
+    pub fn observability_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ObservabilityConfiguration> {
+        self.observability_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeObservabilityConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeObservabilityConfigurationOutput");
+        formatter.field(
+            "observability_configuration",
+            &self.observability_configuration,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DescribeObservabilityConfigurationOutput`](crate::output::DescribeObservabilityConfigurationOutput)
+pub mod describe_observability_configuration_output {
+    /// A builder for [`DescribeObservabilityConfigurationOutput`](crate::output::DescribeObservabilityConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) observability_configuration:
+            std::option::Option<crate::model::ObservabilityConfiguration>,
+    }
+    impl Builder {
+        /// <p>A full description of the App Runner observability configuration that you specified in this request.</p>
+        pub fn observability_configuration(
+            mut self,
+            input: crate::model::ObservabilityConfiguration,
+        ) -> Self {
+            self.observability_configuration = Some(input);
+            self
+        }
+        /// <p>A full description of the App Runner observability configuration that you specified in this request.</p>
+        pub fn set_observability_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ObservabilityConfiguration>,
+        ) -> Self {
+            self.observability_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeObservabilityConfigurationOutput`](crate::output::DescribeObservabilityConfigurationOutput)
+        pub fn build(self) -> crate::output::DescribeObservabilityConfigurationOutput {
+            crate::output::DescribeObservabilityConfigurationOutput {
+                observability_configuration: self.observability_configuration,
+            }
+        }
+    }
+}
+impl DescribeObservabilityConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeObservabilityConfigurationOutput`](crate::output::DescribeObservabilityConfigurationOutput)
+    pub fn builder() -> crate::output::describe_observability_configuration_output::Builder {
+        crate::output::describe_observability_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomDomainsOutput {
     /// <p>The App Runner subdomain of the App Runner service. The associated custom domain names are mapped to this target name.</p>
     pub dns_target: std::option::Option<std::string::String>,
@@ -1349,6 +1512,72 @@ impl DeleteServiceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteObservabilityConfigurationOutput {
+    /// <p>A description of the App Runner observability configuration that this request just deleted.</p>
+    pub observability_configuration: std::option::Option<crate::model::ObservabilityConfiguration>,
+}
+impl DeleteObservabilityConfigurationOutput {
+    /// <p>A description of the App Runner observability configuration that this request just deleted.</p>
+    pub fn observability_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ObservabilityConfiguration> {
+        self.observability_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteObservabilityConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteObservabilityConfigurationOutput");
+        formatter.field(
+            "observability_configuration",
+            &self.observability_configuration,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DeleteObservabilityConfigurationOutput`](crate::output::DeleteObservabilityConfigurationOutput)
+pub mod delete_observability_configuration_output {
+    /// A builder for [`DeleteObservabilityConfigurationOutput`](crate::output::DeleteObservabilityConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) observability_configuration:
+            std::option::Option<crate::model::ObservabilityConfiguration>,
+    }
+    impl Builder {
+        /// <p>A description of the App Runner observability configuration that this request just deleted.</p>
+        pub fn observability_configuration(
+            mut self,
+            input: crate::model::ObservabilityConfiguration,
+        ) -> Self {
+            self.observability_configuration = Some(input);
+            self
+        }
+        /// <p>A description of the App Runner observability configuration that this request just deleted.</p>
+        pub fn set_observability_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ObservabilityConfiguration>,
+        ) -> Self {
+            self.observability_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteObservabilityConfigurationOutput`](crate::output::DeleteObservabilityConfigurationOutput)
+        pub fn build(self) -> crate::output::DeleteObservabilityConfigurationOutput {
+            crate::output::DeleteObservabilityConfigurationOutput {
+                observability_configuration: self.observability_configuration,
+            }
+        }
+    }
+}
+impl DeleteObservabilityConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteObservabilityConfigurationOutput`](crate::output::DeleteObservabilityConfigurationOutput)
+    pub fn builder() -> crate::output::delete_observability_configuration_output::Builder {
+        crate::output::delete_observability_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionOutput {
     /// <p>A description of the App Runner connection that this request just deleted.</p>
     pub connection: std::option::Option<crate::model::Connection>,
@@ -1596,6 +1825,72 @@ impl CreateServiceOutput {
     /// Creates a new builder-style object to manufacture [`CreateServiceOutput`](crate::output::CreateServiceOutput)
     pub fn builder() -> crate::output::create_service_output::Builder {
         crate::output::create_service_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateObservabilityConfigurationOutput {
+    /// <p>A description of the App Runner observability configuration that's created by this request.</p>
+    pub observability_configuration: std::option::Option<crate::model::ObservabilityConfiguration>,
+}
+impl CreateObservabilityConfigurationOutput {
+    /// <p>A description of the App Runner observability configuration that's created by this request.</p>
+    pub fn observability_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ObservabilityConfiguration> {
+        self.observability_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateObservabilityConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateObservabilityConfigurationOutput");
+        formatter.field(
+            "observability_configuration",
+            &self.observability_configuration,
+        );
+        formatter.finish()
+    }
+}
+/// See [`CreateObservabilityConfigurationOutput`](crate::output::CreateObservabilityConfigurationOutput)
+pub mod create_observability_configuration_output {
+    /// A builder for [`CreateObservabilityConfigurationOutput`](crate::output::CreateObservabilityConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) observability_configuration:
+            std::option::Option<crate::model::ObservabilityConfiguration>,
+    }
+    impl Builder {
+        /// <p>A description of the App Runner observability configuration that's created by this request.</p>
+        pub fn observability_configuration(
+            mut self,
+            input: crate::model::ObservabilityConfiguration,
+        ) -> Self {
+            self.observability_configuration = Some(input);
+            self
+        }
+        /// <p>A description of the App Runner observability configuration that's created by this request.</p>
+        pub fn set_observability_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ObservabilityConfiguration>,
+        ) -> Self {
+            self.observability_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateObservabilityConfigurationOutput`](crate::output::CreateObservabilityConfigurationOutput)
+        pub fn build(self) -> crate::output::CreateObservabilityConfigurationOutput {
+            crate::output::CreateObservabilityConfigurationOutput {
+                observability_configuration: self.observability_configuration,
+            }
+        }
+    }
+}
+impl CreateObservabilityConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateObservabilityConfigurationOutput`](crate::output::CreateObservabilityConfigurationOutput)
+    pub fn builder() -> crate::output::create_observability_configuration_output::Builder {
+        crate::output::create_observability_configuration_output::Builder::default()
     }
 }
 

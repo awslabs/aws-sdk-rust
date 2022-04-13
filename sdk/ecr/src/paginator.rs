@@ -117,14 +117,6 @@ impl DescribeImageScanFindingsPaginator {
         self
     }
 
-    /// Create a flattened paginator
-    ///
-    /// This paginator automatically flattens results using `image_scan_findings.findings`. Queries to the underlying service
-    /// are dispatched lazily.
-    pub fn items(self) -> crate::paginator::DescribeImageScanFindingsPaginatorItems {
-        crate::paginator::DescribeImageScanFindingsPaginatorItems(self)
-    }
-
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -585,29 +577,6 @@ impl DescribeImagesPaginatorItems {
                 .unwrap_or_default()
                 .into_iter()
         })
-    }
-}
-
-/// Flattened paginator for `DescribeImageScanFindingsPaginator`
-///
-/// This is created with [`.items()`](DescribeImageScanFindingsPaginator::items)
-pub struct DescribeImageScanFindingsPaginatorItems(DescribeImageScanFindingsPaginator);
-
-impl DescribeImageScanFindingsPaginatorItems {
-    /// Create the pagination stream
-    ///
-    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
-    ///
-    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
-    pub fn send(
-        self,
-    ) -> impl tokio_stream::Stream<
-        Item = std::result::Result<
-            crate::model::ImageScanFinding,
-            aws_smithy_http::result::SdkError<crate::error::DescribeImageScanFindingsError>,
-        >,
-    > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_image_scan_findings_output_image_scan_findings_findings(page).unwrap_or_default().into_iter())
     }
 }
 

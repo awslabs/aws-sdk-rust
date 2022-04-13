@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use crate::{AwsEndpoint, BoxError, CredentialScope, ResolveAwsEndpoint};
 use aws_smithy_http::endpoint::Endpoint;
+use aws_types::endpoint::{AwsEndpoint, BoxError, CredentialScope, ResolveAwsEndpoint};
 use aws_types::region::Region;
 
 /// Endpoint metadata
@@ -55,17 +55,15 @@ impl ResolveAwsEndpoint for Metadata {
         let uri = self.uri_template.replace("{region}", region.as_ref());
         let uri = format!("{}://{}", self.protocol.as_str(), uri);
         let endpoint = Endpoint::mutable(uri.parse()?);
-        let ep = AwsEndpoint {
-            endpoint,
-            credential_scope: CredentialScope {
-                service: self.credential_scope.service.clone(),
-                region: self
-                    .credential_scope
-                    .region
-                    .clone()
-                    .or_else(|| Some(region.clone().into())),
-            },
-        };
-        Ok(ep)
+        let mut credential_scope = CredentialScope::builder().region(
+            self.credential_scope
+                .region()
+                .cloned()
+                .unwrap_or_else(|| region.clone().into()),
+        );
+        if let Some(service) = self.credential_scope.service() {
+            credential_scope = credential_scope.service(service.clone());
+        }
+        Ok(AwsEndpoint::new(endpoint, credential_scope.build()))
     }
 }

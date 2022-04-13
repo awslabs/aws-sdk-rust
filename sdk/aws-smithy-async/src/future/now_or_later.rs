@@ -55,8 +55,10 @@ use std::task::{Context, Poll};
 
 use pin_project_lite::pin_project;
 
+/// Boxed future type alias
 pub type BoxFuture<'a, T> = Pin<Box<dyn Future<Output = T> + Send + 'a>>;
 
+#[derive(Debug)]
 /// Zero sized type for using NowOrLater when no future variant exists.
 pub enum OnlyReady {}
 
@@ -107,12 +109,14 @@ where
 }
 
 impl<T, F> NowOrLater<T, F> {
+    /// Creates a future that will resolve when `future` resolves
     pub fn new(future: F) -> Self {
         Self {
             inner: Inner::Later { future },
         }
     }
 
+    /// Creates a future that immediately resolves to `value`
     pub fn ready(value: T) -> NowOrLater<T, F> {
         let value = Some(value);
         Self {

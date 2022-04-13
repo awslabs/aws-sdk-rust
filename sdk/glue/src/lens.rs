@@ -289,6 +289,16 @@ pub(crate) fn reflens_structure_crate_output_list_schema_versions_output_next_to
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_sessions_output_next_token(
+    input: &crate::output::ListSessionsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_triggers_output_next_token(
     input: &crate::output::ListTriggersOutput,
 ) -> std::option::Option<&std::string::String> {

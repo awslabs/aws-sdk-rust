@@ -1,0 +1,10 @@
+{
+    "name": "environment_variables_blank",
+    "docs": "verifies blank AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY are treated as missing",
+    "result": {
+        "Ok": {
+            "access_key_id": "correct_key",
+            "secret_access_key": "correct_secret"
+        }
+    }
+}

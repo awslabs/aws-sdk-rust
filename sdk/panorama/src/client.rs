@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_panorama::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_panorama::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_panorama::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_panorama::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -262,6 +262,7 @@ impl Client {
     ///   - [`lease_expiration_time(Option<DateTime>)`](crate::output::DescribeDeviceOutput::lease_expiration_time): <p>The device's lease expiration time.</p>
     ///   - [`alternate_softwares(Option<Vec<AlternateSoftwareMetadata>>)`](crate::output::DescribeDeviceOutput::alternate_softwares): <p>Beta software releases available for the device.</p>
     ///   - [`latest_alternate_software(Option<String>)`](crate::output::DescribeDeviceOutput::latest_alternate_software): <p>The most recent beta software release.</p>
+    ///   - [`brand(Option<DeviceBrand>)`](crate::output::DescribeDeviceOutput::brand): <p>The device's maker.</p>
     /// - On failure, responds with [`SdkError<DescribeDeviceError>`](crate::error::DescribeDeviceError)
     pub fn describe_device(&self) -> fluent_builders::DescribeDevice {
         fluent_builders::DescribeDevice::new(self.handle.clone())
@@ -2758,7 +2759,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ProvisionDevice`.
     ///
-    /// <p>Creates a device and returns a configuration archive. The configuration archive is a ZIP file that contains a provisioning certificate that is valid for 5 minutes. Transfer the configuration archive to the device with the included USB storage device within 5 minutes.</p>
+    /// <p>Creates a device and returns a configuration archive. The configuration archive is a ZIP file that contains a provisioning certificate that is valid for 5 minutes. Name the configuration archive <code>certificates-omni_<i>device-name</i>.zip</code> and transfer it to the device within 5 minutes. Use the included USB storage device and connect it to the USB 3.0 port next to the HDMI output.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ProvisionDevice {
         handle: std::sync::Arc<super::Handle>,

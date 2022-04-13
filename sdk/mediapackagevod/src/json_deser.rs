@@ -2699,6 +2699,19 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "scteMarkersSource" => {
+                                builder = builder.set_scte_markers_source(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::ScteMarkersSource::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "streamSelection" => {
                                 builder = builder.set_stream_selection(
                                     crate::json_deser::deser_structure_crate_model_stream_selection(tokens)?

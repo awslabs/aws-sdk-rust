@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_iot::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_iot::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_iot::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_iot::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -344,14 +344,14 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateCustomMetric`](crate::client::fluent_builders::CreateCustomMetric) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`metric_name(impl Into<String>)`](crate::client::fluent_builders::CreateCustomMetric::metric_name) / [`set_metric_name(Option<String>)`](crate::client::fluent_builders::CreateCustomMetric::set_metric_name): <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>. Cannot be updated once defined.</p>
-    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateCustomMetric::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateCustomMetric::set_display_name): <p> Field represents a friendly name in the console for the custom metric; it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated once defined.</p>
-    ///   - [`metric_type(CustomMetricType)`](crate::client::fluent_builders::CreateCustomMetric::metric_type) / [`set_metric_type(Option<CustomMetricType>)`](crate::client::fluent_builders::CreateCustomMetric::set_metric_type): <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
+    ///   - [`metric_name(impl Into<String>)`](crate::client::fluent_builders::CreateCustomMetric::metric_name) / [`set_metric_name(Option<String>)`](crate::client::fluent_builders::CreateCustomMetric::set_metric_name): <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. The name can't begin with <code>aws:</code>. You can't change the name after you define it.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateCustomMetric::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateCustomMetric::set_display_name): <p> The friendly name in the console for the custom metric. This name doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. You can update the friendly name after you define it.</p>
+    ///   - [`metric_type(CustomMetricType)`](crate::client::fluent_builders::CreateCustomMetric::metric_type) / [`set_metric_type(Option<CustomMetricType>)`](crate::client::fluent_builders::CreateCustomMetric::set_metric_type): <p> The type of the custom metric. </p> <important>   <p>The type <code>number</code> only takes a single metric value as an input, but when you submit the metrics value in the DeviceMetrics report, you must pass it as an array with a single value.</p>  </important>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateCustomMetric::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateCustomMetric::set_tags): <p> Metadata that can be used to manage the custom metric. </p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateCustomMetric::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateCustomMetric::set_client_request_token): <p>Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
     /// - On success, responds with [`CreateCustomMetricOutput`](crate::output::CreateCustomMetricOutput) with field(s):
     ///   - [`metric_name(Option<String>)`](crate::output::CreateCustomMetricOutput::metric_name): <p> The name of the custom metric to be used in the metric report. </p>
-    ///   - [`metric_arn(Option<String>)`](crate::output::CreateCustomMetricOutput::metric_arn): <p> The Amazon Resource Number (ARN) of the custom metric, e.g. <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
+    ///   - [`metric_arn(Option<String>)`](crate::output::CreateCustomMetricOutput::metric_arn): <p> The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
     /// - On failure, responds with [`SdkError<CreateCustomMetricError>`](crate::error::CreateCustomMetricError)
     pub fn create_custom_metric(&self) -> fluent_builders::CreateCustomMetric {
         fluent_builders::CreateCustomMetric::new(self.handle.clone())
@@ -611,7 +611,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`role_alias(impl Into<String>)`](crate::client::fluent_builders::CreateRoleAlias::role_alias) / [`set_role_alias(Option<String>)`](crate::client::fluent_builders::CreateRoleAlias::set_role_alias): <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateRoleAlias::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateRoleAlias::set_role_arn): <p>The role ARN.</p>
-    ///   - [`credential_duration_seconds(i32)`](crate::client::fluent_builders::CreateRoleAlias::credential_duration_seconds) / [`set_credential_duration_seconds(Option<i32>)`](crate::client::fluent_builders::CreateRoleAlias::set_credential_duration_seconds): <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>
+    ///   - [`credential_duration_seconds(i32)`](crate::client::fluent_builders::CreateRoleAlias::credential_duration_seconds) / [`set_credential_duration_seconds(Option<i32>)`](crate::client::fluent_builders::CreateRoleAlias::set_credential_duration_seconds): <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>  <p>This value must be less than or equal to the maximum session duration of the IAM role that the role alias references.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRoleAlias::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRoleAlias::set_tags): <p>Metadata which can be used to manage the role alias.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
     /// - On success, responds with [`CreateRoleAliasOutput`](crate::output::CreateRoleAliasOutput) with field(s):
     ///   - [`role_alias(Option<String>)`](crate::output::CreateRoleAliasOutput::role_alias): <p>The role alias.</p>
@@ -1204,7 +1204,7 @@ impl Client {
     /// - On success, responds with [`DescribeCustomMetricOutput`](crate::output::DescribeCustomMetricOutput) with field(s):
     ///   - [`metric_name(Option<String>)`](crate::output::DescribeCustomMetricOutput::metric_name): <p> The name of the custom metric. </p>
     ///   - [`metric_arn(Option<String>)`](crate::output::DescribeCustomMetricOutput::metric_arn): <p> The Amazon Resource Number (ARN) of the custom metric. </p>
-    ///   - [`metric_type(Option<CustomMetricType>)`](crate::output::DescribeCustomMetricOutput::metric_type): <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
+    ///   - [`metric_type(Option<CustomMetricType>)`](crate::output::DescribeCustomMetricOutput::metric_type): <p> The type of the custom metric. </p> <important>   <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>  </important>
     ///   - [`display_name(Option<String>)`](crate::output::DescribeCustomMetricOutput::display_name): <p> Field represents a friendly name in the console for the custom metric; doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
     ///   - [`creation_date(Option<DateTime>)`](crate::output::DescribeCustomMetricOutput::creation_date): <p> The creation date of the custom metric in milliseconds since epoch. </p>
     ///   - [`last_modified_date(Option<DateTime>)`](crate::output::DescribeCustomMetricOutput::last_modified_date): <p> The time the custom metric was last modified in milliseconds since epoch. </p>
@@ -2202,6 +2202,25 @@ impl Client {
     pub fn list_managed_job_templates(&self) -> fluent_builders::ListManagedJobTemplates {
         fluent_builders::ListManagedJobTemplates::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListMetricValues`](crate::client::fluent_builders::ListMetricValues) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMetricValues::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::ListMetricValues::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::ListMetricValues::set_thing_name): <p>The name of the thing for which security profile metric values are returned.</p>
+    ///   - [`metric_name(impl Into<String>)`](crate::client::fluent_builders::ListMetricValues::metric_name) / [`set_metric_name(Option<String>)`](crate::client::fluent_builders::ListMetricValues::set_metric_name): <p>The name of the security profile metric for which values are returned.</p>
+    ///   - [`dimension_name(impl Into<String>)`](crate::client::fluent_builders::ListMetricValues::dimension_name) / [`set_dimension_name(Option<String>)`](crate::client::fluent_builders::ListMetricValues::set_dimension_name): <p>The dimension name.</p>
+    ///   - [`dimension_value_operator(DimensionValueOperator)`](crate::client::fluent_builders::ListMetricValues::dimension_value_operator) / [`set_dimension_value_operator(Option<DimensionValueOperator>)`](crate::client::fluent_builders::ListMetricValues::set_dimension_value_operator): <p>The dimension value operator.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ListMetricValues::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListMetricValues::set_start_time): <p>The start of the time period for which metric values are returned.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ListMetricValues::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListMetricValues::set_end_time): <p>The end of the time period for which metric values are returned.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMetricValues::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMetricValues::set_max_results): <p>The maximum number of results to return at one time.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMetricValues::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMetricValues::set_next_token): <p>The token for the next set of results.</p>
+    /// - On success, responds with [`ListMetricValuesOutput`](crate::output::ListMetricValuesOutput) with field(s):
+    ///   - [`metric_datum_list(Option<Vec<MetricDatum>>)`](crate::output::ListMetricValuesOutput::metric_datum_list): <p>The data the thing reports for the metric during the specified time period.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMetricValuesOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
+    /// - On failure, responds with [`SdkError<ListMetricValuesError>`](crate::error::ListMetricValuesError)
+    pub fn list_metric_values(&self) -> fluent_builders::ListMetricValues {
+        fluent_builders::ListMetricValues::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListMitigationActions`](crate::client::fluent_builders::ListMitigationActions) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMitigationActions::into_paginator).
     ///
@@ -2674,7 +2693,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`ca_certificate(impl Into<String>)`](crate::client::fluent_builders::RegisterCACertificate::ca_certificate) / [`set_ca_certificate(Option<String>)`](crate::client::fluent_builders::RegisterCACertificate::set_ca_certificate): <p>The CA certificate.</p>
     ///   - [`verification_certificate(impl Into<String>)`](crate::client::fluent_builders::RegisterCACertificate::verification_certificate) / [`set_verification_certificate(Option<String>)`](crate::client::fluent_builders::RegisterCACertificate::set_verification_certificate): <p>The private key verification certificate.</p>
-    ///   - [`set_as_active(bool)`](crate::client::fluent_builders::RegisterCACertificate::set_as_active) / [`set_set_as_active(bool)`](crate::client::fluent_builders::RegisterCACertificate::set_set_as_active): <p>A boolean value that specifies if the CA certificate is set to active.</p>
+    ///   - [`set_as_active(bool)`](crate::client::fluent_builders::RegisterCACertificate::set_as_active) / [`set_set_as_active(bool)`](crate::client::fluent_builders::RegisterCACertificate::set_set_as_active): <p>A boolean value that specifies if the CA certificate is set to active.</p>  <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
     ///   - [`allow_auto_registration(bool)`](crate::client::fluent_builders::RegisterCACertificate::allow_auto_registration) / [`set_allow_auto_registration(bool)`](crate::client::fluent_builders::RegisterCACertificate::set_allow_auto_registration): <p>Allows this CA certificate to be used for auto registration of device certificates.</p>
     ///   - [`registration_config(RegistrationConfig)`](crate::client::fluent_builders::RegisterCACertificate::registration_config) / [`set_registration_config(Option<RegistrationConfig>)`](crate::client::fluent_builders::RegisterCACertificate::set_registration_config): <p>Information about the registration configuration.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::RegisterCACertificate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::RegisterCACertificate::set_tags): <p>Metadata which can be used to manage the CA certificate.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
@@ -2690,8 +2709,8 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`certificate_pem(impl Into<String>)`](crate::client::fluent_builders::RegisterCertificate::certificate_pem) / [`set_certificate_pem(Option<String>)`](crate::client::fluent_builders::RegisterCertificate::set_certificate_pem): <p>The certificate data, in PEM format.</p>
     ///   - [`ca_certificate_pem(impl Into<String>)`](crate::client::fluent_builders::RegisterCertificate::ca_certificate_pem) / [`set_ca_certificate_pem(Option<String>)`](crate::client::fluent_builders::RegisterCertificate::set_ca_certificate_pem): <p>The CA certificate used to sign the device certificate being registered.</p>
-    ///   - [`set_as_active(bool)`](crate::client::fluent_builders::RegisterCertificate::set_as_active) / [`set_set_as_active(Option<bool>)`](crate::client::fluent_builders::RegisterCertificate::set_set_as_active): <p>A boolean value that specifies if the certificate is set to active.</p>
-    ///   - [`status(CertificateStatus)`](crate::client::fluent_builders::RegisterCertificate::status) / [`set_status(Option<CertificateStatus>)`](crate::client::fluent_builders::RegisterCertificate::set_status): <p>The status of the register certificate request.</p>
+    ///   - [`set_as_active(bool)`](crate::client::fluent_builders::RegisterCertificate::set_as_active) / [`set_set_as_active(Option<bool>)`](crate::client::fluent_builders::RegisterCertificate::set_set_as_active): <p>A boolean value that specifies if the certificate is set to active.</p>  <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+    ///   - [`status(CertificateStatus)`](crate::client::fluent_builders::RegisterCertificate::status) / [`set_status(Option<CertificateStatus>)`](crate::client::fluent_builders::RegisterCertificate::set_status): <p>The status of the register certificate request. Valid values that you can use include <code>ACTIVE</code>, <code>INACTIVE</code>, and <code>REVOKED</code>.</p>
     /// - On success, responds with [`RegisterCertificateOutput`](crate::output::RegisterCertificateOutput) with field(s):
     ///   - [`certificate_arn(Option<String>)`](crate::output::RegisterCertificateOutput::certificate_arn): <p>The certificate ARN.</p>
     ///   - [`certificate_id(Option<String>)`](crate::output::RegisterCertificateOutput::certificate_id): <p>The certificate identifier.</p>
@@ -3065,7 +3084,7 @@ impl Client {
     /// - On success, responds with [`UpdateCustomMetricOutput`](crate::output::UpdateCustomMetricOutput) with field(s):
     ///   - [`metric_name(Option<String>)`](crate::output::UpdateCustomMetricOutput::metric_name): <p> The name of the custom metric. </p>
     ///   - [`metric_arn(Option<String>)`](crate::output::UpdateCustomMetricOutput::metric_arn): <p> The Amazon Resource Number (ARN) of the custom metric. </p>
-    ///   - [`metric_type(Option<CustomMetricType>)`](crate::output::UpdateCustomMetricOutput::metric_type): <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
+    ///   - [`metric_type(Option<CustomMetricType>)`](crate::output::UpdateCustomMetricOutput::metric_type): <p> The type of the custom metric. </p> <important>   <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>  </important>
     ///   - [`display_name(Option<String>)`](crate::output::UpdateCustomMetricOutput::display_name): <p> A friendly name in the console for the custom metric </p>
     ///   - [`creation_date(Option<DateTime>)`](crate::output::UpdateCustomMetricOutput::creation_date): <p> The creation date of the custom metric in milliseconds since epoch. </p>
     ///   - [`last_modified_date(Option<DateTime>)`](crate::output::UpdateCustomMetricOutput::last_modified_date): <p> The time the custom metric was last modified in milliseconds since epoch. </p>
@@ -3209,7 +3228,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`role_alias(impl Into<String>)`](crate::client::fluent_builders::UpdateRoleAlias::role_alias) / [`set_role_alias(Option<String>)`](crate::client::fluent_builders::UpdateRoleAlias::set_role_alias): <p>The role alias to update.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateRoleAlias::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateRoleAlias::set_role_arn): <p>The role ARN.</p>
-    ///   - [`credential_duration_seconds(i32)`](crate::client::fluent_builders::UpdateRoleAlias::credential_duration_seconds) / [`set_credential_duration_seconds(Option<i32>)`](crate::client::fluent_builders::UpdateRoleAlias::set_credential_duration_seconds): <p>The number of seconds the credential will be valid.</p>
+    ///   - [`credential_duration_seconds(i32)`](crate::client::fluent_builders::UpdateRoleAlias::credential_duration_seconds) / [`set_credential_duration_seconds(Option<i32>)`](crate::client::fluent_builders::UpdateRoleAlias::set_credential_duration_seconds): <p>The number of seconds the credential will be valid.</p>  <p>This value must be less than or equal to the maximum session duration of the IAM role that the role alias references.</p>
     /// - On success, responds with [`UpdateRoleAliasOutput`](crate::output::UpdateRoleAliasOutput) with field(s):
     ///   - [`role_alias(Option<String>)`](crate::output::UpdateRoleAliasOutput::role_alias): <p>The role alias.</p>
     ///   - [`role_alias_arn(Option<String>)`](crate::output::UpdateRoleAliasOutput::role_alias_arn): <p>The role alias ARN.</p>
@@ -4991,32 +5010,36 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>. Cannot be updated once defined.</p>
+        /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. The name can't begin with <code>aws:</code>. You can't change the name after you define it.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.metric_name(input.into());
             self
         }
-        /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>. Cannot be updated once defined.</p>
+        /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. The name can't begin with <code>aws:</code>. You can't change the name after you define it.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_metric_name(input);
             self
         }
-        /// <p> Field represents a friendly name in the console for the custom metric; it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated once defined.</p>
+        /// <p> The friendly name in the console for the custom metric. This name doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. You can update the friendly name after you define it.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.display_name(input.into());
             self
         }
-        /// <p> Field represents a friendly name in the console for the custom metric; it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated once defined.</p>
+        /// <p> The friendly name in the console for the custom metric. This name doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. You can update the friendly name after you define it.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_display_name(input);
             self
         }
-        /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
+        /// <p> The type of the custom metric. </p> <important>
+        /// <p>The type <code>number</code> only takes a single metric value as an input, but when you submit the metrics value in the DeviceMetrics report, you must pass it as an array with a single value.</p>
+        /// </important>
         pub fn metric_type(mut self, input: crate::model::CustomMetricType) -> Self {
             self.inner = self.inner.metric_type(input);
             self
         }
-        /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
+        /// <p> The type of the custom metric. </p> <important>
+        /// <p>The type <code>number</code> only takes a single metric value as an input, but when you submit the metrics value in the DeviceMetrics report, you must pass it as an array with a single value.</p>
+        /// </important>
         pub fn set_metric_type(
             mut self,
             input: std::option::Option<crate::model::CustomMetricType>,
@@ -6979,11 +7002,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>
+        /// <p>This value must be less than or equal to the maximum session duration of the IAM role that the role alias references.</p>
         pub fn credential_duration_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.credential_duration_seconds(input);
             self
         }
         /// <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>
+        /// <p>This value must be less than or equal to the maximum session duration of the IAM role that the role alias references.</p>
         pub fn set_credential_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_credential_duration_seconds(input);
             self
@@ -15548,6 +15573,150 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListMetricValues`.
+    ///
+    /// <p>Lists the values reported for an IoT Device Defender metric (device-side metric, cloud-side metric, or custom metric) by the given thing during the specified time period.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListMetricValues {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_metric_values_input::Builder,
+    }
+    impl ListMetricValues {
+        /// Creates a new `ListMetricValues`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListMetricValuesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListMetricValuesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMetricValuesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMetricValuesPaginator {
+            crate::paginator::ListMetricValuesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The name of the thing for which security profile metric values are returned.</p>
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
+            self
+        }
+        /// <p>The name of the thing for which security profile metric values are returned.</p>
+        pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_thing_name(input);
+            self
+        }
+        /// <p>The name of the security profile metric for which values are returned.</p>
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(input.into());
+            self
+        }
+        /// <p>The name of the security profile metric for which values are returned.</p>
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_metric_name(input);
+            self
+        }
+        /// <p>The dimension name.</p>
+        pub fn dimension_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dimension_name(input.into());
+            self
+        }
+        /// <p>The dimension name.</p>
+        pub fn set_dimension_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_dimension_name(input);
+            self
+        }
+        /// <p>The dimension value operator.</p>
+        pub fn dimension_value_operator(
+            mut self,
+            input: crate::model::DimensionValueOperator,
+        ) -> Self {
+            self.inner = self.inner.dimension_value_operator(input);
+            self
+        }
+        /// <p>The dimension value operator.</p>
+        pub fn set_dimension_value_operator(
+            mut self,
+            input: std::option::Option<crate::model::DimensionValueOperator>,
+        ) -> Self {
+            self.inner = self.inner.set_dimension_value_operator(input);
+            self
+        }
+        /// <p>The start of the time period for which metric values are returned.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
+            self
+        }
+        /// <p>The start of the time period for which metric values are returned.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_start_time(input);
+            self
+        }
+        /// <p>The end of the time period for which metric values are returned.</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
+            self
+        }
+        /// <p>The end of the time period for which metric values are returned.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_end_time(input);
+            self
+        }
+        /// <p>The maximum number of results to return at one time.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return at one time.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListMitigationActions`.
     ///
     /// <p>Gets a list of all mitigation actions that match the specified filter criteria.</p>
@@ -18370,11 +18539,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>A boolean value that specifies if the CA certificate is set to active.</p>
+        /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
         pub fn set_as_active(mut self, input: bool) -> Self {
             self.inner = self.inner.set_as_active(input);
             self
         }
         /// <p>A boolean value that specifies if the CA certificate is set to active.</p>
+        /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
         pub fn set_set_as_active(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_set_as_active(input);
             self
@@ -18498,21 +18669,23 @@ pub mod fluent_builders {
             self
         }
         /// <p>A boolean value that specifies if the certificate is set to active.</p>
+        /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
         pub fn set_as_active(mut self, input: bool) -> Self {
             self.inner = self.inner.set_as_active(input);
             self
         }
         /// <p>A boolean value that specifies if the certificate is set to active.</p>
+        /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
         pub fn set_set_as_active(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_set_as_active(input);
             self
         }
-        /// <p>The status of the register certificate request.</p>
+        /// <p>The status of the register certificate request. Valid values that you can use include <code>ACTIVE</code>, <code>INACTIVE</code>, and <code>REVOKED</code>.</p>
         pub fn status(mut self, input: crate::model::CertificateStatus) -> Self {
             self.inner = self.inner.status(input);
             self
         }
-        /// <p>The status of the register certificate request.</p>
+        /// <p>The status of the register certificate request. Valid values that you can use include <code>ACTIVE</code>, <code>INACTIVE</code>, and <code>REVOKED</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::CertificateStatus>,
@@ -22024,11 +22197,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of seconds the credential will be valid.</p>
+        /// <p>This value must be less than or equal to the maximum session duration of the IAM role that the role alias references.</p>
         pub fn credential_duration_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.credential_duration_seconds(input);
             self
         }
         /// <p>The number of seconds the credential will be valid.</p>
+        /// <p>This value must be less than or equal to the maximum session duration of the IAM role that the role alias references.</p>
         pub fn set_credential_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_credential_duration_seconds(input);
             self

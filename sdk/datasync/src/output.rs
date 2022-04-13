@@ -1681,7 +1681,7 @@ pub struct DescribeLocationS3Output {
     pub location_uri: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 storage class that you chose to store your files in when this location is used as a task destination. For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
     pub s3_storage_class: std::option::Option<crate::model::S3StorageClass>,
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
     /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
     pub s3_config: std::option::Option<crate::model::S3Config>,
     /// <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
@@ -1702,7 +1702,7 @@ impl DescribeLocationS3Output {
     pub fn s3_storage_class(&self) -> std::option::Option<&crate::model::S3StorageClass> {
         self.s3_storage_class.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
     /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
     pub fn s3_config(&self) -> std::option::Option<&crate::model::S3Config> {
         self.s3_config.as_ref()
@@ -1775,13 +1775,13 @@ pub mod describe_location_s3_output {
             self.s3_storage_class = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
         /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
         pub fn s3_config(mut self, input: crate::model::S3Config) -> Self {
             self.s3_config = Some(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
         /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
         pub fn set_s3_config(mut self, input: std::option::Option<crate::model::S3Config>) -> Self {
             self.s3_config = input;
@@ -2625,6 +2625,155 @@ impl DescribeLocationFsxWindowsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLocationFsxOpenZfsOutput {
+    /// <p>The ARN of the FSx for OpenZFS location that was described.</p>
+    pub location_arn: std::option::Option<std::string::String>,
+    /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p>
+    /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> </p>
+    pub location_uri: std::option::Option<std::string::String>,
+    /// <p>The ARNs of the security groups that are configured for the FSx for OpenZFS file system.</p>
+    pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The type of protocol that DataSync uses to access your file system.</p>
+    pub protocol: std::option::Option<crate::model::FsxProtocol>,
+    /// <p>The time that the FSx for OpenZFS location was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl DescribeLocationFsxOpenZfsOutput {
+    /// <p>The ARN of the FSx for OpenZFS location that was described.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+    /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p>
+    /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> </p>
+    pub fn location_uri(&self) -> std::option::Option<&str> {
+        self.location_uri.as_deref()
+    }
+    /// <p>The ARNs of the security groups that are configured for the FSx for OpenZFS file system.</p>
+    pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_arns.as_deref()
+    }
+    /// <p>The type of protocol that DataSync uses to access your file system.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::FsxProtocol> {
+        self.protocol.as_ref()
+    }
+    /// <p>The time that the FSx for OpenZFS location was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeLocationFsxOpenZfsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeLocationFsxOpenZfsOutput");
+        formatter.field("location_arn", &self.location_arn);
+        formatter.field("location_uri", &self.location_uri);
+        formatter.field("security_group_arns", &self.security_group_arns);
+        formatter.field("protocol", &self.protocol);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.finish()
+    }
+}
+/// See [`DescribeLocationFsxOpenZfsOutput`](crate::output::DescribeLocationFsxOpenZfsOutput)
+pub mod describe_location_fsx_open_zfs_output {
+    /// A builder for [`DescribeLocationFsxOpenZfsOutput`](crate::output::DescribeLocationFsxOpenZfsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) location_arn: std::option::Option<std::string::String>,
+        pub(crate) location_uri: std::option::Option<std::string::String>,
+        pub(crate) security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) protocol: std::option::Option<crate::model::FsxProtocol>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The ARN of the FSx for OpenZFS location that was described.</p>
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the FSx for OpenZFS location that was described.</p>
+        pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location_arn = input;
+            self
+        }
+        /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p>
+        /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> </p>
+        pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location_uri = Some(input.into());
+            self
+        }
+        /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p>
+        /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> </p>
+        pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location_uri = input;
+            self
+        }
+        /// Appends an item to `security_group_arns`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
+        ///
+        /// <p>The ARNs of the security groups that are configured for the FSx for OpenZFS file system.</p>
+        pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_arns.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_arns = Some(v);
+            self
+        }
+        /// <p>The ARNs of the security groups that are configured for the FSx for OpenZFS file system.</p>
+        pub fn set_security_group_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_arns = input;
+            self
+        }
+        /// <p>The type of protocol that DataSync uses to access your file system.</p>
+        pub fn protocol(mut self, input: crate::model::FsxProtocol) -> Self {
+            self.protocol = Some(input);
+            self
+        }
+        /// <p>The type of protocol that DataSync uses to access your file system.</p>
+        pub fn set_protocol(
+            mut self,
+            input: std::option::Option<crate::model::FsxProtocol>,
+        ) -> Self {
+            self.protocol = input;
+            self
+        }
+        /// <p>The time that the FSx for OpenZFS location was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The time that the FSx for OpenZFS location was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeLocationFsxOpenZfsOutput`](crate::output::DescribeLocationFsxOpenZfsOutput)
+        pub fn build(self) -> crate::output::DescribeLocationFsxOpenZfsOutput {
+            crate::output::DescribeLocationFsxOpenZfsOutput {
+                location_arn: self.location_arn,
+                location_uri: self.location_uri,
+                security_group_arns: self.security_group_arns,
+                protocol: self.protocol,
+                creation_time: self.creation_time,
+            }
+        }
+    }
+}
+impl DescribeLocationFsxOpenZfsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLocationFsxOpenZfsOutput`](crate::output::DescribeLocationFsxOpenZfsOutput)
+    pub fn builder() -> crate::output::describe_location_fsx_open_zfs_output::Builder {
+        crate::output::describe_location_fsx_open_zfs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationFsxLustreOutput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location that was described.</p>
     pub location_arn: std::option::Option<std::string::String>,
@@ -2753,7 +2902,7 @@ pub struct DescribeLocationEfsOutput {
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>The URL of the EFS location that was described.</p>
     pub location_uri: std::option::Option<std::string::String>,
-    /// <p>The subnet and the security group that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified. </p>
+    /// <p>The subnet that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified. </p>
     pub ec2_config: std::option::Option<crate::model::Ec2Config>,
     /// <p>The time that the EFS location was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2767,7 +2916,7 @@ impl DescribeLocationEfsOutput {
     pub fn location_uri(&self) -> std::option::Option<&str> {
         self.location_uri.as_deref()
     }
-    /// <p>The subnet and the security group that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified. </p>
+    /// <p>The subnet that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified. </p>
     pub fn ec2_config(&self) -> std::option::Option<&crate::model::Ec2Config> {
         self.ec2_config.as_ref()
     }
@@ -2818,12 +2967,12 @@ pub mod describe_location_efs_output {
             self.location_uri = input;
             self
         }
-        /// <p>The subnet and the security group that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified. </p>
+        /// <p>The subnet that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified. </p>
         pub fn ec2_config(mut self, input: crate::model::Ec2Config) -> Self {
             self.ec2_config = Some(input);
             self
         }
-        /// <p>The subnet and the security group that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified. </p>
+        /// <p>The subnet that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified. </p>
         pub fn set_ec2_config(
             mut self,
             input: std::option::Option<crate::model::Ec2Config>,
@@ -3460,11 +3609,11 @@ impl CreateLocationHdfsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationFsxWindowsOutput {
-    /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location that is created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location you created.</p>
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationFsxWindowsOutput {
-    /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location that is created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location you created.</p>
     pub fn location_arn(&self) -> std::option::Option<&str> {
         self.location_arn.as_deref()
     }
@@ -3485,12 +3634,12 @@ pub mod create_location_fsx_windows_output {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location that is created.</p>
+        /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location you created.</p>
         pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.location_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location that is created.</p>
+        /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location you created.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_arn = input;
             self
@@ -3507,6 +3656,60 @@ impl CreateLocationFsxWindowsOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationFsxWindowsOutput`](crate::output::CreateLocationFsxWindowsOutput)
     pub fn builder() -> crate::output::create_location_fsx_windows_output::Builder {
         crate::output::create_location_fsx_windows_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLocationFsxOpenZfsOutput {
+    /// <p>The ARN of the FSx for OpenZFS file system location that you created.</p>
+    pub location_arn: std::option::Option<std::string::String>,
+}
+impl CreateLocationFsxOpenZfsOutput {
+    /// <p>The ARN of the FSx for OpenZFS file system location that you created.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateLocationFsxOpenZfsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateLocationFsxOpenZfsOutput");
+        formatter.field("location_arn", &self.location_arn);
+        formatter.finish()
+    }
+}
+/// See [`CreateLocationFsxOpenZfsOutput`](crate::output::CreateLocationFsxOpenZfsOutput)
+pub mod create_location_fsx_open_zfs_output {
+    /// A builder for [`CreateLocationFsxOpenZfsOutput`](crate::output::CreateLocationFsxOpenZfsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) location_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the FSx for OpenZFS file system location that you created.</p>
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the FSx for OpenZFS file system location that you created.</p>
+        pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateLocationFsxOpenZfsOutput`](crate::output::CreateLocationFsxOpenZfsOutput)
+        pub fn build(self) -> crate::output::CreateLocationFsxOpenZfsOutput {
+            crate::output::CreateLocationFsxOpenZfsOutput {
+                location_arn: self.location_arn,
+            }
+        }
+    }
+}
+impl CreateLocationFsxOpenZfsOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLocationFsxOpenZfsOutput`](crate::output::CreateLocationFsxOpenZfsOutput)
+    pub fn builder() -> crate::output::create_location_fsx_open_zfs_output::Builder {
+        crate::output::create_location_fsx_open_zfs_output::Builder::default()
     }
 }
 

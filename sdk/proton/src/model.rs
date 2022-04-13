@@ -2752,9 +2752,8 @@ pub struct ProvisionedResource {
     pub name: std::option::Option<std::string::String>,
     /// <p>The provisioned resource identifier.</p>
     pub identifier: std::option::Option<std::string::String>,
-    /// <p>The resource provisioning engine.</p> <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
-    /// </important>
+    /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
     pub provisioning_engine: std::option::Option<crate::model::ProvisionedResourceEngine>,
 }
 impl ProvisionedResource {
@@ -2766,9 +2765,8 @@ impl ProvisionedResource {
     pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
-    /// <p>The resource provisioning engine.</p> <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
-    /// </important>
+    /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
     pub fn provisioning_engine(
         &self,
     ) -> std::option::Option<&crate::model::ProvisionedResourceEngine> {
@@ -2816,9 +2814,8 @@ pub mod provisioned_resource {
             self.identifier = input;
             self
         }
-        /// <p>The resource provisioning engine.</p> <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
-        /// </important>
+        /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
         pub fn provisioning_engine(
             mut self,
             input: crate::model::ProvisionedResourceEngine,
@@ -2826,9 +2823,8 @@ pub mod provisioned_resource {
             self.provisioning_engine = Some(input);
             self
         }
-        /// <p>The resource provisioning engine.</p> <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
-        /// </important>
+        /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
         pub fn set_provisioning_engine(
             mut self,
             input: std::option::Option<crate::model::ProvisionedResourceEngine>,
@@ -3836,7 +3832,7 @@ impl Repository {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentTemplateVersionSummary {
-    /// <p>The name of the version of an environment template.</p>
+    /// <p>The name of the environment template.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The latest major version that's associated with the version of an environment template.</p>
     pub major_version: std::option::Option<std::string::String>,
@@ -3858,7 +3854,7 @@ pub struct EnvironmentTemplateVersionSummary {
     pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EnvironmentTemplateVersionSummary {
-    /// <p>The name of the version of an environment template.</p>
+    /// <p>The name of the environment template.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
@@ -3933,12 +3929,12 @@ pub mod environment_template_version_summary {
         pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The name of the version of an environment template.</p>
+        /// <p>The name of the environment template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the version of an environment template.</p>
+        /// <p>The name of the environment template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5237,9 +5233,9 @@ pub struct Environment {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the major version of the environment template.</p>
+    /// <p>The major version of the environment template.</p>
     pub template_major_version: std::option::Option<std::string::String>,
-    /// <p>The ID of the minor version of the environment template.</p>
+    /// <p>The minor version of the environment template.</p>
     pub template_minor_version: std::option::Option<std::string::String>,
     /// <p>The environment deployment status.</p>
     pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
@@ -5255,9 +5251,7 @@ pub struct Environment {
     pub spec: std::option::Option<std::string::String>,
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
     pub provisioning: std::option::Option<crate::model::Provisioning>,
-    /// <p>The repository that you provide with pull request provisioning.</p> <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
-    /// </important>
+    /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
     pub provisioning_repository: std::option::Option<crate::model::RepositoryBranch>,
 }
 impl Environment {
@@ -5289,11 +5283,11 @@ impl Environment {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The ID of the major version of the environment template.</p>
+    /// <p>The major version of the environment template.</p>
     pub fn template_major_version(&self) -> std::option::Option<&str> {
         self.template_major_version.as_deref()
     }
-    /// <p>The ID of the minor version of the environment template.</p>
+    /// <p>The minor version of the environment template.</p>
     pub fn template_minor_version(&self) -> std::option::Option<&str> {
         self.template_minor_version.as_deref()
     }
@@ -5325,9 +5319,7 @@ impl Environment {
     pub fn provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
         self.provisioning.as_ref()
     }
-    /// <p>The repository that you provide with pull request provisioning.</p> <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
-    /// </important>
+    /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
     pub fn provisioning_repository(&self) -> std::option::Option<&crate::model::RepositoryBranch> {
         self.provisioning_repository.as_ref()
     }
@@ -5474,12 +5466,12 @@ pub mod environment {
             self.template_name = input;
             self
         }
-        /// <p>The ID of the major version of the environment template.</p>
+        /// <p>The major version of the environment template.</p>
         pub fn template_major_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_major_version = Some(input.into());
             self
         }
-        /// <p>The ID of the major version of the environment template.</p>
+        /// <p>The major version of the environment template.</p>
         pub fn set_template_major_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5487,12 +5479,12 @@ pub mod environment {
             self.template_major_version = input;
             self
         }
-        /// <p>The ID of the minor version of the environment template.</p>
+        /// <p>The minor version of the environment template.</p>
         pub fn template_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_minor_version = Some(input.into());
             self
         }
-        /// <p>The ID of the minor version of the environment template.</p>
+        /// <p>The minor version of the environment template.</p>
         pub fn set_template_minor_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5591,16 +5583,12 @@ pub mod environment {
             self.provisioning = input;
             self
         }
-        /// <p>The repository that you provide with pull request provisioning.</p> <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
-        /// </important>
+        /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
         pub fn provisioning_repository(mut self, input: crate::model::RepositoryBranch) -> Self {
             self.provisioning_repository = Some(input);
             self
         }
-        /// <p>The repository that you provide with pull request provisioning.</p> <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
-        /// </important>
+        /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
         pub fn set_provisioning_repository(
             mut self,
             input: std::option::Option<crate::model::RepositoryBranch>,
@@ -5639,9 +5627,7 @@ impl Environment {
     }
 }
 
-/// <p>Detail data for a repository branch.</p> <important>
-/// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
-/// </important>
+/// <p>Detail data for a repository branch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryBranch {
@@ -5755,9 +5741,7 @@ impl RepositoryBranch {
     }
 }
 
-/// <p>Detail input data for a repository branch.</p> <important>
-/// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
-/// </important>
+/// <p>Detail input data for a repository branch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryBranchInput {
@@ -6422,25 +6406,21 @@ impl AsRef<str> for EnvironmentAccountConnectionRequesterAccountType {
     }
 }
 
-/// <p>The Proton pipeline service role and repository data.</p>
+/// <p>The Proton pipeline service role and repository data shared across the Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountSettings {
-    /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
     pub pipeline_service_role_arn: std::option::Option<std::string::String>,
-    /// <p>The repository that you provide with pull request provisioning.</p> <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
-    /// </important>
+    /// <p>The repository configured in the Amazon Web Services account for pipeline provisioning. Required it if you have environments configured for self-managed provisioning with services that include pipelines.</p>
     pub pipeline_provisioning_repository: std::option::Option<crate::model::RepositoryBranch>,
 }
 impl AccountSettings {
-    /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
     pub fn pipeline_service_role_arn(&self) -> std::option::Option<&str> {
         self.pipeline_service_role_arn.as_deref()
     }
-    /// <p>The repository that you provide with pull request provisioning.</p> <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
-    /// </important>
+    /// <p>The repository configured in the Amazon Web Services account for pipeline provisioning. Required it if you have environments configured for self-managed provisioning with services that include pipelines.</p>
     pub fn pipeline_provisioning_repository(
         &self,
     ) -> std::option::Option<&crate::model::RepositoryBranch> {
@@ -6469,12 +6449,12 @@ pub mod account_settings {
             std::option::Option<crate::model::RepositoryBranch>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
+        /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
         pub fn pipeline_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.pipeline_service_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
+        /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
         pub fn set_pipeline_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6482,9 +6462,7 @@ pub mod account_settings {
             self.pipeline_service_role_arn = input;
             self
         }
-        /// <p>The repository that you provide with pull request provisioning.</p> <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
-        /// </important>
+        /// <p>The repository configured in the Amazon Web Services account for pipeline provisioning. Required it if you have environments configured for self-managed provisioning with services that include pipelines.</p>
         pub fn pipeline_provisioning_repository(
             mut self,
             input: crate::model::RepositoryBranch,
@@ -6492,9 +6470,7 @@ pub mod account_settings {
             self.pipeline_provisioning_repository = Some(input);
             self
         }
-        /// <p>The repository that you provide with pull request provisioning.</p> <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
-        /// </important>
+        /// <p>The repository configured in the Amazon Web Services account for pipeline provisioning. Required it if you have environments configured for self-managed provisioning with services that include pipelines.</p>
         pub fn set_pipeline_provisioning_repository(
             mut self,
             input: std::option::Option<crate::model::RepositoryBranch>,

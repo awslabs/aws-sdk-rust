@@ -23,11 +23,17 @@ pub struct EnvironmentVariableCredentialsProvider {
 
 impl EnvironmentVariableCredentialsProvider {
     fn credentials(&self) -> credentials::Result {
-        let access_key = self.env.get("AWS_ACCESS_KEY_ID").map_err(to_cred_error)?;
+        let access_key = self
+            .env
+            .get("AWS_ACCESS_KEY_ID")
+            .and_then(err_if_blank)
+            .map_err(to_cred_error)?;
         let secret_key = self
             .env
             .get("AWS_SECRET_ACCESS_KEY")
+            .and_then(err_if_blank)
             .or_else(|_| self.env.get("SECRET_ACCESS_KEY"))
+            .and_then(err_if_blank)
             .map_err(to_cred_error)?;
         let session_token = self
             .env
@@ -84,6 +90,14 @@ fn to_cred_error(err: VarError) -> CredentialsError {
     match err {
         VarError::NotPresent => CredentialsError::not_loaded("environment variable not set"),
         e @ VarError::NotUnicode(_) => CredentialsError::unhandled(e),
+    }
+}
+
+fn err_if_blank(value: String) -> Result<String, VarError> {
+    if value.trim().is_empty() {
+        Err(VarError::NotPresent)
+    } else {
+        Ok(value)
     }
 }
 
@@ -174,6 +188,25 @@ mod test {
     }
 
     #[test]
+    fn secret_key_fallback_empty() {
+        let provider = make_provider(&[
+            ("AWS_ACCESS_KEY_ID", "access"),
+            ("AWS_SECRET_ACCESS_KEY", " "),
+            ("SECRET_ACCESS_KEY", "secret"),
+            ("AWS_SESSION_TOKEN", "token"),
+        ]);
+
+        let creds = provider
+            .provide_credentials()
+            .now_or_never()
+            .unwrap()
+            .expect("valid credentials");
+        assert_eq!(creds.session_token().unwrap(), "token");
+        assert_eq!(creds.access_key_id(), "access");
+        assert_eq!(creds.secret_access_key(), "secret");
+    }
+
+    #[test]
     fn missing() {
         let provider = make_provider(&[]);
         let err = provider
@@ -182,6 +215,32 @@ mod test {
             .unwrap()
             .expect_err("no credentials defined");
         assert!(matches!(err, CredentialsError::CredentialsNotLoaded { .. }));
+    }
+
+    #[test]
+    fn empty_keys_env_vars() {
+        for [access_key_value, secret_key_value] in &[
+            &["", ""],
+            &[" ", ""],
+            &["access", ""],
+            &["", " "],
+            &[" ", " "],
+            &["access", " "],
+            &["", "secret"],
+            &[" ", "secret"],
+        ] {
+            let provider = make_provider(&[
+                ("AWS_ACCESS_KEY_ID", access_key_value),
+                ("AWS_SECRET_ACCESS_KEY", secret_key_value),
+            ]);
+
+            let err = provider
+                .provide_credentials()
+                .now_or_never()
+                .unwrap()
+                .expect_err("no credentials defined");
+            assert!(matches!(err, CredentialsError::CredentialsNotLoaded { .. }));
+        }
     }
 
     #[test]

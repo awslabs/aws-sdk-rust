@@ -451,6 +451,8 @@ impl PropertyRequest {
 )]
 pub enum PropertyUpdateType {
     #[allow(missing_docs)] // documentation missing in model
+    Create,
+    #[allow(missing_docs)] // documentation missing in model
     Delete,
     #[allow(missing_docs)] // documentation missing in model
     Update,
@@ -460,6 +462,7 @@ pub enum PropertyUpdateType {
 impl std::convert::From<&str> for PropertyUpdateType {
     fn from(s: &str) -> Self {
         match s {
+            "CREATE" => PropertyUpdateType::Create,
             "DELETE" => PropertyUpdateType::Delete,
             "UPDATE" => PropertyUpdateType::Update,
             other => PropertyUpdateType::Unknown(other.to_owned()),
@@ -477,6 +480,7 @@ impl PropertyUpdateType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PropertyUpdateType::Create => "CREATE",
             PropertyUpdateType::Delete => "DELETE",
             PropertyUpdateType::Update => "UPDATE",
             PropertyUpdateType::Unknown(s) => s.as_ref(),
@@ -484,7 +488,7 @@ impl PropertyUpdateType {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["DELETE", "UPDATE"]
+        &["CREATE", "DELETE", "UPDATE"]
     }
 }
 impl AsRef<str> for PropertyUpdateType {
@@ -1485,7 +1489,7 @@ impl FunctionRequest {
 pub struct DataConnector {
     /// <p>The Lambda function associated with this data connector.</p>
     pub lambda: std::option::Option<crate::model::LambdaFunction>,
-    /// <p>A Boolean value that specifies whether the data connector is native to TwinMaker.</p>
+    /// <p>A Boolean value that specifies whether the data connector is native to IoT TwinMaker.</p>
     pub is_native: std::option::Option<bool>,
 }
 impl DataConnector {
@@ -1493,7 +1497,7 @@ impl DataConnector {
     pub fn lambda(&self) -> std::option::Option<&crate::model::LambdaFunction> {
         self.lambda.as_ref()
     }
-    /// <p>A Boolean value that specifies whether the data connector is native to TwinMaker.</p>
+    /// <p>A Boolean value that specifies whether the data connector is native to IoT TwinMaker.</p>
     pub fn is_native(&self) -> std::option::Option<bool> {
         self.is_native
     }
@@ -1529,12 +1533,12 @@ pub mod data_connector {
             self.lambda = input;
             self
         }
-        /// <p>A Boolean value that specifies whether the data connector is native to TwinMaker.</p>
+        /// <p>A Boolean value that specifies whether the data connector is native to IoT TwinMaker.</p>
         pub fn is_native(mut self, input: bool) -> Self {
             self.is_native = Some(input);
             self
         }
-        /// <p>A Boolean value that specifies whether the data connector is native to TwinMaker.</p>
+        /// <p>A Boolean value that specifies whether the data connector is native to IoT TwinMaker.</p>
         pub fn set_is_native(mut self, input: std::option::Option<bool>) -> Self {
             self.is_native = input;
             self
@@ -2378,6 +2382,8 @@ impl AsRef<str> for ErrorCode {
 pub enum ListEntitiesFilter {
     /// <p>The ID of the component type in the entities in the list.</p>
     ComponentTypeId(std::string::String),
+    /// <p>The external-Id property of a component. The external-Id property is the primary key of an external storage system.</p>
+    ExternalId(std::string::String),
     /// <p>The parent of the entities in the list.</p>
     ParentEntityId(std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -2403,6 +2409,19 @@ impl ListEntitiesFilter {
     /// Returns true if this is a [`ComponentTypeId`](crate::model::ListEntitiesFilter::ComponentTypeId).
     pub fn is_component_type_id(&self) -> bool {
         self.as_component_type_id().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ExternalId`](crate::model::ListEntitiesFilter::ExternalId), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_external_id(&self) -> std::result::Result<&std::string::String, &Self> {
+        if let ListEntitiesFilter::ExternalId(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`ExternalId`](crate::model::ListEntitiesFilter::ExternalId).
+    pub fn is_external_id(&self) -> bool {
+        self.as_external_id().is_ok()
     }
     /// Tries to convert the enum instance into [`ParentEntityId`](crate::model::ListEntitiesFilter::ParentEntityId), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
@@ -2746,6 +2765,8 @@ pub struct PropertyValue {
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that specifies a value for a time series property.</p>
     pub value: std::option::Option<crate::model::DataValue>,
+    /// Timestamp represented in ISO 8601 format
+    pub time: std::option::Option<std::string::String>,
 }
 impl PropertyValue {
     /// <p>The timestamp of a value for a time series property.</p>
@@ -2756,12 +2777,17 @@ impl PropertyValue {
     pub fn value(&self) -> std::option::Option<&crate::model::DataValue> {
         self.value.as_ref()
     }
+    /// Timestamp represented in ISO 8601 format
+    pub fn time(&self) -> std::option::Option<&str> {
+        self.time.as_deref()
+    }
 }
 impl std::fmt::Debug for PropertyValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PropertyValue");
         formatter.field("timestamp", &self.timestamp);
         formatter.field("value", &self.value);
+        formatter.field("time", &self.time);
         formatter.finish()
     }
 }
@@ -2773,6 +2799,7 @@ pub mod property_value {
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) value: std::option::Option<crate::model::DataValue>,
+        pub(crate) time: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The timestamp of a value for a time series property.</p>
@@ -2798,11 +2825,22 @@ pub mod property_value {
             self.value = input;
             self
         }
+        /// Timestamp represented in ISO 8601 format
+        pub fn time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.time = Some(input.into());
+            self
+        }
+        /// Timestamp represented in ISO 8601 format
+        pub fn set_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.time = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PropertyValue`](crate::model::PropertyValue)
         pub fn build(self) -> crate::model::PropertyValue {
             crate::model::PropertyValue {
                 timestamp: self.timestamp,
                 value: self.value,
+                time: self.time,
             }
         }
     }

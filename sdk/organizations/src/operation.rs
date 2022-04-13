@@ -99,6 +99,38 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelHandshake {
     }
 }
 
+/// Operation shape for `CloseAccount`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`close_account`](crate::client::Client::close_account).
+///
+/// See [`crate::client::fluent_builders::CloseAccount`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CloseAccount {
+    _private: (),
+}
+impl CloseAccount {
+    /// Creates a new builder-style object to manufacture [`CloseAccountInput`](crate::input::CloseAccountInput)
+    pub fn builder() -> crate::input::close_account_input::Builder {
+        crate::input::close_account_input::Builder::default()
+    }
+    /// Creates a new `CloseAccount` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CloseAccount {
+    type Output =
+        std::result::Result<crate::output::CloseAccountOutput, crate::error::CloseAccountError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_close_account_error(response)
+        } else {
+            crate::operation_deser::parse_close_account_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

@@ -375,6 +375,33 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteClientBrandingError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteClientBrandingError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteClientBrandingErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::DeleteClientBrandingErrorKind::InvalidParameterValuesException(
+                    inner,
+                ) => Error::InvalidParameterValuesException(inner),
+                crate::error::DeleteClientBrandingErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DeleteClientBrandingErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteConnectClientAddInError, R>>
     for Error
 where
@@ -582,6 +609,33 @@ where
                     inner,
                 ) => Error::AccessDeniedException(inner),
                 crate::error::DescribeAccountModificationsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeClientBrandingError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeClientBrandingError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeClientBrandingErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::DescribeClientBrandingErrorKind::InvalidParameterValuesException(
+                    inner,
+                ) => Error::InvalidParameterValuesException(inner),
+                crate::error::DescribeClientBrandingErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DescribeClientBrandingErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -896,6 +950,33 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DisassociateIpGroupsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ImportClientBrandingError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ImportClientBrandingError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ImportClientBrandingErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::ImportClientBrandingErrorKind::InvalidParameterValuesException(
+                    inner,
+                ) => Error::InvalidParameterValuesException(inner),
+                crate::error::ImportClientBrandingErrorKind::ResourceLimitExceededException(
+                    inner,
+                ) => Error::ResourceLimitExceededException(inner),
+                crate::error::ImportClientBrandingErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

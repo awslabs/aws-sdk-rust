@@ -3881,6 +3881,20 @@ pub fn parse_list_available_managed_rule_group_versions_error(
                                                     }
             tmp
         })},
+        "WAFNonexistentItemException" => crate::error::ListAvailableManagedRuleGroupVersionsError { meta: generic, kind: crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::WafNonexistentItemException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_nonexistent_item_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAvailableManagedRuleGroupVersionsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         _ => crate::error::ListAvailableManagedRuleGroupVersionsError::generic(generic)
     })
 }

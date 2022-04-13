@@ -799,6 +799,223 @@ impl CreateLocationFsxLustreInput {
     }
 }
 
+/// See [`CreateLocationFsxOpenZfsInput`](crate::input::CreateLocationFsxOpenZfsInput)
+pub mod create_location_fsx_open_zfs_input {
+    /// A builder for [`CreateLocationFsxOpenZfsInput`](crate::input::CreateLocationFsxOpenZfsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) fsx_filesystem_arn: std::option::Option<std::string::String>,
+        pub(crate) protocol: std::option::Option<crate::model::FsxProtocol>,
+        pub(crate) security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) subdirectory: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
+        pub fn fsx_filesystem_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fsx_filesystem_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
+        pub fn set_fsx_filesystem_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.fsx_filesystem_arn = input;
+            self
+        }
+        /// <p>The type of protocol that DataSync uses to access your file system.</p>
+        pub fn protocol(mut self, input: crate::model::FsxProtocol) -> Self {
+            self.protocol = Some(input);
+            self
+        }
+        /// <p>The type of protocol that DataSync uses to access your file system.</p>
+        pub fn set_protocol(
+            mut self,
+            input: std::option::Option<crate::model::FsxProtocol>,
+        ) -> Self {
+            self.protocol = input;
+            self
+        }
+        /// Appends an item to `security_group_arns`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
+        ///
+        /// <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
+        pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_arns.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_arns = Some(v);
+            self
+        }
+        /// <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
+        pub fn set_security_group_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_arns = input;
+            self
+        }
+        /// <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
+        pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subdirectory = Some(input.into());
+            self
+        }
+        /// <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
+        pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subdirectory = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
+        pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateLocationFsxOpenZfsInput`](crate::input::CreateLocationFsxOpenZfsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateLocationFsxOpenZfsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateLocationFsxOpenZfsInput {
+                fsx_filesystem_arn: self.fsx_filesystem_arn,
+                protocol: self.protocol,
+                security_group_arns: self.security_group_arns,
+                subdirectory: self.subdirectory,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateLocationFsxOpenZfsInputOperationOutputAlias =
+    crate::operation::CreateLocationFsxOpenZfs;
+#[doc(hidden)]
+pub type CreateLocationFsxOpenZfsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateLocationFsxOpenZfsInput {
+    /// Consumes the builder and constructs an Operation<[`CreateLocationFsxOpenZfs`](crate::operation::CreateLocationFsxOpenZfs)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateLocationFsxOpenZfs,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateLocationFsxOpenZfsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateLocationFsxOpenZfsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "FmrsService.CreateLocationFsxOpenZfs",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_location_fsx_open_zfs(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateLocationFsxOpenZfs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateLocationFsxOpenZfs",
+            "datasync",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateLocationFsxOpenZfsInput`](crate::input::CreateLocationFsxOpenZfsInput)
+    pub fn builder() -> crate::input::create_location_fsx_open_zfs_input::Builder {
+        crate::input::create_location_fsx_open_zfs_input::Builder::default()
+    }
+}
+
 /// See [`CreateLocationFsxWindowsInput`](crate::input::CreateLocationFsxWindowsInput)
 pub mod create_location_fsx_windows_input {
     /// A builder for [`CreateLocationFsxWindowsInput`](crate::input::CreateLocationFsxWindowsInput)
@@ -841,14 +1058,14 @@ pub mod create_location_fsx_windows_input {
         ///
         /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Windows File Server file system.</p>
+        /// <p>The ARNs of the security groups that are used to configure the FSx for Windows File Server file system.</p>
         pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_arns.unwrap_or_default();
             v.push(input.into());
             self.security_group_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Windows File Server file system.</p>
+        /// <p>The ARNs of the security groups that are used to configure the FSx for Windows File Server file system.</p>
         pub fn set_security_group_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1417,7 +1634,7 @@ pub mod create_location_nfs_input {
             self.subdirectory = input;
             self
         }
-        /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this host name to mount the NFS server in a network. </p>
+        /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p>
         /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
         /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
         /// </note>
@@ -1425,7 +1642,7 @@ pub mod create_location_nfs_input {
             self.server_hostname = Some(input.into());
             self
         }
-        /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this host name to mount the NFS server in a network. </p>
+        /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p>
         /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
         /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
         /// </note>
@@ -1627,12 +1844,12 @@ pub mod create_location_object_storage_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
     }
     impl Builder {
-        /// <p>The name of the self-managed object storage server. This value is the IP address or Domain Name Service (DNS) name of the object storage server. An agent uses this host name to mount the object storage server in a network. </p>
+        /// <p>The name of the self-managed object storage server. This value is the IP address or Domain Name Service (DNS) name of the object storage server. An agent uses this hostname to mount the object storage server in a network. </p>
         pub fn server_hostname(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_hostname = Some(input.into());
             self
         }
-        /// <p>The name of the self-managed object storage server. This value is the IP address or Domain Name Service (DNS) name of the object storage server. An agent uses this host name to mount the object storage server in a network. </p>
+        /// <p>The name of the self-managed object storage server. This value is the IP address or Domain Name Service (DNS) name of the object storage server. An agent uses this hostname to mount the object storage server in a network. </p>
         pub fn set_server_hostname(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1924,13 +2141,13 @@ pub mod create_location_s3_input {
             self.s3_storage_class = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
         /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
         pub fn s3_config(mut self, input: crate::model::S3Config) -> Self {
             self.s3_config = Some(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
         /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
         pub fn set_s3_config(mut self, input: std::option::Option<crate::model::S3Config>) -> Self {
             self.s3_config = input;
@@ -1940,14 +2157,14 @@ pub mod create_location_s3_input {
         ///
         /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
         ///
-        /// <p>If you are using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
+        /// <p>If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.agent_arns.unwrap_or_default();
             v.push(input.into());
             self.agent_arns = Some(v);
             self
         }
-        /// <p>If you are using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
+        /// <p>If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
         pub fn set_agent_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3497,6 +3714,148 @@ impl DescribeLocationFsxLustreInput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationFsxLustreInput`](crate::input::DescribeLocationFsxLustreInput)
     pub fn builder() -> crate::input::describe_location_fsx_lustre_input::Builder {
         crate::input::describe_location_fsx_lustre_input::Builder::default()
+    }
+}
+
+/// See [`DescribeLocationFsxOpenZfsInput`](crate::input::DescribeLocationFsxOpenZfsInput)
+pub mod describe_location_fsx_open_zfs_input {
+    /// A builder for [`DescribeLocationFsxOpenZfsInput`](crate::input::DescribeLocationFsxOpenZfsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) location_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe.</p>
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe.</p>
+        pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeLocationFsxOpenZfsInput`](crate::input::DescribeLocationFsxOpenZfsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeLocationFsxOpenZfsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeLocationFsxOpenZfsInput {
+                location_arn: self.location_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeLocationFsxOpenZfsInputOperationOutputAlias =
+    crate::operation::DescribeLocationFsxOpenZfs;
+#[doc(hidden)]
+pub type DescribeLocationFsxOpenZfsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeLocationFsxOpenZfsInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeLocationFsxOpenZfs`](crate::operation::DescribeLocationFsxOpenZfs)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeLocationFsxOpenZfs,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeLocationFsxOpenZfsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeLocationFsxOpenZfsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "FmrsService.DescribeLocationFsxOpenZfs",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_location_fsx_open_zfs(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeLocationFsxOpenZfs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeLocationFsxOpenZfs",
+            "datasync",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeLocationFsxOpenZfsInput`](crate::input::DescribeLocationFsxOpenZfsInput)
+    pub fn builder() -> crate::input::describe_location_fsx_open_zfs_input::Builder {
+        crate::input::describe_location_fsx_open_zfs_input::Builder::default()
     }
 }
 
@@ -6303,12 +6662,12 @@ pub mod update_location_hdfs_input {
             self.kerberos_principal = input;
             self
         }
-        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the AWS CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
         pub fn kerberos_keytab(mut self, input: aws_smithy_types::Blob) -> Self {
             self.kerberos_keytab = Some(input);
             self
         }
-        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the AWS CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
         pub fn set_kerberos_keytab(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -6316,12 +6675,12 @@ pub mod update_location_hdfs_input {
             self.kerberos_keytab = input;
             self
         }
-        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the AWS CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
         pub fn kerberos_krb5_conf(mut self, input: aws_smithy_types::Blob) -> Self {
             self.kerberos_krb5_conf = Some(input);
             self
         }
-        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the AWS CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
         pub fn set_kerberos_krb5_conf(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -7859,9 +8218,9 @@ pub struct UpdateLocationHdfsInput {
     pub simple_user: std::option::Option<std::string::String>,
     /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
     pub kerberos_principal: std::option::Option<std::string::String>,
-    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the AWS CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
     pub kerberos_keytab: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the AWS CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+    /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
     pub kerberos_krb5_conf: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7909,11 +8268,11 @@ impl UpdateLocationHdfsInput {
     pub fn kerberos_principal(&self) -> std::option::Option<&str> {
         self.kerberos_principal.as_deref()
     }
-    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the AWS CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
     pub fn kerberos_keytab(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.kerberos_keytab.as_ref()
     }
-    /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the AWS CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+    /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
     pub fn kerberos_krb5_conf(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.kerberos_krb5_conf.as_ref()
     }
@@ -8411,6 +8770,27 @@ impl std::fmt::Debug for DescribeLocationFsxWindowsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLocationFsxOpenZfsInput {
+    /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe.</p>
+    pub location_arn: std::option::Option<std::string::String>,
+}
+impl DescribeLocationFsxOpenZfsInput {
+    /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeLocationFsxOpenZfsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeLocationFsxOpenZfsInput");
+        formatter.field("location_arn", &self.location_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationFsxLustreInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe. </p>
     pub location_arn: std::option::Option<std::string::String>,
@@ -8708,10 +9088,10 @@ pub struct CreateLocationS3Input {
     /// <p>The Amazon S3 storage class that you want to store your files in when this location is used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>
     /// <p>For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
     pub s3_storage_class: std::option::Option<crate::model::S3StorageClass>,
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
     /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
     pub s3_config: std::option::Option<crate::model::S3Config>,
-    /// <p>If you are using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
+    /// <p>If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
@@ -8730,12 +9110,12 @@ impl CreateLocationS3Input {
     pub fn s3_storage_class(&self) -> std::option::Option<&crate::model::S3StorageClass> {
         self.s3_storage_class.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
     /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
     pub fn s3_config(&self) -> std::option::Option<&crate::model::S3Config> {
         self.s3_config.as_ref()
     }
-    /// <p>If you are using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
+    /// <p>If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
     pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.agent_arns.as_deref()
     }
@@ -8761,7 +9141,7 @@ impl std::fmt::Debug for CreateLocationS3Input {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationObjectStorageInput {
-    /// <p>The name of the self-managed object storage server. This value is the IP address or Domain Name Service (DNS) name of the object storage server. An agent uses this host name to mount the object storage server in a network. </p>
+    /// <p>The name of the self-managed object storage server. This value is the IP address or Domain Name Service (DNS) name of the object storage server. An agent uses this hostname to mount the object storage server in a network. </p>
     pub server_hostname: std::option::Option<std::string::String>,
     /// <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage server requires one.</p>
     pub server_port: std::option::Option<i32>,
@@ -8781,7 +9161,7 @@ pub struct CreateLocationObjectStorageInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl CreateLocationObjectStorageInput {
-    /// <p>The name of the self-managed object storage server. This value is the IP address or Domain Name Service (DNS) name of the object storage server. An agent uses this host name to mount the object storage server in a network. </p>
+    /// <p>The name of the self-managed object storage server. This value is the IP address or Domain Name Service (DNS) name of the object storage server. An agent uses this hostname to mount the object storage server in a network. </p>
     pub fn server_hostname(&self) -> std::option::Option<&str> {
         self.server_hostname.as_deref()
     }
@@ -8846,7 +9226,7 @@ pub struct CreateLocationNfsInput {
     /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
     /// <p>For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat Enterprise Linux documentation.</p>
     pub subdirectory: std::option::Option<std::string::String>,
-    /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this host name to mount the NFS server in a network. </p>
+    /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p>
     /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
     /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
     /// </note>
@@ -8868,7 +9248,7 @@ impl CreateLocationNfsInput {
     pub fn subdirectory(&self) -> std::option::Option<&str> {
         self.subdirectory.as_deref()
     }
-    /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this host name to mount the NFS server in a network. </p>
+    /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p>
     /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
     /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
     /// </note>
@@ -9032,7 +9412,7 @@ pub struct CreateLocationFsxWindowsInput {
     pub subdirectory: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
     pub fsx_filesystem_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Windows File Server file system.</p>
+    /// <p>The ARNs of the security groups that are used to configure the FSx for Windows File Server file system.</p>
     pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
@@ -9053,7 +9433,7 @@ impl CreateLocationFsxWindowsInput {
     pub fn fsx_filesystem_arn(&self) -> std::option::Option<&str> {
         self.fsx_filesystem_arn.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Windows File Server file system.</p>
+    /// <p>The ARNs of the security groups that are used to configure the FSx for Windows File Server file system.</p>
     pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_arns.as_deref()
     }
@@ -9085,6 +9465,55 @@ impl std::fmt::Debug for CreateLocationFsxWindowsInput {
         formatter.field("user", &self.user);
         formatter.field("domain", &self.domain);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLocationFsxOpenZfsInput {
+    /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
+    pub fsx_filesystem_arn: std::option::Option<std::string::String>,
+    /// <p>The type of protocol that DataSync uses to access your file system.</p>
+    pub protocol: std::option::Option<crate::model::FsxProtocol>,
+    /// <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
+    pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
+    pub subdirectory: std::option::Option<std::string::String>,
+    /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+}
+impl CreateLocationFsxOpenZfsInput {
+    /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
+    pub fn fsx_filesystem_arn(&self) -> std::option::Option<&str> {
+        self.fsx_filesystem_arn.as_deref()
+    }
+    /// <p>The type of protocol that DataSync uses to access your file system.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::FsxProtocol> {
+        self.protocol.as_ref()
+    }
+    /// <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
+    pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_arns.as_deref()
+    }
+    /// <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
+    pub fn subdirectory(&self) -> std::option::Option<&str> {
+        self.subdirectory.as_deref()
+    }
+    /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateLocationFsxOpenZfsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateLocationFsxOpenZfsInput");
+        formatter.field("fsx_filesystem_arn", &self.fsx_filesystem_arn);
+        formatter.field("protocol", &self.protocol);
+        formatter.field("security_group_arns", &self.security_group_arns);
+        formatter.field("subdirectory", &self.subdirectory);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

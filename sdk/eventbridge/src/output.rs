@@ -2,6 +2,230 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateEndpointOutput {
+    /// <p>The name of the endpoint you updated in this request.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The ARN of the endpoint you updated in this request.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The routing configuration you updated in this request.</p>
+    pub routing_config: std::option::Option<crate::model::RoutingConfig>,
+    /// <p>Whether event replication was enabled or disabled for the endpoint you updated in this request.</p>
+    pub replication_config: std::option::Option<crate::model::ReplicationConfig>,
+    /// <p>The event buses used for replication for the endpoint you updated in this request.</p>
+    pub event_buses: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
+    /// <p>The ARN of the role used by event replication for the endpoint you updated in this request.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The ID of the endpoint you updated in this request.</p>
+    pub endpoint_id: std::option::Option<std::string::String>,
+    /// <p>The URL of the endpoint you updated in this request.</p>
+    pub endpoint_url: std::option::Option<std::string::String>,
+    /// <p>The state of the endpoint you updated in this request.</p>
+    pub state: std::option::Option<crate::model::EndpointState>,
+}
+impl UpdateEndpointOutput {
+    /// <p>The name of the endpoint you updated in this request.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the endpoint you updated in this request.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The routing configuration you updated in this request.</p>
+    pub fn routing_config(&self) -> std::option::Option<&crate::model::RoutingConfig> {
+        self.routing_config.as_ref()
+    }
+    /// <p>Whether event replication was enabled or disabled for the endpoint you updated in this request.</p>
+    pub fn replication_config(&self) -> std::option::Option<&crate::model::ReplicationConfig> {
+        self.replication_config.as_ref()
+    }
+    /// <p>The event buses used for replication for the endpoint you updated in this request.</p>
+    pub fn event_buses(&self) -> std::option::Option<&[crate::model::EndpointEventBus]> {
+        self.event_buses.as_deref()
+    }
+    /// <p>The ARN of the role used by event replication for the endpoint you updated in this request.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The ID of the endpoint you updated in this request.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+    /// <p>The URL of the endpoint you updated in this request.</p>
+    pub fn endpoint_url(&self) -> std::option::Option<&str> {
+        self.endpoint_url.as_deref()
+    }
+    /// <p>The state of the endpoint you updated in this request.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::EndpointState> {
+        self.state.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateEndpointOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateEndpointOutput");
+        formatter.field("name", &self.name);
+        formatter.field("arn", &self.arn);
+        formatter.field("routing_config", &self.routing_config);
+        formatter.field("replication_config", &self.replication_config);
+        formatter.field("event_buses", &self.event_buses);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("endpoint_id", &self.endpoint_id);
+        formatter.field("endpoint_url", &self.endpoint_url);
+        formatter.field("state", &self.state);
+        formatter.finish()
+    }
+}
+/// See [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput)
+pub mod update_endpoint_output {
+    /// A builder for [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) routing_config: std::option::Option<crate::model::RoutingConfig>,
+        pub(crate) replication_config: std::option::Option<crate::model::ReplicationConfig>,
+        pub(crate) event_buses: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) endpoint_id: std::option::Option<std::string::String>,
+        pub(crate) endpoint_url: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::EndpointState>,
+    }
+    impl Builder {
+        /// <p>The name of the endpoint you updated in this request.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the endpoint you updated in this request.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The ARN of the endpoint you updated in this request.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the endpoint you updated in this request.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The routing configuration you updated in this request.</p>
+        pub fn routing_config(mut self, input: crate::model::RoutingConfig) -> Self {
+            self.routing_config = Some(input);
+            self
+        }
+        /// <p>The routing configuration you updated in this request.</p>
+        pub fn set_routing_config(
+            mut self,
+            input: std::option::Option<crate::model::RoutingConfig>,
+        ) -> Self {
+            self.routing_config = input;
+            self
+        }
+        /// <p>Whether event replication was enabled or disabled for the endpoint you updated in this request.</p>
+        pub fn replication_config(mut self, input: crate::model::ReplicationConfig) -> Self {
+            self.replication_config = Some(input);
+            self
+        }
+        /// <p>Whether event replication was enabled or disabled for the endpoint you updated in this request.</p>
+        pub fn set_replication_config(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationConfig>,
+        ) -> Self {
+            self.replication_config = input;
+            self
+        }
+        /// Appends an item to `event_buses`.
+        ///
+        /// To override the contents of this collection use [`set_event_buses`](Self::set_event_buses).
+        ///
+        /// <p>The event buses used for replication for the endpoint you updated in this request.</p>
+        pub fn event_buses(mut self, input: crate::model::EndpointEventBus) -> Self {
+            let mut v = self.event_buses.unwrap_or_default();
+            v.push(input);
+            self.event_buses = Some(v);
+            self
+        }
+        /// <p>The event buses used for replication for the endpoint you updated in this request.</p>
+        pub fn set_event_buses(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
+        ) -> Self {
+            self.event_buses = input;
+            self
+        }
+        /// <p>The ARN of the role used by event replication for the endpoint you updated in this request.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the role used by event replication for the endpoint you updated in this request.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The ID of the endpoint you updated in this request.</p>
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the endpoint you updated in this request.</p>
+        pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_id = input;
+            self
+        }
+        /// <p>The URL of the endpoint you updated in this request.</p>
+        pub fn endpoint_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_url = Some(input.into());
+            self
+        }
+        /// <p>The URL of the endpoint you updated in this request.</p>
+        pub fn set_endpoint_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_url = input;
+            self
+        }
+        /// <p>The state of the endpoint you updated in this request.</p>
+        pub fn state(mut self, input: crate::model::EndpointState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The state of the endpoint you updated in this request.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::EndpointState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput)
+        pub fn build(self) -> crate::output::UpdateEndpointOutput {
+            crate::output::UpdateEndpointOutput {
+                name: self.name,
+                arn: self.arn,
+                routing_config: self.routing_config,
+                replication_config: self.replication_config,
+                event_buses: self.event_buses,
+                role_arn: self.role_arn,
+                endpoint_id: self.endpoint_id,
+                endpoint_url: self.endpoint_url,
+                state: self.state,
+            }
+        }
+    }
+}
+impl UpdateEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput)
+    pub fn builder() -> crate::output::update_endpoint_output::Builder {
+        crate::output::update_endpoint_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectionOutput {
     /// <p>The ARN of the connection that was updated.</p>
     pub connection_arn: std::option::Option<std::string::String>,
@@ -1787,6 +2011,88 @@ impl ListEventBusesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListEndpointsOutput {
+    /// <p>The endpoints returned by the call.</p>
+    pub endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEndpointsOutput {
+    /// <p>The endpoints returned by the call.</p>
+    pub fn endpoints(&self) -> std::option::Option<&[crate::model::Endpoint]> {
+        self.endpoints.as_deref()
+    }
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListEndpointsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListEndpointsOutput");
+        formatter.field("endpoints", &self.endpoints);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListEndpointsOutput`](crate::output::ListEndpointsOutput)
+pub mod list_endpoints_output {
+    /// A builder for [`ListEndpointsOutput`](crate::output::ListEndpointsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
+        ///
+        /// <p>The endpoints returned by the call.</p>
+        pub fn endpoints(mut self, input: crate::model::Endpoint) -> Self {
+            let mut v = self.endpoints.unwrap_or_default();
+            v.push(input);
+            self.endpoints = Some(v);
+            self
+        }
+        /// <p>The endpoints returned by the call.</p>
+        pub fn set_endpoints(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
+        ) -> Self {
+            self.endpoints = input;
+            self
+        }
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListEndpointsOutput`](crate::output::ListEndpointsOutput)
+        pub fn build(self) -> crate::output::ListEndpointsOutput {
+            crate::output::ListEndpointsOutput {
+                endpoints: self.endpoints,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListEndpointsOutput {
+    /// Creates a new builder-style object to manufacture [`ListEndpointsOutput`](crate::output::ListEndpointsOutput)
+    pub fn builder() -> crate::output::list_endpoints_output::Builder {
+        crate::output::list_endpoints_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectionsOutput {
     /// <p>An array of connections objects that include details about the connections.</p>
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
@@ -2935,6 +3241,312 @@ impl DescribeEventBusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeEndpointOutput {
+    /// <p>The name of the endpoint you asked for information about.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the endpoint you asked for information about.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The ARN of the endpoint you asked for information about.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The routing configuration of the endpoint you asked for information about.</p>
+    pub routing_config: std::option::Option<crate::model::RoutingConfig>,
+    /// <p>Whether replication is enabled or disabled for the endpoint you asked for information about.</p>
+    pub replication_config: std::option::Option<crate::model::ReplicationConfig>,
+    /// <p>The event buses being used by the endpoint you asked for information about.</p>
+    pub event_buses: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
+    /// <p>The ARN of the role used by the endpoint you asked for information about.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The ID of the endpoint you asked for information about.</p>
+    pub endpoint_id: std::option::Option<std::string::String>,
+    /// <p>The URL of the endpoint you asked for information about.</p>
+    pub endpoint_url: std::option::Option<std::string::String>,
+    /// <p>The current state of the endpoint you asked for information about.</p>
+    pub state: std::option::Option<crate::model::EndpointState>,
+    /// <p>The reason the endpoint you asked for information about is in its current state.</p>
+    pub state_reason: std::option::Option<std::string::String>,
+    /// <p>The time the endpoint you asked for information about was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The last time the endpoint you asked for information about was modified.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl DescribeEndpointOutput {
+    /// <p>The name of the endpoint you asked for information about.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the endpoint you asked for information about.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the endpoint you asked for information about.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The routing configuration of the endpoint you asked for information about.</p>
+    pub fn routing_config(&self) -> std::option::Option<&crate::model::RoutingConfig> {
+        self.routing_config.as_ref()
+    }
+    /// <p>Whether replication is enabled or disabled for the endpoint you asked for information about.</p>
+    pub fn replication_config(&self) -> std::option::Option<&crate::model::ReplicationConfig> {
+        self.replication_config.as_ref()
+    }
+    /// <p>The event buses being used by the endpoint you asked for information about.</p>
+    pub fn event_buses(&self) -> std::option::Option<&[crate::model::EndpointEventBus]> {
+        self.event_buses.as_deref()
+    }
+    /// <p>The ARN of the role used by the endpoint you asked for information about.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The ID of the endpoint you asked for information about.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+    /// <p>The URL of the endpoint you asked for information about.</p>
+    pub fn endpoint_url(&self) -> std::option::Option<&str> {
+        self.endpoint_url.as_deref()
+    }
+    /// <p>The current state of the endpoint you asked for information about.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::EndpointState> {
+        self.state.as_ref()
+    }
+    /// <p>The reason the endpoint you asked for information about is in its current state.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>The time the endpoint you asked for information about was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the endpoint you asked for information about was modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeEndpointOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeEndpointOutput");
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("arn", &self.arn);
+        formatter.field("routing_config", &self.routing_config);
+        formatter.field("replication_config", &self.replication_config);
+        formatter.field("event_buses", &self.event_buses);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("endpoint_id", &self.endpoint_id);
+        formatter.field("endpoint_url", &self.endpoint_url);
+        formatter.field("state", &self.state);
+        formatter.field("state_reason", &self.state_reason);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.finish()
+    }
+}
+/// See [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput)
+pub mod describe_endpoint_output {
+    /// A builder for [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) routing_config: std::option::Option<crate::model::RoutingConfig>,
+        pub(crate) replication_config: std::option::Option<crate::model::ReplicationConfig>,
+        pub(crate) event_buses: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) endpoint_id: std::option::Option<std::string::String>,
+        pub(crate) endpoint_url: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::EndpointState>,
+        pub(crate) state_reason: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The name of the endpoint you asked for information about.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the endpoint you asked for information about.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the endpoint you asked for information about.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the endpoint you asked for information about.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The ARN of the endpoint you asked for information about.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the endpoint you asked for information about.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The routing configuration of the endpoint you asked for information about.</p>
+        pub fn routing_config(mut self, input: crate::model::RoutingConfig) -> Self {
+            self.routing_config = Some(input);
+            self
+        }
+        /// <p>The routing configuration of the endpoint you asked for information about.</p>
+        pub fn set_routing_config(
+            mut self,
+            input: std::option::Option<crate::model::RoutingConfig>,
+        ) -> Self {
+            self.routing_config = input;
+            self
+        }
+        /// <p>Whether replication is enabled or disabled for the endpoint you asked for information about.</p>
+        pub fn replication_config(mut self, input: crate::model::ReplicationConfig) -> Self {
+            self.replication_config = Some(input);
+            self
+        }
+        /// <p>Whether replication is enabled or disabled for the endpoint you asked for information about.</p>
+        pub fn set_replication_config(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationConfig>,
+        ) -> Self {
+            self.replication_config = input;
+            self
+        }
+        /// Appends an item to `event_buses`.
+        ///
+        /// To override the contents of this collection use [`set_event_buses`](Self::set_event_buses).
+        ///
+        /// <p>The event buses being used by the endpoint you asked for information about.</p>
+        pub fn event_buses(mut self, input: crate::model::EndpointEventBus) -> Self {
+            let mut v = self.event_buses.unwrap_or_default();
+            v.push(input);
+            self.event_buses = Some(v);
+            self
+        }
+        /// <p>The event buses being used by the endpoint you asked for information about.</p>
+        pub fn set_event_buses(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
+        ) -> Self {
+            self.event_buses = input;
+            self
+        }
+        /// <p>The ARN of the role used by the endpoint you asked for information about.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the role used by the endpoint you asked for information about.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The ID of the endpoint you asked for information about.</p>
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the endpoint you asked for information about.</p>
+        pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_id = input;
+            self
+        }
+        /// <p>The URL of the endpoint you asked for information about.</p>
+        pub fn endpoint_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_url = Some(input.into());
+            self
+        }
+        /// <p>The URL of the endpoint you asked for information about.</p>
+        pub fn set_endpoint_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_url = input;
+            self
+        }
+        /// <p>The current state of the endpoint you asked for information about.</p>
+        pub fn state(mut self, input: crate::model::EndpointState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The current state of the endpoint you asked for information about.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::EndpointState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The reason the endpoint you asked for information about is in its current state.</p>
+        pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state_reason = Some(input.into());
+            self
+        }
+        /// <p>The reason the endpoint you asked for information about is in its current state.</p>
+        pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_reason = input;
+            self
+        }
+        /// <p>The time the endpoint you asked for information about was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The time the endpoint you asked for information about was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The last time the endpoint you asked for information about was modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The last time the endpoint you asked for information about was modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput)
+        pub fn build(self) -> crate::output::DescribeEndpointOutput {
+            crate::output::DescribeEndpointOutput {
+                name: self.name,
+                description: self.description,
+                arn: self.arn,
+                routing_config: self.routing_config,
+                replication_config: self.replication_config,
+                event_buses: self.event_buses,
+                role_arn: self.role_arn,
+                endpoint_id: self.endpoint_id,
+                endpoint_url: self.endpoint_url,
+                state: self.state,
+                state_reason: self.state_reason,
+                creation_time: self.creation_time,
+                last_modified_time: self.last_modified_time,
+            }
+        }
+    }
+}
+impl DescribeEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput)
+    pub fn builder() -> crate::output::describe_endpoint_output::Builder {
+        crate::output::describe_endpoint_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectionOutput {
     /// <p>The ARN of the connection retrieved.</p>
     pub connection_arn: std::option::Option<std::string::String>,
@@ -3807,6 +4419,36 @@ impl DeleteEventBusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteEndpointOutput {}
+impl std::fmt::Debug for DeleteEndpointOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteEndpointOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
+pub mod delete_endpoint_output {
+    /// A builder for [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
+        pub fn build(self) -> crate::output::DeleteEndpointOutput {
+            crate::output::DeleteEndpointOutput {}
+        }
+    }
+}
+impl DeleteEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
+    pub fn builder() -> crate::output::delete_endpoint_output::Builder {
+        crate::output::delete_endpoint_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionOutput {
     /// <p>The ARN of the connection that was deleted.</p>
     pub connection_arn: std::option::Option<std::string::String>,
@@ -4295,6 +4937,192 @@ impl CreateEventBusOutput {
     /// Creates a new builder-style object to manufacture [`CreateEventBusOutput`](crate::output::CreateEventBusOutput)
     pub fn builder() -> crate::output::create_event_bus_output::Builder {
         crate::output::create_event_bus_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateEndpointOutput {
+    /// <p>The name of the endpoint that was created by this request.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The ARN of the endpoint that was created by this request.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The routing configuration defined by this request.</p>
+    pub routing_config: std::option::Option<crate::model::RoutingConfig>,
+    /// <p>Whether event replication was enabled or disabled by this request.</p>
+    pub replication_config: std::option::Option<crate::model::ReplicationConfig>,
+    /// <p>The event buses used by this request.</p>
+    pub event_buses: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
+    /// <p>The ARN of the role used by event replication for this request.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The state of the endpoint that was created by this request.</p>
+    pub state: std::option::Option<crate::model::EndpointState>,
+}
+impl CreateEndpointOutput {
+    /// <p>The name of the endpoint that was created by this request.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the endpoint that was created by this request.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The routing configuration defined by this request.</p>
+    pub fn routing_config(&self) -> std::option::Option<&crate::model::RoutingConfig> {
+        self.routing_config.as_ref()
+    }
+    /// <p>Whether event replication was enabled or disabled by this request.</p>
+    pub fn replication_config(&self) -> std::option::Option<&crate::model::ReplicationConfig> {
+        self.replication_config.as_ref()
+    }
+    /// <p>The event buses used by this request.</p>
+    pub fn event_buses(&self) -> std::option::Option<&[crate::model::EndpointEventBus]> {
+        self.event_buses.as_deref()
+    }
+    /// <p>The ARN of the role used by event replication for this request.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The state of the endpoint that was created by this request.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::EndpointState> {
+        self.state.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateEndpointOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateEndpointOutput");
+        formatter.field("name", &self.name);
+        formatter.field("arn", &self.arn);
+        formatter.field("routing_config", &self.routing_config);
+        formatter.field("replication_config", &self.replication_config);
+        formatter.field("event_buses", &self.event_buses);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("state", &self.state);
+        formatter.finish()
+    }
+}
+/// See [`CreateEndpointOutput`](crate::output::CreateEndpointOutput)
+pub mod create_endpoint_output {
+    /// A builder for [`CreateEndpointOutput`](crate::output::CreateEndpointOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) routing_config: std::option::Option<crate::model::RoutingConfig>,
+        pub(crate) replication_config: std::option::Option<crate::model::ReplicationConfig>,
+        pub(crate) event_buses: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::EndpointState>,
+    }
+    impl Builder {
+        /// <p>The name of the endpoint that was created by this request.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the endpoint that was created by this request.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The ARN of the endpoint that was created by this request.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the endpoint that was created by this request.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The routing configuration defined by this request.</p>
+        pub fn routing_config(mut self, input: crate::model::RoutingConfig) -> Self {
+            self.routing_config = Some(input);
+            self
+        }
+        /// <p>The routing configuration defined by this request.</p>
+        pub fn set_routing_config(
+            mut self,
+            input: std::option::Option<crate::model::RoutingConfig>,
+        ) -> Self {
+            self.routing_config = input;
+            self
+        }
+        /// <p>Whether event replication was enabled or disabled by this request.</p>
+        pub fn replication_config(mut self, input: crate::model::ReplicationConfig) -> Self {
+            self.replication_config = Some(input);
+            self
+        }
+        /// <p>Whether event replication was enabled or disabled by this request.</p>
+        pub fn set_replication_config(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationConfig>,
+        ) -> Self {
+            self.replication_config = input;
+            self
+        }
+        /// Appends an item to `event_buses`.
+        ///
+        /// To override the contents of this collection use [`set_event_buses`](Self::set_event_buses).
+        ///
+        /// <p>The event buses used by this request.</p>
+        pub fn event_buses(mut self, input: crate::model::EndpointEventBus) -> Self {
+            let mut v = self.event_buses.unwrap_or_default();
+            v.push(input);
+            self.event_buses = Some(v);
+            self
+        }
+        /// <p>The event buses used by this request.</p>
+        pub fn set_event_buses(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
+        ) -> Self {
+            self.event_buses = input;
+            self
+        }
+        /// <p>The ARN of the role used by event replication for this request.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the role used by event replication for this request.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The state of the endpoint that was created by this request.</p>
+        pub fn state(mut self, input: crate::model::EndpointState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The state of the endpoint that was created by this request.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::EndpointState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateEndpointOutput`](crate::output::CreateEndpointOutput)
+        pub fn build(self) -> crate::output::CreateEndpointOutput {
+            crate::output::CreateEndpointOutput {
+                name: self.name,
+                arn: self.arn,
+                routing_config: self.routing_config,
+                replication_config: self.replication_config,
+                event_buses: self.event_buses,
+                role_arn: self.role_arn,
+                state: self.state,
+            }
+        }
+    }
+}
+impl CreateEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`CreateEndpointOutput`](crate::output::CreateEndpointOutput)
+    pub fn builder() -> crate::output::create_endpoint_output::Builder {
+        crate::output::create_endpoint_output::Builder::default()
     }
 }
 

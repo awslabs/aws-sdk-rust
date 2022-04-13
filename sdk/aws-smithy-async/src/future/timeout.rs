@@ -42,6 +42,7 @@ use std::future::Future;
 use std::pin::Pin;
 use std::task::{Context, Poll};
 
+/// Error returned when [`Timeout`] times out
 #[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub struct TimedOutError;
 
@@ -54,6 +55,7 @@ impl fmt::Display for TimedOutError {
 }
 
 pin_project! {
+    /// Timeout Future
     #[non_exhaustive]
     #[must_use = "futures do nothing unless you `.await` or poll them"]
     #[derive(Debug)]
@@ -66,6 +68,9 @@ pin_project! {
 }
 
 impl<T, S> Timeout<T, S> {
+    /// Create a new future that will race `value` and `sleep`.
+    ///
+    /// If `sleep` resolves first, a timeout error is returned. Otherwise, the value is returned.
     pub fn new(value: T, sleep: S) -> Timeout<T, S> {
         Timeout { value, sleep }
     }

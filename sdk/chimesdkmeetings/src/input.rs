@@ -372,6 +372,7 @@ pub mod create_meeting_input {
             std::option::Option<crate::model::NotificationsConfiguration>,
         pub(crate) meeting_features:
             std::option::Option<crate::model::MeetingFeaturesConfiguration>,
+        pub(crate) primary_meeting_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -459,6 +460,19 @@ pub mod create_meeting_input {
             self.meeting_features = input;
             self
         }
+        /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
+        pub fn primary_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.primary_meeting_id = Some(input.into());
+            self
+        }
+        /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
+        pub fn set_primary_meeting_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.primary_meeting_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateMeetingInput`](crate::input::CreateMeetingInput)
         pub fn build(
             self,
@@ -473,6 +487,7 @@ pub mod create_meeting_input {
                 external_meeting_id: self.external_meeting_id,
                 notifications_configuration: self.notifications_configuration,
                 meeting_features: self.meeting_features,
+                primary_meeting_id: self.primary_meeting_id,
             })
         }
     }
@@ -601,6 +616,7 @@ pub mod create_meeting_with_attendees_input {
             std::option::Option<crate::model::NotificationsConfiguration>,
         pub(crate) attendees:
             std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
+        pub(crate) primary_meeting_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -707,6 +723,19 @@ pub mod create_meeting_with_attendees_input {
             self.attendees = input;
             self
         }
+        /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
+        pub fn primary_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.primary_meeting_id = Some(input.into());
+            self
+        }
+        /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
+        pub fn set_primary_meeting_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.primary_meeting_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateMeetingWithAttendeesInput`](crate::input::CreateMeetingWithAttendeesInput)
         pub fn build(
             self,
@@ -722,6 +751,7 @@ pub mod create_meeting_with_attendees_input {
                 meeting_features: self.meeting_features,
                 notifications_configuration: self.notifications_configuration,
                 attendees: self.attendees,
+                primary_meeting_id: self.primary_meeting_id,
             })
         }
     }
@@ -2186,6 +2216,8 @@ pub struct CreateMeetingWithAttendeesInput {
     pub notifications_configuration: std::option::Option<crate::model::NotificationsConfiguration>,
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
     pub attendees: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
+    /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
+    pub primary_meeting_id: std::option::Option<std::string::String>,
 }
 impl CreateMeetingWithAttendeesInput {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -2222,6 +2254,10 @@ impl CreateMeetingWithAttendeesInput {
     pub fn attendees(&self) -> std::option::Option<&[crate::model::CreateAttendeeRequestItem]> {
         self.attendees.as_deref()
     }
+    /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
+    pub fn primary_meeting_id(&self) -> std::option::Option<&str> {
+        self.primary_meeting_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateMeetingWithAttendeesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2236,6 +2272,7 @@ impl std::fmt::Debug for CreateMeetingWithAttendeesInput {
             &self.notifications_configuration,
         );
         formatter.field("attendees", &self.attendees);
+        formatter.field("primary_meeting_id", &self.primary_meeting_id);
         formatter.finish()
     }
 }
@@ -2258,6 +2295,8 @@ pub struct CreateMeetingInput {
     pub notifications_configuration: std::option::Option<crate::model::NotificationsConfiguration>,
     /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
     pub meeting_features: std::option::Option<crate::model::MeetingFeaturesConfiguration>,
+    /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
+    pub primary_meeting_id: std::option::Option<std::string::String>,
 }
 impl CreateMeetingInput {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -2290,6 +2329,10 @@ impl CreateMeetingInput {
     ) -> std::option::Option<&crate::model::MeetingFeaturesConfiguration> {
         self.meeting_features.as_ref()
     }
+    /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
+    pub fn primary_meeting_id(&self) -> std::option::Option<&str> {
+        self.primary_meeting_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateMeetingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2303,6 +2346,7 @@ impl std::fmt::Debug for CreateMeetingInput {
             &self.notifications_configuration,
         );
         formatter.field("meeting_features", &self.meeting_features);
+        formatter.field("primary_meeting_id", &self.primary_meeting_id);
         formatter.finish()
     }
 }

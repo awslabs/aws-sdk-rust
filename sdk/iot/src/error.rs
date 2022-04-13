@@ -21665,6 +21665,132 @@ impl std::error::Error for ListManagedJobTemplatesError {
     }
 }
 
+/// Error type for the `ListMetricValues` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListMetricValuesError {
+    /// Kind of error that occurred.
+    pub kind: ListMetricValuesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListMetricValues` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListMetricValuesErrorKind {
+    /// <p>An unexpected error has occurred.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The rate exceeds the limit.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListMetricValuesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListMetricValuesErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            ListMetricValuesErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListMetricValuesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListMetricValuesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListMetricValuesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListMetricValuesError {
+    fn code(&self) -> Option<&str> {
+        ListMetricValuesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListMetricValuesError {
+    /// Creates a new `ListMetricValuesError`.
+    pub fn new(kind: ListMetricValuesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListMetricValuesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListMetricValuesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListMetricValuesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListMetricValuesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListMetricValuesErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMetricValuesErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMetricValuesErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMetricValuesErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMetricValuesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMetricValuesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMetricValuesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMetricValuesErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for ListMetricValuesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListMetricValuesErrorKind::InternalFailureException(_inner) => Some(_inner),
+            ListMetricValuesErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListMetricValuesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListMetricValuesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListMetricValuesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListMitigationActions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

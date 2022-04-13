@@ -1947,6 +1947,8 @@ pub struct Device {
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The device's lease expiration time.</p>
     pub lease_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The device's maker.</p>
+    pub brand: std::option::Option<crate::model::DeviceBrand>,
 }
 impl Device {
     /// <p>The device's ID.</p>
@@ -1973,6 +1975,10 @@ impl Device {
     pub fn lease_expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.lease_expiration_time.as_ref()
     }
+    /// <p>The device's maker.</p>
+    pub fn brand(&self) -> std::option::Option<&crate::model::DeviceBrand> {
+        self.brand.as_ref()
+    }
 }
 impl std::fmt::Debug for Device {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1983,6 +1989,7 @@ impl std::fmt::Debug for Device {
         formatter.field("provisioning_status", &self.provisioning_status);
         formatter.field("last_updated_time", &self.last_updated_time);
         formatter.field("lease_expiration_time", &self.lease_expiration_time);
+        formatter.field("brand", &self.brand);
         formatter.finish()
     }
 }
@@ -1998,6 +2005,7 @@ pub mod device {
         pub(crate) provisioning_status: std::option::Option<crate::model::DeviceStatus>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) lease_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) brand: std::option::Option<crate::model::DeviceBrand>,
     }
     impl Builder {
         /// <p>The device's ID.</p>
@@ -2072,6 +2080,16 @@ pub mod device {
             self.lease_expiration_time = input;
             self
         }
+        /// <p>The device's maker.</p>
+        pub fn brand(mut self, input: crate::model::DeviceBrand) -> Self {
+            self.brand = Some(input);
+            self
+        }
+        /// <p>The device's maker.</p>
+        pub fn set_brand(mut self, input: std::option::Option<crate::model::DeviceBrand>) -> Self {
+            self.brand = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Device`](crate::model::Device)
         pub fn build(self) -> crate::model::Device {
             crate::model::Device {
@@ -2081,6 +2099,7 @@ pub mod device {
                 provisioning_status: self.provisioning_status,
                 last_updated_time: self.last_updated_time,
                 lease_expiration_time: self.lease_expiration_time,
+                brand: self.brand,
             }
         }
     }
@@ -2089,6 +2108,61 @@ impl Device {
     /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device)
     pub fn builder() -> crate::model::device::Builder {
         crate::model::device::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DeviceBrand {
+    #[allow(missing_docs)] // documentation missing in model
+    AwsPanorama,
+    #[allow(missing_docs)] // documentation missing in model
+    Lenovo,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DeviceBrand {
+    fn from(s: &str) -> Self {
+        match s {
+            "AWS_PANORAMA" => DeviceBrand::AwsPanorama,
+            "LENOVO" => DeviceBrand::Lenovo,
+            other => DeviceBrand::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DeviceBrand {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DeviceBrand::from(s))
+    }
+}
+impl DeviceBrand {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DeviceBrand::AwsPanorama => "AWS_PANORAMA",
+            DeviceBrand::Lenovo => "LENOVO",
+            DeviceBrand::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AWS_PANORAMA", "LENOVO"]
+    }
+}
+impl AsRef<str> for DeviceBrand {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2470,6 +2544,8 @@ pub enum ApplicationInstanceStatus {
     #[allow(missing_docs)] // documentation missing in model
     DeploymentError,
     #[allow(missing_docs)] // documentation missing in model
+    DeploymentFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DeploymentInProgress,
     #[allow(missing_docs)] // documentation missing in model
     DeploymentPending,
@@ -2494,6 +2570,7 @@ impl std::convert::From<&str> for ApplicationInstanceStatus {
     fn from(s: &str) -> Self {
         match s {
             "DEPLOYMENT_ERROR" => ApplicationInstanceStatus::DeploymentError,
+            "DEPLOYMENT_FAILED" => ApplicationInstanceStatus::DeploymentFailed,
             "DEPLOYMENT_IN_PROGRESS" => ApplicationInstanceStatus::DeploymentInProgress,
             "DEPLOYMENT_PENDING" => ApplicationInstanceStatus::DeploymentPending,
             "DEPLOYMENT_REQUESTED" => ApplicationInstanceStatus::DeploymentRequested,
@@ -2519,6 +2596,7 @@ impl ApplicationInstanceStatus {
     pub fn as_str(&self) -> &str {
         match self {
             ApplicationInstanceStatus::DeploymentError => "DEPLOYMENT_ERROR",
+            ApplicationInstanceStatus::DeploymentFailed => "DEPLOYMENT_FAILED",
             ApplicationInstanceStatus::DeploymentInProgress => "DEPLOYMENT_IN_PROGRESS",
             ApplicationInstanceStatus::DeploymentPending => "DEPLOYMENT_PENDING",
             ApplicationInstanceStatus::DeploymentRequested => "DEPLOYMENT_REQUESTED",
@@ -2535,6 +2613,7 @@ impl ApplicationInstanceStatus {
     pub fn values() -> &'static [&'static str] {
         &[
             "DEPLOYMENT_ERROR",
+            "DEPLOYMENT_FAILED",
             "DEPLOYMENT_IN_PROGRESS",
             "DEPLOYMENT_PENDING",
             "DEPLOYMENT_REQUESTED",
@@ -2568,6 +2647,8 @@ pub enum StatusFilter {
     #[allow(missing_docs)] // documentation missing in model
     DeploymentError,
     #[allow(missing_docs)] // documentation missing in model
+    DeploymentFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DeploymentSucceeded,
     #[allow(missing_docs)] // documentation missing in model
     ProcessingDeployment,
@@ -2584,6 +2665,7 @@ impl std::convert::From<&str> for StatusFilter {
     fn from(s: &str) -> Self {
         match s {
             "DEPLOYMENT_ERROR" => StatusFilter::DeploymentError,
+            "DEPLOYMENT_FAILED" => StatusFilter::DeploymentFailed,
             "DEPLOYMENT_SUCCEEDED" => StatusFilter::DeploymentSucceeded,
             "PROCESSING_DEPLOYMENT" => StatusFilter::ProcessingDeployment,
             "PROCESSING_REMOVAL" => StatusFilter::ProcessingRemoval,
@@ -2605,6 +2687,7 @@ impl StatusFilter {
     pub fn as_str(&self) -> &str {
         match self {
             StatusFilter::DeploymentError => "DEPLOYMENT_ERROR",
+            StatusFilter::DeploymentFailed => "DEPLOYMENT_FAILED",
             StatusFilter::DeploymentSucceeded => "DEPLOYMENT_SUCCEEDED",
             StatusFilter::ProcessingDeployment => "PROCESSING_DEPLOYMENT",
             StatusFilter::ProcessingRemoval => "PROCESSING_REMOVAL",
@@ -2617,6 +2700,7 @@ impl StatusFilter {
     pub fn values() -> &'static [&'static str] {
         &[
             "DEPLOYMENT_ERROR",
+            "DEPLOYMENT_FAILED",
             "DEPLOYMENT_SUCCEEDED",
             "PROCESSING_DEPLOYMENT",
             "PROCESSING_REMOVAL",

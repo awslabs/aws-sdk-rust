@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_datasync::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_datasync::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_datasync::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_datasync::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -142,18 +142,32 @@ impl Client {
     pub fn create_location_fsx_lustre(&self) -> fluent_builders::CreateLocationFsxLustre {
         fluent_builders::CreateLocationFsxLustre::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateLocationFsxOpenZfs`](crate::client::fluent_builders::CreateLocationFsxOpenZfs) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`fsx_filesystem_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxOpenZfs::fsx_filesystem_arn) / [`set_fsx_filesystem_arn(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxOpenZfs::set_fsx_filesystem_arn): <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
+    ///   - [`protocol(FsxProtocol)`](crate::client::fluent_builders::CreateLocationFsxOpenZfs::protocol) / [`set_protocol(Option<FsxProtocol>)`](crate::client::fluent_builders::CreateLocationFsxOpenZfs::set_protocol): <p>The type of protocol that DataSync uses to access your file system.</p>
+    ///   - [`security_group_arns(Vec<String>)`](crate::client::fluent_builders::CreateLocationFsxOpenZfs::security_group_arns) / [`set_security_group_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLocationFsxOpenZfs::set_security_group_arns): <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
+    ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxOpenZfs::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxOpenZfs::set_subdirectory): <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
+    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateLocationFsxOpenZfs::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateLocationFsxOpenZfs::set_tags): <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
+    /// - On success, responds with [`CreateLocationFsxOpenZfsOutput`](crate::output::CreateLocationFsxOpenZfsOutput) with field(s):
+    ///   - [`location_arn(Option<String>)`](crate::output::CreateLocationFsxOpenZfsOutput::location_arn): <p>The ARN of the FSx for OpenZFS file system location that you created.</p>
+    /// - On failure, responds with [`SdkError<CreateLocationFsxOpenZfsError>`](crate::error::CreateLocationFsxOpenZfsError)
+    pub fn create_location_fsx_open_zfs(&self) -> fluent_builders::CreateLocationFsxOpenZfs {
+        fluent_builders::CreateLocationFsxOpenZfs::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateLocationFsxWindows`](crate::client::fluent_builders::CreateLocationFsxWindows) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_subdirectory): <p>A subdirectory in the location's path. This subdirectory in the Amazon FSx for Windows File Server file system is used to read data from the Amazon FSx for Windows File Server source location or write data to the FSx for Windows File Server destination.</p>
     ///   - [`fsx_filesystem_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::fsx_filesystem_arn) / [`set_fsx_filesystem_arn(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_fsx_filesystem_arn): <p>The Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
-    ///   - [`security_group_arns(Vec<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::security_group_arns) / [`set_security_group_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_security_group_arns): <p>The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Windows File Server file system.</p>
+    ///   - [`security_group_arns(Vec<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::security_group_arns) / [`set_security_group_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_security_group_arns): <p>The ARNs of the security groups that are used to configure the FSx for Windows File Server file system.</p>
     ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateLocationFsxWindows::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_tags): <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
     ///   - [`user(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::user) / [`set_user(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_user): <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>  <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_domain): <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
     ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_password): <p>The password of the user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
     /// - On success, responds with [`CreateLocationFsxWindowsOutput`](crate::output::CreateLocationFsxWindowsOutput) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::CreateLocationFsxWindowsOutput::location_arn): <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location that is created.</p>
+    ///   - [`location_arn(Option<String>)`](crate::output::CreateLocationFsxWindowsOutput::location_arn): <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location you created.</p>
     /// - On failure, responds with [`SdkError<CreateLocationFsxWindowsError>`](crate::error::CreateLocationFsxWindowsError)
     pub fn create_location_fsx_windows(&self) -> fluent_builders::CreateLocationFsxWindows {
         fluent_builders::CreateLocationFsxWindows::new(self.handle.clone())
@@ -184,7 +198,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::CreateLocationNfs::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::CreateLocationNfs::set_subdirectory): <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network. </p>  <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>  <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>  <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>  <p>For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat Enterprise Linux documentation.</p>
-    ///   - [`server_hostname(impl Into<String>)`](crate::client::fluent_builders::CreateLocationNfs::server_hostname) / [`set_server_hostname(Option<String>)`](crate::client::fluent_builders::CreateLocationNfs::set_server_hostname): <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this host name to mount the NFS server in a network. </p>  <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>   <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>  </note>
+    ///   - [`server_hostname(impl Into<String>)`](crate::client::fluent_builders::CreateLocationNfs::server_hostname) / [`set_server_hostname(Option<String>)`](crate::client::fluent_builders::CreateLocationNfs::set_server_hostname): <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p>  <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>   <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>  </note>
     ///   - [`on_prem_config(OnPremConfig)`](crate::client::fluent_builders::CreateLocationNfs::on_prem_config) / [`set_on_prem_config(Option<OnPremConfig>)`](crate::client::fluent_builders::CreateLocationNfs::set_on_prem_config): <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to connect to an NFS server. </p>  <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
     ///   - [`mount_options(NfsMountOptions)`](crate::client::fluent_builders::CreateLocationNfs::mount_options) / [`set_mount_options(Option<NfsMountOptions>)`](crate::client::fluent_builders::CreateLocationNfs::set_mount_options): <p>The NFS mount options that DataSync can use to mount your NFS share.</p>
     ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateLocationNfs::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateLocationNfs::set_tags): <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
@@ -197,7 +211,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateLocationObjectStorage`](crate::client::fluent_builders::CreateLocationObjectStorage) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`server_hostname(impl Into<String>)`](crate::client::fluent_builders::CreateLocationObjectStorage::server_hostname) / [`set_server_hostname(Option<String>)`](crate::client::fluent_builders::CreateLocationObjectStorage::set_server_hostname): <p>The name of the self-managed object storage server. This value is the IP address or Domain Name Service (DNS) name of the object storage server. An agent uses this host name to mount the object storage server in a network. </p>
+    ///   - [`server_hostname(impl Into<String>)`](crate::client::fluent_builders::CreateLocationObjectStorage::server_hostname) / [`set_server_hostname(Option<String>)`](crate::client::fluent_builders::CreateLocationObjectStorage::set_server_hostname): <p>The name of the self-managed object storage server. This value is the IP address or Domain Name Service (DNS) name of the object storage server. An agent uses this hostname to mount the object storage server in a network. </p>
     ///   - [`server_port(i32)`](crate::client::fluent_builders::CreateLocationObjectStorage::server_port) / [`set_server_port(Option<i32>)`](crate::client::fluent_builders::CreateLocationObjectStorage::set_server_port): <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage server requires one.</p>
     ///   - [`server_protocol(ObjectStorageServerProtocol)`](crate::client::fluent_builders::CreateLocationObjectStorage::server_protocol) / [`set_server_protocol(Option<ObjectStorageServerProtocol>)`](crate::client::fluent_builders::CreateLocationObjectStorage::set_server_protocol): <p>The protocol that the object storage server uses to communicate. Valid values are HTTP or HTTPS.</p>
     ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::CreateLocationObjectStorage::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::CreateLocationObjectStorage::set_subdirectory): <p>The subdirectory in the self-managed object storage server that is used to read data from.</p>
@@ -218,8 +232,8 @@ impl Client {
     ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::CreateLocationS3::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::CreateLocationS3::set_subdirectory): <p>A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read data from the S3 source location or write data to the S3 destination.</p>
     ///   - [`s3_bucket_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLocationS3::s3_bucket_arn) / [`set_s3_bucket_arn(Option<String>)`](crate::client::fluent_builders::CreateLocationS3::set_s3_bucket_arn): <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an access point ARN.</p>
     ///   - [`s3_storage_class(S3StorageClass)`](crate::client::fluent_builders::CreateLocationS3::s3_storage_class) / [`set_s3_storage_class(Option<S3StorageClass>)`](crate::client::fluent_builders::CreateLocationS3::set_s3_storage_class): <p>The Amazon S3 storage class that you want to store your files in when this location is used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>  <p>For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
-    ///   - [`s3_config(S3Config)`](crate::client::fluent_builders::CreateLocationS3::s3_config) / [`set_s3_config(Option<S3Config>)`](crate::client::fluent_builders::CreateLocationS3::set_s3_config): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p>  <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
-    ///   - [`agent_arns(Vec<String>)`](crate::client::fluent_builders::CreateLocationS3::agent_arns) / [`set_agent_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLocationS3::set_agent_arns): <p>If you are using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
+    ///   - [`s3_config(S3Config)`](crate::client::fluent_builders::CreateLocationS3::s3_config) / [`set_s3_config(Option<S3Config>)`](crate::client::fluent_builders::CreateLocationS3::set_s3_config): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>  <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
+    ///   - [`agent_arns(Vec<String>)`](crate::client::fluent_builders::CreateLocationS3::agent_arns) / [`set_agent_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLocationS3::set_agent_arns): <p>If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
     ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateLocationS3::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateLocationS3::set_tags): <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
     /// - On success, responds with [`CreateLocationS3Output`](crate::output::CreateLocationS3Output) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::output::CreateLocationS3Output::location_arn): <p>The Amazon Resource Name (ARN) of the source Amazon S3 bucket location that is created.</p>
@@ -315,7 +329,7 @@ impl Client {
     /// - On success, responds with [`DescribeLocationEfsOutput`](crate::output::DescribeLocationEfsOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::output::DescribeLocationEfsOutput::location_arn): <p>The Amazon Resource Name (ARN) of the EFS location that was described.</p>
     ///   - [`location_uri(Option<String>)`](crate::output::DescribeLocationEfsOutput::location_uri): <p>The URL of the EFS location that was described.</p>
-    ///   - [`ec2_config(Option<Ec2Config>)`](crate::output::DescribeLocationEfsOutput::ec2_config): <p>The subnet and the security group that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified. </p>
+    ///   - [`ec2_config(Option<Ec2Config>)`](crate::output::DescribeLocationEfsOutput::ec2_config): <p>The subnet that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified. </p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeLocationEfsOutput::creation_time): <p>The time that the EFS location was created.</p>
     /// - On failure, responds with [`SdkError<DescribeLocationEfsError>`](crate::error::DescribeLocationEfsError)
     pub fn describe_location_efs(&self) -> fluent_builders::DescribeLocationEfs {
@@ -333,6 +347,20 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeLocationFsxLustreError>`](crate::error::DescribeLocationFsxLustreError)
     pub fn describe_location_fsx_lustre(&self) -> fluent_builders::DescribeLocationFsxLustre {
         fluent_builders::DescribeLocationFsxLustre::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeLocationFsxOpenZfs`](crate::client::fluent_builders::DescribeLocationFsxOpenZfs) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`location_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeLocationFsxOpenZfs::location_arn) / [`set_location_arn(Option<String>)`](crate::client::fluent_builders::DescribeLocationFsxOpenZfs::set_location_arn): <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe.</p>
+    /// - On success, responds with [`DescribeLocationFsxOpenZfsOutput`](crate::output::DescribeLocationFsxOpenZfsOutput) with field(s):
+    ///   - [`location_arn(Option<String>)`](crate::output::DescribeLocationFsxOpenZfsOutput::location_arn): <p>The ARN of the FSx for OpenZFS location that was described.</p>
+    ///   - [`location_uri(Option<String>)`](crate::output::DescribeLocationFsxOpenZfsOutput::location_uri): <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p>  <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> </p>
+    ///   - [`security_group_arns(Option<Vec<String>>)`](crate::output::DescribeLocationFsxOpenZfsOutput::security_group_arns): <p>The ARNs of the security groups that are configured for the FSx for OpenZFS file system.</p>
+    ///   - [`protocol(Option<FsxProtocol>)`](crate::output::DescribeLocationFsxOpenZfsOutput::protocol): <p>The type of protocol that DataSync uses to access your file system.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeLocationFsxOpenZfsOutput::creation_time): <p>The time that the FSx for OpenZFS location was created.</p>
+    /// - On failure, responds with [`SdkError<DescribeLocationFsxOpenZfsError>`](crate::error::DescribeLocationFsxOpenZfsError)
+    pub fn describe_location_fsx_open_zfs(&self) -> fluent_builders::DescribeLocationFsxOpenZfs {
+        fluent_builders::DescribeLocationFsxOpenZfs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeLocationFsxWindows`](crate::client::fluent_builders::DescribeLocationFsxWindows) operation.
     ///
@@ -410,7 +438,7 @@ impl Client {
     ///   - [`location_arn(Option<String>)`](crate::output::DescribeLocationS3Output::location_arn): <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.</p>
     ///   - [`location_uri(Option<String>)`](crate::output::DescribeLocationS3Output::location_uri): <p>The URL of the Amazon S3 location that was described.</p>
     ///   - [`s3_storage_class(Option<S3StorageClass>)`](crate::output::DescribeLocationS3Output::s3_storage_class): <p>The Amazon S3 storage class that you chose to store your files in when this location is used as a task destination. For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
-    ///   - [`s3_config(Option<S3Config>)`](crate::output::DescribeLocationS3Output::s3_config): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p>  <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
+    ///   - [`s3_config(Option<S3Config>)`](crate::output::DescribeLocationS3Output::s3_config): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>  <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
     ///   - [`agent_arns(Option<Vec<String>>)`](crate::output::DescribeLocationS3Output::agent_arns): <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeLocationS3Output::creation_time): <p>The time that the Amazon S3 bucket location was created.</p>
     /// - On failure, responds with [`SdkError<DescribeLocationS3Error>`](crate::error::DescribeLocationS3Error)
@@ -607,8 +635,8 @@ impl Client {
     ///   - [`authentication_type(HdfsAuthenticationType)`](crate::client::fluent_builders::UpdateLocationHdfs::authentication_type) / [`set_authentication_type(Option<HdfsAuthenticationType>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_authentication_type): <p>The type of authentication used to determine the identity of the user. </p>
     ///   - [`simple_user(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationHdfs::simple_user) / [`set_simple_user(Option<String>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_simple_user): <p>The user name used to identify the client on the host operating system.</p>
     ///   - [`kerberos_principal(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationHdfs::kerberos_principal) / [`set_kerberos_principal(Option<String>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_kerberos_principal): <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
-    ///   - [`kerberos_keytab(Blob)`](crate::client::fluent_builders::UpdateLocationHdfs::kerberos_keytab) / [`set_kerberos_keytab(Option<Blob>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_kerberos_keytab): <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the AWS CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
-    ///   - [`kerberos_krb5_conf(Blob)`](crate::client::fluent_builders::UpdateLocationHdfs::kerberos_krb5_conf) / [`set_kerberos_krb5_conf(Option<Blob>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_kerberos_krb5_conf): <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the AWS CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+    ///   - [`kerberos_keytab(Blob)`](crate::client::fluent_builders::UpdateLocationHdfs::kerberos_keytab) / [`set_kerberos_keytab(Option<Blob>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_kerberos_keytab): <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+    ///   - [`kerberos_krb5_conf(Blob)`](crate::client::fluent_builders::UpdateLocationHdfs::kerberos_krb5_conf) / [`set_kerberos_krb5_conf(Option<Blob>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_kerberos_krb5_conf): <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
     ///   - [`agent_arns(Vec<String>)`](crate::client::fluent_builders::UpdateLocationHdfs::agent_arns) / [`set_agent_arns(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_agent_arns): <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
     /// - On success, responds with [`UpdateLocationHdfsOutput`](crate::output::UpdateLocationHdfsOutput)
 
@@ -1108,6 +1136,119 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateLocationFsxOpenZfs`.
+    ///
+    /// <p>Creates an endpoint for an Amazon FSx for OpenZFS file system.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateLocationFsxOpenZfs {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_location_fsx_open_zfs_input::Builder,
+    }
+    impl CreateLocationFsxOpenZfs {
+        /// Creates a new `CreateLocationFsxOpenZfs`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateLocationFsxOpenZfsOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxOpenZfsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
+        pub fn fsx_filesystem_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fsx_filesystem_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
+        pub fn set_fsx_filesystem_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_fsx_filesystem_arn(input);
+            self
+        }
+        /// <p>The type of protocol that DataSync uses to access your file system.</p>
+        pub fn protocol(mut self, input: crate::model::FsxProtocol) -> Self {
+            self.inner = self.inner.protocol(input);
+            self
+        }
+        /// <p>The type of protocol that DataSync uses to access your file system.</p>
+        pub fn set_protocol(
+            mut self,
+            input: std::option::Option<crate::model::FsxProtocol>,
+        ) -> Self {
+            self.inner = self.inner.set_protocol(input);
+            self
+        }
+        /// Appends an item to `SecurityGroupArns`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
+        ///
+        /// <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
+        pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_arns(input.into());
+            self
+        }
+        /// <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
+        pub fn set_security_group_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_security_group_arns(input);
+            self
+        }
+        /// <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
+        pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subdirectory(input.into());
+            self
+        }
+        /// <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
+        pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_subdirectory(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
+        pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateLocationFsxWindows`.
     ///
     /// <p>Creates an endpoint for an Amazon FSx for Windows File Server file system.</p>
@@ -1177,12 +1318,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Windows File Server file system.</p>
+        /// <p>The ARNs of the security groups that are used to configure the FSx for Windows File Server file system.</p>
         pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.security_group_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Windows File Server file system.</p>
+        /// <p>The ARNs of the security groups that are used to configure the FSx for Windows File Server file system.</p>
         pub fn set_security_group_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1528,7 +1669,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subdirectory(input);
             self
         }
-        /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this host name to mount the NFS server in a network. </p>
+        /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p>
         /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
         /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
         /// </note>
@@ -1536,7 +1677,7 @@ pub mod fluent_builders {
             self.inner = self.inner.server_hostname(input.into());
             self
         }
-        /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this host name to mount the NFS server in a network. </p>
+        /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p>
         /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
         /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
         /// </note>
@@ -1635,12 +1776,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the self-managed object storage server. This value is the IP address or Domain Name Service (DNS) name of the object storage server. An agent uses this host name to mount the object storage server in a network. </p>
+        /// <p>The name of the self-managed object storage server. This value is the IP address or Domain Name Service (DNS) name of the object storage server. An agent uses this hostname to mount the object storage server in a network. </p>
         pub fn server_hostname(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.server_hostname(input.into());
             self
         }
-        /// <p>The name of the self-managed object storage server. This value is the IP address or Domain Name Service (DNS) name of the object storage server. An agent uses this host name to mount the object storage server in a network. </p>
+        /// <p>The name of the self-managed object storage server. This value is the IP address or Domain Name Service (DNS) name of the object storage server. An agent uses this hostname to mount the object storage server in a network. </p>
         pub fn set_server_hostname(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1827,13 +1968,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3_storage_class(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
         /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
         pub fn s3_config(mut self, input: crate::model::S3Config) -> Self {
             self.inner = self.inner.s3_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
         /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
         pub fn set_s3_config(mut self, input: std::option::Option<crate::model::S3Config>) -> Self {
             self.inner = self.inner.set_s3_config(input);
@@ -1843,12 +1984,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
         ///
-        /// <p>If you are using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
+        /// <p>If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.agent_arns(input.into());
             self
         }
-        /// <p>If you are using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
+        /// <p>If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
         pub fn set_agent_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2471,7 +2612,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeLocationFsxLustre`.
     ///
-    /// <p>Returns metadata, such as the path information about an Amazon FSx for Lustre location.</p>
+    /// <p>Returns metadata about an Amazon FSx for Lustre location, such as information about its path.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocationFsxLustre {
         handle: std::sync::Arc<super::Handle>,
@@ -2522,9 +2663,62 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeLocationFsxOpenZfs`.
+    ///
+    /// <p>Returns metadata about an Amazon FSx for OpenZFS location, such as information about its path.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeLocationFsxOpenZfs {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_location_fsx_open_zfs_input::Builder,
+    }
+    impl DescribeLocationFsxOpenZfs {
+        /// Creates a new `DescribeLocationFsxOpenZfs`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeLocationFsxOpenZfsOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxOpenZfsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe.</p>
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe.</p>
+        pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_location_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeLocationFsxWindows`.
     ///
-    /// <p>Returns metadata, such as the path information about an Amazon FSx for Windows File Server location.</p>
+    /// <p>Returns metadata about an Amazon FSx for Windows File Server location, such as information about its path.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocationFsxWindows {
         handle: std::sync::Arc<super::Handle>,
@@ -3821,12 +4015,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kerberos_principal(input);
             self
         }
-        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the AWS CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
         pub fn kerberos_keytab(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.kerberos_keytab(input);
             self
         }
-        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the AWS CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
         pub fn set_kerberos_keytab(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -3834,12 +4028,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kerberos_keytab(input);
             self
         }
-        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the AWS CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
         pub fn kerberos_krb5_conf(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.kerberos_krb5_conf(input);
             self
         }
-        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the AWS CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
         pub fn set_kerberos_krb5_conf(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,

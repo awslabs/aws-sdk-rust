@@ -136,6 +136,136 @@ impl std::error::Error for AssociateAdminAccountError {
     }
 }
 
+/// Error type for the `AssociateThirdPartyFirewall` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct AssociateThirdPartyFirewallError {
+    /// Kind of error that occurred.
+    pub kind: AssociateThirdPartyFirewallErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `AssociateThirdPartyFirewall` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AssociateThirdPartyFirewallErrorKind {
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
+    InternalErrorException(crate::error::InternalErrorException),
+    /// <p>The parameters of the request were invalid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
+    InvalidOperationException(crate::error::InvalidOperationException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for AssociateThirdPartyFirewallError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AssociateThirdPartyFirewallErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
+            AssociateThirdPartyFirewallErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            AssociateThirdPartyFirewallErrorKind::InvalidOperationException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateThirdPartyFirewallErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateThirdPartyFirewallErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for AssociateThirdPartyFirewallError {
+    fn code(&self) -> Option<&str> {
+        AssociateThirdPartyFirewallError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AssociateThirdPartyFirewallError {
+    /// Creates a new `AssociateThirdPartyFirewallError`.
+    pub fn new(kind: AssociateThirdPartyFirewallErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `AssociateThirdPartyFirewallError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AssociateThirdPartyFirewallErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `AssociateThirdPartyFirewallError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AssociateThirdPartyFirewallErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `AssociateThirdPartyFirewallErrorKind::InternalErrorException`.
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateThirdPartyFirewallErrorKind::InternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateThirdPartyFirewallErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateThirdPartyFirewallErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateThirdPartyFirewallErrorKind::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateThirdPartyFirewallErrorKind::InvalidOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateThirdPartyFirewallErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateThirdPartyFirewallErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for AssociateThirdPartyFirewallError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AssociateThirdPartyFirewallErrorKind::InternalErrorException(_inner) => Some(_inner),
+            AssociateThirdPartyFirewallErrorKind::InvalidInputException(_inner) => Some(_inner),
+            AssociateThirdPartyFirewallErrorKind::InvalidOperationException(_inner) => Some(_inner),
+            AssociateThirdPartyFirewallErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            AssociateThirdPartyFirewallErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteAppsList` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -720,6 +850,145 @@ impl std::error::Error for DisassociateAdminAccountError {
             DisassociateAdminAccountErrorKind::InvalidOperationException(_inner) => Some(_inner),
             DisassociateAdminAccountErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DisassociateAdminAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DisassociateThirdPartyFirewall` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DisassociateThirdPartyFirewallError {
+    /// Kind of error that occurred.
+    pub kind: DisassociateThirdPartyFirewallErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DisassociateThirdPartyFirewall` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DisassociateThirdPartyFirewallErrorKind {
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
+    InternalErrorException(crate::error::InternalErrorException),
+    /// <p>The parameters of the request were invalid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
+    InvalidOperationException(crate::error::InvalidOperationException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DisassociateThirdPartyFirewallError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DisassociateThirdPartyFirewallErrorKind::InternalErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateThirdPartyFirewallErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DisassociateThirdPartyFirewallErrorKind::InvalidOperationException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateThirdPartyFirewallErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateThirdPartyFirewallErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DisassociateThirdPartyFirewallError {
+    fn code(&self) -> Option<&str> {
+        DisassociateThirdPartyFirewallError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DisassociateThirdPartyFirewallError {
+    /// Creates a new `DisassociateThirdPartyFirewallError`.
+    pub fn new(
+        kind: DisassociateThirdPartyFirewallErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DisassociateThirdPartyFirewallError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DisassociateThirdPartyFirewallErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DisassociateThirdPartyFirewallError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DisassociateThirdPartyFirewallErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DisassociateThirdPartyFirewallErrorKind::InternalErrorException`.
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateThirdPartyFirewallErrorKind::InternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateThirdPartyFirewallErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateThirdPartyFirewallErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateThirdPartyFirewallErrorKind::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateThirdPartyFirewallErrorKind::InvalidOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateThirdPartyFirewallErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateThirdPartyFirewallErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DisassociateThirdPartyFirewallError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DisassociateThirdPartyFirewallErrorKind::InternalErrorException(_inner) => Some(_inner),
+            DisassociateThirdPartyFirewallErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DisassociateThirdPartyFirewallErrorKind::InvalidOperationException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateThirdPartyFirewallErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateThirdPartyFirewallErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1536,6 +1805,153 @@ impl std::error::Error for GetProtocolsListError {
     }
 }
 
+/// Error type for the `GetThirdPartyFirewallAssociationStatus` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetThirdPartyFirewallAssociationStatusError {
+    /// Kind of error that occurred.
+    pub kind: GetThirdPartyFirewallAssociationStatusErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetThirdPartyFirewallAssociationStatus` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetThirdPartyFirewallAssociationStatusErrorKind {
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
+    InternalErrorException(crate::error::InternalErrorException),
+    /// <p>The parameters of the request were invalid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
+    InvalidOperationException(crate::error::InvalidOperationException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetThirdPartyFirewallAssociationStatusError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetThirdPartyFirewallAssociationStatusErrorKind::InternalErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetThirdPartyFirewallAssociationStatusErrorKind::InvalidInputException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetThirdPartyFirewallAssociationStatusErrorKind::InvalidOperationException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetThirdPartyFirewallAssociationStatusErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetThirdPartyFirewallAssociationStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetThirdPartyFirewallAssociationStatusError {
+    fn code(&self) -> Option<&str> {
+        GetThirdPartyFirewallAssociationStatusError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetThirdPartyFirewallAssociationStatusError {
+    /// Creates a new `GetThirdPartyFirewallAssociationStatusError`.
+    pub fn new(
+        kind: GetThirdPartyFirewallAssociationStatusErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetThirdPartyFirewallAssociationStatusError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetThirdPartyFirewallAssociationStatusErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetThirdPartyFirewallAssociationStatusError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetThirdPartyFirewallAssociationStatusErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetThirdPartyFirewallAssociationStatusErrorKind::InternalErrorException`.
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetThirdPartyFirewallAssociationStatusErrorKind::InternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetThirdPartyFirewallAssociationStatusErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetThirdPartyFirewallAssociationStatusErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetThirdPartyFirewallAssociationStatusErrorKind::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetThirdPartyFirewallAssociationStatusErrorKind::InvalidOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetThirdPartyFirewallAssociationStatusErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetThirdPartyFirewallAssociationStatusErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for GetThirdPartyFirewallAssociationStatusError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetThirdPartyFirewallAssociationStatusErrorKind::InternalErrorException(_inner) => {
+                Some(_inner)
+            }
+            GetThirdPartyFirewallAssociationStatusErrorKind::InvalidInputException(_inner) => {
+                Some(_inner)
+            }
+            GetThirdPartyFirewallAssociationStatusErrorKind::InvalidOperationException(_inner) => {
+                Some(_inner)
+            }
+            GetThirdPartyFirewallAssociationStatusErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetThirdPartyFirewallAssociationStatusErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
 /// Error type for the `GetViolationDetails` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2342,6 +2758,153 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InvalidOperationException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListThirdPartyFirewallFirewallPolicies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListThirdPartyFirewallFirewallPoliciesError {
+    /// Kind of error that occurred.
+    pub kind: ListThirdPartyFirewallFirewallPoliciesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListThirdPartyFirewallFirewallPolicies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListThirdPartyFirewallFirewallPoliciesErrorKind {
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
+    InternalErrorException(crate::error::InternalErrorException),
+    /// <p>The parameters of the request were invalid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
+    InvalidOperationException(crate::error::InvalidOperationException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListThirdPartyFirewallFirewallPoliciesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListThirdPartyFirewallFirewallPoliciesErrorKind::InternalErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListThirdPartyFirewallFirewallPoliciesErrorKind::InvalidInputException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListThirdPartyFirewallFirewallPoliciesErrorKind::InvalidOperationException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListThirdPartyFirewallFirewallPoliciesErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListThirdPartyFirewallFirewallPoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListThirdPartyFirewallFirewallPoliciesError {
+    fn code(&self) -> Option<&str> {
+        ListThirdPartyFirewallFirewallPoliciesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListThirdPartyFirewallFirewallPoliciesError {
+    /// Creates a new `ListThirdPartyFirewallFirewallPoliciesError`.
+    pub fn new(
+        kind: ListThirdPartyFirewallFirewallPoliciesErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListThirdPartyFirewallFirewallPoliciesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListThirdPartyFirewallFirewallPoliciesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListThirdPartyFirewallFirewallPoliciesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListThirdPartyFirewallFirewallPoliciesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListThirdPartyFirewallFirewallPoliciesErrorKind::InternalErrorException`.
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListThirdPartyFirewallFirewallPoliciesErrorKind::InternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListThirdPartyFirewallFirewallPoliciesErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListThirdPartyFirewallFirewallPoliciesErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListThirdPartyFirewallFirewallPoliciesErrorKind::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListThirdPartyFirewallFirewallPoliciesErrorKind::InvalidOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListThirdPartyFirewallFirewallPoliciesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListThirdPartyFirewallFirewallPoliciesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for ListThirdPartyFirewallFirewallPoliciesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListThirdPartyFirewallFirewallPoliciesErrorKind::InternalErrorException(_inner) => {
+                Some(_inner)
+            }
+            ListThirdPartyFirewallFirewallPoliciesErrorKind::InvalidInputException(_inner) => {
+                Some(_inner)
+            }
+            ListThirdPartyFirewallFirewallPoliciesErrorKind::InvalidOperationException(_inner) => {
+                Some(_inner)
+            }
+            ListThirdPartyFirewallFirewallPoliciesErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            ListThirdPartyFirewallFirewallPoliciesErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
         }
     }
 }

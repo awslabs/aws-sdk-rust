@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_eventbridge::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_eventbridge::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_eventbridge::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_eventbridge::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -164,6 +164,27 @@ impl Client {
     pub fn create_connection(&self) -> fluent_builders::CreateConnection {
         fluent_builders::CreateConnection::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateEndpoint`](crate::client::fluent_builders::CreateEndpoint) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_name): <p>The name of the global endpoint. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_description): <p>A description of the global endpoint.</p>
+    ///   - [`routing_config(RoutingConfig)`](crate::client::fluent_builders::CreateEndpoint::routing_config) / [`set_routing_config(Option<RoutingConfig>)`](crate::client::fluent_builders::CreateEndpoint::set_routing_config): <p>Configure the routing policy, including the health check and secondary Region..</p>
+    ///   - [`replication_config(ReplicationConfig)`](crate::client::fluent_builders::CreateEndpoint::replication_config) / [`set_replication_config(Option<ReplicationConfig>)`](crate::client::fluent_builders::CreateEndpoint::set_replication_config): <p>Enable or disable event replication.</p>
+    ///   - [`event_buses(Vec<EndpointEventBus>)`](crate::client::fluent_builders::CreateEndpoint::event_buses) / [`set_event_buses(Option<Vec<EndpointEventBus>>)`](crate::client::fluent_builders::CreateEndpoint::set_event_buses): <p>Define the event buses used. </p> <important>   <p>The names of the event buses must be identical in each Region.</p>  </important>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_role_arn): <p>The ARN of the role used for replication.</p>
+    /// - On success, responds with [`CreateEndpointOutput`](crate::output::CreateEndpointOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateEndpointOutput::name): <p>The name of the endpoint that was created by this request.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateEndpointOutput::arn): <p>The ARN of the endpoint that was created by this request.</p>
+    ///   - [`routing_config(Option<RoutingConfig>)`](crate::output::CreateEndpointOutput::routing_config): <p>The routing configuration defined by this request.</p>
+    ///   - [`replication_config(Option<ReplicationConfig>)`](crate::output::CreateEndpointOutput::replication_config): <p>Whether event replication was enabled or disabled by this request.</p>
+    ///   - [`event_buses(Option<Vec<EndpointEventBus>>)`](crate::output::CreateEndpointOutput::event_buses): <p>The event buses used by this request.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::CreateEndpointOutput::role_arn): <p>The ARN of the role used by event replication for this request.</p>
+    ///   - [`state(Option<EndpointState>)`](crate::output::CreateEndpointOutput::state): <p>The state of the endpoint that was created by this request.</p>
+    /// - On failure, responds with [`SdkError<CreateEndpointError>`](crate::error::CreateEndpointError)
+    pub fn create_endpoint(&self) -> fluent_builders::CreateEndpoint {
+        fluent_builders::CreateEndpoint::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateEventBus`](crate::client::fluent_builders::CreateEventBus) operation.
     ///
     /// - The fluent builder is configurable:
@@ -244,6 +265,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteConnectionError>`](crate::error::DeleteConnectionError)
     pub fn delete_connection(&self) -> fluent_builders::DeleteConnection {
         fluent_builders::DeleteConnection::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteEndpoint`](crate::client::fluent_builders::DeleteEndpoint) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteEndpoint::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteEndpoint::set_name): <p>The name of the endpoint you want to delete. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>..</p>
+    /// - On success, responds with [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteEndpointError>`](crate::error::DeleteEndpointError)
+    pub fn delete_endpoint(&self) -> fluent_builders::DeleteEndpoint {
+        fluent_builders::DeleteEndpoint::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteEventBus`](crate::client::fluent_builders::DeleteEventBus) operation.
     ///
@@ -336,6 +367,29 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeConnectionError>`](crate::error::DescribeConnectionError)
     pub fn describe_connection(&self) -> fluent_builders::DescribeConnection {
         fluent_builders::DescribeConnection::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeEndpoint`](crate::client::fluent_builders::DescribeEndpoint) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DescribeEndpoint::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DescribeEndpoint::set_name): <p>The name of the endpoint you want to get information about. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+    ///   - [`home_region(impl Into<String>)`](crate::client::fluent_builders::DescribeEndpoint::home_region) / [`set_home_region(Option<String>)`](crate::client::fluent_builders::DescribeEndpoint::set_home_region): <p>The primary Region of the endpoint you want to get information about. For example <code>"HomeRegion": "us-east-1"</code>.</p>
+    /// - On success, responds with [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DescribeEndpointOutput::name): <p>The name of the endpoint you asked for information about.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeEndpointOutput::description): <p>The description of the endpoint you asked for information about.</p>
+    ///   - [`arn(Option<String>)`](crate::output::DescribeEndpointOutput::arn): <p>The ARN of the endpoint you asked for information about.</p>
+    ///   - [`routing_config(Option<RoutingConfig>)`](crate::output::DescribeEndpointOutput::routing_config): <p>The routing configuration of the endpoint you asked for information about.</p>
+    ///   - [`replication_config(Option<ReplicationConfig>)`](crate::output::DescribeEndpointOutput::replication_config): <p>Whether replication is enabled or disabled for the endpoint you asked for information about.</p>
+    ///   - [`event_buses(Option<Vec<EndpointEventBus>>)`](crate::output::DescribeEndpointOutput::event_buses): <p>The event buses being used by the endpoint you asked for information about.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeEndpointOutput::role_arn): <p>The ARN of the role used by the endpoint you asked for information about.</p>
+    ///   - [`endpoint_id(Option<String>)`](crate::output::DescribeEndpointOutput::endpoint_id): <p>The ID of the endpoint you asked for information about.</p>
+    ///   - [`endpoint_url(Option<String>)`](crate::output::DescribeEndpointOutput::endpoint_url): <p>The URL of the endpoint you asked for information about.</p>
+    ///   - [`state(Option<EndpointState>)`](crate::output::DescribeEndpointOutput::state): <p>The current state of the endpoint you asked for information about.</p>
+    ///   - [`state_reason(Option<String>)`](crate::output::DescribeEndpointOutput::state_reason): <p>The reason the endpoint you asked for information about is in its current state.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeEndpointOutput::creation_time): <p>The time the endpoint you asked for information about was created.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeEndpointOutput::last_modified_time): <p>The last time the endpoint you asked for information about was modified.</p>
+    /// - On failure, responds with [`SdkError<DescribeEndpointError>`](crate::error::DescribeEndpointError)
+    pub fn describe_endpoint(&self) -> fluent_builders::DescribeEndpoint {
+        fluent_builders::DescribeEndpoint::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeEventBus`](crate::client::fluent_builders::DescribeEventBus) operation.
     ///
@@ -481,6 +535,20 @@ impl Client {
     pub fn list_connections(&self) -> fluent_builders::ListConnections {
         fluent_builders::ListConnections::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListEndpoints`](crate::client::fluent_builders::ListEndpoints) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name_prefix(impl Into<String>)`](crate::client::fluent_builders::ListEndpoints::name_prefix) / [`set_name_prefix(Option<String>)`](crate::client::fluent_builders::ListEndpoints::set_name_prefix): <p>A value that will return a subset of the endpoints associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</p>
+    ///   - [`home_region(impl Into<String>)`](crate::client::fluent_builders::ListEndpoints::home_region) / [`set_home_region(Option<String>)`](crate::client::fluent_builders::ListEndpoints::set_home_region): <p>The primary Region of the endpoints associated with this account. For example <code>"HomeRegion": "us-east-1"</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEndpoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEndpoints::set_next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEndpoints::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEndpoints::set_max_results): <p>The maximum number of results returned by the call.</p>
+    /// - On success, responds with [`ListEndpointsOutput`](crate::output::ListEndpointsOutput) with field(s):
+    ///   - [`endpoints(Option<Vec<Endpoint>>)`](crate::output::ListEndpointsOutput::endpoints): <p>The endpoints returned by the call.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEndpointsOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+    /// - On failure, responds with [`SdkError<ListEndpointsError>`](crate::error::ListEndpointsError)
+    pub fn list_endpoints(&self) -> fluent_builders::ListEndpoints {
+        fluent_builders::ListEndpoints::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListEventBuses`](crate::client::fluent_builders::ListEventBuses) operation.
     ///
     /// - The fluent builder is configurable:
@@ -606,6 +674,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`entries(Vec<PutEventsRequestEntry>)`](crate::client::fluent_builders::PutEvents::entries) / [`set_entries(Option<Vec<PutEventsRequestEntry>>)`](crate::client::fluent_builders::PutEvents::set_entries): <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
+    ///   - [`endpoint_id(impl Into<String>)`](crate::client::fluent_builders::PutEvents::endpoint_id) / [`set_endpoint_id(Option<String>)`](crate::client::fluent_builders::PutEvents::set_endpoint_id): <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>   <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>  </important>
     /// - On success, responds with [`PutEventsOutput`](crate::output::PutEventsOutput) with field(s):
     ///   - [`failed_entry_count(i32)`](crate::output::PutEventsOutput::failed_entry_count): <p>The number of failed entries.</p>
     ///   - [`entries(Option<Vec<PutEventsResultEntry>>)`](crate::output::PutEventsOutput::entries): <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
@@ -644,7 +713,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::PutRule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::PutRule::set_name): <p>The name of the rule that you are creating or updating.</p>
     ///   - [`schedule_expression(impl Into<String>)`](crate::client::fluent_builders::PutRule::schedule_expression) / [`set_schedule_expression(Option<String>)`](crate::client::fluent_builders::PutRule::set_schedule_expression): <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".</p>
-    ///   - [`event_pattern(impl Into<String>)`](crate::client::fluent_builders::PutRule::event_pattern) / [`set_event_pattern(Option<String>)`](crate::client::fluent_builders::PutRule::set_event_pattern): <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    ///   - [`event_pattern(impl Into<String>)`](crate::client::fluent_builders::PutRule::event_pattern) / [`set_event_pattern(Option<String>)`](crate::client::fluent_builders::PutRule::set_event_pattern): <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     ///   - [`state(RuleState)`](crate::client::fluent_builders::PutRule::state) / [`set_state(Option<RuleState>)`](crate::client::fluent_builders::PutRule::set_state): <p>Indicates whether the rule is enabled or disabled.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::PutRule::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::PutRule::set_description): <p>A description of the rule.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::PutRule::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::PutRule::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>  <p>If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure, instead of here in this parameter.</p>
@@ -796,6 +865,29 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateConnectionError>`](crate::error::UpdateConnectionError)
     pub fn update_connection(&self) -> fluent_builders::UpdateConnection {
         fluent_builders::UpdateConnection::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateEndpoint`](crate::client::fluent_builders::UpdateEndpoint) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateEndpoint::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateEndpoint::set_name): <p>The name of the endpoint you want to update.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateEndpoint::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateEndpoint::set_description): <p>A description for the endpoint.</p>
+    ///   - [`routing_config(RoutingConfig)`](crate::client::fluent_builders::UpdateEndpoint::routing_config) / [`set_routing_config(Option<RoutingConfig>)`](crate::client::fluent_builders::UpdateEndpoint::set_routing_config): <p>Configure the routing policy, including the health check and secondary Region..</p>
+    ///   - [`replication_config(ReplicationConfig)`](crate::client::fluent_builders::UpdateEndpoint::replication_config) / [`set_replication_config(Option<ReplicationConfig>)`](crate::client::fluent_builders::UpdateEndpoint::set_replication_config): <p>Whether event replication was enabled or disabled by this request.</p>
+    ///   - [`event_buses(Vec<EndpointEventBus>)`](crate::client::fluent_builders::UpdateEndpoint::event_buses) / [`set_event_buses(Option<Vec<EndpointEventBus>>)`](crate::client::fluent_builders::UpdateEndpoint::set_event_buses): <p>Define event buses used for replication.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateEndpoint::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateEndpoint::set_role_arn): <p>The ARN of the role used by event replication for this request.</p>
+    /// - On success, responds with [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::UpdateEndpointOutput::name): <p>The name of the endpoint you updated in this request.</p>
+    ///   - [`arn(Option<String>)`](crate::output::UpdateEndpointOutput::arn): <p>The ARN of the endpoint you updated in this request.</p>
+    ///   - [`routing_config(Option<RoutingConfig>)`](crate::output::UpdateEndpointOutput::routing_config): <p>The routing configuration you updated in this request.</p>
+    ///   - [`replication_config(Option<ReplicationConfig>)`](crate::output::UpdateEndpointOutput::replication_config): <p>Whether event replication was enabled or disabled for the endpoint you updated in this request.</p>
+    ///   - [`event_buses(Option<Vec<EndpointEventBus>>)`](crate::output::UpdateEndpointOutput::event_buses): <p>The event buses used for replication for the endpoint you updated in this request.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::UpdateEndpointOutput::role_arn): <p>The ARN of the role used by event replication for the endpoint you updated in this request.</p>
+    ///   - [`endpoint_id(Option<String>)`](crate::output::UpdateEndpointOutput::endpoint_id): <p>The ID of the endpoint you updated in this request.</p>
+    ///   - [`endpoint_url(Option<String>)`](crate::output::UpdateEndpointOutput::endpoint_url): <p>The URL of the endpoint you updated in this request.</p>
+    ///   - [`state(Option<EndpointState>)`](crate::output::UpdateEndpointOutput::state): <p>The state of the endpoint you updated in this request.</p>
+    /// - On failure, responds with [`SdkError<UpdateEndpointError>`](crate::error::UpdateEndpointError)
+    pub fn update_endpoint(&self) -> fluent_builders::UpdateEndpoint {
+        fluent_builders::UpdateEndpoint::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
@@ -1218,6 +1310,126 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::CreateConnectionAuthRequestParameters>,
         ) -> Self {
             self.inner = self.inner.set_auth_parameters(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateEndpoint`.
+    ///
+    /// <p>Creates a global endpoint. Global endpoints improve your application's availability by making it regional-fault tolerant. To do this, you define a primary and secondary Region with event buses in each Region. You also create a Amazon Route&nbsp;53 health check that will tell EventBridge to route events to the secondary Region when an "unhealthy" state is encountered and events will be routed back to the primary Region when the health check reports a "healthy" state.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateEndpoint {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_endpoint_input::Builder,
+    }
+    impl CreateEndpoint {
+        /// Creates a new `CreateEndpoint`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateEndpointOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateEndpointError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the global endpoint. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the global endpoint. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>A description of the global endpoint.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>A description of the global endpoint.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+        pub fn routing_config(mut self, input: crate::model::RoutingConfig) -> Self {
+            self.inner = self.inner.routing_config(input);
+            self
+        }
+        /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+        pub fn set_routing_config(
+            mut self,
+            input: std::option::Option<crate::model::RoutingConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_routing_config(input);
+            self
+        }
+        /// <p>Enable or disable event replication.</p>
+        pub fn replication_config(mut self, input: crate::model::ReplicationConfig) -> Self {
+            self.inner = self.inner.replication_config(input);
+            self
+        }
+        /// <p>Enable or disable event replication.</p>
+        pub fn set_replication_config(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_replication_config(input);
+            self
+        }
+        /// Appends an item to `EventBuses`.
+        ///
+        /// To override the contents of this collection use [`set_event_buses`](Self::set_event_buses).
+        ///
+        /// <p>Define the event buses used. </p> <important>
+        /// <p>The names of the event buses must be identical in each Region.</p>
+        /// </important>
+        pub fn event_buses(mut self, input: crate::model::EndpointEventBus) -> Self {
+            self.inner = self.inner.event_buses(input);
+            self
+        }
+        /// <p>Define the event buses used. </p> <important>
+        /// <p>The names of the event buses must be identical in each Region.</p>
+        /// </important>
+        pub fn set_event_buses(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
+        ) -> Self {
+            self.inner = self.inner.set_event_buses(input);
+            self
+        }
+        /// <p>The ARN of the role used for replication.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the role used for replication.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
     }
@@ -1644,6 +1856,59 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteEndpoint`.
+    ///
+    /// <p>Delete an existing global endpoint. For more information about global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making applications Regional-fault tolerant with global endpoints and event replication</a> in the Amazon EventBridge User Guide.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteEndpoint {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_endpoint_input::Builder,
+    }
+    impl DeleteEndpoint {
+        /// Creates a new `DeleteEndpoint`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteEndpointOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteEndpointError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the endpoint you want to delete. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>..</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the endpoint you want to delete. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>..</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteEventBus`.
     ///
     /// <p>Deletes the specified custom event bus or partner event bus. All rules associated with this event bus need to be deleted. You can't delete your account's default event bus.</p>
@@ -1998,6 +2263,69 @@ pub mod fluent_builders {
         /// <p>The name of the connection to retrieve.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeEndpoint`.
+    ///
+    /// <p>Get the information about an existing global endpoint. For more information about global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making applications Regional-fault tolerant with global endpoints and event replication</a> in the Amazon EventBridge User Guide..</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeEndpoint {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_endpoint_input::Builder,
+    }
+    impl DescribeEndpoint {
+        /// Creates a new `DescribeEndpoint`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeEndpointOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeEndpointError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the endpoint you want to get information about. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the endpoint you want to get information about. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The primary Region of the endpoint you want to get information about. For example <code>"HomeRegion": "us-east-1"</code>.</p>
+        pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_region(input.into());
+            self
+        }
+        /// <p>The primary Region of the endpoint you want to get information about. For example <code>"HomeRegion": "us-east-1"</code>.</p>
+        pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_home_region(input);
             self
         }
     }
@@ -2681,6 +3009,89 @@ pub mod fluent_builders {
         /// <p>The maximum number of connections to return.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListEndpoints`.
+    ///
+    /// <p>List the global endpoints associated with this account. For more information about global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making applications Regional-fault tolerant with global endpoints and event replication</a> in the Amazon EventBridge User Guide..</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListEndpoints {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_endpoints_input::Builder,
+    }
+    impl ListEndpoints {
+        /// Creates a new `ListEndpoints`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListEndpointsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListEndpointsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A value that will return a subset of the endpoints associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</p>
+        pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_prefix(input.into());
+            self
+        }
+        /// <p>A value that will return a subset of the endpoints associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</p>
+        pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name_prefix(input);
+            self
+        }
+        /// <p>The primary Region of the endpoints associated with this account. For example <code>"HomeRegion": "us-east-1"</code>.</p>
+        pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_region(input.into());
+            self
+        }
+        /// <p>The primary Region of the endpoints associated with this account. For example <code>"HomeRegion": "us-east-1"</code>.</p>
+        pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_home_region(input);
+            self
+        }
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results returned by the call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results returned by the call.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -3389,7 +3800,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutEvents`.
     ///
-    /// <p>Sends custom events to Amazon EventBridge so that they can be matched to rules.</p>
+    /// <p>Sends custom events to Amazon EventBridge so that they can be matched to rules.</p> <note>
+    /// <p>PutEvents will only process nested JSON up to 1100 levels deep.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEvents {
         handle: std::sync::Arc<super::Handle>,
@@ -3444,6 +3857,20 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::PutEventsRequestEntry>>,
         ) -> Self {
             self.inner = self.inner.set_entries(input);
+            self
+        }
+        /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
+        /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
+        /// </important>
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(input.into());
+            self
+        }
+        /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
+        /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
+        /// </important>
+        pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_endpoint_id(input);
             self
         }
     }
@@ -3705,12 +4132,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_schedule_expression(input);
             self
         }
-        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
         pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_pattern(input.into());
             self
         }
-        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
         pub fn set_event_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3790,30 +4217,33 @@ pub mod fluent_builders {
     /// <p>You can configure the following as targets for Events:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html">API destination</a> </p> </li>
-    /// <li> <p>Amazon API Gateway REST API endpoints</p> </li>
-    /// <li> <p>API Gateway</p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-gateway-target.html">API Gateway</a> </p> </li>
     /// <li> <p>Batch job queue</p> </li>
-    /// <li> <p>CloudWatch Logs group</p> </li>
+    /// <li> <p>CloudWatch group</p> </li>
     /// <li> <p>CodeBuild project</p> </li>
     /// <li> <p>CodePipeline</p> </li>
-    /// <li> <p>Amazon EC2 <code>CreateSnapshot</code> API call</p> </li>
+    /// <li> <p>EC2 <code>CreateSnapshot</code> API call</p> </li>
     /// <li> <p>EC2 Image Builder</p> </li>
-    /// <li> <p>Amazon EC2 <code>RebootInstances</code> API call</p> </li>
-    /// <li> <p>Amazon EC2 <code>StopInstances</code> API call</p> </li>
-    /// <li> <p>Amazon EC2 <code>TerminateInstances</code> API call</p> </li>
-    /// <li> <p>Amazon ECS tasks</p> </li>
-    /// <li> <p>Event bus in a different Amazon Web Services account or Region.</p> <p>You can use an event bus in the US East (N. Virginia) us-east-1, US West (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as a target for a rule.</p> </li>
-    /// <li> <p>Firehose delivery stream (Kinesis Data Firehose)</p> </li>
-    /// <li> <p>Inspector assessment template (Amazon Inspector)</p> </li>
-    /// <li> <p>Kinesis stream (Kinesis Data Stream)</p> </li>
+    /// <li> <p>EC2 <code>RebootInstances</code> API call</p> </li>
+    /// <li> <p>EC2 <code>StopInstances</code> API call</p> </li>
+    /// <li> <p>EC2 <code>TerminateInstances</code> API call</p> </li>
+    /// <li> <p>ECS task</p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html">Event bus in a different account or Region</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-bus-to-bus.html">Event bus in the same account and Region</a> </p> </li>
+    /// <li> <p>Firehose delivery stream</p> </li>
+    /// <li> <p>Glue workflow</p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-creation.html#incident-tracking-auto-eventbridge">Incident Manager response plan</a> </p> </li>
+    /// <li> <p>Inspector assessment template</p> </li>
+    /// <li> <p>Kinesis stream</p> </li>
     /// <li> <p>Lambda function</p> </li>
-    /// <li> <p>Redshift clusters (Data API statement execution)</p> </li>
-    /// <li> <p>Amazon SNS topic</p> </li>
-    /// <li> <p>Amazon SQS queues (includes FIFO queues)</p> </li>
-    /// <li> <p>SSM Automation</p> </li>
-    /// <li> <p>SSM OpsItem</p> </li>
-    /// <li> <p>SSM Run Command</p> </li>
-    /// <li> <p>Step Functions state machines</p> </li>
+    /// <li> <p>Redshift cluster</p> </li>
+    /// <li> <p>SageMaker Pipeline</p> </li>
+    /// <li> <p>SNS topic</p> </li>
+    /// <li> <p>SQS queue</p> </li>
+    /// <li> <p>Step Functions state machine</p> </li>
+    /// <li> <p>Systems Manager Automation</p> </li>
+    /// <li> <p>Systems Manager OpsItem</p> </li>
+    /// <li> <p>Systems Manager Run Command</p> </li>
     /// </ul>
     /// <p>Creating rules with built-in targets is supported only in the Amazon Web Services Management Console. The built-in targets are <code>EC2 CreateSnapshot API call</code>, <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances API call</code>, and <code>EC2 TerminateInstances API call</code>. </p>
     /// <p>For some target types, <code>PutTargets</code> provides target-specific parameters. If the target is a Kinesis data stream, you can optionally specify which shard the event goes to by using the <code>KinesisParameters</code> argument. To invoke a command on multiple EC2 instances with one rule, you can use the <code>RunCommandParameters</code> field.</p>
@@ -4722,6 +5152,122 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::UpdateConnectionAuthRequestParameters>,
         ) -> Self {
             self.inner = self.inner.set_auth_parameters(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateEndpoint`.
+    ///
+    /// <p>Update an existing endpoint. For more information about global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making applications Regional-fault tolerant with global endpoints and event replication</a> in the Amazon EventBridge User Guide..</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateEndpoint {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_endpoint_input::Builder,
+    }
+    impl UpdateEndpoint {
+        /// Creates a new `UpdateEndpoint`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateEndpointOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateEndpointError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the endpoint you want to update.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the endpoint you want to update.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>A description for the endpoint.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>A description for the endpoint.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+        pub fn routing_config(mut self, input: crate::model::RoutingConfig) -> Self {
+            self.inner = self.inner.routing_config(input);
+            self
+        }
+        /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+        pub fn set_routing_config(
+            mut self,
+            input: std::option::Option<crate::model::RoutingConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_routing_config(input);
+            self
+        }
+        /// <p>Whether event replication was enabled or disabled by this request.</p>
+        pub fn replication_config(mut self, input: crate::model::ReplicationConfig) -> Self {
+            self.inner = self.inner.replication_config(input);
+            self
+        }
+        /// <p>Whether event replication was enabled or disabled by this request.</p>
+        pub fn set_replication_config(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_replication_config(input);
+            self
+        }
+        /// Appends an item to `EventBuses`.
+        ///
+        /// To override the contents of this collection use [`set_event_buses`](Self::set_event_buses).
+        ///
+        /// <p>Define event buses used for replication.</p>
+        pub fn event_buses(mut self, input: crate::model::EndpointEventBus) -> Self {
+            self.inner = self.inner.event_buses(input);
+            self
+        }
+        /// <p>Define event buses used for replication.</p>
+        pub fn set_event_buses(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
+        ) -> Self {
+            self.inner = self.inner.set_event_buses(input);
+            self
+        }
+        /// <p>The ARN of the role used by event replication for this request.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the role used by event replication for this request.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
     }

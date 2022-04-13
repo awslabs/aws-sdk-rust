@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_devopsguru::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_devopsguru::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_devopsguru::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_devopsguru::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -101,6 +101,16 @@ impl Client {
     pub fn add_notification_channel(&self) -> fluent_builders::AddNotificationChannel {
         fluent_builders::AddNotificationChannel::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteInsight`](crate::client::fluent_builders::DeleteInsight) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteInsight::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteInsight::set_id): <p>The ID of the insight.</p>
+    /// - On success, responds with [`DeleteInsightOutput`](crate::output::DeleteInsightOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteInsightError>`](crate::error::DeleteInsightError)
+    pub fn delete_insight(&self) -> fluent_builders::DeleteInsight {
+        fluent_builders::DeleteInsight::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeAccountHealth`](crate::client::fluent_builders::DescribeAccountHealth) operation.
     ///
     /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeAccountHealth::send) it.
@@ -144,7 +154,7 @@ impl Client {
     /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeEventSourcesConfig::send) it.
 
     /// - On success, responds with [`DescribeEventSourcesConfigOutput`](crate::output::DescribeEventSourcesConfigOutput) with field(s):
-    ///   - [`event_sources(Option<EventSourcesConfig>)`](crate::output::DescribeEventSourcesConfigOutput::event_sources): <p>The name of the event source.</p>
+    ///   - [`event_sources(Option<EventSourcesConfig>)`](crate::output::DescribeEventSourcesConfigOutput::event_sources): <p>Lists the event sources in the configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeEventSourcesConfigError>`](crate::error::DescribeEventSourcesConfigError)
     pub fn describe_event_sources_config(&self) -> fluent_builders::DescribeEventSourcesConfig {
         fluent_builders::DescribeEventSourcesConfig::new(self.handle.clone())
@@ -436,7 +446,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateEventSourcesConfig`](crate::client::fluent_builders::UpdateEventSourcesConfig) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`event_sources(EventSourcesConfig)`](crate::client::fluent_builders::UpdateEventSourcesConfig::event_sources) / [`set_event_sources(Option<EventSourcesConfig>)`](crate::client::fluent_builders::UpdateEventSourcesConfig::set_event_sources): <p>The name of the event source.</p>
+    ///   - [`event_sources(EventSourcesConfig)`](crate::client::fluent_builders::UpdateEventSourcesConfig::event_sources) / [`set_event_sources(Option<EventSourcesConfig>)`](crate::client::fluent_builders::UpdateEventSourcesConfig::set_event_sources): <p>Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.</p>
     /// - On success, responds with [`UpdateEventSourcesConfigOutput`](crate::output::UpdateEventSourcesConfigOutput)
 
     /// - On failure, responds with [`SdkError<UpdateEventSourcesConfigError>`](crate::error::UpdateEventSourcesConfigError)
@@ -476,7 +486,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddNotificationChannel`.
     ///
     /// <p> Adds a notification channel to DevOps Guru. A notification channel is used to notify you about important DevOps Guru events, such as when an insight is generated. </p>
-    /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for cross account Amazon SNS topics</a>.</p>
+    /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. DevOps Guru only supports standard SNS topics. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for cross account Amazon SNS topics</a>.</p>
+    /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see Permissions for cross account Amazon SNS topics.</p>
     /// <p>If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions to the CMK. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddNotificationChannel {
@@ -528,6 +539,59 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::NotificationChannelConfig>,
         ) -> Self {
             self.inner = self.inner.set_config(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteInsight`.
+    ///
+    /// <p>Deletes the insight along with the associated anomalies, events and recommendations.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteInsight {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_insight_input::Builder,
+    }
+    impl DeleteInsight {
+        /// Creates a new `DeleteInsight`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteInsightOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteInsightError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the insight.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The ID of the insight.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -708,7 +772,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEventSourcesConfig`.
     ///
-    /// <p>This operation lists details about a DevOps Guru event source that is shared with your  account.</p>
+    /// <p>Returns the integration status of services that are integrated with DevOps Guru as Consumer via EventBridge. The one service that can be integrated with DevOps Guru is Amazon CodeGuru Profiler, which can produce proactive recommendations which can be stored and viewed in DevOps Guru.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventSourcesConfig {
         handle: std::sync::Arc<super::Handle>,
@@ -2375,7 +2439,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateEventSourcesConfig`.
     ///
-    /// <p>Updates the event source configuration.</p>
+    /// <p>Enables or disables integration with a service that can be integrated with DevOps Guru. The one service that can be integrated with DevOps Guru is Amazon CodeGuru Profiler, which can produce proactive recommendations which can be stored and viewed in DevOps Guru.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEventSourcesConfig {
         handle: std::sync::Arc<super::Handle>,
@@ -2415,12 +2479,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the event source.</p>
+        /// <p>Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.</p>
         pub fn event_sources(mut self, input: crate::model::EventSourcesConfig) -> Self {
             self.inner = self.inner.event_sources(input);
             self
         }
-        /// <p>The name of the event source.</p>
+        /// <p>Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.</p>
         pub fn set_event_sources(
             mut self,
             input: std::option::Option<crate::model::EventSourcesConfig>,

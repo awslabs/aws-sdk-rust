@@ -33,6 +33,40 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateAdminAccount {
     }
 }
 
+/// Operation shape for `AssociateThirdPartyFirewall`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`associate_third_party_firewall`](crate::client::Client::associate_third_party_firewall).
+///
+/// See [`crate::client::fluent_builders::AssociateThirdPartyFirewall`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct AssociateThirdPartyFirewall {
+    _private: (),
+}
+impl AssociateThirdPartyFirewall {
+    /// Creates a new builder-style object to manufacture [`AssociateThirdPartyFirewallInput`](crate::input::AssociateThirdPartyFirewallInput)
+    pub fn builder() -> crate::input::associate_third_party_firewall_input::Builder {
+        crate::input::associate_third_party_firewall_input::Builder::default()
+    }
+    /// Creates a new `AssociateThirdPartyFirewall` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for AssociateThirdPartyFirewall {
+    type Output = std::result::Result<
+        crate::output::AssociateThirdPartyFirewallOutput,
+        crate::error::AssociateThirdPartyFirewallError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_associate_third_party_firewall_error(response)
+        } else {
+            crate::operation_deser::parse_associate_third_party_firewall_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteAppsList`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -195,6 +229,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateAdminAccount
             crate::operation_deser::parse_disassociate_admin_account_error(response)
         } else {
             crate::operation_deser::parse_disassociate_admin_account_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DisassociateThirdPartyFirewall`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`disassociate_third_party_firewall`](crate::client::Client::disassociate_third_party_firewall).
+///
+/// See [`crate::client::fluent_builders::DisassociateThirdPartyFirewall`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DisassociateThirdPartyFirewall {
+    _private: (),
+}
+impl DisassociateThirdPartyFirewall {
+    /// Creates a new builder-style object to manufacture [`DisassociateThirdPartyFirewallInput`](crate::input::DisassociateThirdPartyFirewallInput)
+    pub fn builder() -> crate::input::disassociate_third_party_firewall_input::Builder {
+        crate::input::disassociate_third_party_firewall_input::Builder::default()
+    }
+    /// Creates a new `DisassociateThirdPartyFirewall` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DisassociateThirdPartyFirewall {
+    type Output = std::result::Result<
+        crate::output::DisassociateThirdPartyFirewallOutput,
+        crate::error::DisassociateThirdPartyFirewallError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_disassociate_third_party_firewall_error(response)
+        } else {
+            crate::operation_deser::parse_disassociate_third_party_firewall_response(response)
         }
     }
 }
@@ -432,6 +500,44 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProtocolsList {
     }
 }
 
+/// Operation shape for `GetThirdPartyFirewallAssociationStatus`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_third_party_firewall_association_status`](crate::client::Client::get_third_party_firewall_association_status).
+///
+/// See [`crate::client::fluent_builders::GetThirdPartyFirewallAssociationStatus`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetThirdPartyFirewallAssociationStatus {
+    _private: (),
+}
+impl GetThirdPartyFirewallAssociationStatus {
+    /// Creates a new builder-style object to manufacture [`GetThirdPartyFirewallAssociationStatusInput`](crate::input::GetThirdPartyFirewallAssociationStatusInput)
+    pub fn builder() -> crate::input::get_third_party_firewall_association_status_input::Builder {
+        crate::input::get_third_party_firewall_association_status_input::Builder::default()
+    }
+    /// Creates a new `GetThirdPartyFirewallAssociationStatus` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetThirdPartyFirewallAssociationStatus {
+    type Output = std::result::Result<
+        crate::output::GetThirdPartyFirewallAssociationStatusOutput,
+        crate::error::GetThirdPartyFirewallAssociationStatusError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_third_party_firewall_association_status_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_get_third_party_firewall_association_status_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `GetViolationDetails`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -662,6 +768,44 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
             crate::operation_deser::parse_list_tags_for_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListThirdPartyFirewallFirewallPolicies`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_third_party_firewall_firewall_policies`](crate::client::Client::list_third_party_firewall_firewall_policies).
+///
+/// See [`crate::client::fluent_builders::ListThirdPartyFirewallFirewallPolicies`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListThirdPartyFirewallFirewallPolicies {
+    _private: (),
+}
+impl ListThirdPartyFirewallFirewallPolicies {
+    /// Creates a new builder-style object to manufacture [`ListThirdPartyFirewallFirewallPoliciesInput`](crate::input::ListThirdPartyFirewallFirewallPoliciesInput)
+    pub fn builder() -> crate::input::list_third_party_firewall_firewall_policies_input::Builder {
+        crate::input::list_third_party_firewall_firewall_policies_input::Builder::default()
+    }
+    /// Creates a new `ListThirdPartyFirewallFirewallPolicies` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListThirdPartyFirewallFirewallPolicies {
+    type Output = std::result::Result<
+        crate::output::ListThirdPartyFirewallFirewallPoliciesOutput,
+        crate::error::ListThirdPartyFirewallFirewallPoliciesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_third_party_firewall_firewall_policies_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_list_third_party_firewall_firewall_policies_response(
+                response,
+            )
         }
     }
 }

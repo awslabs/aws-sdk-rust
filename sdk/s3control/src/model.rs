@@ -9513,7 +9513,7 @@ pub struct S3CopyObjectOperation {
     pub un_modified_since_constraint: std::option::Option<aws_smithy_types::DateTime>,
     /// <p></p>
     pub sse_aws_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the folder prefix into which you would like the objects to be copied. For example, to copy objects into a folder named "Folder1" in the destination bucket, set the TargetKeyPrefix to "Folder1/".</p>
+    /// <p>Specifies the folder prefix into which you would like the objects to be copied. For example, to copy objects into a folder named <code>Folder1</code> in the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
     pub target_key_prefix: std::option::Option<std::string::String>,
     /// <p>The legal hold status to be applied to all objects in the Batch Operations job.</p>
     pub object_lock_legal_hold_status:
@@ -9579,7 +9579,7 @@ impl S3CopyObjectOperation {
     pub fn sse_aws_kms_key_id(&self) -> std::option::Option<&str> {
         self.sse_aws_kms_key_id.as_deref()
     }
-    /// <p>Specifies the folder prefix into which you would like the objects to be copied. For example, to copy objects into a folder named "Folder1" in the destination bucket, set the TargetKeyPrefix to "Folder1/".</p>
+    /// <p>Specifies the folder prefix into which you would like the objects to be copied. For example, to copy objects into a folder named <code>Folder1</code> in the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
     pub fn target_key_prefix(&self) -> std::option::Option<&str> {
         self.target_key_prefix.as_deref()
     }
@@ -9841,12 +9841,12 @@ pub mod s3_copy_object_operation {
             self.sse_aws_kms_key_id = input;
             self
         }
-        /// <p>Specifies the folder prefix into which you would like the objects to be copied. For example, to copy objects into a folder named "Folder1" in the destination bucket, set the TargetKeyPrefix to "Folder1/".</p>
+        /// <p>Specifies the folder prefix into which you would like the objects to be copied. For example, to copy objects into a folder named <code>Folder1</code> in the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
         pub fn target_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_key_prefix = Some(input.into());
             self
         }
-        /// <p>Specifies the folder prefix into which you would like the objects to be copied. For example, to copy objects into a folder named "Folder1" in the destination bucket, set the TargetKeyPrefix to "Folder1/".</p>
+        /// <p>Specifies the folder prefix into which you would like the objects to be copied. For example, to copy objects into a folder named <code>Folder1</code> in the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
         pub fn set_target_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,

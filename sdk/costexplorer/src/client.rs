@@ -31,11 +31,11 @@ pub(crate) struct Handle {
 /// ```rust,no_run
 /// use aws_config::RetryConfig;
 /// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_costexplorer::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_costexplorer::Client::from_conf(config);
+/// let shared_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_costexplorer::config::Builder::from(&shared_config)
+///   .retry_config(RetryConfig::disabled())
+///   .build();
+/// let client = aws_sdk_costexplorer::Client::from_conf(config);
 /// # }
 #[derive(std::fmt::Debug)]
 pub struct Client {
@@ -95,6 +95,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`anomaly_monitor(AnomalyMonitor)`](crate::client::fluent_builders::CreateAnomalyMonitor::anomaly_monitor) / [`set_anomaly_monitor(Option<AnomalyMonitor>)`](crate::client::fluent_builders::CreateAnomalyMonitor::set_anomaly_monitor): <p>The cost anomaly detection monitor object that you want to create.</p>
+    ///   - [`resource_tags(Vec<ResourceTag>)`](crate::client::fluent_builders::CreateAnomalyMonitor::resource_tags) / [`set_resource_tags(Option<Vec<ResourceTag>>)`](crate::client::fluent_builders::CreateAnomalyMonitor::set_resource_tags): <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html"> <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your monitor using IAM policies.</p>  <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>  <ul>   <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>   <li> <p>The maximum length of a key is 128 characters</p> </li>   <li> <p>The maximum length of a value is 256 characters</p> </li>   <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>   <li> <p>Keys and values are case sensitive</p> </li>   <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>   <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>  </ul>
     /// - On success, responds with [`CreateAnomalyMonitorOutput`](crate::output::CreateAnomalyMonitorOutput) with field(s):
     ///   - [`monitor_arn(Option<String>)`](crate::output::CreateAnomalyMonitorOutput::monitor_arn): <p>The unique identifier of your newly created cost anomaly detection monitor.</p>
     /// - On failure, responds with [`SdkError<CreateAnomalyMonitorError>`](crate::error::CreateAnomalyMonitorError)
@@ -105,6 +106,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`anomaly_subscription(AnomalySubscription)`](crate::client::fluent_builders::CreateAnomalySubscription::anomaly_subscription) / [`set_anomaly_subscription(Option<AnomalySubscription>)`](crate::client::fluent_builders::CreateAnomalySubscription::set_anomaly_subscription): <p>The cost anomaly subscription object that you want to create. </p>
+    ///   - [`resource_tags(Vec<ResourceTag>)`](crate::client::fluent_builders::CreateAnomalySubscription::resource_tags) / [`set_resource_tags(Option<Vec<ResourceTag>>)`](crate::client::fluent_builders::CreateAnomalySubscription::set_resource_tags): <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>  <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>  <ul>   <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>   <li> <p>The maximum length of a key is 128 characters</p> </li>   <li> <p>The maximum length of a value is 256 characters</p> </li>   <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>   <li> <p>Keys and values are case sensitive</p> </li>   <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>   <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>  </ul>
     /// - On success, responds with [`CreateAnomalySubscriptionOutput`](crate::output::CreateAnomalySubscriptionOutput) with field(s):
     ///   - [`subscription_arn(Option<String>)`](crate::output::CreateAnomalySubscriptionOutput::subscription_arn): <p>The unique identifier of your newly created cost anomaly subscription. </p>
     /// - On failure, responds with [`SdkError<CreateAnomalySubscriptionError>`](crate::error::CreateAnomalySubscriptionError)
@@ -119,6 +121,7 @@ impl Client {
     ///   - [`rules(Vec<CostCategoryRule>)`](crate::client::fluent_builders::CreateCostCategoryDefinition::rules) / [`set_rules(Option<Vec<CostCategoryRule>>)`](crate::client::fluent_builders::CreateCostCategoryDefinition::set_rules): <p>The Cost Category rules used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
     ///   - [`default_value(impl Into<String>)`](crate::client::fluent_builders::CreateCostCategoryDefinition::default_value) / [`set_default_value(Option<String>)`](crate::client::fluent_builders::CreateCostCategoryDefinition::set_default_value): <p>The default value for the cost category.</p>
     ///   - [`split_charge_rules(Vec<CostCategorySplitChargeRule>)`](crate::client::fluent_builders::CreateCostCategoryDefinition::split_charge_rules) / [`set_split_charge_rules(Option<Vec<CostCategorySplitChargeRule>>)`](crate::client::fluent_builders::CreateCostCategoryDefinition::set_split_charge_rules): <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
+    ///   - [`resource_tags(Vec<ResourceTag>)`](crate::client::fluent_builders::CreateCostCategoryDefinition::resource_tags) / [`set_resource_tags(Option<Vec<ResourceTag>>)`](crate::client::fluent_builders::CreateCostCategoryDefinition::set_resource_tags): <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>  <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>  <ul>   <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>   <li> <p>The maximum length of a key is 128 characters</p> </li>   <li> <p>The maximum length of a value is 256 characters</p> </li>   <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>   <li> <p>Keys and values are case sensitive</p> </li>   <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>   <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>  </ul>
     /// - On success, responds with [`CreateCostCategoryDefinitionOutput`](crate::output::CreateCostCategoryDefinitionOutput) with field(s):
     ///   - [`cost_category_arn(Option<String>)`](crate::output::CreateCostCategoryDefinitionOutput::cost_category_arn): <p> The unique identifier for your newly created Cost Category. </p>
     ///   - [`effective_start(Option<String>)`](crate::output::CreateCostCategoryDefinitionOutput::effective_start): <p> The Cost Category's effective start date. </p>
@@ -218,7 +221,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`time_period(DateInterval)`](crate::client::fluent_builders::GetCostAndUsage::time_period) / [`set_time_period(Option<DateInterval>)`](crate::client::fluent_builders::GetCostAndUsage::set_time_period): <p>Sets the start date and end date for retrieving Amazon Web Services costs. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
     ///   - [`granularity(Granularity)`](crate::client::fluent_builders::GetCostAndUsage::granularity) / [`set_granularity(Option<Granularity>)`](crate::client::fluent_builders::GetCostAndUsage::set_granularity): <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. </p>
-    ///   - [`filter(Expression)`](crate::client::fluent_builders::GetCostAndUsage::filter) / [`set_filter(Option<Expression>)`](crate::client::fluent_builders::GetCostAndUsage::set_filter): <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>  <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>  <p>The default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+    ///   - [`filter(Expression)`](crate::client::fluent_builders::GetCostAndUsage::filter) / [`set_filter(Option<Expression>)`](crate::client::fluent_builders::GetCostAndUsage::set_filter): <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>  <p>Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>  <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
     ///   - [`metrics(Vec<String>)`](crate::client::fluent_builders::GetCostAndUsage::metrics) / [`set_metrics(Option<Vec<String>>)`](crate::client::fluent_builders::GetCostAndUsage::set_metrics): <p>Which metrics are returned in the query. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>  <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p> <note>   <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking into account the units. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hours and GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>  </note>  <p> <code>Metrics</code> is required for <code>GetCostAndUsage</code> requests.</p>
     ///   - [`group_by(Vec<GroupDefinition>)`](crate::client::fluent_builders::GetCostAndUsage::group_by) / [`set_group_by(Option<Vec<GroupDefinition>>)`](crate::client::fluent_builders::GetCostAndUsage::set_group_by): <p>You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys, cost categories, or any two group by types.</p>  <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>, <code>INVOICING_ENTITY</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>  <p>When you group by the <code>TAG</code> type and include a valid tag key, you get all tag values, including empty strings.</p>
     ///   - [`next_page_token(impl Into<String>)`](crate::client::fluent_builders::GetCostAndUsage::next_page_token) / [`set_next_page_token(Option<String>)`](crate::client::fluent_builders::GetCostAndUsage::set_next_page_token): <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -236,7 +239,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`time_period(DateInterval)`](crate::client::fluent_builders::GetCostAndUsageWithResources::time_period) / [`set_time_period(Option<DateInterval>)`](crate::client::fluent_builders::GetCostAndUsageWithResources::set_time_period): <p>Sets the start and end dates for retrieving Amazon Web Services costs. The range must be within the last 14 days (the start date cannot be earlier than 14 days ago). The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
     ///   - [`granularity(Granularity)`](crate::client::fluent_builders::GetCostAndUsageWithResources::granularity) / [`set_granularity(Option<Granularity>)`](crate::client::fluent_builders::GetCostAndUsageWithResources::set_granularity): <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
-    ///   - [`filter(Expression)`](crate::client::fluent_builders::GetCostAndUsageWithResources::filter) / [`set_filter(Option<Expression>)`](crate::client::fluent_builders::GetCostAndUsageWithResources::set_filter): <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>  <p>The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.</p>  <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>  <p>The default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+    ///   - [`filter(Expression)`](crate::client::fluent_builders::GetCostAndUsageWithResources::filter) / [`set_filter(Option<Expression>)`](crate::client::fluent_builders::GetCostAndUsageWithResources::set_filter): <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>  <p>The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.</p>  <p>Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>  <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
     ///   - [`metrics(Vec<String>)`](crate::client::fluent_builders::GetCostAndUsageWithResources::metrics) / [`set_metrics(Option<Vec<String>>)`](crate::client::fluent_builders::GetCostAndUsageWithResources::set_metrics): <p>Which metrics are returned in the query. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>  <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p> <note>   <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>  </note>  <p> <code>Metrics</code> is required for <code>GetCostAndUsageWithResources</code> requests.</p>
     ///   - [`group_by(Vec<GroupDefinition>)`](crate::client::fluent_builders::GetCostAndUsageWithResources::group_by) / [`set_group_by(Option<Vec<GroupDefinition>>)`](crate::client::fluent_builders::GetCostAndUsageWithResources::set_group_by): <p>You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
     ///   - [`next_page_token(impl Into<String>)`](crate::client::fluent_builders::GetCostAndUsageWithResources::next_page_token) / [`set_next_page_token(Option<String>)`](crate::client::fluent_builders::GetCostAndUsageWithResources::set_next_page_token): <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -507,6 +510,16 @@ impl Client {
     pub fn list_cost_category_definitions(&self) -> fluent_builders::ListCostCategoryDefinitions {
         fluent_builders::ListCostCategoryDefinitions::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`resource_tags(Option<Vec<ResourceTag>>)`](crate::output::ListTagsForResourceOutput::resource_tags): <p>A list of tag key value pairs that are associated with the response. </p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
+    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
+        fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ProvideAnomalyFeedback`](crate::client::fluent_builders::ProvideAnomalyFeedback) operation.
     ///
     /// - The fluent builder is configurable:
@@ -517,6 +530,28 @@ impl Client {
     /// - On failure, responds with [`SdkError<ProvideAnomalyFeedbackError>`](crate::error::ProvideAnomalyFeedbackError)
     pub fn provide_anomaly_feedback(&self) -> fluent_builders::ProvideAnomalyFeedback {
         fluent_builders::ProvideAnomalyFeedback::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
+    ///   - [`resource_tags(Vec<ResourceTag>)`](crate::client::fluent_builders::TagResource::resource_tags) / [`set_resource_tags(Option<Vec<ResourceTag>>)`](crate::client::fluent_builders::TagResource::set_resource_tags): <p> A list of tag key-value pairs to be added to the resource.</p>  <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>  <ul>   <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>   <li> <p>The maximum length of a key is 128 characters</p> </li>   <li> <p>The maximum length of a value is 256 characters</p> </li>   <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>   <li> <p>Keys and values are case sensitive</p> </li>   <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>   <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>  </ul>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
+    pub fn tag_resource(&self) -> fluent_builders::TagResource {
+        fluent_builders::TagResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p> The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
+    ///   - [`resource_tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::resource_tag_keys) / [`set_resource_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_resource_tag_keys): <p> A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that does not exist, it is ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The remaining are reserved for Amazon Web Services use. </p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
+    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
+        fluent_builders::UntagResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateAnomalyMonitor`](crate::client::fluent_builders::UpdateAnomalyMonitor) operation.
     ///
@@ -623,6 +658,43 @@ pub mod fluent_builders {
             self.inner = self.inner.set_anomaly_monitor(input);
             self
         }
+        /// Appends an item to `ResourceTags`.
+        ///
+        /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
+        ///
+        /// <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html"> <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your monitor using IAM policies.</p>
+        /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
+        /// <ul>
+        /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
+        /// <li> <p>The maximum length of a key is 128 characters</p> </li>
+        /// <li> <p>The maximum length of a value is 256 characters</p> </li>
+        /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+        /// <li> <p>Keys and values are case sensitive</p> </li>
+        /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
+        /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+        /// </ul>
+        pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
+            self.inner = self.inner.resource_tags(input);
+            self
+        }
+        /// <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html"> <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your monitor using IAM policies.</p>
+        /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
+        /// <ul>
+        /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
+        /// <li> <p>The maximum length of a key is 128 characters</p> </li>
+        /// <li> <p>The maximum length of a value is 256 characters</p> </li>
+        /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+        /// <li> <p>Keys and values are case sensitive</p> </li>
+        /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
+        /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+        /// </ul>
+        pub fn set_resource_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateAnomalySubscription`.
     ///
@@ -677,6 +749,43 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::AnomalySubscription>,
         ) -> Self {
             self.inner = self.inner.set_anomaly_subscription(input);
+            self
+        }
+        /// Appends an item to `ResourceTags`.
+        ///
+        /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
+        ///
+        /// <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
+        /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
+        /// <ul>
+        /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
+        /// <li> <p>The maximum length of a key is 128 characters</p> </li>
+        /// <li> <p>The maximum length of a value is 256 characters</p> </li>
+        /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+        /// <li> <p>Keys and values are case sensitive</p> </li>
+        /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
+        /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+        /// </ul>
+        pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
+            self.inner = self.inner.resource_tags(input);
+            self
+        }
+        /// <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
+        /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
+        /// <ul>
+        /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
+        /// <li> <p>The maximum length of a key is 128 characters</p> </li>
+        /// <li> <p>The maximum length of a value is 256 characters</p> </li>
+        /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+        /// <li> <p>Keys and values are case sensitive</p> </li>
+        /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
+        /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+        /// </ul>
+        pub fn set_resource_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_tags(input);
             self
         }
     }
@@ -793,6 +902,43 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
         ) -> Self {
             self.inner = self.inner.set_split_charge_rules(input);
+            self
+        }
+        /// Appends an item to `ResourceTags`.
+        ///
+        /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
+        ///
+        /// <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
+        /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
+        /// <ul>
+        /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
+        /// <li> <p>The maximum length of a key is 128 characters</p> </li>
+        /// <li> <p>The maximum length of a value is 256 characters</p> </li>
+        /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+        /// <li> <p>Keys and values are case sensitive</p> </li>
+        /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
+        /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+        /// </ul>
+        pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
+            self.inner = self.inner.resource_tags(input);
+            self
+        }
+        /// <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
+        /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
+        /// <ul>
+        /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
+        /// <li> <p>The maximum length of a key is 128 characters</p> </li>
+        /// <li> <p>The maximum length of a value is 256 characters</p> </li>
+        /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+        /// <li> <p>Keys and values are case sensitive</p> </li>
+        /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
+        /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+        /// </ul>
+        pub fn set_resource_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_tags(input);
             self
         }
     }
@@ -1389,15 +1535,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
-        /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
-        /// <p>The default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+        /// <p>Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+        /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
         pub fn filter(mut self, input: crate::model::Expression) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
         /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
-        /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
-        /// <p>The default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+        /// <p>Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+        /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.inner = self.inner.set_filter(input);
             self
@@ -1534,16 +1680,16 @@ pub mod fluent_builders {
         }
         /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
         /// <p>The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.</p>
-        /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
-        /// <p>The default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+        /// <p>Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+        /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
         pub fn filter(mut self, input: crate::model::Expression) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
         /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
         /// <p>The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.</p>
-        /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
-        /// <p>The default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+        /// <p>Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+        /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.inner = self.inner.set_filter(input);
             self
@@ -4068,6 +4214,59 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListTagsForResource`.
+    ///
+    /// <p>Returns a list of resource tags associated with the resource specified by the Amazon Resource Name (ARN). </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListTagsForResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_tags_for_resource_input::Builder,
+    }
+    impl ListTagsForResource {
+        /// Creates a new `ListTagsForResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListTagsForResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ProvideAnomalyFeedback`.
     ///
     /// <p>Modifies the feedback property of a given cost anomaly. </p>
@@ -4134,9 +4333,171 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `TagResource`.
+    ///
+    /// <p>An API operation for adding one or more tags (key-value pairs) to a resource.</p>
+    /// <p>You can use the <code>TagResource</code> operation with a resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value you specify replaces the previous value for that tag.</p>
+    /// <p> Although the maximum number of array members is 200, user-tag maximum is 50. The remaining are reserved for Amazon Web Services use.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct TagResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::tag_resource_input::Builder,
+    }
+    impl TagResource {
+        /// Creates a new `TagResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::TagResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Appends an item to `ResourceTags`.
+        ///
+        /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
+        ///
+        /// <p> A list of tag key-value pairs to be added to the resource.</p>
+        /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
+        /// <ul>
+        /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
+        /// <li> <p>The maximum length of a key is 128 characters</p> </li>
+        /// <li> <p>The maximum length of a value is 256 characters</p> </li>
+        /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+        /// <li> <p>Keys and values are case sensitive</p> </li>
+        /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
+        /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+        /// </ul>
+        pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
+            self.inner = self.inner.resource_tags(input);
+            self
+        }
+        /// <p> A list of tag key-value pairs to be added to the resource.</p>
+        /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
+        /// <ul>
+        /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
+        /// <li> <p>The maximum length of a key is 128 characters</p> </li>
+        /// <li> <p>The maximum length of a value is 256 characters</p> </li>
+        /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+        /// <li> <p>Keys and values are case sensitive</p> </li>
+        /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
+        /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+        /// </ul>
+        pub fn set_resource_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UntagResource`.
+    ///
+    /// <p> Removes one or more tags from a resource. Specify only tag key(s) in your request. Do not specify the value. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UntagResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::untag_resource_input::Builder,
+    }
+    impl UntagResource {
+        /// Creates a new `UntagResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UntagResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p> The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Appends an item to `ResourceTagKeys`.
+        ///
+        /// To override the contents of this collection use [`set_resource_tag_keys`](Self::set_resource_tag_keys).
+        ///
+        /// <p> A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that does not exist, it is ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The remaining are reserved for Amazon Web Services use. </p>
+        pub fn resource_tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_tag_keys(input.into());
+            self
+        }
+        /// <p> A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that does not exist, it is ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The remaining are reserved for Amazon Web Services use. </p>
+        pub fn set_resource_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_tag_keys(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateAnomalyMonitor`.
     ///
-    /// <p>Updates an existing cost anomaly monitor. The changes made are applied going forward, and doesn'tt change anomalies detected in the past. </p>
+    /// <p>Updates an existing cost anomaly monitor. The changes made are applied going forward, and doesn't change anomalies detected in the past. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAnomalyMonitor {
         handle: std::sync::Arc<super::Handle>,

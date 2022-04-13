@@ -406,6 +406,110 @@ impl std::error::Error for CreateLocationFsxLustreError {
     }
 }
 
+/// Error type for the `CreateLocationFsxOpenZfs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateLocationFsxOpenZfsError {
+    /// Kind of error that occurred.
+    pub kind: CreateLocationFsxOpenZfsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateLocationFsxOpenZfs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateLocationFsxOpenZfsErrorKind {
+    /// <p>This exception is thrown when an error occurs in the DataSync service.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateLocationFsxOpenZfsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateLocationFsxOpenZfsErrorKind::InternalException(_inner) => _inner.fmt(f),
+            CreateLocationFsxOpenZfsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            CreateLocationFsxOpenZfsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateLocationFsxOpenZfsError {
+    fn code(&self) -> Option<&str> {
+        CreateLocationFsxOpenZfsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateLocationFsxOpenZfsError {
+    /// Creates a new `CreateLocationFsxOpenZfsError`.
+    pub fn new(kind: CreateLocationFsxOpenZfsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateLocationFsxOpenZfsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateLocationFsxOpenZfsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateLocationFsxOpenZfsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateLocationFsxOpenZfsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateLocationFsxOpenZfsErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLocationFsxOpenZfsErrorKind::InternalException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLocationFsxOpenZfsErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLocationFsxOpenZfsErrorKind::InvalidRequestException(_)
+        )
+    }
+}
+impl std::error::Error for CreateLocationFsxOpenZfsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateLocationFsxOpenZfsErrorKind::InternalException(_inner) => Some(_inner),
+            CreateLocationFsxOpenZfsErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            CreateLocationFsxOpenZfsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateLocationFsxWindows` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1721,6 +1825,110 @@ impl std::error::Error for DescribeLocationFsxLustreError {
             DescribeLocationFsxLustreErrorKind::InternalException(_inner) => Some(_inner),
             DescribeLocationFsxLustreErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeLocationFsxLustreErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeLocationFsxOpenZfs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeLocationFsxOpenZfsError {
+    /// Kind of error that occurred.
+    pub kind: DescribeLocationFsxOpenZfsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeLocationFsxOpenZfs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeLocationFsxOpenZfsErrorKind {
+    /// <p>This exception is thrown when an error occurs in the DataSync service.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeLocationFsxOpenZfsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeLocationFsxOpenZfsErrorKind::InternalException(_inner) => _inner.fmt(f),
+            DescribeLocationFsxOpenZfsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeLocationFsxOpenZfsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeLocationFsxOpenZfsError {
+    fn code(&self) -> Option<&str> {
+        DescribeLocationFsxOpenZfsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeLocationFsxOpenZfsError {
+    /// Creates a new `DescribeLocationFsxOpenZfsError`.
+    pub fn new(kind: DescribeLocationFsxOpenZfsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeLocationFsxOpenZfsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeLocationFsxOpenZfsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeLocationFsxOpenZfsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeLocationFsxOpenZfsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeLocationFsxOpenZfsErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLocationFsxOpenZfsErrorKind::InternalException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeLocationFsxOpenZfsErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLocationFsxOpenZfsErrorKind::InvalidRequestException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeLocationFsxOpenZfsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeLocationFsxOpenZfsErrorKind::InternalException(_inner) => Some(_inner),
+            DescribeLocationFsxOpenZfsErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeLocationFsxOpenZfsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

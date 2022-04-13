@@ -82,7 +82,7 @@ impl AsRef<str> for CertificateAuthorityStatus {
     }
 }
 
-/// <p>Certificate revocation information used by the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> actions. Your private certificate authority (CA) can configure Online Certificate Status Protocol (OCSP) support and/or maintain a certificate revocation list (CRL). OCSP returns validation information about certificates as requested by clients, and a CRL contains an updated list of certificates revoked by your CA. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html">RevokeCertificate</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/revocation-setup.html">Setting up a certificate revocation method</a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User Guide</i>.</p>
+/// <p>Certificate revocation information used by the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> actions. Your private certificate authority (CA) can configure Online Certificate Status Protocol (OCSP) support and/or maintain a certificate revocation list (CRL). OCSP returns validation information about certificates as requested by clients, and a CRL contains an updated list of certificates revoked by your CA. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html">RevokeCertificate</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/revocation-setup.html">Setting up a certificate revocation method</a> in the <i>Certificate Manager Private Certificate Authority (PCA) User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevocationConfiguration {
@@ -168,9 +168,9 @@ impl RevocationConfiguration {
 pub struct OcspConfiguration {
     /// <p>Flag enabling use of the Online Certificate Status Protocol (OCSP) for validating certificate revocation status.</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>By default, ACM Private CA injects an AWS domain into certificates being validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME specifying a customized OCSP domain.</p>
+    /// <p>By default, ACM Private CA injects an Amazon Web Services domain into certificates being validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME specifying a customized OCSP domain.</p>
     /// <p>Note: The value of the CNAME must not include a protocol prefix such as "http://" or "https://".</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate Status Protocol (OCSP) </a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager Private Certificate Authority (PCA) User Guide</i>.</p>
     pub ocsp_custom_cname: std::option::Option<std::string::String>,
 }
 impl OcspConfiguration {
@@ -178,9 +178,9 @@ impl OcspConfiguration {
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
-    /// <p>By default, ACM Private CA injects an AWS domain into certificates being validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME specifying a customized OCSP domain.</p>
+    /// <p>By default, ACM Private CA injects an Amazon Web Services domain into certificates being validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME specifying a customized OCSP domain.</p>
     /// <p>Note: The value of the CNAME must not include a protocol prefix such as "http://" or "https://".</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate Status Protocol (OCSP) </a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager Private Certificate Authority (PCA) User Guide</i>.</p>
     pub fn ocsp_custom_cname(&self) -> std::option::Option<&str> {
         self.ocsp_custom_cname.as_deref()
     }
@@ -213,16 +213,16 @@ pub mod ocsp_configuration {
             self.enabled = input;
             self
         }
-        /// <p>By default, ACM Private CA injects an AWS domain into certificates being validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME specifying a customized OCSP domain.</p>
+        /// <p>By default, ACM Private CA injects an Amazon Web Services domain into certificates being validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME specifying a customized OCSP domain.</p>
         /// <p>Note: The value of the CNAME must not include a protocol prefix such as "http://" or "https://".</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate Status Protocol (OCSP) </a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager Private Certificate Authority (PCA) User Guide</i>.</p>
         pub fn ocsp_custom_cname(mut self, input: impl Into<std::string::String>) -> Self {
             self.ocsp_custom_cname = Some(input.into());
             self
         }
-        /// <p>By default, ACM Private CA injects an AWS domain into certificates being validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME specifying a customized OCSP domain.</p>
+        /// <p>By default, ACM Private CA injects an Amazon Web Services domain into certificates being validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME specifying a customized OCSP domain.</p>
         /// <p>Note: The value of the CNAME must not include a protocol prefix such as "http://" or "https://".</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate Status Protocol (OCSP) </a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager Private Certificate Authority (PCA) User Guide</i>.</p>
         pub fn set_ocsp_custom_cname(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -248,7 +248,7 @@ impl OcspConfiguration {
 
 /// <p>Contains configuration information for a certificate revocation list (CRL). Your private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can enable CRLs for your new or an existing private CA by setting the <b>Enabled</b> parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify in the <b>S3BucketName</b> parameter. You can hide the name of your bucket by specifying a value for the <b>CustomCname</b> parameter. Your private CA copies the CNAME or the S3 bucket name to the <b>CRL Distribution Points</b> extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM Private CA. </p>
 /// <p>ACM Private CA assets that are stored in Amazon S3 can be protected with encryption. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting Your CRLs</a>.</p>
-/// <p>Your private CA uses the value in the <b>ExpirationInDays</b> parameter to calculate the <b>nextUpdate</b> field in the CRL. The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked. When a certificate is revoked, it is recorded in the next CRL that is generated and in the next audit report. Only time valid certificates are listed in the CRL. Expired certificates are not included.</p>
+/// <p>Your private CA uses the value in the <b>ExpirationInDays</b> parameter to calculate the <b>nextUpdate</b> field in the CRL. The CRL is refreshed prior to a certificate's expiration date or when a certificate is revoked. When a certificate is revoked, it appears in the CRL until the certificate expires, and then in one additional CRL after expiration, and it always appears in the audit report.</p>
 /// <p>A CRL is typically updated approximately 30 minutes after a certificate is revoked. If for any reason a CRL update fails, ACM Private CA makes further attempts every 15 minutes.</p>
 /// <p>CRLs contain the following fields:</p>
 /// <ul>
@@ -276,7 +276,7 @@ impl OcspConfiguration {
 /// </ul>
 /// <p>Certificate revocation lists created by ACM Private CA are DER-encoded. You can use the following OpenSSL command to list a CRL.</p>
 /// <p> <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code> </p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html">Planning a certificate revocation list (CRL)</a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User Guide</i> </p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html">Planning a certificate revocation list (CRL)</a> in the <i>Certificate Manager Private Certificate Authority (PCA) User Guide</i> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CrlConfiguration {
@@ -640,7 +640,7 @@ impl AsRef<str> for RevocationReason {
     }
 }
 
-/// <p>Permissions designate which private CA actions can be performed by an AWS service or entity. In order for ACM to automatically renew private certificates, you must give the ACM service principal all available permissions (<code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>). Permissions can be assigned with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreatePermission.html">CreatePermission</a> action, removed with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePermission.html">DeletePermission</a> action, and listed with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListPermissions.html">ListPermissions</a> action.</p>
+/// <p>Permissions designate which private CA actions can be performed by an Amazon Web Services service or entity. In order for ACM to automatically renew private certificates, you must give the ACM service principal all available permissions (<code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>). Permissions can be assigned with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreatePermission.html">CreatePermission</a> action, removed with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePermission.html">DeletePermission</a> action, and listed with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListPermissions.html">ListPermissions</a> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Permission {
@@ -648,11 +648,11 @@ pub struct Permission {
     pub certificate_authority_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the permission was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The AWS service or entity that holds the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
+    /// <p>The Amazon Web Services service or entity that holds the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
     pub principal: std::option::Option<std::string::String>,
     /// <p>The ID of the account that assigned the permission.</p>
     pub source_account: std::option::Option<std::string::String>,
-    /// <p>The private CA actions that can be performed by the designated AWS service.</p>
+    /// <p>The private CA actions that can be performed by the designated Amazon Web Services service.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::ActionType>>,
     /// <p>The name of the policy that is associated with the permission.</p>
     pub policy: std::option::Option<std::string::String>,
@@ -666,7 +666,7 @@ impl Permission {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The AWS service or entity that holds the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
+    /// <p>The Amazon Web Services service or entity that holds the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
@@ -674,7 +674,7 @@ impl Permission {
     pub fn source_account(&self) -> std::option::Option<&str> {
         self.source_account.as_deref()
     }
-    /// <p>The private CA actions that can be performed by the designated AWS service.</p>
+    /// <p>The private CA actions that can be performed by the designated Amazon Web Services service.</p>
     pub fn actions(&self) -> std::option::Option<&[crate::model::ActionType]> {
         self.actions.as_deref()
     }
@@ -735,12 +735,12 @@ pub mod permission {
             self.created_at = input;
             self
         }
-        /// <p>The AWS service or entity that holds the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
+        /// <p>The Amazon Web Services service or entity that holds the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal = Some(input.into());
             self
         }
-        /// <p>The AWS service or entity that holds the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
+        /// <p>The Amazon Web Services service or entity that holds the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
@@ -762,14 +762,14 @@ pub mod permission {
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
-        /// <p>The private CA actions that can be performed by the designated AWS service.</p>
+        /// <p>The private CA actions that can be performed by the designated Amazon Web Services service.</p>
         pub fn actions(mut self, input: crate::model::ActionType) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input);
             self.actions = Some(v);
             self
         }
-        /// <p>The private CA actions that can be performed by the designated AWS service.</p>
+        /// <p>The private CA actions that can be performed by the designated Amazon Web Services service.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActionType>>,
@@ -866,13 +866,13 @@ impl AsRef<str> for ActionType {
     }
 }
 
-/// <p>Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate <b>Subject</b> field owns or controls the public key contained in the <b>Subject Public Key Info</b> field. Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action to create your private CA. You must then call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html">GetCertificateAuthorityCertificate</a> action to retrieve a private CA certificate signing request (CSR). Sign the CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a> action to import the signed certificate into AWS Certificate Manager (ACM). </p>
+/// <p>Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate <b>Subject</b> field owns or controls the public key contained in the <b>Subject Public Key Info</b> field. Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action to create your private CA. You must then call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html">GetCertificateAuthorityCertificate</a> action to retrieve a private CA certificate signing request (CSR). Sign the CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a> action to import the signed certificate into Certificate Manager (ACM). </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateAuthority {
     /// <p>Amazon Resource Name (ARN) for your private certificate authority (CA). The format is <code> <i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID that owns the certificate authority.</p>
+    /// <p>The Amazon Web Services account ID that owns the certificate authority.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>Date and time at which your private CA was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -899,7 +899,7 @@ pub struct CertificateAuthority {
     pub restorable_until: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Defines a cryptographic key management compliance standard used for handling CA keys. </p>
     /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
-    /// <p>Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
+    /// <p>Note: Amazon Web Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
     pub key_storage_security_standard:
         std::option::Option<crate::model::KeyStorageSecurityStandard>,
 }
@@ -908,7 +908,7 @@ impl CertificateAuthority {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The AWS account ID that owns the certificate authority.</p>
+    /// <p>The Amazon Web Services account ID that owns the certificate authority.</p>
     pub fn owner_account(&self) -> std::option::Option<&str> {
         self.owner_account.as_deref()
     }
@@ -962,7 +962,7 @@ impl CertificateAuthority {
     }
     /// <p>Defines a cryptographic key management compliance standard used for handling CA keys. </p>
     /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
-    /// <p>Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
+    /// <p>Note: Amazon Web Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
     pub fn key_storage_security_standard(
         &self,
     ) -> std::option::Option<&crate::model::KeyStorageSecurityStandard> {
@@ -1030,12 +1030,12 @@ pub mod certificate_authority {
             self.arn = input;
             self
         }
-        /// <p>The AWS account ID that owns the certificate authority.</p>
+        /// <p>The Amazon Web Services account ID that owns the certificate authority.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The AWS account ID that owns the certificate authority.</p>
+        /// <p>The Amazon Web Services account ID that owns the certificate authority.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1191,7 +1191,7 @@ pub mod certificate_authority {
         }
         /// <p>Defines a cryptographic key management compliance standard used for handling CA keys. </p>
         /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
-        /// <p>Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
+        /// <p>Note: Amazon Web Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
         pub fn key_storage_security_standard(
             mut self,
             input: crate::model::KeyStorageSecurityStandard,
@@ -1201,7 +1201,7 @@ pub mod certificate_authority {
         }
         /// <p>Defines a cryptographic key management compliance standard used for handling CA keys. </p>
         /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
-        /// <p>Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
+        /// <p>Note: Amazon Web Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
         pub fn set_key_storage_security_standard(
             mut self,
             input: std::option::Option<crate::model::KeyStorageSecurityStandard>,
@@ -1428,7 +1428,7 @@ impl CertificateAuthorityConfiguration {
 pub struct CsrExtensions {
     /// <p>Indicates the purpose of the certificate and of the key contained in the certificate.</p>
     pub key_usage: std::option::Option<crate::model::KeyUsage>,
-    /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
+    /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
     pub subject_information_access:
         std::option::Option<std::vec::Vec<crate::model::AccessDescription>>,
 }
@@ -1437,7 +1437,7 @@ impl CsrExtensions {
     pub fn key_usage(&self) -> std::option::Option<&crate::model::KeyUsage> {
         self.key_usage.as_ref()
     }
-    /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
+    /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
     pub fn subject_information_access(
         &self,
     ) -> std::option::Option<&[crate::model::AccessDescription]> {
@@ -1480,7 +1480,7 @@ pub mod csr_extensions {
         ///
         /// To override the contents of this collection use [`set_subject_information_access`](Self::set_subject_information_access).
         ///
-        /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
+        /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
         pub fn subject_information_access(
             mut self,
             input: crate::model::AccessDescription,
@@ -1490,7 +1490,7 @@ pub mod csr_extensions {
             self.subject_information_access = Some(v);
             self
         }
-        /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
+        /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
         pub fn set_subject_information_access(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccessDescription>>,
@@ -1514,7 +1514,7 @@ impl CsrExtensions {
     }
 }
 
-/// <p>Provides access information used by the <code>authorityInfoAccess</code> and <code>subjectInfoAccess</code> extensions described in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>.</p>
+/// <p>Provides access information used by the <code>authorityInfoAccess</code> and <code>subjectInfoAccess</code> extensions described in <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDescription {
@@ -1593,13 +1593,13 @@ impl AccessDescription {
     }
 }
 
-/// <p>Describes an ASN.1 X.400 <code>GeneralName</code> as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. Only one of the following naming options should be provided. Providing more than one option results in an <code>InvalidArgsException</code> error.</p>
+/// <p>Describes an ASN.1 X.400 <code>GeneralName</code> as defined in <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>. Only one of the following naming options should be provided. Providing more than one option results in an <code>InvalidArgsException</code> error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GeneralName {
     /// <p>Represents <code>GeneralName</code> using an <code>OtherName</code> object.</p>
     pub other_name: std::option::Option<crate::model::OtherName>,
-    /// <p>Represents <code>GeneralName</code> as an <a href="https://tools.ietf.org/html/rfc822">RFC 822</a> email address.</p>
+    /// <p>Represents <code>GeneralName</code> as an <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email address.</p>
     pub rfc822_name: std::option::Option<std::string::String>,
     /// <p>Represents <code>GeneralName</code> as a DNS name.</p>
     pub dns_name: std::option::Option<std::string::String>,
@@ -1619,7 +1619,7 @@ impl GeneralName {
     pub fn other_name(&self) -> std::option::Option<&crate::model::OtherName> {
         self.other_name.as_ref()
     }
-    /// <p>Represents <code>GeneralName</code> as an <a href="https://tools.ietf.org/html/rfc822">RFC 822</a> email address.</p>
+    /// <p>Represents <code>GeneralName</code> as an <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email address.</p>
     pub fn rfc822_name(&self) -> std::option::Option<&str> {
         self.rfc822_name.as_deref()
     }
@@ -1694,12 +1694,12 @@ pub mod general_name {
             self.other_name = input;
             self
         }
-        /// <p>Represents <code>GeneralName</code> as an <a href="https://tools.ietf.org/html/rfc822">RFC 822</a> email address.</p>
+        /// <p>Represents <code>GeneralName</code> as an <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email address.</p>
         pub fn rfc822_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.rfc822_name = Some(input.into());
             self
         }
-        /// <p>Represents <code>GeneralName</code> as an <a href="https://tools.ietf.org/html/rfc822">RFC 822</a> email address.</p>
+        /// <p>Represents <code>GeneralName</code> as an <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email address.</p>
         pub fn set_rfc822_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rfc822_name = input;
             self
@@ -1801,7 +1801,7 @@ impl GeneralName {
     }
 }
 
-/// <p>Describes an Electronic Data Interchange (EDI) entity as described in as defined in <a href="https://tools.ietf.org/html/rfc5280">Subject Alternative Name</a> in RFC 5280.</p>
+/// <p>Describes an Electronic Data Interchange (EDI) entity as described in as defined in <a href="https://datatracker.ietf.org/doc/html/rfc5280">Subject Alternative Name</a> in RFC 5280.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EdiPartyName {
@@ -1910,6 +1910,11 @@ pub struct Asn1Subject {
     pub pseudonym: std::option::Option<std::string::String>,
     /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for junior, Sr. for senior, and III for third.</p>
     pub generation_qualifier: std::option::Option<std::string::String>,
+    /// <p></p>
+    /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p> <note>
+    /// <p>Custom attributes cannot be used in combination with standard attributes.</p>
+    /// </note>
+    pub custom_attributes: std::option::Option<std::vec::Vec<crate::model::CustomAttribute>>,
 }
 impl Asn1Subject {
     /// <p>Two-digit code that specifies the country in which the certificate subject located.</p>
@@ -1969,6 +1974,13 @@ impl Asn1Subject {
     pub fn generation_qualifier(&self) -> std::option::Option<&str> {
         self.generation_qualifier.as_deref()
     }
+    /// <p></p>
+    /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p> <note>
+    /// <p>Custom attributes cannot be used in combination with standard attributes.</p>
+    /// </note>
+    pub fn custom_attributes(&self) -> std::option::Option<&[crate::model::CustomAttribute]> {
+        self.custom_attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for Asn1Subject {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1990,6 +2002,7 @@ impl std::fmt::Debug for Asn1Subject {
         formatter.field("initials", &self.initials);
         formatter.field("pseudonym", &self.pseudonym);
         formatter.field("generation_qualifier", &self.generation_qualifier);
+        formatter.field("custom_attributes", &self.custom_attributes);
         formatter.finish()
     }
 }
@@ -2013,6 +2026,8 @@ pub mod asn1_subject {
         pub(crate) initials: std::option::Option<std::string::String>,
         pub(crate) pseudonym: std::option::Option<std::string::String>,
         pub(crate) generation_qualifier: std::option::Option<std::string::String>,
+        pub(crate) custom_attributes:
+            std::option::Option<std::vec::Vec<crate::model::CustomAttribute>>,
     }
     impl Builder {
         /// <p>Two-digit code that specifies the country in which the certificate subject located.</p>
@@ -2172,6 +2187,31 @@ pub mod asn1_subject {
             self.generation_qualifier = input;
             self
         }
+        /// Appends an item to `custom_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_custom_attributes`](Self::set_custom_attributes).
+        ///
+        /// <p></p>
+        /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p> <note>
+        /// <p>Custom attributes cannot be used in combination with standard attributes.</p>
+        /// </note>
+        pub fn custom_attributes(mut self, input: crate::model::CustomAttribute) -> Self {
+            let mut v = self.custom_attributes.unwrap_or_default();
+            v.push(input);
+            self.custom_attributes = Some(v);
+            self
+        }
+        /// <p></p>
+        /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p> <note>
+        /// <p>Custom attributes cannot be used in combination with standard attributes.</p>
+        /// </note>
+        pub fn set_custom_attributes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CustomAttribute>>,
+        ) -> Self {
+            self.custom_attributes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Asn1Subject`](crate::model::Asn1Subject)
         pub fn build(self) -> crate::model::Asn1Subject {
             crate::model::Asn1Subject {
@@ -2189,6 +2229,7 @@ pub mod asn1_subject {
                 initials: self.initials,
                 pseudonym: self.pseudonym,
                 generation_qualifier: self.generation_qualifier,
+                custom_attributes: self.custom_attributes,
             }
         }
     }
@@ -2197,6 +2238,86 @@ impl Asn1Subject {
     /// Creates a new builder-style object to manufacture [`Asn1Subject`](crate::model::Asn1Subject)
     pub fn builder() -> crate::model::asn1_subject::Builder {
         crate::model::asn1_subject::Builder::default()
+    }
+}
+
+/// <p>Defines the X.500 relative distinguished name (RDN).</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CustomAttribute {
+    /// <p>Specifies the object identifier (OID) of the attribute type of the relative distinguished name (RDN).</p>
+    pub object_identifier: std::option::Option<std::string::String>,
+    /// <p></p>
+    /// <p>Specifies the attribute value of relative distinguished name (RDN).</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl CustomAttribute {
+    /// <p>Specifies the object identifier (OID) of the attribute type of the relative distinguished name (RDN).</p>
+    pub fn object_identifier(&self) -> std::option::Option<&str> {
+        self.object_identifier.as_deref()
+    }
+    /// <p></p>
+    /// <p>Specifies the attribute value of relative distinguished name (RDN).</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for CustomAttribute {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomAttribute");
+        formatter.field("object_identifier", &self.object_identifier);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`CustomAttribute`](crate::model::CustomAttribute)
+pub mod custom_attribute {
+    /// A builder for [`CustomAttribute`](crate::model::CustomAttribute)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) object_identifier: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the object identifier (OID) of the attribute type of the relative distinguished name (RDN).</p>
+        pub fn object_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.object_identifier = Some(input.into());
+            self
+        }
+        /// <p>Specifies the object identifier (OID) of the attribute type of the relative distinguished name (RDN).</p>
+        pub fn set_object_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.object_identifier = input;
+            self
+        }
+        /// <p></p>
+        /// <p>Specifies the attribute value of relative distinguished name (RDN).</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p></p>
+        /// <p>Specifies the attribute value of relative distinguished name (RDN).</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CustomAttribute`](crate::model::CustomAttribute)
+        pub fn build(self) -> crate::model::CustomAttribute {
+            crate::model::CustomAttribute {
+                object_identifier: self.object_identifier,
+                value: self.value,
+            }
+        }
+    }
+}
+impl CustomAttribute {
+    /// Creates a new builder-style object to manufacture [`CustomAttribute`](crate::model::CustomAttribute)
+    pub fn builder() -> crate::model::custom_attribute::Builder {
+        crate::model::custom_attribute::Builder::default()
     }
 }
 
@@ -2931,7 +3052,7 @@ impl AsRef<str> for ResourceOwner {
     }
 }
 
-/// <p>Validity specifies the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the validity of a certificate starts or expires, or as a span of time after issuance, stated in days, months, or years. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
+/// <p>Validity specifies the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the validity of a certificate starts or expires, or as a span of time after issuance, stated in days, months, or years. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
 /// <p>ACM Private CA API consumes the <code>Validity</code> data type differently in two distinct parameters of the <code>IssueCertificate</code> action. The required parameter <code>IssueCertificate</code>:<code>Validity</code> specifies the end of a certificate's validity period. The optional parameter <code>IssueCertificate</code>:<code>ValidityNotBefore</code> specifies a customized starting time for the validity period.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3236,6 +3357,11 @@ pub struct Extensions {
     pub key_usage: std::option::Option<crate::model::KeyUsage>,
     /// <p>The subject alternative name extension allows identities to be bound to the subject of the certificate. These identities may be included in addition to or in place of the identity in the subject field of the certificate.</p>
     pub subject_alternative_names: std::option::Option<std::vec::Vec<crate::model::GeneralName>>,
+    /// <p></p>
+    /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p> <note>
+    /// <p>The OID value of a <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a> must not match the OID of a predefined extension.</p>
+    /// </note>
+    pub custom_extensions: std::option::Option<std::vec::Vec<crate::model::CustomExtension>>,
 }
 impl Extensions {
     /// <p>Contains a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
@@ -3255,6 +3381,13 @@ impl Extensions {
     pub fn subject_alternative_names(&self) -> std::option::Option<&[crate::model::GeneralName]> {
         self.subject_alternative_names.as_deref()
     }
+    /// <p></p>
+    /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p> <note>
+    /// <p>The OID value of a <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a> must not match the OID of a predefined extension.</p>
+    /// </note>
+    pub fn custom_extensions(&self) -> std::option::Option<&[crate::model::CustomExtension]> {
+        self.custom_extensions.as_deref()
+    }
 }
 impl std::fmt::Debug for Extensions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3263,6 +3396,7 @@ impl std::fmt::Debug for Extensions {
         formatter.field("extended_key_usage", &self.extended_key_usage);
         formatter.field("key_usage", &self.key_usage);
         formatter.field("subject_alternative_names", &self.subject_alternative_names);
+        formatter.field("custom_extensions", &self.custom_extensions);
         formatter.finish()
     }
 }
@@ -3279,6 +3413,8 @@ pub mod extensions {
         pub(crate) key_usage: std::option::Option<crate::model::KeyUsage>,
         pub(crate) subject_alternative_names:
             std::option::Option<std::vec::Vec<crate::model::GeneralName>>,
+        pub(crate) custom_extensions:
+            std::option::Option<std::vec::Vec<crate::model::CustomExtension>>,
     }
     impl Builder {
         /// Appends an item to `certificate_policies`.
@@ -3350,6 +3486,31 @@ pub mod extensions {
             self.subject_alternative_names = input;
             self
         }
+        /// Appends an item to `custom_extensions`.
+        ///
+        /// To override the contents of this collection use [`set_custom_extensions`](Self::set_custom_extensions).
+        ///
+        /// <p></p>
+        /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p> <note>
+        /// <p>The OID value of a <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a> must not match the OID of a predefined extension.</p>
+        /// </note>
+        pub fn custom_extensions(mut self, input: crate::model::CustomExtension) -> Self {
+            let mut v = self.custom_extensions.unwrap_or_default();
+            v.push(input);
+            self.custom_extensions = Some(v);
+            self
+        }
+        /// <p></p>
+        /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p> <note>
+        /// <p>The OID value of a <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a> must not match the OID of a predefined extension.</p>
+        /// </note>
+        pub fn set_custom_extensions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CustomExtension>>,
+        ) -> Self {
+            self.custom_extensions = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Extensions`](crate::model::Extensions)
         pub fn build(self) -> crate::model::Extensions {
             crate::model::Extensions {
@@ -3357,6 +3518,7 @@ pub mod extensions {
                 extended_key_usage: self.extended_key_usage,
                 key_usage: self.key_usage,
                 subject_alternative_names: self.subject_alternative_names,
+                custom_extensions: self.custom_extensions,
             }
         }
     }
@@ -3368,17 +3530,126 @@ impl Extensions {
     }
 }
 
+/// <p></p>
+/// <p>Specifies the X.509 extension information for a certificate.</p>
+/// <p>Extensions present in <code>CustomExtensions</code> follow the <code>ApiPassthrough</code> <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">template rules</a>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CustomExtension {
+    /// <p></p>
+    /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
+    pub object_identifier: std::option::Option<std::string::String>,
+    /// <p></p>
+    /// <p>Specifies the base64-encoded value of the X.509 extension.</p>
+    pub value: std::option::Option<std::string::String>,
+    /// <p></p>
+    /// <p>Specifies the critical flag of the X.509 extension.</p>
+    pub critical: std::option::Option<bool>,
+}
+impl CustomExtension {
+    /// <p></p>
+    /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
+    pub fn object_identifier(&self) -> std::option::Option<&str> {
+        self.object_identifier.as_deref()
+    }
+    /// <p></p>
+    /// <p>Specifies the base64-encoded value of the X.509 extension.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p></p>
+    /// <p>Specifies the critical flag of the X.509 extension.</p>
+    pub fn critical(&self) -> std::option::Option<bool> {
+        self.critical
+    }
+}
+impl std::fmt::Debug for CustomExtension {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomExtension");
+        formatter.field("object_identifier", &self.object_identifier);
+        formatter.field("value", &self.value);
+        formatter.field("critical", &self.critical);
+        formatter.finish()
+    }
+}
+/// See [`CustomExtension`](crate::model::CustomExtension)
+pub mod custom_extension {
+    /// A builder for [`CustomExtension`](crate::model::CustomExtension)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) object_identifier: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) critical: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p></p>
+        /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
+        pub fn object_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.object_identifier = Some(input.into());
+            self
+        }
+        /// <p></p>
+        /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
+        pub fn set_object_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.object_identifier = input;
+            self
+        }
+        /// <p></p>
+        /// <p>Specifies the base64-encoded value of the X.509 extension.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p></p>
+        /// <p>Specifies the base64-encoded value of the X.509 extension.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// <p></p>
+        /// <p>Specifies the critical flag of the X.509 extension.</p>
+        pub fn critical(mut self, input: bool) -> Self {
+            self.critical = Some(input);
+            self
+        }
+        /// <p></p>
+        /// <p>Specifies the critical flag of the X.509 extension.</p>
+        pub fn set_critical(mut self, input: std::option::Option<bool>) -> Self {
+            self.critical = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CustomExtension`](crate::model::CustomExtension)
+        pub fn build(self) -> crate::model::CustomExtension {
+            crate::model::CustomExtension {
+                object_identifier: self.object_identifier,
+                value: self.value,
+                critical: self.critical,
+            }
+        }
+    }
+}
+impl CustomExtension {
+    /// Creates a new builder-style object to manufacture [`CustomExtension`](crate::model::CustomExtension)
+    pub fn builder() -> crate::model::custom_extension::Builder {
+        crate::model::custom_extension::Builder::default()
+    }
+}
+
 /// <p>Specifies additional purposes for which the certified public key may be used other than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtendedKeyUsage {
-    /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://tools.ietf.org/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
+    /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
     pub extended_key_usage_type: std::option::Option<crate::model::ExtendedKeyUsageType>,
     /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier (OID).</p>
     pub extended_key_usage_object_identifier: std::option::Option<std::string::String>,
 }
 impl ExtendedKeyUsage {
-    /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://tools.ietf.org/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
+    /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
     pub fn extended_key_usage_type(
         &self,
     ) -> std::option::Option<&crate::model::ExtendedKeyUsageType> {
@@ -3410,7 +3681,7 @@ pub mod extended_key_usage {
         pub(crate) extended_key_usage_object_identifier: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://tools.ietf.org/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
+        /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
         pub fn extended_key_usage_type(
             mut self,
             input: crate::model::ExtendedKeyUsageType,
@@ -3418,7 +3689,7 @@ pub mod extended_key_usage {
             self.extended_key_usage_type = Some(input);
             self
         }
-        /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://tools.ietf.org/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
+        /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
         pub fn set_extended_key_usage_type(
             mut self,
             input: std::option::Option<crate::model::ExtendedKeyUsageType>,
@@ -3716,7 +3987,7 @@ impl PolicyQualifierInfo {
     }
 }
 
-/// <p>Defines a <code>PolicyInformation</code> qualifier. ACM Private CA supports the <a href="https://tools.ietf.org/html/rfc5280#section-4.2.1.4">certification practice statement (CPS) qualifier</a> defined in RFC 5280. </p>
+/// <p>Defines a <code>PolicyInformation</code> qualifier. ACM Private CA supports the <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.4">certification practice statement (CPS) qualifier</a> defined in RFC 5280. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Qualifier {

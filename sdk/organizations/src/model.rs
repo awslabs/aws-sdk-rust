@@ -210,9 +210,15 @@ pub enum ConstraintViolationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     AccountNumberLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
+    CannotCloseManagementAccount,
+    #[allow(missing_docs)] // documentation missing in model
     CannotRegisterMasterAsDelegatedAdministrator,
     #[allow(missing_docs)] // documentation missing in model
     CannotRemoveDelegatedAdministratorFromOrg,
+    #[allow(missing_docs)] // documentation missing in model
+    CloseAccountQuotaExceeded,
+    #[allow(missing_docs)] // documentation missing in model
+    CloseAccountRequestsLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     CreateOrganizationInBillingModeUnsupportedRegion,
     #[allow(missing_docs)] // documentation missing in model
@@ -252,6 +258,8 @@ pub enum ConstraintViolationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     PolicyNumberLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
+    ServiceAccessNotEnabled,
+    #[allow(missing_docs)] // documentation missing in model
     TagPolicyViolation,
     #[allow(missing_docs)] // documentation missing in model
     WaitPeriodActive,
@@ -266,8 +274,11 @@ impl std::convert::From<&str> for ConstraintViolationExceptionReason {
             "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION" => ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification,
             "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded,
             "ACCOUNT_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::AccountNumberLimitExceeded,
+            "CANNOT_CLOSE_MANAGEMENT_ACCOUNT" => ConstraintViolationExceptionReason::CannotCloseManagementAccount,
             "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR" => ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator,
             "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG" => ConstraintViolationExceptionReason::CannotRemoveDelegatedAdministratorFromOrg,
+            "CLOSE_ACCOUNT_QUOTA_EXCEEDED" => ConstraintViolationExceptionReason::CloseAccountQuotaExceeded,
+            "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::CloseAccountRequestsLimitExceeded,
             "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION" => ConstraintViolationExceptionReason::CreateOrganizationInBillingModeUnsupportedRegion,
             "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE" => ConstraintViolationExceptionReason::DelegatedAdministratorExistsForThisService,
             "EMAIL_VERIFICATION_CODE_EXPIRED" => ConstraintViolationExceptionReason::EmailVerificationCodeExpired,
@@ -287,6 +298,7 @@ impl std::convert::From<&str> for ConstraintViolationExceptionReason {
             "OU_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::OuNumberLimitExceeded,
             "POLICY_CONTENT_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::PolicyContentLimitExceeded,
             "POLICY_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::PolicyNumberLimitExceeded,
+            "SERVICE_ACCESS_NOT_ENABLED" => ConstraintViolationExceptionReason::ServiceAccessNotEnabled,
             "TAG_POLICY_VIOLATION" => ConstraintViolationExceptionReason::TagPolicyViolation,
             "WAIT_PERIOD_ACTIVE" => ConstraintViolationExceptionReason::WaitPeriodActive,
             other => ConstraintViolationExceptionReason::Unknown(other.to_owned())
@@ -309,8 +321,11 @@ impl ConstraintViolationExceptionReason {
             ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification => "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION",
             ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded => "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED",
             ConstraintViolationExceptionReason::AccountNumberLimitExceeded => "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
+            ConstraintViolationExceptionReason::CannotCloseManagementAccount => "CANNOT_CLOSE_MANAGEMENT_ACCOUNT",
             ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator => "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR",
             ConstraintViolationExceptionReason::CannotRemoveDelegatedAdministratorFromOrg => "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG",
+            ConstraintViolationExceptionReason::CloseAccountQuotaExceeded => "CLOSE_ACCOUNT_QUOTA_EXCEEDED",
+            ConstraintViolationExceptionReason::CloseAccountRequestsLimitExceeded => "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED",
             ConstraintViolationExceptionReason::CreateOrganizationInBillingModeUnsupportedRegion => "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION",
             ConstraintViolationExceptionReason::DelegatedAdministratorExistsForThisService => "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE",
             ConstraintViolationExceptionReason::EmailVerificationCodeExpired => "EMAIL_VERIFICATION_CODE_EXPIRED",
@@ -330,6 +345,7 @@ impl ConstraintViolationExceptionReason {
             ConstraintViolationExceptionReason::OuNumberLimitExceeded => "OU_NUMBER_LIMIT_EXCEEDED",
             ConstraintViolationExceptionReason::PolicyContentLimitExceeded => "POLICY_CONTENT_LIMIT_EXCEEDED",
             ConstraintViolationExceptionReason::PolicyNumberLimitExceeded => "POLICY_NUMBER_LIMIT_EXCEEDED",
+            ConstraintViolationExceptionReason::ServiceAccessNotEnabled => "SERVICE_ACCESS_NOT_ENABLED",
             ConstraintViolationExceptionReason::TagPolicyViolation => "TAG_POLICY_VIOLATION",
             ConstraintViolationExceptionReason::WaitPeriodActive => "WAIT_PERIOD_ACTIVE",
             ConstraintViolationExceptionReason::Unknown(s) => s.as_ref()
@@ -343,8 +359,11 @@ impl ConstraintViolationExceptionReason {
             "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION",
             "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED",
             "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
+            "CANNOT_CLOSE_MANAGEMENT_ACCOUNT",
             "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR",
             "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG",
+            "CLOSE_ACCOUNT_QUOTA_EXCEEDED",
+            "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED",
             "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION",
             "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE",
             "EMAIL_VERIFICATION_CODE_EXPIRED",
@@ -364,6 +383,7 @@ impl ConstraintViolationExceptionReason {
             "OU_NUMBER_LIMIT_EXCEEDED",
             "POLICY_CONTENT_LIMIT_EXCEEDED",
             "POLICY_NUMBER_LIMIT_EXCEEDED",
+            "SERVICE_ACCESS_NOT_ENABLED",
             "TAG_POLICY_VIOLATION",
             "WAIT_PERIOD_ACTIVE",
         ]
@@ -459,7 +479,7 @@ pub struct PolicySummary {
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
-    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The friendly name of the policy.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
@@ -468,7 +488,7 @@ pub struct PolicySummary {
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of policy.</p>
     pub r#type: std::option::Option<crate::model::PolicyType>,
-    /// <p>A boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you can attach the policy to roots, OUs, or accounts, but you cannot edit it.</p>
+    /// <p>A boolean value that indicates whether the specified policy is an Amazon Web Services managed policy. If true, then you can attach the policy to roots, OUs, or accounts, but you cannot edit it.</p>
     pub aws_managed: bool,
 }
 impl PolicySummary {
@@ -478,7 +498,7 @@ impl PolicySummary {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
-    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -495,7 +515,7 @@ impl PolicySummary {
     pub fn r#type(&self) -> std::option::Option<&crate::model::PolicyType> {
         self.r#type.as_ref()
     }
-    /// <p>A boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you can attach the policy to roots, OUs, or accounts, but you cannot edit it.</p>
+    /// <p>A boolean value that indicates whether the specified policy is an Amazon Web Services managed policy. If true, then you can attach the policy to roots, OUs, or accounts, but you cannot edit it.</p>
     pub fn aws_managed(&self) -> bool {
         self.aws_managed
     }
@@ -539,13 +559,13 @@ pub mod policy_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the policy.</p>
-        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the policy.</p>
-        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -582,12 +602,12 @@ pub mod policy_summary {
             self.r#type = input;
             self
         }
-        /// <p>A boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you can attach the policy to roots, OUs, or accounts, but you cannot edit it.</p>
+        /// <p>A boolean value that indicates whether the specified policy is an Amazon Web Services managed policy. If true, then you can attach the policy to roots, OUs, or accounts, but you cannot edit it.</p>
         pub fn aws_managed(mut self, input: bool) -> Self {
             self.aws_managed = Some(input);
             self
         }
-        /// <p>A boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you can attach the policy to roots, OUs, or accounts, but you cannot edit it.</p>
+        /// <p>A boolean value that indicates whether the specified policy is an Amazon Web Services managed policy. If true, then you can attach the policy to roots, OUs, or accounts, but you cannot edit it.</p>
         pub fn set_aws_managed(mut self, input: std::option::Option<bool>) -> Self {
             self.aws_managed = input;
             self
@@ -680,7 +700,7 @@ impl AsRef<str> for PolicyType {
     }
 }
 
-/// <p>Contains details about an organizational unit (OU). An OU is a container of AWS accounts within a root of an organization. Policies that are attached to an OU apply to all accounts contained in that OU and in any child OUs.</p>
+/// <p>Contains details about an organizational unit (OU). An OU is a container of Amazon Web Services accounts within a root of an organization. Policies that are attached to an OU apply to all accounts contained in that OU and in any child OUs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationalUnit {
@@ -688,7 +708,7 @@ pub struct OrganizationalUnit {
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of this OU.</p>
-    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The friendly name of this OU.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
@@ -701,7 +721,7 @@ impl OrganizationalUnit {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of this OU.</p>
-    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -744,13 +764,13 @@ pub mod organizational_unit {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of this OU.</p>
-        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of this OU.</p>
-        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -787,7 +807,7 @@ impl OrganizationalUnit {
 /// <p>A custom key-value pair associated with a resource within your organization.</p>
 /// <p>You can attach tags to any of the following organization resources.</p>
 /// <ul>
-/// <li> <p>AWS account</p> </li>
+/// <li> <p>Amazon Web Services account</p> </li>
 /// <li> <p>Organizational unit (OU)</p> </li>
 /// <li> <p>Organization root</p> </li>
 /// <li> <p>Policy</p> </li>
@@ -877,7 +897,7 @@ pub struct PolicyTargetSummary {
     /// </ul>
     pub target_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the policy target.</p>
-    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The friendly name of the policy target.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
@@ -897,7 +917,7 @@ impl PolicyTargetSummary {
         self.target_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the policy target.</p>
-    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -956,13 +976,13 @@ pub mod policy_target_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the policy target.</p>
-        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the policy target.</p>
-        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1066,7 +1086,7 @@ impl AsRef<str> for TargetType {
     }
 }
 
-/// <p>Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. The root contains every AWS account in the organization.</p>
+/// <p>Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. The root contains every Amazon Web Services account in the organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Root {
@@ -1074,7 +1094,7 @@ pub struct Root {
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the root.</p>
-    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The friendly name of the root.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
@@ -1091,7 +1111,7 @@ impl Root {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the root.</p>
-    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -1143,13 +1163,13 @@ pub mod root {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the root.</p>
-        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the root.</p>
-        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1491,7 +1511,7 @@ impl AsRef<str> for ParentType {
 }
 
 /// <p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a management account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p>
-/// <p> <b>Note:</b> Handshakes that are <code>CANCELED</code>, <code>ACCEPTED</code>, or <code>DECLINED</code> show up in lists for only 30 days after entering that state After that they are deleted.</p>
+/// <p> <b>Note:</b> Handshakes that are <code>CANCELED</code>, <code>ACCEPTED</code>, <code>DECLINED</code>, or <code>EXPIRED</code> show up in lists for only 30 days after entering that state After that they are deleted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Handshake {
@@ -1499,7 +1519,7 @@ pub struct Handshake {
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a handshake.</p>
-    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>Information about the two accounts that are participating in the handshake.</p>
     pub parties: std::option::Option<std::vec::Vec<crate::model::HandshakeParty>>,
@@ -1534,7 +1554,7 @@ impl Handshake {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a handshake.</p>
-    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -1619,13 +1639,13 @@ pub mod handshake {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a handshake.</p>
-        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a handshake.</p>
-        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1773,7 +1793,7 @@ pub struct HandshakeResource {
     pub value: std::option::Option<std::string::String>,
     /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p>
     /// <ul>
-    /// <li> <p> <code>ACCOUNT</code> - Specifies an AWS account ID number.</p> </li>
+    /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li>
     /// <li> <p> <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li>
     /// <li> <p> <code>EMAIL</code> - Specifies the email address that is associated with the account that receives the handshake. </p> </li>
     /// <li> <p> <code>OWNER_EMAIL</code> - Specifies the email address associated with the management account. Included as information about an organization. </p> </li>
@@ -1791,7 +1811,7 @@ impl HandshakeResource {
     }
     /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p>
     /// <ul>
-    /// <li> <p> <code>ACCOUNT</code> - Specifies an AWS account ID number.</p> </li>
+    /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li>
     /// <li> <p> <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li>
     /// <li> <p> <code>EMAIL</code> - Specifies the email address that is associated with the account that receives the handshake. </p> </li>
     /// <li> <p> <code>OWNER_EMAIL</code> - Specifies the email address associated with the management account. Included as information about an organization. </p> </li>
@@ -1838,7 +1858,7 @@ pub mod handshake_resource {
         }
         /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p>
         /// <ul>
-        /// <li> <p> <code>ACCOUNT</code> - Specifies an AWS account ID number.</p> </li>
+        /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li>
         /// <li> <p> <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li>
         /// <li> <p> <code>EMAIL</code> - Specifies the email address that is associated with the account that receives the handshake. </p> </li>
         /// <li> <p> <code>OWNER_EMAIL</code> - Specifies the email address associated with the management account. Included as information about an organization. </p> </li>
@@ -1851,7 +1871,7 @@ pub mod handshake_resource {
         }
         /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p>
         /// <ul>
-        /// <li> <p> <code>ACCOUNT</code> - Specifies an AWS account ID number.</p> </li>
+        /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li>
         /// <li> <p> <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li>
         /// <li> <p> <code>EMAIL</code> - Specifies the email address that is associated with the account that receives the handshake. </p> </li>
         /// <li> <p> <code>OWNER_EMAIL</code> - Specifies the email address associated with the management account. Included as information about an organization. </p> </li>
@@ -2369,17 +2389,17 @@ impl HandshakeFilter {
     }
 }
 
-/// <p>Contains information about the AWS service for which the account is a delegated administrator.</p>
+/// <p>Contains information about the Amazon Web Services service for which the account is a delegated administrator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DelegatedService {
-    /// <p>The name of an AWS service that can request an operation for the specified service. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
+    /// <p>The name of an Amazon Web Services service that can request an operation for the specified service. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
     pub service_principal: std::option::Option<std::string::String>,
     /// <p>The date that the account became a delegated administrator for this service. </p>
     pub delegation_enabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DelegatedService {
-    /// <p>The name of an AWS service that can request an operation for the specified service. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
+    /// <p>The name of an Amazon Web Services service that can request an operation for the specified service. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
     pub fn service_principal(&self) -> std::option::Option<&str> {
         self.service_principal.as_deref()
     }
@@ -2406,12 +2426,12 @@ pub mod delegated_service {
         pub(crate) delegation_enabled_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The name of an AWS service that can request an operation for the specified service. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
+        /// <p>The name of an Amazon Web Services service that can request an operation for the specified service. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
         pub fn service_principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_principal = Some(input.into());
             self
         }
-        /// <p>The name of an AWS service that can request an operation for the specified service. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
+        /// <p>The name of an Amazon Web Services service that can request an operation for the specified service. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
         pub fn set_service_principal(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2456,7 +2476,7 @@ pub struct DelegatedAdministrator {
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the delegated administrator's account.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The email address that is associated with the delegated administrator's AWS account.</p>
+    /// <p>The email address that is associated with the delegated administrator's Amazon Web Services account.</p>
     pub email: std::option::Option<std::string::String>,
     /// <p>The friendly name of the delegated administrator's account.</p>
     pub name: std::option::Option<std::string::String>,
@@ -2478,7 +2498,7 @@ impl DelegatedAdministrator {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The email address that is associated with the delegated administrator's AWS account.</p>
+    /// <p>The email address that is associated with the delegated administrator's Amazon Web Services account.</p>
     pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
@@ -2553,12 +2573,12 @@ pub mod delegated_administrator {
             self.arn = input;
             self
         }
-        /// <p>The email address that is associated with the delegated administrator's AWS account.</p>
+        /// <p>The email address that is associated with the delegated administrator's Amazon Web Services account.</p>
         pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
             self.email = Some(input.into());
             self
         }
-        /// <p>The email address that is associated with the delegated administrator's AWS account.</p>
+        /// <p>The email address that is associated with the delegated administrator's Amazon Web Services account.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.email = input;
             self
@@ -2717,6 +2737,8 @@ pub enum AccountStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    PendingClosure,
+    #[allow(missing_docs)] // documentation missing in model
     Suspended,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2725,6 +2747,7 @@ impl std::convert::From<&str> for AccountStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => AccountStatus::Active,
+            "PENDING_CLOSURE" => AccountStatus::PendingClosure,
             "SUSPENDED" => AccountStatus::Suspended,
             other => AccountStatus::Unknown(other.to_owned()),
         }
@@ -2742,13 +2765,14 @@ impl AccountStatus {
     pub fn as_str(&self) -> &str {
         match self {
             AccountStatus::Active => "ACTIVE",
+            AccountStatus::PendingClosure => "PENDING_CLOSURE",
             AccountStatus::Suspended => "SUSPENDED",
             AccountStatus::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["ACTIVE", "SUSPENDED"]
+        &["ACTIVE", "PENDING_CLOSURE", "SUSPENDED"]
     }
 }
 impl AsRef<str> for AccountStatus {
@@ -2757,7 +2781,7 @@ impl AsRef<str> for AccountStatus {
     }
 }
 
-/// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an AWS account or an AWS GovCloud (US) account in an organization.</p>
+/// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccountStatus {
@@ -2766,7 +2790,7 @@ pub struct CreateAccountStatus {
     pub id: std::option::Option<std::string::String>,
     /// <p>The account name given to the account when it was created.</p>
     pub account_name: std::option::Option<std::string::String>,
-    /// <p>The status of the asynchronous request to create an AWS account.</p>
+    /// <p>The status of the asynchronous request to create an Amazon Web Services account.</p>
     pub state: std::option::Option<crate::model::CreateAccountState>,
     /// <p>The date and time that the request was made for the account creation.</p>
     pub requested_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -2775,23 +2799,23 @@ pub struct CreateAccountStatus {
     /// <p>If the account was created successfully, the unique identifier (ID) of the new account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the AWS GovCloud (US) Region.</p>
+    /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
     pub gov_cloud_account_id: std::option::Option<std::string::String>,
     /// <p>If the request failed, a description of the reason for the failure.</p>
     /// <ul>
     /// <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of accounts in your organization.</p> </li>
     /// <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.</p> </li>
-    /// <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address already exists.</p> </li>
-    /// <li> <p>FAILED_BUSINESS_VALIDATION: The AWS account that owns your organization failed to receive business license validation.</p> </li>
-    /// <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because this Region already includes an account with that email address.</p> </li>
-    /// <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS account that owns your organization can't complete business license validation because it doesn't have valid identity data.</p> </li>
+    /// <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another Amazon Web Services account with that email address already exists.</p> </li>
+    /// <li> <p>FAILED_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization failed to receive business license validation.</p> </li>
+    /// <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the Amazon Web Services GovCloud (US) Region could not be created because this Region already includes an account with that email address.</p> </li>
+    /// <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization can't complete business license validation because it doesn't have valid identity data.</p> </li>
     /// <li> <p>INVALID_ADDRESS: The account could not be created because the address you provided is not valid.</p> </li>
     /// <li> <p>INVALID_EMAIL: The account could not be created because the email address you provided is not valid.</p> </li>
-    /// <li> <p>INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the problem persists, contact AWS Customer Support.</p> </li>
-    /// <li> <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has not received Business Validation.</p> </li>
+    /// <li> <p>INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the problem persists, contact Amazon Web Services Customer Support.</p> </li>
+    /// <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has not received Business Validation.</p> </li>
     /// <li> <p> MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as a credit card.</p> </li>
-    /// <li> <p>PENDING_BUSINESS_VALIDATION: The AWS account that owns your organization is still in the process of completing business license validation.</p> </li>
-    /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The AWS account that owns your organization has an unknown issue with business license validation.</p> </li>
+    /// <li> <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization is still in the process of completing business license validation.</p> </li>
+    /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has an unknown issue with business license validation.</p> </li>
     /// </ul>
     pub failure_reason: std::option::Option<crate::model::CreateAccountFailureReason>,
 }
@@ -2805,7 +2829,7 @@ impl CreateAccountStatus {
     pub fn account_name(&self) -> std::option::Option<&str> {
         self.account_name.as_deref()
     }
-    /// <p>The status of the asynchronous request to create an AWS account.</p>
+    /// <p>The status of the asynchronous request to create an Amazon Web Services account.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::CreateAccountState> {
         self.state.as_ref()
     }
@@ -2822,7 +2846,7 @@ impl CreateAccountStatus {
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the AWS GovCloud (US) Region.</p>
+    /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
     pub fn gov_cloud_account_id(&self) -> std::option::Option<&str> {
         self.gov_cloud_account_id.as_deref()
     }
@@ -2830,17 +2854,17 @@ impl CreateAccountStatus {
     /// <ul>
     /// <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of accounts in your organization.</p> </li>
     /// <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.</p> </li>
-    /// <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address already exists.</p> </li>
-    /// <li> <p>FAILED_BUSINESS_VALIDATION: The AWS account that owns your organization failed to receive business license validation.</p> </li>
-    /// <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because this Region already includes an account with that email address.</p> </li>
-    /// <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS account that owns your organization can't complete business license validation because it doesn't have valid identity data.</p> </li>
+    /// <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another Amazon Web Services account with that email address already exists.</p> </li>
+    /// <li> <p>FAILED_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization failed to receive business license validation.</p> </li>
+    /// <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the Amazon Web Services GovCloud (US) Region could not be created because this Region already includes an account with that email address.</p> </li>
+    /// <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization can't complete business license validation because it doesn't have valid identity data.</p> </li>
     /// <li> <p>INVALID_ADDRESS: The account could not be created because the address you provided is not valid.</p> </li>
     /// <li> <p>INVALID_EMAIL: The account could not be created because the email address you provided is not valid.</p> </li>
-    /// <li> <p>INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the problem persists, contact AWS Customer Support.</p> </li>
-    /// <li> <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has not received Business Validation.</p> </li>
+    /// <li> <p>INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the problem persists, contact Amazon Web Services Customer Support.</p> </li>
+    /// <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has not received Business Validation.</p> </li>
     /// <li> <p> MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as a credit card.</p> </li>
-    /// <li> <p>PENDING_BUSINESS_VALIDATION: The AWS account that owns your organization is still in the process of completing business license validation.</p> </li>
-    /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The AWS account that owns your organization has an unknown issue with business license validation.</p> </li>
+    /// <li> <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization is still in the process of completing business license validation.</p> </li>
+    /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has an unknown issue with business license validation.</p> </li>
     /// </ul>
     pub fn failure_reason(&self) -> std::option::Option<&crate::model::CreateAccountFailureReason> {
         self.failure_reason.as_ref()
@@ -2898,12 +2922,12 @@ pub mod create_account_status {
             self.account_name = input;
             self
         }
-        /// <p>The status of the asynchronous request to create an AWS account.</p>
+        /// <p>The status of the asynchronous request to create an Amazon Web Services account.</p>
         pub fn state(mut self, input: crate::model::CreateAccountState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The status of the asynchronous request to create an AWS account.</p>
+        /// <p>The status of the asynchronous request to create an Amazon Web Services account.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::CreateAccountState>,
@@ -2949,12 +2973,12 @@ pub mod create_account_status {
             self.account_id = input;
             self
         }
-        /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the AWS GovCloud (US) Region.</p>
+        /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
         pub fn gov_cloud_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.gov_cloud_account_id = Some(input.into());
             self
         }
-        /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the AWS GovCloud (US) Region.</p>
+        /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
         pub fn set_gov_cloud_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2966,17 +2990,17 @@ pub mod create_account_status {
         /// <ul>
         /// <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of accounts in your organization.</p> </li>
         /// <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.</p> </li>
-        /// <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address already exists.</p> </li>
-        /// <li> <p>FAILED_BUSINESS_VALIDATION: The AWS account that owns your organization failed to receive business license validation.</p> </li>
-        /// <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because this Region already includes an account with that email address.</p> </li>
-        /// <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS account that owns your organization can't complete business license validation because it doesn't have valid identity data.</p> </li>
+        /// <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another Amazon Web Services account with that email address already exists.</p> </li>
+        /// <li> <p>FAILED_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization failed to receive business license validation.</p> </li>
+        /// <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the Amazon Web Services GovCloud (US) Region could not be created because this Region already includes an account with that email address.</p> </li>
+        /// <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization can't complete business license validation because it doesn't have valid identity data.</p> </li>
         /// <li> <p>INVALID_ADDRESS: The account could not be created because the address you provided is not valid.</p> </li>
         /// <li> <p>INVALID_EMAIL: The account could not be created because the email address you provided is not valid.</p> </li>
-        /// <li> <p>INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the problem persists, contact AWS Customer Support.</p> </li>
-        /// <li> <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has not received Business Validation.</p> </li>
+        /// <li> <p>INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the problem persists, contact Amazon Web Services Customer Support.</p> </li>
+        /// <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has not received Business Validation.</p> </li>
         /// <li> <p> MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as a credit card.</p> </li>
-        /// <li> <p>PENDING_BUSINESS_VALIDATION: The AWS account that owns your organization is still in the process of completing business license validation.</p> </li>
-        /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The AWS account that owns your organization has an unknown issue with business license validation.</p> </li>
+        /// <li> <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization is still in the process of completing business license validation.</p> </li>
+        /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has an unknown issue with business license validation.</p> </li>
         /// </ul>
         pub fn failure_reason(mut self, input: crate::model::CreateAccountFailureReason) -> Self {
             self.failure_reason = Some(input);
@@ -2986,17 +3010,17 @@ pub mod create_account_status {
         /// <ul>
         /// <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of accounts in your organization.</p> </li>
         /// <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.</p> </li>
-        /// <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address already exists.</p> </li>
-        /// <li> <p>FAILED_BUSINESS_VALIDATION: The AWS account that owns your organization failed to receive business license validation.</p> </li>
-        /// <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because this Region already includes an account with that email address.</p> </li>
-        /// <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS account that owns your organization can't complete business license validation because it doesn't have valid identity data.</p> </li>
+        /// <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another Amazon Web Services account with that email address already exists.</p> </li>
+        /// <li> <p>FAILED_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization failed to receive business license validation.</p> </li>
+        /// <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the Amazon Web Services GovCloud (US) Region could not be created because this Region already includes an account with that email address.</p> </li>
+        /// <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization can't complete business license validation because it doesn't have valid identity data.</p> </li>
         /// <li> <p>INVALID_ADDRESS: The account could not be created because the address you provided is not valid.</p> </li>
         /// <li> <p>INVALID_EMAIL: The account could not be created because the email address you provided is not valid.</p> </li>
-        /// <li> <p>INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the problem persists, contact AWS Customer Support.</p> </li>
-        /// <li> <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has not received Business Validation.</p> </li>
+        /// <li> <p>INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the problem persists, contact Amazon Web Services Customer Support.</p> </li>
+        /// <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has not received Business Validation.</p> </li>
         /// <li> <p> MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as a credit card.</p> </li>
-        /// <li> <p>PENDING_BUSINESS_VALIDATION: The AWS account that owns your organization is still in the process of completing business license validation.</p> </li>
-        /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The AWS account that owns your organization has an unknown issue with business license validation.</p> </li>
+        /// <li> <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization is still in the process of completing business license validation.</p> </li>
+        /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has an unknown issue with business license validation.</p> </li>
         /// </ul>
         pub fn set_failure_reason(
             mut self,
@@ -3359,13 +3383,13 @@ impl AsRef<str> for ChildType {
     }
 }
 
-/// <p>A structure that contains details of a service principal that represents an AWS service that is enabled to integrate with AWS Organizations.</p>
+/// <p>A structure that contains details of a service principal that represents an Amazon Web Services service that is enabled to integrate with Organizations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnabledServicePrincipal {
     /// <p>The name of the service principal. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
     pub service_principal: std::option::Option<std::string::String>,
-    /// <p>The date that the service principal was enabled for integration with AWS Organizations.</p>
+    /// <p>The date that the service principal was enabled for integration with Organizations.</p>
     pub date_enabled: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EnabledServicePrincipal {
@@ -3373,7 +3397,7 @@ impl EnabledServicePrincipal {
     pub fn service_principal(&self) -> std::option::Option<&str> {
         self.service_principal.as_deref()
     }
-    /// <p>The date that the service principal was enabled for integration with AWS Organizations.</p>
+    /// <p>The date that the service principal was enabled for integration with Organizations.</p>
     pub fn date_enabled(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_enabled.as_ref()
     }
@@ -3409,12 +3433,12 @@ pub mod enabled_service_principal {
             self.service_principal = input;
             self
         }
-        /// <p>The date that the service principal was enabled for integration with AWS Organizations.</p>
+        /// <p>The date that the service principal was enabled for integration with Organizations.</p>
         pub fn date_enabled(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_enabled = Some(input);
             self
         }
-        /// <p>The date that the service principal was enabled for integration with AWS Organizations.</p>
+        /// <p>The date that the service principal was enabled for integration with Organizations.</p>
         pub fn set_date_enabled(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3438,7 +3462,7 @@ impl EnabledServicePrincipal {
     }
 }
 
-/// <p>Contains information about an AWS account that is a member of an organization.</p>
+/// <p>Contains information about an Amazon Web Services account that is a member of an organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Account {
@@ -3446,9 +3470,9 @@ pub struct Account {
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the account.</p>
-    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The email address associated with the AWS account.</p>
+    /// <p>The email address associated with the Amazon Web Services account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that represents a standard internet email address.</p>
     pub email: std::option::Option<std::string::String>,
     /// <p>The friendly name of the account.</p>
@@ -3468,11 +3492,11 @@ impl Account {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the account.</p>
-    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The email address associated with the AWS account.</p>
+    /// <p>The email address associated with the Amazon Web Services account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that represents a standard internet email address.</p>
     pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
@@ -3536,24 +3560,24 @@ pub mod account {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the account.</p>
-        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the account.</p>
-        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>The email address associated with the AWS account.</p>
+        /// <p>The email address associated with the Amazon Web Services account.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that represents a standard internet email address.</p>
         pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
             self.email = Some(input.into());
             self
         }
-        /// <p>The email address associated with the AWS account.</p>
+        /// <p>The email address associated with the Amazon Web Services account.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that represents a standard internet email address.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.email = input;
@@ -3652,6 +3676,8 @@ pub enum HandshakeConstraintViolationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     InviteDisabledDuringEnableAllFeatures,
     #[allow(missing_docs)] // documentation missing in model
+    ManagementAccountEmailNotVerified,
+    #[allow(missing_docs)] // documentation missing in model
     OrganizationAlreadyHasAllFeatures,
     #[allow(missing_docs)] // documentation missing in model
     OrganizationFromDifferentSellerOfRecord,
@@ -3671,6 +3697,7 @@ impl std::convert::From<&str> for HandshakeConstraintViolationExceptionReason {
             "ALREADY_IN_AN_ORGANIZATION" => HandshakeConstraintViolationExceptionReason::AlreadyInAnOrganization,
             "HANDSHAKE_RATE_LIMIT_EXCEEDED" => HandshakeConstraintViolationExceptionReason::HandshakeRateLimitExceeded,
             "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES" => HandshakeConstraintViolationExceptionReason::InviteDisabledDuringEnableAllFeatures,
+            "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED" => HandshakeConstraintViolationExceptionReason::ManagementAccountEmailNotVerified,
             "ORGANIZATION_ALREADY_HAS_ALL_FEATURES" => HandshakeConstraintViolationExceptionReason::OrganizationAlreadyHasAllFeatures,
             "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD" => HandshakeConstraintViolationExceptionReason::OrganizationFromDifferentSellerOfRecord,
             "ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION" => HandshakeConstraintViolationExceptionReason::OrganizationIsAlreadyPendingAllFeaturesMigration,
@@ -3695,6 +3722,7 @@ impl HandshakeConstraintViolationExceptionReason {
             HandshakeConstraintViolationExceptionReason::AlreadyInAnOrganization => "ALREADY_IN_AN_ORGANIZATION",
             HandshakeConstraintViolationExceptionReason::HandshakeRateLimitExceeded => "HANDSHAKE_RATE_LIMIT_EXCEEDED",
             HandshakeConstraintViolationExceptionReason::InviteDisabledDuringEnableAllFeatures => "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES",
+            HandshakeConstraintViolationExceptionReason::ManagementAccountEmailNotVerified => "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED",
             HandshakeConstraintViolationExceptionReason::OrganizationAlreadyHasAllFeatures => "ORGANIZATION_ALREADY_HAS_ALL_FEATURES",
             HandshakeConstraintViolationExceptionReason::OrganizationFromDifferentSellerOfRecord => "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD",
             HandshakeConstraintViolationExceptionReason::OrganizationIsAlreadyPendingAllFeaturesMigration => "ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION",
@@ -3710,6 +3738,7 @@ impl HandshakeConstraintViolationExceptionReason {
             "ALREADY_IN_AN_ORGANIZATION",
             "HANDSHAKE_RATE_LIMIT_EXCEEDED",
             "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES",
+            "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED",
             "ORGANIZATION_ALREADY_HAS_ALL_FEATURES",
             "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD",
             "ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION",
@@ -3732,17 +3761,17 @@ pub struct Organization {
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires "o-" followed by from 10 to 32 lowercase letters or digits.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an organization.</p>
-    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the functionality that currently is available to the organization. If set to "ALL", then all features are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.</p>
+    /// <p>Specifies the functionality that currently is available to the organization. If set to "ALL", then all features are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
     pub feature_set: std::option::Option<crate::model::OrganizationFeatureSet>,
     /// <p>The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.</p>
-    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub master_account_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier (ID) of the management account of an organization.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub master_account_id: std::option::Option<std::string::String>,
-    /// <p>The email address that is associated with the AWS account that is designated as the management account for the organization.</p>
+    /// <p>The email address that is associated with the Amazon Web Services account that is designated as the management account for the organization.</p>
     pub master_account_email: std::option::Option<std::string::String>,
     /// <important>
     /// <p>Do not use. This field is deprecated and doesn't provide complete information about the policies in your organization.</p>
@@ -3757,16 +3786,16 @@ impl Organization {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an organization.</p>
-    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Specifies the functionality that currently is available to the organization. If set to "ALL", then all features are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.</p>
+    /// <p>Specifies the functionality that currently is available to the organization. If set to "ALL", then all features are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
     pub fn feature_set(&self) -> std::option::Option<&crate::model::OrganizationFeatureSet> {
         self.feature_set.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.</p>
-    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub fn master_account_arn(&self) -> std::option::Option<&str> {
         self.master_account_arn.as_deref()
     }
@@ -3775,7 +3804,7 @@ impl Organization {
     pub fn master_account_id(&self) -> std::option::Option<&str> {
         self.master_account_id.as_deref()
     }
-    /// <p>The email address that is associated with the AWS account that is designated as the management account for the organization.</p>
+    /// <p>The email address that is associated with the Amazon Web Services account that is designated as the management account for the organization.</p>
     pub fn master_account_email(&self) -> std::option::Option<&str> {
         self.master_account_email.as_deref()
     }
@@ -3831,23 +3860,23 @@ pub mod organization {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an organization.</p>
-        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an organization.</p>
-        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>Specifies the functionality that currently is available to the organization. If set to "ALL", then all features are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.</p>
+        /// <p>Specifies the functionality that currently is available to the organization. If set to "ALL", then all features are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
         pub fn feature_set(mut self, input: crate::model::OrganizationFeatureSet) -> Self {
             self.feature_set = Some(input);
             self
         }
-        /// <p>Specifies the functionality that currently is available to the organization. If set to "ALL", then all features are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.</p>
+        /// <p>Specifies the functionality that currently is available to the organization. If set to "ALL", then all features are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
         pub fn set_feature_set(
             mut self,
             input: std::option::Option<crate::model::OrganizationFeatureSet>,
@@ -3856,13 +3885,13 @@ pub mod organization {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.</p>
-        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn master_account_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_account_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.</p>
-        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+        /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn set_master_account_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3885,12 +3914,12 @@ pub mod organization {
             self.master_account_id = input;
             self
         }
-        /// <p>The email address that is associated with the AWS account that is designated as the management account for the organization.</p>
+        /// <p>The email address that is associated with the Amazon Web Services account that is designated as the management account for the organization.</p>
         pub fn master_account_email(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_account_email = Some(input.into());
             self
         }
-        /// <p>The email address that is associated with the AWS account that is designated as the management account for the organization.</p>
+        /// <p>The email address that is associated with the Amazon Web Services account that is designated as the management account for the organization.</p>
         pub fn set_master_account_email(
             mut self,
             input: std::option::Option<std::string::String>,

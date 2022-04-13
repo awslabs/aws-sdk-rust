@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>You don't have sufficient permissions to query the routing control state.</p>
+    /// <p>You don't have sufficient permissions to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There was a conflict with this request. Try again.</p>
     ConflictException(crate::error::ConflictException),
@@ -11,8 +11,10 @@ pub enum Error {
     EndpointTemporarilyUnavailableException(crate::error::EndpointTemporarilyUnavailableException),
     /// <p>There was an unexpected error during processing of the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The request references a routing control that was not found.</p>
+    /// <p>The request references a routing control or control panel that was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request can't update that many routing control states at the same time. Try again with fewer routing control states.</p>
+    ServiceLimitExceededException(crate::error::ServiceLimitExceededException),
     /// <p>The request was denied because of request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>There was a validation error on the request.</p>
@@ -28,6 +30,7 @@ impl std::fmt::Display for Error {
             Error::EndpointTemporarilyUnavailableException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ServiceLimitExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
@@ -51,6 +54,27 @@ where
                 crate::error::GetRoutingControlStateErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::GetRoutingControlStateErrorKind::ValidationException(inner) => Error::ValidationException(inner),
                 crate::error::GetRoutingControlStateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRoutingControlsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListRoutingControlsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListRoutingControlsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::ListRoutingControlsErrorKind::EndpointTemporarilyUnavailableException(inner) => Error::EndpointTemporarilyUnavailableException(inner),
+                crate::error::ListRoutingControlsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::ListRoutingControlsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::ListRoutingControlsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::ListRoutingControlsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::ListRoutingControlsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
         }
@@ -94,6 +118,7 @@ where
                 crate::error::UpdateRoutingControlStatesErrorKind::EndpointTemporarilyUnavailableException(inner) => Error::EndpointTemporarilyUnavailableException(inner),
                 crate::error::UpdateRoutingControlStatesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::UpdateRoutingControlStatesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateRoutingControlStatesErrorKind::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
                 crate::error::UpdateRoutingControlStatesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdateRoutingControlStatesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
                 crate::error::UpdateRoutingControlStatesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
