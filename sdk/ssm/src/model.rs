@@ -1097,6 +1097,8 @@ pub enum OperatingSystem {
     #[allow(missing_docs)] // documentation missing in model
     RedhatEnterpriseLinux,
     #[allow(missing_docs)] // documentation missing in model
+    RockyLinux,
+    #[allow(missing_docs)] // documentation missing in model
     Suse,
     #[allow(missing_docs)] // documentation missing in model
     Ubuntu,
@@ -1116,6 +1118,7 @@ impl std::convert::From<&str> for OperatingSystem {
             "ORACLE_LINUX" => OperatingSystem::OracleLinux,
             "RASPBIAN" => OperatingSystem::Raspbian,
             "REDHAT_ENTERPRISE_LINUX" => OperatingSystem::RedhatEnterpriseLinux,
+            "ROCKY_LINUX" => OperatingSystem::RockyLinux,
             "SUSE" => OperatingSystem::Suse,
             "UBUNTU" => OperatingSystem::Ubuntu,
             "WINDOWS" => OperatingSystem::Windows,
@@ -1142,6 +1145,7 @@ impl OperatingSystem {
             OperatingSystem::OracleLinux => "ORACLE_LINUX",
             OperatingSystem::Raspbian => "RASPBIAN",
             OperatingSystem::RedhatEnterpriseLinux => "REDHAT_ENTERPRISE_LINUX",
+            OperatingSystem::RockyLinux => "ROCKY_LINUX",
             OperatingSystem::Suse => "SUSE",
             OperatingSystem::Ubuntu => "UBUNTU",
             OperatingSystem::Windows => "WINDOWS",
@@ -1159,6 +1163,7 @@ impl OperatingSystem {
             "ORACLE_LINUX",
             "RASPBIAN",
             "REDHAT_ENTERPRISE_LINUX",
+            "ROCKY_LINUX",
             "SUSE",
             "UBUNTU",
             "WINDOWS",
@@ -7908,6 +7913,8 @@ impl ServiceSetting {
 )]
 pub enum ResourceTypeForTagging {
     #[allow(missing_docs)] // documentation missing in model
+    Automation,
+    #[allow(missing_docs)] // documentation missing in model
     Document,
     #[allow(missing_docs)] // documentation missing in model
     MaintenanceWindow,
@@ -7927,6 +7934,7 @@ pub enum ResourceTypeForTagging {
 impl std::convert::From<&str> for ResourceTypeForTagging {
     fn from(s: &str) -> Self {
         match s {
+            "Automation" => ResourceTypeForTagging::Automation,
             "Document" => ResourceTypeForTagging::Document,
             "MaintenanceWindow" => ResourceTypeForTagging::MaintenanceWindow,
             "ManagedInstance" => ResourceTypeForTagging::ManagedInstance,
@@ -7949,6 +7957,7 @@ impl ResourceTypeForTagging {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ResourceTypeForTagging::Automation => "Automation",
             ResourceTypeForTagging::Document => "Document",
             ResourceTypeForTagging::MaintenanceWindow => "MaintenanceWindow",
             ResourceTypeForTagging::ManagedInstance => "ManagedInstance",
@@ -7962,6 +7971,7 @@ impl ResourceTypeForTagging {
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
+            "Automation",
             "Document",
             "MaintenanceWindow",
             "ManagedInstance",
@@ -14945,7 +14955,7 @@ pub struct Association {
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The association version.</p>
     pub association_version: std::option::Option<std::string::String>,
-    /// <p>The version of the document used in the association.</p> <important>
+    /// <p>The version of the document used in the association. If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p> <important>
     /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
     /// </important>
     pub document_version: std::option::Option<std::string::String>,
@@ -14977,7 +14987,7 @@ impl Association {
     pub fn association_version(&self) -> std::option::Option<&str> {
         self.association_version.as_deref()
     }
-    /// <p>The version of the document used in the association.</p> <important>
+    /// <p>The version of the document used in the association. If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p> <important>
     /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
     /// </important>
     pub fn document_version(&self) -> std::option::Option<&str> {
@@ -15084,14 +15094,14 @@ pub mod association {
             self.association_version = input;
             self
         }
-        /// <p>The version of the document used in the association.</p> <important>
+        /// <p>The version of the document used in the association. If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p> <important>
         /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
         /// </important>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_version = Some(input.into());
             self
         }
-        /// <p>The version of the document used in the association.</p> <important>
+        /// <p>The version of the document used in the association. If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p> <important>
         /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
         /// </important>
         pub fn set_document_version(

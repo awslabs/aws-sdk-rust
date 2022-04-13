@@ -5882,13 +5882,13 @@ pub mod start_transcription_job_input {
             self.transcription_job_name = input;
             self
         }
-        /// <p>The language code for the language used in the input media file.</p>
+        /// <p>The language code for the language used in the input media file. You must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request.</p>
         /// <p>To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate of 16,000 Hz or higher.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language code for the language used in the input media file.</p>
+        /// <p>The language code for the language used in the input media file. You must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request.</p>
         /// <p>To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate of 16,000 Hz or higher.</p>
         pub fn set_language_code(
             mut self,
@@ -6082,11 +6082,13 @@ pub mod start_transcription_job_input {
             self
         }
         /// <p>Set this field to <code>true</code> to enable automatic language identification. Automatic language identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value for a <code>LanguageCode</code>.</p>
+        /// <p>You must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request.</p>
         pub fn identify_language(mut self, input: bool) -> Self {
             self.identify_language = Some(input);
             self
         }
         /// <p>Set this field to <code>true</code> to enable automatic language identification. Automatic language identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value for a <code>LanguageCode</code>.</p>
+        /// <p>You must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request.</p>
         pub fn set_identify_language(mut self, input: std::option::Option<bool>) -> Self {
             self.identify_language = input;
             self
@@ -7620,7 +7622,7 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct StartTranscriptionJobInput {
     /// <p>The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name must also be unique within an Amazon Web Services account. If you try to create a transcription job with the same name as a previous transcription job, you get a <code>ConflictException</code> error.</p>
     pub transcription_job_name: std::option::Option<std::string::String>,
-    /// <p>The language code for the language used in the input media file.</p>
+    /// <p>The language code for the language used in the input media file. You must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request.</p>
     /// <p>To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate of 16,000 Hz or higher.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
@@ -7666,6 +7668,7 @@ pub struct StartTranscriptionJobInput {
     /// <p>An object that contains the request parameters for content redaction.</p>
     pub content_redaction: std::option::Option<crate::model::ContentRedaction>,
     /// <p>Set this field to <code>true</code> to enable automatic language identification. Automatic language identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value for a <code>LanguageCode</code>.</p>
+    /// <p>You must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request.</p>
     pub identify_language: std::option::Option<bool>,
     /// <p>An object containing a list of languages that might be present in your collection of audio files. Automatic language identification chooses a language that best matches the source audio from that list.</p>
     /// <p>To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate of 16,000 Hz or higher.</p>
@@ -7684,7 +7687,7 @@ impl StartTranscriptionJobInput {
     pub fn transcription_job_name(&self) -> std::option::Option<&str> {
         self.transcription_job_name.as_deref()
     }
-    /// <p>The language code for the language used in the input media file.</p>
+    /// <p>The language code for the language used in the input media file. You must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request.</p>
     /// <p>To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate of 16,000 Hz or higher.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
@@ -7758,6 +7761,7 @@ impl StartTranscriptionJobInput {
         self.content_redaction.as_ref()
     }
     /// <p>Set this field to <code>true</code> to enable automatic language identification. Automatic language identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value for a <code>LanguageCode</code>.</p>
+    /// <p>You must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request.</p>
     pub fn identify_language(&self) -> std::option::Option<bool> {
         self.identify_language
     }

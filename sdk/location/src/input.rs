@@ -5174,6 +5174,7 @@ pub mod get_device_position_history_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) start_time_inclusive: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time_exclusive: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The tracker resource receiving the request for the device position history.</p>
@@ -5250,6 +5251,18 @@ pub mod get_device_position_history_input {
             self.end_time_exclusive = input;
             self
         }
+        /// <p>An optional limit for the number of device positions returned in a single call.</p>
+        /// <p>Default value: <code>100</code> </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>An optional limit for the number of device positions returned in a single call.</p>
+        /// <p>Default value: <code>100</code> </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDevicePositionHistoryInput`](crate::input::GetDevicePositionHistoryInput)
         pub fn build(
             self,
@@ -5263,6 +5276,7 @@ pub mod get_device_position_history_input {
                 next_token: self.next_token,
                 start_time_inclusive: self.start_time_inclusive,
                 end_time_exclusive: self.end_time_exclusive,
+                max_results: self.max_results,
             })
         }
     }
@@ -10310,6 +10324,9 @@ pub struct GetDevicePositionHistoryInput {
     /// <li> <p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p> </li>
     /// </ul>
     pub end_time_exclusive: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>An optional limit for the number of device positions returned in a single call.</p>
+    /// <p>Default value: <code>100</code> </p>
+    pub max_results: std::option::Option<i32>,
 }
 impl GetDevicePositionHistoryInput {
     /// <p>The tracker resource receiving the request for the device position history.</p>
@@ -10341,6 +10358,11 @@ impl GetDevicePositionHistoryInput {
     pub fn end_time_exclusive(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time_exclusive.as_ref()
     }
+    /// <p>An optional limit for the number of device positions returned in a single call.</p>
+    /// <p>Default value: <code>100</code> </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for GetDevicePositionHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10350,6 +10372,7 @@ impl std::fmt::Debug for GetDevicePositionHistoryInput {
         formatter.field("next_token", &self.next_token);
         formatter.field("start_time_inclusive", &self.start_time_inclusive);
         formatter.field("end_time_exclusive", &self.end_time_exclusive);
+        formatter.field("max_results", &self.max_results);
         formatter.finish()
     }
 }

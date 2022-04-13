@@ -173,10 +173,9 @@ pub struct GetResourceMetricsOutput {
     pub aligned_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>.</p>
     pub aligned_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source. </p>
-    /// <p>To use a DB instance as a data source, you specify its <code>DbiResourceId</code> value - for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+    /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
     pub identifier: std::option::Option<std::string::String>,
-    /// <p>An array of metric results,, where each array element contains all of the data points for a particular dimension.</p>
+    /// <p>An array of metric results, where each array element contains all of the data points for a particular dimension.</p>
     pub metric_list: std::option::Option<std::vec::Vec<crate::model::MetricKeyDataPoints>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -190,12 +189,11 @@ impl GetResourceMetricsOutput {
     pub fn aligned_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.aligned_end_time.as_ref()
     }
-    /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source. </p>
-    /// <p>To use a DB instance as a data source, you specify its <code>DbiResourceId</code> value - for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+    /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
     pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
-    /// <p>An array of metric results,, where each array element contains all of the data points for a particular dimension.</p>
+    /// <p>An array of metric results, where each array element contains all of the data points for a particular dimension.</p>
     pub fn metric_list(&self) -> std::option::Option<&[crate::model::MetricKeyDataPoints]> {
         self.metric_list.as_deref()
     }
@@ -255,14 +253,12 @@ pub mod get_resource_metrics_output {
             self.aligned_end_time = input;
             self
         }
-        /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source. </p>
-        /// <p>To use a DB instance as a data source, you specify its <code>DbiResourceId</code> value - for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+        /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
         pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.identifier = Some(input.into());
             self
         }
-        /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source. </p>
-        /// <p>To use a DB instance as a data source, you specify its <code>DbiResourceId</code> value - for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+        /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
@@ -271,14 +267,14 @@ pub mod get_resource_metrics_output {
         ///
         /// To override the contents of this collection use [`set_metric_list`](Self::set_metric_list).
         ///
-        /// <p>An array of metric results,, where each array element contains all of the data points for a particular dimension.</p>
+        /// <p>An array of metric results, where each array element contains all of the data points for a particular dimension.</p>
         pub fn metric_list(mut self, input: crate::model::MetricKeyDataPoints) -> Self {
             let mut v = self.metric_list.unwrap_or_default();
             v.push(input);
             self.metric_list = Some(v);
             self
         }
-        /// <p>An array of metric results,, where each array element contains all of the data points for a particular dimension.</p>
+        /// <p>An array of metric results, where each array element contains all of the data points for a particular dimension.</p>
         pub fn set_metric_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricKeyDataPoints>>,

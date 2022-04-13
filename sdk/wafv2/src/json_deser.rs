@@ -1633,6 +1633,15 @@ pub fn deser_operation_crate_operation_list_available_managed_rule_group_version
                             crate::json_deser::deser_list_com_amazonaws_wafv2_managed_rule_group_versions(tokens)?
                         );
                     }
+                    "CurrentDefaultVersion" => {
+                        builder = builder.set_current_default_version(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -5013,6 +5022,13 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "VersioningSupported" => {
+                                builder = builder.set_versioning_supported(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
                                 );
                             }
                             "Description" => {

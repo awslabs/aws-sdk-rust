@@ -18,6 +18,8 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Aria,
     #[allow(missing_docs)] // documentation missing in model
+    Arlet,
+    #[allow(missing_docs)] // documentation missing in model
     Astrid,
     #[allow(missing_docs)] // documentation missing in model
     Ayanda,
@@ -150,6 +152,7 @@ impl std::convert::From<&str> for VoiceId {
             "Aditi" => VoiceId::Aditi,
             "Amy" => VoiceId::Amy,
             "Aria" => VoiceId::Aria,
+            "Arlet" => VoiceId::Arlet,
             "Astrid" => VoiceId::Astrid,
             "Ayanda" => VoiceId::Ayanda,
             "Bianca" => VoiceId::Bianca,
@@ -230,6 +233,7 @@ impl VoiceId {
             VoiceId::Aditi => "Aditi",
             VoiceId::Amy => "Amy",
             VoiceId::Aria => "Aria",
+            VoiceId::Arlet => "Arlet",
             VoiceId::Astrid => "Astrid",
             VoiceId::Ayanda => "Ayanda",
             VoiceId::Bianca => "Bianca",
@@ -301,6 +305,7 @@ impl VoiceId {
             "Aditi",
             "Amy",
             "Aria",
+            "Arlet",
             "Astrid",
             "Ayanda",
             "Bianca",
@@ -568,6 +573,8 @@ pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     Arb,
     #[allow(missing_docs)] // documentation missing in model
+    CaEs,
+    #[allow(missing_docs)] // documentation missing in model
     CmnCn,
     #[allow(missing_docs)] // documentation missing in model
     CyGb,
@@ -634,6 +641,7 @@ impl std::convert::From<&str> for LanguageCode {
     fn from(s: &str) -> Self {
         match s {
             "arb" => LanguageCode::Arb,
+            "ca-ES" => LanguageCode::CaEs,
             "cmn-CN" => LanguageCode::CmnCn,
             "cy-GB" => LanguageCode::CyGb,
             "da-DK" => LanguageCode::DaDk,
@@ -680,6 +688,7 @@ impl LanguageCode {
     pub fn as_str(&self) -> &str {
         match self {
             LanguageCode::Arb => "arb",
+            LanguageCode::CaEs => "ca-ES",
             LanguageCode::CmnCn => "cmn-CN",
             LanguageCode::CyGb => "cy-GB",
             LanguageCode::DaDk => "da-DK",
@@ -717,6 +726,7 @@ impl LanguageCode {
     pub fn values() -> &'static [&'static str] {
         &[
             "arb",
+            "ca-ES",
             "cmn-CN",
             "cy-GB",
             "da-DK",

@@ -507,6 +507,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelMLTaskRun {
     }
 }
 
+/// Operation shape for `CancelStatement`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`cancel_statement`](crate::client::Client::cancel_statement).
+///
+/// See [`crate::client::fluent_builders::CancelStatement`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CancelStatement {
+    _private: (),
+}
+impl CancelStatement {
+    /// Creates a new builder-style object to manufacture [`CancelStatementInput`](crate::input::CancelStatementInput)
+    pub fn builder() -> crate::input::cancel_statement_input::Builder {
+        crate::input::cancel_statement_input::Builder::default()
+    }
+    /// Creates a new `CancelStatement` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CancelStatement {
+    type Output = std::result::Result<
+        crate::output::CancelStatementOutput,
+        crate::error::CancelStatementError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_cancel_statement_error(response)
+        } else {
+            crate::operation_deser::parse_cancel_statement_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CheckSchemaVersionValidity`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1000,6 +1034,38 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSecurityConfigurat
             crate::operation_deser::parse_create_security_configuration_error(response)
         } else {
             crate::operation_deser::parse_create_security_configuration_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateSession`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_session`](crate::client::Client::create_session).
+///
+/// See [`crate::client::fluent_builders::CreateSession`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateSession {
+    _private: (),
+}
+impl CreateSession {
+    /// Creates a new builder-style object to manufacture [`CreateSessionInput`](crate::input::CreateSessionInput)
+    pub fn builder() -> crate::input::create_session_input::Builder {
+        crate::input::create_session_input::Builder::default()
+    }
+    /// Creates a new `CreateSession` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateSession {
+    type Output =
+        std::result::Result<crate::output::CreateSessionOutput, crate::error::CreateSessionError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_session_error(response)
+        } else {
+            crate::operation_deser::parse_create_session_response(response)
         }
     }
 }
@@ -1697,6 +1763,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSecurityConfigurat
             crate::operation_deser::parse_delete_security_configuration_error(response)
         } else {
             crate::operation_deser::parse_delete_security_configuration_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteSession`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_session`](crate::client::Client::delete_session).
+///
+/// See [`crate::client::fluent_builders::DeleteSession`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteSession {
+    _private: (),
+}
+impl DeleteSession {
+    /// Creates a new builder-style object to manufacture [`DeleteSessionInput`](crate::input::DeleteSessionInput)
+    pub fn builder() -> crate::input::delete_session_input::Builder {
+        crate::input::delete_session_input::Builder::default()
+    }
+    /// Creates a new `DeleteSession` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteSession {
+    type Output =
+        std::result::Result<crate::output::DeleteSessionOutput, crate::error::DeleteSessionError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_session_error(response)
+        } else {
+            crate::operation_deser::parse_delete_session_response(response)
         }
     }
 }
@@ -3240,6 +3338,70 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSecurityConfiguration
     }
 }
 
+/// Operation shape for `GetSession`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_session`](crate::client::Client::get_session).
+///
+/// See [`crate::client::fluent_builders::GetSession`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetSession {
+    _private: (),
+}
+impl GetSession {
+    /// Creates a new builder-style object to manufacture [`GetSessionInput`](crate::input::GetSessionInput)
+    pub fn builder() -> crate::input::get_session_input::Builder {
+        crate::input::get_session_input::Builder::default()
+    }
+    /// Creates a new `GetSession` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetSession {
+    type Output =
+        std::result::Result<crate::output::GetSessionOutput, crate::error::GetSessionError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_session_error(response)
+        } else {
+            crate::operation_deser::parse_get_session_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetStatement`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_statement`](crate::client::Client::get_statement).
+///
+/// See [`crate::client::fluent_builders::GetStatement`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetStatement {
+    _private: (),
+}
+impl GetStatement {
+    /// Creates a new builder-style object to manufacture [`GetStatementInput`](crate::input::GetStatementInput)
+    pub fn builder() -> crate::input::get_statement_input::Builder {
+        crate::input::get_statement_input::Builder::default()
+    }
+    /// Creates a new `GetStatement` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetStatement {
+    type Output =
+        std::result::Result<crate::output::GetStatementOutput, crate::error::GetStatementError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_statement_error(response)
+        } else {
+            crate::operation_deser::parse_get_statement_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetTable`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -4062,6 +4224,70 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSchemaVersions {
     }
 }
 
+/// Operation shape for `ListSessions`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_sessions`](crate::client::Client::list_sessions).
+///
+/// See [`crate::client::fluent_builders::ListSessions`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListSessions {
+    _private: (),
+}
+impl ListSessions {
+    /// Creates a new builder-style object to manufacture [`ListSessionsInput`](crate::input::ListSessionsInput)
+    pub fn builder() -> crate::input::list_sessions_input::Builder {
+        crate::input::list_sessions_input::Builder::default()
+    }
+    /// Creates a new `ListSessions` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListSessions {
+    type Output =
+        std::result::Result<crate::output::ListSessionsOutput, crate::error::ListSessionsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_sessions_error(response)
+        } else {
+            crate::operation_deser::parse_list_sessions_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListStatements`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_statements`](crate::client::Client::list_statements).
+///
+/// See [`crate::client::fluent_builders::ListStatements`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListStatements {
+    _private: (),
+}
+impl ListStatements {
+    /// Creates a new builder-style object to manufacture [`ListStatementsInput`](crate::input::ListStatementsInput)
+    pub fn builder() -> crate::input::list_statements_input::Builder {
+        crate::input::list_statements_input::Builder::default()
+    }
+    /// Creates a new `ListStatements` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListStatements {
+    type Output =
+        std::result::Result<crate::output::ListStatementsOutput, crate::error::ListStatementsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_statements_error(response)
+        } else {
+            crate::operation_deser::parse_list_statements_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListTriggers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -4428,6 +4654,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ResumeWorkflowRun {
             crate::operation_deser::parse_resume_workflow_run_error(response)
         } else {
             crate::operation_deser::parse_resume_workflow_run_response(response)
+        }
+    }
+}
+
+/// Operation shape for `RunStatement`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`run_statement`](crate::client::Client::run_statement).
+///
+/// See [`crate::client::fluent_builders::RunStatement`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct RunStatement {
+    _private: (),
+}
+impl RunStatement {
+    /// Creates a new builder-style object to manufacture [`RunStatementInput`](crate::input::RunStatementInput)
+    pub fn builder() -> crate::input::run_statement_input::Builder {
+        crate::input::run_statement_input::Builder::default()
+    }
+    /// Creates a new `RunStatement` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for RunStatement {
+    type Output =
+        std::result::Result<crate::output::RunStatementOutput, crate::error::RunStatementError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_run_statement_error(response)
+        } else {
+            crate::operation_deser::parse_run_statement_response(response)
         }
     }
 }
@@ -4862,6 +5120,38 @@ impl aws_smithy_http::response::ParseStrictResponse for StopCrawlerSchedule {
             crate::operation_deser::parse_stop_crawler_schedule_error(response)
         } else {
             crate::operation_deser::parse_stop_crawler_schedule_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StopSession`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`stop_session`](crate::client::Client::stop_session).
+///
+/// See [`crate::client::fluent_builders::StopSession`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StopSession {
+    _private: (),
+}
+impl StopSession {
+    /// Creates a new builder-style object to manufacture [`StopSessionInput`](crate::input::StopSessionInput)
+    pub fn builder() -> crate::input::stop_session_input::Builder {
+        crate::input::stop_session_input::Builder::default()
+    }
+    /// Creates a new `StopSession` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StopSession {
+    type Output =
+        std::result::Result<crate::output::StopSessionOutput, crate::error::StopSessionError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_session_error(response)
+        } else {
+            crate::operation_deser::parse_stop_session_response(response)
         }
     }
 }

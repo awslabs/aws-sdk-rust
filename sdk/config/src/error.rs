@@ -337,15 +337,15 @@ pub struct DeleteConfigRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteConfigRuleErrorKind {
-    /// <p>One or more Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchConfigRuleException(crate::error::NoSuchConfigRuleException),
     /// <p>You see this exception in the following cases: </p>
     /// <ul>
     /// <li> <p>For DeleteConfigRule, Config is deleting this rule. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, a remediation action is associated with the rule and Config cannot delete this rule. Delete the remediation action associated with the rule before deleting the rule and try your request again later.</p> </li>
-    /// <li> <p>For PutConfigOrganizationRule, organization config rule deletion is in progress. Try your request again later.</p> </li>
-    /// <li> <p>For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For DeleteOrganizationConfigRule, organization Config rule creation is in progress. Try your request again later.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// </ul>
@@ -654,8 +654,8 @@ pub enum DeleteConformancePackErrorKind {
     /// <li> <p>For DeleteConfigRule, Config is deleting this rule. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, a remediation action is associated with the rule and Config cannot delete this rule. Delete the remediation action associated with the rule before deleting the rule and try your request again later.</p> </li>
-    /// <li> <p>For PutConfigOrganizationRule, organization config rule deletion is in progress. Try your request again later.</p> </li>
-    /// <li> <p>For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For DeleteOrganizationConfigRule, organization Config rule creation is in progress. Try your request again later.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// </ul>
@@ -870,15 +870,15 @@ pub struct DeleteEvaluationResultsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteEvaluationResultsErrorKind {
-    /// <p>One or more Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchConfigRuleException(crate::error::NoSuchConfigRuleException),
     /// <p>You see this exception in the following cases: </p>
     /// <ul>
     /// <li> <p>For DeleteConfigRule, Config is deleting this rule. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, a remediation action is associated with the rule and Config cannot delete this rule. Delete the remediation action associated with the rule before deleting the rule and try your request again later.</p> </li>
-    /// <li> <p>For PutConfigOrganizationRule, organization config rule deletion is in progress. Try your request again later.</p> </li>
-    /// <li> <p>For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For DeleteOrganizationConfigRule, organization Config rule creation is in progress. Try your request again later.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// </ul>
@@ -983,7 +983,7 @@ pub struct DeleteOrganizationConfigRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteOrganizationConfigRuleErrorKind {
-    /// <p>You specified one or more organization config rules that do not exist.</p>
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an organization Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchOrganizationConfigRuleException(crate::error::NoSuchOrganizationConfigRuleException),
     /// <p>For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:</p>
     /// <ul>
@@ -999,8 +999,8 @@ pub enum DeleteOrganizationConfigRuleErrorKind {
     /// <li> <p>For DeleteConfigRule, Config is deleting this rule. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, a remediation action is associated with the rule and Config cannot delete this rule. Delete the remediation action associated with the rule before deleting the rule and try your request again later.</p> </li>
-    /// <li> <p>For PutConfigOrganizationRule, organization config rule deletion is in progress. Try your request again later.</p> </li>
-    /// <li> <p>For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For DeleteOrganizationConfigRule, organization Config rule creation is in progress. Try your request again later.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// </ul>
@@ -1141,8 +1141,8 @@ pub enum DeleteOrganizationConformancePackErrorKind {
     /// <li> <p>For DeleteConfigRule, Config is deleting this rule. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, a remediation action is associated with the rule and Config cannot delete this rule. Delete the remediation action associated with the rule before deleting the rule and try your request again later.</p> </li>
-    /// <li> <p>For PutConfigOrganizationRule, organization config rule deletion is in progress. Try your request again later.</p> </li>
-    /// <li> <p>For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For DeleteOrganizationConfigRule, organization Config rule creation is in progress. Try your request again later.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// </ul>
@@ -1381,7 +1381,7 @@ pub enum DeleteRemediationConfigurationErrorKind {
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
     /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
@@ -2514,7 +2514,7 @@ pub enum DescribeComplianceByConfigRuleErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>One or more Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchConfigRuleException(crate::error::NoSuchConfigRuleException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2756,7 +2756,7 @@ pub enum DescribeConfigRuleEvaluationStatusErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>One or more Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchConfigRuleException(crate::error::NoSuchConfigRuleException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2884,7 +2884,7 @@ pub struct DescribeConfigRulesError {
 pub enum DescribeConfigRulesErrorKind {
     /// <p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>One or more Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchConfigRuleException(crate::error::NoSuchConfigRuleException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4112,7 +4112,7 @@ pub enum DescribeOrganizationConfigRulesErrorKind {
     InvalidLimitException(crate::error::InvalidLimitException),
     /// <p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>You specified one or more organization config rules that do not exist.</p>
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an organization Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchOrganizationConfigRuleException(crate::error::NoSuchOrganizationConfigRuleException),
     /// <p>For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:</p>
     /// <ul>
@@ -4262,7 +4262,7 @@ pub enum DescribeOrganizationConfigRuleStatusesErrorKind {
     InvalidLimitException(crate::error::InvalidLimitException),
     /// <p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>You specified one or more organization config rules that do not exist.</p>
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an organization Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchOrganizationConfigRuleException(crate::error::NoSuchOrganizationConfigRuleException),
     /// <p>For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:</p>
     /// <ul>
@@ -6069,7 +6069,7 @@ pub enum GetComplianceDetailsByConfigRuleErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>One or more Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchConfigRuleException(crate::error::NoSuchConfigRuleException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6762,6 +6762,99 @@ impl std::error::Error for GetConformancePackComplianceSummaryError {
     }
 }
 
+/// Error type for the `GetCustomRulePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetCustomRulePolicyError {
+    /// Kind of error that occurred.
+    pub kind: GetCustomRulePolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetCustomRulePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetCustomRulePolicyErrorKind {
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
+    NoSuchConfigRuleException(crate::error::NoSuchConfigRuleException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetCustomRulePolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetCustomRulePolicyErrorKind::NoSuchConfigRuleException(_inner) => _inner.fmt(f),
+            GetCustomRulePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetCustomRulePolicyError {
+    fn code(&self) -> Option<&str> {
+        GetCustomRulePolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetCustomRulePolicyError {
+    /// Creates a new `GetCustomRulePolicyError`.
+    pub fn new(kind: GetCustomRulePolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetCustomRulePolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetCustomRulePolicyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetCustomRulePolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetCustomRulePolicyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetCustomRulePolicyErrorKind::NoSuchConfigRuleException`.
+    pub fn is_no_such_config_rule_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCustomRulePolicyErrorKind::NoSuchConfigRuleException(_)
+        )
+    }
+}
+impl std::error::Error for GetCustomRulePolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetCustomRulePolicyErrorKind::NoSuchConfigRuleException(_inner) => Some(_inner),
+            GetCustomRulePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetDiscoveredResourceCounts` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6898,7 +6991,7 @@ pub enum GetOrganizationConfigRuleDetailedStatusErrorKind {
     InvalidLimitException(crate::error::InvalidLimitException),
     /// <p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>You specified one or more organization config rules that do not exist.</p>
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an organization Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchOrganizationConfigRuleException(crate::error::NoSuchOrganizationConfigRuleException),
     /// <p>For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:</p>
     /// <ul>
@@ -7190,6 +7283,128 @@ impl std::error::Error for GetOrganizationConformancePackDetailedStatusError {
             GetOrganizationConformancePackDetailedStatusErrorKind::Unhandled(_inner) => {
                 Some(_inner.as_ref())
             }
+        }
+    }
+}
+
+/// Error type for the `GetOrganizationCustomRulePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetOrganizationCustomRulePolicyError {
+    /// Kind of error that occurred.
+    pub kind: GetOrganizationCustomRulePolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetOrganizationCustomRulePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetOrganizationCustomRulePolicyErrorKind {
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an organization Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
+    NoSuchOrganizationConfigRuleException(crate::error::NoSuchOrganizationConfigRuleException),
+    /// <p>For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:</p>
+    /// <ul>
+    /// <li> <p>No permission to call <code>EnableAWSServiceAccess</code> API</p> </li>
+    /// <li> <p>The configuration aggregator cannot be updated because your Amazon Web Services Organization management account or the delegated administrator role changed. Delete this aggregator and create a new one with the current Amazon Web Services Organization.</p> </li>
+    /// <li> <p>The configuration aggregator is associated with a previous Amazon Web Services Organization and Config cannot aggregate data with current Amazon Web Services Organization. Delete this aggregator and create a new one with the current Amazon Web Services Organization.</p> </li>
+    /// <li> <p>You are not a registered delegated administrator for Config with permissions to call <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated administrator for Config service principle name before the delegated administrator creates an aggregator.</p> </li>
+    /// </ul>
+    /// <p>For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, Config throws an exception if APIs are called from member accounts. All APIs must be called from organization master account.</p>
+    OrganizationAccessDeniedException(crate::error::OrganizationAccessDeniedException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetOrganizationCustomRulePolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetOrganizationCustomRulePolicyErrorKind::NoSuchOrganizationConfigRuleException(
+                _inner,
+            ) => _inner.fmt(f),
+            GetOrganizationCustomRulePolicyErrorKind::OrganizationAccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetOrganizationCustomRulePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetOrganizationCustomRulePolicyError {
+    fn code(&self) -> Option<&str> {
+        GetOrganizationCustomRulePolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetOrganizationCustomRulePolicyError {
+    /// Creates a new `GetOrganizationCustomRulePolicyError`.
+    pub fn new(
+        kind: GetOrganizationCustomRulePolicyErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetOrganizationCustomRulePolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetOrganizationCustomRulePolicyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetOrganizationCustomRulePolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetOrganizationCustomRulePolicyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetOrganizationCustomRulePolicyErrorKind::NoSuchOrganizationConfigRuleException`.
+    pub fn is_no_such_organization_config_rule_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetOrganizationCustomRulePolicyErrorKind::NoSuchOrganizationConfigRuleException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetOrganizationCustomRulePolicyErrorKind::OrganizationAccessDeniedException`.
+    pub fn is_organization_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetOrganizationCustomRulePolicyErrorKind::OrganizationAccessDeniedException(_)
+        )
+    }
+}
+impl std::error::Error for GetOrganizationCustomRulePolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetOrganizationCustomRulePolicyErrorKind::NoSuchOrganizationConfigRuleException(
+                _inner,
+            ) => Some(_inner),
+            GetOrganizationCustomRulePolicyErrorKind::OrganizationAccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            GetOrganizationCustomRulePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -8082,7 +8297,7 @@ pub enum PutConfigRuleErrorKind {
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
     /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
@@ -8103,8 +8318,8 @@ pub enum PutConfigRuleErrorKind {
     /// <li> <p>For DeleteConfigRule, Config is deleting this rule. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, a remediation action is associated with the rule and Config cannot delete this rule. Delete the remediation action associated with the rule before deleting the rule and try your request again later.</p> </li>
-    /// <li> <p>For PutConfigOrganizationRule, organization config rule deletion is in progress. Try your request again later.</p> </li>
-    /// <li> <p>For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For DeleteOrganizationConfigRule, organization Config rule creation is in progress. Try your request again later.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// </ul>
@@ -8576,7 +8791,7 @@ pub enum PutConformancePackErrorKind {
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
     /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
@@ -8595,8 +8810,8 @@ pub enum PutConformancePackErrorKind {
     /// <li> <p>For DeleteConfigRule, Config is deleting this rule. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, a remediation action is associated with the rule and Config cannot delete this rule. Delete the remediation action associated with the rule before deleting the rule and try your request again later.</p> </li>
-    /// <li> <p>For PutConfigOrganizationRule, organization config rule deletion is in progress. Try your request again later.</p> </li>
-    /// <li> <p>For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For DeleteOrganizationConfigRule, organization Config rule creation is in progress. Try your request again later.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// </ul>
@@ -8930,7 +9145,7 @@ pub enum PutEvaluationsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The specified <code>ResultToken</code> is invalid.</p>
     InvalidResultTokenException(crate::error::InvalidResultTokenException),
-    /// <p>One or more Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchConfigRuleException(crate::error::NoSuchConfigRuleException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9043,7 +9258,7 @@ pub struct PutExternalEvaluationError {
 pub enum PutExternalEvaluationErrorKind {
     /// <p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>One or more Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchConfigRuleException(crate::error::NoSuchConfigRuleException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9149,7 +9364,7 @@ pub enum PutOrganizationConfigRuleErrorKind {
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
     /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
@@ -9159,7 +9374,7 @@ pub enum PutOrganizationConfigRuleErrorKind {
     InsufficientPermissionsException(crate::error::InsufficientPermissionsException),
     /// <p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>You have reached the limit of the number of organization config rules you can create.</p>
+    /// <p>You have reached the limit of the number of organization Config rules you can create.</p>
     MaxNumberOfOrganizationConfigRulesExceededException(
         crate::error::MaxNumberOfOrganizationConfigRulesExceededException,
     ),
@@ -9183,8 +9398,8 @@ pub enum PutOrganizationConfigRuleErrorKind {
     /// <li> <p>For DeleteConfigRule, Config is deleting this rule. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, a remediation action is associated with the rule and Config cannot delete this rule. Delete the remediation action associated with the rule before deleting the rule and try your request again later.</p> </li>
-    /// <li> <p>For PutConfigOrganizationRule, organization config rule deletion is in progress. Try your request again later.</p> </li>
-    /// <li> <p>For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For DeleteOrganizationConfigRule, organization Config rule creation is in progress. Try your request again later.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// </ul>
@@ -9389,7 +9604,7 @@ pub enum PutOrganizationConformancePackErrorKind {
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
     /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
@@ -9425,8 +9640,8 @@ pub enum PutOrganizationConformancePackErrorKind {
     /// <li> <p>For DeleteConfigRule, Config is deleting this rule. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, a remediation action is associated with the rule and Config cannot delete this rule. Delete the remediation action associated with the rule before deleting the rule and try your request again later.</p> </li>
-    /// <li> <p>For PutConfigOrganizationRule, organization config rule deletion is in progress. Try your request again later.</p> </li>
-    /// <li> <p>For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For DeleteOrganizationConfigRule, organization Config rule creation is in progress. Try your request again later.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// </ul>
@@ -9626,7 +9841,7 @@ pub enum PutRemediationConfigurationsErrorKind {
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
     /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
@@ -9748,7 +9963,7 @@ pub enum PutRemediationExceptionsErrorKind {
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
     /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
@@ -9870,7 +10085,7 @@ pub enum PutResourceConfigErrorKind {
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
     /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
@@ -10506,15 +10721,15 @@ pub enum StartConfigRulesEvaluationErrorKind {
     /// <p>For <code>StartConfigRulesEvaluation</code> API, this exception is thrown if an evaluation is in progress or if you call the <code>StartConfigRulesEvaluation</code> API more than once per minute.</p>
     /// <p>For <code>PutConfigurationAggregator</code> API, this exception is thrown if the number of accounts and aggregators exceeds the limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>One or more Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchConfigRuleException(crate::error::NoSuchConfigRuleException),
     /// <p>You see this exception in the following cases: </p>
     /// <ul>
     /// <li> <p>For DeleteConfigRule, Config is deleting this rule. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, a remediation action is associated with the rule and Config cannot delete this rule. Delete the remediation action associated with the rule before deleting the rule and try your request again later.</p> </li>
-    /// <li> <p>For PutConfigOrganizationRule, organization config rule deletion is in progress. Try your request again later.</p> </li>
-    /// <li> <p>For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For DeleteOrganizationConfigRule, organization Config rule creation is in progress. Try your request again later.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// </ul>
@@ -10757,7 +10972,7 @@ pub enum StartRemediationExecutionErrorKind {
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
     /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
@@ -11578,7 +11793,7 @@ impl InvalidParameterValueException {
 /// <ul>
 /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
 /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-/// <li> <p>For PutOrganizationConfigRule, organization config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+/// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
 /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
 /// <ul>
 /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
@@ -11717,8 +11932,8 @@ impl NoAvailableDeliveryChannelException {
 /// <li> <p>For DeleteConfigRule, Config is deleting this rule. Try your request again later.</p> </li>
 /// <li> <p>For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.</p> </li>
 /// <li> <p>For DeleteConfigRule, a remediation action is associated with the rule and Config cannot delete this rule. Delete the remediation action associated with the rule before deleting the rule and try your request again later.</p> </li>
-/// <li> <p>For PutConfigOrganizationRule, organization config rule deletion is in progress. Try your request again later.</p> </li>
-/// <li> <p>For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request again later.</p> </li>
+/// <li> <p>For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try your request again later.</p> </li>
+/// <li> <p>For DeleteOrganizationConfigRule, organization Config rule creation is in progress. Try your request again later.</p> </li>
 /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
 /// <li> <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
 /// </ul>
@@ -11785,7 +12000,7 @@ impl ResourceInUseException {
     }
 }
 
-/// <p>One or more Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>
+/// <p>The Config rule in the request is not valid. Verify that the rule is an Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchConfigRuleException {
@@ -12765,7 +12980,7 @@ impl MaxNumberOfOrganizationConformancePacksExceededException {
     }
 }
 
-/// <p>You have reached the limit of the number of organization config rules you can create.</p>
+/// <p>You have reached the limit of the number of organization Config rules you can create.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxNumberOfOrganizationConfigRulesExceededException {
@@ -13986,72 +14201,7 @@ impl InvalidTimeRangeException {
     }
 }
 
-/// <p>Config organization conformance pack that you passed in the filter does not exist.</p>
-/// <p>For DeleteOrganizationConformancePack, you tried to delete an organization conformance pack that does not exist.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct NoSuchOrganizationConformancePackException {
-    /// <p>Error executing the command</p>
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchOrganizationConformancePackException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchOrganizationConformancePackException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl NoSuchOrganizationConformancePackException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchOrganizationConformancePackException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchOrganizationConformancePackException")?;
-        if let Some(inner_44) = &self.message {
-            write!(f, ": {}", inner_44)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchOrganizationConformancePackException {}
-/// See [`NoSuchOrganizationConformancePackException`](crate::error::NoSuchOrganizationConformancePackException)
-pub mod no_such_organization_conformance_pack_exception {
-    /// A builder for [`NoSuchOrganizationConformancePackException`](crate::error::NoSuchOrganizationConformancePackException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>Error executing the command</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>Error executing the command</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`NoSuchOrganizationConformancePackException`](crate::error::NoSuchOrganizationConformancePackException)
-        pub fn build(self) -> crate::error::NoSuchOrganizationConformancePackException {
-            crate::error::NoSuchOrganizationConformancePackException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl NoSuchOrganizationConformancePackException {
-    /// Creates a new builder-style object to manufacture [`NoSuchOrganizationConformancePackException`](crate::error::NoSuchOrganizationConformancePackException)
-    pub fn builder() -> crate::error::no_such_organization_conformance_pack_exception::Builder {
-        crate::error::no_such_organization_conformance_pack_exception::Builder::default()
-    }
-}
-
-/// <p>You specified one or more organization config rules that do not exist.</p>
+/// <p>The Config rule in the request is not valid. Verify that the rule is an organization Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchOrganizationConfigRuleException {
@@ -14074,8 +14224,8 @@ impl NoSuchOrganizationConfigRuleException {
 impl std::fmt::Display for NoSuchOrganizationConfigRuleException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchOrganizationConfigRuleException")?;
-        if let Some(inner_45) = &self.message {
-            write!(f, ": {}", inner_45)?;
+        if let Some(inner_44) = &self.message {
+            write!(f, ": {}", inner_44)?;
         }
         Ok(())
     }
@@ -14112,6 +14262,71 @@ impl NoSuchOrganizationConfigRuleException {
     /// Creates a new builder-style object to manufacture [`NoSuchOrganizationConfigRuleException`](crate::error::NoSuchOrganizationConfigRuleException)
     pub fn builder() -> crate::error::no_such_organization_config_rule_exception::Builder {
         crate::error::no_such_organization_config_rule_exception::Builder::default()
+    }
+}
+
+/// <p>Config organization conformance pack that you passed in the filter does not exist.</p>
+/// <p>For DeleteOrganizationConformancePack, you tried to delete an organization conformance pack that does not exist.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NoSuchOrganizationConformancePackException {
+    /// <p>Error executing the command</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for NoSuchOrganizationConformancePackException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NoSuchOrganizationConformancePackException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl NoSuchOrganizationConformancePackException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchOrganizationConformancePackException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchOrganizationConformancePackException")?;
+        if let Some(inner_45) = &self.message {
+            write!(f, ": {}", inner_45)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchOrganizationConformancePackException {}
+/// See [`NoSuchOrganizationConformancePackException`](crate::error::NoSuchOrganizationConformancePackException)
+pub mod no_such_organization_conformance_pack_exception {
+    /// A builder for [`NoSuchOrganizationConformancePackException`](crate::error::NoSuchOrganizationConformancePackException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Error executing the command</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Error executing the command</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NoSuchOrganizationConformancePackException`](crate::error::NoSuchOrganizationConformancePackException)
+        pub fn build(self) -> crate::error::NoSuchOrganizationConformancePackException {
+            crate::error::NoSuchOrganizationConformancePackException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl NoSuchOrganizationConformancePackException {
+    /// Creates a new builder-style object to manufacture [`NoSuchOrganizationConformancePackException`](crate::error::NoSuchOrganizationConformancePackException)
+    pub fn builder() -> crate::error::no_such_organization_conformance_pack_exception::Builder {
+        crate::error::no_such_organization_conformance_pack_exception::Builder::default()
     }
 }
 

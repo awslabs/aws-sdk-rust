@@ -2508,6 +2508,8 @@ pub mod get_property_value_history_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) order_by_time: std::option::Option<crate::model::OrderByTime>,
+        pub(crate) start_time: std::option::Option<std::string::String>,
+        pub(crate) end_time: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the workspace.</p>
@@ -2666,6 +2668,26 @@ pub mod get_property_value_history_input {
             self.order_by_time = input;
             self
         }
+        /// Timestamp represented in ISO 8601 format
+        pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start_time = Some(input.into());
+            self
+        }
+        /// Timestamp represented in ISO 8601 format
+        pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// Timestamp represented in ISO 8601 format
+        pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.end_time = Some(input.into());
+            self
+        }
+        /// Timestamp represented in ISO 8601 format
+        pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.end_time = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetPropertyValueHistoryInput`](crate::input::GetPropertyValueHistoryInput)
         pub fn build(
             self,
@@ -2686,6 +2708,8 @@ pub mod get_property_value_history_input {
                 next_token: self.next_token,
                 max_results: self.max_results,
                 order_by_time: self.order_by_time,
+                start_time: self.start_time,
+                end_time: self.end_time,
             })
         }
     }
@@ -5879,6 +5903,10 @@ pub struct GetPropertyValueHistoryInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The time direction to use in the result order.</p>
     pub order_by_time: std::option::Option<crate::model::OrderByTime>,
+    /// Timestamp represented in ISO 8601 format
+    pub start_time: std::option::Option<std::string::String>,
+    /// Timestamp represented in ISO 8601 format
+    pub end_time: std::option::Option<std::string::String>,
 }
 impl GetPropertyValueHistoryInput {
     /// <p>The ID of the workspace.</p>
@@ -5929,6 +5957,14 @@ impl GetPropertyValueHistoryInput {
     pub fn order_by_time(&self) -> std::option::Option<&crate::model::OrderByTime> {
         self.order_by_time.as_ref()
     }
+    /// Timestamp represented in ISO 8601 format
+    pub fn start_time(&self) -> std::option::Option<&str> {
+        self.start_time.as_deref()
+    }
+    /// Timestamp represented in ISO 8601 format
+    pub fn end_time(&self) -> std::option::Option<&str> {
+        self.end_time.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPropertyValueHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5945,6 +5981,8 @@ impl std::fmt::Debug for GetPropertyValueHistoryInput {
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
         formatter.field("order_by_time", &self.order_by_time);
+        formatter.field("start_time", &self.start_time);
+        formatter.field("end_time", &self.end_time);
         formatter.finish()
     }
 }

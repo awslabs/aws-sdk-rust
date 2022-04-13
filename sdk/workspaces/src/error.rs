@@ -1586,6 +1586,121 @@ impl std::error::Error for CreateWorkspacesError {
     }
 }
 
+/// Error type for the `DeleteClientBranding` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteClientBrandingError {
+    /// Kind of error that occurred.
+    pub kind: DeleteClientBrandingErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteClientBranding` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteClientBrandingErrorKind {
+    /// <p>The user is not authorized to access a resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>One or more parameter values are not valid.</p>
+    InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
+    /// <p>The resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteClientBrandingError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteClientBrandingErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteClientBrandingErrorKind::InvalidParameterValuesException(_inner) => _inner.fmt(f),
+            DeleteClientBrandingErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteClientBrandingErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteClientBrandingError {
+    fn code(&self) -> Option<&str> {
+        DeleteClientBrandingError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteClientBrandingError {
+    /// Creates a new `DeleteClientBrandingError`.
+    pub fn new(kind: DeleteClientBrandingErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteClientBrandingError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteClientBrandingErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteClientBrandingError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteClientBrandingErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteClientBrandingErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteClientBrandingErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteClientBrandingErrorKind::InvalidParameterValuesException`.
+    pub fn is_invalid_parameter_values_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteClientBrandingErrorKind::InvalidParameterValuesException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteClientBrandingErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteClientBrandingErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteClientBrandingError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteClientBrandingErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteClientBrandingErrorKind::InvalidParameterValuesException(_inner) => Some(_inner),
+            DeleteClientBrandingErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteClientBrandingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteConnectClientAddIn` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2660,6 +2775,125 @@ impl std::error::Error for DescribeAccountModificationsError {
         match &self.kind {
             DescribeAccountModificationsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DescribeAccountModificationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeClientBranding` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeClientBrandingError {
+    /// Kind of error that occurred.
+    pub kind: DescribeClientBrandingErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeClientBranding` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeClientBrandingErrorKind {
+    /// <p>The user is not authorized to access a resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>One or more parameter values are not valid.</p>
+    InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
+    /// <p>The resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeClientBrandingError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeClientBrandingErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeClientBrandingErrorKind::InvalidParameterValuesException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeClientBrandingErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeClientBrandingErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeClientBrandingError {
+    fn code(&self) -> Option<&str> {
+        DescribeClientBrandingError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeClientBrandingError {
+    /// Creates a new `DescribeClientBrandingError`.
+    pub fn new(kind: DescribeClientBrandingErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeClientBrandingError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeClientBrandingErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeClientBrandingError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeClientBrandingErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeClientBrandingErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeClientBrandingErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeClientBrandingErrorKind::InvalidParameterValuesException`.
+    pub fn is_invalid_parameter_values_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeClientBrandingErrorKind::InvalidParameterValuesException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeClientBrandingErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeClientBrandingErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeClientBrandingError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeClientBrandingErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeClientBrandingErrorKind::InvalidParameterValuesException(_inner) => {
+                Some(_inner)
+            }
+            DescribeClientBrandingErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeClientBrandingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -4382,6 +4616,121 @@ impl std::error::Error for DisassociateIpGroupsError {
             DisassociateIpGroupsErrorKind::InvalidResourceStateException(_inner) => Some(_inner),
             DisassociateIpGroupsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DisassociateIpGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ImportClientBranding` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ImportClientBrandingError {
+    /// Kind of error that occurred.
+    pub kind: ImportClientBrandingErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ImportClientBranding` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ImportClientBrandingErrorKind {
+    /// <p>The user is not authorized to access a resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>One or more parameter values are not valid.</p>
+    InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
+    /// <p>Your resource limits have been exceeded.</p>
+    ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ImportClientBrandingError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ImportClientBrandingErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ImportClientBrandingErrorKind::InvalidParameterValuesException(_inner) => _inner.fmt(f),
+            ImportClientBrandingErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
+            ImportClientBrandingErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ImportClientBrandingError {
+    fn code(&self) -> Option<&str> {
+        ImportClientBrandingError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ImportClientBrandingError {
+    /// Creates a new `ImportClientBrandingError`.
+    pub fn new(kind: ImportClientBrandingErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ImportClientBrandingError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ImportClientBrandingErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ImportClientBrandingError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ImportClientBrandingErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ImportClientBrandingErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportClientBrandingErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ImportClientBrandingErrorKind::InvalidParameterValuesException`.
+    pub fn is_invalid_parameter_values_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportClientBrandingErrorKind::InvalidParameterValuesException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ImportClientBrandingErrorKind::ResourceLimitExceededException`.
+    pub fn is_resource_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportClientBrandingErrorKind::ResourceLimitExceededException(_)
+        )
+    }
+}
+impl std::error::Error for ImportClientBrandingError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ImportClientBrandingErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ImportClientBrandingErrorKind::InvalidParameterValuesException(_inner) => Some(_inner),
+            ImportClientBrandingErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
+            ImportClientBrandingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

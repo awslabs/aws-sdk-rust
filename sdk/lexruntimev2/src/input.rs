@@ -171,7 +171,7 @@ impl DeleteSessionInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -386,7 +386,7 @@ impl GetSessionInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -704,7 +704,7 @@ impl PutSessionInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -991,7 +991,7 @@ impl RecognizeTextInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1361,7 +1361,7 @@ impl RecognizeUtteranceInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),

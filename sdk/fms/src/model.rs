@@ -301,7 +301,6 @@ pub struct Policy {
     /// <p>An array of <code>ResourceTag</code> objects.</p>
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
     /// <p>If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are not in scope of the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with the specified tags are in scope of the policy.</p>
-    /// <p> This option isn't available for the centralized deployment model when creating policies to configure Network Firewall. </p>
     pub exclude_resource_tags: bool,
     /// <p>Indicates if the policy should be automatically applied to new resources.</p>
     pub remediation_enabled: bool,
@@ -317,7 +316,6 @@ pub struct Policy {
     /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// </ul>
-    /// <p> This option isn't available for the centralized deployment model when creating policies to configure Network Firewall. </p>
     pub include_map: std::option::Option<
         std::collections::HashMap<
             crate::model::CustomerPolicyScopeIdType,
@@ -332,7 +330,6 @@ pub struct Policy {
     /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// </ul>
-    /// <p> This option isn't available for the centralized deployment model when creating policies to configure Network Firewall. </p>
     pub exclude_map: std::option::Option<
         std::collections::HashMap<
             crate::model::CustomerPolicyScopeIdType,
@@ -373,7 +370,6 @@ impl Policy {
         self.resource_tags.as_deref()
     }
     /// <p>If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are not in scope of the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with the specified tags are in scope of the policy.</p>
-    /// <p> This option isn't available for the centralized deployment model when creating policies to configure Network Firewall. </p>
     pub fn exclude_resource_tags(&self) -> bool {
         self.exclude_resource_tags
     }
@@ -395,7 +391,6 @@ impl Policy {
     /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// </ul>
-    /// <p> This option isn't available for the centralized deployment model when creating policies to configure Network Firewall. </p>
     pub fn include_map(
         &self,
     ) -> std::option::Option<
@@ -414,7 +409,6 @@ impl Policy {
     /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// </ul>
-    /// <p> This option isn't available for the centralized deployment model when creating policies to configure Network Firewall. </p>
     pub fn exclude_map(
         &self,
     ) -> std::option::Option<
@@ -584,13 +578,11 @@ pub mod policy {
             self
         }
         /// <p>If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are not in scope of the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with the specified tags are in scope of the policy.</p>
-        /// <p> This option isn't available for the centralized deployment model when creating policies to configure Network Firewall. </p>
         pub fn exclude_resource_tags(mut self, input: bool) -> Self {
             self.exclude_resource_tags = Some(input);
             self
         }
         /// <p>If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are not in scope of the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with the specified tags are in scope of the policy.</p>
-        /// <p> This option isn't available for the centralized deployment model when creating policies to configure Network Firewall. </p>
         pub fn set_exclude_resource_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.exclude_resource_tags = input;
             self
@@ -634,7 +626,6 @@ pub mod policy {
         /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
         /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
         /// </ul>
-        /// <p> This option isn't available for the centralized deployment model when creating policies to configure Network Firewall. </p>
         pub fn include_map(
             mut self,
             k: crate::model::CustomerPolicyScopeIdType,
@@ -653,7 +644,6 @@ pub mod policy {
         /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
         /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
         /// </ul>
-        /// <p> This option isn't available for the centralized deployment model when creating policies to configure Network Firewall. </p>
         pub fn set_include_map(
             mut self,
             input: std::option::Option<
@@ -678,7 +668,6 @@ pub mod policy {
         /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
         /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
         /// </ul>
-        /// <p> This option isn't available for the centralized deployment model when creating policies to configure Network Firewall. </p>
         pub fn exclude_map(
             mut self,
             k: crate::model::CustomerPolicyScopeIdType,
@@ -697,7 +686,6 @@ pub mod policy {
         /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
         /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
         /// </ul>
-        /// <p> This option isn't available for the centralized deployment model when creating policies to configure Network Firewall. </p>
         pub fn set_exclude_map(
             mut self,
             input: std::option::Option<
@@ -877,14 +865,18 @@ pub struct SecurityServicePolicyData {
     /// <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p> <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code> </p> <note>
     /// <p>Valid values for <code>preProcessRuleGroups</code> are between 1 and 99. Valid values for <code>postProcessRuleGroups</code> are between 9901 and 10000.</p>
     /// </note> </li>
-    /// <li> <p>Example: <code>NETWORK_FIREWALL</code> - Centralized deployment model.</p> <p> <code>"{\"type\":\"NETWORK_FIREWALL\",\"awsNetworkFirewallConfig\":{\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\",\"priority\":1}],\"networkFirewallStatelessDefaultActions\":[\"aws:forward_to_sfe\",\"customActionName\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"aws:forward_to_sfe\",\"customActionName\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"customActionName\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"metricdimensionvalue\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\"}],\"networkFirewallLoggingConfiguration\":{\"logDestinationConfigs\":[{\"logDestinationType\":\"S3\",\"logType\":\"ALERT\",\"logDestination\":{\"bucketName\":\"s3-bucket-name\"}},{\"logDestinationType\":\"S3\",\"logType\":\"FLOW\",\"logDestination\":{\"bucketName\":\"s3-bucket-name\"}}],\"overrideExistingConfig\":true}},\"firewallDeploymentModel\":{\"centralizedFirewallDeploymentModel\":{\"centralizedFirewallOrchestrationConfig\":{\"inspectionVpcIds\":[{\"resourceId\":\"vpc-1234\",\"accountId\":\"123456789011\"}],\"firewallCreationConfig\":{\"endpointLocation\":{\"availabilityZoneConfigList\":[{\"availabilityZoneId\":null,\"availabilityZoneName\":\"us-east-1a\",\"allowedIPV4CidrList\":[\"10.0.0.0/28\"]}]}},\"allowedIPV4CidrList\":[]}}}}"</code> </p> <p> To use the centralized deployment model, you must set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>CENTRALIZED</code>. </p> </li>
+    /// <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p> <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code> </p> <note>
+    /// <p>Valid values for <code>preProcessRuleGroups</code> are between 1 and 99. Valid values for <code>postProcessRuleGroups</code> are between 9901 and 10000.</p>
+    /// </note> </li>
     /// <li> <p>Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with automatic Availability Zone configuration. With automatic Availbility Zone configuration, Firewall Manager chooses which Availability Zones to create the endpoints in. </p> <p> <code>"{ \"type\": \"NETWORK_FIREWALL\", \"networkFirewallStatelessRuleGroupReferences\": [ { \"resourceARN\": \"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\", \"priority\": 1 } ], \"networkFirewallStatelessDefaultActions\": [ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessFragmentDefaultActions\": [ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessCustomActions\": [ { \"actionName\": \"customActionName\", \"actionDefinition\": { \"publishMetricAction\": { \"dimensions\": [ { \"value\": \"metricdimensionvalue\" } ] } } } ], \"networkFirewallStatefulRuleGroupReferences\": [ { \"resourceARN\": \"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\" } ], \"networkFirewallOrchestrationConfig\": { \"singleFirewallEndpointPerVPC\": false, \"allowedIPV4CidrList\": [ \"10.0.0.0/28\", \"192.168.0.0/28\" ], \"routeManagementAction\": \"OFF\" }, \"networkFirewallLoggingConfiguration\": { \"logDestinationConfigs\": [ { \"logDestinationType\": \"S3\", \"logType\": \"ALERT\", \"logDestination\": { \"bucketName\": \"s3-bucket-name\" } }, { \"logDestinationType\": \"S3\", \"logType\": \"FLOW\", \"logDestination\": { \"bucketName\": \"s3-bucket-name\" } } ], \"overrideExistingConfig\": true } }"</code> </p> <p> To use the distributed deployment model, you must set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>NULL</code>. </p> </li>
     /// <li> <p>Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with automatic Availability Zone configuration, and route management. </p> <p> <code>"{ \"type\": \"NETWORK_FIREWALL\", \"networkFirewallStatelessRuleGroupReferences\": [ { \"resourceARN\": \"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\", \"priority\": 1 } ], \"networkFirewallStatelessDefaultActions\": [ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessFragmentDefaultActions\": [ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessCustomActions\": [ { \"actionName\": \"customActionName\", \"actionDefinition\": { \"publishMetricAction\": { \"dimensions\": [ { \"value\": \"metricdimensionvalue\" } ] } } } ], \"networkFirewallStatefulRuleGroupReferences\": [ { \"resourceARN\": \"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\" } ], \"networkFirewallOrchestrationConfig\": { \"singleFirewallEndpointPerVPC\": false, \"allowedIPV4CidrList\": [ \"10.0.0.0/28\", \"192.168.0.0/28\" ], \"routeManagementAction\": \"MONITOR\", \"routeManagementTargetTypes\": [ \"InternetGateway\" ] }, \"networkFirewallLoggingConfiguration\": { \"logDestinationConfigs\": [ { \"logDestinationType\": \"S3\", \"logType\": \"ALERT\", \"logDestination\": { \"bucketName\": \"s3-bucket-name\" } }, { \"logDestinationType\": \"S3\", \"logType\": \"FLOW\", \"logDestination\": { \"bucketName\": \"s3-bucket-name\" } } ], \"overrideExistingConfig\": true } }"</code> </p> </li>
     /// <li> <p>Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with custom Availability Zone configuration. With custom Availability Zone configuration, you define which specific Availability Zones to create endpoints in by configuring <code>firewallCreationConfig</code>. </p> <p> <code>"{ \"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\",\"priority\":1}], \"networkFirewallStatelessDefaultActions\":[ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessFragmentDefaultActions\":[ \"aws:forward_to_sfe\", \"fragmentcustomactionname\" ], \"networkFirewallStatelessCustomActions\":[ { \"actionName\":\"customActionName\", \"actionDefinition\":{ \"publishMetricAction\":{ \"dimensions\":[ { \"value\":\"metricdimensionvalue\" } ] } } }, { \"actionName\":\"fragmentcustomactionname\", \"actionDefinition\":{ \"publishMetricAction\":{ \"dimensions\":[ { \"value\":\"fragmentmetricdimensionvalue\" } ] } } } ], \"networkFirewallStatefulRuleGroupReferences\":[ { \"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\" } ], \"networkFirewallOrchestrationConfig\":{ \"firewallCreationConfig\":{ \"endpointLocation\":{ \"availabilityZoneConfigList\":[ { \"availabilityZoneId\":null, \"availabilityZoneName\":\"us-east-1a\", \"allowedIPV4CidrList\":[ \"10.0.0.0/28\" ] }, { ¯\"availabilityZoneId\":null, \"availabilityZoneName\":\"us-east-1b\", \"allowedIPV4CidrList\":[ \"10.0.0.0/28\" ] } ] } }, \"singleFirewallEndpointPerVPC\":false, \"allowedIPV4CidrList\":null, \"routeManagementAction\":\"OFF\", \"networkFirewallLoggingConfiguration\":{ \"logDestinationConfigs\":[ { \"logDestinationType\":\"S3\", \"logType\":\"ALERT\", \"logDestination\":{ \"bucketName\":\"s3-bucket-name\" } }, { \"logDestinationType\":\"S3\", \"logType\":\"FLOW\", \"logDestination\":{ \"bucketName\":\"s3-bucket-name\" } } ], \"overrideExistingConfig\":boolean } }"</code> </p> </li>
     /// <li> <p>Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with custom Availability Zone configuration, and route management. </p> <p> <code>"{ \"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\",\"priority\":1}], \"networkFirewallStatelessDefaultActions\":[ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessFragmentDefaultActions\":[ \"aws:forward_to_sfe\", \"fragmentcustomactionname\" ], \"networkFirewallStatelessCustomActions\":[ { \"actionName\":\"customActionName\", \"actionDefinition\":{ \"publishMetricAction\":{ \"dimensions\":[ { \"value\":\"metricdimensionvalue\" } ] } } }, { \"actionName\":\"fragmentcustomactionname\", \"actionDefinition\":{ \"publishMetricAction\":{ \"dimensions\":[ { \"value\":\"fragmentmetricdimensionvalue\" } ] } } } ], \"networkFirewallStatefulRuleGroupReferences\":[ { \"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\" } ], \"networkFirewallOrchestrationConfig\":{ \"firewallCreationConfig\":{ \"endpointLocation\":{ \"availabilityZoneConfigList\":[ { \"availabilityZoneId\":null, \"availabilityZoneName\":\"us-east-1a\", \"allowedIPV4CidrList\":[ \"10.0.0.0/28\" ] }, { ¯\"availabilityZoneId\":null, \"availabilityZoneName\":\"us-east-1b\", \"allowedIPV4CidrList\":[ \"10.0.0.0/28\" ] } ] } }, \"singleFirewallEndpointPerVPC\":false, \"allowedIPV4CidrList\":null, \"routeManagementAction\":\"MONITOR\", \"routeManagementTargetTypes\":[ \"InternetGateway\" ], \"routeManagementConfig\":{ \"allowCrossAZTrafficIfNoEndpoint\":true } }, \"networkFirewallLoggingConfiguration\":{ \"logDestinationConfigs\":[ { \"logDestinationType\":\"S3\", \"logType\":\"ALERT\", \"logDestination\":{ \"bucketName\":\"s3-bucket-name\" } }, { \"logDestinationType\":\"S3\", \"logType\":\"FLOW\", \"logDestination\":{ \"bucketName\":\"s3-bucket-name\" } } ], \"overrideExistingConfig\":boolean } }"</code> </p> </li>
+    /// <li> <p>Example: <code>PARTNER_FIREWALL</code> for Firewall Manager</p> <p> <code>"{\"type\":\"THIRD_PARTY_FIREWALL\",\"thirdPartyrFirewall\":\"PALO_ALTO_NETWORKS_CLOUD_NGFW\",\"thirdPartyFirewallConfig\":{\"thirdPartyFirewallPolicyList\":[\"global-123456789012-1\"],\"networkFirewallLoggingConfiguration\":null},\"firewallDeploymentModel\":{\"distributedFirewallDeploymentModel\":{\"distributedFirewallOrchestrationConfig\":{\"firewallCreationConfig\":{\"endpointLocation\":{\"availabilityZoneConfigList\":[{\"availabilityZoneId\":null,\"availabilityZoneName\":\"us-east-1a\",\"allowedIPV4CidrList\":[\"10.0.1.0/28\"]}]}},\"allowedIPV4CidrList\":null},\"distributedRouteManagementConfig\":null},\"centralizedFirewallDeploymentModel\":null}}""</code> </p> </li>
     /// <li> <p>Specification for <code>SHIELD_ADVANCED</code> for Amazon CloudFront distributions </p> <p> <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\": {\"automaticResponseStatus\":\"ENABLED|IGNORED|DISABLED\", \"automaticResponseAction\":\"BLOCK|COUNT\"}, \"overrideCustomerWebaclClassic\":true|false}"</code> </p> <p>For example: <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\": {\"automaticResponseStatus\":\"ENABLED\", \"automaticResponseAction\":\"COUNT\"}}"</code> </p> <p>The default value for <code>automaticResponseStatus</code> is <code>IGNORED</code>. The value for <code>automaticResponseAction</code> is only required when <code>automaticResponseStatus</code> is set to <code>ENABLED</code>. The default value for <code>overrideCustomerWebaclClassic</code> is <code>false</code>.</p> <p>For other resource types that you can protect with a Shield Advanced policy, this <code>ManagedServiceData</code> configuration is an empty string.</p> </li>
     /// <li> <p>Example: <code>WAFV2</code> </p> <p> <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code> </p> <p>In the <code>loggingConfiguration</code>, you can specify one <code>logDestinationConfigs</code>, you can optionally provide up to 20 <code>redactedFields</code>, and the <code>RedactedFieldType</code> must be one of <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p> </li>
     /// <li> <p>Example: <code>WAF Classic</code> </p> <p> <code>"{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":\"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}"</code> </p> </li>
+    /// <li> <p>Example: <code>WAFV2</code> - Firewall Manager support for WAF managed rule group versioning </p> <p> <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"versionEnabled\":true,\"version\":\"Version_2.0\",\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesCommonRuleSet\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code> </p> <p> To use a specific version of a WAF managed rule group in your Firewall Manager policy, you must set <code>versionEnabled</code> to <code>true</code>, and set <code>version</code> to the version you'd like to use. If you don't set <code>versionEnabled</code> to <code>true</code>, or if you omit <code>versionEnabled</code>, then Firewall Manager uses the default version of the WAF managed rule group. </p> </li>
     /// <li> <p>Example: <code>SECURITY_GROUPS_COMMON</code> </p> <p> <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code> </p> </li>
     /// <li> <p>Example: Shared VPCs. Apply the preceding policy to resources in shared VPCs as well as to those in VPCs that the account owns </p> <p> <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code> </p> </li>
     /// <li> <p>Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code> </p> <p> <code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code> </p> <p>The security group action for content audit can be <code>ALLOW</code> or <code>DENY</code>. For <code>ALLOW</code>, all in-scope security group rules must be within the allowed range of the policy's security group rules. For <code>DENY</code>, all in-scope security group rules must not contain a value or a range that matches a rule value or range in the policy security group.</p> </li>
@@ -904,14 +896,18 @@ impl SecurityServicePolicyData {
     /// <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p> <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code> </p> <note>
     /// <p>Valid values for <code>preProcessRuleGroups</code> are between 1 and 99. Valid values for <code>postProcessRuleGroups</code> are between 9901 and 10000.</p>
     /// </note> </li>
-    /// <li> <p>Example: <code>NETWORK_FIREWALL</code> - Centralized deployment model.</p> <p> <code>"{\"type\":\"NETWORK_FIREWALL\",\"awsNetworkFirewallConfig\":{\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\",\"priority\":1}],\"networkFirewallStatelessDefaultActions\":[\"aws:forward_to_sfe\",\"customActionName\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"aws:forward_to_sfe\",\"customActionName\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"customActionName\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"metricdimensionvalue\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\"}],\"networkFirewallLoggingConfiguration\":{\"logDestinationConfigs\":[{\"logDestinationType\":\"S3\",\"logType\":\"ALERT\",\"logDestination\":{\"bucketName\":\"s3-bucket-name\"}},{\"logDestinationType\":\"S3\",\"logType\":\"FLOW\",\"logDestination\":{\"bucketName\":\"s3-bucket-name\"}}],\"overrideExistingConfig\":true}},\"firewallDeploymentModel\":{\"centralizedFirewallDeploymentModel\":{\"centralizedFirewallOrchestrationConfig\":{\"inspectionVpcIds\":[{\"resourceId\":\"vpc-1234\",\"accountId\":\"123456789011\"}],\"firewallCreationConfig\":{\"endpointLocation\":{\"availabilityZoneConfigList\":[{\"availabilityZoneId\":null,\"availabilityZoneName\":\"us-east-1a\",\"allowedIPV4CidrList\":[\"10.0.0.0/28\"]}]}},\"allowedIPV4CidrList\":[]}}}}"</code> </p> <p> To use the centralized deployment model, you must set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>CENTRALIZED</code>. </p> </li>
+    /// <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p> <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code> </p> <note>
+    /// <p>Valid values for <code>preProcessRuleGroups</code> are between 1 and 99. Valid values for <code>postProcessRuleGroups</code> are between 9901 and 10000.</p>
+    /// </note> </li>
     /// <li> <p>Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with automatic Availability Zone configuration. With automatic Availbility Zone configuration, Firewall Manager chooses which Availability Zones to create the endpoints in. </p> <p> <code>"{ \"type\": \"NETWORK_FIREWALL\", \"networkFirewallStatelessRuleGroupReferences\": [ { \"resourceARN\": \"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\", \"priority\": 1 } ], \"networkFirewallStatelessDefaultActions\": [ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessFragmentDefaultActions\": [ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessCustomActions\": [ { \"actionName\": \"customActionName\", \"actionDefinition\": { \"publishMetricAction\": { \"dimensions\": [ { \"value\": \"metricdimensionvalue\" } ] } } } ], \"networkFirewallStatefulRuleGroupReferences\": [ { \"resourceARN\": \"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\" } ], \"networkFirewallOrchestrationConfig\": { \"singleFirewallEndpointPerVPC\": false, \"allowedIPV4CidrList\": [ \"10.0.0.0/28\", \"192.168.0.0/28\" ], \"routeManagementAction\": \"OFF\" }, \"networkFirewallLoggingConfiguration\": { \"logDestinationConfigs\": [ { \"logDestinationType\": \"S3\", \"logType\": \"ALERT\", \"logDestination\": { \"bucketName\": \"s3-bucket-name\" } }, { \"logDestinationType\": \"S3\", \"logType\": \"FLOW\", \"logDestination\": { \"bucketName\": \"s3-bucket-name\" } } ], \"overrideExistingConfig\": true } }"</code> </p> <p> To use the distributed deployment model, you must set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>NULL</code>. </p> </li>
     /// <li> <p>Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with automatic Availability Zone configuration, and route management. </p> <p> <code>"{ \"type\": \"NETWORK_FIREWALL\", \"networkFirewallStatelessRuleGroupReferences\": [ { \"resourceARN\": \"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\", \"priority\": 1 } ], \"networkFirewallStatelessDefaultActions\": [ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessFragmentDefaultActions\": [ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessCustomActions\": [ { \"actionName\": \"customActionName\", \"actionDefinition\": { \"publishMetricAction\": { \"dimensions\": [ { \"value\": \"metricdimensionvalue\" } ] } } } ], \"networkFirewallStatefulRuleGroupReferences\": [ { \"resourceARN\": \"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\" } ], \"networkFirewallOrchestrationConfig\": { \"singleFirewallEndpointPerVPC\": false, \"allowedIPV4CidrList\": [ \"10.0.0.0/28\", \"192.168.0.0/28\" ], \"routeManagementAction\": \"MONITOR\", \"routeManagementTargetTypes\": [ \"InternetGateway\" ] }, \"networkFirewallLoggingConfiguration\": { \"logDestinationConfigs\": [ { \"logDestinationType\": \"S3\", \"logType\": \"ALERT\", \"logDestination\": { \"bucketName\": \"s3-bucket-name\" } }, { \"logDestinationType\": \"S3\", \"logType\": \"FLOW\", \"logDestination\": { \"bucketName\": \"s3-bucket-name\" } } ], \"overrideExistingConfig\": true } }"</code> </p> </li>
     /// <li> <p>Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with custom Availability Zone configuration. With custom Availability Zone configuration, you define which specific Availability Zones to create endpoints in by configuring <code>firewallCreationConfig</code>. </p> <p> <code>"{ \"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\",\"priority\":1}], \"networkFirewallStatelessDefaultActions\":[ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessFragmentDefaultActions\":[ \"aws:forward_to_sfe\", \"fragmentcustomactionname\" ], \"networkFirewallStatelessCustomActions\":[ { \"actionName\":\"customActionName\", \"actionDefinition\":{ \"publishMetricAction\":{ \"dimensions\":[ { \"value\":\"metricdimensionvalue\" } ] } } }, { \"actionName\":\"fragmentcustomactionname\", \"actionDefinition\":{ \"publishMetricAction\":{ \"dimensions\":[ { \"value\":\"fragmentmetricdimensionvalue\" } ] } } } ], \"networkFirewallStatefulRuleGroupReferences\":[ { \"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\" } ], \"networkFirewallOrchestrationConfig\":{ \"firewallCreationConfig\":{ \"endpointLocation\":{ \"availabilityZoneConfigList\":[ { \"availabilityZoneId\":null, \"availabilityZoneName\":\"us-east-1a\", \"allowedIPV4CidrList\":[ \"10.0.0.0/28\" ] }, { ¯\"availabilityZoneId\":null, \"availabilityZoneName\":\"us-east-1b\", \"allowedIPV4CidrList\":[ \"10.0.0.0/28\" ] } ] } }, \"singleFirewallEndpointPerVPC\":false, \"allowedIPV4CidrList\":null, \"routeManagementAction\":\"OFF\", \"networkFirewallLoggingConfiguration\":{ \"logDestinationConfigs\":[ { \"logDestinationType\":\"S3\", \"logType\":\"ALERT\", \"logDestination\":{ \"bucketName\":\"s3-bucket-name\" } }, { \"logDestinationType\":\"S3\", \"logType\":\"FLOW\", \"logDestination\":{ \"bucketName\":\"s3-bucket-name\" } } ], \"overrideExistingConfig\":boolean } }"</code> </p> </li>
     /// <li> <p>Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with custom Availability Zone configuration, and route management. </p> <p> <code>"{ \"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\",\"priority\":1}], \"networkFirewallStatelessDefaultActions\":[ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessFragmentDefaultActions\":[ \"aws:forward_to_sfe\", \"fragmentcustomactionname\" ], \"networkFirewallStatelessCustomActions\":[ { \"actionName\":\"customActionName\", \"actionDefinition\":{ \"publishMetricAction\":{ \"dimensions\":[ { \"value\":\"metricdimensionvalue\" } ] } } }, { \"actionName\":\"fragmentcustomactionname\", \"actionDefinition\":{ \"publishMetricAction\":{ \"dimensions\":[ { \"value\":\"fragmentmetricdimensionvalue\" } ] } } } ], \"networkFirewallStatefulRuleGroupReferences\":[ { \"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\" } ], \"networkFirewallOrchestrationConfig\":{ \"firewallCreationConfig\":{ \"endpointLocation\":{ \"availabilityZoneConfigList\":[ { \"availabilityZoneId\":null, \"availabilityZoneName\":\"us-east-1a\", \"allowedIPV4CidrList\":[ \"10.0.0.0/28\" ] }, { ¯\"availabilityZoneId\":null, \"availabilityZoneName\":\"us-east-1b\", \"allowedIPV4CidrList\":[ \"10.0.0.0/28\" ] } ] } }, \"singleFirewallEndpointPerVPC\":false, \"allowedIPV4CidrList\":null, \"routeManagementAction\":\"MONITOR\", \"routeManagementTargetTypes\":[ \"InternetGateway\" ], \"routeManagementConfig\":{ \"allowCrossAZTrafficIfNoEndpoint\":true } }, \"networkFirewallLoggingConfiguration\":{ \"logDestinationConfigs\":[ { \"logDestinationType\":\"S3\", \"logType\":\"ALERT\", \"logDestination\":{ \"bucketName\":\"s3-bucket-name\" } }, { \"logDestinationType\":\"S3\", \"logType\":\"FLOW\", \"logDestination\":{ \"bucketName\":\"s3-bucket-name\" } } ], \"overrideExistingConfig\":boolean } }"</code> </p> </li>
+    /// <li> <p>Example: <code>PARTNER_FIREWALL</code> for Firewall Manager</p> <p> <code>"{\"type\":\"THIRD_PARTY_FIREWALL\",\"thirdPartyrFirewall\":\"PALO_ALTO_NETWORKS_CLOUD_NGFW\",\"thirdPartyFirewallConfig\":{\"thirdPartyFirewallPolicyList\":[\"global-123456789012-1\"],\"networkFirewallLoggingConfiguration\":null},\"firewallDeploymentModel\":{\"distributedFirewallDeploymentModel\":{\"distributedFirewallOrchestrationConfig\":{\"firewallCreationConfig\":{\"endpointLocation\":{\"availabilityZoneConfigList\":[{\"availabilityZoneId\":null,\"availabilityZoneName\":\"us-east-1a\",\"allowedIPV4CidrList\":[\"10.0.1.0/28\"]}]}},\"allowedIPV4CidrList\":null},\"distributedRouteManagementConfig\":null},\"centralizedFirewallDeploymentModel\":null}}""</code> </p> </li>
     /// <li> <p>Specification for <code>SHIELD_ADVANCED</code> for Amazon CloudFront distributions </p> <p> <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\": {\"automaticResponseStatus\":\"ENABLED|IGNORED|DISABLED\", \"automaticResponseAction\":\"BLOCK|COUNT\"}, \"overrideCustomerWebaclClassic\":true|false}"</code> </p> <p>For example: <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\": {\"automaticResponseStatus\":\"ENABLED\", \"automaticResponseAction\":\"COUNT\"}}"</code> </p> <p>The default value for <code>automaticResponseStatus</code> is <code>IGNORED</code>. The value for <code>automaticResponseAction</code> is only required when <code>automaticResponseStatus</code> is set to <code>ENABLED</code>. The default value for <code>overrideCustomerWebaclClassic</code> is <code>false</code>.</p> <p>For other resource types that you can protect with a Shield Advanced policy, this <code>ManagedServiceData</code> configuration is an empty string.</p> </li>
     /// <li> <p>Example: <code>WAFV2</code> </p> <p> <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code> </p> <p>In the <code>loggingConfiguration</code>, you can specify one <code>logDestinationConfigs</code>, you can optionally provide up to 20 <code>redactedFields</code>, and the <code>RedactedFieldType</code> must be one of <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p> </li>
     /// <li> <p>Example: <code>WAF Classic</code> </p> <p> <code>"{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":\"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}"</code> </p> </li>
+    /// <li> <p>Example: <code>WAFV2</code> - Firewall Manager support for WAF managed rule group versioning </p> <p> <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"versionEnabled\":true,\"version\":\"Version_2.0\",\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesCommonRuleSet\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code> </p> <p> To use a specific version of a WAF managed rule group in your Firewall Manager policy, you must set <code>versionEnabled</code> to <code>true</code>, and set <code>version</code> to the version you'd like to use. If you don't set <code>versionEnabled</code> to <code>true</code>, or if you omit <code>versionEnabled</code>, then Firewall Manager uses the default version of the WAF managed rule group. </p> </li>
     /// <li> <p>Example: <code>SECURITY_GROUPS_COMMON</code> </p> <p> <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code> </p> </li>
     /// <li> <p>Example: Shared VPCs. Apply the preceding policy to resources in shared VPCs as well as to those in VPCs that the account owns </p> <p> <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code> </p> </li>
     /// <li> <p>Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code> </p> <p> <code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code> </p> <p>The security group action for content audit can be <code>ALLOW</code> or <code>DENY</code>. For <code>ALLOW</code>, all in-scope security group rules must be within the allowed range of the policy's security group rules. For <code>DENY</code>, all in-scope security group rules must not contain a value or a range that matches a rule value or range in the policy security group.</p> </li>
@@ -963,14 +959,18 @@ pub mod security_service_policy_data {
         /// <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p> <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code> </p> <note>
         /// <p>Valid values for <code>preProcessRuleGroups</code> are between 1 and 99. Valid values for <code>postProcessRuleGroups</code> are between 9901 and 10000.</p>
         /// </note> </li>
-        /// <li> <p>Example: <code>NETWORK_FIREWALL</code> - Centralized deployment model.</p> <p> <code>"{\"type\":\"NETWORK_FIREWALL\",\"awsNetworkFirewallConfig\":{\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\",\"priority\":1}],\"networkFirewallStatelessDefaultActions\":[\"aws:forward_to_sfe\",\"customActionName\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"aws:forward_to_sfe\",\"customActionName\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"customActionName\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"metricdimensionvalue\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\"}],\"networkFirewallLoggingConfiguration\":{\"logDestinationConfigs\":[{\"logDestinationType\":\"S3\",\"logType\":\"ALERT\",\"logDestination\":{\"bucketName\":\"s3-bucket-name\"}},{\"logDestinationType\":\"S3\",\"logType\":\"FLOW\",\"logDestination\":{\"bucketName\":\"s3-bucket-name\"}}],\"overrideExistingConfig\":true}},\"firewallDeploymentModel\":{\"centralizedFirewallDeploymentModel\":{\"centralizedFirewallOrchestrationConfig\":{\"inspectionVpcIds\":[{\"resourceId\":\"vpc-1234\",\"accountId\":\"123456789011\"}],\"firewallCreationConfig\":{\"endpointLocation\":{\"availabilityZoneConfigList\":[{\"availabilityZoneId\":null,\"availabilityZoneName\":\"us-east-1a\",\"allowedIPV4CidrList\":[\"10.0.0.0/28\"]}]}},\"allowedIPV4CidrList\":[]}}}}"</code> </p> <p> To use the centralized deployment model, you must set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>CENTRALIZED</code>. </p> </li>
+        /// <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p> <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code> </p> <note>
+        /// <p>Valid values for <code>preProcessRuleGroups</code> are between 1 and 99. Valid values for <code>postProcessRuleGroups</code> are between 9901 and 10000.</p>
+        /// </note> </li>
         /// <li> <p>Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with automatic Availability Zone configuration. With automatic Availbility Zone configuration, Firewall Manager chooses which Availability Zones to create the endpoints in. </p> <p> <code>"{ \"type\": \"NETWORK_FIREWALL\", \"networkFirewallStatelessRuleGroupReferences\": [ { \"resourceARN\": \"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\", \"priority\": 1 } ], \"networkFirewallStatelessDefaultActions\": [ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessFragmentDefaultActions\": [ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessCustomActions\": [ { \"actionName\": \"customActionName\", \"actionDefinition\": { \"publishMetricAction\": { \"dimensions\": [ { \"value\": \"metricdimensionvalue\" } ] } } } ], \"networkFirewallStatefulRuleGroupReferences\": [ { \"resourceARN\": \"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\" } ], \"networkFirewallOrchestrationConfig\": { \"singleFirewallEndpointPerVPC\": false, \"allowedIPV4CidrList\": [ \"10.0.0.0/28\", \"192.168.0.0/28\" ], \"routeManagementAction\": \"OFF\" }, \"networkFirewallLoggingConfiguration\": { \"logDestinationConfigs\": [ { \"logDestinationType\": \"S3\", \"logType\": \"ALERT\", \"logDestination\": { \"bucketName\": \"s3-bucket-name\" } }, { \"logDestinationType\": \"S3\", \"logType\": \"FLOW\", \"logDestination\": { \"bucketName\": \"s3-bucket-name\" } } ], \"overrideExistingConfig\": true } }"</code> </p> <p> To use the distributed deployment model, you must set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>NULL</code>. </p> </li>
         /// <li> <p>Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with automatic Availability Zone configuration, and route management. </p> <p> <code>"{ \"type\": \"NETWORK_FIREWALL\", \"networkFirewallStatelessRuleGroupReferences\": [ { \"resourceARN\": \"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\", \"priority\": 1 } ], \"networkFirewallStatelessDefaultActions\": [ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessFragmentDefaultActions\": [ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessCustomActions\": [ { \"actionName\": \"customActionName\", \"actionDefinition\": { \"publishMetricAction\": { \"dimensions\": [ { \"value\": \"metricdimensionvalue\" } ] } } } ], \"networkFirewallStatefulRuleGroupReferences\": [ { \"resourceARN\": \"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\" } ], \"networkFirewallOrchestrationConfig\": { \"singleFirewallEndpointPerVPC\": false, \"allowedIPV4CidrList\": [ \"10.0.0.0/28\", \"192.168.0.0/28\" ], \"routeManagementAction\": \"MONITOR\", \"routeManagementTargetTypes\": [ \"InternetGateway\" ] }, \"networkFirewallLoggingConfiguration\": { \"logDestinationConfigs\": [ { \"logDestinationType\": \"S3\", \"logType\": \"ALERT\", \"logDestination\": { \"bucketName\": \"s3-bucket-name\" } }, { \"logDestinationType\": \"S3\", \"logType\": \"FLOW\", \"logDestination\": { \"bucketName\": \"s3-bucket-name\" } } ], \"overrideExistingConfig\": true } }"</code> </p> </li>
         /// <li> <p>Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with custom Availability Zone configuration. With custom Availability Zone configuration, you define which specific Availability Zones to create endpoints in by configuring <code>firewallCreationConfig</code>. </p> <p> <code>"{ \"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\",\"priority\":1}], \"networkFirewallStatelessDefaultActions\":[ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessFragmentDefaultActions\":[ \"aws:forward_to_sfe\", \"fragmentcustomactionname\" ], \"networkFirewallStatelessCustomActions\":[ { \"actionName\":\"customActionName\", \"actionDefinition\":{ \"publishMetricAction\":{ \"dimensions\":[ { \"value\":\"metricdimensionvalue\" } ] } } }, { \"actionName\":\"fragmentcustomactionname\", \"actionDefinition\":{ \"publishMetricAction\":{ \"dimensions\":[ { \"value\":\"fragmentmetricdimensionvalue\" } ] } } } ], \"networkFirewallStatefulRuleGroupReferences\":[ { \"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\" } ], \"networkFirewallOrchestrationConfig\":{ \"firewallCreationConfig\":{ \"endpointLocation\":{ \"availabilityZoneConfigList\":[ { \"availabilityZoneId\":null, \"availabilityZoneName\":\"us-east-1a\", \"allowedIPV4CidrList\":[ \"10.0.0.0/28\" ] }, { ¯\"availabilityZoneId\":null, \"availabilityZoneName\":\"us-east-1b\", \"allowedIPV4CidrList\":[ \"10.0.0.0/28\" ] } ] } }, \"singleFirewallEndpointPerVPC\":false, \"allowedIPV4CidrList\":null, \"routeManagementAction\":\"OFF\", \"networkFirewallLoggingConfiguration\":{ \"logDestinationConfigs\":[ { \"logDestinationType\":\"S3\", \"logType\":\"ALERT\", \"logDestination\":{ \"bucketName\":\"s3-bucket-name\" } }, { \"logDestinationType\":\"S3\", \"logType\":\"FLOW\", \"logDestination\":{ \"bucketName\":\"s3-bucket-name\" } } ], \"overrideExistingConfig\":boolean } }"</code> </p> </li>
         /// <li> <p>Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with custom Availability Zone configuration, and route management. </p> <p> <code>"{ \"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\",\"priority\":1}], \"networkFirewallStatelessDefaultActions\":[ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessFragmentDefaultActions\":[ \"aws:forward_to_sfe\", \"fragmentcustomactionname\" ], \"networkFirewallStatelessCustomActions\":[ { \"actionName\":\"customActionName\", \"actionDefinition\":{ \"publishMetricAction\":{ \"dimensions\":[ { \"value\":\"metricdimensionvalue\" } ] } } }, { \"actionName\":\"fragmentcustomactionname\", \"actionDefinition\":{ \"publishMetricAction\":{ \"dimensions\":[ { \"value\":\"fragmentmetricdimensionvalue\" } ] } } } ], \"networkFirewallStatefulRuleGroupReferences\":[ { \"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\" } ], \"networkFirewallOrchestrationConfig\":{ \"firewallCreationConfig\":{ \"endpointLocation\":{ \"availabilityZoneConfigList\":[ { \"availabilityZoneId\":null, \"availabilityZoneName\":\"us-east-1a\", \"allowedIPV4CidrList\":[ \"10.0.0.0/28\" ] }, { ¯\"availabilityZoneId\":null, \"availabilityZoneName\":\"us-east-1b\", \"allowedIPV4CidrList\":[ \"10.0.0.0/28\" ] } ] } }, \"singleFirewallEndpointPerVPC\":false, \"allowedIPV4CidrList\":null, \"routeManagementAction\":\"MONITOR\", \"routeManagementTargetTypes\":[ \"InternetGateway\" ], \"routeManagementConfig\":{ \"allowCrossAZTrafficIfNoEndpoint\":true } }, \"networkFirewallLoggingConfiguration\":{ \"logDestinationConfigs\":[ { \"logDestinationType\":\"S3\", \"logType\":\"ALERT\", \"logDestination\":{ \"bucketName\":\"s3-bucket-name\" } }, { \"logDestinationType\":\"S3\", \"logType\":\"FLOW\", \"logDestination\":{ \"bucketName\":\"s3-bucket-name\" } } ], \"overrideExistingConfig\":boolean } }"</code> </p> </li>
+        /// <li> <p>Example: <code>PARTNER_FIREWALL</code> for Firewall Manager</p> <p> <code>"{\"type\":\"THIRD_PARTY_FIREWALL\",\"thirdPartyrFirewall\":\"PALO_ALTO_NETWORKS_CLOUD_NGFW\",\"thirdPartyFirewallConfig\":{\"thirdPartyFirewallPolicyList\":[\"global-123456789012-1\"],\"networkFirewallLoggingConfiguration\":null},\"firewallDeploymentModel\":{\"distributedFirewallDeploymentModel\":{\"distributedFirewallOrchestrationConfig\":{\"firewallCreationConfig\":{\"endpointLocation\":{\"availabilityZoneConfigList\":[{\"availabilityZoneId\":null,\"availabilityZoneName\":\"us-east-1a\",\"allowedIPV4CidrList\":[\"10.0.1.0/28\"]}]}},\"allowedIPV4CidrList\":null},\"distributedRouteManagementConfig\":null},\"centralizedFirewallDeploymentModel\":null}}""</code> </p> </li>
         /// <li> <p>Specification for <code>SHIELD_ADVANCED</code> for Amazon CloudFront distributions </p> <p> <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\": {\"automaticResponseStatus\":\"ENABLED|IGNORED|DISABLED\", \"automaticResponseAction\":\"BLOCK|COUNT\"}, \"overrideCustomerWebaclClassic\":true|false}"</code> </p> <p>For example: <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\": {\"automaticResponseStatus\":\"ENABLED\", \"automaticResponseAction\":\"COUNT\"}}"</code> </p> <p>The default value for <code>automaticResponseStatus</code> is <code>IGNORED</code>. The value for <code>automaticResponseAction</code> is only required when <code>automaticResponseStatus</code> is set to <code>ENABLED</code>. The default value for <code>overrideCustomerWebaclClassic</code> is <code>false</code>.</p> <p>For other resource types that you can protect with a Shield Advanced policy, this <code>ManagedServiceData</code> configuration is an empty string.</p> </li>
         /// <li> <p>Example: <code>WAFV2</code> </p> <p> <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code> </p> <p>In the <code>loggingConfiguration</code>, you can specify one <code>logDestinationConfigs</code>, you can optionally provide up to 20 <code>redactedFields</code>, and the <code>RedactedFieldType</code> must be one of <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p> </li>
         /// <li> <p>Example: <code>WAF Classic</code> </p> <p> <code>"{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":\"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}"</code> </p> </li>
+        /// <li> <p>Example: <code>WAFV2</code> - Firewall Manager support for WAF managed rule group versioning </p> <p> <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"versionEnabled\":true,\"version\":\"Version_2.0\",\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesCommonRuleSet\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code> </p> <p> To use a specific version of a WAF managed rule group in your Firewall Manager policy, you must set <code>versionEnabled</code> to <code>true</code>, and set <code>version</code> to the version you'd like to use. If you don't set <code>versionEnabled</code> to <code>true</code>, or if you omit <code>versionEnabled</code>, then Firewall Manager uses the default version of the WAF managed rule group. </p> </li>
         /// <li> <p>Example: <code>SECURITY_GROUPS_COMMON</code> </p> <p> <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code> </p> </li>
         /// <li> <p>Example: Shared VPCs. Apply the preceding policy to resources in shared VPCs as well as to those in VPCs that the account owns </p> <p> <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code> </p> </li>
         /// <li> <p>Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code> </p> <p> <code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code> </p> <p>The security group action for content audit can be <code>ALLOW</code> or <code>DENY</code>. For <code>ALLOW</code>, all in-scope security group rules must be within the allowed range of the policy's security group rules. For <code>DENY</code>, all in-scope security group rules must not contain a value or a range that matches a rule value or range in the policy security group.</p> </li>
@@ -985,14 +985,18 @@ pub mod security_service_policy_data {
         /// <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p> <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code> </p> <note>
         /// <p>Valid values for <code>preProcessRuleGroups</code> are between 1 and 99. Valid values for <code>postProcessRuleGroups</code> are between 9901 and 10000.</p>
         /// </note> </li>
-        /// <li> <p>Example: <code>NETWORK_FIREWALL</code> - Centralized deployment model.</p> <p> <code>"{\"type\":\"NETWORK_FIREWALL\",\"awsNetworkFirewallConfig\":{\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\",\"priority\":1}],\"networkFirewallStatelessDefaultActions\":[\"aws:forward_to_sfe\",\"customActionName\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"aws:forward_to_sfe\",\"customActionName\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"customActionName\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"metricdimensionvalue\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\"}],\"networkFirewallLoggingConfiguration\":{\"logDestinationConfigs\":[{\"logDestinationType\":\"S3\",\"logType\":\"ALERT\",\"logDestination\":{\"bucketName\":\"s3-bucket-name\"}},{\"logDestinationType\":\"S3\",\"logType\":\"FLOW\",\"logDestination\":{\"bucketName\":\"s3-bucket-name\"}}],\"overrideExistingConfig\":true}},\"firewallDeploymentModel\":{\"centralizedFirewallDeploymentModel\":{\"centralizedFirewallOrchestrationConfig\":{\"inspectionVpcIds\":[{\"resourceId\":\"vpc-1234\",\"accountId\":\"123456789011\"}],\"firewallCreationConfig\":{\"endpointLocation\":{\"availabilityZoneConfigList\":[{\"availabilityZoneId\":null,\"availabilityZoneName\":\"us-east-1a\",\"allowedIPV4CidrList\":[\"10.0.0.0/28\"]}]}},\"allowedIPV4CidrList\":[]}}}}"</code> </p> <p> To use the centralized deployment model, you must set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>CENTRALIZED</code>. </p> </li>
+        /// <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p> <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code> </p> <note>
+        /// <p>Valid values for <code>preProcessRuleGroups</code> are between 1 and 99. Valid values for <code>postProcessRuleGroups</code> are between 9901 and 10000.</p>
+        /// </note> </li>
         /// <li> <p>Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with automatic Availability Zone configuration. With automatic Availbility Zone configuration, Firewall Manager chooses which Availability Zones to create the endpoints in. </p> <p> <code>"{ \"type\": \"NETWORK_FIREWALL\", \"networkFirewallStatelessRuleGroupReferences\": [ { \"resourceARN\": \"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\", \"priority\": 1 } ], \"networkFirewallStatelessDefaultActions\": [ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessFragmentDefaultActions\": [ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessCustomActions\": [ { \"actionName\": \"customActionName\", \"actionDefinition\": { \"publishMetricAction\": { \"dimensions\": [ { \"value\": \"metricdimensionvalue\" } ] } } } ], \"networkFirewallStatefulRuleGroupReferences\": [ { \"resourceARN\": \"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\" } ], \"networkFirewallOrchestrationConfig\": { \"singleFirewallEndpointPerVPC\": false, \"allowedIPV4CidrList\": [ \"10.0.0.0/28\", \"192.168.0.0/28\" ], \"routeManagementAction\": \"OFF\" }, \"networkFirewallLoggingConfiguration\": { \"logDestinationConfigs\": [ { \"logDestinationType\": \"S3\", \"logType\": \"ALERT\", \"logDestination\": { \"bucketName\": \"s3-bucket-name\" } }, { \"logDestinationType\": \"S3\", \"logType\": \"FLOW\", \"logDestination\": { \"bucketName\": \"s3-bucket-name\" } } ], \"overrideExistingConfig\": true } }"</code> </p> <p> To use the distributed deployment model, you must set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>NULL</code>. </p> </li>
         /// <li> <p>Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with automatic Availability Zone configuration, and route management. </p> <p> <code>"{ \"type\": \"NETWORK_FIREWALL\", \"networkFirewallStatelessRuleGroupReferences\": [ { \"resourceARN\": \"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\", \"priority\": 1 } ], \"networkFirewallStatelessDefaultActions\": [ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessFragmentDefaultActions\": [ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessCustomActions\": [ { \"actionName\": \"customActionName\", \"actionDefinition\": { \"publishMetricAction\": { \"dimensions\": [ { \"value\": \"metricdimensionvalue\" } ] } } } ], \"networkFirewallStatefulRuleGroupReferences\": [ { \"resourceARN\": \"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\" } ], \"networkFirewallOrchestrationConfig\": { \"singleFirewallEndpointPerVPC\": false, \"allowedIPV4CidrList\": [ \"10.0.0.0/28\", \"192.168.0.0/28\" ], \"routeManagementAction\": \"MONITOR\", \"routeManagementTargetTypes\": [ \"InternetGateway\" ] }, \"networkFirewallLoggingConfiguration\": { \"logDestinationConfigs\": [ { \"logDestinationType\": \"S3\", \"logType\": \"ALERT\", \"logDestination\": { \"bucketName\": \"s3-bucket-name\" } }, { \"logDestinationType\": \"S3\", \"logType\": \"FLOW\", \"logDestination\": { \"bucketName\": \"s3-bucket-name\" } } ], \"overrideExistingConfig\": true } }"</code> </p> </li>
         /// <li> <p>Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with custom Availability Zone configuration. With custom Availability Zone configuration, you define which specific Availability Zones to create endpoints in by configuring <code>firewallCreationConfig</code>. </p> <p> <code>"{ \"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\",\"priority\":1}], \"networkFirewallStatelessDefaultActions\":[ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessFragmentDefaultActions\":[ \"aws:forward_to_sfe\", \"fragmentcustomactionname\" ], \"networkFirewallStatelessCustomActions\":[ { \"actionName\":\"customActionName\", \"actionDefinition\":{ \"publishMetricAction\":{ \"dimensions\":[ { \"value\":\"metricdimensionvalue\" } ] } } }, { \"actionName\":\"fragmentcustomactionname\", \"actionDefinition\":{ \"publishMetricAction\":{ \"dimensions\":[ { \"value\":\"fragmentmetricdimensionvalue\" } ] } } } ], \"networkFirewallStatefulRuleGroupReferences\":[ { \"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\" } ], \"networkFirewallOrchestrationConfig\":{ \"firewallCreationConfig\":{ \"endpointLocation\":{ \"availabilityZoneConfigList\":[ { \"availabilityZoneId\":null, \"availabilityZoneName\":\"us-east-1a\", \"allowedIPV4CidrList\":[ \"10.0.0.0/28\" ] }, { ¯\"availabilityZoneId\":null, \"availabilityZoneName\":\"us-east-1b\", \"allowedIPV4CidrList\":[ \"10.0.0.0/28\" ] } ] } }, \"singleFirewallEndpointPerVPC\":false, \"allowedIPV4CidrList\":null, \"routeManagementAction\":\"OFF\", \"networkFirewallLoggingConfiguration\":{ \"logDestinationConfigs\":[ { \"logDestinationType\":\"S3\", \"logType\":\"ALERT\", \"logDestination\":{ \"bucketName\":\"s3-bucket-name\" } }, { \"logDestinationType\":\"S3\", \"logType\":\"FLOW\", \"logDestination\":{ \"bucketName\":\"s3-bucket-name\" } } ], \"overrideExistingConfig\":boolean } }"</code> </p> </li>
         /// <li> <p>Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with custom Availability Zone configuration, and route management. </p> <p> <code>"{ \"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\",\"priority\":1}], \"networkFirewallStatelessDefaultActions\":[ \"aws:forward_to_sfe\", \"customActionName\" ], \"networkFirewallStatelessFragmentDefaultActions\":[ \"aws:forward_to_sfe\", \"fragmentcustomactionname\" ], \"networkFirewallStatelessCustomActions\":[ { \"actionName\":\"customActionName\", \"actionDefinition\":{ \"publishMetricAction\":{ \"dimensions\":[ { \"value\":\"metricdimensionvalue\" } ] } } }, { \"actionName\":\"fragmentcustomactionname\", \"actionDefinition\":{ \"publishMetricAction\":{ \"dimensions\":[ { \"value\":\"fragmentmetricdimensionvalue\" } ] } } } ], \"networkFirewallStatefulRuleGroupReferences\":[ { \"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\" } ], \"networkFirewallOrchestrationConfig\":{ \"firewallCreationConfig\":{ \"endpointLocation\":{ \"availabilityZoneConfigList\":[ { \"availabilityZoneId\":null, \"availabilityZoneName\":\"us-east-1a\", \"allowedIPV4CidrList\":[ \"10.0.0.0/28\" ] }, { ¯\"availabilityZoneId\":null, \"availabilityZoneName\":\"us-east-1b\", \"allowedIPV4CidrList\":[ \"10.0.0.0/28\" ] } ] } }, \"singleFirewallEndpointPerVPC\":false, \"allowedIPV4CidrList\":null, \"routeManagementAction\":\"MONITOR\", \"routeManagementTargetTypes\":[ \"InternetGateway\" ], \"routeManagementConfig\":{ \"allowCrossAZTrafficIfNoEndpoint\":true } }, \"networkFirewallLoggingConfiguration\":{ \"logDestinationConfigs\":[ { \"logDestinationType\":\"S3\", \"logType\":\"ALERT\", \"logDestination\":{ \"bucketName\":\"s3-bucket-name\" } }, { \"logDestinationType\":\"S3\", \"logType\":\"FLOW\", \"logDestination\":{ \"bucketName\":\"s3-bucket-name\" } } ], \"overrideExistingConfig\":boolean } }"</code> </p> </li>
+        /// <li> <p>Example: <code>PARTNER_FIREWALL</code> for Firewall Manager</p> <p> <code>"{\"type\":\"THIRD_PARTY_FIREWALL\",\"thirdPartyrFirewall\":\"PALO_ALTO_NETWORKS_CLOUD_NGFW\",\"thirdPartyFirewallConfig\":{\"thirdPartyFirewallPolicyList\":[\"global-123456789012-1\"],\"networkFirewallLoggingConfiguration\":null},\"firewallDeploymentModel\":{\"distributedFirewallDeploymentModel\":{\"distributedFirewallOrchestrationConfig\":{\"firewallCreationConfig\":{\"endpointLocation\":{\"availabilityZoneConfigList\":[{\"availabilityZoneId\":null,\"availabilityZoneName\":\"us-east-1a\",\"allowedIPV4CidrList\":[\"10.0.1.0/28\"]}]}},\"allowedIPV4CidrList\":null},\"distributedRouteManagementConfig\":null},\"centralizedFirewallDeploymentModel\":null}}""</code> </p> </li>
         /// <li> <p>Specification for <code>SHIELD_ADVANCED</code> for Amazon CloudFront distributions </p> <p> <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\": {\"automaticResponseStatus\":\"ENABLED|IGNORED|DISABLED\", \"automaticResponseAction\":\"BLOCK|COUNT\"}, \"overrideCustomerWebaclClassic\":true|false}"</code> </p> <p>For example: <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\": {\"automaticResponseStatus\":\"ENABLED\", \"automaticResponseAction\":\"COUNT\"}}"</code> </p> <p>The default value for <code>automaticResponseStatus</code> is <code>IGNORED</code>. The value for <code>automaticResponseAction</code> is only required when <code>automaticResponseStatus</code> is set to <code>ENABLED</code>. The default value for <code>overrideCustomerWebaclClassic</code> is <code>false</code>.</p> <p>For other resource types that you can protect with a Shield Advanced policy, this <code>ManagedServiceData</code> configuration is an empty string.</p> </li>
         /// <li> <p>Example: <code>WAFV2</code> </p> <p> <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code> </p> <p>In the <code>loggingConfiguration</code>, you can specify one <code>logDestinationConfigs</code>, you can optionally provide up to 20 <code>redactedFields</code>, and the <code>RedactedFieldType</code> must be one of <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p> </li>
         /// <li> <p>Example: <code>WAF Classic</code> </p> <p> <code>"{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":\"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}"</code> </p> </li>
+        /// <li> <p>Example: <code>WAFV2</code> - Firewall Manager support for WAF managed rule group versioning </p> <p> <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"versionEnabled\":true,\"version\":\"Version_2.0\",\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesCommonRuleSet\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code> </p> <p> To use a specific version of a WAF managed rule group in your Firewall Manager policy, you must set <code>versionEnabled</code> to <code>true</code>, and set <code>version</code> to the version you'd like to use. If you don't set <code>versionEnabled</code> to <code>true</code>, or if you omit <code>versionEnabled</code>, then Firewall Manager uses the default version of the WAF managed rule group. </p> </li>
         /// <li> <p>Example: <code>SECURITY_GROUPS_COMMON</code> </p> <p> <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code> </p> </li>
         /// <li> <p>Example: Shared VPCs. Apply the preceding policy to resources in shared VPCs as well as to those in VPCs that the account owns </p> <p> <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code> </p> </li>
         /// <li> <p>Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code> </p> <p> <code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code> </p> <p>The security group action for content audit can be <code>ALLOW</code> or <code>DENY</code>. For <code>ALLOW</code>, all in-scope security group rules must be within the allowed range of the policy's security group rules. For <code>DENY</code>, all in-scope security group rules must not contain a value or a range that matches a rule value or range in the policy security group.</p> </li>
@@ -1041,6 +1045,8 @@ impl SecurityServicePolicyData {
 pub struct PolicyOption {
     /// <p>Defines the deployment model to use for the firewall policy.</p>
     pub network_firewall_policy: std::option::Option<crate::model::NetworkFirewallPolicy>,
+    /// <p>Defines the policy options for a third-party firewall policy.</p>
+    pub third_party_firewall_policy: std::option::Option<crate::model::ThirdPartyFirewallPolicy>,
 }
 impl PolicyOption {
     /// <p>Defines the deployment model to use for the firewall policy.</p>
@@ -1049,11 +1055,21 @@ impl PolicyOption {
     ) -> std::option::Option<&crate::model::NetworkFirewallPolicy> {
         self.network_firewall_policy.as_ref()
     }
+    /// <p>Defines the policy options for a third-party firewall policy.</p>
+    pub fn third_party_firewall_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::ThirdPartyFirewallPolicy> {
+        self.third_party_firewall_policy.as_ref()
+    }
 }
 impl std::fmt::Debug for PolicyOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PolicyOption");
         formatter.field("network_firewall_policy", &self.network_firewall_policy);
+        formatter.field(
+            "third_party_firewall_policy",
+            &self.third_party_firewall_policy,
+        );
         formatter.finish()
     }
 }
@@ -1065,6 +1081,8 @@ pub mod policy_option {
     pub struct Builder {
         pub(crate) network_firewall_policy:
             std::option::Option<crate::model::NetworkFirewallPolicy>,
+        pub(crate) third_party_firewall_policy:
+            std::option::Option<crate::model::ThirdPartyFirewallPolicy>,
     }
     impl Builder {
         /// <p>Defines the deployment model to use for the firewall policy.</p>
@@ -1083,10 +1101,27 @@ pub mod policy_option {
             self.network_firewall_policy = input;
             self
         }
+        /// <p>Defines the policy options for a third-party firewall policy.</p>
+        pub fn third_party_firewall_policy(
+            mut self,
+            input: crate::model::ThirdPartyFirewallPolicy,
+        ) -> Self {
+            self.third_party_firewall_policy = Some(input);
+            self
+        }
+        /// <p>Defines the policy options for a third-party firewall policy.</p>
+        pub fn set_third_party_firewall_policy(
+            mut self,
+            input: std::option::Option<crate::model::ThirdPartyFirewallPolicy>,
+        ) -> Self {
+            self.third_party_firewall_policy = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PolicyOption`](crate::model::PolicyOption)
         pub fn build(self) -> crate::model::PolicyOption {
             crate::model::PolicyOption {
                 network_firewall_policy: self.network_firewall_policy,
+                third_party_firewall_policy: self.third_party_firewall_policy,
             }
         }
     }
@@ -1095,6 +1130,124 @@ impl PolicyOption {
     /// Creates a new builder-style object to manufacture [`PolicyOption`](crate::model::PolicyOption)
     pub fn builder() -> crate::model::policy_option::Builder {
         crate::model::policy_option::Builder::default()
+    }
+}
+
+/// <p>Configures the policy for the third-party firewall.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ThirdPartyFirewallPolicy {
+    /// <p>Defines the deployment model to use for the third-party firewall.</p>
+    pub firewall_deployment_model: std::option::Option<crate::model::FirewallDeploymentModel>,
+}
+impl ThirdPartyFirewallPolicy {
+    /// <p>Defines the deployment model to use for the third-party firewall.</p>
+    pub fn firewall_deployment_model(
+        &self,
+    ) -> std::option::Option<&crate::model::FirewallDeploymentModel> {
+        self.firewall_deployment_model.as_ref()
+    }
+}
+impl std::fmt::Debug for ThirdPartyFirewallPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ThirdPartyFirewallPolicy");
+        formatter.field("firewall_deployment_model", &self.firewall_deployment_model);
+        formatter.finish()
+    }
+}
+/// See [`ThirdPartyFirewallPolicy`](crate::model::ThirdPartyFirewallPolicy)
+pub mod third_party_firewall_policy {
+    /// A builder for [`ThirdPartyFirewallPolicy`](crate::model::ThirdPartyFirewallPolicy)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) firewall_deployment_model:
+            std::option::Option<crate::model::FirewallDeploymentModel>,
+    }
+    impl Builder {
+        /// <p>Defines the deployment model to use for the third-party firewall.</p>
+        pub fn firewall_deployment_model(
+            mut self,
+            input: crate::model::FirewallDeploymentModel,
+        ) -> Self {
+            self.firewall_deployment_model = Some(input);
+            self
+        }
+        /// <p>Defines the deployment model to use for the third-party firewall.</p>
+        pub fn set_firewall_deployment_model(
+            mut self,
+            input: std::option::Option<crate::model::FirewallDeploymentModel>,
+        ) -> Self {
+            self.firewall_deployment_model = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ThirdPartyFirewallPolicy`](crate::model::ThirdPartyFirewallPolicy)
+        pub fn build(self) -> crate::model::ThirdPartyFirewallPolicy {
+            crate::model::ThirdPartyFirewallPolicy {
+                firewall_deployment_model: self.firewall_deployment_model,
+            }
+        }
+    }
+}
+impl ThirdPartyFirewallPolicy {
+    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallPolicy`](crate::model::ThirdPartyFirewallPolicy)
+    pub fn builder() -> crate::model::third_party_firewall_policy::Builder {
+        crate::model::third_party_firewall_policy::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FirewallDeploymentModel {
+    #[allow(missing_docs)] // documentation missing in model
+    Centralized,
+    #[allow(missing_docs)] // documentation missing in model
+    Distributed,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FirewallDeploymentModel {
+    fn from(s: &str) -> Self {
+        match s {
+            "CENTRALIZED" => FirewallDeploymentModel::Centralized,
+            "DISTRIBUTED" => FirewallDeploymentModel::Distributed,
+            other => FirewallDeploymentModel::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FirewallDeploymentModel {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FirewallDeploymentModel::from(s))
+    }
+}
+impl FirewallDeploymentModel {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FirewallDeploymentModel::Centralized => "CENTRALIZED",
+            FirewallDeploymentModel::Distributed => "DISTRIBUTED",
+            FirewallDeploymentModel::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CENTRALIZED", "DISTRIBUTED"]
+    }
+}
+impl AsRef<str> for FirewallDeploymentModel {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1172,57 +1325,6 @@ impl NetworkFirewallPolicy {
     std::fmt::Debug,
     std::hash::Hash,
 )]
-pub enum FirewallDeploymentModel {
-    #[allow(missing_docs)] // documentation missing in model
-    Centralized,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for FirewallDeploymentModel {
-    fn from(s: &str) -> Self {
-        match s {
-            "CENTRALIZED" => FirewallDeploymentModel::Centralized,
-            other => FirewallDeploymentModel::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for FirewallDeploymentModel {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FirewallDeploymentModel::from(s))
-    }
-}
-impl FirewallDeploymentModel {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FirewallDeploymentModel::Centralized => "CENTRALIZED",
-            FirewallDeploymentModel::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["CENTRALIZED"]
-    }
-}
-impl AsRef<str> for FirewallDeploymentModel {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
 pub enum SecurityServiceType {
     #[allow(missing_docs)] // documentation missing in model
     DnsFirewall,
@@ -1236,6 +1338,8 @@ pub enum SecurityServiceType {
     SecurityGroupsUsageAudit,
     #[allow(missing_docs)] // documentation missing in model
     ShieldAdvanced,
+    #[allow(missing_docs)] // documentation missing in model
+    ThirdPartyFirewall,
     #[allow(missing_docs)] // documentation missing in model
     Waf,
     #[allow(missing_docs)] // documentation missing in model
@@ -1252,6 +1356,7 @@ impl std::convert::From<&str> for SecurityServiceType {
             "SECURITY_GROUPS_CONTENT_AUDIT" => SecurityServiceType::SecurityGroupsContentAudit,
             "SECURITY_GROUPS_USAGE_AUDIT" => SecurityServiceType::SecurityGroupsUsageAudit,
             "SHIELD_ADVANCED" => SecurityServiceType::ShieldAdvanced,
+            "THIRD_PARTY_FIREWALL" => SecurityServiceType::ThirdPartyFirewall,
             "WAF" => SecurityServiceType::Waf,
             "WAFV2" => SecurityServiceType::Wafv2,
             other => SecurityServiceType::Unknown(other.to_owned()),
@@ -1275,6 +1380,7 @@ impl SecurityServiceType {
             SecurityServiceType::SecurityGroupsContentAudit => "SECURITY_GROUPS_CONTENT_AUDIT",
             SecurityServiceType::SecurityGroupsUsageAudit => "SECURITY_GROUPS_USAGE_AUDIT",
             SecurityServiceType::ShieldAdvanced => "SHIELD_ADVANCED",
+            SecurityServiceType::ThirdPartyFirewall => "THIRD_PARTY_FIREWALL",
             SecurityServiceType::Waf => "WAF",
             SecurityServiceType::Wafv2 => "WAFV2",
             SecurityServiceType::Unknown(s) => s.as_ref(),
@@ -1289,6 +1395,7 @@ impl SecurityServiceType {
             "SECURITY_GROUPS_CONTENT_AUDIT",
             "SECURITY_GROUPS_USAGE_AUDIT",
             "SHIELD_ADVANCED",
+            "THIRD_PARTY_FIREWALL",
             "WAF",
             "WAFV2",
         ]
@@ -1598,6 +1705,136 @@ impl App {
     /// Creates a new builder-style object to manufacture [`App`](crate::model::App)
     pub fn builder() -> crate::model::app::Builder {
         crate::model::app::Builder::default()
+    }
+}
+
+/// <p>Configures the firewall policy deployment model for a third-party firewall. The deployment model can either be distributed or centralized.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ThirdPartyFirewallFirewallPolicy {
+    /// <p>The ID of the specified firewall policy.</p>
+    pub firewall_policy_id: std::option::Option<std::string::String>,
+    /// <p>The name of the specified firewall policy.</p>
+    pub firewall_policy_name: std::option::Option<std::string::String>,
+}
+impl ThirdPartyFirewallFirewallPolicy {
+    /// <p>The ID of the specified firewall policy.</p>
+    pub fn firewall_policy_id(&self) -> std::option::Option<&str> {
+        self.firewall_policy_id.as_deref()
+    }
+    /// <p>The name of the specified firewall policy.</p>
+    pub fn firewall_policy_name(&self) -> std::option::Option<&str> {
+        self.firewall_policy_name.as_deref()
+    }
+}
+impl std::fmt::Debug for ThirdPartyFirewallFirewallPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ThirdPartyFirewallFirewallPolicy");
+        formatter.field("firewall_policy_id", &self.firewall_policy_id);
+        formatter.field("firewall_policy_name", &self.firewall_policy_name);
+        formatter.finish()
+    }
+}
+/// See [`ThirdPartyFirewallFirewallPolicy`](crate::model::ThirdPartyFirewallFirewallPolicy)
+pub mod third_party_firewall_firewall_policy {
+    /// A builder for [`ThirdPartyFirewallFirewallPolicy`](crate::model::ThirdPartyFirewallFirewallPolicy)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) firewall_policy_id: std::option::Option<std::string::String>,
+        pub(crate) firewall_policy_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the specified firewall policy.</p>
+        pub fn firewall_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.firewall_policy_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the specified firewall policy.</p>
+        pub fn set_firewall_policy_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_policy_id = input;
+            self
+        }
+        /// <p>The name of the specified firewall policy.</p>
+        pub fn firewall_policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.firewall_policy_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the specified firewall policy.</p>
+        pub fn set_firewall_policy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_policy_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ThirdPartyFirewallFirewallPolicy`](crate::model::ThirdPartyFirewallFirewallPolicy)
+        pub fn build(self) -> crate::model::ThirdPartyFirewallFirewallPolicy {
+            crate::model::ThirdPartyFirewallFirewallPolicy {
+                firewall_policy_id: self.firewall_policy_id,
+                firewall_policy_name: self.firewall_policy_name,
+            }
+        }
+    }
+}
+impl ThirdPartyFirewallFirewallPolicy {
+    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallFirewallPolicy`](crate::model::ThirdPartyFirewallFirewallPolicy)
+    pub fn builder() -> crate::model::third_party_firewall_firewall_policy::Builder {
+        crate::model::third_party_firewall_firewall_policy::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ThirdPartyFirewall {
+    #[allow(missing_docs)] // documentation missing in model
+    PaloAltoNetworksCloudNgfw,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ThirdPartyFirewall {
+    fn from(s: &str) -> Self {
+        match s {
+            "PALO_ALTO_NETWORKS_CLOUD_NGFW" => ThirdPartyFirewall::PaloAltoNetworksCloudNgfw,
+            other => ThirdPartyFirewall::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ThirdPartyFirewall {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ThirdPartyFirewall::from(s))
+    }
+}
+impl ThirdPartyFirewall {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ThirdPartyFirewall::PaloAltoNetworksCloudNgfw => "PALO_ALTO_NETWORKS_CLOUD_NGFW",
+            ThirdPartyFirewall::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["PALO_ALTO_NETWORKS_CLOUD_NGFW"]
+    }
+}
+impl AsRef<str> for ThirdPartyFirewall {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2471,7 +2708,6 @@ pub struct ViolationDetail {
     /// <p>List of violations for the requested resource.</p>
     pub resource_violations: std::option::Option<std::vec::Vec<crate::model::ResourceViolation>>,
     /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
-    /// <p> This option isn't available for the centralized deployment model when creating policies to configure Network Firewall. </p>
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Brief description for the requested resource.</p>
     pub resource_description: std::option::Option<std::string::String>,
@@ -2498,7 +2734,6 @@ impl ViolationDetail {
         self.resource_violations.as_deref()
     }
     /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
-    /// <p> This option isn't available for the centralized deployment model when creating policies to configure Network Firewall. </p>
     pub fn resource_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.resource_tags.as_deref()
     }
@@ -2606,7 +2841,6 @@ pub mod violation_detail {
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
         /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
-        /// <p> This option isn't available for the centralized deployment model when creating policies to configure Network Firewall. </p>
         pub fn resource_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
             v.push(input);
@@ -2614,7 +2848,6 @@ pub mod violation_detail {
             self
         }
         /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
-        /// <p> This option isn't available for the centralized deployment model when creating policies to configure Network Firewall. </p>
         pub fn set_resource_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2715,6 +2948,18 @@ pub struct ResourceViolation {
     /// <p>Contains details about the route endpoint that violates the policy scope.</p>
     pub route_has_out_of_scope_endpoint_violation:
         std::option::Option<crate::model::RouteHasOutOfScopeEndpointViolation>,
+    /// <p>The violation details for a third-party firewall that's been deleted.</p>
+    pub third_party_firewall_missing_firewall_violation:
+        std::option::Option<crate::model::ThirdPartyFirewallMissingFirewallViolation>,
+    /// <p>The violation details for a third-party firewall's subnet that's been deleted.</p>
+    pub third_party_firewall_missing_subnet_violation:
+        std::option::Option<crate::model::ThirdPartyFirewallMissingSubnetViolation>,
+    /// <p>The violation details for a third-party firewall that has the Firewall Manager managed route table that was associated with the third-party firewall has been deleted.</p>
+    pub third_party_firewall_missing_expected_route_table_violation:
+        std::option::Option<crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation>,
+    /// <p>The violation details for a third-party firewall's VPC endpoint subnet that was deleted.</p>
+    pub firewall_subnet_missing_vpc_endpoint_violation:
+        std::option::Option<crate::model::FirewallSubnetMissingVpcEndpointViolation>,
 }
 impl ResourceViolation {
     /// <p>Violation detail for security groups.</p>
@@ -2838,6 +3083,33 @@ impl ResourceViolation {
     ) -> std::option::Option<&crate::model::RouteHasOutOfScopeEndpointViolation> {
         self.route_has_out_of_scope_endpoint_violation.as_ref()
     }
+    /// <p>The violation details for a third-party firewall that's been deleted.</p>
+    pub fn third_party_firewall_missing_firewall_violation(
+        &self,
+    ) -> std::option::Option<&crate::model::ThirdPartyFirewallMissingFirewallViolation> {
+        self.third_party_firewall_missing_firewall_violation
+            .as_ref()
+    }
+    /// <p>The violation details for a third-party firewall's subnet that's been deleted.</p>
+    pub fn third_party_firewall_missing_subnet_violation(
+        &self,
+    ) -> std::option::Option<&crate::model::ThirdPartyFirewallMissingSubnetViolation> {
+        self.third_party_firewall_missing_subnet_violation.as_ref()
+    }
+    /// <p>The violation details for a third-party firewall that has the Firewall Manager managed route table that was associated with the third-party firewall has been deleted.</p>
+    pub fn third_party_firewall_missing_expected_route_table_violation(
+        &self,
+    ) -> std::option::Option<&crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation>
+    {
+        self.third_party_firewall_missing_expected_route_table_violation
+            .as_ref()
+    }
+    /// <p>The violation details for a third-party firewall's VPC endpoint subnet that was deleted.</p>
+    pub fn firewall_subnet_missing_vpc_endpoint_violation(
+        &self,
+    ) -> std::option::Option<&crate::model::FirewallSubnetMissingVpcEndpointViolation> {
+        self.firewall_subnet_missing_vpc_endpoint_violation.as_ref()
+    }
 }
 impl std::fmt::Debug for ResourceViolation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2918,6 +3190,22 @@ impl std::fmt::Debug for ResourceViolation {
             "route_has_out_of_scope_endpoint_violation",
             &self.route_has_out_of_scope_endpoint_violation,
         );
+        formatter.field(
+            "third_party_firewall_missing_firewall_violation",
+            &self.third_party_firewall_missing_firewall_violation,
+        );
+        formatter.field(
+            "third_party_firewall_missing_subnet_violation",
+            &self.third_party_firewall_missing_subnet_violation,
+        );
+        formatter.field(
+            "third_party_firewall_missing_expected_route_table_violation",
+            &self.third_party_firewall_missing_expected_route_table_violation,
+        );
+        formatter.field(
+            "firewall_subnet_missing_vpc_endpoint_violation",
+            &self.firewall_subnet_missing_vpc_endpoint_violation,
+        );
         formatter.finish()
     }
 }
@@ -2965,6 +3253,14 @@ pub mod resource_violation {
             std::option::Option<crate::model::FirewallSubnetIsOutOfScopeViolation>,
         pub(crate) route_has_out_of_scope_endpoint_violation:
             std::option::Option<crate::model::RouteHasOutOfScopeEndpointViolation>,
+        pub(crate) third_party_firewall_missing_firewall_violation:
+            std::option::Option<crate::model::ThirdPartyFirewallMissingFirewallViolation>,
+        pub(crate) third_party_firewall_missing_subnet_violation:
+            std::option::Option<crate::model::ThirdPartyFirewallMissingSubnetViolation>,
+        pub(crate) third_party_firewall_missing_expected_route_table_violation:
+            std::option::Option<crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation>,
+        pub(crate) firewall_subnet_missing_vpc_endpoint_violation:
+            std::option::Option<crate::model::FirewallSubnetMissingVpcEndpointViolation>,
     }
     impl Builder {
         /// <p>Violation detail for security groups.</p>
@@ -3281,6 +3577,72 @@ pub mod resource_violation {
             self.route_has_out_of_scope_endpoint_violation = input;
             self
         }
+        /// <p>The violation details for a third-party firewall that's been deleted.</p>
+        pub fn third_party_firewall_missing_firewall_violation(
+            mut self,
+            input: crate::model::ThirdPartyFirewallMissingFirewallViolation,
+        ) -> Self {
+            self.third_party_firewall_missing_firewall_violation = Some(input);
+            self
+        }
+        /// <p>The violation details for a third-party firewall that's been deleted.</p>
+        pub fn set_third_party_firewall_missing_firewall_violation(
+            mut self,
+            input: std::option::Option<crate::model::ThirdPartyFirewallMissingFirewallViolation>,
+        ) -> Self {
+            self.third_party_firewall_missing_firewall_violation = input;
+            self
+        }
+        /// <p>The violation details for a third-party firewall's subnet that's been deleted.</p>
+        pub fn third_party_firewall_missing_subnet_violation(
+            mut self,
+            input: crate::model::ThirdPartyFirewallMissingSubnetViolation,
+        ) -> Self {
+            self.third_party_firewall_missing_subnet_violation = Some(input);
+            self
+        }
+        /// <p>The violation details for a third-party firewall's subnet that's been deleted.</p>
+        pub fn set_third_party_firewall_missing_subnet_violation(
+            mut self,
+            input: std::option::Option<crate::model::ThirdPartyFirewallMissingSubnetViolation>,
+        ) -> Self {
+            self.third_party_firewall_missing_subnet_violation = input;
+            self
+        }
+        /// <p>The violation details for a third-party firewall that has the Firewall Manager managed route table that was associated with the third-party firewall has been deleted.</p>
+        pub fn third_party_firewall_missing_expected_route_table_violation(
+            mut self,
+            input: crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation,
+        ) -> Self {
+            self.third_party_firewall_missing_expected_route_table_violation = Some(input);
+            self
+        }
+        /// <p>The violation details for a third-party firewall that has the Firewall Manager managed route table that was associated with the third-party firewall has been deleted.</p>
+        pub fn set_third_party_firewall_missing_expected_route_table_violation(
+            mut self,
+            input: std::option::Option<
+                crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation,
+            >,
+        ) -> Self {
+            self.third_party_firewall_missing_expected_route_table_violation = input;
+            self
+        }
+        /// <p>The violation details for a third-party firewall's VPC endpoint subnet that was deleted.</p>
+        pub fn firewall_subnet_missing_vpc_endpoint_violation(
+            mut self,
+            input: crate::model::FirewallSubnetMissingVpcEndpointViolation,
+        ) -> Self {
+            self.firewall_subnet_missing_vpc_endpoint_violation = Some(input);
+            self
+        }
+        /// <p>The violation details for a third-party firewall's VPC endpoint subnet that was deleted.</p>
+        pub fn set_firewall_subnet_missing_vpc_endpoint_violation(
+            mut self,
+            input: std::option::Option<crate::model::FirewallSubnetMissingVpcEndpointViolation>,
+        ) -> Self {
+            self.firewall_subnet_missing_vpc_endpoint_violation = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResourceViolation`](crate::model::ResourceViolation)
         pub fn build(self) -> crate::model::ResourceViolation {
             crate::model::ResourceViolation {
@@ -3317,6 +3679,14 @@ pub mod resource_violation {
                     .firewall_subnet_is_out_of_scope_violation,
                 route_has_out_of_scope_endpoint_violation: self
                     .route_has_out_of_scope_endpoint_violation,
+                third_party_firewall_missing_firewall_violation: self
+                    .third_party_firewall_missing_firewall_violation,
+                third_party_firewall_missing_subnet_violation: self
+                    .third_party_firewall_missing_subnet_violation,
+                third_party_firewall_missing_expected_route_table_violation: self
+                    .third_party_firewall_missing_expected_route_table_violation,
+                firewall_subnet_missing_vpc_endpoint_violation: self
+                    .firewall_subnet_missing_vpc_endpoint_violation,
             }
         }
     }
@@ -3325,6 +3695,516 @@ impl ResourceViolation {
     /// Creates a new builder-style object to manufacture [`ResourceViolation`](crate::model::ResourceViolation)
     pub fn builder() -> crate::model::resource_violation::Builder {
         crate::model::resource_violation::Builder::default()
+    }
+}
+
+/// <p>The violation details for a firewall subnet's VPC endpoint that's deleted or missing.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FirewallSubnetMissingVpcEndpointViolation {
+    /// <p>The ID of the firewall that this VPC endpoint is associated with.</p>
+    pub firewall_subnet_id: std::option::Option<std::string::String>,
+    /// <p>The resource ID of the VPC associated with the deleted VPC subnet.</p>
+    pub vpc_id: std::option::Option<std::string::String>,
+    /// <p>The name of the Availability Zone of the deleted VPC subnet.</p>
+    pub subnet_availability_zone: std::option::Option<std::string::String>,
+    /// <p>The ID of the Availability Zone of the deleted VPC subnet.</p>
+    pub subnet_availability_zone_id: std::option::Option<std::string::String>,
+}
+impl FirewallSubnetMissingVpcEndpointViolation {
+    /// <p>The ID of the firewall that this VPC endpoint is associated with.</p>
+    pub fn firewall_subnet_id(&self) -> std::option::Option<&str> {
+        self.firewall_subnet_id.as_deref()
+    }
+    /// <p>The resource ID of the VPC associated with the deleted VPC subnet.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The name of the Availability Zone of the deleted VPC subnet.</p>
+    pub fn subnet_availability_zone(&self) -> std::option::Option<&str> {
+        self.subnet_availability_zone.as_deref()
+    }
+    /// <p>The ID of the Availability Zone of the deleted VPC subnet.</p>
+    pub fn subnet_availability_zone_id(&self) -> std::option::Option<&str> {
+        self.subnet_availability_zone_id.as_deref()
+    }
+}
+impl std::fmt::Debug for FirewallSubnetMissingVpcEndpointViolation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FirewallSubnetMissingVpcEndpointViolation");
+        formatter.field("firewall_subnet_id", &self.firewall_subnet_id);
+        formatter.field("vpc_id", &self.vpc_id);
+        formatter.field("subnet_availability_zone", &self.subnet_availability_zone);
+        formatter.field(
+            "subnet_availability_zone_id",
+            &self.subnet_availability_zone_id,
+        );
+        formatter.finish()
+    }
+}
+/// See [`FirewallSubnetMissingVpcEndpointViolation`](crate::model::FirewallSubnetMissingVpcEndpointViolation)
+pub mod firewall_subnet_missing_vpc_endpoint_violation {
+    /// A builder for [`FirewallSubnetMissingVpcEndpointViolation`](crate::model::FirewallSubnetMissingVpcEndpointViolation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) firewall_subnet_id: std::option::Option<std::string::String>,
+        pub(crate) vpc_id: std::option::Option<std::string::String>,
+        pub(crate) subnet_availability_zone: std::option::Option<std::string::String>,
+        pub(crate) subnet_availability_zone_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the firewall that this VPC endpoint is associated with.</p>
+        pub fn firewall_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.firewall_subnet_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the firewall that this VPC endpoint is associated with.</p>
+        pub fn set_firewall_subnet_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_subnet_id = input;
+            self
+        }
+        /// <p>The resource ID of the VPC associated with the deleted VPC subnet.</p>
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
+            self
+        }
+        /// <p>The resource ID of the VPC associated with the deleted VPC subnet.</p>
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
+            self
+        }
+        /// <p>The name of the Availability Zone of the deleted VPC subnet.</p>
+        pub fn subnet_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subnet_availability_zone = Some(input.into());
+            self
+        }
+        /// <p>The name of the Availability Zone of the deleted VPC subnet.</p>
+        pub fn set_subnet_availability_zone(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.subnet_availability_zone = input;
+            self
+        }
+        /// <p>The ID of the Availability Zone of the deleted VPC subnet.</p>
+        pub fn subnet_availability_zone_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.subnet_availability_zone_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Availability Zone of the deleted VPC subnet.</p>
+        pub fn set_subnet_availability_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.subnet_availability_zone_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FirewallSubnetMissingVpcEndpointViolation`](crate::model::FirewallSubnetMissingVpcEndpointViolation)
+        pub fn build(self) -> crate::model::FirewallSubnetMissingVpcEndpointViolation {
+            crate::model::FirewallSubnetMissingVpcEndpointViolation {
+                firewall_subnet_id: self.firewall_subnet_id,
+                vpc_id: self.vpc_id,
+                subnet_availability_zone: self.subnet_availability_zone,
+                subnet_availability_zone_id: self.subnet_availability_zone_id,
+            }
+        }
+    }
+}
+impl FirewallSubnetMissingVpcEndpointViolation {
+    /// Creates a new builder-style object to manufacture [`FirewallSubnetMissingVpcEndpointViolation`](crate::model::FirewallSubnetMissingVpcEndpointViolation)
+    pub fn builder() -> crate::model::firewall_subnet_missing_vpc_endpoint_violation::Builder {
+        crate::model::firewall_subnet_missing_vpc_endpoint_violation::Builder::default()
+    }
+}
+
+/// <p>The violation details for a third-party firewall that's not associated with an Firewall Manager managed route table.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ThirdPartyFirewallMissingExpectedRouteTableViolation {
+    /// <p>The ID of the third-party firewall or VPC resource that's causing the violation.</p>
+    pub violation_target: std::option::Option<std::string::String>,
+    /// <p>The resource ID of the VPC associated with a fireawll subnet that's causing the violation.</p>
+    pub vpc: std::option::Option<std::string::String>,
+    /// <p>The Availability Zone of the firewall subnet that's causing the violation.</p>
+    pub availability_zone: std::option::Option<std::string::String>,
+    /// <p>The resource ID of the current route table that's associated with the subnet, if one is available.</p>
+    pub current_route_table: std::option::Option<std::string::String>,
+    /// <p>The resource ID of the route table that should be associated with the subnet.</p>
+    pub expected_route_table: std::option::Option<std::string::String>,
+}
+impl ThirdPartyFirewallMissingExpectedRouteTableViolation {
+    /// <p>The ID of the third-party firewall or VPC resource that's causing the violation.</p>
+    pub fn violation_target(&self) -> std::option::Option<&str> {
+        self.violation_target.as_deref()
+    }
+    /// <p>The resource ID of the VPC associated with a fireawll subnet that's causing the violation.</p>
+    pub fn vpc(&self) -> std::option::Option<&str> {
+        self.vpc.as_deref()
+    }
+    /// <p>The Availability Zone of the firewall subnet that's causing the violation.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The resource ID of the current route table that's associated with the subnet, if one is available.</p>
+    pub fn current_route_table(&self) -> std::option::Option<&str> {
+        self.current_route_table.as_deref()
+    }
+    /// <p>The resource ID of the route table that should be associated with the subnet.</p>
+    pub fn expected_route_table(&self) -> std::option::Option<&str> {
+        self.expected_route_table.as_deref()
+    }
+}
+impl std::fmt::Debug for ThirdPartyFirewallMissingExpectedRouteTableViolation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ThirdPartyFirewallMissingExpectedRouteTableViolation");
+        formatter.field("violation_target", &self.violation_target);
+        formatter.field("vpc", &self.vpc);
+        formatter.field("availability_zone", &self.availability_zone);
+        formatter.field("current_route_table", &self.current_route_table);
+        formatter.field("expected_route_table", &self.expected_route_table);
+        formatter.finish()
+    }
+}
+/// See [`ThirdPartyFirewallMissingExpectedRouteTableViolation`](crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation)
+pub mod third_party_firewall_missing_expected_route_table_violation {
+    /// A builder for [`ThirdPartyFirewallMissingExpectedRouteTableViolation`](crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) violation_target: std::option::Option<std::string::String>,
+        pub(crate) vpc: std::option::Option<std::string::String>,
+        pub(crate) availability_zone: std::option::Option<std::string::String>,
+        pub(crate) current_route_table: std::option::Option<std::string::String>,
+        pub(crate) expected_route_table: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the third-party firewall or VPC resource that's causing the violation.</p>
+        pub fn violation_target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.violation_target = Some(input.into());
+            self
+        }
+        /// <p>The ID of the third-party firewall or VPC resource that's causing the violation.</p>
+        pub fn set_violation_target(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.violation_target = input;
+            self
+        }
+        /// <p>The resource ID of the VPC associated with a fireawll subnet that's causing the violation.</p>
+        pub fn vpc(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc = Some(input.into());
+            self
+        }
+        /// <p>The resource ID of the VPC associated with a fireawll subnet that's causing the violation.</p>
+        pub fn set_vpc(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc = input;
+            self
+        }
+        /// <p>The Availability Zone of the firewall subnet that's causing the violation.</p>
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.availability_zone = Some(input.into());
+            self
+        }
+        /// <p>The Availability Zone of the firewall subnet that's causing the violation.</p>
+        pub fn set_availability_zone(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.availability_zone = input;
+            self
+        }
+        /// <p>The resource ID of the current route table that's associated with the subnet, if one is available.</p>
+        pub fn current_route_table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.current_route_table = Some(input.into());
+            self
+        }
+        /// <p>The resource ID of the current route table that's associated with the subnet, if one is available.</p>
+        pub fn set_current_route_table(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.current_route_table = input;
+            self
+        }
+        /// <p>The resource ID of the route table that should be associated with the subnet.</p>
+        pub fn expected_route_table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_route_table = Some(input.into());
+            self
+        }
+        /// <p>The resource ID of the route table that should be associated with the subnet.</p>
+        pub fn set_expected_route_table(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.expected_route_table = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ThirdPartyFirewallMissingExpectedRouteTableViolation`](crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation)
+        pub fn build(self) -> crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation {
+            crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation {
+                violation_target: self.violation_target,
+                vpc: self.vpc,
+                availability_zone: self.availability_zone,
+                current_route_table: self.current_route_table,
+                expected_route_table: self.expected_route_table,
+            }
+        }
+    }
+}
+impl ThirdPartyFirewallMissingExpectedRouteTableViolation {
+    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallMissingExpectedRouteTableViolation`](crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation)
+    pub fn builder(
+    ) -> crate::model::third_party_firewall_missing_expected_route_table_violation::Builder {
+        crate::model::third_party_firewall_missing_expected_route_table_violation::Builder::default(
+        )
+    }
+}
+
+/// <p>The violation details for a third-party firewall for an Availability Zone that's missing the Firewall Manager managed subnet.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ThirdPartyFirewallMissingSubnetViolation {
+    /// <p>The ID of the third-party firewall or VPC resource that's causing the violation.</p>
+    pub violation_target: std::option::Option<std::string::String>,
+    /// <p>The resource ID of the VPC associated with a subnet that's causing the violation.</p>
+    pub vpc: std::option::Option<std::string::String>,
+    /// <p>The Availability Zone of a subnet that's causing the violation.</p>
+    pub availability_zone: std::option::Option<std::string::String>,
+    /// <p>The reason the resource is causing the violation, if a reason is available.</p>
+    pub target_violation_reason: std::option::Option<std::string::String>,
+}
+impl ThirdPartyFirewallMissingSubnetViolation {
+    /// <p>The ID of the third-party firewall or VPC resource that's causing the violation.</p>
+    pub fn violation_target(&self) -> std::option::Option<&str> {
+        self.violation_target.as_deref()
+    }
+    /// <p>The resource ID of the VPC associated with a subnet that's causing the violation.</p>
+    pub fn vpc(&self) -> std::option::Option<&str> {
+        self.vpc.as_deref()
+    }
+    /// <p>The Availability Zone of a subnet that's causing the violation.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The reason the resource is causing the violation, if a reason is available.</p>
+    pub fn target_violation_reason(&self) -> std::option::Option<&str> {
+        self.target_violation_reason.as_deref()
+    }
+}
+impl std::fmt::Debug for ThirdPartyFirewallMissingSubnetViolation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ThirdPartyFirewallMissingSubnetViolation");
+        formatter.field("violation_target", &self.violation_target);
+        formatter.field("vpc", &self.vpc);
+        formatter.field("availability_zone", &self.availability_zone);
+        formatter.field("target_violation_reason", &self.target_violation_reason);
+        formatter.finish()
+    }
+}
+/// See [`ThirdPartyFirewallMissingSubnetViolation`](crate::model::ThirdPartyFirewallMissingSubnetViolation)
+pub mod third_party_firewall_missing_subnet_violation {
+    /// A builder for [`ThirdPartyFirewallMissingSubnetViolation`](crate::model::ThirdPartyFirewallMissingSubnetViolation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) violation_target: std::option::Option<std::string::String>,
+        pub(crate) vpc: std::option::Option<std::string::String>,
+        pub(crate) availability_zone: std::option::Option<std::string::String>,
+        pub(crate) target_violation_reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the third-party firewall or VPC resource that's causing the violation.</p>
+        pub fn violation_target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.violation_target = Some(input.into());
+            self
+        }
+        /// <p>The ID of the third-party firewall or VPC resource that's causing the violation.</p>
+        pub fn set_violation_target(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.violation_target = input;
+            self
+        }
+        /// <p>The resource ID of the VPC associated with a subnet that's causing the violation.</p>
+        pub fn vpc(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc = Some(input.into());
+            self
+        }
+        /// <p>The resource ID of the VPC associated with a subnet that's causing the violation.</p>
+        pub fn set_vpc(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc = input;
+            self
+        }
+        /// <p>The Availability Zone of a subnet that's causing the violation.</p>
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.availability_zone = Some(input.into());
+            self
+        }
+        /// <p>The Availability Zone of a subnet that's causing the violation.</p>
+        pub fn set_availability_zone(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.availability_zone = input;
+            self
+        }
+        /// <p>The reason the resource is causing the violation, if a reason is available.</p>
+        pub fn target_violation_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_violation_reason = Some(input.into());
+            self
+        }
+        /// <p>The reason the resource is causing the violation, if a reason is available.</p>
+        pub fn set_target_violation_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_violation_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ThirdPartyFirewallMissingSubnetViolation`](crate::model::ThirdPartyFirewallMissingSubnetViolation)
+        pub fn build(self) -> crate::model::ThirdPartyFirewallMissingSubnetViolation {
+            crate::model::ThirdPartyFirewallMissingSubnetViolation {
+                violation_target: self.violation_target,
+                vpc: self.vpc,
+                availability_zone: self.availability_zone,
+                target_violation_reason: self.target_violation_reason,
+            }
+        }
+    }
+}
+impl ThirdPartyFirewallMissingSubnetViolation {
+    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallMissingSubnetViolation`](crate::model::ThirdPartyFirewallMissingSubnetViolation)
+    pub fn builder() -> crate::model::third_party_firewall_missing_subnet_violation::Builder {
+        crate::model::third_party_firewall_missing_subnet_violation::Builder::default()
+    }
+}
+
+/// <p>The violation details about a third-party firewall's subnet that doesn't have a Firewall Manager managed firewall in its VPC.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ThirdPartyFirewallMissingFirewallViolation {
+    /// <p>The ID of the third-party firewall that's causing the violation.</p>
+    pub violation_target: std::option::Option<std::string::String>,
+    /// <p>The resource ID of the VPC associated with a third-party firewall.</p>
+    pub vpc: std::option::Option<std::string::String>,
+    /// <p>The Availability Zone of the third-party firewall that's causing the violation.</p>
+    pub availability_zone: std::option::Option<std::string::String>,
+    /// <p>The reason the resource is causing this violation, if a reason is available.</p>
+    pub target_violation_reason: std::option::Option<std::string::String>,
+}
+impl ThirdPartyFirewallMissingFirewallViolation {
+    /// <p>The ID of the third-party firewall that's causing the violation.</p>
+    pub fn violation_target(&self) -> std::option::Option<&str> {
+        self.violation_target.as_deref()
+    }
+    /// <p>The resource ID of the VPC associated with a third-party firewall.</p>
+    pub fn vpc(&self) -> std::option::Option<&str> {
+        self.vpc.as_deref()
+    }
+    /// <p>The Availability Zone of the third-party firewall that's causing the violation.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The reason the resource is causing this violation, if a reason is available.</p>
+    pub fn target_violation_reason(&self) -> std::option::Option<&str> {
+        self.target_violation_reason.as_deref()
+    }
+}
+impl std::fmt::Debug for ThirdPartyFirewallMissingFirewallViolation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ThirdPartyFirewallMissingFirewallViolation");
+        formatter.field("violation_target", &self.violation_target);
+        formatter.field("vpc", &self.vpc);
+        formatter.field("availability_zone", &self.availability_zone);
+        formatter.field("target_violation_reason", &self.target_violation_reason);
+        formatter.finish()
+    }
+}
+/// See [`ThirdPartyFirewallMissingFirewallViolation`](crate::model::ThirdPartyFirewallMissingFirewallViolation)
+pub mod third_party_firewall_missing_firewall_violation {
+    /// A builder for [`ThirdPartyFirewallMissingFirewallViolation`](crate::model::ThirdPartyFirewallMissingFirewallViolation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) violation_target: std::option::Option<std::string::String>,
+        pub(crate) vpc: std::option::Option<std::string::String>,
+        pub(crate) availability_zone: std::option::Option<std::string::String>,
+        pub(crate) target_violation_reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the third-party firewall that's causing the violation.</p>
+        pub fn violation_target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.violation_target = Some(input.into());
+            self
+        }
+        /// <p>The ID of the third-party firewall that's causing the violation.</p>
+        pub fn set_violation_target(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.violation_target = input;
+            self
+        }
+        /// <p>The resource ID of the VPC associated with a third-party firewall.</p>
+        pub fn vpc(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc = Some(input.into());
+            self
+        }
+        /// <p>The resource ID of the VPC associated with a third-party firewall.</p>
+        pub fn set_vpc(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc = input;
+            self
+        }
+        /// <p>The Availability Zone of the third-party firewall that's causing the violation.</p>
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.availability_zone = Some(input.into());
+            self
+        }
+        /// <p>The Availability Zone of the third-party firewall that's causing the violation.</p>
+        pub fn set_availability_zone(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.availability_zone = input;
+            self
+        }
+        /// <p>The reason the resource is causing this violation, if a reason is available.</p>
+        pub fn target_violation_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_violation_reason = Some(input.into());
+            self
+        }
+        /// <p>The reason the resource is causing this violation, if a reason is available.</p>
+        pub fn set_target_violation_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_violation_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ThirdPartyFirewallMissingFirewallViolation`](crate::model::ThirdPartyFirewallMissingFirewallViolation)
+        pub fn build(self) -> crate::model::ThirdPartyFirewallMissingFirewallViolation {
+            crate::model::ThirdPartyFirewallMissingFirewallViolation {
+                violation_target: self.violation_target,
+                vpc: self.vpc,
+                availability_zone: self.availability_zone,
+                target_violation_reason: self.target_violation_reason,
+            }
+        }
+    }
+}
+impl ThirdPartyFirewallMissingFirewallViolation {
+    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallMissingFirewallViolation`](crate::model::ThirdPartyFirewallMissingFirewallViolation)
+    pub fn builder() -> crate::model::third_party_firewall_missing_firewall_violation::Builder {
+        crate::model::third_party_firewall_missing_firewall_violation::Builder::default()
     }
 }
 
@@ -9263,6 +10143,138 @@ impl PartialMatch {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MarketplaceSubscriptionOnboardingStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Complete,
+    #[allow(missing_docs)] // documentation missing in model
+    NotComplete,
+    #[allow(missing_docs)] // documentation missing in model
+    NoSubscription,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MarketplaceSubscriptionOnboardingStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "COMPLETE" => MarketplaceSubscriptionOnboardingStatus::Complete,
+            "NOT_COMPLETE" => MarketplaceSubscriptionOnboardingStatus::NotComplete,
+            "NO_SUBSCRIPTION" => MarketplaceSubscriptionOnboardingStatus::NoSubscription,
+            other => MarketplaceSubscriptionOnboardingStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MarketplaceSubscriptionOnboardingStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MarketplaceSubscriptionOnboardingStatus::from(s))
+    }
+}
+impl MarketplaceSubscriptionOnboardingStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MarketplaceSubscriptionOnboardingStatus::Complete => "COMPLETE",
+            MarketplaceSubscriptionOnboardingStatus::NotComplete => "NOT_COMPLETE",
+            MarketplaceSubscriptionOnboardingStatus::NoSubscription => "NO_SUBSCRIPTION",
+            MarketplaceSubscriptionOnboardingStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETE", "NOT_COMPLETE", "NO_SUBSCRIPTION"]
+    }
+}
+impl AsRef<str> for MarketplaceSubscriptionOnboardingStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ThirdPartyFirewallAssociationStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    NotExist,
+    #[allow(missing_docs)] // documentation missing in model
+    Offboarding,
+    #[allow(missing_docs)] // documentation missing in model
+    OffboardComplete,
+    #[allow(missing_docs)] // documentation missing in model
+    Onboarding,
+    #[allow(missing_docs)] // documentation missing in model
+    OnboardComplete,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ThirdPartyFirewallAssociationStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "NOT_EXIST" => ThirdPartyFirewallAssociationStatus::NotExist,
+            "OFFBOARDING" => ThirdPartyFirewallAssociationStatus::Offboarding,
+            "OFFBOARD_COMPLETE" => ThirdPartyFirewallAssociationStatus::OffboardComplete,
+            "ONBOARDING" => ThirdPartyFirewallAssociationStatus::Onboarding,
+            "ONBOARD_COMPLETE" => ThirdPartyFirewallAssociationStatus::OnboardComplete,
+            other => ThirdPartyFirewallAssociationStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ThirdPartyFirewallAssociationStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ThirdPartyFirewallAssociationStatus::from(s))
+    }
+}
+impl ThirdPartyFirewallAssociationStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ThirdPartyFirewallAssociationStatus::NotExist => "NOT_EXIST",
+            ThirdPartyFirewallAssociationStatus::Offboarding => "OFFBOARDING",
+            ThirdPartyFirewallAssociationStatus::OffboardComplete => "OFFBOARD_COMPLETE",
+            ThirdPartyFirewallAssociationStatus::Onboarding => "ONBOARDING",
+            ThirdPartyFirewallAssociationStatus::OnboardComplete => "ONBOARD_COMPLETE",
+            ThirdPartyFirewallAssociationStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "NOT_EXIST",
+            "OFFBOARDING",
+            "OFFBOARD_COMPLETE",
+            "ONBOARDING",
+            "ONBOARD_COMPLETE",
+        ]
+    }
+}
+impl AsRef<str> for ThirdPartyFirewallAssociationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Describes the noncompliant resources in a member account for a specific Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are noncompliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -9628,6 +10640,8 @@ pub enum ViolationReason {
     #[allow(missing_docs)] // documentation missing in model
     FirewallSubnetMissingExpectedRoute,
     #[allow(missing_docs)] // documentation missing in model
+    FirewallSubnetMissingVpcEndpoint,
+    #[allow(missing_docs)] // documentation missing in model
     FmsCreatedSecurityGroupEdited,
     #[allow(missing_docs)] // documentation missing in model
     InternetGatewayMissingExpectedRoute,
@@ -9687,6 +10701,9 @@ impl std::convert::From<&str> for ViolationReason {
             "FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE" => {
                 ViolationReason::FirewallSubnetMissingExpectedRoute
             }
+            "FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT" => {
+                ViolationReason::FirewallSubnetMissingVpcEndpoint
+            }
             "FMS_CREATED_SECURITY_GROUP_EDITED" => ViolationReason::FmsCreatedSecurityGroupEdited,
             "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE" => {
                 ViolationReason::InternetGatewayMissingExpectedRoute
@@ -9743,6 +10760,9 @@ impl ViolationReason {
             ViolationReason::FirewallSubnetMissingExpectedRoute => {
                 "FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE"
             }
+            ViolationReason::FirewallSubnetMissingVpcEndpoint => {
+                "FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT"
+            }
             ViolationReason::FmsCreatedSecurityGroupEdited => "FMS_CREATED_SECURITY_GROUP_EDITED",
             ViolationReason::InternetGatewayMissingExpectedRoute => {
                 "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE"
@@ -9786,6 +10806,7 @@ impl ViolationReason {
             "BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET",
             "FIREWALL_SUBNET_IS_OUT_OF_SCOPE",
             "FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE",
+            "FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT",
             "FMS_CREATED_SECURITY_GROUP_EDITED",
             "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE",
             "INTERNET_TRAFFIC_NOT_INSPECTED",

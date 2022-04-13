@@ -504,7 +504,7 @@ impl Client {
     ///   - [`protocols(Vec<Protocol>)`](crate::client::fluent_builders::UpdateServer::protocols) / [`set_protocols(Option<Vec<Protocol>>)`](crate::client::fluent_builders::UpdateServer::set_protocols): <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>  <ul>   <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH</p> </li>   <li> <p>File Transfer Protocol Secure (FTPS): File transfer with TLS encryption</p> </li>   <li> <p>File Transfer Protocol (FTP): Unencrypted file transfer</p> </li>  </ul> <note>   <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate Manager (ACM) which will be used to identify your server when clients connect to it over FTPS.</p>   <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>   <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>   <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>  </note>
     ///   - [`security_policy_name(impl Into<String>)`](crate::client::fluent_builders::UpdateServer::security_policy_name) / [`set_security_policy_name(Option<String>)`](crate::client::fluent_builders::UpdateServer::set_security_policy_name): <p>Specifies the name of the security policy that is attached to the server.</p>
     ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::UpdateServer::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::UpdateServer::set_server_id): <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
-    ///   - [`workflow_details(WorkflowDetails)`](crate::client::fluent_builders::UpdateServer::workflow_details) / [`set_workflow_details(Option<WorkflowDetails>)`](crate::client::fluent_builders::UpdateServer::set_workflow_details): <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+    ///   - [`workflow_details(WorkflowDetails)`](crate::client::fluent_builders::UpdateServer::workflow_details) / [`set_workflow_details(Option<WorkflowDetails>)`](crate::client::fluent_builders::UpdateServer::set_workflow_details): <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>  <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>  <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
     /// - On success, responds with [`UpdateServerOutput`](crate::output::UpdateServerOutput) with field(s):
     ///   - [`server_id(Option<String>)`](crate::output::UpdateServerOutput::server_id): <p>A system-assigned unique identifier for a server that the user account is assigned to.</p>
     /// - On failure, responds with [`SdkError<UpdateServerError>`](crate::error::UpdateServerError)
@@ -3546,11 +3546,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+        /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
+        /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
         pub fn workflow_details(mut self, input: crate::model::WorkflowDetails) -> Self {
             self.inner = self.inner.workflow_details(input);
             self
         }
         /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+        /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
+        /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
         pub fn set_workflow_details(
             mut self,
             input: std::option::Option<crate::model::WorkflowDetails>,

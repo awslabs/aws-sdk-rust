@@ -2858,8 +2858,8 @@ pub struct LocationListEntry {
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>Represents a list of URIs of a location. <code>LocationUri</code> returns an array that contains a list of locations when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a> operation is called.</p>
     /// <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
-    /// <p>TYPE designates the type of location. Valid values: NFS | EFS | S3.</p>
-    /// <p>GLOBAL_ID is the globally unique identifier of the resource that backs the location. An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket name, such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a host name compliant with Domain Name Service (DNS).</p>
+    /// <p>TYPE designates the type of location (for example, <code>nfs</code> or <code>s3</code>).</p>
+    /// <p>GLOBAL_ID is the globally unique identifier of the resource that backs the location. An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket name, such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a hostname that is compliant with Domain Name Service (DNS).</p>
     /// <p>SUBDIR is a valid file system path, delimited by forward slashes as is the *nix convention. For NFS and Amazon EFS, it's the export path to mount the location. For Amazon S3, it's the prefix path that you mount to and treat as the root of the location.</p>
     /// <p></p>
     pub location_uri: std::option::Option<std::string::String>,
@@ -2871,8 +2871,8 @@ impl LocationListEntry {
     }
     /// <p>Represents a list of URIs of a location. <code>LocationUri</code> returns an array that contains a list of locations when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a> operation is called.</p>
     /// <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
-    /// <p>TYPE designates the type of location. Valid values: NFS | EFS | S3.</p>
-    /// <p>GLOBAL_ID is the globally unique identifier of the resource that backs the location. An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket name, such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a host name compliant with Domain Name Service (DNS).</p>
+    /// <p>TYPE designates the type of location (for example, <code>nfs</code> or <code>s3</code>).</p>
+    /// <p>GLOBAL_ID is the globally unique identifier of the resource that backs the location. An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket name, such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a hostname that is compliant with Domain Name Service (DNS).</p>
     /// <p>SUBDIR is a valid file system path, delimited by forward slashes as is the *nix convention. For NFS and Amazon EFS, it's the export path to mount the location. For Amazon S3, it's the prefix path that you mount to and treat as the root of the location.</p>
     /// <p></p>
     pub fn location_uri(&self) -> std::option::Option<&str> {
@@ -2909,8 +2909,8 @@ pub mod location_list_entry {
         }
         /// <p>Represents a list of URIs of a location. <code>LocationUri</code> returns an array that contains a list of locations when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a> operation is called.</p>
         /// <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
-        /// <p>TYPE designates the type of location. Valid values: NFS | EFS | S3.</p>
-        /// <p>GLOBAL_ID is the globally unique identifier of the resource that backs the location. An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket name, such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a host name compliant with Domain Name Service (DNS).</p>
+        /// <p>TYPE designates the type of location (for example, <code>nfs</code> or <code>s3</code>).</p>
+        /// <p>GLOBAL_ID is the globally unique identifier of the resource that backs the location. An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket name, such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a hostname that is compliant with Domain Name Service (DNS).</p>
         /// <p>SUBDIR is a valid file system path, delimited by forward slashes as is the *nix convention. For NFS and Amazon EFS, it's the export path to mount the location. For Amazon S3, it's the prefix path that you mount to and treat as the root of the location.</p>
         /// <p></p>
         pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2919,8 +2919,8 @@ pub mod location_list_entry {
         }
         /// <p>Represents a list of URIs of a location. <code>LocationUri</code> returns an array that contains a list of locations when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a> operation is called.</p>
         /// <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
-        /// <p>TYPE designates the type of location. Valid values: NFS | EFS | S3.</p>
-        /// <p>GLOBAL_ID is the globally unique identifier of the resource that backs the location. An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket name, such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a host name compliant with Domain Name Service (DNS).</p>
+        /// <p>TYPE designates the type of location (for example, <code>nfs</code> or <code>s3</code>).</p>
+        /// <p>GLOBAL_ID is the globally unique identifier of the resource that backs the location. An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket name, such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a hostname that is compliant with Domain Name Service (DNS).</p>
         /// <p>SUBDIR is a valid file system path, delimited by forward slashes as is the *nix convention. For NFS and Amazon EFS, it's the export path to mount the location. For Amazon S3, it's the prefix path that you mount to and treat as the root of the location.</p>
         /// <p></p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -3527,16 +3527,16 @@ impl AsRef<str> for PhaseStatus {
     }
 }
 
-/// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p>
+/// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
 /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Config {
-    /// <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html">CreateLocationS3</a> operation. </p>
+    /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
     pub bucket_access_role_arn: std::option::Option<std::string::String>,
 }
 impl S3Config {
-    /// <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html">CreateLocationS3</a> operation. </p>
+    /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
     pub fn bucket_access_role_arn(&self) -> std::option::Option<&str> {
         self.bucket_access_role_arn.as_deref()
     }
@@ -3557,12 +3557,12 @@ pub mod s3_config {
         pub(crate) bucket_access_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html">CreateLocationS3</a> operation. </p>
+        /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
         pub fn bucket_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html">CreateLocationS3</a> operation. </p>
+        /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
         pub fn set_bucket_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3668,17 +3668,126 @@ impl AsRef<str> for S3StorageClass {
     }
 }
 
-/// <p>The subnet and the security group that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified. </p>
+/// <p>Represents the protocol that DataSync uses to access your Amazon FSx for OpenZFS file system.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FsxProtocol {
+    /// <p>Represents the Network File System (NFS) protocol that DataSync uses to access your FSx for OpenZFS file system.</p>
+    pub nfs: std::option::Option<crate::model::FsxProtocolNfs>,
+}
+impl FsxProtocol {
+    /// <p>Represents the Network File System (NFS) protocol that DataSync uses to access your FSx for OpenZFS file system.</p>
+    pub fn nfs(&self) -> std::option::Option<&crate::model::FsxProtocolNfs> {
+        self.nfs.as_ref()
+    }
+}
+impl std::fmt::Debug for FsxProtocol {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FsxProtocol");
+        formatter.field("nfs", &self.nfs);
+        formatter.finish()
+    }
+}
+/// See [`FsxProtocol`](crate::model::FsxProtocol)
+pub mod fsx_protocol {
+    /// A builder for [`FsxProtocol`](crate::model::FsxProtocol)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) nfs: std::option::Option<crate::model::FsxProtocolNfs>,
+    }
+    impl Builder {
+        /// <p>Represents the Network File System (NFS) protocol that DataSync uses to access your FSx for OpenZFS file system.</p>
+        pub fn nfs(mut self, input: crate::model::FsxProtocolNfs) -> Self {
+            self.nfs = Some(input);
+            self
+        }
+        /// <p>Represents the Network File System (NFS) protocol that DataSync uses to access your FSx for OpenZFS file system.</p>
+        pub fn set_nfs(mut self, input: std::option::Option<crate::model::FsxProtocolNfs>) -> Self {
+            self.nfs = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FsxProtocol`](crate::model::FsxProtocol)
+        pub fn build(self) -> crate::model::FsxProtocol {
+            crate::model::FsxProtocol { nfs: self.nfs }
+        }
+    }
+}
+impl FsxProtocol {
+    /// Creates a new builder-style object to manufacture [`FsxProtocol`](crate::model::FsxProtocol)
+    pub fn builder() -> crate::model::fsx_protocol::Builder {
+        crate::model::fsx_protocol::Builder::default()
+    }
+}
+
+/// <p>Represents the Network File System (NFS) protocol that DataSync uses to access your Amazon FSx for OpenZFS file system.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FsxProtocolNfs {
+    /// <p>Represents the mount options that are available for DataSync to access an NFS location.</p>
+    pub mount_options: std::option::Option<crate::model::NfsMountOptions>,
+}
+impl FsxProtocolNfs {
+    /// <p>Represents the mount options that are available for DataSync to access an NFS location.</p>
+    pub fn mount_options(&self) -> std::option::Option<&crate::model::NfsMountOptions> {
+        self.mount_options.as_ref()
+    }
+}
+impl std::fmt::Debug for FsxProtocolNfs {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FsxProtocolNfs");
+        formatter.field("mount_options", &self.mount_options);
+        formatter.finish()
+    }
+}
+/// See [`FsxProtocolNfs`](crate::model::FsxProtocolNfs)
+pub mod fsx_protocol_nfs {
+    /// A builder for [`FsxProtocolNfs`](crate::model::FsxProtocolNfs)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) mount_options: std::option::Option<crate::model::NfsMountOptions>,
+    }
+    impl Builder {
+        /// <p>Represents the mount options that are available for DataSync to access an NFS location.</p>
+        pub fn mount_options(mut self, input: crate::model::NfsMountOptions) -> Self {
+            self.mount_options = Some(input);
+            self
+        }
+        /// <p>Represents the mount options that are available for DataSync to access an NFS location.</p>
+        pub fn set_mount_options(
+            mut self,
+            input: std::option::Option<crate::model::NfsMountOptions>,
+        ) -> Self {
+            self.mount_options = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FsxProtocolNfs`](crate::model::FsxProtocolNfs)
+        pub fn build(self) -> crate::model::FsxProtocolNfs {
+            crate::model::FsxProtocolNfs {
+                mount_options: self.mount_options,
+            }
+        }
+    }
+}
+impl FsxProtocolNfs {
+    /// Creates a new builder-style object to manufacture [`FsxProtocolNfs`](crate::model::FsxProtocolNfs)
+    pub fn builder() -> crate::model::fsx_protocol_nfs::Builder {
+        crate::model::fsx_protocol_nfs::Builder::default()
+    }
+}
+
+/// <p>The subnet that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2Config {
-    /// <p>The ARN of the subnet and the security group that DataSync uses to access the target EFS file system.</p>
+    /// <p>The ARN of the subnet that DataSync uses to access the target EFS file system.</p>
     pub subnet_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the Amazon EC2 resource.</p>
     pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Ec2Config {
-    /// <p>The ARN of the subnet and the security group that DataSync uses to access the target EFS file system.</p>
+    /// <p>The ARN of the subnet that DataSync uses to access the target EFS file system.</p>
     pub fn subnet_arn(&self) -> std::option::Option<&str> {
         self.subnet_arn.as_deref()
     }
@@ -3705,12 +3814,12 @@ pub mod ec2_config {
         pub(crate) security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The ARN of the subnet and the security group that DataSync uses to access the target EFS file system.</p>
+        /// <p>The ARN of the subnet that DataSync uses to access the target EFS file system.</p>
         pub fn subnet_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.subnet_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the subnet and the security group that DataSync uses to access the target EFS file system.</p>
+        /// <p>The ARN of the subnet that DataSync uses to access the target EFS file system.</p>
         pub fn set_subnet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_arn = input;
             self

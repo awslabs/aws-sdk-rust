@@ -622,6 +622,7 @@ impl Client {
     ///   - [`tag_options(Option<Vec<TagOptionSummary>>)`](crate::output::DescribeProvisioningParametersOutput::tag_options): <p>Information about the TagOptions associated with the resource.</p>
     ///   - [`provisioning_artifact_preferences(Option<ProvisioningArtifactPreferences>)`](crate::output::DescribeProvisioningParametersOutput::provisioning_artifact_preferences): <p>An object that contains information about preferences, such as regions and accounts, for the provisioning artifact.</p>
     ///   - [`provisioning_artifact_outputs(Option<Vec<ProvisioningArtifactOutput>>)`](crate::output::DescribeProvisioningParametersOutput::provisioning_artifact_outputs): <p>The output of the provisioning artifact.</p>
+    ///   - [`provisioning_artifact_output_keys(Option<Vec<ProvisioningArtifactOutput>>)`](crate::output::DescribeProvisioningParametersOutput::provisioning_artifact_output_keys): <p>A list of the keys and descriptions of the outputs. These outputs can be referenced from a provisioned product launched from this provisioning artifact.</p>
     /// - On failure, responds with [`SdkError<DescribeProvisioningParametersError>`](crate::error::DescribeProvisioningParametersError)
     pub fn describe_provisioning_parameters(
         &self,

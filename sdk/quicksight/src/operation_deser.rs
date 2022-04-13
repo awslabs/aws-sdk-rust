@@ -7511,6 +7511,173 @@ pub fn parse_describe_group_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_group_membership_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeGroupMembershipOutput,
+    crate::error::DescribeGroupMembershipError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeGroupMembershipError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeGroupMembershipError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::DescribeGroupMembershipError {
+            meta: generic,
+            kind: crate::error::DescribeGroupMembershipErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGroupMembershipError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalFailureException" => crate::error::DescribeGroupMembershipError {
+            meta: generic,
+            kind: crate::error::DescribeGroupMembershipErrorKind::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGroupMembershipError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterValueException" => crate::error::DescribeGroupMembershipError {
+            meta: generic,
+            kind: crate::error::DescribeGroupMembershipErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGroupMembershipError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionNotMetException" => crate::error::DescribeGroupMembershipError {
+            meta: generic,
+            kind: crate::error::DescribeGroupMembershipErrorKind::PreconditionNotMetException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_not_met_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_not_met_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGroupMembershipError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DescribeGroupMembershipError {
+            meta: generic,
+            kind: crate::error::DescribeGroupMembershipErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGroupMembershipError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceUnavailableException" => crate::error::DescribeGroupMembershipError {
+            meta: generic,
+            kind: crate::error::DescribeGroupMembershipErrorKind::ResourceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGroupMembershipError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::DescribeGroupMembershipError {
+            meta: generic,
+            kind: crate::error::DescribeGroupMembershipErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGroupMembershipError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeGroupMembershipError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_group_membership_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeGroupMembershipOutput,
+    crate::error::DescribeGroupMembershipError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_group_membership_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_group_membership(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeGroupMembershipError::unhandled)?;
+        output = output.set_status(Some(response.status().as_u16() as _));
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_iam_policy_assignment_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -13837,6 +14004,180 @@ pub fn parse_search_folders_response(
             output,
         )
         .map_err(crate::error::SearchFoldersError::unhandled)?;
+        output = output.set_status(Some(response.status().as_u16() as _));
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_search_groups_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::SearchGroupsOutput, crate::error::SearchGroupsError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::SearchGroupsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::SearchGroupsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::SearchGroupsError {
+            meta: generic,
+            kind: crate::error::SearchGroupsErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchGroupsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalFailureException" => crate::error::SearchGroupsError {
+            meta: generic,
+            kind: crate::error::SearchGroupsErrorKind::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchGroupsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidNextTokenException" => crate::error::SearchGroupsError {
+            meta: generic,
+            kind: crate::error::SearchGroupsErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchGroupsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterValueException" => crate::error::SearchGroupsError {
+            meta: generic,
+            kind: crate::error::SearchGroupsErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchGroupsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionNotMetException" => crate::error::SearchGroupsError {
+            meta: generic,
+            kind: crate::error::SearchGroupsErrorKind::PreconditionNotMetException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_not_met_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_not_met_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchGroupsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::SearchGroupsError {
+            meta: generic,
+            kind: crate::error::SearchGroupsErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchGroupsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceUnavailableException" => crate::error::SearchGroupsError {
+            meta: generic,
+            kind: crate::error::SearchGroupsErrorKind::ResourceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchGroupsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::SearchGroupsError {
+            meta: generic,
+            kind: crate::error::SearchGroupsErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchGroupsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::SearchGroupsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_search_groups_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::SearchGroupsOutput, crate::error::SearchGroupsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::search_groups_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_search_groups(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::SearchGroupsError::unhandled)?;
         output = output.set_status(Some(response.status().as_u16() as _));
         output.build()
     })

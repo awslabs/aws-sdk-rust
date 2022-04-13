@@ -14,6 +14,14 @@ impl GetDevicePositionHistoryPaginator {
         Self { handle, builder }
     }
 
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
+    }
+
     /// Create a flattened paginator
     ///
     /// This paginator automatically flattens results using `device_positions`. Queries to the underlying service

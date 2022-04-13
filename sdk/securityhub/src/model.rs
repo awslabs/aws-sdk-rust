@@ -10106,6 +10106,8 @@ pub struct ResourceDetails {
     /// <p>Details about an Network Firewall rule group.</p>
     pub aws_network_firewall_rule_group:
         std::option::Option<crate::model::AwsNetworkFirewallRuleGroupDetails>,
+    /// <p>Details about an Amazon RDS DB security group.</p>
+    pub aws_rds_db_security_group: std::option::Option<crate::model::AwsRdsDbSecurityGroupDetails>,
 }
 impl ResourceDetails {
     /// <p>Details for an autoscaling group.</p>
@@ -10443,6 +10445,12 @@ impl ResourceDetails {
     ) -> std::option::Option<&crate::model::AwsNetworkFirewallRuleGroupDetails> {
         self.aws_network_firewall_rule_group.as_ref()
     }
+    /// <p>Details about an Amazon RDS DB security group.</p>
+    pub fn aws_rds_db_security_group(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsRdsDbSecurityGroupDetails> {
+        self.aws_rds_db_security_group.as_ref()
+    }
 }
 impl std::fmt::Debug for ResourceDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10557,6 +10565,7 @@ impl std::fmt::Debug for ResourceDetails {
             "aws_network_firewall_rule_group",
             &self.aws_network_firewall_rule_group,
         );
+        formatter.field("aws_rds_db_security_group", &self.aws_rds_db_security_group);
         formatter.finish()
     }
 }
@@ -10664,6 +10673,8 @@ pub mod resource_details {
             std::option::Option<crate::model::AwsNetworkFirewallFirewallDetails>,
         pub(crate) aws_network_firewall_rule_group:
             std::option::Option<crate::model::AwsNetworkFirewallRuleGroupDetails>,
+        pub(crate) aws_rds_db_security_group:
+            std::option::Option<crate::model::AwsRdsDbSecurityGroupDetails>,
     }
     impl Builder {
         /// <p>Details for an autoscaling group.</p>
@@ -11597,6 +11608,22 @@ pub mod resource_details {
             self.aws_network_firewall_rule_group = input;
             self
         }
+        /// <p>Details about an Amazon RDS DB security group.</p>
+        pub fn aws_rds_db_security_group(
+            mut self,
+            input: crate::model::AwsRdsDbSecurityGroupDetails,
+        ) -> Self {
+            self.aws_rds_db_security_group = Some(input);
+            self
+        }
+        /// <p>Details about an Amazon RDS DB security group.</p>
+        pub fn set_aws_rds_db_security_group(
+            mut self,
+            input: std::option::Option<crate::model::AwsRdsDbSecurityGroupDetails>,
+        ) -> Self {
+            self.aws_rds_db_security_group = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResourceDetails`](crate::model::ResourceDetails)
         pub fn build(self) -> crate::model::ResourceDetails {
             crate::model::ResourceDetails {
@@ -11662,6 +11689,7 @@ pub mod resource_details {
                 aws_network_firewall_firewall_policy: self.aws_network_firewall_firewall_policy,
                 aws_network_firewall_firewall: self.aws_network_firewall_firewall,
                 aws_network_firewall_rule_group: self.aws_network_firewall_rule_group,
+                aws_rds_db_security_group: self.aws_rds_db_security_group,
             }
         }
     }
@@ -11670,6 +11698,416 @@ impl ResourceDetails {
     /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails)
     pub fn builder() -> crate::model::resource_details::Builder {
         crate::model::resource_details::Builder::default()
+    }
+}
+
+/// <p>Provides information about an Amazon RDS DB security group.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsRdsDbSecurityGroupDetails {
+    /// <p>The ARN for the DB security group.</p>
+    pub db_security_group_arn: std::option::Option<std::string::String>,
+    /// <p>Provides the description of the DB security group.</p>
+    pub db_security_group_description: std::option::Option<std::string::String>,
+    /// <p>Specifies the name of the DB security group.</p>
+    pub db_security_group_name: std::option::Option<std::string::String>,
+    /// <p>Contains a list of EC2 security groups.</p>
+    pub ec2_security_groups:
+        std::option::Option<std::vec::Vec<crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup>>,
+    /// <p>Contains a list of IP ranges.</p>
+    pub ip_ranges: std::option::Option<std::vec::Vec<crate::model::AwsRdsDbSecurityGroupIpRange>>,
+    /// <p>Provides the Amazon Web Services ID of the owner of a specific DB security group.</p>
+    pub owner_id: std::option::Option<std::string::String>,
+    /// <p>Provides VPC ID associated with the DB security group. </p>
+    pub vpc_id: std::option::Option<std::string::String>,
+}
+impl AwsRdsDbSecurityGroupDetails {
+    /// <p>The ARN for the DB security group.</p>
+    pub fn db_security_group_arn(&self) -> std::option::Option<&str> {
+        self.db_security_group_arn.as_deref()
+    }
+    /// <p>Provides the description of the DB security group.</p>
+    pub fn db_security_group_description(&self) -> std::option::Option<&str> {
+        self.db_security_group_description.as_deref()
+    }
+    /// <p>Specifies the name of the DB security group.</p>
+    pub fn db_security_group_name(&self) -> std::option::Option<&str> {
+        self.db_security_group_name.as_deref()
+    }
+    /// <p>Contains a list of EC2 security groups.</p>
+    pub fn ec2_security_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup]> {
+        self.ec2_security_groups.as_deref()
+    }
+    /// <p>Contains a list of IP ranges.</p>
+    pub fn ip_ranges(&self) -> std::option::Option<&[crate::model::AwsRdsDbSecurityGroupIpRange]> {
+        self.ip_ranges.as_deref()
+    }
+    /// <p>Provides the Amazon Web Services ID of the owner of a specific DB security group.</p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>Provides VPC ID associated with the DB security group. </p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+}
+impl std::fmt::Debug for AwsRdsDbSecurityGroupDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsRdsDbSecurityGroupDetails");
+        formatter.field("db_security_group_arn", &self.db_security_group_arn);
+        formatter.field(
+            "db_security_group_description",
+            &self.db_security_group_description,
+        );
+        formatter.field("db_security_group_name", &self.db_security_group_name);
+        formatter.field("ec2_security_groups", &self.ec2_security_groups);
+        formatter.field("ip_ranges", &self.ip_ranges);
+        formatter.field("owner_id", &self.owner_id);
+        formatter.field("vpc_id", &self.vpc_id);
+        formatter.finish()
+    }
+}
+/// See [`AwsRdsDbSecurityGroupDetails`](crate::model::AwsRdsDbSecurityGroupDetails)
+pub mod aws_rds_db_security_group_details {
+    /// A builder for [`AwsRdsDbSecurityGroupDetails`](crate::model::AwsRdsDbSecurityGroupDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) db_security_group_arn: std::option::Option<std::string::String>,
+        pub(crate) db_security_group_description: std::option::Option<std::string::String>,
+        pub(crate) db_security_group_name: std::option::Option<std::string::String>,
+        pub(crate) ec2_security_groups:
+            std::option::Option<std::vec::Vec<crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup>>,
+        pub(crate) ip_ranges:
+            std::option::Option<std::vec::Vec<crate::model::AwsRdsDbSecurityGroupIpRange>>,
+        pub(crate) owner_id: std::option::Option<std::string::String>,
+        pub(crate) vpc_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN for the DB security group.</p>
+        pub fn db_security_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_security_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN for the DB security group.</p>
+        pub fn set_db_security_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_security_group_arn = input;
+            self
+        }
+        /// <p>Provides the description of the DB security group.</p>
+        pub fn db_security_group_description(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.db_security_group_description = Some(input.into());
+            self
+        }
+        /// <p>Provides the description of the DB security group.</p>
+        pub fn set_db_security_group_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_security_group_description = input;
+            self
+        }
+        /// <p>Specifies the name of the DB security group.</p>
+        pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_security_group_name = Some(input.into());
+            self
+        }
+        /// <p>Specifies the name of the DB security group.</p>
+        pub fn set_db_security_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_security_group_name = input;
+            self
+        }
+        /// Appends an item to `ec2_security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_ec2_security_groups`](Self::set_ec2_security_groups).
+        ///
+        /// <p>Contains a list of EC2 security groups.</p>
+        pub fn ec2_security_groups(
+            mut self,
+            input: crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup,
+        ) -> Self {
+            let mut v = self.ec2_security_groups.unwrap_or_default();
+            v.push(input);
+            self.ec2_security_groups = Some(v);
+            self
+        }
+        /// <p>Contains a list of EC2 security groups.</p>
+        pub fn set_ec2_security_groups(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup>,
+            >,
+        ) -> Self {
+            self.ec2_security_groups = input;
+            self
+        }
+        /// Appends an item to `ip_ranges`.
+        ///
+        /// To override the contents of this collection use [`set_ip_ranges`](Self::set_ip_ranges).
+        ///
+        /// <p>Contains a list of IP ranges.</p>
+        pub fn ip_ranges(mut self, input: crate::model::AwsRdsDbSecurityGroupIpRange) -> Self {
+            let mut v = self.ip_ranges.unwrap_or_default();
+            v.push(input);
+            self.ip_ranges = Some(v);
+            self
+        }
+        /// <p>Contains a list of IP ranges.</p>
+        pub fn set_ip_ranges(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AwsRdsDbSecurityGroupIpRange>>,
+        ) -> Self {
+            self.ip_ranges = input;
+            self
+        }
+        /// <p>Provides the Amazon Web Services ID of the owner of a specific DB security group.</p>
+        pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner_id = Some(input.into());
+            self
+        }
+        /// <p>Provides the Amazon Web Services ID of the owner of a specific DB security group.</p>
+        pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_id = input;
+            self
+        }
+        /// <p>Provides VPC ID associated with the DB security group. </p>
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
+            self
+        }
+        /// <p>Provides VPC ID associated with the DB security group. </p>
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsRdsDbSecurityGroupDetails`](crate::model::AwsRdsDbSecurityGroupDetails)
+        pub fn build(self) -> crate::model::AwsRdsDbSecurityGroupDetails {
+            crate::model::AwsRdsDbSecurityGroupDetails {
+                db_security_group_arn: self.db_security_group_arn,
+                db_security_group_description: self.db_security_group_description,
+                db_security_group_name: self.db_security_group_name,
+                ec2_security_groups: self.ec2_security_groups,
+                ip_ranges: self.ip_ranges,
+                owner_id: self.owner_id,
+                vpc_id: self.vpc_id,
+            }
+        }
+    }
+}
+impl AwsRdsDbSecurityGroupDetails {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbSecurityGroupDetails`](crate::model::AwsRdsDbSecurityGroupDetails)
+    pub fn builder() -> crate::model::aws_rds_db_security_group_details::Builder {
+        crate::model::aws_rds_db_security_group_details::Builder::default()
+    }
+}
+
+/// <p>IP range information for an RDS DB security group.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsRdsDbSecurityGroupIpRange {
+    /// <p>Specifies the IP range.</p>
+    pub cidr_ip: std::option::Option<std::string::String>,
+    /// <p>Specifies the status of the IP range.</p>
+    pub status: std::option::Option<std::string::String>,
+}
+impl AwsRdsDbSecurityGroupIpRange {
+    /// <p>Specifies the IP range.</p>
+    pub fn cidr_ip(&self) -> std::option::Option<&str> {
+        self.cidr_ip.as_deref()
+    }
+    /// <p>Specifies the status of the IP range.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
+impl std::fmt::Debug for AwsRdsDbSecurityGroupIpRange {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsRdsDbSecurityGroupIpRange");
+        formatter.field("cidr_ip", &self.cidr_ip);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`AwsRdsDbSecurityGroupIpRange`](crate::model::AwsRdsDbSecurityGroupIpRange)
+pub mod aws_rds_db_security_group_ip_range {
+    /// A builder for [`AwsRdsDbSecurityGroupIpRange`](crate::model::AwsRdsDbSecurityGroupIpRange)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cidr_ip: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the IP range.</p>
+        pub fn cidr_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cidr_ip = Some(input.into());
+            self
+        }
+        /// <p>Specifies the IP range.</p>
+        pub fn set_cidr_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cidr_ip = input;
+            self
+        }
+        /// <p>Specifies the status of the IP range.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>Specifies the status of the IP range.</p>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsRdsDbSecurityGroupIpRange`](crate::model::AwsRdsDbSecurityGroupIpRange)
+        pub fn build(self) -> crate::model::AwsRdsDbSecurityGroupIpRange {
+            crate::model::AwsRdsDbSecurityGroupIpRange {
+                cidr_ip: self.cidr_ip,
+                status: self.status,
+            }
+        }
+    }
+}
+impl AwsRdsDbSecurityGroupIpRange {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbSecurityGroupIpRange`](crate::model::AwsRdsDbSecurityGroupIpRange)
+    pub fn builder() -> crate::model::aws_rds_db_security_group_ip_range::Builder {
+        crate::model::aws_rds_db_security_group_ip_range::Builder::default()
+    }
+}
+
+/// <p>EC2 security group information for an RDS DB security group.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsRdsDbSecurityGroupEc2SecurityGroup {
+    /// <p>Specifies the ID for the EC2 security group.</p>
+    pub ec2_security_group_id: std::option::Option<std::string::String>,
+    /// <p>Specifies the name of the EC2 security group.</p>
+    pub ec2_security_group_name: std::option::Option<std::string::String>,
+    /// <p>Provides the Amazon Web Services ID of the owner of the EC2 security group.</p>
+    pub ec2_security_group_owner_id: std::option::Option<std::string::String>,
+    /// <p>Provides the status of the EC2 security group.</p>
+    pub status: std::option::Option<std::string::String>,
+}
+impl AwsRdsDbSecurityGroupEc2SecurityGroup {
+    /// <p>Specifies the ID for the EC2 security group.</p>
+    pub fn ec2_security_group_id(&self) -> std::option::Option<&str> {
+        self.ec2_security_group_id.as_deref()
+    }
+    /// <p>Specifies the name of the EC2 security group.</p>
+    pub fn ec2_security_group_name(&self) -> std::option::Option<&str> {
+        self.ec2_security_group_name.as_deref()
+    }
+    /// <p>Provides the Amazon Web Services ID of the owner of the EC2 security group.</p>
+    pub fn ec2_security_group_owner_id(&self) -> std::option::Option<&str> {
+        self.ec2_security_group_owner_id.as_deref()
+    }
+    /// <p>Provides the status of the EC2 security group.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
+impl std::fmt::Debug for AwsRdsDbSecurityGroupEc2SecurityGroup {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsRdsDbSecurityGroupEc2SecurityGroup");
+        formatter.field("ec2_security_group_id", &self.ec2_security_group_id);
+        formatter.field("ec2_security_group_name", &self.ec2_security_group_name);
+        formatter.field(
+            "ec2_security_group_owner_id",
+            &self.ec2_security_group_owner_id,
+        );
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`AwsRdsDbSecurityGroupEc2SecurityGroup`](crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup)
+pub mod aws_rds_db_security_group_ec2_security_group {
+    /// A builder for [`AwsRdsDbSecurityGroupEc2SecurityGroup`](crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ec2_security_group_id: std::option::Option<std::string::String>,
+        pub(crate) ec2_security_group_name: std::option::Option<std::string::String>,
+        pub(crate) ec2_security_group_owner_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the ID for the EC2 security group.</p>
+        pub fn ec2_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ec2_security_group_id = Some(input.into());
+            self
+        }
+        /// <p>Specifies the ID for the EC2 security group.</p>
+        pub fn set_ec2_security_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ec2_security_group_id = input;
+            self
+        }
+        /// <p>Specifies the name of the EC2 security group.</p>
+        pub fn ec2_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ec2_security_group_name = Some(input.into());
+            self
+        }
+        /// <p>Specifies the name of the EC2 security group.</p>
+        pub fn set_ec2_security_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ec2_security_group_name = input;
+            self
+        }
+        /// <p>Provides the Amazon Web Services ID of the owner of the EC2 security group.</p>
+        pub fn ec2_security_group_owner_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.ec2_security_group_owner_id = Some(input.into());
+            self
+        }
+        /// <p>Provides the Amazon Web Services ID of the owner of the EC2 security group.</p>
+        pub fn set_ec2_security_group_owner_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ec2_security_group_owner_id = input;
+            self
+        }
+        /// <p>Provides the status of the EC2 security group.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>Provides the status of the EC2 security group.</p>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsRdsDbSecurityGroupEc2SecurityGroup`](crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup)
+        pub fn build(self) -> crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup {
+            crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup {
+                ec2_security_group_id: self.ec2_security_group_id,
+                ec2_security_group_name: self.ec2_security_group_name,
+                ec2_security_group_owner_id: self.ec2_security_group_owner_id,
+                status: self.status,
+            }
+        }
+    }
+}
+impl AwsRdsDbSecurityGroupEc2SecurityGroup {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbSecurityGroupEc2SecurityGroup`](crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup)
+    pub fn builder() -> crate::model::aws_rds_db_security_group_ec2_security_group::Builder {
+        crate::model::aws_rds_db_security_group_ec2_security_group::Builder::default()
     }
 }
 
@@ -37092,6 +37530,9 @@ pub struct AwsElbLoadBalancerAttributes {
     /// <p>If cross-zone load balancing is enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
     pub cross_zone_load_balancing:
         std::option::Option<crate::model::AwsElbLoadBalancerCrossZoneLoadBalancing>,
+    /// <p>Any additional attributes for a load balancer.</p>
+    pub additional_attributes:
+        std::option::Option<std::vec::Vec<crate::model::AwsElbLoadBalancerAdditionalAttribute>>,
 }
 impl AwsElbLoadBalancerAttributes {
     /// <p>Information about the access log configuration for the load balancer.</p>
@@ -37120,6 +37561,12 @@ impl AwsElbLoadBalancerAttributes {
     ) -> std::option::Option<&crate::model::AwsElbLoadBalancerCrossZoneLoadBalancing> {
         self.cross_zone_load_balancing.as_ref()
     }
+    /// <p>Any additional attributes for a load balancer.</p>
+    pub fn additional_attributes(
+        &self,
+    ) -> std::option::Option<&[crate::model::AwsElbLoadBalancerAdditionalAttribute]> {
+        self.additional_attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for AwsElbLoadBalancerAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37128,6 +37575,7 @@ impl std::fmt::Debug for AwsElbLoadBalancerAttributes {
         formatter.field("connection_draining", &self.connection_draining);
         formatter.field("connection_settings", &self.connection_settings);
         formatter.field("cross_zone_load_balancing", &self.cross_zone_load_balancing);
+        formatter.field("additional_attributes", &self.additional_attributes);
         formatter.finish()
     }
 }
@@ -37144,6 +37592,8 @@ pub mod aws_elb_load_balancer_attributes {
             std::option::Option<crate::model::AwsElbLoadBalancerConnectionSettings>,
         pub(crate) cross_zone_load_balancing:
             std::option::Option<crate::model::AwsElbLoadBalancerCrossZoneLoadBalancing>,
+        pub(crate) additional_attributes:
+            std::option::Option<std::vec::Vec<crate::model::AwsElbLoadBalancerAdditionalAttribute>>,
     }
     impl Builder {
         /// <p>Information about the access log configuration for the load balancer.</p>
@@ -37215,6 +37665,30 @@ pub mod aws_elb_load_balancer_attributes {
             self.cross_zone_load_balancing = input;
             self
         }
+        /// Appends an item to `additional_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_additional_attributes`](Self::set_additional_attributes).
+        ///
+        /// <p>Any additional attributes for a load balancer.</p>
+        pub fn additional_attributes(
+            mut self,
+            input: crate::model::AwsElbLoadBalancerAdditionalAttribute,
+        ) -> Self {
+            let mut v = self.additional_attributes.unwrap_or_default();
+            v.push(input);
+            self.additional_attributes = Some(v);
+            self
+        }
+        /// <p>Any additional attributes for a load balancer.</p>
+        pub fn set_additional_attributes(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AwsElbLoadBalancerAdditionalAttribute>,
+            >,
+        ) -> Self {
+            self.additional_attributes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AwsElbLoadBalancerAttributes`](crate::model::AwsElbLoadBalancerAttributes)
         pub fn build(self) -> crate::model::AwsElbLoadBalancerAttributes {
             crate::model::AwsElbLoadBalancerAttributes {
@@ -37222,6 +37696,7 @@ pub mod aws_elb_load_balancer_attributes {
                 connection_draining: self.connection_draining,
                 connection_settings: self.connection_settings,
                 cross_zone_load_balancing: self.cross_zone_load_balancing,
+                additional_attributes: self.additional_attributes,
             }
         }
     }
@@ -37230,6 +37705,79 @@ impl AwsElbLoadBalancerAttributes {
     /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerAttributes`](crate::model::AwsElbLoadBalancerAttributes)
     pub fn builder() -> crate::model::aws_elb_load_balancer_attributes::Builder {
         crate::model::aws_elb_load_balancer_attributes::Builder::default()
+    }
+}
+
+/// <p>Provides information about additional attributes for the load balancer.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsElbLoadBalancerAdditionalAttribute {
+    /// <p>The name of the attribute.</p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p>The value of the attribute.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl AwsElbLoadBalancerAdditionalAttribute {
+    /// <p>The name of the attribute.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the attribute.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for AwsElbLoadBalancerAdditionalAttribute {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsElbLoadBalancerAdditionalAttribute");
+        formatter.field("key", &self.key);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`AwsElbLoadBalancerAdditionalAttribute`](crate::model::AwsElbLoadBalancerAdditionalAttribute)
+pub mod aws_elb_load_balancer_additional_attribute {
+    /// A builder for [`AwsElbLoadBalancerAdditionalAttribute`](crate::model::AwsElbLoadBalancerAdditionalAttribute)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the attribute.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        /// <p>The name of the attribute.</p>
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>The value of the attribute.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The value of the attribute.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsElbLoadBalancerAdditionalAttribute`](crate::model::AwsElbLoadBalancerAdditionalAttribute)
+        pub fn build(self) -> crate::model::AwsElbLoadBalancerAdditionalAttribute {
+            crate::model::AwsElbLoadBalancerAdditionalAttribute {
+                key: self.key,
+                value: self.value,
+            }
+        }
+    }
+}
+impl AwsElbLoadBalancerAdditionalAttribute {
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerAdditionalAttribute`](crate::model::AwsElbLoadBalancerAdditionalAttribute)
+    pub fn builder() -> crate::model::aws_elb_load_balancer_additional_attribute::Builder {
+        crate::model::aws_elb_load_balancer_additional_attribute::Builder::default()
     }
 }
 
@@ -38199,6 +38747,8 @@ pub struct AwsRedshiftClusterDetails {
     /// <p>The list of VPC security groups that the cluster belongs to, if the cluster is in a VPC.</p>
     pub vpc_security_groups:
         std::option::Option<std::vec::Vec<crate::model::AwsRedshiftClusterVpcSecurityGroup>>,
+    /// <p>Information about the logging status of the cluster.</p>
+    pub logging_status: std::option::Option<crate::model::AwsRedshiftClusterLoggingStatus>,
 }
 impl AwsRedshiftClusterDetails {
     /// <p>Indicates whether major version upgrades are applied automatically to the cluster during the maintenance window.</p>
@@ -38414,6 +38964,12 @@ impl AwsRedshiftClusterDetails {
     ) -> std::option::Option<&[crate::model::AwsRedshiftClusterVpcSecurityGroup]> {
         self.vpc_security_groups.as_deref()
     }
+    /// <p>Information about the logging status of the cluster.</p>
+    pub fn logging_status(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsRedshiftClusterLoggingStatus> {
+        self.logging_status.as_ref()
+    }
 }
 impl std::fmt::Debug for AwsRedshiftClusterDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38494,6 +39050,7 @@ impl std::fmt::Debug for AwsRedshiftClusterDetails {
         formatter.field("snapshot_schedule_state", &self.snapshot_schedule_state);
         formatter.field("vpc_id", &self.vpc_id);
         formatter.field("vpc_security_groups", &self.vpc_security_groups);
+        formatter.field("logging_status", &self.logging_status);
         formatter.finish()
     }
 }
@@ -38560,6 +39117,8 @@ pub mod aws_redshift_cluster_details {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
         pub(crate) vpc_security_groups:
             std::option::Option<std::vec::Vec<crate::model::AwsRedshiftClusterVpcSecurityGroup>>,
+        pub(crate) logging_status:
+            std::option::Option<crate::model::AwsRedshiftClusterLoggingStatus>,
     }
     impl Builder {
         /// <p>Indicates whether major version upgrades are applied automatically to the cluster during the maintenance window.</p>
@@ -39235,6 +39794,22 @@ pub mod aws_redshift_cluster_details {
             self.vpc_security_groups = input;
             self
         }
+        /// <p>Information about the logging status of the cluster.</p>
+        pub fn logging_status(
+            mut self,
+            input: crate::model::AwsRedshiftClusterLoggingStatus,
+        ) -> Self {
+            self.logging_status = Some(input);
+            self
+        }
+        /// <p>Information about the logging status of the cluster.</p>
+        pub fn set_logging_status(
+            mut self,
+            input: std::option::Option<crate::model::AwsRedshiftClusterLoggingStatus>,
+        ) -> Self {
+            self.logging_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AwsRedshiftClusterDetails`](crate::model::AwsRedshiftClusterDetails)
         pub fn build(self) -> crate::model::AwsRedshiftClusterDetails {
             crate::model::AwsRedshiftClusterDetails {
@@ -39286,6 +39861,7 @@ pub mod aws_redshift_cluster_details {
                 snapshot_schedule_state: self.snapshot_schedule_state,
                 vpc_id: self.vpc_id,
                 vpc_security_groups: self.vpc_security_groups,
+                logging_status: self.logging_status,
             }
         }
     }
@@ -39294,6 +39870,181 @@ impl AwsRedshiftClusterDetails {
     /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterDetails`](crate::model::AwsRedshiftClusterDetails)
     pub fn builder() -> crate::model::aws_redshift_cluster_details::Builder {
         crate::model::aws_redshift_cluster_details::Builder::default()
+    }
+}
+
+/// <p>Provides information about the logging status of the cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsRedshiftClusterLoggingStatus {
+    /// <p>The name of the S3 bucket where the log files are stored.</p>
+    pub bucket_name: std::option::Option<std::string::String>,
+    /// <p>The message indicating that the logs failed to be delivered.</p>
+    pub last_failure_message: std::option::Option<std::string::String>,
+    /// <p>The last time when logs failed to be delivered.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub last_failure_time: std::option::Option<std::string::String>,
+    /// <p>The last time that logs were delivered successfully.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub last_successful_delivery_time: std::option::Option<std::string::String>,
+    /// <p>Indicates whether logging is enabled.</p>
+    pub logging_enabled: bool,
+    /// <p>Provides the prefix applied to the log file names.</p>
+    pub s3_key_prefix: std::option::Option<std::string::String>,
+}
+impl AwsRedshiftClusterLoggingStatus {
+    /// <p>The name of the S3 bucket where the log files are stored.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The message indicating that the logs failed to be delivered.</p>
+    pub fn last_failure_message(&self) -> std::option::Option<&str> {
+        self.last_failure_message.as_deref()
+    }
+    /// <p>The last time when logs failed to be delivered.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn last_failure_time(&self) -> std::option::Option<&str> {
+        self.last_failure_time.as_deref()
+    }
+    /// <p>The last time that logs were delivered successfully.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn last_successful_delivery_time(&self) -> std::option::Option<&str> {
+        self.last_successful_delivery_time.as_deref()
+    }
+    /// <p>Indicates whether logging is enabled.</p>
+    pub fn logging_enabled(&self) -> bool {
+        self.logging_enabled
+    }
+    /// <p>Provides the prefix applied to the log file names.</p>
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_key_prefix.as_deref()
+    }
+}
+impl std::fmt::Debug for AwsRedshiftClusterLoggingStatus {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsRedshiftClusterLoggingStatus");
+        formatter.field("bucket_name", &self.bucket_name);
+        formatter.field("last_failure_message", &self.last_failure_message);
+        formatter.field("last_failure_time", &self.last_failure_time);
+        formatter.field(
+            "last_successful_delivery_time",
+            &self.last_successful_delivery_time,
+        );
+        formatter.field("logging_enabled", &self.logging_enabled);
+        formatter.field("s3_key_prefix", &self.s3_key_prefix);
+        formatter.finish()
+    }
+}
+/// See [`AwsRedshiftClusterLoggingStatus`](crate::model::AwsRedshiftClusterLoggingStatus)
+pub mod aws_redshift_cluster_logging_status {
+    /// A builder for [`AwsRedshiftClusterLoggingStatus`](crate::model::AwsRedshiftClusterLoggingStatus)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket_name: std::option::Option<std::string::String>,
+        pub(crate) last_failure_message: std::option::Option<std::string::String>,
+        pub(crate) last_failure_time: std::option::Option<std::string::String>,
+        pub(crate) last_successful_delivery_time: std::option::Option<std::string::String>,
+        pub(crate) logging_enabled: std::option::Option<bool>,
+        pub(crate) s3_key_prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the S3 bucket where the log files are stored.</p>
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the S3 bucket where the log files are stored.</p>
+        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket_name = input;
+            self
+        }
+        /// <p>The message indicating that the logs failed to be delivered.</p>
+        pub fn last_failure_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_failure_message = Some(input.into());
+            self
+        }
+        /// <p>The message indicating that the logs failed to be delivered.</p>
+        pub fn set_last_failure_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_failure_message = input;
+            self
+        }
+        /// <p>The last time when logs failed to be delivered.</p>
+        /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+        pub fn last_failure_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_failure_time = Some(input.into());
+            self
+        }
+        /// <p>The last time when logs failed to be delivered.</p>
+        /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+        pub fn set_last_failure_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_failure_time = input;
+            self
+        }
+        /// <p>The last time that logs were delivered successfully.</p>
+        /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+        pub fn last_successful_delivery_time(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.last_successful_delivery_time = Some(input.into());
+            self
+        }
+        /// <p>The last time that logs were delivered successfully.</p>
+        /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+        pub fn set_last_successful_delivery_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_successful_delivery_time = input;
+            self
+        }
+        /// <p>Indicates whether logging is enabled.</p>
+        pub fn logging_enabled(mut self, input: bool) -> Self {
+            self.logging_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates whether logging is enabled.</p>
+        pub fn set_logging_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.logging_enabled = input;
+            self
+        }
+        /// <p>Provides the prefix applied to the log file names.</p>
+        pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_key_prefix = Some(input.into());
+            self
+        }
+        /// <p>Provides the prefix applied to the log file names.</p>
+        pub fn set_s3_key_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_key_prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsRedshiftClusterLoggingStatus`](crate::model::AwsRedshiftClusterLoggingStatus)
+        pub fn build(self) -> crate::model::AwsRedshiftClusterLoggingStatus {
+            crate::model::AwsRedshiftClusterLoggingStatus {
+                bucket_name: self.bucket_name,
+                last_failure_message: self.last_failure_message,
+                last_failure_time: self.last_failure_time,
+                last_successful_delivery_time: self.last_successful_delivery_time,
+                logging_enabled: self.logging_enabled.unwrap_or_default(),
+                s3_key_prefix: self.s3_key_prefix,
+            }
+        }
+    }
+}
+impl AwsRedshiftClusterLoggingStatus {
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterLoggingStatus`](crate::model::AwsRedshiftClusterLoggingStatus)
+    pub fn builder() -> crate::model::aws_redshift_cluster_logging_status::Builder {
+        crate::model::aws_redshift_cluster_logging_status::Builder::default()
     }
 }
 
@@ -59646,6 +60397,9 @@ pub struct AwsCodeBuildProjectDetails {
     pub logs_config: std::option::Option<crate::model::AwsCodeBuildProjectLogsConfigDetails>,
     /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
     pub vpc_config: std::option::Option<crate::model::AwsCodeBuildProjectVpcConfig>,
+    /// <p>Information about the secondary artifacts for the CodeBuild project.</p>
+    pub secondary_artifacts:
+        std::option::Option<std::vec::Vec<crate::model::AwsCodeBuildProjectArtifactsDetails>>,
 }
 impl AwsCodeBuildProjectDetails {
     /// <p>The KMS key used to encrypt the build output artifacts.</p>
@@ -59687,6 +60441,12 @@ impl AwsCodeBuildProjectDetails {
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::AwsCodeBuildProjectVpcConfig> {
         self.vpc_config.as_ref()
     }
+    /// <p>Information about the secondary artifacts for the CodeBuild project.</p>
+    pub fn secondary_artifacts(
+        &self,
+    ) -> std::option::Option<&[crate::model::AwsCodeBuildProjectArtifactsDetails]> {
+        self.secondary_artifacts.as_deref()
+    }
 }
 impl std::fmt::Debug for AwsCodeBuildProjectDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -59699,6 +60459,7 @@ impl std::fmt::Debug for AwsCodeBuildProjectDetails {
         formatter.field("service_role", &self.service_role);
         formatter.field("logs_config", &self.logs_config);
         formatter.field("vpc_config", &self.vpc_config);
+        formatter.field("secondary_artifacts", &self.secondary_artifacts);
         formatter.finish()
     }
 }
@@ -59718,6 +60479,8 @@ pub mod aws_code_build_project_details {
         pub(crate) logs_config:
             std::option::Option<crate::model::AwsCodeBuildProjectLogsConfigDetails>,
         pub(crate) vpc_config: std::option::Option<crate::model::AwsCodeBuildProjectVpcConfig>,
+        pub(crate) secondary_artifacts:
+            std::option::Option<std::vec::Vec<crate::model::AwsCodeBuildProjectArtifactsDetails>>,
     }
     impl Builder {
         /// <p>The KMS key used to encrypt the build output artifacts.</p>
@@ -59834,6 +60597,30 @@ pub mod aws_code_build_project_details {
             self.vpc_config = input;
             self
         }
+        /// Appends an item to `secondary_artifacts`.
+        ///
+        /// To override the contents of this collection use [`set_secondary_artifacts`](Self::set_secondary_artifacts).
+        ///
+        /// <p>Information about the secondary artifacts for the CodeBuild project.</p>
+        pub fn secondary_artifacts(
+            mut self,
+            input: crate::model::AwsCodeBuildProjectArtifactsDetails,
+        ) -> Self {
+            let mut v = self.secondary_artifacts.unwrap_or_default();
+            v.push(input);
+            self.secondary_artifacts = Some(v);
+            self
+        }
+        /// <p>Information about the secondary artifacts for the CodeBuild project.</p>
+        pub fn set_secondary_artifacts(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AwsCodeBuildProjectArtifactsDetails>,
+            >,
+        ) -> Self {
+            self.secondary_artifacts = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AwsCodeBuildProjectDetails`](crate::model::AwsCodeBuildProjectDetails)
         pub fn build(self) -> crate::model::AwsCodeBuildProjectDetails {
             crate::model::AwsCodeBuildProjectDetails {
@@ -59845,6 +60632,7 @@ pub mod aws_code_build_project_details {
                 service_role: self.service_role,
                 logs_config: self.logs_config,
                 vpc_config: self.vpc_config,
+                secondary_artifacts: self.secondary_artifacts,
             }
         }
     }
@@ -59853,6 +60641,218 @@ impl AwsCodeBuildProjectDetails {
     /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectDetails`](crate::model::AwsCodeBuildProjectDetails)
     pub fn builder() -> crate::model::aws_code_build_project_details::Builder {
         crate::model::aws_code_build_project_details::Builder::default()
+    }
+}
+
+/// <p>Information about the build artifacts for the CodeBuild project.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsCodeBuildProjectArtifactsDetails {
+    /// <p>An identifier for the artifact definition.</p>
+    pub artifact_identifier: std::option::Option<std::string::String>,
+    /// <p>Indicates whether to disable encryption on the artifact. Only valid when <code>Type</code> is <code>S3</code>.</p>
+    pub encryption_disabled: bool,
+    /// <p>Only used when <code>Type</code> is <code>S3</code>. The name of the S3 bucket where the artifact is located.</p>
+    pub location: std::option::Option<std::string::String>,
+    /// <p>Only used when Type is S3. The name of the artifact. Used with <code>NamepaceType</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Only used when <code>Type</code> is <code>S3</code>. The value to use for the namespace. Used with <code>Name</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
+    pub namespace_type: std::option::Option<std::string::String>,
+    /// <p>Whether the name specified in the buildspec file overrides the artifact name.</p>
+    pub override_artifact_name: bool,
+    /// <p>Only used when <code>Type</code> is <code>S3</code>. The type of output artifact to create.</p>
+    pub packaging: std::option::Option<std::string::String>,
+    /// <p>Only used when <code>Type</code> is <code>S3</code>. The path to the artifact. Used with <code>Name</code> and <code>NamespaceType</code> to determine the pattern for storing the artifact.</p>
+    pub path: std::option::Option<std::string::String>,
+    /// <p>The type of build artifact.</p>
+    pub r#type: std::option::Option<std::string::String>,
+}
+impl AwsCodeBuildProjectArtifactsDetails {
+    /// <p>An identifier for the artifact definition.</p>
+    pub fn artifact_identifier(&self) -> std::option::Option<&str> {
+        self.artifact_identifier.as_deref()
+    }
+    /// <p>Indicates whether to disable encryption on the artifact. Only valid when <code>Type</code> is <code>S3</code>.</p>
+    pub fn encryption_disabled(&self) -> bool {
+        self.encryption_disabled
+    }
+    /// <p>Only used when <code>Type</code> is <code>S3</code>. The name of the S3 bucket where the artifact is located.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>Only used when Type is S3. The name of the artifact. Used with <code>NamepaceType</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Only used when <code>Type</code> is <code>S3</code>. The value to use for the namespace. Used with <code>Name</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
+    pub fn namespace_type(&self) -> std::option::Option<&str> {
+        self.namespace_type.as_deref()
+    }
+    /// <p>Whether the name specified in the buildspec file overrides the artifact name.</p>
+    pub fn override_artifact_name(&self) -> bool {
+        self.override_artifact_name
+    }
+    /// <p>Only used when <code>Type</code> is <code>S3</code>. The type of output artifact to create.</p>
+    pub fn packaging(&self) -> std::option::Option<&str> {
+        self.packaging.as_deref()
+    }
+    /// <p>Only used when <code>Type</code> is <code>S3</code>. The path to the artifact. Used with <code>Name</code> and <code>NamespaceType</code> to determine the pattern for storing the artifact.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The type of build artifact.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
+impl std::fmt::Debug for AwsCodeBuildProjectArtifactsDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsCodeBuildProjectArtifactsDetails");
+        formatter.field("artifact_identifier", &self.artifact_identifier);
+        formatter.field("encryption_disabled", &self.encryption_disabled);
+        formatter.field("location", &self.location);
+        formatter.field("name", &self.name);
+        formatter.field("namespace_type", &self.namespace_type);
+        formatter.field("override_artifact_name", &self.override_artifact_name);
+        formatter.field("packaging", &self.packaging);
+        formatter.field("path", &self.path);
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+/// See [`AwsCodeBuildProjectArtifactsDetails`](crate::model::AwsCodeBuildProjectArtifactsDetails)
+pub mod aws_code_build_project_artifacts_details {
+    /// A builder for [`AwsCodeBuildProjectArtifactsDetails`](crate::model::AwsCodeBuildProjectArtifactsDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) artifact_identifier: std::option::Option<std::string::String>,
+        pub(crate) encryption_disabled: std::option::Option<bool>,
+        pub(crate) location: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) namespace_type: std::option::Option<std::string::String>,
+        pub(crate) override_artifact_name: std::option::Option<bool>,
+        pub(crate) packaging: std::option::Option<std::string::String>,
+        pub(crate) path: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>An identifier for the artifact definition.</p>
+        pub fn artifact_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.artifact_identifier = Some(input.into());
+            self
+        }
+        /// <p>An identifier for the artifact definition.</p>
+        pub fn set_artifact_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.artifact_identifier = input;
+            self
+        }
+        /// <p>Indicates whether to disable encryption on the artifact. Only valid when <code>Type</code> is <code>S3</code>.</p>
+        pub fn encryption_disabled(mut self, input: bool) -> Self {
+            self.encryption_disabled = Some(input);
+            self
+        }
+        /// <p>Indicates whether to disable encryption on the artifact. Only valid when <code>Type</code> is <code>S3</code>.</p>
+        pub fn set_encryption_disabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.encryption_disabled = input;
+            self
+        }
+        /// <p>Only used when <code>Type</code> is <code>S3</code>. The name of the S3 bucket where the artifact is located.</p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location = Some(input.into());
+            self
+        }
+        /// <p>Only used when <code>Type</code> is <code>S3</code>. The name of the S3 bucket where the artifact is located.</p>
+        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location = input;
+            self
+        }
+        /// <p>Only used when Type is S3. The name of the artifact. Used with <code>NamepaceType</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>Only used when Type is S3. The name of the artifact. Used with <code>NamepaceType</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Only used when <code>Type</code> is <code>S3</code>. The value to use for the namespace. Used with <code>Name</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
+        pub fn namespace_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.namespace_type = Some(input.into());
+            self
+        }
+        /// <p>Only used when <code>Type</code> is <code>S3</code>. The value to use for the namespace. Used with <code>Name</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
+        pub fn set_namespace_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.namespace_type = input;
+            self
+        }
+        /// <p>Whether the name specified in the buildspec file overrides the artifact name.</p>
+        pub fn override_artifact_name(mut self, input: bool) -> Self {
+            self.override_artifact_name = Some(input);
+            self
+        }
+        /// <p>Whether the name specified in the buildspec file overrides the artifact name.</p>
+        pub fn set_override_artifact_name(mut self, input: std::option::Option<bool>) -> Self {
+            self.override_artifact_name = input;
+            self
+        }
+        /// <p>Only used when <code>Type</code> is <code>S3</code>. The type of output artifact to create.</p>
+        pub fn packaging(mut self, input: impl Into<std::string::String>) -> Self {
+            self.packaging = Some(input.into());
+            self
+        }
+        /// <p>Only used when <code>Type</code> is <code>S3</code>. The type of output artifact to create.</p>
+        pub fn set_packaging(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.packaging = input;
+            self
+        }
+        /// <p>Only used when <code>Type</code> is <code>S3</code>. The path to the artifact. Used with <code>Name</code> and <code>NamespaceType</code> to determine the pattern for storing the artifact.</p>
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
+            self
+        }
+        /// <p>Only used when <code>Type</code> is <code>S3</code>. The path to the artifact. Used with <code>Name</code> and <code>NamespaceType</code> to determine the pattern for storing the artifact.</p>
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
+            self
+        }
+        /// <p>The type of build artifact.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>The type of build artifact.</p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsCodeBuildProjectArtifactsDetails`](crate::model::AwsCodeBuildProjectArtifactsDetails)
+        pub fn build(self) -> crate::model::AwsCodeBuildProjectArtifactsDetails {
+            crate::model::AwsCodeBuildProjectArtifactsDetails {
+                artifact_identifier: self.artifact_identifier,
+                encryption_disabled: self.encryption_disabled.unwrap_or_default(),
+                location: self.location,
+                name: self.name,
+                namespace_type: self.namespace_type,
+                override_artifact_name: self.override_artifact_name.unwrap_or_default(),
+                packaging: self.packaging,
+                path: self.path,
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl AwsCodeBuildProjectArtifactsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectArtifactsDetails`](crate::model::AwsCodeBuildProjectArtifactsDetails)
+    pub fn builder() -> crate::model::aws_code_build_project_artifacts_details::Builder {
+        crate::model::aws_code_build_project_artifacts_details::Builder::default()
     }
 }
 
@@ -60862,218 +61862,6 @@ impl AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails {
     }
 }
 
-/// <p>Information about the build artifacts for the CodeBuild project.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AwsCodeBuildProjectArtifactsDetails {
-    /// <p>An identifier for the artifact definition.</p>
-    pub artifact_identifier: std::option::Option<std::string::String>,
-    /// <p>Indicates whether to disable encryption on the artifact. Only valid when <code>Type</code> is <code>S3</code>.</p>
-    pub encryption_disabled: bool,
-    /// <p>Only used when <code>Type</code> is <code>S3</code>. The name of the S3 bucket where the artifact is located.</p>
-    pub location: std::option::Option<std::string::String>,
-    /// <p>Only used when Type is S3. The name of the artifact. Used with <code>NamepaceType</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
-    pub name: std::option::Option<std::string::String>,
-    /// <p>Only used when <code>Type</code> is <code>S3</code>. The value to use for the namespace. Used with <code>Name</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
-    pub namespace_type: std::option::Option<std::string::String>,
-    /// <p>Whether the name specified in the buildspec file overrides the artifact name.</p>
-    pub override_artifact_name: bool,
-    /// <p>Only used when <code>Type</code> is <code>S3</code>. The type of output artifact to create.</p>
-    pub packaging: std::option::Option<std::string::String>,
-    /// <p>Only used when <code>Type</code> is <code>S3</code>. The path to the artifact. Used with <code>Name</code> and <code>NamespaceType</code> to determine the pattern for storing the artifact.</p>
-    pub path: std::option::Option<std::string::String>,
-    /// <p>The type of build artifact.</p>
-    pub r#type: std::option::Option<std::string::String>,
-}
-impl AwsCodeBuildProjectArtifactsDetails {
-    /// <p>An identifier for the artifact definition.</p>
-    pub fn artifact_identifier(&self) -> std::option::Option<&str> {
-        self.artifact_identifier.as_deref()
-    }
-    /// <p>Indicates whether to disable encryption on the artifact. Only valid when <code>Type</code> is <code>S3</code>.</p>
-    pub fn encryption_disabled(&self) -> bool {
-        self.encryption_disabled
-    }
-    /// <p>Only used when <code>Type</code> is <code>S3</code>. The name of the S3 bucket where the artifact is located.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
-        self.location.as_deref()
-    }
-    /// <p>Only used when Type is S3. The name of the artifact. Used with <code>NamepaceType</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-    /// <p>Only used when <code>Type</code> is <code>S3</code>. The value to use for the namespace. Used with <code>Name</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
-    pub fn namespace_type(&self) -> std::option::Option<&str> {
-        self.namespace_type.as_deref()
-    }
-    /// <p>Whether the name specified in the buildspec file overrides the artifact name.</p>
-    pub fn override_artifact_name(&self) -> bool {
-        self.override_artifact_name
-    }
-    /// <p>Only used when <code>Type</code> is <code>S3</code>. The type of output artifact to create.</p>
-    pub fn packaging(&self) -> std::option::Option<&str> {
-        self.packaging.as_deref()
-    }
-    /// <p>Only used when <code>Type</code> is <code>S3</code>. The path to the artifact. Used with <code>Name</code> and <code>NamespaceType</code> to determine the pattern for storing the artifact.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
-        self.path.as_deref()
-    }
-    /// <p>The type of build artifact.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
-        self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for AwsCodeBuildProjectArtifactsDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsCodeBuildProjectArtifactsDetails");
-        formatter.field("artifact_identifier", &self.artifact_identifier);
-        formatter.field("encryption_disabled", &self.encryption_disabled);
-        formatter.field("location", &self.location);
-        formatter.field("name", &self.name);
-        formatter.field("namespace_type", &self.namespace_type);
-        formatter.field("override_artifact_name", &self.override_artifact_name);
-        formatter.field("packaging", &self.packaging);
-        formatter.field("path", &self.path);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
-/// See [`AwsCodeBuildProjectArtifactsDetails`](crate::model::AwsCodeBuildProjectArtifactsDetails)
-pub mod aws_code_build_project_artifacts_details {
-    /// A builder for [`AwsCodeBuildProjectArtifactsDetails`](crate::model::AwsCodeBuildProjectArtifactsDetails)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) artifact_identifier: std::option::Option<std::string::String>,
-        pub(crate) encryption_disabled: std::option::Option<bool>,
-        pub(crate) location: std::option::Option<std::string::String>,
-        pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) namespace_type: std::option::Option<std::string::String>,
-        pub(crate) override_artifact_name: std::option::Option<bool>,
-        pub(crate) packaging: std::option::Option<std::string::String>,
-        pub(crate) path: std::option::Option<std::string::String>,
-        pub(crate) r#type: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>An identifier for the artifact definition.</p>
-        pub fn artifact_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.artifact_identifier = Some(input.into());
-            self
-        }
-        /// <p>An identifier for the artifact definition.</p>
-        pub fn set_artifact_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.artifact_identifier = input;
-            self
-        }
-        /// <p>Indicates whether to disable encryption on the artifact. Only valid when <code>Type</code> is <code>S3</code>.</p>
-        pub fn encryption_disabled(mut self, input: bool) -> Self {
-            self.encryption_disabled = Some(input);
-            self
-        }
-        /// <p>Indicates whether to disable encryption on the artifact. Only valid when <code>Type</code> is <code>S3</code>.</p>
-        pub fn set_encryption_disabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.encryption_disabled = input;
-            self
-        }
-        /// <p>Only used when <code>Type</code> is <code>S3</code>. The name of the S3 bucket where the artifact is located.</p>
-        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-            self.location = Some(input.into());
-            self
-        }
-        /// <p>Only used when <code>Type</code> is <code>S3</code>. The name of the S3 bucket where the artifact is located.</p>
-        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
-        }
-        /// <p>Only used when Type is S3. The name of the artifact. Used with <code>NamepaceType</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        /// <p>Only used when Type is S3. The name of the artifact. Used with <code>NamepaceType</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// <p>Only used when <code>Type</code> is <code>S3</code>. The value to use for the namespace. Used with <code>Name</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
-        pub fn namespace_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.namespace_type = Some(input.into());
-            self
-        }
-        /// <p>Only used when <code>Type</code> is <code>S3</code>. The value to use for the namespace. Used with <code>Name</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
-        pub fn set_namespace_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.namespace_type = input;
-            self
-        }
-        /// <p>Whether the name specified in the buildspec file overrides the artifact name.</p>
-        pub fn override_artifact_name(mut self, input: bool) -> Self {
-            self.override_artifact_name = Some(input);
-            self
-        }
-        /// <p>Whether the name specified in the buildspec file overrides the artifact name.</p>
-        pub fn set_override_artifact_name(mut self, input: std::option::Option<bool>) -> Self {
-            self.override_artifact_name = input;
-            self
-        }
-        /// <p>Only used when <code>Type</code> is <code>S3</code>. The type of output artifact to create.</p>
-        pub fn packaging(mut self, input: impl Into<std::string::String>) -> Self {
-            self.packaging = Some(input.into());
-            self
-        }
-        /// <p>Only used when <code>Type</code> is <code>S3</code>. The type of output artifact to create.</p>
-        pub fn set_packaging(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.packaging = input;
-            self
-        }
-        /// <p>Only used when <code>Type</code> is <code>S3</code>. The path to the artifact. Used with <code>Name</code> and <code>NamespaceType</code> to determine the pattern for storing the artifact.</p>
-        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-            self.path = Some(input.into());
-            self
-        }
-        /// <p>Only used when <code>Type</code> is <code>S3</code>. The path to the artifact. Used with <code>Name</code> and <code>NamespaceType</code> to determine the pattern for storing the artifact.</p>
-        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
-        }
-        /// <p>The type of build artifact.</p>
-        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(input.into());
-            self
-        }
-        /// <p>The type of build artifact.</p>
-        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`AwsCodeBuildProjectArtifactsDetails`](crate::model::AwsCodeBuildProjectArtifactsDetails)
-        pub fn build(self) -> crate::model::AwsCodeBuildProjectArtifactsDetails {
-            crate::model::AwsCodeBuildProjectArtifactsDetails {
-                artifact_identifier: self.artifact_identifier,
-                encryption_disabled: self.encryption_disabled.unwrap_or_default(),
-                location: self.location,
-                name: self.name,
-                namespace_type: self.namespace_type,
-                override_artifact_name: self.override_artifact_name.unwrap_or_default(),
-                packaging: self.packaging,
-                path: self.path,
-                r#type: self.r#type,
-            }
-        }
-    }
-}
-impl AwsCodeBuildProjectArtifactsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectArtifactsDetails`](crate::model::AwsCodeBuildProjectArtifactsDetails)
-    pub fn builder() -> crate::model::aws_code_build_project_artifacts_details::Builder {
-        crate::model::aws_code_build_project_artifacts_details::Builder::default()
-    }
-}
-
 /// <p>Provides details about an auto scaling group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -61097,6 +61885,12 @@ pub struct AwsAutoScalingAutoScalingGroupDetails {
     pub availability_zones: std::option::Option<
         std::vec::Vec<crate::model::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>,
     >,
+    /// <p>The launch template to use.</p>
+    pub launch_template: std::option::Option<
+        crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification,
+    >,
+    /// <p>Indicates whether capacity rebalancing is enabled. </p>
+    pub capacity_rebalance: bool,
 }
 impl AwsAutoScalingAutoScalingGroupDetails {
     /// <p>The name of the launch configuration.</p>
@@ -61135,6 +61929,18 @@ impl AwsAutoScalingAutoScalingGroupDetails {
     > {
         self.availability_zones.as_deref()
     }
+    /// <p>The launch template to use.</p>
+    pub fn launch_template(
+        &self,
+    ) -> std::option::Option<
+        &crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification,
+    > {
+        self.launch_template.as_ref()
+    }
+    /// <p>Indicates whether capacity rebalancing is enabled. </p>
+    pub fn capacity_rebalance(&self) -> bool {
+        self.capacity_rebalance
+    }
 }
 impl std::fmt::Debug for AwsAutoScalingAutoScalingGroupDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -61146,6 +61952,8 @@ impl std::fmt::Debug for AwsAutoScalingAutoScalingGroupDetails {
         formatter.field("created_time", &self.created_time);
         formatter.field("mixed_instances_policy", &self.mixed_instances_policy);
         formatter.field("availability_zones", &self.availability_zones);
+        formatter.field("launch_template", &self.launch_template);
+        formatter.field("capacity_rebalance", &self.capacity_rebalance);
         formatter.finish()
     }
 }
@@ -61166,6 +61974,10 @@ pub mod aws_auto_scaling_auto_scaling_group_details {
         pub(crate) availability_zones: std::option::Option<
             std::vec::Vec<crate::model::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>,
         >,
+        pub(crate) launch_template: std::option::Option<
+            crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification,
+        >,
+        pub(crate) capacity_rebalance: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name of the launch configuration.</p>
@@ -61279,6 +62091,32 @@ pub mod aws_auto_scaling_auto_scaling_group_details {
             self.availability_zones = input;
             self
         }
+        /// <p>The launch template to use.</p>
+        pub fn launch_template(
+            mut self,
+            input: crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification,
+        ) -> Self {
+            self.launch_template = Some(input);
+            self
+        }
+        /// <p>The launch template to use.</p>
+        pub fn set_launch_template(
+            mut self,
+            input: std::option::Option<crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification>,
+        ) -> Self {
+            self.launch_template = input;
+            self
+        }
+        /// <p>Indicates whether capacity rebalancing is enabled. </p>
+        pub fn capacity_rebalance(mut self, input: bool) -> Self {
+            self.capacity_rebalance = Some(input);
+            self
+        }
+        /// <p>Indicates whether capacity rebalancing is enabled. </p>
+        pub fn set_capacity_rebalance(mut self, input: std::option::Option<bool>) -> Self {
+            self.capacity_rebalance = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupDetails`](crate::model::AwsAutoScalingAutoScalingGroupDetails)
         pub fn build(self) -> crate::model::AwsAutoScalingAutoScalingGroupDetails {
             crate::model::AwsAutoScalingAutoScalingGroupDetails {
@@ -61289,6 +62127,8 @@ pub mod aws_auto_scaling_auto_scaling_group_details {
                 created_time: self.created_time,
                 mixed_instances_policy: self.mixed_instances_policy,
                 availability_zones: self.availability_zones,
+                launch_template: self.launch_template,
+                capacity_rebalance: self.capacity_rebalance.unwrap_or_default(),
             }
         }
     }
@@ -61297,6 +62137,109 @@ impl AwsAutoScalingAutoScalingGroupDetails {
     /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupDetails`](crate::model::AwsAutoScalingAutoScalingGroupDetails)
     pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_details::Builder {
         crate::model::aws_auto_scaling_auto_scaling_group_details::Builder::default()
+    }
+}
+
+/// <p>Details about the launch template to use.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification {
+    /// <p>The identifier of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
+    pub launch_template_id: std::option::Option<std::string::String>,
+    /// <p>The name of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
+    pub launch_template_name: std::option::Option<std::string::String>,
+    /// <p>Identifies the version of the launch template. You can specify a version identifier, or use the values <code>$Latest</code> or <code>$Default</code>.</p>
+    pub version: std::option::Option<std::string::String>,
+}
+impl AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification {
+    /// <p>The identifier of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
+    pub fn launch_template_id(&self) -> std::option::Option<&str> {
+        self.launch_template_id.as_deref()
+    }
+    /// <p>The name of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
+    pub fn launch_template_name(&self) -> std::option::Option<&str> {
+        self.launch_template_name.as_deref()
+    }
+    /// <p>Identifies the version of the launch template. You can specify a version identifier, or use the values <code>$Latest</code> or <code>$Default</code>.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
+impl std::fmt::Debug for AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct(
+            "AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification",
+        );
+        formatter.field("launch_template_id", &self.launch_template_id);
+        formatter.field("launch_template_name", &self.launch_template_name);
+        formatter.field("version", &self.version);
+        formatter.finish()
+    }
+}
+/// See [`AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification)
+pub mod aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification {
+    /// A builder for [`AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) launch_template_id: std::option::Option<std::string::String>,
+        pub(crate) launch_template_name: std::option::Option<std::string::String>,
+        pub(crate) version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
+        pub fn launch_template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.launch_template_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
+        pub fn set_launch_template_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.launch_template_id = input;
+            self
+        }
+        /// <p>The name of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
+        pub fn launch_template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.launch_template_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
+        pub fn set_launch_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.launch_template_name = input;
+            self
+        }
+        /// <p>Identifies the version of the launch template. You can specify a version identifier, or use the values <code>$Latest</code> or <code>$Default</code>.</p>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
+            self
+        }
+        /// <p>Identifies the version of the launch template. You can specify a version identifier, or use the values <code>$Latest</code> or <code>$Default</code>.</p>
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification)
+        pub fn build(
+            self,
+        ) -> crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification
+        {
+            crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification {
+                launch_template_id: self.launch_template_id,
+                launch_template_name: self.launch_template_name,
+                version: self.version,
+            }
+        }
+    }
+}
+impl AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification {
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification)
+    pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification::Builder{
+        crate::model::aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification::Builder::default()
     }
 }
 
@@ -61457,13 +62400,13 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails  {
-    /// <p>The launch template to use.</p>
+    /// <p>The launch template to use for a mixed instances policy.</p>
     pub launch_template_specification: std::option::Option<crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification>,
     /// <p>Property values to use to override the values in the launch template.</p>
     pub overrides: std::option::Option<std::vec::Vec<crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>>,
 }
 impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails {
-    /// <p>The launch template to use.</p>
+    /// <p>The launch template to use for a mixed instances policy.</p>
     pub fn launch_template_specification(&self) -> std::option::Option<& crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification>{
         self.launch_template_specification.as_ref()
     }
@@ -61495,7 +62438,7 @@ pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_templa
         pub(crate) overrides: std::option::Option<std::vec::Vec<crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>>,
     }
     impl Builder {
-        /// <p>The launch template to use.</p>
+        /// <p>The launch template to use for a mixed instances policy.</p>
         pub fn launch_template_specification(
             mut self,
             input: crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification,
@@ -61503,7 +62446,7 @@ pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_templa
             self.launch_template_specification = Some(input);
             self
         }
-        /// <p>The launch template to use.</p>
+        /// <p>The launch template to use for a mixed instances policy.</p>
         pub fn set_launch_template_specification(
             mut self,
             input: std::option::Option<crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification>,
@@ -61637,7 +62580,7 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesLi
     }
 }
 
-/// <p>Details about the launch template to use.</p>
+/// <p>Details about the launch template to use for a mixed instances policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification

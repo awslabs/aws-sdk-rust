@@ -5763,11 +5763,15 @@ pub mod update_server_input {
             self
         }
         /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+        /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
+        /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
         pub fn workflow_details(mut self, input: crate::model::WorkflowDetails) -> Self {
             self.workflow_details = Some(input);
             self
         }
         /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+        /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
+        /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
         pub fn set_workflow_details(
             mut self,
             input: std::option::Option<crate::model::WorkflowDetails>,
@@ -6339,6 +6343,8 @@ pub struct UpdateServerInput {
     /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
     pub server_id: std::option::Option<std::string::String>,
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+    /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
+    /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
     pub workflow_details: std::option::Option<crate::model::WorkflowDetails>,
 }
 impl UpdateServerInput {
@@ -6428,6 +6434,8 @@ impl UpdateServerInput {
         self.server_id.as_deref()
     }
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+    /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
+    /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
     pub fn workflow_details(&self) -> std::option::Option<&crate::model::WorkflowDetails> {
         self.workflow_details.as_ref()
     }

@@ -1025,6 +1025,151 @@ impl std::error::Error for ListPermissionsError {
     }
 }
 
+/// Error type for the `ListTagsForResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListTagsForResourceError {
+    /// Kind of error that occurred.
+    pub kind: ListTagsForResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListTagsForResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListTagsForResourceErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Unexpected error while processing the request. Retry the request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request references a resource that does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because of request throttling. Retry the request.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The value of a parameter in the request caused an error.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListTagsForResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListTagsForResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
+    fn code(&self) -> Option<&str> {
+        ListTagsForResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            ListTagsForResourceErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListTagsForResourceErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl ListTagsForResourceError {
+    /// Creates a new `ListTagsForResourceError`.
+    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListTagsForResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListTagsForResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListWorkspaces` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1141,6 +1286,273 @@ impl std::error::Error for ListWorkspacesError {
             ListWorkspacesErrorKind::InternalServerException(_inner) => Some(_inner),
             ListWorkspacesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListWorkspacesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `TagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct TagResourceError {
+    /// Kind of error that occurred.
+    pub kind: TagResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `TagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum TagResourceErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Unexpected error while processing the request. Retry the request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request references a resource that does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because of request throttling. Retry the request.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The value of a parameter in the request caused an error.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for TagResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            TagResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
+    fn code(&self) -> Option<&str> {
+        TagResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            TagResourceErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            TagResourceErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
+            _ => None,
+        }
+    }
+}
+impl TagResourceError {
+    /// Creates a new `TagResourceError`.
+    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: TagResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for TagResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            TagResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            TagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            TagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
+            TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UntagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UntagResourceError {
+    /// Kind of error that occurred.
+    pub kind: UntagResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UntagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UntagResourceErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Unexpected error while processing the request. Retry the request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request references a resource that does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because of request throttling. Retry the request.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The value of a parameter in the request caused an error.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UntagResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UntagResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
+    fn code(&self) -> Option<&str> {
+        UntagResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            UntagResourceErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            UntagResourceErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl UntagResourceError {
+    /// Creates a new `UntagResourceError`.
+    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UntagResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for UntagResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UntagResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UntagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

@@ -724,6 +724,7 @@ pub mod create_flow_input {
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::SetSourceRequest>>,
         pub(crate) vpc_interfaces:
             std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>,
+        pub(crate) maintenance: std::option::Option<crate::model::AddMaintenance>,
     }
     impl Builder {
         /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
@@ -869,6 +870,19 @@ pub mod create_flow_input {
             self.vpc_interfaces = input;
             self
         }
+        /// Create maintenance setting for a flow
+        pub fn maintenance(mut self, input: crate::model::AddMaintenance) -> Self {
+            self.maintenance = Some(input);
+            self
+        }
+        /// Create maintenance setting for a flow
+        pub fn set_maintenance(
+            mut self,
+            input: std::option::Option<crate::model::AddMaintenance>,
+        ) -> Self {
+            self.maintenance = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateFlowInput`](crate::input::CreateFlowInput)
         pub fn build(
             self,
@@ -886,6 +900,7 @@ pub mod create_flow_input {
                 source_failover_config: self.source_failover_config,
                 sources: self.sources,
                 vpc_interfaces: self.vpc_interfaces,
+                maintenance: self.maintenance,
             })
         }
     }
@@ -4146,6 +4161,7 @@ pub mod update_flow_input {
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) source_failover_config: std::option::Option<crate::model::UpdateFailoverConfig>,
+        pub(crate) maintenance: std::option::Option<crate::model::UpdateMaintenance>,
     }
     impl Builder {
         /// The flow that you want to update.
@@ -4171,6 +4187,19 @@ pub mod update_flow_input {
             self.source_failover_config = input;
             self
         }
+        /// Update maintenance setting for a flow
+        pub fn maintenance(mut self, input: crate::model::UpdateMaintenance) -> Self {
+            self.maintenance = Some(input);
+            self
+        }
+        /// Update maintenance setting for a flow
+        pub fn set_maintenance(
+            mut self,
+            input: std::option::Option<crate::model::UpdateMaintenance>,
+        ) -> Self {
+            self.maintenance = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateFlowInput`](crate::input::UpdateFlowInput)
         pub fn build(
             self,
@@ -4181,6 +4210,7 @@ pub mod update_flow_input {
             Ok(crate::input::UpdateFlowInput {
                 flow_arn: self.flow_arn,
                 source_failover_config: self.source_failover_config,
+                maintenance: self.maintenance,
             })
         }
     }
@@ -6010,6 +6040,8 @@ pub struct UpdateFlowInput {
     pub flow_arn: std::option::Option<std::string::String>,
     /// The settings for source failover.
     pub source_failover_config: std::option::Option<crate::model::UpdateFailoverConfig>,
+    /// Update maintenance setting for a flow
+    pub maintenance: std::option::Option<crate::model::UpdateMaintenance>,
 }
 impl UpdateFlowInput {
     /// The flow that you want to update.
@@ -6022,12 +6054,17 @@ impl UpdateFlowInput {
     ) -> std::option::Option<&crate::model::UpdateFailoverConfig> {
         self.source_failover_config.as_ref()
     }
+    /// Update maintenance setting for a flow
+    pub fn maintenance(&self) -> std::option::Option<&crate::model::UpdateMaintenance> {
+        self.maintenance.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFlowInput");
         formatter.field("flow_arn", &self.flow_arn);
         formatter.field("source_failover_config", &self.source_failover_config);
+        formatter.field("maintenance", &self.maintenance);
         formatter.finish()
     }
 }
@@ -6576,6 +6613,8 @@ pub struct CreateFlowInput {
     pub sources: std::option::Option<std::vec::Vec<crate::model::SetSourceRequest>>,
     /// The VPC interfaces you want on the flow.
     pub vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>,
+    /// Create maintenance setting for a flow
+    pub maintenance: std::option::Option<crate::model::AddMaintenance>,
 }
 impl CreateFlowInput {
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
@@ -6614,6 +6653,10 @@ impl CreateFlowInput {
     pub fn vpc_interfaces(&self) -> std::option::Option<&[crate::model::VpcInterfaceRequest]> {
         self.vpc_interfaces.as_deref()
     }
+    /// Create maintenance setting for a flow
+    pub fn maintenance(&self) -> std::option::Option<&crate::model::AddMaintenance> {
+        self.maintenance.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6627,6 +6670,7 @@ impl std::fmt::Debug for CreateFlowInput {
         formatter.field("source_failover_config", &self.source_failover_config);
         formatter.field("sources", &self.sources);
         formatter.field("vpc_interfaces", &self.vpc_interfaces);
+        formatter.field("maintenance", &self.maintenance);
         formatter.finish()
     }
 }

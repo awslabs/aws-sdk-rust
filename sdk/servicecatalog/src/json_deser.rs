@@ -1638,6 +1638,11 @@ pub fn deser_operation_crate_operation_describe_provisioning_parameters(
                             crate::json_deser::deser_list_com_amazonaws_servicecatalog_provisioning_artifact_outputs(tokens)?
                         );
                     }
+                    "ProvisioningArtifactOutputKeys" => {
+                        builder = builder.set_provisioning_artifact_output_keys(
+                            crate::json_deser::deser_list_com_amazonaws_servicecatalog_provisioning_artifact_outputs(tokens)?
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

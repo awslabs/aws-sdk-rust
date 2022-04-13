@@ -1520,6 +1520,8 @@ pub struct Meeting {
     pub media_placement: std::option::Option<crate::model::MediaPlacement>,
     /// <p>The features available to a meeting, such as Amazon Voice Focus.</p>
     pub meeting_features: std::option::Option<crate::model::MeetingFeaturesConfiguration>,
+    /// <p>When specified, replicates the media from the primary meeting to this meeting.</p>
+    pub primary_meeting_id: std::option::Option<std::string::String>,
 }
 impl Meeting {
     /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -1549,6 +1551,10 @@ impl Meeting {
     ) -> std::option::Option<&crate::model::MeetingFeaturesConfiguration> {
         self.meeting_features.as_ref()
     }
+    /// <p>When specified, replicates the media from the primary meeting to this meeting.</p>
+    pub fn primary_meeting_id(&self) -> std::option::Option<&str> {
+        self.primary_meeting_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Meeting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1559,6 +1565,7 @@ impl std::fmt::Debug for Meeting {
         formatter.field("media_region", &self.media_region);
         formatter.field("media_placement", &self.media_placement);
         formatter.field("meeting_features", &self.meeting_features);
+        formatter.field("primary_meeting_id", &self.primary_meeting_id);
         formatter.finish()
     }
 }
@@ -1575,6 +1582,7 @@ pub mod meeting {
         pub(crate) media_placement: std::option::Option<crate::model::MediaPlacement>,
         pub(crate) meeting_features:
             std::option::Option<crate::model::MeetingFeaturesConfiguration>,
+        pub(crate) primary_meeting_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -1654,6 +1662,19 @@ pub mod meeting {
             self.meeting_features = input;
             self
         }
+        /// <p>When specified, replicates the media from the primary meeting to this meeting.</p>
+        pub fn primary_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.primary_meeting_id = Some(input.into());
+            self
+        }
+        /// <p>When specified, replicates the media from the primary meeting to this meeting.</p>
+        pub fn set_primary_meeting_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.primary_meeting_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Meeting`](crate::model::Meeting)
         pub fn build(self) -> crate::model::Meeting {
             crate::model::Meeting {
@@ -1663,6 +1684,7 @@ pub mod meeting {
                 media_region: self.media_region,
                 media_placement: self.media_placement,
                 meeting_features: self.meeting_features,
+                primary_meeting_id: self.primary_meeting_id,
             }
         }
     }

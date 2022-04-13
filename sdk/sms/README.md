@@ -5,9 +5,7 @@ feedback purposes only. Do not use this SDK for production workloads.**
 
 __Product update__
 
-As of March 31, 2022, Amazon Web Services will discontinue Server Migration Service (Amazon Web Services SMS). Going forward, we recommend [Amazon Web Services Application Migration Service](http://aws.amazon.com/application-migration-service) (Amazon Web Services MGN) as the primary migration service for lift-and-shift migrations.
-
-You can initiate new migration jobs in Server Migration Service until January 1, 2022. Complete these active migration projects by March 31, 2022. For more information, see [When to Choose AWS Application Migration Service](http://aws.amazon.com/application-migration-service/when-to-choose-aws-mgn/).
+We recommend [Amazon Web Services Application Migration Service](http://aws.amazon.com/application-migration-service) (Amazon Web Services MGN) as the primary migration service for lift-and-shift migrations. If Amazon Web Services MGN is unavailable in a specific Amazon Web Services Region, you can use the Server Migration Service APIs through March 2023.
 
 Server Migration Service (Server Migration Service) makes it easier and faster for you to migrate your on-premises workloads to Amazon Web Services. To learn more about Server Migration Service, see the following resources:
   - [Server Migration Service product page](http://aws.amazon.com/server-migration-service/)
@@ -24,8 +22,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.9.0"
-aws-sdk-sms = "0.9.0"
+aws-config = "0.10.0"
+aws-sdk-sms = "0.10.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -108,15 +108,16 @@ impl Client {
     ///   - [`account_access_type(AccountAccessType)`](crate::client::fluent_builders::CreateWorkspace::account_access_type) / [`set_account_access_type(Option<AccountAccessType>)`](crate::client::fluent_builders::CreateWorkspace::set_account_access_type): <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_client_token): <p>A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>
     ///   - [`organization_role_name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::organization_role_name) / [`set_organization_role_name(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_organization_role_name): <p>The name of an IAM role that already exists to use with Organizations to access Amazon Web Services data sources and notification channels in other accounts in an organization.</p>
-    ///   - [`permission_type(PermissionType)`](crate::client::fluent_builders::CreateWorkspace::permission_type) / [`set_permission_type(Option<PermissionType>)`](crate::client::fluent_builders::CreateWorkspace::set_permission_type): <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>  <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
+    ///   - [`permission_type(PermissionType)`](crate::client::fluent_builders::CreateWorkspace::permission_type) / [`set_permission_type(Option<PermissionType>)`](crate::client::fluent_builders::CreateWorkspace::set_permission_type): <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p>  <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
     ///   - [`stack_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::stack_set_name) / [`set_stack_set_name(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_stack_set_name): <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
     ///   - [`workspace_data_sources(Vec<DataSourceType>)`](crate::client::fluent_builders::CreateWorkspace::workspace_data_sources) / [`set_workspace_data_sources(Option<Vec<DataSourceType>>)`](crate::client::fluent_builders::CreateWorkspace::set_workspace_data_sources): <p>Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.</p>  <p>If you don't specify a data source here, you can still add it as a data source in the workspace console later. However, you will then have to manually configure permissions for it.</p>
-    ///   - [`workspace_description(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::workspace_description) / [`set_workspace_description(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_workspace_description): <p>A description for the workspace. This is used only to help you identify this workspace.</p>
+    ///   - [`workspace_description(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::workspace_description) / [`set_workspace_description(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_workspace_description): <p>A description for the workspace. This is used only to help you identify this workspace.</p>  <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> </p>
     ///   - [`workspace_name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::workspace_name) / [`set_workspace_name(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_workspace_name): <p>The name for the workspace. It does not have to be unique.</p>
     ///   - [`workspace_notification_destinations(Vec<NotificationDestinationType>)`](crate::client::fluent_builders::CreateWorkspace::workspace_notification_destinations) / [`set_workspace_notification_destinations(Option<Vec<NotificationDestinationType>>)`](crate::client::fluent_builders::CreateWorkspace::set_workspace_notification_destinations): <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
     ///   - [`workspace_organizational_units(Vec<String>)`](crate::client::fluent_builders::CreateWorkspace::workspace_organizational_units) / [`set_workspace_organizational_units(Option<Vec<String>>)`](crate::client::fluent_builders::CreateWorkspace::set_workspace_organizational_units): <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-    ///   - [`workspace_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::workspace_role_arn) / [`set_workspace_role_arn(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_workspace_role_arn): <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. If you omit this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically created.</p>
+    ///   - [`workspace_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::workspace_role_arn) / [`set_workspace_role_arn(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_workspace_role_arn): <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. The permission type should be set to <code>CUSTOMER_MANAGED</code>.</p>
     ///   - [`authentication_providers(Vec<AuthenticationProviderTypes>)`](crate::client::fluent_builders::CreateWorkspace::authentication_providers) / [`set_authentication_providers(Option<Vec<AuthenticationProviderTypes>>)`](crate::client::fluent_builders::CreateWorkspace::set_authentication_providers): <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateWorkspace::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateWorkspace::set_tags): <p>The list of tags associated with the workspace.</p>
     /// - On success, responds with [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput) with field(s):
     ///   - [`workspace(Option<WorkspaceDescription>)`](crate::output::CreateWorkspaceOutput::workspace): <p>A structure containing data about the workspace that was created.</p>
     /// - On failure, responds with [`SdkError<CreateWorkspaceError>`](crate::error::CreateWorkspaceError)
@@ -183,6 +184,16 @@ impl Client {
     pub fn list_permissions(&self) -> fluent_builders::ListPermissions {
         fluent_builders::ListPermissions::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource the list of tags are associated with.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tags that are associated with the resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
+    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
+        fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListWorkspaces`](crate::client::fluent_builders::ListWorkspaces) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWorkspaces::into_paginator).
     ///
@@ -195,6 +206,28 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListWorkspacesError>`](crate::error::ListWorkspacesError)
     pub fn list_workspaces(&self) -> fluent_builders::ListWorkspaces {
         fluent_builders::ListWorkspaces::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource the tag is associated with.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The list of tag keys and values to associate with the resource. You can associate tag keys only, tags (key and values) only or a combination of tag keys and tags.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
+    pub fn tag_resource(&self) -> fluent_builders::TagResource {
+        fluent_builders::TagResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource the tag association is removed from. </p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The key values of the tag to be removed from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
+    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
+        fluent_builders::UntagResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdatePermissions`](crate::client::fluent_builders::UpdatePermissions) operation.
     ///
@@ -395,16 +428,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_role_name(input);
             self
         }
-        /// <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
+        /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p>
         /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
         pub fn permission_type(mut self, input: crate::model::PermissionType) -> Self {
             self.inner = self.inner.permission_type(input);
             self
         }
-        /// <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
+        /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p>
         /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
         pub fn set_permission_type(
             mut self,
             input: std::option::Option<crate::model::PermissionType>,
@@ -445,11 +478,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
+        /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> </p>
         pub fn workspace_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workspace_description(input.into());
             self
         }
         /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
+        /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> </p>
         pub fn set_workspace_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -510,12 +545,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workspace_organizational_units(input);
             self
         }
-        /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. If you omit this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically created.</p>
+        /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. The permission type should be set to <code>CUSTOMER_MANAGED</code>.</p>
         pub fn workspace_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workspace_role_arn(input.into());
             self
         }
-        /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. If you omit this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically created.</p>
+        /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. The permission type should be set to <code>CUSTOMER_MANAGED</code>.</p>
         pub fn set_workspace_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -541,6 +576,29 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
         ) -> Self {
             self.inner = self.inner.set_authentication_providers(input);
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of tags associated with the workspace.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>The list of tags associated with the workspace.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -878,6 +936,59 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListTagsForResource`.
+    ///
+    /// <p>The <code>ListTagsForResource</code> operation returns the tags that are associated with the Amazon Managed Service for Grafana resource specified by the <code>resourceArn</code>. Currently, the only resource that can be tagged is a workspace. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListTagsForResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_tags_for_resource_input::Builder,
+    }
+    impl ListTagsForResource {
+        /// Creates a new `ListTagsForResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListTagsForResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the resource the list of tags are associated with.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the resource the list of tags are associated with.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListWorkspaces`.
     ///
     /// <p>Returns a list of Amazon Managed Grafana workspaces in the account, with some information about each workspace. For more complete information about one workspace, use <a href="https://docs.aws.amazon.com/AAMG/latest/APIReference/API_DescribeWorkspace.html">DescribeWorkspace</a>.</p>
@@ -944,6 +1055,153 @@ pub mod fluent_builders {
         /// <p>The token for the next set of workspaces to return. (You receive this token from a previous <code>ListWorkspaces</code> operation.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `TagResource`.
+    ///
+    /// <p>The <code>TagResource</code> operation associates tags with an Amazon Managed Grafana resource. Currently, the only resource that can be tagged is workspaces. </p>
+    /// <p>If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct TagResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::tag_resource_input::Builder,
+    }
+    impl TagResource {
+        /// Creates a new `TagResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::TagResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the resource the tag is associated with.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the resource the tag is associated with.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of tag keys and values to associate with the resource. You can associate tag keys only, tags (key and values) only or a combination of tag keys and tags.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>The list of tag keys and values to associate with the resource. You can associate tag keys only, tags (key and values) only or a combination of tag keys and tags.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UntagResource`.
+    ///
+    /// <p>The <code>UntagResource</code> operation removes the association of the tag with the Amazon Managed Grafana resource. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UntagResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::untag_resource_input::Builder,
+    }
+    impl UntagResource {
+        /// Creates a new `UntagResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UntagResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the resource the tag association is removed from. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the resource the tag association is removed from. </p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Appends an item to `tagKeys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The key values of the tag to be removed from the resource.</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
+            self
+        }
+        /// <p>The key values of the tag to be removed from the resource.</p>
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }

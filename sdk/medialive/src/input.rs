@@ -1169,6 +1169,7 @@ pub mod create_channel_input {
             std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
         pub(crate) input_specification: std::option::Option<crate::model::InputSpecification>,
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
+        pub(crate) maintenance: std::option::Option<crate::model::MaintenanceCreateSettings>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) reserved: std::option::Option<std::string::String>,
@@ -1282,6 +1283,19 @@ pub mod create_channel_input {
             self.log_level = input;
             self
         }
+        /// Maintenance settings for this channel.
+        pub fn maintenance(mut self, input: crate::model::MaintenanceCreateSettings) -> Self {
+            self.maintenance = Some(input);
+            self
+        }
+        /// Maintenance settings for this channel.
+        pub fn set_maintenance(
+            mut self,
+            input: std::option::Option<crate::model::MaintenanceCreateSettings>,
+        ) -> Self {
+            self.maintenance = input;
+            self
+        }
         /// Name of channel.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -1375,6 +1389,7 @@ pub mod create_channel_input {
                 input_attachments: self.input_attachments,
                 input_specification: self.input_specification,
                 log_level: self.log_level,
+                maintenance: self.maintenance,
                 name: self.name,
                 request_id: self.request_id,
                 reserved: self.reserved,
@@ -8597,6 +8612,7 @@ pub mod update_channel_input {
             std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
         pub(crate) input_specification: std::option::Option<crate::model::InputSpecification>,
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
+        pub(crate) maintenance: std::option::Option<crate::model::MaintenanceUpdateSettings>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
@@ -8701,6 +8717,19 @@ pub mod update_channel_input {
             self.log_level = input;
             self
         }
+        /// Maintenance settings for this channel.
+        pub fn maintenance(mut self, input: crate::model::MaintenanceUpdateSettings) -> Self {
+            self.maintenance = Some(input);
+            self
+        }
+        /// Maintenance settings for this channel.
+        pub fn set_maintenance(
+            mut self,
+            input: std::option::Option<crate::model::MaintenanceUpdateSettings>,
+        ) -> Self {
+            self.maintenance = input;
+            self
+        }
         /// The name of the channel.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -8736,6 +8765,7 @@ pub mod update_channel_input {
                 input_attachments: self.input_attachments,
                 input_specification: self.input_specification,
                 log_level: self.log_level,
+                maintenance: self.maintenance,
                 name: self.name,
                 role_arn: self.role_arn,
             })
@@ -10633,6 +10663,8 @@ pub struct UpdateChannelInput {
     pub input_specification: std::option::Option<crate::model::InputSpecification>,
     /// The log level to write to CloudWatch Logs.
     pub log_level: std::option::Option<crate::model::LogLevel>,
+    /// Maintenance settings for this channel.
+    pub maintenance: std::option::Option<crate::model::MaintenanceUpdateSettings>,
     /// The name of the channel.
     pub name: std::option::Option<std::string::String>,
     /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel. If you do not specify this on an update call but the role was previously set that role will be removed.
@@ -10669,6 +10701,10 @@ impl UpdateChannelInput {
     pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
         self.log_level.as_ref()
     }
+    /// Maintenance settings for this channel.
+    pub fn maintenance(&self) -> std::option::Option<&crate::model::MaintenanceUpdateSettings> {
+        self.maintenance.as_ref()
+    }
     /// The name of the channel.
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
@@ -10688,6 +10724,7 @@ impl std::fmt::Debug for UpdateChannelInput {
         formatter.field("input_attachments", &self.input_attachments);
         formatter.field("input_specification", &self.input_specification);
         formatter.field("log_level", &self.log_level);
+        formatter.field("maintenance", &self.maintenance);
         formatter.field("name", &self.name);
         formatter.field("role_arn", &self.role_arn);
         formatter.finish()
@@ -12053,6 +12090,8 @@ pub struct CreateChannelInput {
     pub input_specification: std::option::Option<crate::model::InputSpecification>,
     /// The log level to write to CloudWatch Logs.
     pub log_level: std::option::Option<crate::model::LogLevel>,
+    /// Maintenance settings for this channel.
+    pub maintenance: std::option::Option<crate::model::MaintenanceCreateSettings>,
     /// Name of channel.
     pub name: std::option::Option<std::string::String>,
     /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
@@ -12098,6 +12137,10 @@ impl CreateChannelInput {
     pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
         self.log_level.as_ref()
     }
+    /// Maintenance settings for this channel.
+    pub fn maintenance(&self) -> std::option::Option<&crate::model::MaintenanceCreateSettings> {
+        self.maintenance.as_ref()
+    }
     /// Name of channel.
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
@@ -12136,6 +12179,7 @@ impl std::fmt::Debug for CreateChannelInput {
         formatter.field("input_attachments", &self.input_attachments);
         formatter.field("input_specification", &self.input_specification);
         formatter.field("log_level", &self.log_level);
+        formatter.field("maintenance", &self.maintenance);
         formatter.field("name", &self.name);
         formatter.field("request_id", &self.request_id);
         formatter.field("reserved", &self.reserved);

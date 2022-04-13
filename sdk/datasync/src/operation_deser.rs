@@ -293,6 +293,86 @@ pub fn parse_create_location_fsx_lustre_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_location_fsx_open_zfs_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateLocationFsxOpenZfsOutput,
+    crate::error::CreateLocationFsxOpenZfsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateLocationFsxOpenZfsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateLocationFsxOpenZfsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalException" => {
+            crate::error::CreateLocationFsxOpenZfsError {
+                meta: generic,
+                kind: crate::error::CreateLocationFsxOpenZfsErrorKind::InternalException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLocationFsxOpenZfsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InvalidRequestException" => crate::error::CreateLocationFsxOpenZfsError {
+            meta: generic,
+            kind: crate::error::CreateLocationFsxOpenZfsErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLocationFsxOpenZfsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateLocationFsxOpenZfsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_location_fsx_open_zfs_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateLocationFsxOpenZfsOutput,
+    crate::error::CreateLocationFsxOpenZfsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_location_fsx_open_zfs_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_location_fsx_open_zfs(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateLocationFsxOpenZfsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_location_fsx_windows_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -1231,6 +1311,86 @@ pub fn parse_describe_location_fsx_lustre_response(
             output,
         )
         .map_err(crate::error::DescribeLocationFsxLustreError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_location_fsx_open_zfs_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeLocationFsxOpenZfsOutput,
+    crate::error::DescribeLocationFsxOpenZfsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeLocationFsxOpenZfsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeLocationFsxOpenZfsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalException" => {
+            crate::error::DescribeLocationFsxOpenZfsError {
+                meta: generic,
+                kind: crate::error::DescribeLocationFsxOpenZfsErrorKind::InternalException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLocationFsxOpenZfsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InvalidRequestException" => crate::error::DescribeLocationFsxOpenZfsError {
+            meta: generic,
+            kind: crate::error::DescribeLocationFsxOpenZfsErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLocationFsxOpenZfsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeLocationFsxOpenZfsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_location_fsx_open_zfs_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeLocationFsxOpenZfsOutput,
+    crate::error::DescribeLocationFsxOpenZfsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_location_fsx_open_zfs_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_location_fsx_open_zfs(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeLocationFsxOpenZfsError::unhandled)?;
         output.build()
     })
 }

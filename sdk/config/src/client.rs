@@ -194,7 +194,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteOrganizationConfigRule`](crate::client::fluent_builders::DeleteOrganizationConfigRule) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_config_rule_name(impl Into<String>)`](crate::client::fluent_builders::DeleteOrganizationConfigRule::organization_config_rule_name) / [`set_organization_config_rule_name(Option<String>)`](crate::client::fluent_builders::DeleteOrganizationConfigRule::set_organization_config_rule_name): <p>The name of organization config rule that you want to delete.</p>
+    ///   - [`organization_config_rule_name(impl Into<String>)`](crate::client::fluent_builders::DeleteOrganizationConfigRule::organization_config_rule_name) / [`set_organization_config_rule_name(Option<String>)`](crate::client::fluent_builders::DeleteOrganizationConfigRule::set_organization_config_rule_name): <p>The name of organization Config rule that you want to delete.</p>
     /// - On success, responds with [`DeleteOrganizationConfigRuleOutput`](crate::output::DeleteOrganizationConfigRuleOutput)
 
     /// - On failure, responds with [`SdkError<DeleteOrganizationConfigRuleError>`](crate::error::DeleteOrganizationConfigRuleError)
@@ -532,8 +532,8 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeOrganizationConfigRules::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_config_rule_names(Vec<String>)`](crate::client::fluent_builders::DescribeOrganizationConfigRules::organization_config_rule_names) / [`set_organization_config_rule_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeOrganizationConfigRules::set_organization_config_rule_names): <p>The names of organization config rules for which you want details. If you do not specify any names, Config returns details for all your organization config rules.</p>
-    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeOrganizationConfigRules::limit) / [`set_limit(i32)`](crate::client::fluent_builders::DescribeOrganizationConfigRules::set_limit): <p>The maximum number of organization config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    ///   - [`organization_config_rule_names(Vec<String>)`](crate::client::fluent_builders::DescribeOrganizationConfigRules::organization_config_rule_names) / [`set_organization_config_rule_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeOrganizationConfigRules::set_organization_config_rule_names): <p>The names of organization Config rules for which you want details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeOrganizationConfigRules::limit) / [`set_limit(i32)`](crate::client::fluent_builders::DescribeOrganizationConfigRules::set_limit): <p>The maximum number of organization Config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeOrganizationConfigRules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeOrganizationConfigRules::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     /// - On success, responds with [`DescribeOrganizationConfigRulesOutput`](crate::output::DescribeOrganizationConfigRulesOutput) with field(s):
     ///   - [`organization_config_rules(Option<Vec<OrganizationConfigRule>>)`](crate::output::DescribeOrganizationConfigRulesOutput::organization_config_rules): <p>Returns a list of <code>OrganizationConfigRule</code> objects.</p>
@@ -548,7 +548,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_config_rule_names(Vec<String>)`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses::organization_config_rule_names) / [`set_organization_config_rule_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses::set_organization_config_rule_names): <p>The names of organization config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
+    ///   - [`organization_config_rule_names(Vec<String>)`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses::organization_config_rule_names) / [`set_organization_config_rule_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses::set_organization_config_rule_names): <p>The names of organization Config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses::limit) / [`set_limit(i32)`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses::set_limit): <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     /// - On success, responds with [`DescribeOrganizationConfigRuleStatusesOutput`](crate::output::DescribeOrganizationConfigRuleStatusesOutput) with field(s):
@@ -849,6 +849,16 @@ impl Client {
     ) -> fluent_builders::GetConformancePackComplianceSummary {
         fluent_builders::GetConformancePackComplianceSummary::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetCustomRulePolicy`](crate::client::fluent_builders::GetCustomRulePolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`config_rule_name(impl Into<String>)`](crate::client::fluent_builders::GetCustomRulePolicy::config_rule_name) / [`set_config_rule_name(Option<String>)`](crate::client::fluent_builders::GetCustomRulePolicy::set_config_rule_name): <p>The name of your Config Custom Policy rule.</p>
+    /// - On success, responds with [`GetCustomRulePolicyOutput`](crate::output::GetCustomRulePolicyOutput) with field(s):
+    ///   - [`policy_text(Option<String>)`](crate::output::GetCustomRulePolicyOutput::policy_text): <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
+    /// - On failure, responds with [`SdkError<GetCustomRulePolicyError>`](crate::error::GetCustomRulePolicyError)
+    pub fn get_custom_rule_policy(&self) -> fluent_builders::GetCustomRulePolicy {
+        fluent_builders::GetCustomRulePolicy::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetDiscoveredResourceCounts`](crate::client::fluent_builders::GetDiscoveredResourceCounts) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetDiscoveredResourceCounts::into_paginator).
     ///
@@ -868,7 +878,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_config_rule_name(impl Into<String>)`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::organization_config_rule_name) / [`set_organization_config_rule_name(Option<String>)`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::set_organization_config_rule_name): <p>The name of organization config rule for which you want status details for member accounts.</p>
+    ///   - [`organization_config_rule_name(impl Into<String>)`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::organization_config_rule_name) / [`set_organization_config_rule_name(Option<String>)`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::set_organization_config_rule_name): <p>The name of your organization Config rule for which you want status details for member accounts.</p>
     ///   - [`filters(StatusDetailFilters)`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::filters) / [`set_filters(Option<StatusDetailFilters>)`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::set_filters): <p>A <code>StatusDetailFilters</code> object.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::limit) / [`set_limit(i32)`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::set_limit): <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
@@ -897,6 +907,18 @@ impl Client {
         &self,
     ) -> fluent_builders::GetOrganizationConformancePackDetailedStatus {
         fluent_builders::GetOrganizationConformancePackDetailedStatus::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetOrganizationCustomRulePolicy`](crate::client::fluent_builders::GetOrganizationCustomRulePolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`organization_config_rule_name(impl Into<String>)`](crate::client::fluent_builders::GetOrganizationCustomRulePolicy::organization_config_rule_name) / [`set_organization_config_rule_name(Option<String>)`](crate::client::fluent_builders::GetOrganizationCustomRulePolicy::set_organization_config_rule_name): <p>The name of your organization Config Custom Policy rule. </p>
+    /// - On success, responds with [`GetOrganizationCustomRulePolicyOutput`](crate::output::GetOrganizationCustomRulePolicyOutput) with field(s):
+    ///   - [`policy_text(Option<String>)`](crate::output::GetOrganizationCustomRulePolicyOutput::policy_text): <p>The policy definition containing the logic for your organization Config Custom Policy rule.</p>
+    /// - On failure, responds with [`SdkError<GetOrganizationCustomRulePolicyError>`](crate::error::GetOrganizationCustomRulePolicyError)
+    pub fn get_organization_custom_rule_policy(
+        &self,
+    ) -> fluent_builders::GetOrganizationCustomRulePolicy {
+        fluent_builders::GetOrganizationCustomRulePolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetResourceConfigHistory`](crate::client::fluent_builders::GetResourceConfigHistory) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetResourceConfigHistory::into_paginator).
@@ -1039,7 +1061,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`conformance_pack_name(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::conformance_pack_name) / [`set_conformance_pack_name(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_conformance_pack_name): <p>Name of the conformance pack you want to create.</p>
     ///   - [`template_s3_uri(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::template_s3_uri) / [`set_template_s3_uri(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_template_s3_uri): <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>   <p>You must have access to read Amazon S3 bucket.</p>  </note>
-    ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_template_body): <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>   <p>You can only use a YAML template with two resource types: config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>  </note>
+    ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_template_body): <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>   <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>  </note>
     ///   - [`delivery_s3_bucket(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::delivery_s3_bucket) / [`set_delivery_s3_bucket(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_delivery_s3_bucket): <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>   <p>This field is optional.</p>  </note>
     ///   - [`delivery_s3_key_prefix(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::delivery_s3_key_prefix) / [`set_delivery_s3_key_prefix(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_delivery_s3_key_prefix): <p>The prefix for the Amazon S3 bucket. </p> <note>   <p>This field is optional.</p>  </note>
     ///   - [`conformance_pack_input_parameters(Vec<ConformancePackInputParameter>)`](crate::client::fluent_builders::PutConformancePack::conformance_pack_input_parameters) / [`set_conformance_pack_input_parameters(Option<Vec<ConformancePackInputParameter>>)`](crate::client::fluent_builders::PutConformancePack::set_conformance_pack_input_parameters): <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
@@ -1085,12 +1107,13 @@ impl Client {
     /// Constructs a fluent builder for the [`PutOrganizationConfigRule`](crate::client::fluent_builders::PutOrganizationConfigRule) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_config_rule_name(impl Into<String>)`](crate::client::fluent_builders::PutOrganizationConfigRule::organization_config_rule_name) / [`set_organization_config_rule_name(Option<String>)`](crate::client::fluent_builders::PutOrganizationConfigRule::set_organization_config_rule_name): <p>The name that you assign to an organization config rule.</p>
+    ///   - [`organization_config_rule_name(impl Into<String>)`](crate::client::fluent_builders::PutOrganizationConfigRule::organization_config_rule_name) / [`set_organization_config_rule_name(Option<String>)`](crate::client::fluent_builders::PutOrganizationConfigRule::set_organization_config_rule_name): <p>The name that you assign to an organization Config rule.</p>
     ///   - [`organization_managed_rule_metadata(OrganizationManagedRuleMetadata)`](crate::client::fluent_builders::PutOrganizationConfigRule::organization_managed_rule_metadata) / [`set_organization_managed_rule_metadata(Option<OrganizationManagedRuleMetadata>)`](crate::client::fluent_builders::PutOrganizationConfigRule::set_organization_managed_rule_metadata): <p>An <code>OrganizationManagedRuleMetadata</code> object. </p>
     ///   - [`organization_custom_rule_metadata(OrganizationCustomRuleMetadata)`](crate::client::fluent_builders::PutOrganizationConfigRule::organization_custom_rule_metadata) / [`set_organization_custom_rule_metadata(Option<OrganizationCustomRuleMetadata>)`](crate::client::fluent_builders::PutOrganizationConfigRule::set_organization_custom_rule_metadata): <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
-    ///   - [`excluded_accounts(Vec<String>)`](crate::client::fluent_builders::PutOrganizationConfigRule::excluded_accounts) / [`set_excluded_accounts(Option<Vec<String>>)`](crate::client::fluent_builders::PutOrganizationConfigRule::set_excluded_accounts): <p>A comma-separated list of accounts that you want to exclude from an organization config rule.</p>
+    ///   - [`excluded_accounts(Vec<String>)`](crate::client::fluent_builders::PutOrganizationConfigRule::excluded_accounts) / [`set_excluded_accounts(Option<Vec<String>>)`](crate::client::fluent_builders::PutOrganizationConfigRule::set_excluded_accounts): <p>A comma-separated list of accounts that you want to exclude from an organization Config rule.</p>
+    ///   - [`organization_custom_policy_rule_metadata(OrganizationCustomPolicyRuleMetadata)`](crate::client::fluent_builders::PutOrganizationConfigRule::organization_custom_policy_rule_metadata) / [`set_organization_custom_policy_rule_metadata(Option<OrganizationCustomPolicyRuleMetadata>)`](crate::client::fluent_builders::PutOrganizationConfigRule::set_organization_custom_policy_rule_metadata): <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
     /// - On success, responds with [`PutOrganizationConfigRuleOutput`](crate::output::PutOrganizationConfigRuleOutput) with field(s):
-    ///   - [`organization_config_rule_arn(Option<String>)`](crate::output::PutOrganizationConfigRuleOutput::organization_config_rule_arn): <p>The Amazon Resource Name (ARN) of an organization config rule.</p>
+    ///   - [`organization_config_rule_arn(Option<String>)`](crate::output::PutOrganizationConfigRuleOutput::organization_config_rule_arn): <p>The Amazon Resource Name (ARN) of an organization Config rule.</p>
     /// - On failure, responds with [`SdkError<PutOrganizationConfigRuleError>`](crate::error::PutOrganizationConfigRuleError)
     pub fn put_organization_config_rule(&self) -> fluent_builders::PutOrganizationConfigRule {
         fluent_builders::PutOrganizationConfigRule::new(self.handle.clone())
@@ -1847,8 +1870,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteOrganizationConfigRule`.
     ///
-    /// <p>Deletes the specified organization config rule and all of its evaluation results from all member accounts in that organization. </p>
-    /// <p>Only a master account and a delegated administrator account can delete an organization config rule. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
+    /// <p>Deletes the specified organization Config rule and all of its evaluation results from all member accounts in that organization. </p>
+    /// <p>Only a master account and a delegated administrator account can delete an organization Config rule. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
     /// <p>Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a rule while it is in this state.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOrganizationConfigRule {
@@ -1889,7 +1912,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of organization config rule that you want to delete.</p>
+        /// <p>The name of organization Config rule that you want to delete.</p>
         pub fn organization_config_rule_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -1897,7 +1920,7 @@ pub mod fluent_builders {
             self.inner = self.inner.organization_config_rule_name(input.into());
             self
         }
-        /// <p>The name of organization config rule that you want to delete.</p>
+        /// <p>The name of organization Config rule that you want to delete.</p>
         pub fn set_organization_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1908,7 +1931,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteOrganizationConformancePack`.
     ///
-    /// <p>Deletes the specified organization conformance pack and all of the config rules and remediation actions from all member accounts in that organization. </p>
+    /// <p>Deletes the specified organization conformance pack and all of the Config rules and remediation actions from all member accounts in that organization. </p>
     /// <p> Only a master account or a delegated administrator account can delete an organization conformance pack. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
     /// <p>Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a conformance pack while it is in this state. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -3853,8 +3876,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeOrganizationConfigRules`.
     ///
-    /// <p>Returns a list of organization config rules. </p> <note>
-    /// <p>When you specify the limit and the next token, you receive a paginated response. Limit and next token are not applicable if you specify organization config rule names. It is only applicable, when you request all the organization config rules.</p>
+    /// <p>Returns a list of organization Config rules. </p> <note>
+    /// <p>When you specify the limit and the next token, you receive a paginated response. Limit and next token are not applicable if you specify organization Config rule names. It is only applicable, when you request all the organization Config rules.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConfigRules {
@@ -3905,7 +3928,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_organization_config_rule_names`](Self::set_organization_config_rule_names).
         ///
-        /// <p>The names of organization config rules for which you want details. If you do not specify any names, Config returns details for all your organization config rules.</p>
+        /// <p>The names of organization Config rules for which you want details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
         pub fn organization_config_rule_names(
             mut self,
             input: impl Into<std::string::String>,
@@ -3913,7 +3936,7 @@ pub mod fluent_builders {
             self.inner = self.inner.organization_config_rule_names(input.into());
             self
         }
-        /// <p>The names of organization config rules for which you want details. If you do not specify any names, Config returns details for all your organization config rules.</p>
+        /// <p>The names of organization Config rules for which you want details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
         pub fn set_organization_config_rule_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3921,12 +3944,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_config_rule_names(input);
             self
         }
-        /// <p>The maximum number of organization config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+        /// <p>The maximum number of organization Config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of organization config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+        /// <p>The maximum number of organization Config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -3944,9 +3967,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeOrganizationConfigRuleStatuses`.
     ///
-    /// <p>Provides organization config rule deployment status for an organization.</p> <note>
-    /// <p>The status is not considered successful until organization config rule is successfully deployed in all the member accounts with an exception of excluded accounts.</p>
-    /// <p>When you specify the limit and the next token, you receive a paginated response. Limit and next token are not applicable if you specify organization config rule names. It is only applicable, when you request all the organization config rules.</p>
+    /// <p>Provides organization Config rule deployment status for an organization.</p> <note>
+    /// <p>The status is not considered successful until organization Config rule is successfully deployed in all the member accounts with an exception of excluded accounts.</p>
+    /// <p>When you specify the limit and the next token, you receive a paginated response. Limit and next token are not applicable if you specify organization Config rule names. It is only applicable, when you request all the organization Config rules.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConfigRuleStatuses {
@@ -4004,7 +4027,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_organization_config_rule_names`](Self::set_organization_config_rule_names).
         ///
-        /// <p>The names of organization config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
+        /// <p>The names of organization Config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
         pub fn organization_config_rule_names(
             mut self,
             input: impl Into<std::string::String>,
@@ -4012,7 +4035,7 @@ pub mod fluent_builders {
             self.inner = self.inner.organization_config_rule_names(input.into());
             self
         }
-        /// <p>The names of organization config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
+        /// <p>The names of organization Config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
         pub fn set_organization_config_rule_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5772,6 +5795,62 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetCustomRulePolicy`.
+    ///
+    /// <p>Returns the policy definition containing the logic for your Config Custom Policy rule.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetCustomRulePolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_custom_rule_policy_input::Builder,
+    }
+    impl GetCustomRulePolicy {
+        /// Creates a new `GetCustomRulePolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetCustomRulePolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetCustomRulePolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of your Config Custom Policy rule.</p>
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
+            self
+        }
+        /// <p>The name of your Config Custom Policy rule.</p>
+        pub fn set_config_rule_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_config_rule_name(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetDiscoveredResourceCounts`.
     ///
     /// <p>Returns the resource types, the number of each resource type, and the total number of resources that Config is recording in this region for your Amazon Web Services account. </p>
@@ -5885,7 +5964,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetOrganizationConfigRuleDetailedStatus`.
     ///
-    /// <p>Returns detailed status for each member account within an organization for a given organization config rule.</p>
+    /// <p>Returns detailed status for each member account within an organization for a given organization Config rule.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOrganizationConfigRuleDetailedStatus {
         handle: std::sync::Arc<super::Handle>,
@@ -5938,7 +6017,7 @@ pub mod fluent_builders {
                 self.inner,
             )
         }
-        /// <p>The name of organization config rule for which you want status details for member accounts.</p>
+        /// <p>The name of your organization Config rule for which you want status details for member accounts.</p>
         pub fn organization_config_rule_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -5946,7 +6025,7 @@ pub mod fluent_builders {
             self.inner = self.inner.organization_config_rule_name(input.into());
             self
         }
-        /// <p>The name of organization config rule for which you want status details for member accounts.</p>
+        /// <p>The name of your organization Config rule for which you want status details for member accounts.</p>
         pub fn set_organization_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6093,6 +6172,65 @@ pub mod fluent_builders {
         /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetOrganizationCustomRulePolicy`.
+    ///
+    /// <p>Returns the policy definition containing the logic for your organization Config Custom Policy rule.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetOrganizationCustomRulePolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_organization_custom_rule_policy_input::Builder,
+    }
+    impl GetOrganizationCustomRulePolicy {
+        /// Creates a new `GetOrganizationCustomRulePolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetOrganizationCustomRulePolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetOrganizationCustomRulePolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of your organization Config Custom Policy rule. </p>
+        pub fn organization_config_rule_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.organization_config_rule_name(input.into());
+            self
+        }
+        /// <p>The name of your organization Config Custom Policy rule. </p>
+        pub fn set_organization_config_rule_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_config_rule_name(input);
             self
         }
     }
@@ -6760,8 +6898,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutConfigRule`.
     ///
     /// <p>Adds or updates an Config rule for evaluating whether your Amazon Web Services resources comply with your desired configurations.</p>
-    /// <p>You can use this action for custom Config rules and Config managed rules. A custom Config rule is a rule that you develop and maintain. An Config managed rule is a customizable, predefined rule that Config provides.</p>
-    /// <p>If you are adding a new custom Config rule, you must first create the Lambda function that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code> action to add the rule to Config, you must specify the Amazon Resource Name (ARN) that Lambda assigns to the function. Specify the ARN for the <code>SourceIdentifier</code> key. This key is part of the <code>Source</code> object, which is part of the <code>ConfigRule</code> object. </p>
+    /// <p>You can use this action for Config custom rules and Config managed rules. A Config custom rule is a rule that you develop and maintain. An Config managed rule is a customizable, predefined rule that Config provides.</p>
+    /// <p>If you are adding a new Config custom rule, you must first create the Lambda function that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code> action to add the rule to Config, you must specify the Amazon Resource Name (ARN) that Lambda assigns to the function. Specify the ARN for the <code>SourceIdentifier</code> key. This key is part of the <code>Source</code> object, which is part of the <code>ConfigRule</code> object. </p>
     /// <p>If you are adding an Config managed rule, specify the rule's identifier for the <code>SourceIdentifier</code> key. To reference Config managed rule identifiers, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About Config managed rules</a>.</p>
     /// <p>For any new rule that you add, specify the <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do not specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>. These values are generated by Config for new rules.</p>
     /// <p>If you are updating a rule that you added previously, you can specify the rule by <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use in this request.</p>
@@ -7094,14 +7232,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
-        /// <p>You can only use a YAML template with two resource types: config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
+        /// <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
         /// </note>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_body(input.into());
             self
         }
         /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
-        /// <p>You can only use a YAML template with two resource types: config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
+        /// <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
         /// </note>
         pub fn set_template_body(
             mut self,
@@ -7380,12 +7518,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutOrganizationConfigRule`.
     ///
-    /// <p>Adds or updates organization config rule for your entire organization evaluating whether your Amazon Web Services resources comply with your desired configurations.</p>
-    /// <p> Only a master account and a delegated administrator can create or update an organization config rule. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added. </p>
+    /// <p>Adds or updates organization Config rule for your entire organization evaluating whether your Amazon Web Services resources comply with your desired configurations.</p>
+    /// <p> Only a master account and a delegated administrator can create or update an organization Config rule. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added. </p>
     /// <p>This API enables organization service access through the <code>EnableAWSServiceAccess</code> action and creates a service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated administrator account of your organization. The service linked role is created only when the role does not exist in the caller account. Config verifies the existence of role with <code>GetRole</code> action.</p>
     /// <p>To use this API with delegated administrator, register a delegated administrator by calling Amazon Web Services Organization <code>register-delegated-administrator</code> for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
-    /// <p>You can use this action to create both custom Config rules and Config managed rules. If you are adding a new custom Config rule, you must first create Lambda function in the master account or a delegated administrator that the rule invokes to evaluate your resources. You also need to create an IAM role in the managed-account that can be assumed by the Lambda function. When you use the <code>PutOrganizationConfigRule</code> action to add the rule to Config, you must specify the Amazon Resource Name (ARN) that Lambda assigns to the function. If you are adding an Config managed rule, specify the rule's identifier for the <code>RuleIdentifier</code> key.</p>
-    /// <p>The maximum number of organization config rules that Config supports is 150 and 3 delegated administrator per organization. </p> <note>
+    /// <p>You can use this action to create both Config custom rules and Config managed rules. If you are adding a new Config custom rule, you must first create Lambda function in the master account or a delegated administrator that the rule invokes to evaluate your resources. You also need to create an IAM role in the managed-account that can be assumed by the Lambda function. When you use the <code>PutOrganizationConfigRule</code> action to add the rule to Config, you must specify the Amazon Resource Name (ARN) that Lambda assigns to the function. If you are adding an Config managed rule, specify the rule's identifier for the <code>RuleIdentifier</code> key.</p>
+    /// <p>The maximum number of organization Config rules that Config supports is 150 and 3 delegated administrator per organization. </p> <note>
     /// <p>Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to enable all features in an organization.</p>
     /// <p>Specify either <code>OrganizationCustomRuleMetadata</code> or <code>OrganizationManagedRuleMetadata</code>.</p>
     /// </note>
@@ -7428,7 +7566,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name that you assign to an organization config rule.</p>
+        /// <p>The name that you assign to an organization Config rule.</p>
         pub fn organization_config_rule_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -7436,7 +7574,7 @@ pub mod fluent_builders {
             self.inner = self.inner.organization_config_rule_name(input.into());
             self
         }
-        /// <p>The name that you assign to an organization config rule.</p>
+        /// <p>The name that you assign to an organization Config rule.</p>
         pub fn set_organization_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7480,17 +7618,35 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_excluded_accounts`](Self::set_excluded_accounts).
         ///
-        /// <p>A comma-separated list of accounts that you want to exclude from an organization config rule.</p>
+        /// <p>A comma-separated list of accounts that you want to exclude from an organization Config rule.</p>
         pub fn excluded_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.excluded_accounts(input.into());
             self
         }
-        /// <p>A comma-separated list of accounts that you want to exclude from an organization config rule.</p>
+        /// <p>A comma-separated list of accounts that you want to exclude from an organization Config rule.</p>
         pub fn set_excluded_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_excluded_accounts(input);
+            self
+        }
+        /// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
+        pub fn organization_custom_policy_rule_metadata(
+            mut self,
+            input: crate::model::OrganizationCustomPolicyRuleMetadata,
+        ) -> Self {
+            self.inner = self.inner.organization_custom_policy_rule_metadata(input);
+            self
+        }
+        /// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
+        pub fn set_organization_custom_policy_rule_metadata(
+            mut self,
+            input: std::option::Option<crate::model::OrganizationCustomPolicyRuleMetadata>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_organization_custom_policy_rule_metadata(input);
             self
         }
     }

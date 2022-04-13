@@ -94,3 +94,37 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEndpoints {
         }
     }
 }
+
+/// Operation shape for `ListSharedEndpoints`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_shared_endpoints`](crate::client::Client::list_shared_endpoints).
+///
+/// See [`crate::client::fluent_builders::ListSharedEndpoints`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListSharedEndpoints {
+    _private: (),
+}
+impl ListSharedEndpoints {
+    /// Creates a new builder-style object to manufacture [`ListSharedEndpointsInput`](crate::input::ListSharedEndpointsInput)
+    pub fn builder() -> crate::input::list_shared_endpoints_input::Builder {
+        crate::input::list_shared_endpoints_input::Builder::default()
+    }
+    /// Creates a new `ListSharedEndpoints` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListSharedEndpoints {
+    type Output = std::result::Result<
+        crate::output::ListSharedEndpointsOutput,
+        crate::error::ListSharedEndpointsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_shared_endpoints_error(response)
+        } else {
+            crate::operation_deser::parse_list_shared_endpoints_response(response)
+        }
+    }
+}

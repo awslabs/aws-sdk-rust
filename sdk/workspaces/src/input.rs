@@ -1974,6 +1974,171 @@ impl CreateWorkspacesInput {
     }
 }
 
+/// See [`DeleteClientBrandingInput`](crate::input::DeleteClientBrandingInput)
+pub mod delete_client_branding_input {
+    /// A builder for [`DeleteClientBrandingInput`](crate::input::DeleteClientBrandingInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) platforms: std::option::Option<std::vec::Vec<crate::model::ClientDeviceType>>,
+    }
+    impl Builder {
+        /// <p>The directory identifier of the WorkSpace for which you want to delete client branding.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
+            self
+        }
+        /// <p>The directory identifier of the WorkSpace for which you want to delete client branding.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
+            self
+        }
+        /// Appends an item to `platforms`.
+        ///
+        /// To override the contents of this collection use [`set_platforms`](Self::set_platforms).
+        ///
+        /// <p>The device type for which you want to delete client branding.</p>
+        pub fn platforms(mut self, input: crate::model::ClientDeviceType) -> Self {
+            let mut v = self.platforms.unwrap_or_default();
+            v.push(input);
+            self.platforms = Some(v);
+            self
+        }
+        /// <p>The device type for which you want to delete client branding.</p>
+        pub fn set_platforms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ClientDeviceType>>,
+        ) -> Self {
+            self.platforms = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteClientBrandingInput`](crate::input::DeleteClientBrandingInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteClientBrandingInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteClientBrandingInput {
+                resource_id: self.resource_id,
+                platforms: self.platforms,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteClientBrandingInputOperationOutputAlias = crate::operation::DeleteClientBranding;
+#[doc(hidden)]
+pub type DeleteClientBrandingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteClientBrandingInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteClientBranding`](crate::operation::DeleteClientBranding)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteClientBranding,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteClientBrandingInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteClientBrandingInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkspacesService.DeleteClientBranding",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_client_branding(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteClientBranding::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteClientBranding",
+            "workspaces",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteClientBrandingInput`](crate::input::DeleteClientBrandingInput)
+    pub fn builder() -> crate::input::delete_client_branding_input::Builder {
+        crate::input::delete_client_branding_input::Builder::default()
+    }
+}
+
 /// See [`DeleteConnectClientAddInInput`](crate::input::DeleteConnectClientAddInInput)
 pub mod delete_connect_client_add_in_input {
     /// A builder for [`DeleteConnectClientAddInInput`](crate::input::DeleteConnectClientAddInInput)
@@ -3272,6 +3437,150 @@ impl DescribeAccountModificationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountModificationsInput`](crate::input::DescribeAccountModificationsInput)
     pub fn builder() -> crate::input::describe_account_modifications_input::Builder {
         crate::input::describe_account_modifications_input::Builder::default()
+    }
+}
+
+/// See [`DescribeClientBrandingInput`](crate::input::DescribeClientBrandingInput)
+pub mod describe_client_branding_input {
+    /// A builder for [`DescribeClientBrandingInput`](crate::input::DescribeClientBrandingInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The directory identifier of the WorkSpace for which you want to view client branding information.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
+            self
+        }
+        /// <p>The directory identifier of the WorkSpace for which you want to view client branding information.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeClientBrandingInput`](crate::input::DescribeClientBrandingInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeClientBrandingInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeClientBrandingInput {
+                resource_id: self.resource_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeClientBrandingInputOperationOutputAlias = crate::operation::DescribeClientBranding;
+#[doc(hidden)]
+pub type DescribeClientBrandingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeClientBrandingInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeClientBranding`](crate::operation::DescribeClientBranding)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeClientBranding,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeClientBrandingInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeClientBrandingInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkspacesService.DescribeClientBranding",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_client_branding(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeClientBranding::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeClientBranding",
+            "workspaces",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeClientBrandingInput`](crate::input::DescribeClientBrandingInput)
+    pub fn builder() -> crate::input::describe_client_branding_input::Builder {
+        crate::input::describe_client_branding_input::Builder::default()
     }
 }
 
@@ -5814,6 +6123,264 @@ impl DisassociateIpGroupsInput {
     }
 }
 
+/// See [`ImportClientBrandingInput`](crate::input::ImportClientBrandingInput)
+pub mod import_client_branding_input {
+    /// A builder for [`ImportClientBrandingInput`](crate::input::ImportClientBrandingInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) device_type_windows:
+            std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
+        pub(crate) device_type_osx:
+            std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
+        pub(crate) device_type_android:
+            std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
+        pub(crate) device_type_ios:
+            std::option::Option<crate::model::IosImportClientBrandingAttributes>,
+        pub(crate) device_type_linux:
+            std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
+        pub(crate) device_type_web:
+            std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
+    }
+    impl Builder {
+        /// <p>The directory identifier of the WorkSpace for which you want to import client branding.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
+            self
+        }
+        /// <p>The directory identifier of the WorkSpace for which you want to import client branding.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
+            self
+        }
+        /// <p>The branding information to import for Windows devices.</p>
+        pub fn device_type_windows(
+            mut self,
+            input: crate::model::DefaultImportClientBrandingAttributes,
+        ) -> Self {
+            self.device_type_windows = Some(input);
+            self
+        }
+        /// <p>The branding information to import for Windows devices.</p>
+        pub fn set_device_type_windows(
+            mut self,
+            input: std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
+        ) -> Self {
+            self.device_type_windows = input;
+            self
+        }
+        /// <p>The branding information to import for macOS devices.</p>
+        pub fn device_type_osx(
+            mut self,
+            input: crate::model::DefaultImportClientBrandingAttributes,
+        ) -> Self {
+            self.device_type_osx = Some(input);
+            self
+        }
+        /// <p>The branding information to import for macOS devices.</p>
+        pub fn set_device_type_osx(
+            mut self,
+            input: std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
+        ) -> Self {
+            self.device_type_osx = input;
+            self
+        }
+        /// <p>The branding information to import for Android devices.</p>
+        pub fn device_type_android(
+            mut self,
+            input: crate::model::DefaultImportClientBrandingAttributes,
+        ) -> Self {
+            self.device_type_android = Some(input);
+            self
+        }
+        /// <p>The branding information to import for Android devices.</p>
+        pub fn set_device_type_android(
+            mut self,
+            input: std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
+        ) -> Self {
+            self.device_type_android = input;
+            self
+        }
+        /// <p>The branding information to import for iOS devices.</p>
+        pub fn device_type_ios(
+            mut self,
+            input: crate::model::IosImportClientBrandingAttributes,
+        ) -> Self {
+            self.device_type_ios = Some(input);
+            self
+        }
+        /// <p>The branding information to import for iOS devices.</p>
+        pub fn set_device_type_ios(
+            mut self,
+            input: std::option::Option<crate::model::IosImportClientBrandingAttributes>,
+        ) -> Self {
+            self.device_type_ios = input;
+            self
+        }
+        /// <p>The branding information to import for Linux devices.</p>
+        pub fn device_type_linux(
+            mut self,
+            input: crate::model::DefaultImportClientBrandingAttributes,
+        ) -> Self {
+            self.device_type_linux = Some(input);
+            self
+        }
+        /// <p>The branding information to import for Linux devices.</p>
+        pub fn set_device_type_linux(
+            mut self,
+            input: std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
+        ) -> Self {
+            self.device_type_linux = input;
+            self
+        }
+        /// <p>The branding information to import for web access.</p>
+        pub fn device_type_web(
+            mut self,
+            input: crate::model::DefaultImportClientBrandingAttributes,
+        ) -> Self {
+            self.device_type_web = Some(input);
+            self
+        }
+        /// <p>The branding information to import for web access.</p>
+        pub fn set_device_type_web(
+            mut self,
+            input: std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
+        ) -> Self {
+            self.device_type_web = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportClientBrandingInput`](crate::input::ImportClientBrandingInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ImportClientBrandingInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ImportClientBrandingInput {
+                resource_id: self.resource_id,
+                device_type_windows: self.device_type_windows,
+                device_type_osx: self.device_type_osx,
+                device_type_android: self.device_type_android,
+                device_type_ios: self.device_type_ios,
+                device_type_linux: self.device_type_linux,
+                device_type_web: self.device_type_web,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ImportClientBrandingInputOperationOutputAlias = crate::operation::ImportClientBranding;
+#[doc(hidden)]
+pub type ImportClientBrandingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ImportClientBrandingInput {
+    /// Consumes the builder and constructs an Operation<[`ImportClientBranding`](crate::operation::ImportClientBranding)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ImportClientBranding,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ImportClientBrandingInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ImportClientBrandingInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkspacesService.ImportClientBranding",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_import_client_branding(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ImportClientBranding::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ImportClientBranding",
+            "workspaces",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ImportClientBrandingInput`](crate::input::ImportClientBrandingInput)
+    pub fn builder() -> crate::input::import_client_branding_input::Builder {
+        crate::input::import_client_branding_input::Builder::default()
+    }
+}
+
 /// See [`ImportWorkspaceImageInput`](crate::input::ImportWorkspaceImageInput)
 pub mod import_workspace_image_input {
     /// A builder for [`ImportWorkspaceImageInput`](crate::input::ImportWorkspaceImageInput)
@@ -5840,7 +6407,9 @@ pub mod import_workspace_image_input {
             self
         }
         /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
-        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+        /// <p>For non-GPU-enabled images (bundles other than Graphics.g4dn, GraphicsPro.g4dn, Graphics, or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p> <note>
+        /// <p>Use <code>BYOL_GRAPHICS_G4DN</code> ingestion for both Graphics.g4dn and GraphicsPro.g4dn.</p>
+        /// </note>
         pub fn ingestion_process(
             mut self,
             input: crate::model::WorkspaceImageIngestionProcess,
@@ -5849,7 +6418,9 @@ pub mod import_workspace_image_input {
             self
         }
         /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
-        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+        /// <p>For non-GPU-enabled images (bundles other than Graphics.g4dn, GraphicsPro.g4dn, Graphics, or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p> <note>
+        /// <p>Use <code>BYOL_GRAPHICS_G4DN</code> ingestion for both Graphics.g4dn and GraphicsPro.g4dn.</p>
+        /// </note>
         pub fn set_ingestion_process(
             mut self,
             input: std::option::Option<crate::model::WorkspaceImageIngestionProcess>,
@@ -5904,7 +6475,10 @@ pub mod import_workspace_image_input {
         /// To override the contents of this collection use [`set_applications`](Self::set_applications).
         ///
         /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
-        /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
+        /// <ul>
+        /// <li> <p>Although this parameter is an array, only one item is allowed at this time</p> </li>
+        /// <li> <p>Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn Bring Your Own License (BYOL) images</p> </li>
+        /// </ul>
         /// </note>
         pub fn applications(mut self, input: crate::model::Application) -> Self {
             let mut v = self.applications.unwrap_or_default();
@@ -5913,7 +6487,10 @@ pub mod import_workspace_image_input {
             self
         }
         /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
-        /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
+        /// <ul>
+        /// <li> <p>Although this parameter is an array, only one item is allowed at this time</p> </li>
+        /// <li> <p>Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn Bring Your Own License (BYOL) images</p> </li>
+        /// </ul>
         /// </note>
         pub fn set_applications(
             mut self,
@@ -10323,7 +10900,9 @@ pub struct ImportWorkspaceImageInput {
     /// <p>The identifier of the EC2 image.</p>
     pub ec2_image_id: std::option::Option<std::string::String>,
     /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
-    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+    /// <p>For non-GPU-enabled images (bundles other than Graphics.g4dn, GraphicsPro.g4dn, Graphics, or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p> <note>
+    /// <p>Use <code>BYOL_GRAPHICS_G4DN</code> ingestion for both Graphics.g4dn and GraphicsPro.g4dn.</p>
+    /// </note>
     pub ingestion_process: std::option::Option<crate::model::WorkspaceImageIngestionProcess>,
     /// <p>The name of the WorkSpace image.</p>
     pub image_name: std::option::Option<std::string::String>,
@@ -10332,7 +10911,10 @@ pub struct ImportWorkspaceImageInput {
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
-    /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
+    /// <ul>
+    /// <li> <p>Although this parameter is an array, only one item is allowed at this time</p> </li>
+    /// <li> <p>Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn Bring Your Own License (BYOL) images</p> </li>
+    /// </ul>
     /// </note>
     pub applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
 }
@@ -10342,7 +10924,9 @@ impl ImportWorkspaceImageInput {
         self.ec2_image_id.as_deref()
     }
     /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
-    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+    /// <p>For non-GPU-enabled images (bundles other than Graphics.g4dn, GraphicsPro.g4dn, Graphics, or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p> <note>
+    /// <p>Use <code>BYOL_GRAPHICS_G4DN</code> ingestion for both Graphics.g4dn and GraphicsPro.g4dn.</p>
+    /// </note>
     pub fn ingestion_process(
         &self,
     ) -> std::option::Option<&crate::model::WorkspaceImageIngestionProcess> {
@@ -10361,7 +10945,10 @@ impl ImportWorkspaceImageInput {
         self.tags.as_deref()
     }
     /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
-    /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
+    /// <ul>
+    /// <li> <p>Although this parameter is an array, only one item is allowed at this time</p> </li>
+    /// <li> <p>Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn Bring Your Own License (BYOL) images</p> </li>
+    /// </ul>
     /// </note>
     pub fn applications(&self) -> std::option::Option<&[crate::model::Application]> {
         self.applications.as_deref()
@@ -10376,6 +10963,83 @@ impl std::fmt::Debug for ImportWorkspaceImageInput {
         formatter.field("image_description", &self.image_description);
         formatter.field("tags", &self.tags);
         formatter.field("applications", &self.applications);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportClientBrandingInput {
+    /// <p>The directory identifier of the WorkSpace for which you want to import client branding.</p>
+    pub resource_id: std::option::Option<std::string::String>,
+    /// <p>The branding information to import for Windows devices.</p>
+    pub device_type_windows:
+        std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
+    /// <p>The branding information to import for macOS devices.</p>
+    pub device_type_osx: std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
+    /// <p>The branding information to import for Android devices.</p>
+    pub device_type_android:
+        std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
+    /// <p>The branding information to import for iOS devices.</p>
+    pub device_type_ios: std::option::Option<crate::model::IosImportClientBrandingAttributes>,
+    /// <p>The branding information to import for Linux devices.</p>
+    pub device_type_linux: std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
+    /// <p>The branding information to import for web access.</p>
+    pub device_type_web: std::option::Option<crate::model::DefaultImportClientBrandingAttributes>,
+}
+impl ImportClientBrandingInput {
+    /// <p>The directory identifier of the WorkSpace for which you want to import client branding.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The branding information to import for Windows devices.</p>
+    pub fn device_type_windows(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultImportClientBrandingAttributes> {
+        self.device_type_windows.as_ref()
+    }
+    /// <p>The branding information to import for macOS devices.</p>
+    pub fn device_type_osx(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultImportClientBrandingAttributes> {
+        self.device_type_osx.as_ref()
+    }
+    /// <p>The branding information to import for Android devices.</p>
+    pub fn device_type_android(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultImportClientBrandingAttributes> {
+        self.device_type_android.as_ref()
+    }
+    /// <p>The branding information to import for iOS devices.</p>
+    pub fn device_type_ios(
+        &self,
+    ) -> std::option::Option<&crate::model::IosImportClientBrandingAttributes> {
+        self.device_type_ios.as_ref()
+    }
+    /// <p>The branding information to import for Linux devices.</p>
+    pub fn device_type_linux(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultImportClientBrandingAttributes> {
+        self.device_type_linux.as_ref()
+    }
+    /// <p>The branding information to import for web access.</p>
+    pub fn device_type_web(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultImportClientBrandingAttributes> {
+        self.device_type_web.as_ref()
+    }
+}
+impl std::fmt::Debug for ImportClientBrandingInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportClientBrandingInput");
+        formatter.field("resource_id", &self.resource_id);
+        formatter.field("device_type_windows", &self.device_type_windows);
+        formatter.field("device_type_osx", &self.device_type_osx);
+        formatter.field("device_type_android", &self.device_type_android);
+        formatter.field("device_type_ios", &self.device_type_ios);
+        formatter.field("device_type_linux", &self.device_type_linux);
+        formatter.field("device_type_web", &self.device_type_web);
         formatter.finish()
     }
 }
@@ -10877,6 +11541,27 @@ impl std::fmt::Debug for DescribeClientPropertiesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeClientBrandingInput {
+    /// <p>The directory identifier of the WorkSpace for which you want to view client branding information.</p>
+    pub resource_id: std::option::Option<std::string::String>,
+}
+impl DescribeClientBrandingInput {
+    /// <p>The directory identifier of the WorkSpace for which you want to view client branding information.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeClientBrandingInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeClientBrandingInput");
+        formatter.field("resource_id", &self.resource_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountModificationsInput {
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -11063,6 +11748,34 @@ impl std::fmt::Debug for DeleteConnectClientAddInInput {
         let mut formatter = f.debug_struct("DeleteConnectClientAddInInput");
         formatter.field("add_in_id", &self.add_in_id);
         formatter.field("resource_id", &self.resource_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteClientBrandingInput {
+    /// <p>The directory identifier of the WorkSpace for which you want to delete client branding.</p>
+    pub resource_id: std::option::Option<std::string::String>,
+    /// <p>The device type for which you want to delete client branding.</p>
+    pub platforms: std::option::Option<std::vec::Vec<crate::model::ClientDeviceType>>,
+}
+impl DeleteClientBrandingInput {
+    /// <p>The directory identifier of the WorkSpace for which you want to delete client branding.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The device type for which you want to delete client branding.</p>
+    pub fn platforms(&self) -> std::option::Option<&[crate::model::ClientDeviceType]> {
+        self.platforms.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteClientBrandingInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteClientBrandingInput");
+        formatter.field("resource_id", &self.resource_id);
+        formatter.field("platforms", &self.platforms);
         formatter.finish()
     }
 }

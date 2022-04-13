@@ -5182,6 +5182,19 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "klvMetadata" => {
+                                builder = builder.set_klv_metadata(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::CmfcKlvMetadata::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "scte35Esam" => {
                                 builder = builder.set_scte35_esam(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -5466,6 +5479,19 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|v| v.to_f64()),
+                                );
+                            }
+                            "klvMetadata" => {
+                                builder = builder.set_klv_metadata(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::M2tsKlvMetadata::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             "maxPcrInterval" => {
@@ -6151,6 +6177,18 @@ where
                                         s.to_unescaped().map(|u| {
                                             crate::model::MpdCaptionContainerType::from(u.as_ref())
                                         })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "klvMetadata" => {
+                                builder = builder.set_klv_metadata(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::MpdKlvMetadata::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

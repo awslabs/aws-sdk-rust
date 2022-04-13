@@ -792,11 +792,11 @@ impl PutOrganizationConformancePackOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutOrganizationConfigRuleOutput {
-    /// <p>The Amazon Resource Name (ARN) of an organization config rule.</p>
+    /// <p>The Amazon Resource Name (ARN) of an organization Config rule.</p>
     pub organization_config_rule_arn: std::option::Option<std::string::String>,
 }
 impl PutOrganizationConfigRuleOutput {
-    /// <p>The Amazon Resource Name (ARN) of an organization config rule.</p>
+    /// <p>The Amazon Resource Name (ARN) of an organization Config rule.</p>
     pub fn organization_config_rule_arn(&self) -> std::option::Option<&str> {
         self.organization_config_rule_arn.as_deref()
     }
@@ -820,7 +820,7 @@ pub mod put_organization_config_rule_output {
         pub(crate) organization_config_rule_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of an organization config rule.</p>
+        /// <p>The Amazon Resource Name (ARN) of an organization Config rule.</p>
         pub fn organization_config_rule_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -828,7 +828,7 @@ pub mod put_organization_config_rule_output {
             self.organization_config_rule_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an organization config rule.</p>
+        /// <p>The Amazon Resource Name (ARN) of an organization Config rule.</p>
         pub fn set_organization_config_rule_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1700,6 +1700,60 @@ impl GetResourceConfigHistoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetOrganizationCustomRulePolicyOutput {
+    /// <p>The policy definition containing the logic for your organization Config Custom Policy rule.</p>
+    pub policy_text: std::option::Option<std::string::String>,
+}
+impl GetOrganizationCustomRulePolicyOutput {
+    /// <p>The policy definition containing the logic for your organization Config Custom Policy rule.</p>
+    pub fn policy_text(&self) -> std::option::Option<&str> {
+        self.policy_text.as_deref()
+    }
+}
+impl std::fmt::Debug for GetOrganizationCustomRulePolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetOrganizationCustomRulePolicyOutput");
+        formatter.field("policy_text", &self.policy_text);
+        formatter.finish()
+    }
+}
+/// See [`GetOrganizationCustomRulePolicyOutput`](crate::output::GetOrganizationCustomRulePolicyOutput)
+pub mod get_organization_custom_rule_policy_output {
+    /// A builder for [`GetOrganizationCustomRulePolicyOutput`](crate::output::GetOrganizationCustomRulePolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) policy_text: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The policy definition containing the logic for your organization Config Custom Policy rule.</p>
+        pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_text = Some(input.into());
+            self
+        }
+        /// <p>The policy definition containing the logic for your organization Config Custom Policy rule.</p>
+        pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_text = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetOrganizationCustomRulePolicyOutput`](crate::output::GetOrganizationCustomRulePolicyOutput)
+        pub fn build(self) -> crate::output::GetOrganizationCustomRulePolicyOutput {
+            crate::output::GetOrganizationCustomRulePolicyOutput {
+                policy_text: self.policy_text,
+            }
+        }
+    }
+}
+impl GetOrganizationCustomRulePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetOrganizationCustomRulePolicyOutput`](crate::output::GetOrganizationCustomRulePolicyOutput)
+    pub fn builder() -> crate::output::get_organization_custom_rule_policy_output::Builder {
+        crate::output::get_organization_custom_rule_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOrganizationConformancePackDetailedStatusOutput {
     /// <p>A list of <code>OrganizationConformancePackDetailedStatus</code> objects. </p>
     pub organization_conformance_pack_detailed_statuses:
@@ -2018,6 +2072,60 @@ impl GetDiscoveredResourceCountsOutput {
     /// Creates a new builder-style object to manufacture [`GetDiscoveredResourceCountsOutput`](crate::output::GetDiscoveredResourceCountsOutput)
     pub fn builder() -> crate::output::get_discovered_resource_counts_output::Builder {
         crate::output::get_discovered_resource_counts_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetCustomRulePolicyOutput {
+    /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
+    pub policy_text: std::option::Option<std::string::String>,
+}
+impl GetCustomRulePolicyOutput {
+    /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
+    pub fn policy_text(&self) -> std::option::Option<&str> {
+        self.policy_text.as_deref()
+    }
+}
+impl std::fmt::Debug for GetCustomRulePolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetCustomRulePolicyOutput");
+        formatter.field("policy_text", &self.policy_text);
+        formatter.finish()
+    }
+}
+/// See [`GetCustomRulePolicyOutput`](crate::output::GetCustomRulePolicyOutput)
+pub mod get_custom_rule_policy_output {
+    /// A builder for [`GetCustomRulePolicyOutput`](crate::output::GetCustomRulePolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) policy_text: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
+        pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_text = Some(input.into());
+            self
+        }
+        /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
+        pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_text = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetCustomRulePolicyOutput`](crate::output::GetCustomRulePolicyOutput)
+        pub fn build(self) -> crate::output::GetCustomRulePolicyOutput {
+            crate::output::GetCustomRulePolicyOutput {
+                policy_text: self.policy_text,
+            }
+        }
+    }
+}
+impl GetCustomRulePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetCustomRulePolicyOutput`](crate::output::GetCustomRulePolicyOutput)
+    pub fn builder() -> crate::output::get_custom_rule_policy_output::Builder {
+        crate::output::get_custom_rule_policy_output::Builder::default()
     }
 }
 

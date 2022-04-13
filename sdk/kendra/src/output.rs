@@ -2847,18 +2847,18 @@ impl DescribePrincipalMappingOutput {
 pub struct DescribeIndexOutput {
     /// <p>The name of the index.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The name of the index.</p>
+    /// <p>The identifier of the index.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Kendra edition used for the index. You decide the edition when you create the index.</p>
     pub edition: std::option::Option<crate::model::IndexEdition>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon Cloudwatch logs.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The identifier of the KMScustomer master key (CMK) used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+    /// <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     /// <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub status: std::option::Option<crate::model::IndexStatus>,
-    /// <p>The description of the index.</p>
+    /// <p>The description for the index.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The Unix datetime that the index was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -2869,9 +2869,9 @@ pub struct DescribeIndexOutput {
         std::option::Option<std::vec::Vec<crate::model::DocumentMetadataConfiguration>>,
     /// <p>Provides information about the number of FAQ questions and answers and the number of text documents indexed.</p>
     pub index_statistics: std::option::Option<crate::model::IndexStatistics>,
-    /// <p>When th e<code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
+    /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub error_message: std::option::Option<std::string::String>,
-    /// <p>For Enterprise edition indexes, you can choose to use additional capacity to meet the needs of your application. This contains the capacity units used for the index. A 0 for the query capacity or the storage capacity indicates that the index is using the default capacity for the index.</p>
+    /// <p>For Enterprise Edition indexes, you can choose to use additional capacity to meet the needs of your application. This contains the capacity units used for the index. A query or document storage capacity of zero indicates that the index is using the default capacity. For more information on the default capacity for an index and adjusting this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
     pub capacity_units: std::option::Option<crate::model::CapacityUnitsConfiguration>,
     /// <p>The user token configuration for the Amazon Kendra index.</p>
     pub user_token_configurations:
@@ -2887,7 +2887,7 @@ impl DescribeIndexOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The name of the index.</p>
+    /// <p>The identifier of the index.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -2899,7 +2899,7 @@ impl DescribeIndexOutput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The identifier of the KMScustomer master key (CMK) used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+    /// <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
     pub fn server_side_encryption_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
@@ -2909,7 +2909,7 @@ impl DescribeIndexOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::IndexStatus> {
         self.status.as_ref()
     }
-    /// <p>The description of the index.</p>
+    /// <p>The description for the index.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -2931,11 +2931,11 @@ impl DescribeIndexOutput {
     pub fn index_statistics(&self) -> std::option::Option<&crate::model::IndexStatistics> {
         self.index_statistics.as_ref()
     }
-    /// <p>When th e<code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
+    /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
-    /// <p>For Enterprise edition indexes, you can choose to use additional capacity to meet the needs of your application. This contains the capacity units used for the index. A 0 for the query capacity or the storage capacity indicates that the index is using the default capacity for the index.</p>
+    /// <p>For Enterprise Edition indexes, you can choose to use additional capacity to meet the needs of your application. This contains the capacity units used for the index. A query or document storage capacity of zero indicates that the index is using the default capacity. For more information on the default capacity for an index and adjusting this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
     pub fn capacity_units(&self) -> std::option::Option<&crate::model::CapacityUnitsConfiguration> {
         self.capacity_units.as_ref()
     }
@@ -3025,12 +3025,12 @@ pub mod describe_index_output {
             self.name = input;
             self
         }
-        /// <p>The name of the index.</p>
+        /// <p>The identifier of the index.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The name of the index.</p>
+        /// <p>The identifier of the index.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3058,7 +3058,7 @@ pub mod describe_index_output {
             self.role_arn = input;
             self
         }
-        /// <p>The identifier of the KMScustomer master key (CMK) used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+        /// <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
         pub fn server_side_encryption_configuration(
             mut self,
             input: crate::model::ServerSideEncryptionConfiguration,
@@ -3066,7 +3066,7 @@ pub mod describe_index_output {
             self.server_side_encryption_configuration = Some(input);
             self
         }
-        /// <p>The identifier of the KMScustomer master key (CMK) used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+        /// <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
         pub fn set_server_side_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
@@ -3084,12 +3084,12 @@ pub mod describe_index_output {
             self.status = input;
             self
         }
-        /// <p>The description of the index.</p>
+        /// <p>The description for the index.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the index.</p>
+        /// <p>The description for the index.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3155,12 +3155,12 @@ pub mod describe_index_output {
             self.index_statistics = input;
             self
         }
-        /// <p>When th e<code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
+        /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_message = Some(input.into());
             self
         }
-        /// <p>When th e<code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
+        /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3168,12 +3168,12 @@ pub mod describe_index_output {
             self.error_message = input;
             self
         }
-        /// <p>For Enterprise edition indexes, you can choose to use additional capacity to meet the needs of your application. This contains the capacity units used for the index. A 0 for the query capacity or the storage capacity indicates that the index is using the default capacity for the index.</p>
+        /// <p>For Enterprise Edition indexes, you can choose to use additional capacity to meet the needs of your application. This contains the capacity units used for the index. A query or document storage capacity of zero indicates that the index is using the default capacity. For more information on the default capacity for an index and adjusting this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
         pub fn capacity_units(mut self, input: crate::model::CapacityUnitsConfiguration) -> Self {
             self.capacity_units = Some(input);
             self
         }
-        /// <p>For Enterprise edition indexes, you can choose to use additional capacity to meet the needs of your application. This contains the capacity units used for the index. A 0 for the query capacity or the storage capacity indicates that the index is using the default capacity for the index.</p>
+        /// <p>For Enterprise Edition indexes, you can choose to use additional capacity to meet the needs of your application. This contains the capacity units used for the index. A query or document storage capacity of zero indicates that the index is using the default capacity. For more information on the default capacity for an index and adjusting this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
         pub fn set_capacity_units(
             mut self,
             input: std::option::Option<crate::model::CapacityUnitsConfiguration>,

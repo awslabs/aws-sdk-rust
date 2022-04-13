@@ -2271,17 +2271,19 @@ impl LanguageIdSettings {
     }
 }
 
-/// <p>Choose the output format for your subtitle file and the S3 location where you want your file saved.</p>
+/// <p>The S3 location where your subtitle files are located. Note that your subtitle files are placed in the same location as your transcription output. Refer to <code>TranscriptFileUri</code> to download your files.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubtitlesOutput {
-    /// <p>Specify the output format for your subtitle file; if you select both SRT and VTT formats, two output files are generated.</p>
+    /// <p>The format of your subtitle files. If your request specified both <code>srt</code> and <code>vtt</code> formats, both formats are shown.</p>
     pub formats: std::option::Option<std::vec::Vec<crate::model::SubtitleFormat>>,
     /// <p>Contains the output location for your subtitle file. This location must be an S3 bucket.</p>
     pub subtitle_file_uris: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Shows the output start index value for your subtitle files. If you did not specify a value in your request, the default value of <code>0</code> is used.</p>
+    pub output_start_index: std::option::Option<i32>,
 }
 impl SubtitlesOutput {
-    /// <p>Specify the output format for your subtitle file; if you select both SRT and VTT formats, two output files are generated.</p>
+    /// <p>The format of your subtitle files. If your request specified both <code>srt</code> and <code>vtt</code> formats, both formats are shown.</p>
     pub fn formats(&self) -> std::option::Option<&[crate::model::SubtitleFormat]> {
         self.formats.as_deref()
     }
@@ -2289,12 +2291,17 @@ impl SubtitlesOutput {
     pub fn subtitle_file_uris(&self) -> std::option::Option<&[std::string::String]> {
         self.subtitle_file_uris.as_deref()
     }
+    /// <p>Shows the output start index value for your subtitle files. If you did not specify a value in your request, the default value of <code>0</code> is used.</p>
+    pub fn output_start_index(&self) -> std::option::Option<i32> {
+        self.output_start_index
+    }
 }
 impl std::fmt::Debug for SubtitlesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SubtitlesOutput");
         formatter.field("formats", &self.formats);
         formatter.field("subtitle_file_uris", &self.subtitle_file_uris);
+        formatter.field("output_start_index", &self.output_start_index);
         formatter.finish()
     }
 }
@@ -2306,20 +2313,21 @@ pub mod subtitles_output {
     pub struct Builder {
         pub(crate) formats: std::option::Option<std::vec::Vec<crate::model::SubtitleFormat>>,
         pub(crate) subtitle_file_uris: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) output_start_index: std::option::Option<i32>,
     }
     impl Builder {
         /// Appends an item to `formats`.
         ///
         /// To override the contents of this collection use [`set_formats`](Self::set_formats).
         ///
-        /// <p>Specify the output format for your subtitle file; if you select both SRT and VTT formats, two output files are generated.</p>
+        /// <p>The format of your subtitle files. If your request specified both <code>srt</code> and <code>vtt</code> formats, both formats are shown.</p>
         pub fn formats(mut self, input: crate::model::SubtitleFormat) -> Self {
             let mut v = self.formats.unwrap_or_default();
             v.push(input);
             self.formats = Some(v);
             self
         }
-        /// <p>Specify the output format for your subtitle file; if you select both SRT and VTT formats, two output files are generated.</p>
+        /// <p>The format of your subtitle files. If your request specified both <code>srt</code> and <code>vtt</code> formats, both formats are shown.</p>
         pub fn set_formats(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SubtitleFormat>>,
@@ -2346,11 +2354,22 @@ pub mod subtitles_output {
             self.subtitle_file_uris = input;
             self
         }
+        /// <p>Shows the output start index value for your subtitle files. If you did not specify a value in your request, the default value of <code>0</code> is used.</p>
+        pub fn output_start_index(mut self, input: i32) -> Self {
+            self.output_start_index = Some(input);
+            self
+        }
+        /// <p>Shows the output start index value for your subtitle files. If you did not specify a value in your request, the default value of <code>0</code> is used.</p>
+        pub fn set_output_start_index(mut self, input: std::option::Option<i32>) -> Self {
+            self.output_start_index = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SubtitlesOutput`](crate::model::SubtitlesOutput)
         pub fn build(self) -> crate::model::SubtitlesOutput {
             crate::model::SubtitlesOutput {
                 formats: self.formats,
                 subtitle_file_uris: self.subtitle_file_uris,
+                output_start_index: self.output_start_index,
             }
         }
     }
@@ -3495,23 +3514,32 @@ impl AsRef<str> for TranscriptionJobStatus {
     }
 }
 
-/// <p>Generate subtitles for your batch transcription job.</p>
+/// <p>Generate subtitles for your batch transcription job. Note that your subtitle files are placed in the same location as your transcription output.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Subtitles {
-    /// <p>Specify the output format for your subtitle file.</p>
+    /// <p>Specify the output format for your subtitle file; if you select both <code>srt</code> and <code>vtt</code> formats, two output files are generated.</p>
     pub formats: std::option::Option<std::vec::Vec<crate::model::SubtitleFormat>>,
+    /// <p>Defines the starting value that is assigned to the first subtitle segment.</p>
+    /// <p>The default start index for Amazon Transcribe is <code>0</code>, which differs from the more widely used standard of <code>1</code>. If you're uncertain which value to use, we recommend choosing <code>1</code>, as this may improve compatibility with other services.</p>
+    pub output_start_index: std::option::Option<i32>,
 }
 impl Subtitles {
-    /// <p>Specify the output format for your subtitle file.</p>
+    /// <p>Specify the output format for your subtitle file; if you select both <code>srt</code> and <code>vtt</code> formats, two output files are generated.</p>
     pub fn formats(&self) -> std::option::Option<&[crate::model::SubtitleFormat]> {
         self.formats.as_deref()
+    }
+    /// <p>Defines the starting value that is assigned to the first subtitle segment.</p>
+    /// <p>The default start index for Amazon Transcribe is <code>0</code>, which differs from the more widely used standard of <code>1</code>. If you're uncertain which value to use, we recommend choosing <code>1</code>, as this may improve compatibility with other services.</p>
+    pub fn output_start_index(&self) -> std::option::Option<i32> {
+        self.output_start_index
     }
 }
 impl std::fmt::Debug for Subtitles {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Subtitles");
         formatter.field("formats", &self.formats);
+        formatter.field("output_start_index", &self.output_start_index);
         formatter.finish()
     }
 }
@@ -3522,20 +3550,21 @@ pub mod subtitles {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) formats: std::option::Option<std::vec::Vec<crate::model::SubtitleFormat>>,
+        pub(crate) output_start_index: std::option::Option<i32>,
     }
     impl Builder {
         /// Appends an item to `formats`.
         ///
         /// To override the contents of this collection use [`set_formats`](Self::set_formats).
         ///
-        /// <p>Specify the output format for your subtitle file.</p>
+        /// <p>Specify the output format for your subtitle file; if you select both <code>srt</code> and <code>vtt</code> formats, two output files are generated.</p>
         pub fn formats(mut self, input: crate::model::SubtitleFormat) -> Self {
             let mut v = self.formats.unwrap_or_default();
             v.push(input);
             self.formats = Some(v);
             self
         }
-        /// <p>Specify the output format for your subtitle file.</p>
+        /// <p>Specify the output format for your subtitle file; if you select both <code>srt</code> and <code>vtt</code> formats, two output files are generated.</p>
         pub fn set_formats(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SubtitleFormat>>,
@@ -3543,10 +3572,23 @@ pub mod subtitles {
             self.formats = input;
             self
         }
+        /// <p>Defines the starting value that is assigned to the first subtitle segment.</p>
+        /// <p>The default start index for Amazon Transcribe is <code>0</code>, which differs from the more widely used standard of <code>1</code>. If you're uncertain which value to use, we recommend choosing <code>1</code>, as this may improve compatibility with other services.</p>
+        pub fn output_start_index(mut self, input: i32) -> Self {
+            self.output_start_index = Some(input);
+            self
+        }
+        /// <p>Defines the starting value that is assigned to the first subtitle segment.</p>
+        /// <p>The default start index for Amazon Transcribe is <code>0</code>, which differs from the more widely used standard of <code>1</code>. If you're uncertain which value to use, we recommend choosing <code>1</code>, as this may improve compatibility with other services.</p>
+        pub fn set_output_start_index(mut self, input: std::option::Option<i32>) -> Self {
+            self.output_start_index = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Subtitles`](crate::model::Subtitles)
         pub fn build(self) -> crate::model::Subtitles {
             crate::model::Subtitles {
                 formats: self.formats,
+                output_start_index: self.output_start_index,
             }
         }
     }
@@ -4397,7 +4439,7 @@ pub struct CallAnalyticsJob {
     /// <p>If you know the language spoken between the customer and the agent, specify a language code for this field.</p>
     /// <p>If you don't know the language, you can leave this field blank, and Amazon Transcribe will use machine learning to automatically identify the language. To improve the accuracy of language identification, you can provide an array containing the possible language codes for the language spoken in your audio. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> for additional information.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The sample rate, in Hertz, of the audio.</p>
+    /// <p>The sample rate, in Hertz, of the input audio.</p>
     pub media_sample_rate_hertz: std::option::Option<i32>,
     /// <p>The format of the input audio file. Note: for call analytics jobs, only the following media formats are supported: MP3, MP4, WAV, FLAC, OGG, and WebM.</p>
     pub media_format: std::option::Option<crate::model::MediaFormat>,
@@ -4447,7 +4489,7 @@ impl CallAnalyticsJob {
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The sample rate, in Hertz, of the audio.</p>
+    /// <p>The sample rate, in Hertz, of the input audio.</p>
     pub fn media_sample_rate_hertz(&self) -> std::option::Option<i32> {
         self.media_sample_rate_hertz
     }
@@ -4595,12 +4637,12 @@ pub mod call_analytics_job {
             self.language_code = input;
             self
         }
-        /// <p>The sample rate, in Hertz, of the audio.</p>
+        /// <p>The sample rate, in Hertz, of the input audio.</p>
         pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
             self.media_sample_rate_hertz = Some(input);
             self
         }
-        /// <p>The sample rate, in Hertz, of the audio.</p>
+        /// <p>The sample rate, in Hertz, of the input audio.</p>
         pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
             self.media_sample_rate_hertz = input;
             self

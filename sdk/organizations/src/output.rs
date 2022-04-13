@@ -1343,14 +1343,14 @@ impl ListChildrenOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAwsServiceAccessForOrganizationOutput {
-    /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with AWS Organizations.</p>
+    /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with Organizations.</p>
     pub enabled_service_principals:
         std::option::Option<std::vec::Vec<crate::model::EnabledServicePrincipal>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAwsServiceAccessForOrganizationOutput {
-    /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with AWS Organizations.</p>
+    /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with Organizations.</p>
     pub fn enabled_service_principals(
         &self,
     ) -> std::option::Option<&[crate::model::EnabledServicePrincipal]> {
@@ -1387,7 +1387,7 @@ pub mod list_aws_service_access_for_organization_output {
         ///
         /// To override the contents of this collection use [`set_enabled_service_principals`](Self::set_enabled_service_principals).
         ///
-        /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with AWS Organizations.</p>
+        /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with Organizations.</p>
         pub fn enabled_service_principals(
             mut self,
             input: crate::model::EnabledServicePrincipal,
@@ -1397,7 +1397,7 @@ pub mod list_aws_service_access_for_organization_output {
             self.enabled_service_principals = Some(v);
             self
         }
-        /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with AWS Organizations.</p>
+        /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with Organizations.</p>
         pub fn set_enabled_service_principals(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnabledServicePrincipal>>,
@@ -2683,11 +2683,11 @@ impl CreateOrganizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGovCloudAccountOutput {
-    /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an AWS account or an AWS GovCloud (US) account in an organization.</p>
+    /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.</p>
     pub create_account_status: std::option::Option<crate::model::CreateAccountStatus>,
 }
 impl CreateGovCloudAccountOutput {
-    /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an AWS account or an AWS GovCloud (US) account in an organization.</p>
+    /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.</p>
     pub fn create_account_status(&self) -> std::option::Option<&crate::model::CreateAccountStatus> {
         self.create_account_status.as_ref()
     }
@@ -2708,12 +2708,12 @@ pub mod create_gov_cloud_account_output {
         pub(crate) create_account_status: std::option::Option<crate::model::CreateAccountStatus>,
     }
     impl Builder {
-        /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an AWS account or an AWS GovCloud (US) account in an organization.</p>
+        /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.</p>
         pub fn create_account_status(mut self, input: crate::model::CreateAccountStatus) -> Self {
             self.create_account_status = Some(input);
             self
         }
-        /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an AWS account or an AWS GovCloud (US) account in an organization.</p>
+        /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.</p>
         pub fn set_create_account_status(
             mut self,
             input: std::option::Option<crate::model::CreateAccountStatus>,
@@ -2740,11 +2740,11 @@ impl CreateGovCloudAccountOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccountOutput {
-    /// <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the AWS CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>AWS Organizations User Guide</i>.</p>
+    /// <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
     pub create_account_status: std::option::Option<crate::model::CreateAccountStatus>,
 }
 impl CreateAccountOutput {
-    /// <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the AWS CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>AWS Organizations User Guide</i>.</p>
+    /// <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
     pub fn create_account_status(&self) -> std::option::Option<&crate::model::CreateAccountStatus> {
         self.create_account_status.as_ref()
     }
@@ -2765,12 +2765,12 @@ pub mod create_account_output {
         pub(crate) create_account_status: std::option::Option<crate::model::CreateAccountStatus>,
     }
     impl Builder {
-        /// <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the AWS CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>AWS Organizations User Guide</i>.</p>
+        /// <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
         pub fn create_account_status(mut self, input: crate::model::CreateAccountStatus) -> Self {
             self.create_account_status = Some(input);
             self
         }
-        /// <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the AWS CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>AWS Organizations User Guide</i>.</p>
+        /// <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
         pub fn set_create_account_status(
             mut self,
             input: std::option::Option<crate::model::CreateAccountStatus>,
@@ -2790,6 +2790,36 @@ impl CreateAccountOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccountOutput`](crate::output::CreateAccountOutput)
     pub fn builder() -> crate::output::create_account_output::Builder {
         crate::output::create_account_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CloseAccountOutput {}
+impl std::fmt::Debug for CloseAccountOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CloseAccountOutput");
+        formatter.finish()
+    }
+}
+/// See [`CloseAccountOutput`](crate::output::CloseAccountOutput)
+pub mod close_account_output {
+    /// A builder for [`CloseAccountOutput`](crate::output::CloseAccountOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`CloseAccountOutput`](crate::output::CloseAccountOutput)
+        pub fn build(self) -> crate::output::CloseAccountOutput {
+            crate::output::CloseAccountOutput {}
+        }
+    }
+}
+impl CloseAccountOutput {
+    /// Creates a new builder-style object to manufacture [`CloseAccountOutput`](crate::output::CloseAccountOutput)
+    pub fn builder() -> crate::output::close_account_output::Builder {
+        crate::output::close_account_output::Builder::default()
     }
 }
 

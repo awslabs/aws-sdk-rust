@@ -158,6 +158,142 @@ impl std::error::Error for AddNotificationChannelError {
     }
 }
 
+/// Error type for the `DeleteInsight` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteInsightError {
+    /// Kind of error that occurred.
+    pub kind: DeleteInsightErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteInsight` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteInsightErrorKind {
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> An exception that is thrown when a conflict occurs. </p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An internal failure in an Amazon service occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>A requested resource could not be found</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to a request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteInsightError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteInsightErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteInsightErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteInsightErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteInsightErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteInsightErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteInsightErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteInsightErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteInsightError {
+    fn code(&self) -> Option<&str> {
+        DeleteInsightError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteInsightError {
+    /// Creates a new `DeleteInsightError`.
+    pub fn new(kind: DeleteInsightErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteInsightError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteInsightErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteInsightError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteInsightErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteInsightErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, DeleteInsightErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteInsightErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteInsightErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteInsightErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInsightErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteInsightErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInsightErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteInsightErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DeleteInsightErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteInsightErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, DeleteInsightErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for DeleteInsightError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteInsightErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteInsightErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteInsightErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteInsightErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteInsightErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteInsightErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteInsightErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeAccountHealth` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

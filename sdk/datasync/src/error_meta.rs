@@ -108,6 +108,30 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxOpenZfsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxOpenZfsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateLocationFsxOpenZfsErrorKind::InternalException(inner) => {
+                    Error::InternalException(inner)
+                }
+                crate::error::CreateLocationFsxOpenZfsErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::CreateLocationFsxOpenZfsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxWindowsError, R>>
     for Error
 where
@@ -383,6 +407,30 @@ where
                     inner,
                 ) => Error::InvalidRequestException(inner),
                 crate::error::DescribeLocationFsxLustreErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxOpenZfsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxOpenZfsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeLocationFsxOpenZfsErrorKind::InternalException(inner) => {
+                    Error::InternalException(inner)
+                }
+                crate::error::DescribeLocationFsxOpenZfsErrorKind::InvalidRequestException(
+                    inner,
+                ) => Error::InvalidRequestException(inner),
+                crate::error::DescribeLocationFsxOpenZfsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

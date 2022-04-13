@@ -125,9 +125,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`certificate_authority_arn(impl Into<String>)`](crate::client::fluent_builders::CreatePermission::certificate_authority_arn) / [`set_certificate_authority_arn(Option<String>)`](crate::client::fluent_builders::CreatePermission::set_certificate_authority_arn): <p>The Amazon Resource Name (ARN) of the CA that grants the permissions. You can find the ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
-    ///   - [`principal(impl Into<String>)`](crate::client::fluent_builders::CreatePermission::principal) / [`set_principal(Option<String>)`](crate::client::fluent_builders::CreatePermission::set_principal): <p>The AWS service or identity that receives the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
+    ///   - [`principal(impl Into<String>)`](crate::client::fluent_builders::CreatePermission::principal) / [`set_principal(Option<String>)`](crate::client::fluent_builders::CreatePermission::set_principal): <p>The Amazon Web Services service or identity that receives the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
     ///   - [`source_account(impl Into<String>)`](crate::client::fluent_builders::CreatePermission::source_account) / [`set_source_account(Option<String>)`](crate::client::fluent_builders::CreatePermission::set_source_account): <p>The ID of the calling account.</p>
-    ///   - [`actions(Vec<ActionType>)`](crate::client::fluent_builders::CreatePermission::actions) / [`set_actions(Option<Vec<ActionType>>)`](crate::client::fluent_builders::CreatePermission::set_actions): <p>The actions that the specified AWS service principal can use. These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>.</p>
+    ///   - [`actions(Vec<ActionType>)`](crate::client::fluent_builders::CreatePermission::actions) / [`set_actions(Option<Vec<ActionType>>)`](crate::client::fluent_builders::CreatePermission::set_actions): <p>The actions that the specified Amazon Web Services service principal can use. These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>.</p>
     /// - On success, responds with [`CreatePermissionOutput`](crate::output::CreatePermissionOutput)
 
     /// - On failure, responds with [`SdkError<CreatePermissionError>`](crate::error::CreatePermissionError)
@@ -149,8 +149,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`certificate_authority_arn(impl Into<String>)`](crate::client::fluent_builders::DeletePermission::certificate_authority_arn) / [`set_certificate_authority_arn(Option<String>)`](crate::client::fluent_builders::DeletePermission::set_certificate_authority_arn): <p>The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
-    ///   - [`principal(impl Into<String>)`](crate::client::fluent_builders::DeletePermission::principal) / [`set_principal(Option<String>)`](crate::client::fluent_builders::DeletePermission::set_principal): <p>The AWS service or identity that will have its CA permissions revoked. At this time, the only valid service principal is <code>acm.amazonaws.com</code> </p>
-    ///   - [`source_account(impl Into<String>)`](crate::client::fluent_builders::DeletePermission::source_account) / [`set_source_account(Option<String>)`](crate::client::fluent_builders::DeletePermission::set_source_account): <p>The AWS account that calls this action.</p>
+    ///   - [`principal(impl Into<String>)`](crate::client::fluent_builders::DeletePermission::principal) / [`set_principal(Option<String>)`](crate::client::fluent_builders::DeletePermission::set_principal): <p>The Amazon Web Services service or identity that will have its CA permissions revoked. At this time, the only valid service principal is <code>acm.amazonaws.com</code> </p>
+    ///   - [`source_account(impl Into<String>)`](crate::client::fluent_builders::DeletePermission::source_account) / [`set_source_account(Option<String>)`](crate::client::fluent_builders::DeletePermission::set_source_account): <p>The Amazon Web Services account that calls this action.</p>
     /// - On success, responds with [`DeletePermissionOutput`](crate::output::DeletePermissionOutput)
 
     /// - On failure, responds with [`SdkError<DeletePermissionError>`](crate::error::DeletePermissionError)
@@ -257,11 +257,11 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`api_passthrough(ApiPassthrough)`](crate::client::fluent_builders::IssueCertificate::api_passthrough) / [`set_api_passthrough(Option<ApiPassthrough>)`](crate::client::fluent_builders::IssueCertificate::set_api_passthrough): <p>Specifies X.509 certificate information to be included in the issued certificate. An <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must be selected, or else this parameter is ignored. For more information about using these templates, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate Templates</a>.</p>  <p>If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private CA applies <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order of operation rules</a> to determine what information is used.</p>
     ///   - [`certificate_authority_arn(impl Into<String>)`](crate::client::fluent_builders::IssueCertificate::certificate_authority_arn) / [`set_certificate_authority_arn(Option<String>)`](crate::client::fluent_builders::IssueCertificate::set_certificate_authority_arn): <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form:</p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    ///   - [`csr(Blob)`](crate::client::fluent_builders::IssueCertificate::csr) / [`set_csr(Option<Blob>)`](crate::client::fluent_builders::IssueCertificate::set_csr): <p>The certificate signing request (CSR) for the certificate you want to issue. As an example, you can use the following OpenSSL command to create the CSR and a 2048 bit RSA private key. </p>  <p> <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>  <p>If you have a configuration file, you can then use the following OpenSSL command. The <code>usr_cert</code> block in the configuration file contains your X509 version 3 extensions. </p>  <p> <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>  <p>Note: A CSR must provide either a <i>subject name</i> or a <i>subject alternative name</i> or the request will be rejected. </p>
-    ///   - [`signing_algorithm(SigningAlgorithm)`](crate::client::fluent_builders::IssueCertificate::signing_algorithm) / [`set_signing_algorithm(Option<SigningAlgorithm>)`](crate::client::fluent_builders::IssueCertificate::set_signing_algorithm): <p>The name of the algorithm that will be used to sign the certificate to be issued. </p>  <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p>
+    ///   - [`csr(Blob)`](crate::client::fluent_builders::IssueCertificate::csr) / [`set_csr(Option<Blob>)`](crate::client::fluent_builders::IssueCertificate::set_csr): <p>The certificate signing request (CSR) for the certificate you want to issue. As an example, you can use the following OpenSSL command to create the CSR and a 2048 bit RSA private key. </p>  <p> <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>  <p>If you have a configuration file, you can then use the following OpenSSL command. The <code>usr_cert</code> block in the configuration file contains your X509 version 3 extensions. </p>  <p> <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>  <p>Note: A CSR must provide either a <i>subject name</i> or a <i>subject alternative name</i> or the request will be rejected. </p>
+    ///   - [`signing_algorithm(SigningAlgorithm)`](crate::client::fluent_builders::IssueCertificate::signing_algorithm) / [`set_signing_algorithm(Option<SigningAlgorithm>)`](crate::client::fluent_builders::IssueCertificate::set_signing_algorithm): <p>The name of the algorithm that will be used to sign the certificate to be issued. </p>  <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p> <note>   <p>The specified signing algorithm family (RSA or ECDSA) much match the algorithm family of the CA's secret key.</p>  </note>
     ///   - [`template_arn(impl Into<String>)`](crate::client::fluent_builders::IssueCertificate::template_arn) / [`set_template_arn(Option<String>)`](crate::client::fluent_builders::IssueCertificate::set_template_arn): <p>Specifies a custom configuration template to use when issuing a certificate. If this parameter is not provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA certificates, you should choose the shortest path length that meets your needs. The path length is indicated by the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.</p>  <p>Note: The CA depth configured on a subordinate CA certificate must not exceed the limit set by its parents in the CA hierarchy.</p>  <p>For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate Templates</a>.</p>
-    ///   - [`validity(Validity)`](crate::client::fluent_builders::IssueCertificate::validity) / [`set_validity(Option<Validity>)`](crate::client::fluent_builders::IssueCertificate::set_validity): <p>Information describing the end of the validity period of the certificate. This parameter sets the “Not After” date for the certificate.</p>  <p>Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280. </p>  <p>This value is unaffected when <code>ValidityNotBefore</code> is also specified. For example, if <code>Validity</code> is set to 20 days in the future, the certificate will expire 20 days from issuance time regardless of the <code>ValidityNotBefore</code> value.</p>  <p>The end of the validity period configured on a certificate must not exceed the limit set on its parents in the CA hierarchy.</p>
-    ///   - [`validity_not_before(Validity)`](crate::client::fluent_builders::IssueCertificate::validity_not_before) / [`set_validity_not_before(Option<Validity>)`](crate::client::fluent_builders::IssueCertificate::set_validity_not_before): <p>Information describing the start of the validity period of the certificate. This parameter sets the “Not Before" date for the certificate.</p>  <p>By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value. </p>  <p>Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.</p>  <p>The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
+    ///   - [`validity(Validity)`](crate::client::fluent_builders::IssueCertificate::validity) / [`set_validity(Option<Validity>)`](crate::client::fluent_builders::IssueCertificate::set_validity): <p>Information describing the end of the validity period of the certificate. This parameter sets the “Not After” date for the certificate.</p>  <p>Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280. </p>  <p>This value is unaffected when <code>ValidityNotBefore</code> is also specified. For example, if <code>Validity</code> is set to 20 days in the future, the certificate will expire 20 days from issuance time regardless of the <code>ValidityNotBefore</code> value.</p>  <p>The end of the validity period configured on a certificate must not exceed the limit set on its parents in the CA hierarchy.</p>
+    ///   - [`validity_not_before(Validity)`](crate::client::fluent_builders::IssueCertificate::validity_not_before) / [`set_validity_not_before(Option<Validity>)`](crate::client::fluent_builders::IssueCertificate::set_validity_not_before): <p>Information describing the start of the validity period of the certificate. This parameter sets the “Not Before" date for the certificate.</p>  <p>By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value. </p>  <p>Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.</p>  <p>The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::IssueCertificate::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::IssueCertificate::set_idempotency_token): <p>Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, ACM Private CA recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, PCA recognizes that you are requesting multiple certificates.</p>
     /// - On success, responds with [`IssueCertificateOutput`](crate::output::IssueCertificateOutput) with field(s):
     ///   - [`certificate_arn(Option<String>)`](crate::output::IssueCertificateOutput::certificate_arn): <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
@@ -336,7 +336,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`certificate_authority_arn(impl Into<String>)`](crate::client::fluent_builders::RevokeCertificate::certificate_authority_arn) / [`set_certificate_authority_arn(Option<String>)`](crate::client::fluent_builders::RevokeCertificate::set_certificate_authority_arn): <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    ///   - [`certificate_serial(impl Into<String>)`](crate::client::fluent_builders::RevokeCertificate::certificate_serial) / [`set_certificate_serial(Option<String>)`](crate::client::fluent_builders::RevokeCertificate::set_certificate_serial): <p>Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial number by calling <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p>  <p> <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p>  <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>AWS Certificate Manager API Reference</i>. </p>
+    ///   - [`certificate_serial(impl Into<String>)`](crate::client::fluent_builders::RevokeCertificate::certificate_serial) / [`set_certificate_serial(Option<String>)`](crate::client::fluent_builders::RevokeCertificate::set_certificate_serial): <p>Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial number by calling <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p>  <p> <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p>  <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>Certificate Manager API Reference</i>. </p>
     ///   - [`revocation_reason(RevocationReason)`](crate::client::fluent_builders::RevokeCertificate::revocation_reason) / [`set_revocation_reason(Option<RevocationReason>)`](crate::client::fluent_builders::RevokeCertificate::set_revocation_reason): <p>Specifies why you revoked the certificate.</p>
     /// - On success, responds with [`RevokeCertificateOutput`](crate::output::RevokeCertificateOutput)
 
@@ -391,7 +391,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a root or subordinate private certificate authority (CA). You must specify the CA configuration, an optional configuration for Online Certificate Status Protocol (OCSP) and/or a certificate revocation list (CRL), the CA type, and an optional idempotency token to avoid accidental creation of multiple CAs. The CA configuration specifies the name of the algorithm and key size to be used to create the CA private key, the type of signing algorithm that the CA uses, and X.500 subject information. The OCSP configuration can optionally specify a custom URL for the OCSP responder. The CRL configuration specifies the CRL expiration period in days (the validity period of the CRL), the Amazon S3 bucket that will contain the CRL, and a CNAME alias for the S3 bucket that is included in certificates issued by the CA. If successful, this action returns the Amazon Resource Name (ARN) of the CA.</p>
     /// <p>ACM Private CA assets that are stored in Amazon S3 can be protected with encryption. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting Your CRLs</a>.</p> <note>
-    /// <p>Both PCA and the IAM principal must have permission to write to the S3 bucket that you specify. If the IAM principal making the call does not have permission to write to the bucket, then an exception is thrown. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuthAccess.html">Configure Access to ACM Private CA</a>.</p>
+    /// <p>Both PCA and the IAM principal must have permission to write to the S3 bucket that you specify. If the IAM principal making the call does not have permission to write to the bucket, then an exception is thrown. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html#s3-policies">Access policies for CRLs in Amazon S3</a>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCertificateAuthority {
@@ -534,9 +534,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCertificateAuthorityAuditReport`.
     ///
     /// <p>Creates an audit report that lists every time that your CA private key is used. The report is saved in the Amazon S3 bucket that you specify on input. The <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_IssueCertificate.html">IssueCertificate</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html">RevokeCertificate</a> actions use the private key. </p> <note>
-    /// <p>Both PCA and the IAM principal must have permission to write to the S3 bucket that you specify. If the IAM principal making the call does not have permission to write to the bucket, then an exception is thrown. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuthAccess.html">Configure Access to ACM Private CA</a>.</p>
+    /// <p>Both PCA and the IAM principal must have permission to write to the S3 bucket that you specify. If the IAM principal making the call does not have permission to write to the bucket, then an exception is thrown. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html#s3-policies">Access policies for CRLs in Amazon S3</a>.</p>
     /// </note>
-    /// <p>ACM Private CA assets that are stored in Amazon S3 can be protected with encryption. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuditReport.html#audit-report-encryption">Encrypting Your Audit Reports</a>.</p>
+    /// <p>ACM Private CA assets that are stored in Amazon S3 can be protected with encryption. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuditReport.html#audit-report-encryption">Encrypting Your Audit Reports</a>.</p> <note>
+    /// <p>You can generate a maximum of one report every 30 minutes.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCertificateAuthorityAuditReport {
         handle: std::sync::Arc<super::Handle>,
@@ -625,7 +627,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePermission`.
     ///
-    /// <p>Grants one or more permissions on a private CA to the AWS Certificate Manager (ACM) service principal (<code>acm.amazonaws.com</code>). These permissions allow ACM to issue and renew ACM certificates that reside in the same AWS account as the CA.</p>
+    /// <p>Grants one or more permissions on a private CA to the Certificate Manager (ACM) service principal (<code>acm.amazonaws.com</code>). These permissions allow ACM to issue and renew ACM certificates that reside in the same Amazon Web Services account as the CA.</p>
     /// <p>You can list current permissions with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListPermissions.html">ListPermissions</a> action and revoke them with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePermission.html">DeletePermission</a> action.</p>
     /// <p class="title"> <b>About Permissions</b> </p>
     /// <ul>
@@ -687,12 +689,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certificate_authority_arn(input);
             self
         }
-        /// <p>The AWS service or identity that receives the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
+        /// <p>The Amazon Web Services service or identity that receives the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal(input.into());
             self
         }
-        /// <p>The AWS service or identity that receives the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
+        /// <p>The Amazon Web Services service or identity that receives the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal(input);
             self
@@ -714,12 +716,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
-        /// <p>The actions that the specified AWS service principal can use. These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>.</p>
+        /// <p>The actions that the specified Amazon Web Services service principal can use. These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>.</p>
         pub fn actions(mut self, input: crate::model::ActionType) -> Self {
             self.inner = self.inner.actions(input);
             self
         }
-        /// <p>The actions that the specified AWS service principal can use. These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>.</p>
+        /// <p>The actions that the specified Amazon Web Services service principal can use. These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActionType>>,
@@ -806,8 +808,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePermission`.
     ///
-    /// <p>Revokes permissions on a private CA granted to the AWS Certificate Manager (ACM) service principal (acm.amazonaws.com). </p>
-    /// <p>These permissions allow ACM to issue and renew ACM certificates that reside in the same AWS account as the CA. If you revoke these permissions, ACM will no longer renew the affected certificates automatically.</p>
+    /// <p>Revokes permissions on a private CA granted to the Certificate Manager (ACM) service principal (acm.amazonaws.com). </p>
+    /// <p>These permissions allow ACM to issue and renew ACM certificates that reside in the same Amazon Web Services account as the CA. If you revoke these permissions, ACM will no longer renew the affected certificates automatically.</p>
     /// <p>Permissions can be granted with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreatePermission.html">CreatePermission</a> action and listed with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListPermissions.html">ListPermissions</a> action. </p>
     /// <p class="title"> <b>About Permissions</b> </p>
     /// <ul>
@@ -869,22 +871,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certificate_authority_arn(input);
             self
         }
-        /// <p>The AWS service or identity that will have its CA permissions revoked. At this time, the only valid service principal is <code>acm.amazonaws.com</code> </p>
+        /// <p>The Amazon Web Services service or identity that will have its CA permissions revoked. At this time, the only valid service principal is <code>acm.amazonaws.com</code> </p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal(input.into());
             self
         }
-        /// <p>The AWS service or identity that will have its CA permissions revoked. At this time, the only valid service principal is <code>acm.amazonaws.com</code> </p>
+        /// <p>The Amazon Web Services service or identity that will have its CA permissions revoked. At this time, the only valid service principal is <code>acm.amazonaws.com</code> </p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal(input);
             self
         }
-        /// <p>The AWS account that calls this action.</p>
+        /// <p>The Amazon Web Services account that calls this action.</p>
         pub fn source_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_account(input.into());
             self
         }
-        /// <p>The AWS account that calls this action.</p>
+        /// <p>The Amazon Web Services account that calls this action.</p>
         pub fn set_source_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -896,15 +898,15 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePolicy`.
     ///
     /// <p>Deletes the resource-based policy attached to a private CA. Deletion will remove any access that the policy has granted. If there is no policy attached to the private CA, this action will return successful.</p>
-    /// <p>If you delete a policy that was applied through AWS Resource Access Manager (RAM), the CA will be removed from all shares in which it was included. </p>
-    /// <p>The AWS Certificate Manager Service Linked Role that the policy supports is not affected when you delete the policy. </p>
+    /// <p>If you delete a policy that was applied through Amazon Web Services Resource Access Manager (RAM), the CA will be removed from all shares in which it was included. </p>
+    /// <p>The Certificate Manager Service Linked Role that the policy supports is not affected when you delete the policy. </p>
     /// <p>The current policy can be shown with <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetPolicy.html">GetPolicy</a> and updated with <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_PutPolicy.html">PutPolicy</a>.</p>
     /// <p class="title"> <b>About Policies</b> </p>
     /// <ul>
-    /// <li> <p>A policy grants access on a private CA to an AWS customer account, to AWS Organizations, or to an AWS Organizations unit. Policies are under the control of a CA administrator. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM Private CA</a>.</p> </li>
-    /// <li> <p>A policy permits a user of AWS Certificate Manager (ACM) to issue ACM certificates signed by a CA in another account.</p> </li>
+    /// <li> <p>A policy grants access on a private CA to an Amazon Web Services customer account, to Amazon Web Services Organizations, or to an Amazon Web Services Organizations unit. Policies are under the control of a CA administrator. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM Private CA</a>.</p> </li>
+    /// <li> <p>A policy permits a user of Certificate Manager (ACM) to issue ACM certificates signed by a CA in another account.</p> </li>
     /// <li> <p>For ACM to manage automatic renewal of these certificates, the ACM user must configure a Service Linked Role (SLR). The SLR allows the ACM service to assume the identity of the user, subject to confirmation against the ACM Private CA policy. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a Service Linked Role with ACM</a>.</p> </li>
-    /// <li> <p>Updates made in AWS Resource Manager (RAM) are reflected in policies. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach a Policy for Cross-Account Access</a>.</p> </li>
+    /// <li> <p>Updates made in Amazon Web Services Resource Manager (RAM) are reflected in policies. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach a Policy for Cross-Account Access</a>.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePolicy {
@@ -965,7 +967,7 @@ pub mod fluent_builders {
     /// <li> <p> <code>ACTIVE</code> - Your private CA is active.</p> </li>
     /// <li> <p> <code>DISABLED</code> - Your private CA has been disabled.</p> </li>
     /// <li> <p> <code>EXPIRED</code> - Your private CA certificate has expired.</p> </li>
-    /// <li> <p> <code>FAILED</code> - Your private CA has failed. Your CA can fail because of problems such a network outage or back-end AWS failure or other errors. A failed CA can never return to the pending state. You must create a new CA. </p> </li>
+    /// <li> <p> <code>FAILED</code> - Your private CA has failed. Your CA can fail because of problems such a network outage or back-end Amazon Web Services failure or other errors. A failed CA can never return to the pending state. You must create a new CA. </p> </li>
     /// <li> <p> <code>DELETED</code> - Your private CA is within the restoration period, after which it is permanently deleted. The length of time remaining in the CA's restoration period is also included in this action's output.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1293,10 +1295,10 @@ pub mod fluent_builders {
     /// <p>The policy can be attached or updated with <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_PutPolicy.html">PutPolicy</a> and removed with <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.</p>
     /// <p class="title"> <b>About Policies</b> </p>
     /// <ul>
-    /// <li> <p>A policy grants access on a private CA to an AWS customer account, to AWS Organizations, or to an AWS Organizations unit. Policies are under the control of a CA administrator. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM Private CA</a>.</p> </li>
-    /// <li> <p>A policy permits a user of AWS Certificate Manager (ACM) to issue ACM certificates signed by a CA in another account.</p> </li>
+    /// <li> <p>A policy grants access on a private CA to an Amazon Web Services customer account, to Amazon Web Services Organizations, or to an Amazon Web Services Organizations unit. Policies are under the control of a CA administrator. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM Private CA</a>.</p> </li>
+    /// <li> <p>A policy permits a user of Certificate Manager (ACM) to issue ACM certificates signed by a CA in another account.</p> </li>
     /// <li> <p>For ACM to manage automatic renewal of these certificates, the ACM user must configure a Service Linked Role (SLR). The SLR allows the ACM service to assume the identity of the user, subject to confirmation against the ACM Private CA policy. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a Service Linked Role with ACM</a>.</p> </li>
-    /// <li> <p>Updates made in AWS Resource Manager (RAM) are reflected in policies. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach a Policy for Cross-Account Access</a>.</p> </li>
+    /// <li> <p>Updates made in Amazon Web Services Resource Manager (RAM) are reflected in policies. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach a Policy for Cross-Account Access</a>.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPolicy {
@@ -1560,7 +1562,7 @@ pub mod fluent_builders {
         /// <p>The certificate signing request (CSR) for the certificate you want to issue. As an example, you can use the following OpenSSL command to create the CSR and a 2048 bit RSA private key. </p>
         /// <p> <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>
         /// <p>If you have a configuration file, you can then use the following OpenSSL command. The <code>usr_cert</code> block in the configuration file contains your X509 version 3 extensions. </p>
-        /// <p> <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>
+        /// <p> <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>
         /// <p>Note: A CSR must provide either a <i>subject name</i> or a <i>subject alternative name</i> or the request will be rejected. </p>
         pub fn csr(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.csr(input);
@@ -1569,20 +1571,24 @@ pub mod fluent_builders {
         /// <p>The certificate signing request (CSR) for the certificate you want to issue. As an example, you can use the following OpenSSL command to create the CSR and a 2048 bit RSA private key. </p>
         /// <p> <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>
         /// <p>If you have a configuration file, you can then use the following OpenSSL command. The <code>usr_cert</code> block in the configuration file contains your X509 version 3 extensions. </p>
-        /// <p> <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>
+        /// <p> <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>
         /// <p>Note: A CSR must provide either a <i>subject name</i> or a <i>subject alternative name</i> or the request will be rejected. </p>
         pub fn set_csr(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.inner = self.inner.set_csr(input);
             self
         }
         /// <p>The name of the algorithm that will be used to sign the certificate to be issued. </p>
-        /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p>
+        /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p> <note>
+        /// <p>The specified signing algorithm family (RSA or ECDSA) much match the algorithm family of the CA's secret key.</p>
+        /// </note>
         pub fn signing_algorithm(mut self, input: crate::model::SigningAlgorithm) -> Self {
             self.inner = self.inner.signing_algorithm(input);
             self
         }
         /// <p>The name of the algorithm that will be used to sign the certificate to be issued. </p>
-        /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p>
+        /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p> <note>
+        /// <p>The specified signing algorithm family (RSA or ECDSA) much match the algorithm family of the CA's secret key.</p>
+        /// </note>
         pub fn set_signing_algorithm(
             mut self,
             input: std::option::Option<crate::model::SigningAlgorithm>,
@@ -1605,7 +1611,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information describing the end of the validity period of the certificate. This parameter sets the “Not After” date for the certificate.</p>
-        /// <p>Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280. </p>
+        /// <p>Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280. </p>
         /// <p>This value is unaffected when <code>ValidityNotBefore</code> is also specified. For example, if <code>Validity</code> is set to 20 days in the future, the certificate will expire 20 days from issuance time regardless of the <code>ValidityNotBefore</code> value.</p>
         /// <p>The end of the validity period configured on a certificate must not exceed the limit set on its parents in the CA hierarchy.</p>
         pub fn validity(mut self, input: crate::model::Validity) -> Self {
@@ -1613,7 +1619,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information describing the end of the validity period of the certificate. This parameter sets the “Not After” date for the certificate.</p>
-        /// <p>Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280. </p>
+        /// <p>Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280. </p>
         /// <p>This value is unaffected when <code>ValidityNotBefore</code> is also specified. For example, if <code>Validity</code> is set to 20 days in the future, the certificate will expire 20 days from issuance time regardless of the <code>ValidityNotBefore</code> value.</p>
         /// <p>The end of the validity period configured on a certificate must not exceed the limit set on its parents in the CA hierarchy.</p>
         pub fn set_validity(mut self, input: std::option::Option<crate::model::Validity>) -> Self {
@@ -1623,7 +1629,7 @@ pub mod fluent_builders {
         /// <p>Information describing the start of the validity period of the certificate. This parameter sets the “Not Before" date for the certificate.</p>
         /// <p>By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value. </p>
         /// <p>Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.</p>
-        /// <p>The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
+        /// <p>The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
         pub fn validity_not_before(mut self, input: crate::model::Validity) -> Self {
             self.inner = self.inner.validity_not_before(input);
             self
@@ -1631,7 +1637,7 @@ pub mod fluent_builders {
         /// <p>Information describing the start of the validity period of the certificate. This parameter sets the “Not Before" date for the certificate.</p>
         /// <p>By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value. </p>
         /// <p>Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.</p>
-        /// <p>The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
+        /// <p>The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
         pub fn set_validity_not_before(
             mut self,
             input: std::option::Option<crate::model::Validity>,
@@ -1737,8 +1743,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPermissions`.
     ///
-    /// <p>List all permissions on a private CA, if any, granted to the AWS Certificate Manager (ACM) service principal (acm.amazonaws.com). </p>
-    /// <p>These permissions allow ACM to issue and renew ACM certificates that reside in the same AWS account as the CA. </p>
+    /// <p>List all permissions on a private CA, if any, granted to the Certificate Manager (ACM) service principal (acm.amazonaws.com). </p>
+    /// <p>These permissions allow ACM to issue and renew ACM certificates that reside in the same Amazon Web Services account as the CA. </p>
     /// <p>Permissions can be granted with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreatePermission.html">CreatePermission</a> action and revoked with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePermission.html">DeletePermission</a> action.</p>
     /// <p class="title"> <b>About Permissions</b> </p>
     /// <ul>
@@ -1912,14 +1918,14 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutPolicy`.
     ///
     /// <p>Attaches a resource-based policy to a private CA. </p>
-    /// <p>A policy can also be applied by sharing a private CA through AWS Resource Access Manager (RAM). For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach a Policy for Cross-Account Access</a>.</p>
+    /// <p>A policy can also be applied by sharing a private CA through Amazon Web Services Resource Access Manager (RAM). For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach a Policy for Cross-Account Access</a>.</p>
     /// <p>The policy can be displayed with <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetPolicy.html">GetPolicy</a> and removed with <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.</p>
     /// <p class="title"> <b>About Policies</b> </p>
     /// <ul>
-    /// <li> <p>A policy grants access on a private CA to an AWS customer account, to AWS Organizations, or to an AWS Organizations unit. Policies are under the control of a CA administrator. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM Private CA</a>.</p> </li>
-    /// <li> <p>A policy permits a user of AWS Certificate Manager (ACM) to issue ACM certificates signed by a CA in another account.</p> </li>
+    /// <li> <p>A policy grants access on a private CA to an Amazon Web Services customer account, to Amazon Web Services Organizations, or to an Amazon Web Services Organizations unit. Policies are under the control of a CA administrator. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a Resource Based Policy with ACM Private CA</a>.</p> </li>
+    /// <li> <p>A policy permits a user of Certificate Manager (ACM) to issue ACM certificates signed by a CA in another account.</p> </li>
     /// <li> <p>For ACM to manage automatic renewal of these certificates, the ACM user must configure a Service Linked Role (SLR). The SLR allows the ACM service to assume the identity of the user, subject to confirmation against the ACM Private CA policy. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a Service Linked Role with ACM</a>.</p> </li>
-    /// <li> <p>Updates made in AWS Resource Manager (RAM) are reflected in policies. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach a Policy for Cross-Account Access</a>.</p> </li>
+    /// <li> <p>Updates made in Amazon Web Services Resource Manager (RAM) are reflected in policies. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach a Policy for Cross-Account Access</a>.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutPolicy {
@@ -2044,7 +2050,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RevokeCertificate`.
     ///
     /// <p>Revokes a certificate that was issued inside ACM Private CA. If you enable a certificate revocation list (CRL) when you create or update your private CA, information about the revoked certificates will be included in the CRL. ACM Private CA writes the CRL to an S3 bucket that you specify. A CRL is typically updated approximately 30 minutes after a certificate is revoked. If for any reason the CRL update fails, ACM Private CA attempts makes further attempts every 15 minutes. With Amazon CloudWatch, you can create alarms for the metrics <code>CRLGenerated</code> and <code>MisconfiguredCRLBucket</code>. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCloudWatch.html">Supported CloudWatch Metrics</a>.</p> <note>
-    /// <p>Both PCA and the IAM principal must have permission to write to the S3 bucket that you specify. If the IAM principal making the call does not have permission to write to the bucket, then an exception is thrown. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuthAccess.html">Configure Access to ACM Private CA</a>.</p>
+    /// <p>Both PCA and the IAM principal must have permission to write to the S3 bucket that you specify. If the IAM principal making the call does not have permission to write to the bucket, then an exception is thrown. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html#s3-policies">Access policies for CRLs in Amazon S3</a>.</p>
     /// </note>
     /// <p>ACM Private CA also writes revocation information to the audit report. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a>.</p> <note>
     /// <p>You cannot revoke a root CA self-signed certificate.</p>
@@ -2105,14 +2111,14 @@ pub mod fluent_builders {
         }
         /// <p>Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial number by calling <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p>
         /// <p> <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p>
-        /// <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>AWS Certificate Manager API Reference</i>. </p>
+        /// <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>Certificate Manager API Reference</i>. </p>
         pub fn certificate_serial(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_serial(input.into());
             self
         }
         /// <p>Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial number by calling <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p>
         /// <p> <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p>
-        /// <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>AWS Certificate Manager API Reference</i>. </p>
+        /// <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>Certificate Manager API Reference</i>. </p>
         pub fn set_certificate_serial(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2136,7 +2142,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagCertificateAuthority`.
     ///
-    /// <p>Adds one or more tags to your private CA. Tags are labels that you can use to identify and organize your AWS resources. Each tag consists of a key and an optional value. You specify the private CA on input by its Amazon Resource Name (ARN). You specify the tag by using a key-value pair. You can apply a tag to just one private CA if you want to identify a specific characteristic of that CA, or you can apply the same tag to multiple private CAs if you want to filter for a common relationship among those CAs. To remove one or more tags, use the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UntagCertificateAuthority.html">UntagCertificateAuthority</a> action. Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListTags.html">ListTags</a> action to see what tags are associated with your CA. </p>
+    /// <p>Adds one or more tags to your private CA. Tags are labels that you can use to identify and organize your Amazon Web Services resources. Each tag consists of a key and an optional value. You specify the private CA on input by its Amazon Resource Name (ARN). You specify the tag by using a key-value pair. You can apply a tag to just one private CA if you want to identify a specific characteristic of that CA, or you can apply the same tag to multiple private CAs if you want to filter for a common relationship among those CAs. To remove one or more tags, use the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UntagCertificateAuthority.html">UntagCertificateAuthority</a> action. Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListTags.html">ListTags</a> action to see what tags are associated with your CA. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagCertificateAuthority {
         handle: std::sync::Arc<super::Handle>,
@@ -2287,7 +2293,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCertificateAuthority`.
     ///
     /// <p>Updates the status or configuration of a private certificate authority (CA). Your private CA must be in the <code>ACTIVE</code> or <code>DISABLED</code> state before you can update it. You can disable a private CA that is in the <code>ACTIVE</code> state or make a CA that is in the <code>DISABLED</code> state active again.</p> <note>
-    /// <p>Both PCA and the IAM principal must have permission to write to the S3 bucket that you specify. If the IAM principal making the call does not have permission to write to the bucket, then an exception is thrown. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuthAccess.html">Configure Access to ACM Private CA</a>.</p>
+    /// <p>Both PCA and the IAM principal must have permission to write to the S3 bucket that you specify. If the IAM principal making the call does not have permission to write to the bucket, then an exception is thrown. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html#s3-policies">Access policies for CRLs in Amazon S3</a>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCertificateAuthority {

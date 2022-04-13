@@ -12,6 +12,8 @@
 )]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
+    ConflictingBlockUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidBlock,
     #[allow(missing_docs)] // documentation missing in model
     InvalidBlockToken,
@@ -39,6 +41,7 @@ pub enum ValidationExceptionReason {
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
         match s {
+            "CONFLICTING_BLOCK_UPDATE" => ValidationExceptionReason::ConflictingBlockUpdate,
             "INVALID_BLOCK" => ValidationExceptionReason::InvalidBlock,
             "INVALID_BLOCK_TOKEN" => ValidationExceptionReason::InvalidBlockToken,
             "INVALID_CONTENT_ENCODING" => ValidationExceptionReason::InvalidContentEncoding,
@@ -65,6 +68,7 @@ impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ValidationExceptionReason::ConflictingBlockUpdate => "CONFLICTING_BLOCK_UPDATE",
             ValidationExceptionReason::InvalidBlock => "INVALID_BLOCK",
             ValidationExceptionReason::InvalidBlockToken => "INVALID_BLOCK_TOKEN",
             ValidationExceptionReason::InvalidContentEncoding => "INVALID_CONTENT_ENCODING",
@@ -82,6 +86,7 @@ impl ValidationExceptionReason {
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
+            "CONFLICTING_BLOCK_UPDATE",
             "INVALID_BLOCK",
             "INVALID_BLOCK_TOKEN",
             "INVALID_CONTENT_ENCODING",
@@ -232,6 +237,8 @@ pub enum RequestThrottledExceptionReason {
     AccountThrottled,
     #[allow(missing_docs)] // documentation missing in model
     DependencyRequestThrottled,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceLevelThrottle,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -242,6 +249,7 @@ impl std::convert::From<&str> for RequestThrottledExceptionReason {
             "DEPENDENCY_REQUEST_THROTTLED" => {
                 RequestThrottledExceptionReason::DependencyRequestThrottled
             }
+            "RESOURCE_LEVEL_THROTTLE" => RequestThrottledExceptionReason::ResourceLevelThrottle,
             other => RequestThrottledExceptionReason::Unknown(other.to_owned()),
         }
     }
@@ -261,12 +269,17 @@ impl RequestThrottledExceptionReason {
             RequestThrottledExceptionReason::DependencyRequestThrottled => {
                 "DEPENDENCY_REQUEST_THROTTLED"
             }
+            RequestThrottledExceptionReason::ResourceLevelThrottle => "RESOURCE_LEVEL_THROTTLE",
             RequestThrottledExceptionReason::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["ACCOUNT_THROTTLED", "DEPENDENCY_REQUEST_THROTTLED"]
+        &[
+            "ACCOUNT_THROTTLED",
+            "DEPENDENCY_REQUEST_THROTTLED",
+            "RESOURCE_LEVEL_THROTTLE",
+        ]
     }
 }
 impl AsRef<str> for RequestThrottledExceptionReason {

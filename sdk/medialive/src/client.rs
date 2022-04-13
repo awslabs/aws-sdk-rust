@@ -182,6 +182,7 @@ impl Client {
     ///   - [`input_attachments(Vec<InputAttachment>)`](crate::client::fluent_builders::CreateChannel::input_attachments) / [`set_input_attachments(Option<Vec<InputAttachment>>)`](crate::client::fluent_builders::CreateChannel::set_input_attachments): List of input attachments for channel.
     ///   - [`input_specification(InputSpecification)`](crate::client::fluent_builders::CreateChannel::input_specification) / [`set_input_specification(Option<InputSpecification>)`](crate::client::fluent_builders::CreateChannel::set_input_specification): Specification of network and file inputs for this channel
     ///   - [`log_level(LogLevel)`](crate::client::fluent_builders::CreateChannel::log_level) / [`set_log_level(Option<LogLevel>)`](crate::client::fluent_builders::CreateChannel::set_log_level): The log level to write to CloudWatch Logs.
+    ///   - [`maintenance(MaintenanceCreateSettings)`](crate::client::fluent_builders::CreateChannel::maintenance) / [`set_maintenance(Option<MaintenanceCreateSettings>)`](crate::client::fluent_builders::CreateChannel::set_maintenance): Maintenance settings for this channel.
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_name): Name of channel.
     ///   - [`request_id(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::request_id) / [`set_request_id(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_request_id): Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
     ///   - [`reserved(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::reserved) / [`set_reserved(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_reserved): Deprecated field that's only usable by whitelisted customers.
@@ -290,6 +291,7 @@ impl Client {
     ///   - [`input_attachments(Option<Vec<InputAttachment>>)`](crate::output::DeleteChannelOutput::input_attachments): List of input attachments for channel.
     ///   - [`input_specification(Option<InputSpecification>)`](crate::output::DeleteChannelOutput::input_specification): Specification of network and file inputs for this channel
     ///   - [`log_level(Option<LogLevel>)`](crate::output::DeleteChannelOutput::log_level): The log level being written to CloudWatch Logs.
+    ///   - [`maintenance(Option<MaintenanceStatus>)`](crate::output::DeleteChannelOutput::maintenance): Maintenance settings for this channel.
     ///   - [`name(Option<String>)`](crate::output::DeleteChannelOutput::name): The name of the channel. (user-mutable)
     ///   - [`pipeline_details(Option<Vec<PipelineDetail>>)`](crate::output::DeleteChannelOutput::pipeline_details): Runtime details for the pipelines of a running channel.
     ///   - [`pipelines_running_count(i32)`](crate::output::DeleteChannelOutput::pipelines_running_count): The number of currently healthy pipelines.
@@ -418,6 +420,7 @@ impl Client {
     ///   - [`input_attachments(Option<Vec<InputAttachment>>)`](crate::output::DescribeChannelOutput::input_attachments): List of input attachments for channel.
     ///   - [`input_specification(Option<InputSpecification>)`](crate::output::DescribeChannelOutput::input_specification): Specification of network and file inputs for this channel
     ///   - [`log_level(Option<LogLevel>)`](crate::output::DescribeChannelOutput::log_level): The log level being written to CloudWatch Logs.
+    ///   - [`maintenance(Option<MaintenanceStatus>)`](crate::output::DescribeChannelOutput::maintenance): Maintenance settings for this channel.
     ///   - [`name(Option<String>)`](crate::output::DescribeChannelOutput::name): The name of the channel. (user-mutable)
     ///   - [`pipeline_details(Option<Vec<PipelineDetail>>)`](crate::output::DescribeChannelOutput::pipeline_details): Runtime details for the pipelines of a running channel.
     ///   - [`pipelines_running_count(i32)`](crate::output::DescribeChannelOutput::pipelines_running_count): The number of currently healthy pipelines.
@@ -787,6 +790,7 @@ impl Client {
     ///   - [`input_attachments(Option<Vec<InputAttachment>>)`](crate::output::StartChannelOutput::input_attachments): List of input attachments for channel.
     ///   - [`input_specification(Option<InputSpecification>)`](crate::output::StartChannelOutput::input_specification): Specification of network and file inputs for this channel
     ///   - [`log_level(Option<LogLevel>)`](crate::output::StartChannelOutput::log_level): The log level being written to CloudWatch Logs.
+    ///   - [`maintenance(Option<MaintenanceStatus>)`](crate::output::StartChannelOutput::maintenance): Maintenance settings for this channel.
     ///   - [`name(Option<String>)`](crate::output::StartChannelOutput::name): The name of the channel. (user-mutable)
     ///   - [`pipeline_details(Option<Vec<PipelineDetail>>)`](crate::output::StartChannelOutput::pipeline_details): Runtime details for the pipelines of a running channel.
     ///   - [`pipelines_running_count(i32)`](crate::output::StartChannelOutput::pipelines_running_count): The number of currently healthy pipelines.
@@ -832,6 +836,7 @@ impl Client {
     ///   - [`input_attachments(Option<Vec<InputAttachment>>)`](crate::output::StopChannelOutput::input_attachments): List of input attachments for channel.
     ///   - [`input_specification(Option<InputSpecification>)`](crate::output::StopChannelOutput::input_specification): Specification of network and file inputs for this channel
     ///   - [`log_level(Option<LogLevel>)`](crate::output::StopChannelOutput::log_level): The log level being written to CloudWatch Logs.
+    ///   - [`maintenance(Option<MaintenanceStatus>)`](crate::output::StopChannelOutput::maintenance): Maintenance settings for this channel.
     ///   - [`name(Option<String>)`](crate::output::StopChannelOutput::name): The name of the channel. (user-mutable)
     ///   - [`pipeline_details(Option<Vec<PipelineDetail>>)`](crate::output::StopChannelOutput::pipeline_details): Runtime details for the pipelines of a running channel.
     ///   - [`pipelines_running_count(i32)`](crate::output::StopChannelOutput::pipelines_running_count): The number of currently healthy pipelines.
@@ -885,6 +890,7 @@ impl Client {
     ///   - [`input_attachments(Vec<InputAttachment>)`](crate::client::fluent_builders::UpdateChannel::input_attachments) / [`set_input_attachments(Option<Vec<InputAttachment>>)`](crate::client::fluent_builders::UpdateChannel::set_input_attachments): Placeholder documentation for __listOfInputAttachment
     ///   - [`input_specification(InputSpecification)`](crate::client::fluent_builders::UpdateChannel::input_specification) / [`set_input_specification(Option<InputSpecification>)`](crate::client::fluent_builders::UpdateChannel::set_input_specification): Specification of network and file inputs for this channel
     ///   - [`log_level(LogLevel)`](crate::client::fluent_builders::UpdateChannel::log_level) / [`set_log_level(Option<LogLevel>)`](crate::client::fluent_builders::UpdateChannel::set_log_level): The log level to write to CloudWatch Logs.
+    ///   - [`maintenance(MaintenanceUpdateSettings)`](crate::client::fluent_builders::UpdateChannel::maintenance) / [`set_maintenance(Option<MaintenanceUpdateSettings>)`](crate::client::fluent_builders::UpdateChannel::set_maintenance): Maintenance settings for this channel.
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_name): The name of the channel.
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_role_arn): An optional Amazon Resource Name (ARN) of the role to assume when running the Channel. If you do not specify this on an update call but the role was previously set that role will be removed.
     /// - On success, responds with [`UpdateChannelOutput`](crate::output::UpdateChannelOutput) with field(s):
@@ -1650,6 +1656,19 @@ pub mod fluent_builders {
         /// The log level to write to CloudWatch Logs.
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
             self.inner = self.inner.set_log_level(input);
+            self
+        }
+        /// Maintenance settings for this channel.
+        pub fn maintenance(mut self, input: crate::model::MaintenanceCreateSettings) -> Self {
+            self.inner = self.inner.maintenance(input);
+            self
+        }
+        /// Maintenance settings for this channel.
+        pub fn set_maintenance(
+            mut self,
+            input: std::option::Option<crate::model::MaintenanceCreateSettings>,
+        ) -> Self {
+            self.inner = self.inner.set_maintenance(input);
             self
         }
         /// Name of channel.
@@ -4962,6 +4981,19 @@ pub mod fluent_builders {
         /// The log level to write to CloudWatch Logs.
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
             self.inner = self.inner.set_log_level(input);
+            self
+        }
+        /// Maintenance settings for this channel.
+        pub fn maintenance(mut self, input: crate::model::MaintenanceUpdateSettings) -> Self {
+            self.inner = self.inner.maintenance(input);
+            self
+        }
+        /// Maintenance settings for this channel.
+        pub fn set_maintenance(
+            mut self,
+            input: std::option::Option<crate::model::MaintenanceUpdateSettings>,
+        ) -> Self {
+            self.inner = self.inner.set_maintenance(input);
             self
         }
         /// The name of the channel.

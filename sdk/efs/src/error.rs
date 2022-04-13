@@ -12,9 +12,9 @@ pub struct CreateAccessPointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAccessPointErrorKind {
-    /// <p>Returned if the access point you are trying to create already exists, with the creation token you provided in the request.</p>
+    /// <p>Returned if the access point that you are trying to create already exists, with the creation token you provided in the request.</p>
     AccessPointAlreadyExists(crate::error::AccessPointAlreadyExists),
-    /// <p>Returned if the Amazon Web Services account has already created the maximum number of access points allowed per file system.</p>
+    /// <p>Returned if the Amazon Web Services account has already created the maximum number of access points allowed per file system. For more informaton, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region">https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region</a>.</p>
     AccessPointLimitExceeded(crate::error::AccessPointLimitExceeded),
     /// <p>Returned if the request is malformed or contains an error such as an invalid parameter value or a missing required parameter.</p>
     BadRequest(crate::error::BadRequest),
@@ -24,6 +24,8 @@ pub enum CreateAccessPointErrorKind {
     IncorrectFileSystemLifeCycleState(crate::error::IncorrectFileSystemLifeCycleState),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
+    /// <p>Returned when the <code>CreateAccessPoint</code> API action is called too quickly and the number of Access Points in the account is nearing the limit of 120.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -36,6 +38,7 @@ impl std::fmt::Display for CreateAccessPointError {
             CreateAccessPointErrorKind::FileSystemNotFound(_inner) => _inner.fmt(f),
             CreateAccessPointErrorKind::IncorrectFileSystemLifeCycleState(_inner) => _inner.fmt(f),
             CreateAccessPointErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            CreateAccessPointErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateAccessPointErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -129,6 +132,13 @@ impl CreateAccessPointError {
             CreateAccessPointErrorKind::InternalServerError(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateAccessPointErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAccessPointErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for CreateAccessPointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -139,6 +149,7 @@ impl std::error::Error for CreateAccessPointError {
             CreateAccessPointErrorKind::FileSystemNotFound(_inner) => Some(_inner),
             CreateAccessPointErrorKind::IncorrectFileSystemLifeCycleState(_inner) => Some(_inner),
             CreateAccessPointErrorKind::InternalServerError(_inner) => Some(_inner),
+            CreateAccessPointErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateAccessPointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -163,7 +174,7 @@ pub enum CreateFileSystemErrorKind {
     FileSystemAlreadyExists(crate::error::FileSystemAlreadyExists),
     /// <p>Returned if the Amazon Web Services account has already created the maximum number of file systems allowed per account.</p>
     FileSystemLimitExceeded(crate::error::FileSystemLimitExceeded),
-    /// <p>Returned if there's not enough capacity to provision additional throughput. This value might be returned when you try to create a file system in provisioned throughput mode, when you attempt to increase the provisioned throughput of an existing file system, or when you attempt to change an existing file system from bursting to provisioned throughput mode. Try again later.</p>
+    /// <p>Returned if there's not enough capacity to provision additional throughput. This value might be returned when you try to create a file system in provisioned throughput mode, when you attempt to increase the provisioned throughput of an existing file system, or when you attempt to change an existing file system from Bursting Throughput to Provisioned Throughput mode. Try again later.</p>
     InsufficientThroughputCapacity(crate::error::InsufficientThroughputCapacity),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -313,7 +324,7 @@ pub struct CreateMountTargetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateMountTargetErrorKind {
-    /// <p>Returned if the Availability Zone that was specified for a mount target is different from the Availability Zone that was specified for One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/availability-durability.html">Regional and One Zone storage redundancy</a>.</p>
+    /// <p>Returned if the Availability Zone that was specified for a mount target is different from the Availability Zone that was specified for One Zone storage. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/availability-durability.html">Regional and One Zone storage redundancy</a>.</p>
     AvailabilityZonesMismatch(crate::error::AvailabilityZonesMismatch),
     /// <p>Returned if the request is malformed or contains an error such as an invalid parameter value or a missing required parameter.</p>
     BadRequest(crate::error::BadRequest),
@@ -327,13 +338,13 @@ pub enum CreateMountTargetErrorKind {
     IpAddressInUse(crate::error::IpAddressInUse),
     /// <p>Returned if the mount target would violate one of the specified restrictions based on the file system's existing mount targets.</p>
     MountTargetConflict(crate::error::MountTargetConflict),
-    /// <p>The calling account has reached the limit for elastic network interfaces for the specific Amazon Web Services Region. The client should try to delete some elastic network interfaces or get the account limit raised. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC Limits</a> in the <i>Amazon VPC User Guide </i> (see the Network interfaces per VPC entry in the table). </p>
+    /// <p>The calling account has reached the limit for elastic network interfaces for the specific Amazon Web Services Region. Either delete some network interfaces or request that the account quota be raised. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Network interfaces per Region</b> entry in the <b>Network interfaces</b> table). </p>
     NetworkInterfaceLimitExceeded(crate::error::NetworkInterfaceLimitExceeded),
     /// <p>Returned if <code>IpAddress</code> was not specified in the request and there are no free IP addresses in the subnet.</p>
     NoFreeAddressesInSubnet(crate::error::NoFreeAddressesInSubnet),
     /// <p>Returned if the size of <code>SecurityGroups</code> specified in the request is greater than five.</p>
     SecurityGroupLimitExceeded(crate::error::SecurityGroupLimitExceeded),
-    /// <p>Returned if one of the specified security groups doesn't exist in the subnet's VPC.</p>
+    /// <p>Returned if one of the specified security groups doesn't exist in the subnet's virtual private cloud (VPC).</p>
     SecurityGroupNotFound(crate::error::SecurityGroupNotFound),
     /// <p>Returned if there is no subnet with ID <code>SubnetId</code> provided in the request.</p>
     SubnetNotFound(crate::error::SubnetNotFound),
@@ -537,11 +548,11 @@ pub enum CreateReplicationConfigurationErrorKind {
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>Returned if the file system's lifecycle state is not "available".</p>
     IncorrectFileSystemLifeCycleState(crate::error::IncorrectFileSystemLifeCycleState),
-    /// <p>Returned if there's not enough capacity to provision additional throughput. This value might be returned when you try to create a file system in provisioned throughput mode, when you attempt to increase the provisioned throughput of an existing file system, or when you attempt to change an existing file system from bursting to provisioned throughput mode. Try again later.</p>
+    /// <p>Returned if there's not enough capacity to provision additional throughput. This value might be returned when you try to create a file system in provisioned throughput mode, when you attempt to increase the provisioned throughput of an existing file system, or when you attempt to change an existing file system from Bursting Throughput to Provisioned Throughput mode. Try again later.</p>
     InsufficientThroughputCapacity(crate::error::InsufficientThroughputCapacity),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Returned if the specified file system did not have a replication configuration.</p>
+    /// <p>Returned if the specified file system does not have a replication configuration.</p>
     ReplicationNotFound(crate::error::ReplicationNotFound),
     /// <p>Returned if the throughput mode or amount of provisioned throughput can't be changed because the throughput limit of 1024 MiB/s has been reached.</p>
     ThroughputLimitExceeded(crate::error::ThroughputLimitExceeded),
@@ -1332,7 +1343,7 @@ pub enum DeleteReplicationConfigurationErrorKind {
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Returned if the specified file system did not have a replication configuration.</p>
+    /// <p>Returned if the specified file system does not have a replication configuration.</p>
     ReplicationNotFound(crate::error::ReplicationNotFound),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2538,7 +2549,7 @@ pub enum DescribeReplicationConfigurationsErrorKind {
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Returned if the specified file system did not have a replication configuration.</p>
+    /// <p>Returned if the specified file system does not have a replication configuration.</p>
     ReplicationNotFound(crate::error::ReplicationNotFound),
     /// <p>Returned if the Backup service is not available in the Amazon Web Services Region in which the request was made.</p>
     ValidationException(crate::error::ValidationException),
@@ -2917,7 +2928,7 @@ pub enum ModifyMountTargetSecurityGroupsErrorKind {
     MountTargetNotFound(crate::error::MountTargetNotFound),
     /// <p>Returned if the size of <code>SecurityGroups</code> specified in the request is greater than five.</p>
     SecurityGroupLimitExceeded(crate::error::SecurityGroupLimitExceeded),
-    /// <p>Returned if one of the specified security groups doesn't exist in the subnet's VPC.</p>
+    /// <p>Returned if one of the specified security groups doesn't exist in the subnet's virtual private cloud (VPC).</p>
     SecurityGroupNotFound(crate::error::SecurityGroupNotFound),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3302,7 +3313,7 @@ pub enum PutFileSystemPolicyErrorKind {
     IncorrectFileSystemLifeCycleState(crate::error::IncorrectFileSystemLifeCycleState),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Returned if the <code>FileSystemPolicy</code> is is malformed or contains an error such as an invalid parameter value or a missing required parameter. Returned in the case of a policy lockout safety check error.</p>
+    /// <p>Returned if the <code>FileSystemPolicy</code> is malformed or contains an error such as a parameter value that is not valid or a missing required parameter. Returned in the case of a policy lockout safety check error.</p>
     InvalidPolicyException(crate::error::InvalidPolicyException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3794,13 +3805,13 @@ pub enum UpdateFileSystemErrorKind {
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>Returned if the file system's lifecycle state is not "available".</p>
     IncorrectFileSystemLifeCycleState(crate::error::IncorrectFileSystemLifeCycleState),
-    /// <p>Returned if there's not enough capacity to provision additional throughput. This value might be returned when you try to create a file system in provisioned throughput mode, when you attempt to increase the provisioned throughput of an existing file system, or when you attempt to change an existing file system from bursting to provisioned throughput mode. Try again later.</p>
+    /// <p>Returned if there's not enough capacity to provision additional throughput. This value might be returned when you try to create a file system in provisioned throughput mode, when you attempt to increase the provisioned throughput of an existing file system, or when you attempt to change an existing file system from Bursting Throughput to Provisioned Throughput mode. Try again later.</p>
     InsufficientThroughputCapacity(crate::error::InsufficientThroughputCapacity),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>Returned if the throughput mode or amount of provisioned throughput can't be changed because the throughput limit of 1024 MiB/s has been reached.</p>
     ThroughputLimitExceeded(crate::error::ThroughputLimitExceeded),
-    /// <p>Returned if you don’t wait at least 24 hours before changing the throughput mode, or decreasing the Provisioned Throughput value.</p>
+    /// <p>Returned if you don’t wait at least 24 hours before either changing the throughput mode, or decreasing the Provisioned Throughput value.</p>
     TooManyRequests(crate::error::TooManyRequests),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3925,7 +3936,7 @@ impl std::error::Error for UpdateFileSystemError {
     }
 }
 
-/// <p>Returned if you don’t wait at least 24 hours before changing the throughput mode, or decreasing the Provisioned Throughput value.</p>
+/// <p>Returned if you don’t wait at least 24 hours before either changing the throughput mode, or decreasing the Provisioned Throughput value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequests {
@@ -4180,7 +4191,7 @@ impl InternalServerError {
     }
 }
 
-/// <p>Returned if there's not enough capacity to provision additional throughput. This value might be returned when you try to create a file system in provisioned throughput mode, when you attempt to increase the provisioned throughput of an existing file system, or when you attempt to change an existing file system from bursting to provisioned throughput mode. Try again later.</p>
+/// <p>Returned if there's not enough capacity to provision additional throughput. This value might be returned when you try to create a file system in provisioned throughput mode, when you attempt to increase the provisioned throughput of an existing file system, or when you attempt to change an existing file system from Bursting Throughput to Provisioned Throughput mode. Try again later.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientThroughputCapacity {
@@ -4605,7 +4616,7 @@ impl AccessPointNotFound {
     }
 }
 
-/// <p>Returned if the <code>FileSystemPolicy</code> is is malformed or contains an error such as an invalid parameter value or a missing required parameter. Returned in the case of a policy lockout safety check error.</p>
+/// <p>Returned if the <code>FileSystemPolicy</code> is malformed or contains an error such as a parameter value that is not valid or a missing required parameter. Returned in the case of a policy lockout safety check error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPolicyException {
@@ -4775,7 +4786,7 @@ impl ValidationException {
     }
 }
 
-/// <p>Returned if one of the specified security groups doesn't exist in the subnet's VPC.</p>
+/// <p>Returned if one of the specified security groups doesn't exist in the subnet's virtual private cloud (VPC).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityGroupNotFound {
@@ -5115,7 +5126,7 @@ impl IncorrectMountTargetState {
     }
 }
 
-/// <p>Returned if the specified file system did not have a replication configuration.</p>
+/// <p>Returned if the specified file system does not have a replication configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationNotFound {
@@ -5795,7 +5806,7 @@ impl NoFreeAddressesInSubnet {
     }
 }
 
-/// <p>The calling account has reached the limit for elastic network interfaces for the specific Amazon Web Services Region. The client should try to delete some elastic network interfaces or get the account limit raised. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC Limits</a> in the <i>Amazon VPC User Guide </i> (see the Network interfaces per VPC entry in the table). </p>
+/// <p>The calling account has reached the limit for elastic network interfaces for the specific Amazon Web Services Region. Either delete some network interfaces or request that the account quota be raised. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Network interfaces per Region</b> entry in the <b>Network interfaces</b> table). </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkInterfaceLimitExceeded {
@@ -6050,7 +6061,7 @@ impl IpAddressInUse {
     }
 }
 
-/// <p>Returned if the Availability Zone that was specified for a mount target is different from the Availability Zone that was specified for One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/availability-durability.html">Regional and One Zone storage redundancy</a>.</p>
+/// <p>Returned if the Availability Zone that was specified for a mount target is different from the Availability Zone that was specified for One Zone storage. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/availability-durability.html">Regional and One Zone storage redundancy</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AvailabilityZonesMismatch {
@@ -6242,7 +6253,92 @@ impl FileSystemAlreadyExists {
     }
 }
 
-/// <p>Returned if the Amazon Web Services account has already created the maximum number of access points allowed per file system.</p>
+/// <p>Returned when the <code>CreateAccessPoint</code> API action is called too quickly and the number of Access Points in the account is nearing the limit of 120.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ThrottlingException {
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
+    pub error_code: std::option::Option<std::string::String>,
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl ThrottlingException {
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
+impl std::fmt::Debug for ThrottlingException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ThrottlingException");
+        formatter.field("error_code", &self.error_code);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ThrottlingException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ThrottlingException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ThrottlingException")?;
+        if let Some(inner_28) = &self.message {
+            write!(f, ": {}", inner_28)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ThrottlingException {}
+/// See [`ThrottlingException`](crate::error::ThrottlingException)
+pub mod throttling_exception {
+    /// A builder for [`ThrottlingException`](crate::error::ThrottlingException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) error_code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
+        pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_code = Some(input.into());
+            self
+        }
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
+        pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException)
+        pub fn build(self) -> crate::error::ThrottlingException {
+            crate::error::ThrottlingException {
+                error_code: self.error_code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl ThrottlingException {
+    /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException)
+    pub fn builder() -> crate::error::throttling_exception::Builder {
+        crate::error::throttling_exception::Builder::default()
+    }
+}
+
+/// <p>Returned if the Amazon Web Services account has already created the maximum number of access points allowed per file system. For more informaton, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region">https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPointLimitExceeded {
@@ -6274,8 +6370,8 @@ impl AccessPointLimitExceeded {
 impl std::fmt::Display for AccessPointLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessPointLimitExceeded")?;
-        if let Some(inner_28) = &self.message {
-            write!(f, ": {}", inner_28)?;
+        if let Some(inner_29) = &self.message {
+            write!(f, ": {}", inner_29)?;
         }
         Ok(())
     }
@@ -6327,7 +6423,7 @@ impl AccessPointLimitExceeded {
     }
 }
 
-/// <p>Returned if the access point you are trying to create already exists, with the creation token you provided in the request.</p>
+/// <p>Returned if the access point that you are trying to create already exists, with the creation token you provided in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPointAlreadyExists {
@@ -6366,8 +6462,8 @@ impl AccessPointAlreadyExists {
 impl std::fmt::Display for AccessPointAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessPointAlreadyExists")?;
-        if let Some(inner_29) = &self.message {
-            write!(f, ": {}", inner_29)?;
+        if let Some(inner_30) = &self.message {
+            write!(f, ": {}", inner_30)?;
         }
         Ok(())
     }

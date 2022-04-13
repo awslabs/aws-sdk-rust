@@ -247,12 +247,12 @@ pub mod create_backend_input {
             self.backend_environment_name = input;
             self
         }
-        /// <p>The resource configuration for creating backend storage.</p>
+        /// <p>The resource configuration for creating a backend.</p>
         pub fn resource_config(mut self, input: crate::model::ResourceConfig) -> Self {
             self.resource_config = Some(input);
             self
         }
-        /// <p>The resource configuration for creating backend storage.</p>
+        /// <p>The resource configuration for creating a backend.</p>
         pub fn set_resource_config(
             mut self,
             input: std::option::Option<crate::model::ResourceConfig>,
@@ -7113,7 +7113,7 @@ pub struct CreateBackendInput {
     pub app_name: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment.</p>
     pub backend_environment_name: std::option::Option<std::string::String>,
-    /// <p>The resource configuration for creating backend storage.</p>
+    /// <p>The resource configuration for creating a backend.</p>
     pub resource_config: std::option::Option<crate::model::ResourceConfig>,
     /// <p>The name of the resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
@@ -7131,7 +7131,7 @@ impl CreateBackendInput {
     pub fn backend_environment_name(&self) -> std::option::Option<&str> {
         self.backend_environment_name.as_deref()
     }
-    /// <p>The resource configuration for creating backend storage.</p>
+    /// <p>The resource configuration for creating a backend.</p>
     pub fn resource_config(&self) -> std::option::Option<&crate::model::ResourceConfig> {
         self.resource_config.as_ref()
     }

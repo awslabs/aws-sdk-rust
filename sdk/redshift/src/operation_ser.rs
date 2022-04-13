@@ -4143,6 +4143,11 @@ pub fn serialize_operation_crate_operation_restore_from_cluster_snapshot(
     if let Some(var_1124) = &input.target_reserved_node_offering_id {
         scope_1123.string(var_1124);
     }
+    #[allow(unused_mut)]
+    let mut scope_1125 = writer.prefix("Encrypted");
+    if let Some(var_1126) = &input.encrypted {
+        scope_1125.boolean(*var_1126);
+    }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -4158,49 +4163,49 @@ pub fn serialize_operation_crate_operation_restore_table_from_cluster_snapshot(
         "2012-12-01",
     );
     #[allow(unused_mut)]
-    let mut scope_1125 = writer.prefix("ClusterIdentifier");
-    if let Some(var_1126) = &input.cluster_identifier {
-        scope_1125.string(var_1126);
-    }
-    #[allow(unused_mut)]
-    let mut scope_1127 = writer.prefix("SnapshotIdentifier");
-    if let Some(var_1128) = &input.snapshot_identifier {
+    let mut scope_1127 = writer.prefix("ClusterIdentifier");
+    if let Some(var_1128) = &input.cluster_identifier {
         scope_1127.string(var_1128);
     }
     #[allow(unused_mut)]
-    let mut scope_1129 = writer.prefix("SourceDatabaseName");
-    if let Some(var_1130) = &input.source_database_name {
+    let mut scope_1129 = writer.prefix("SnapshotIdentifier");
+    if let Some(var_1130) = &input.snapshot_identifier {
         scope_1129.string(var_1130);
     }
     #[allow(unused_mut)]
-    let mut scope_1131 = writer.prefix("SourceSchemaName");
-    if let Some(var_1132) = &input.source_schema_name {
+    let mut scope_1131 = writer.prefix("SourceDatabaseName");
+    if let Some(var_1132) = &input.source_database_name {
         scope_1131.string(var_1132);
     }
     #[allow(unused_mut)]
-    let mut scope_1133 = writer.prefix("SourceTableName");
-    if let Some(var_1134) = &input.source_table_name {
+    let mut scope_1133 = writer.prefix("SourceSchemaName");
+    if let Some(var_1134) = &input.source_schema_name {
         scope_1133.string(var_1134);
     }
     #[allow(unused_mut)]
-    let mut scope_1135 = writer.prefix("TargetDatabaseName");
-    if let Some(var_1136) = &input.target_database_name {
+    let mut scope_1135 = writer.prefix("SourceTableName");
+    if let Some(var_1136) = &input.source_table_name {
         scope_1135.string(var_1136);
     }
     #[allow(unused_mut)]
-    let mut scope_1137 = writer.prefix("TargetSchemaName");
-    if let Some(var_1138) = &input.target_schema_name {
+    let mut scope_1137 = writer.prefix("TargetDatabaseName");
+    if let Some(var_1138) = &input.target_database_name {
         scope_1137.string(var_1138);
     }
     #[allow(unused_mut)]
-    let mut scope_1139 = writer.prefix("NewTableName");
-    if let Some(var_1140) = &input.new_table_name {
+    let mut scope_1139 = writer.prefix("TargetSchemaName");
+    if let Some(var_1140) = &input.target_schema_name {
         scope_1139.string(var_1140);
     }
     #[allow(unused_mut)]
-    let mut scope_1141 = writer.prefix("EnableCaseSensitiveIdentifier");
-    if let Some(var_1142) = &input.enable_case_sensitive_identifier {
-        scope_1141.boolean(*var_1142);
+    let mut scope_1141 = writer.prefix("NewTableName");
+    if let Some(var_1142) = &input.new_table_name {
+        scope_1141.string(var_1142);
+    }
+    #[allow(unused_mut)]
+    let mut scope_1143 = writer.prefix("EnableCaseSensitiveIdentifier");
+    if let Some(var_1144) = &input.enable_case_sensitive_identifier {
+        scope_1143.boolean(*var_1144);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -4213,9 +4218,9 @@ pub fn serialize_operation_crate_operation_resume_cluster(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "ResumeCluster", "2012-12-01");
     #[allow(unused_mut)]
-    let mut scope_1143 = writer.prefix("ClusterIdentifier");
-    if let Some(var_1144) = &input.cluster_identifier {
-        scope_1143.string(var_1144);
+    let mut scope_1145 = writer.prefix("ClusterIdentifier");
+    if let Some(var_1146) = &input.cluster_identifier {
+        scope_1145.string(var_1146);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -4232,24 +4237,24 @@ pub fn serialize_operation_crate_operation_revoke_cluster_security_group_ingress
         "2012-12-01",
     );
     #[allow(unused_mut)]
-    let mut scope_1145 = writer.prefix("ClusterSecurityGroupName");
-    if let Some(var_1146) = &input.cluster_security_group_name {
-        scope_1145.string(var_1146);
-    }
-    #[allow(unused_mut)]
-    let mut scope_1147 = writer.prefix("CIDRIP");
-    if let Some(var_1148) = &input.cidrip {
+    let mut scope_1147 = writer.prefix("ClusterSecurityGroupName");
+    if let Some(var_1148) = &input.cluster_security_group_name {
         scope_1147.string(var_1148);
     }
     #[allow(unused_mut)]
-    let mut scope_1149 = writer.prefix("EC2SecurityGroupName");
-    if let Some(var_1150) = &input.ec2_security_group_name {
+    let mut scope_1149 = writer.prefix("CIDRIP");
+    if let Some(var_1150) = &input.cidrip {
         scope_1149.string(var_1150);
     }
     #[allow(unused_mut)]
-    let mut scope_1151 = writer.prefix("EC2SecurityGroupOwnerId");
-    if let Some(var_1152) = &input.ec2_security_group_owner_id {
+    let mut scope_1151 = writer.prefix("EC2SecurityGroupName");
+    if let Some(var_1152) = &input.ec2_security_group_name {
         scope_1151.string(var_1152);
+    }
+    #[allow(unused_mut)]
+    let mut scope_1153 = writer.prefix("EC2SecurityGroupOwnerId");
+    if let Some(var_1154) = &input.ec2_security_group_owner_id {
+        scope_1153.string(var_1154);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -4263,30 +4268,30 @@ pub fn serialize_operation_crate_operation_revoke_endpoint_access(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "RevokeEndpointAccess", "2012-12-01");
     #[allow(unused_mut)]
-    let mut scope_1153 = writer.prefix("ClusterIdentifier");
-    if let Some(var_1154) = &input.cluster_identifier {
-        scope_1153.string(var_1154);
-    }
-    #[allow(unused_mut)]
-    let mut scope_1155 = writer.prefix("Account");
-    if let Some(var_1156) = &input.account {
+    let mut scope_1155 = writer.prefix("ClusterIdentifier");
+    if let Some(var_1156) = &input.cluster_identifier {
         scope_1155.string(var_1156);
     }
     #[allow(unused_mut)]
-    let mut scope_1157 = writer.prefix("VpcIds");
-    if let Some(var_1158) = &input.vpc_ids {
-        let mut list_1160 = scope_1157.start_list(false, Some("VpcIdentifier"));
-        for item_1159 in var_1158 {
-            #[allow(unused_mut)]
-            let mut entry_1161 = list_1160.entry();
-            entry_1161.string(item_1159);
-        }
-        list_1160.finish();
+    let mut scope_1157 = writer.prefix("Account");
+    if let Some(var_1158) = &input.account {
+        scope_1157.string(var_1158);
     }
     #[allow(unused_mut)]
-    let mut scope_1162 = writer.prefix("Force");
+    let mut scope_1159 = writer.prefix("VpcIds");
+    if let Some(var_1160) = &input.vpc_ids {
+        let mut list_1162 = scope_1159.start_list(false, Some("VpcIdentifier"));
+        for item_1161 in var_1160 {
+            #[allow(unused_mut)]
+            let mut entry_1163 = list_1162.entry();
+            entry_1163.string(item_1161);
+        }
+        list_1162.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_1164 = writer.prefix("Force");
     if input.force {
-        scope_1162.boolean(input.force);
+        scope_1164.boolean(input.force);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -4300,19 +4305,19 @@ pub fn serialize_operation_crate_operation_revoke_snapshot_access(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "RevokeSnapshotAccess", "2012-12-01");
     #[allow(unused_mut)]
-    let mut scope_1163 = writer.prefix("SnapshotIdentifier");
-    if let Some(var_1164) = &input.snapshot_identifier {
-        scope_1163.string(var_1164);
-    }
-    #[allow(unused_mut)]
-    let mut scope_1165 = writer.prefix("SnapshotClusterIdentifier");
-    if let Some(var_1166) = &input.snapshot_cluster_identifier {
+    let mut scope_1165 = writer.prefix("SnapshotIdentifier");
+    if let Some(var_1166) = &input.snapshot_identifier {
         scope_1165.string(var_1166);
     }
     #[allow(unused_mut)]
-    let mut scope_1167 = writer.prefix("AccountWithRestoreAccess");
-    if let Some(var_1168) = &input.account_with_restore_access {
+    let mut scope_1167 = writer.prefix("SnapshotClusterIdentifier");
+    if let Some(var_1168) = &input.snapshot_cluster_identifier {
         scope_1167.string(var_1168);
+    }
+    #[allow(unused_mut)]
+    let mut scope_1169 = writer.prefix("AccountWithRestoreAccess");
+    if let Some(var_1170) = &input.account_with_restore_access {
+        scope_1169.string(var_1170);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -4326,9 +4331,9 @@ pub fn serialize_operation_crate_operation_rotate_encryption_key(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "RotateEncryptionKey", "2012-12-01");
     #[allow(unused_mut)]
-    let mut scope_1169 = writer.prefix("ClusterIdentifier");
-    if let Some(var_1170) = &input.cluster_identifier {
-        scope_1169.string(var_1170);
+    let mut scope_1171 = writer.prefix("ClusterIdentifier");
+    if let Some(var_1172) = &input.cluster_identifier {
+        scope_1171.string(var_1172);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -4342,34 +4347,34 @@ pub fn serialize_operation_crate_operation_update_partner_status(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "UpdatePartnerStatus", "2012-12-01");
     #[allow(unused_mut)]
-    let mut scope_1171 = writer.prefix("AccountId");
-    if let Some(var_1172) = &input.account_id {
-        scope_1171.string(var_1172);
-    }
-    #[allow(unused_mut)]
-    let mut scope_1173 = writer.prefix("ClusterIdentifier");
-    if let Some(var_1174) = &input.cluster_identifier {
+    let mut scope_1173 = writer.prefix("AccountId");
+    if let Some(var_1174) = &input.account_id {
         scope_1173.string(var_1174);
     }
     #[allow(unused_mut)]
-    let mut scope_1175 = writer.prefix("DatabaseName");
-    if let Some(var_1176) = &input.database_name {
+    let mut scope_1175 = writer.prefix("ClusterIdentifier");
+    if let Some(var_1176) = &input.cluster_identifier {
         scope_1175.string(var_1176);
     }
     #[allow(unused_mut)]
-    let mut scope_1177 = writer.prefix("PartnerName");
-    if let Some(var_1178) = &input.partner_name {
+    let mut scope_1177 = writer.prefix("DatabaseName");
+    if let Some(var_1178) = &input.database_name {
         scope_1177.string(var_1178);
     }
     #[allow(unused_mut)]
-    let mut scope_1179 = writer.prefix("Status");
-    if let Some(var_1180) = &input.status {
-        scope_1179.string(var_1180.as_str());
+    let mut scope_1179 = writer.prefix("PartnerName");
+    if let Some(var_1180) = &input.partner_name {
+        scope_1179.string(var_1180);
     }
     #[allow(unused_mut)]
-    let mut scope_1181 = writer.prefix("StatusMessage");
-    if let Some(var_1182) = &input.status_message {
-        scope_1181.string(var_1182);
+    let mut scope_1181 = writer.prefix("Status");
+    if let Some(var_1182) = &input.status {
+        scope_1181.string(var_1182.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_1183 = writer.prefix("StatusMessage");
+    if let Some(var_1184) = &input.status_message {
+        scope_1183.string(var_1184);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))

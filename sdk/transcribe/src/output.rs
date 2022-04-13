@@ -467,11 +467,11 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTranscriptionJobOutput {
-    /// <p>An object containing details of the asynchronous transcription job.</p>
+    /// <p>Provides information about your asynchronous transcription job.</p>
     pub transcription_job: std::option::Option<crate::model::TranscriptionJob>,
 }
 impl StartTranscriptionJobOutput {
-    /// <p>An object containing details of the asynchronous transcription job.</p>
+    /// <p>Provides information about your asynchronous transcription job.</p>
     pub fn transcription_job(&self) -> std::option::Option<&crate::model::TranscriptionJob> {
         self.transcription_job.as_ref()
     }
@@ -492,12 +492,12 @@ pub mod start_transcription_job_output {
         pub(crate) transcription_job: std::option::Option<crate::model::TranscriptionJob>,
     }
     impl Builder {
-        /// <p>An object containing details of the asynchronous transcription job.</p>
+        /// <p>Provides information about your asynchronous transcription job.</p>
         pub fn transcription_job(mut self, input: crate::model::TranscriptionJob) -> Self {
             self.transcription_job = Some(input);
             self
         }
-        /// <p>An object containing details of the asynchronous transcription job.</p>
+        /// <p>Provides information about your asynchronous transcription job.</p>
         pub fn set_transcription_job(
             mut self,
             input: std::option::Option<crate::model::TranscriptionJob>,

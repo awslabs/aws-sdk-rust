@@ -110,6 +110,16 @@ pub fn deser_header_create_function_too_many_requests_exception_retry_after_seco
     aws_smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_create_function_url_config_too_many_requests_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("Retry-After").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_delete_alias_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
@@ -161,6 +171,16 @@ pub fn deser_header_delete_function_concurrency_too_many_requests_exception_retr
 }
 
 pub fn deser_header_delete_function_event_invoke_config_too_many_requests_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("Retry-After").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_delete_function_url_config_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -261,6 +281,16 @@ pub fn deser_header_get_function_configuration_too_many_requests_exception_retry
 }
 
 pub fn deser_header_get_function_event_invoke_config_too_many_requests_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("Retry-After").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_get_function_url_config_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -399,6 +429,16 @@ pub fn deser_header_list_function_event_invoke_configs_too_many_requests_excepti
 }
 
 pub fn deser_header_list_functions_too_many_requests_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("Retry-After").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_list_function_url_configs_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -599,6 +639,16 @@ pub fn deser_header_update_function_configuration_too_many_requests_exception_re
 }
 
 pub fn deser_header_update_function_event_invoke_config_too_many_requests_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("Retry-After").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_update_function_url_config_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,

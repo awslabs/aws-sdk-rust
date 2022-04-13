@@ -239,6 +239,16 @@ pub(crate) fn reflens_structure_crate_output_list_job_templates_output_next_toke
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_metric_values_output_next_token(
+    input: &crate::output::ListMetricValuesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_mitigation_actions_output_next_token(
     input: &crate::output::ListMitigationActionsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -773,6 +783,16 @@ pub(crate) fn lens_structure_crate_output_list_job_templates_output_job_template
     input: crate::output::ListJobTemplatesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::JobTemplateSummary>> {
     let input = match input.job_templates {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_metric_values_output_metric_datum_list(
+    input: crate::output::ListMetricValuesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::MetricDatum>> {
+    let input = match input.metric_datum_list {
         None => return None,
         Some(t) => t,
     };

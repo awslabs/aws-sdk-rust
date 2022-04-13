@@ -3131,6 +3131,126 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SearchGroupsOutput {
+    /// <p>A list of groups in a specified namespace that match the filters you set in your <code>SearchGroups</code> request.</p>
+    pub group_list: std::option::Option<std::vec::Vec<crate::model::Group>>,
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub request_id: std::option::Option<std::string::String>,
+    /// <p>The HTTP status of the request.</p>
+    pub status: i32,
+}
+impl SearchGroupsOutput {
+    /// <p>A list of groups in a specified namespace that match the filters you set in your <code>SearchGroups</code> request.</p>
+    pub fn group_list(&self) -> std::option::Option<&[crate::model::Group]> {
+        self.group_list.as_deref()
+    }
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
+impl std::fmt::Debug for SearchGroupsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchGroupsOutput");
+        formatter.field("group_list", &self.group_list);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("request_id", &self.request_id);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`SearchGroupsOutput`](crate::output::SearchGroupsOutput)
+pub mod search_groups_output {
+    /// A builder for [`SearchGroupsOutput`](crate::output::SearchGroupsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) group_list: std::option::Option<std::vec::Vec<crate::model::Group>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// Appends an item to `group_list`.
+        ///
+        /// To override the contents of this collection use [`set_group_list`](Self::set_group_list).
+        ///
+        /// <p>A list of groups in a specified namespace that match the filters you set in your <code>SearchGroups</code> request.</p>
+        pub fn group_list(mut self, input: crate::model::Group) -> Self {
+            let mut v = self.group_list.unwrap_or_default();
+            v.push(input);
+            self.group_list = Some(v);
+            self
+        }
+        /// <p>A list of groups in a specified namespace that match the filters you set in your <code>SearchGroups</code> request.</p>
+        pub fn set_group_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Group>>,
+        ) -> Self {
+            self.group_list = input;
+            self
+        }
+        /// <p>A pagination token that can be used in a subsequent request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A pagination token that can be used in a subsequent request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn status(mut self, input: i32) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SearchGroupsOutput`](crate::output::SearchGroupsOutput)
+        pub fn build(self) -> crate::output::SearchGroupsOutput {
+            crate::output::SearchGroupsOutput {
+                group_list: self.group_list,
+                next_token: self.next_token,
+                request_id: self.request_id,
+                status: self.status.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl SearchGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`SearchGroupsOutput`](crate::output::SearchGroupsOutput)
+    pub fn builder() -> crate::output::search_groups_output::Builder {
+        crate::output::search_groups_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchFoldersOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -7939,6 +8059,101 @@ impl DescribeIamPolicyAssignmentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIamPolicyAssignmentOutput`](crate::output::DescribeIamPolicyAssignmentOutput)
     pub fn builder() -> crate::output::describe_iam_policy_assignment_output::Builder {
         crate::output::describe_iam_policy_assignment_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeGroupMembershipOutput {
+    /// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
+    pub group_member: std::option::Option<crate::model::GroupMember>,
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub request_id: std::option::Option<std::string::String>,
+    /// <p>The HTTP status of the request.</p>
+    pub status: i32,
+}
+impl DescribeGroupMembershipOutput {
+    /// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
+    pub fn group_member(&self) -> std::option::Option<&crate::model::GroupMember> {
+        self.group_member.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
+impl std::fmt::Debug for DescribeGroupMembershipOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeGroupMembershipOutput");
+        formatter.field("group_member", &self.group_member);
+        formatter.field("request_id", &self.request_id);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`DescribeGroupMembershipOutput`](crate::output::DescribeGroupMembershipOutput)
+pub mod describe_group_membership_output {
+    /// A builder for [`DescribeGroupMembershipOutput`](crate::output::DescribeGroupMembershipOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) group_member: std::option::Option<crate::model::GroupMember>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
+        pub fn group_member(mut self, input: crate::model::GroupMember) -> Self {
+            self.group_member = Some(input);
+            self
+        }
+        /// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
+        pub fn set_group_member(
+            mut self,
+            input: std::option::Option<crate::model::GroupMember>,
+        ) -> Self {
+            self.group_member = input;
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn status(mut self, input: i32) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeGroupMembershipOutput`](crate::output::DescribeGroupMembershipOutput)
+        pub fn build(self) -> crate::output::DescribeGroupMembershipOutput {
+            crate::output::DescribeGroupMembershipOutput {
+                group_member: self.group_member,
+                request_id: self.request_id,
+                status: self.status.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl DescribeGroupMembershipOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeGroupMembershipOutput`](crate::output::DescribeGroupMembershipOutput)
+    pub fn builder() -> crate::output::describe_group_membership_output::Builder {
+        crate::output::describe_group_membership_output::Builder::default()
     }
 }
 

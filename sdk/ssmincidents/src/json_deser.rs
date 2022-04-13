@@ -1284,7 +1284,7 @@ where
                             }
                             "automationExecutions" => {
                                 builder = builder.set_automation_executions(
-                                    crate::json_deser::deser_set_com_amazonaws_ssmincidents_automation_execution_set(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_ssmincidents_automation_execution_set(tokens)?
                                 );
                             }
                             "incidentRecordSource" => {
@@ -1310,7 +1310,7 @@ where
                             }
                             "notificationTargets" => {
                                 builder = builder.set_notification_targets(
-                                    crate::json_deser::deser_set_com_amazonaws_ssmincidents_notification_target_set(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_ssmincidents_notification_target_set(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1658,7 +1658,7 @@ where
                             }
                             "notificationTargets" => {
                                 builder = builder.set_notification_targets(
-                                    crate::json_deser::deser_set_com_amazonaws_ssmincidents_notification_target_set(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_ssmincidents_notification_target_set(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2009,7 +2009,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_set_com_amazonaws_ssmincidents_automation_execution_set<'a, I>(
+pub fn deser_list_com_amazonaws_ssmincidents_automation_execution_set<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::AutomationExecution>>,
@@ -2123,7 +2123,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_set_com_amazonaws_ssmincidents_notification_target_set<'a, I>(
+pub fn deser_list_com_amazonaws_ssmincidents_notification_target_set<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::NotificationTargetItem>>,

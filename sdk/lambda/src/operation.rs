@@ -197,6 +197,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFunction {
     }
 }
 
+/// Operation shape for `CreateFunctionUrlConfig`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_function_url_config`](crate::client::Client::create_function_url_config).
+///
+/// See [`crate::client::fluent_builders::CreateFunctionUrlConfig`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateFunctionUrlConfig {
+    _private: (),
+}
+impl CreateFunctionUrlConfig {
+    /// Creates a new builder-style object to manufacture [`CreateFunctionUrlConfigInput`](crate::input::CreateFunctionUrlConfigInput)
+    pub fn builder() -> crate::input::create_function_url_config_input::Builder {
+        crate::input::create_function_url_config_input::Builder::default()
+    }
+    /// Creates a new `CreateFunctionUrlConfig` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateFunctionUrlConfig {
+    type Output = std::result::Result<
+        crate::output::CreateFunctionUrlConfigOutput,
+        crate::error::CreateFunctionUrlConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 201 {
+            crate::operation_deser::parse_create_function_url_config_error(response)
+        } else {
+            crate::operation_deser::parse_create_function_url_config_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteAlias`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -427,6 +461,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFunctionEventInvok
             crate::operation_deser::parse_delete_function_event_invoke_config_error(response)
         } else {
             crate::operation_deser::parse_delete_function_event_invoke_config_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteFunctionUrlConfig`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_function_url_config`](crate::client::Client::delete_function_url_config).
+///
+/// See [`crate::client::fluent_builders::DeleteFunctionUrlConfig`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteFunctionUrlConfig {
+    _private: (),
+}
+impl DeleteFunctionUrlConfig {
+    /// Creates a new builder-style object to manufacture [`DeleteFunctionUrlConfigInput`](crate::input::DeleteFunctionUrlConfigInput)
+    pub fn builder() -> crate::input::delete_function_url_config_input::Builder {
+        crate::input::delete_function_url_config_input::Builder::default()
+    }
+    /// Creates a new `DeleteFunctionUrlConfig` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteFunctionUrlConfig {
+    type Output = std::result::Result<
+        crate::output::DeleteFunctionUrlConfigOutput,
+        crate::error::DeleteFunctionUrlConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_function_url_config_error(response)
+        } else {
+            crate::operation_deser::parse_delete_function_url_config_response(response)
         }
     }
 }
@@ -796,6 +864,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFunctionEventInvokeCo
             crate::operation_deser::parse_get_function_event_invoke_config_error(response)
         } else {
             crate::operation_deser::parse_get_function_event_invoke_config_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetFunctionUrlConfig`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_function_url_config`](crate::client::Client::get_function_url_config).
+///
+/// See [`crate::client::fluent_builders::GetFunctionUrlConfig`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetFunctionUrlConfig {
+    _private: (),
+}
+impl GetFunctionUrlConfig {
+    /// Creates a new builder-style object to manufacture [`GetFunctionUrlConfigInput`](crate::input::GetFunctionUrlConfigInput)
+    pub fn builder() -> crate::input::get_function_url_config_input::Builder {
+        crate::input::get_function_url_config_input::Builder::default()
+    }
+    /// Creates a new `GetFunctionUrlConfig` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetFunctionUrlConfig {
+    type Output = std::result::Result<
+        crate::output::GetFunctionUrlConfigOutput,
+        crate::error::GetFunctionUrlConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_function_url_config_error(response)
+        } else {
+            crate::operation_deser::parse_get_function_url_config_response(response)
         }
     }
 }
@@ -1226,6 +1328,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFunctionsByCodeSigni
             crate::operation_deser::parse_list_functions_by_code_signing_config_error(response)
         } else {
             crate::operation_deser::parse_list_functions_by_code_signing_config_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListFunctionUrlConfigs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_function_url_configs`](crate::client::Client::list_function_url_configs).
+///
+/// See [`crate::client::fluent_builders::ListFunctionUrlConfigs`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListFunctionUrlConfigs {
+    _private: (),
+}
+impl ListFunctionUrlConfigs {
+    /// Creates a new builder-style object to manufacture [`ListFunctionUrlConfigsInput`](crate::input::ListFunctionUrlConfigsInput)
+    pub fn builder() -> crate::input::list_function_url_configs_input::Builder {
+        crate::input::list_function_url_configs_input::Builder::default()
+    }
+    /// Creates a new `ListFunctionUrlConfigs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListFunctionUrlConfigs {
+    type Output = std::result::Result<
+        crate::output::ListFunctionUrlConfigsOutput,
+        crate::error::ListFunctionUrlConfigsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_function_url_configs_error(response)
+        } else {
+            crate::operation_deser::parse_list_function_url_configs_response(response)
         }
     }
 }
@@ -1927,6 +2063,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFunctionEventInvok
             crate::operation_deser::parse_update_function_event_invoke_config_error(response)
         } else {
             crate::operation_deser::parse_update_function_event_invoke_config_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateFunctionUrlConfig`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_function_url_config`](crate::client::Client::update_function_url_config).
+///
+/// See [`crate::client::fluent_builders::UpdateFunctionUrlConfig`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateFunctionUrlConfig {
+    _private: (),
+}
+impl UpdateFunctionUrlConfig {
+    /// Creates a new builder-style object to manufacture [`UpdateFunctionUrlConfigInput`](crate::input::UpdateFunctionUrlConfigInput)
+    pub fn builder() -> crate::input::update_function_url_config_input::Builder {
+        crate::input::update_function_url_config_input::Builder::default()
+    }
+    /// Creates a new `UpdateFunctionUrlConfig` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateFunctionUrlConfig {
+    type Output = std::result::Result<
+        crate::output::UpdateFunctionUrlConfigOutput,
+        crate::error::UpdateFunctionUrlConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_function_url_config_error(response)
+        } else {
+            crate::operation_deser::parse_update_function_url_config_response(response)
         }
     }
 }

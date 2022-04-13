@@ -2775,6 +2775,8 @@ pub struct DescribeDeviceOutput {
         std::option::Option<std::vec::Vec<crate::model::AlternateSoftwareMetadata>>,
     /// <p>The most recent beta software release.</p>
     pub latest_alternate_software: std::option::Option<std::string::String>,
+    /// <p>The device's maker.</p>
+    pub brand: std::option::Option<crate::model::DeviceBrand>,
 }
 impl DescribeDeviceOutput {
     /// <p>The device's ID.</p>
@@ -2852,6 +2854,10 @@ impl DescribeDeviceOutput {
     pub fn latest_alternate_software(&self) -> std::option::Option<&str> {
         self.latest_alternate_software.as_deref()
     }
+    /// <p>The device's maker.</p>
+    pub fn brand(&self) -> std::option::Option<&crate::model::DeviceBrand> {
+        self.brand.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2873,6 +2879,7 @@ impl std::fmt::Debug for DescribeDeviceOutput {
         formatter.field("lease_expiration_time", &self.lease_expiration_time);
         formatter.field("alternate_softwares", &self.alternate_softwares);
         formatter.field("latest_alternate_software", &self.latest_alternate_software);
+        formatter.field("brand", &self.brand);
         formatter.finish()
     }
 }
@@ -2903,6 +2910,7 @@ pub mod describe_device_output {
         pub(crate) alternate_softwares:
             std::option::Option<std::vec::Vec<crate::model::AlternateSoftwareMetadata>>,
         pub(crate) latest_alternate_software: std::option::Option<std::string::String>,
+        pub(crate) brand: std::option::Option<crate::model::DeviceBrand>,
     }
     impl Builder {
         /// <p>The device's ID.</p>
@@ -3135,6 +3143,16 @@ pub mod describe_device_output {
             self.latest_alternate_software = input;
             self
         }
+        /// <p>The device's maker.</p>
+        pub fn brand(mut self, input: crate::model::DeviceBrand) -> Self {
+            self.brand = Some(input);
+            self
+        }
+        /// <p>The device's maker.</p>
+        pub fn set_brand(mut self, input: std::option::Option<crate::model::DeviceBrand>) -> Self {
+            self.brand = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput)
         pub fn build(self) -> crate::output::DescribeDeviceOutput {
             crate::output::DescribeDeviceOutput {
@@ -3155,6 +3173,7 @@ pub mod describe_device_output {
                 lease_expiration_time: self.lease_expiration_time,
                 alternate_softwares: self.alternate_softwares,
                 latest_alternate_software: self.latest_alternate_software,
+                brand: self.brand,
             }
         }
     }

@@ -2328,8 +2328,8 @@ pub mod get_resource_shares_input {
         }
         /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
         /// <ul>
-        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
-        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// <li> <p> <b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p> </li>
         /// </ul>
         pub fn resource_owner(mut self, input: crate::model::ResourceOwner) -> Self {
             self.resource_owner = Some(input);
@@ -2337,8 +2337,8 @@ pub mod get_resource_shares_input {
         }
         /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
         /// <ul>
-        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
-        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// <li> <p> <b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p> </li>
         /// </ul>
         pub fn set_resource_owner(
             mut self,
@@ -3081,8 +3081,8 @@ pub mod list_principals_input {
     impl Builder {
         /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
         /// <ul>
-        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
-        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// <li> <p> <b> <code>SELF</code> </b> – principals that your account is sharing resources with</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p> </li>
         /// </ul>
         pub fn resource_owner(mut self, input: crate::model::ResourceOwner) -> Self {
             self.resource_owner = Some(input);
@@ -3090,8 +3090,8 @@ pub mod list_principals_input {
         }
         /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
         /// <ul>
-        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
-        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// <li> <p> <b> <code>SELF</code> </b> – principals that your account is sharing resources with</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p> </li>
         /// </ul>
         pub fn set_resource_owner(
             mut self,
@@ -3346,8 +3346,8 @@ pub mod list_resources_input {
     impl Builder {
         /// <p>Specifies that you want to list only the resource shares that match the following:</p>
         /// <ul>
-        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
-        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// <li> <p> <b> <code>SELF</code> </b> – resources that your account shares with other accounts</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p> </li>
         /// </ul>
         pub fn resource_owner(mut self, input: crate::model::ResourceOwner) -> Self {
             self.resource_owner = Some(input);
@@ -3355,8 +3355,8 @@ pub mod list_resources_input {
         }
         /// <p>Specifies that you want to list only the resource shares that match the following:</p>
         /// <ul>
-        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
-        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// <li> <p> <b> <code>SELF</code> </b> – resources that your account shares with other accounts</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p> </li>
         /// </ul>
         pub fn set_resource_owner(
             mut self,
@@ -4992,8 +4992,8 @@ impl std::fmt::Debug for ListResourceSharePermissionsInput {
 pub struct ListResourcesInput {
     /// <p>Specifies that you want to list only the resource shares that match the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
-    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+    /// <li> <p> <b> <code>SELF</code> </b> – resources that your account shares with other accounts</p> </li>
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p> </li>
     /// </ul>
     pub resource_owner: std::option::Option<crate::model::ResourceOwner>,
     /// <p>Specifies that you want to list only the resource shares that are associated with the specified principal.</p>
@@ -5021,8 +5021,8 @@ pub struct ListResourcesInput {
 impl ListResourcesInput {
     /// <p>Specifies that you want to list only the resource shares that match the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
-    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+    /// <li> <p> <b> <code>SELF</code> </b> – resources that your account shares with other accounts</p> </li>
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p> </li>
     /// </ul>
     pub fn resource_owner(&self) -> std::option::Option<&crate::model::ResourceOwner> {
         self.resource_owner.as_ref()
@@ -5086,8 +5086,8 @@ impl std::fmt::Debug for ListResourcesInput {
 pub struct ListPrincipalsInput {
     /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
-    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+    /// <li> <p> <b> <code>SELF</code> </b> – principals that your account is sharing resources with</p> </li>
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p> </li>
     /// </ul>
     pub resource_owner: std::option::Option<crate::model::ResourceOwner>,
     /// <p>Specifies that you want to list principal information for the resource share with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.</p>
@@ -5117,8 +5117,8 @@ pub struct ListPrincipalsInput {
 impl ListPrincipalsInput {
     /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
-    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+    /// <li> <p> <b> <code>SELF</code> </b> – principals that your account is sharing resources with</p> </li>
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p> </li>
     /// </ul>
     pub fn resource_owner(&self) -> std::option::Option<&crate::model::ResourceOwner> {
         self.resource_owner.as_ref()
@@ -5312,8 +5312,8 @@ pub struct GetResourceSharesInput {
     pub resource_share_status: std::option::Option<crate::model::ResourceShareStatus>,
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
-    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+    /// <li> <p> <b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p> </li>
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p> </li>
     /// </ul>
     pub resource_owner: std::option::Option<crate::model::ResourceOwner>,
     /// <p>Specifies the name of an individual resource share that you want to retrieve details about.</p>
@@ -5338,8 +5338,8 @@ impl GetResourceSharesInput {
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
-    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+    /// <li> <p> <b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p> </li>
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p> </li>
     /// </ul>
     pub fn resource_owner(&self) -> std::option::Option<&crate::model::ResourceOwner> {
         self.resource_owner.as_ref()

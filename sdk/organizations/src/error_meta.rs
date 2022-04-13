@@ -7,57 +7,62 @@ pub enum Error {
     AwsOrganizationsNotInUseException(crate::error::AwsOrganizationsNotInUseException),
     /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide.</i> </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The operation that you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code> for <code>organizations.amazonaws.com</code> permission so that AWS Organizations can create the required service-linked role. You don't have that permission.</p>
+    /// <p>The operation that you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code> for <code>organizations.amazonaws.com</code> permission so that Organizations can create the required service-linked role. You don't have that permission.</p>
     AccessDeniedForDependencyException(crate::error::AccessDeniedForDependencyException),
-    /// <p>The specified account is already a delegated administrator for this AWS service.</p>
+    /// <p>You attempted to close an account that is already closed.</p>
+    AccountAlreadyClosedException(crate::error::AccountAlreadyClosedException),
+    /// <p>The specified account is already a delegated administrator for this Amazon Web Services service.</p>
     AccountAlreadyRegisteredException(crate::error::AccountAlreadyRegisteredException),
-    /// <p> We can't find an AWS account with the <code>AccountId</code> that you specified, or the account whose credentials you used to make this request isn't a member of an organization.</p>
+    /// <p> We can't find an Amazon Web Services account with the <code>AccountId</code> that you specified, or the account whose credentials you used to make this request isn't a member of an organization.</p>
     AccountNotFoundException(crate::error::AccountNotFoundException),
-    /// <p>The specified account is not a delegated administrator for this AWS service. </p>
+    /// <p>The specified account is not a delegated administrator for this Amazon Web Services service. </p>
     AccountNotRegisteredException(crate::error::AccountNotRegisteredException),
-    /// <p>You can't invite an existing account to your organization until you verify that you own the email address associated with the management account. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_create.html#about-email-verification">Email Address Verification</a> in the <i>AWS Organizations User Guide.</i> </p>
+    /// <p>You can't invite an existing account to your organization until you verify that you own the email address associated with the management account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_create.html#about-email-verification">Email Address Verification</a> in the <i>Organizations User Guide.</i> </p>
     AccountOwnerNotVerifiedException(crate::error::AccountOwnerNotVerifiedException),
     /// <p>This account is already a member of an organization. An account can belong to only one organization at a time.</p>
     AlreadyInOrganizationException(crate::error::AlreadyInOrganizationException),
-    /// <p>We can't find an organizational unit (OU) or AWS account with the <code>ChildId</code> that you specified.</p>
+    /// <p>We can't find an organizational unit (OU) or Amazon Web Services account with the <code>ChildId</code> that you specified.</p>
     ChildNotFoundException(crate::error::ChildNotFoundException),
     /// <p>The target of the operation is currently being modified by a different request. Try again later.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>The request failed because it conflicts with the current state of the specified resource.</p>
+    ConflictException(crate::error::ConflictException),
     /// <p>Performing this operation violates a minimum or maximum value limit. For example, attempting to remove the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the organization, or attaching too many policies to an account, OU, or root. This exception includes a reason that contains additional information about the violated limit:</p> <note>
     /// <p>Some of the reasons in the following list might not be applicable to this specific API or operation.</p>
     /// </note>
     /// <ul>
     /// <li> <p>ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization. You can't remove the management account. Instead, after you remove all member accounts, delete the organization itself.</p> </li>
-    /// <li> <p>ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't yet have enough information to exist as a standalone account. This account requires you to first agree to the AWS Customer Agreement. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master">Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i> </p> </li>
-    /// <li> <p>ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization that doesn't yet have enough information to exist as a standalone account. This account requires you to first complete phone verification. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master">Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i> </p> </li>
+    /// <li> <p>ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization that doesn't yet have enough information to exist as a standalone account. This account requires you to first complete phone verification. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master">Removing a member account from your organization</a> in the <i>Organizations User Guide.</i> </p> </li>
     /// <li> <p>ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create in one day.</p> </li>
-    /// <li> <p>ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an organization. If you need more accounts, contact <a href="https://console.aws.amazon.com/support/home#/">AWS Support</a> to request an increase in your limit. </p> <p>Or the number of invitations that you tried to send would cause you to exceed the limit of accounts in your organization. Send fewer invitations or contact AWS Support to request an increase in the number of accounts.</p> <note>
+    /// <li> <p>ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an organization. If you need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web Services Support</a> to request an increase in your limit. </p> <p>Or the number of invitations that you tried to send would cause you to exceed the limit of accounts in your organization. Send fewer invitations or contact Amazon Web Services Support to request an increase in the number of accounts.</p> <note>
     /// <p>Deleted and closed accounts still count toward your limit.</p>
     /// </note> <important>
-    /// <p>If you get this exception when running a command immediately after creating the organization, wait one hour and try again. After an hour, if the command continues to fail with this error, contact <a href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.</p>
+    /// <p>If you get this exception when running a command immediately after creating the organization, wait one hour and try again. After an hour, if the command continues to fail with this error, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p>
     /// </important> </li>
-    /// <li> <p>CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of the organization as a delegated administrator for an AWS service integrated with Organizations. You can designate only a member account as a delegated administrator.</p> </li>
+    /// <li> <p>CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of the organization as a delegated administrator for an Amazon Web Services service integrated with Organizations. You can designate only a member account as a delegated administrator.</p> </li>
     /// <li> <p>CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as a delegated administrator for a service integrated with your organization. To complete this operation, you must first deregister this account as a delegated administrator. </p> </li>
     /// <li> <p>CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified region, you must enable all features mode.</p> </li>
-    /// <li> <p>DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated administrator for an AWS service that already has a delegated administrator. To complete this operation, you must first deregister any existing delegated administrators for this service.</p> </li>
+    /// <li> <p>DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an Amazon Web Services account as a delegated administrator for an Amazon Web Services service that already has a delegated administrator. To complete this operation, you must first deregister any existing delegated administrators for this service.</p> </li>
     /// <li> <p>EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time. You must resubmit the request and generate a new verfication code.</p> </li>
     /// <li> <p>HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that you can send in one day.</p> </li>
     /// <li> <p>MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first must migrate the organization's management account to the marketplace that corresponds to the management account's address. For example, accounts with India addresses must be associated with the AISPL marketplace. All accounts in an organization must be associated with the same marketplace.</p> </li>
-    /// <li> <p>MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an organization, the master must have a valid business license. For more information, contact customer support.</p> </li>
+    /// <li> <p>MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the Amazon Web Services /&gt; Regions in China. To create an organization, the master must have a valid business license. For more information, contact customer support.</p> </li>
     /// <li> <p>MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact address and phone number for the management account. Then try the operation again.</p> </li>
-    /// <li> <p>MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an associated account in the AWS GovCloud (US-West) Region. For more information, see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS Organizations</a> in the <i>AWS GovCloud User Guide.</i> </p> </li>
-    /// <li> <p>MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you first must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To leave an organization when all required account information has not yet been provided</a> in the <i>AWS Organizations User Guide.</i> </p> </li>
+    /// <li> <p>MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an associated account in the Amazon Web Services GovCloud (US-West) Region. For more information, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">Organizations</a> in the <i>Amazon Web Services GovCloud User Guide.</i> </p> </li>
+    /// <li> <p>MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you first must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To leave an organization when all required account information has not yet been provided</a> in the <i>Organizations User Guide.</i> </p> </li>
     /// <li> <p>MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED: You attempted to register more delegated administrators than allowed for the service principal. </p> </li>
     /// <li> <p>MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain type that can be attached to an entity at one time.</p> </li>
     /// <li> <p>MAX_TAG_LIMIT_EXCEEDED: You have exceeded the number of tags allowed on this resource. </p> </li>
-    /// <li> <p>MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you first must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To leave an organization when all required account information has not yet been provided</a> in the <i>AWS Organizations User Guide.</i> </p> </li>
+    /// <li> <p>MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you first must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To leave an organization when all required account information has not yet been provided</a> in the <i>Organizations User Guide.</i> </p> </li>
     /// <li> <p>MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would cause the entity to have fewer than the minimum number of policies of a certain type required.</p> </li>
     /// <li> <p>ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the organization to be configured to support all features. An organization that supports only consolidated billing features can't perform this operation.</p> </li>
     /// <li> <p>OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.</p> </li>
     /// <li> <p>OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of OUs that you can have in an organization.</p> </li>
     /// <li> <p>POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.</p> </li>
     /// <li> <p>POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an organization.</p> </li>
+    /// <li> <p>SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.</p> </li>
     /// <li> <p>TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with the tag policy requirements for this account.</p> </li>
+    /// <li> <p>WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting period before you can remove it from the organization. If you get an error that indicates that a wait period is required, try again in a few days.</p> </li>
     /// </ul>
     ConstraintViolationException(crate::error::ConstraintViolationException),
     /// <p>We can't find an create account request with the <code>CreateAccountRequestId</code> that you specified.</p>
@@ -76,7 +81,7 @@ pub enum Error {
     DuplicatePolicyException(crate::error::DuplicatePolicyException),
     /// <p>If you ran this action on the management account, this policy type is not enabled. If you ran the action on a member account, the account doesn't have an effective policy of this type. Contact the administrator of your organization about attaching a policy of this type to the account. </p>
     EffectivePolicyNotFoundException(crate::error::EffectivePolicyNotFoundException),
-    /// <p>AWS Organizations couldn't perform the operation because your organization hasn't finished initializing. This can take up to an hour. Try again later. If after one hour you continue to receive this error, contact <a href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.</p>
+    /// <p>Organizations couldn't perform the operation because your organization hasn't finished initializing. This can take up to an hour. Try again later. If after one hour you continue to receive this error, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p>
     FinalizingOrganizationException(crate::error::FinalizingOrganizationException),
     /// <p>The specified handshake is already in the requested state. For example, you can't accept a handshake that was already accepted.</p>
     HandshakeAlreadyInStateException(crate::error::HandshakeAlreadyInStateException),
@@ -85,7 +90,7 @@ pub enum Error {
     /// </note>
     /// <ul>
     /// <li> <p>ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an organization. Note that deleted and closed accounts still count toward your limit.</p> <important>
-    /// <p>If you get this exception immediately after creating the organization, wait one hour and try again. If after an hour it continues to fail with this error, contact <a href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.</p>
+    /// <p>If you get this exception immediately after creating the organization, wait one hour and try again. If after an hour it continues to fail with this error, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p>
     /// </important> </li>
     /// <li> <p>ALREADY_IN_AN_ORGANIZATION: The handshake request is invalid because the invited account is already a member of an organization.</p> </li>
     /// <li> <p>HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that you can send in one day.</p> </li>
@@ -106,7 +111,7 @@ pub enum Error {
     /// </note>
     /// <ul>
     /// <li> <p>DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.</p> </li>
-    /// <li> <p>IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.</p> </li>
+    /// <li> <p>IMMUTABLE_POLICY: You specified a policy that is managed by Amazon Web Services and can't be modified.</p> </li>
     /// <li> <p>INPUT_REQUIRED: You must include a value for all required parameters.</p> </li>
     /// <li> <p>INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.</p> </li>
     /// <li> <p>INVALID_ENUM: You specified an invalid value.</p> </li>
@@ -120,7 +125,7 @@ pub enum Error {
     /// <li> <p>INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin with the reserved prefix <code>AWSServiceRoleFor</code>.</p> </li>
     /// <li> <p>INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid Amazon Resource Name (ARN) for the organization.</p> </li>
     /// <li> <p>INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID. </p> </li>
-    /// <li> <p>INVALID_SYSTEM_TAGS_PARAMETER: You specified a tag key that is a system tag. You can’t add, edit, or delete system tag keys because they're reserved for AWS use. System tags don’t count against your tags per resource limit.</p> </li>
+    /// <li> <p>INVALID_SYSTEM_TAGS_PARAMETER: You specified a tag key that is a system tag. You can’t add, edit, or delete system tag keys because they're reserved for Amazon Web Services use. System tags don’t count against your tags per resource limit.</p> </li>
     /// <li> <p>MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.</p> </li>
     /// <li> <p>MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.</p> </li>
     /// <li> <p>MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.</p> </li>
@@ -131,7 +136,7 @@ pub enum Error {
     /// <li> <p>UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.</p> </li>
     /// </ul>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The provided policy document doesn't meet the requirements of the specified policy type. For example, the syntax might be incorrect. For details about service control policy syntax, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
+    /// <p>The provided policy document doesn't meet the requirements of the specified policy type. For example, the syntax might be incorrect. For details about service control policy syntax, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
     /// <p>You can't remove a management account from an organization. If you want the management account to become a member account in another organization, you must first delete the current organization of the management account.</p>
     MasterCannotLeaveOrganizationException(crate::error::MasterCannotLeaveOrganizationException),
@@ -153,24 +158,24 @@ pub enum Error {
     PolicyNotFoundException(crate::error::PolicyNotFoundException),
     /// <p>The specified policy type is already enabled in the specified root.</p>
     PolicyTypeAlreadyEnabledException(crate::error::PolicyTypeAlreadyEnabledException),
-    /// <p>You can't use the specified policy type with the feature set currently enabled for this organization. For example, you can enable SCPs only after you enable all features in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root">Managing AWS Organizations Policies</a>in the <i>AWS Organizations User Guide.</i> </p>
+    /// <p>You can't use the specified policy type with the feature set currently enabled for this organization. For example, you can enable SCPs only after you enable all features in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root">Managing Organizations Policies</a>in the <i>Organizations User Guide.</i> </p>
     PolicyTypeNotAvailableForOrganizationException(
         crate::error::PolicyTypeNotAvailableForOrganizationException,
     ),
-    /// <p>The specified policy type isn't currently enabled in this root. You can't attach policies of the specified type to entities in a root until you enable that type in the root. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide.</i> </p>
+    /// <p>The specified policy type isn't currently enabled in this root. You can't attach policies of the specified type to entities in a root until you enable that type in the root. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>Organizations User Guide.</i> </p>
     PolicyTypeNotEnabledException(crate::error::PolicyTypeNotEnabledException),
     /// <p>We can't find a root with the <code>RootId</code> that you specified.</p>
     RootNotFoundException(crate::error::RootNotFoundException),
-    /// <p>AWS Organizations can't complete your request because of an internal service error. Try again later.</p>
+    /// <p>Organizations can't complete your request because of an internal service error. Try again later.</p>
     ServiceException(crate::error::ServiceException),
     /// <p>We can't find a source root or OU with the <code>ParentId</code> that you specified.</p>
     SourceParentNotFoundException(crate::error::SourceParentNotFoundException),
     /// <p>We can't find a root, OU, account, or policy with the <code>TargetId</code> that you specified.</p>
     TargetNotFoundException(crate::error::TargetNotFoundException),
     /// <p>You have sent too many requests in too short a period of time. The quota helps protect against denial-of-service attacks. Try again later.</p>
-    /// <p>For information about quotas that affect AWS Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for AWS Organizations</a>in the <i>AWS Organizations User Guide.</i> </p>
+    /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This action isn't available in the current AWS Region.</p>
+    /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -181,6 +186,7 @@ impl std::fmt::Display for Error {
             Error::AwsOrganizationsNotInUseException(inner) => inner.fmt(f),
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::AccessDeniedForDependencyException(inner) => inner.fmt(f),
+            Error::AccountAlreadyClosedException(inner) => inner.fmt(f),
             Error::AccountAlreadyRegisteredException(inner) => inner.fmt(f),
             Error::AccountNotFoundException(inner) => inner.fmt(f),
             Error::AccountNotRegisteredException(inner) => inner.fmt(f),
@@ -188,6 +194,7 @@ impl std::fmt::Display for Error {
             Error::AlreadyInOrganizationException(inner) => inner.fmt(f),
             Error::ChildNotFoundException(inner) => inner.fmt(f),
             Error::ConcurrentModificationException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::ConstraintViolationException(inner) => inner.fmt(f),
             Error::CreateAccountStatusNotFoundException(inner) => inner.fmt(f),
             Error::DestinationParentNotFoundException(inner) => inner.fmt(f),
@@ -356,6 +363,52 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::CancelHandshakeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CloseAccountError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CloseAccountError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CloseAccountErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::CloseAccountErrorKind::AccountAlreadyClosedException(inner) => {
+                    Error::AccountAlreadyClosedException(inner)
+                }
+                crate::error::CloseAccountErrorKind::AccountNotFoundException(inner) => {
+                    Error::AccountNotFoundException(inner)
+                }
+                crate::error::CloseAccountErrorKind::AwsOrganizationsNotInUseException(inner) => {
+                    Error::AwsOrganizationsNotInUseException(inner)
+                }
+                crate::error::CloseAccountErrorKind::ConcurrentModificationException(inner) => {
+                    Error::ConcurrentModificationException(inner)
+                }
+                crate::error::CloseAccountErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::CloseAccountErrorKind::ConstraintViolationException(inner) => {
+                    Error::ConstraintViolationException(inner)
+                }
+                crate::error::CloseAccountErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::CloseAccountErrorKind::ServiceException(inner) => {
+                    Error::ServiceException(inner)
+                }
+                crate::error::CloseAccountErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
+                }
+                crate::error::CloseAccountErrorKind::UnsupportedApiEndpointException(inner) => {
+                    Error::UnsupportedApiEndpointException(inner)
+                }
+                crate::error::CloseAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

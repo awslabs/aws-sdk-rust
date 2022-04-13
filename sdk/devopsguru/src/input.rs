@@ -142,6 +142,141 @@ impl AddNotificationChannelInput {
     }
 }
 
+/// See [`DeleteInsightInput`](crate::input::DeleteInsightInput)
+pub mod delete_insight_input {
+    /// A builder for [`DeleteInsightInput`](crate::input::DeleteInsightInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the insight.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the insight.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteInsightInput`](crate::input::DeleteInsightInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteInsightInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteInsightInput { id: self.id })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteInsightInputOperationOutputAlias = crate::operation::DeleteInsight;
+#[doc(hidden)]
+pub type DeleteInsightInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteInsightInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteInsight`](crate::operation::DeleteInsight)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteInsight,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteInsightInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_1 = &_input.id;
+                let input_1 = input_1.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let id = aws_smithy_http::label::fmt_string(input_1, false);
+                if id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/insights/{Id}", Id = id).expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteInsightInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteInsight::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteInsight",
+            "devopsguru",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteInsightInput`](crate::input::DeleteInsightInput)
+    pub fn builder() -> crate::input::delete_insight_input::Builder {
+        crate::input::delete_insight_input::Builder::default()
+    }
+}
+
 /// See [`DescribeAccountHealthInput`](crate::input::DescribeAccountHealthInput)
 pub mod describe_account_health_input {
     /// A builder for [`DescribeAccountHealthInput`](crate::input::DescribeAccountHealthInput)
@@ -477,14 +612,14 @@ impl DescribeAnomalyInput {
                 _input: &crate::input::DescribeAnomalyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_1 = &_input.id;
-                let input_1 = input_1.as_ref().ok_or(
+                let input_2 = &_input.id;
+                let input_2 = input_2.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_1, false);
+                let id = aws_smithy_http::label::fmt_string(input_2, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -499,8 +634,8 @@ impl DescribeAnomalyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_2) = &_input.account_id {
-                    query.push_kv("AccountId", &aws_smithy_http::query::fmt_string(&inner_2));
+                if let Some(inner_3) = &_input.account_id {
+                    query.push_kv("AccountId", &aws_smithy_http::query::fmt_string(&inner_3));
                 }
                 Ok(())
             }
@@ -884,14 +1019,14 @@ impl DescribeInsightInput {
                 _input: &crate::input::DescribeInsightInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_3 = &_input.id;
-                let input_3 = input_3.as_ref().ok_or(
+                let input_4 = &_input.id;
+                let input_4 = input_4.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_3, false);
+                let id = aws_smithy_http::label::fmt_string(input_4, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -906,8 +1041,8 @@ impl DescribeInsightInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_4) = &_input.account_id {
-                    query.push_kv("AccountId", &aws_smithy_http::query::fmt_string(&inner_4));
+                if let Some(inner_5) = &_input.account_id {
+                    query.push_kv("AccountId", &aws_smithy_http::query::fmt_string(&inner_5));
                 }
                 Ok(())
             }
@@ -1637,14 +1772,14 @@ impl DescribeResourceCollectionHealthInput {
                 _input: &crate::input::DescribeResourceCollectionHealthInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_5 = &_input.resource_collection_type;
-                let input_5 = input_5.as_ref().ok_or(
+                let input_6 = &_input.resource_collection_type;
+                let input_6 = input_6.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_collection_type",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_collection_type = aws_smithy_http::label::fmt_string(input_5, false);
+                let resource_collection_type = aws_smithy_http::label::fmt_string(input_6, false);
                 if resource_collection_type.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_collection_type",
@@ -1664,8 +1799,8 @@ impl DescribeResourceCollectionHealthInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_6) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_6));
+                if let Some(inner_7) = &_input.next_token {
+                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_7));
                 }
                 Ok(())
             }
@@ -1908,8 +2043,8 @@ impl GetCostEstimationInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_7) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_7));
+                if let Some(inner_8) = &_input.next_token {
+                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_8));
                 }
                 Ok(())
             }
@@ -2053,14 +2188,14 @@ impl GetResourceCollectionInput {
                 _input: &crate::input::GetResourceCollectionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_8 = &_input.resource_collection_type;
-                let input_8 = input_8.as_ref().ok_or(
+                let input_9 = &_input.resource_collection_type;
+                let input_9 = input_9.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_collection_type",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_collection_type = aws_smithy_http::label::fmt_string(input_8, false);
+                let resource_collection_type = aws_smithy_http::label::fmt_string(input_9, false);
                 if resource_collection_type.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_collection_type",
@@ -2080,8 +2215,8 @@ impl GetResourceCollectionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_9) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_9));
+                if let Some(inner_10) = &_input.next_token {
+                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_10));
                 }
                 Ok(())
             }
@@ -2258,14 +2393,14 @@ impl ListAnomaliesForInsightInput {
                 _input: &crate::input::ListAnomaliesForInsightInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_10 = &_input.insight_id;
-                let input_10 = input_10.as_ref().ok_or(
+                let input_11 = &_input.insight_id;
+                let input_11 = input_11.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "insight_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let insight_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let insight_id = aws_smithy_http::label::fmt_string(input_11, false);
                 if insight_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "insight_id",
@@ -3417,14 +3552,14 @@ impl RemoveNotificationChannelInput {
                 _input: &crate::input::RemoveNotificationChannelInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_11 = &_input.id;
-                let input_11 = input_11.as_ref().ok_or(
+                let input_12 = &_input.id;
+                let input_12 = input_12.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_11, false);
+                let id = aws_smithy_http::label::fmt_string(input_12, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -4072,12 +4207,12 @@ pub mod update_event_sources_config_input {
         pub(crate) event_sources: std::option::Option<crate::model::EventSourcesConfig>,
     }
     impl Builder {
-        /// <p>The name of the event source.</p>
+        /// <p>Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.</p>
         pub fn event_sources(mut self, input: crate::model::EventSourcesConfig) -> Self {
             self.event_sources = Some(input);
             self
         }
-        /// <p>The name of the event source.</p>
+        /// <p>Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.</p>
         pub fn set_event_sources(
             mut self,
             input: std::option::Option<crate::model::EventSourcesConfig>,
@@ -4572,11 +4707,11 @@ impl std::fmt::Debug for UpdateResourceCollectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEventSourcesConfigInput {
-    /// <p>The name of the event source.</p>
+    /// <p>Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.</p>
     pub event_sources: std::option::Option<crate::model::EventSourcesConfig>,
 }
 impl UpdateEventSourcesConfigInput {
-    /// <p>The name of the event source.</p>
+    /// <p>Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.</p>
     pub fn event_sources(&self) -> std::option::Option<&crate::model::EventSourcesConfig> {
         self.event_sources.as_ref()
     }
@@ -5345,6 +5480,27 @@ pub struct DescribeAccountHealthInput {}
 impl std::fmt::Debug for DescribeAccountHealthInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAccountHealthInput");
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteInsightInput {
+    /// <p>The ID of the insight.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl DeleteInsightInput {
+    /// <p>The ID of the insight.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteInsightInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteInsightInput");
+        formatter.field("id", &self.id);
         formatter.finish()
     }
 }

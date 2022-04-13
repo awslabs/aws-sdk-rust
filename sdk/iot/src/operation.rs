@@ -5216,6 +5216,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListManagedJobTemplates 
     }
 }
 
+/// Operation shape for `ListMetricValues`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_metric_values`](crate::client::Client::list_metric_values).
+///
+/// See [`crate::client::fluent_builders::ListMetricValues`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListMetricValues {
+    _private: (),
+}
+impl ListMetricValues {
+    /// Creates a new builder-style object to manufacture [`ListMetricValuesInput`](crate::input::ListMetricValuesInput)
+    pub fn builder() -> crate::input::list_metric_values_input::Builder {
+        crate::input::list_metric_values_input::Builder::default()
+    }
+    /// Creates a new `ListMetricValues` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListMetricValues {
+    type Output = std::result::Result<
+        crate::output::ListMetricValuesOutput,
+        crate::error::ListMetricValuesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_metric_values_error(response)
+        } else {
+            crate::operation_deser::parse_list_metric_values_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListMitigationActions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

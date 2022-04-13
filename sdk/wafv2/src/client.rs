@@ -469,6 +469,7 @@ impl Client {
     /// - On success, responds with [`ListAvailableManagedRuleGroupVersionsOutput`](crate::output::ListAvailableManagedRuleGroupVersionsOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::output::ListAvailableManagedRuleGroupVersionsOutput::next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     ///   - [`versions(Option<Vec<ManagedRuleGroupVersion>>)`](crate::output::ListAvailableManagedRuleGroupVersionsOutput::versions): <p>The versions that are currently available for the specified managed rule group. </p>
+    ///   - [`current_default_version(Option<String>)`](crate::output::ListAvailableManagedRuleGroupVersionsOutput::current_default_version): <p>The name of the version that's currently set as the default. </p>
     /// - On failure, responds with [`SdkError<ListAvailableManagedRuleGroupVersionsError>`](crate::error::ListAvailableManagedRuleGroupVersionsError)
     pub fn list_available_managed_rule_group_versions(
         &self,
@@ -619,7 +620,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::PutPermissionPolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::PutPermissionPolicy::set_resource_arn): <p>The Amazon Resource Name (ARN) of the <code>RuleGroup</code> to which you want to attach the policy.</p>
-    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutPermissionPolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutPermissionPolicy::set_policy): <p>The policy to attach to the specified rule group. </p>  <p>The policy specifications must conform to the following:</p>  <ul>   <li> <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>   <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>   <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>   <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>   <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
+    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutPermissionPolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutPermissionPolicy::set_policy): <p>The policy to attach to the specified rule group. </p>  <p>The policy specifications must conform to the following:</p>  <ul>   <li> <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>   <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>   <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>   <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>   <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
     /// - On success, responds with [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput)
 
     /// - On failure, responds with [`SdkError<PutPermissionPolicyError>`](crate::error::PutPermissionPolicyError)
@@ -4353,7 +4354,7 @@ pub mod fluent_builders {
         /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>
         /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>
         /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
-        /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
+        /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
         /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>
         /// </ul>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
@@ -4367,7 +4368,7 @@ pub mod fluent_builders {
         /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>
         /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>
         /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
-        /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
+        /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
         /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>
         /// </ul>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>

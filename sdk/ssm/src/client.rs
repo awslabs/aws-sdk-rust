@@ -1371,7 +1371,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`patch_group(impl Into<String>)`](crate::client::fluent_builders::GetPatchBaselineForPatchGroup::patch_group) / [`set_patch_group(Option<String>)`](crate::client::fluent_builders::GetPatchBaselineForPatchGroup::set_patch_group): <p>The name of the patch group whose patch baseline should be retrieved.</p>
-    ///   - [`operating_system(OperatingSystem)`](crate::client::fluent_builders::GetPatchBaselineForPatchGroup::operating_system) / [`set_operating_system(Option<OperatingSystem>)`](crate::client::fluent_builders::GetPatchBaselineForPatchGroup::set_operating_system): <p>Returns he operating system rule specified for patch groups using the patch baseline.</p>
+    ///   - [`operating_system(OperatingSystem)`](crate::client::fluent_builders::GetPatchBaselineForPatchGroup::operating_system) / [`set_operating_system(Option<OperatingSystem>)`](crate::client::fluent_builders::GetPatchBaselineForPatchGroup::set_operating_system): <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
     /// - On success, responds with [`GetPatchBaselineForPatchGroupOutput`](crate::output::GetPatchBaselineForPatchGroupOutput) with field(s):
     ///   - [`baseline_id(Option<String>)`](crate::output::GetPatchBaselineForPatchGroupOutput::baseline_id): <p>The ID of the patch baseline that should be used for the patch group.</p>
     ///   - [`patch_group(Option<String>)`](crate::output::GetPatchBaselineForPatchGroupOutput::patch_group): <p>The name of the patch group.</p>
@@ -1690,7 +1690,7 @@ impl Client {
     /// Constructs a fluent builder for the [`PutParameter`](crate::client::fluent_builders::PutParameter) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::PutParameter::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::PutParameter::set_name): <p>The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>  <p>Naming Constraints:</p>  <ul>   <li> <p>Parameter names are case sensitive.</p> </li>   <li> <p>A parameter name must be unique within an Amazon Web Services Region</p> </li>   <li> <p>A parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>" (case-insensitive).</p> </li>   <li> <p>Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li>   <li> <p>A parameter name can't include spaces.</p> </li>   <li> <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p> </li>  </ul>  <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>   <p>The maximum length constraint listed below includes capacity for additional system attributes that aren't part of the name. The maximum length for a parameter name, including the full length of the parameter ARN, is 1011 characters. For example, the length of the following parameter name is 65 characters, not 20 characters:</p>   <p> <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code> </p>  </note>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::PutParameter::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::PutParameter::set_name): <p>The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>  <p>Naming Constraints:</p>  <ul>   <li> <p>Parameter names are case sensitive.</p> </li>   <li> <p>A parameter name must be unique within an Amazon Web Services Region</p> </li>   <li> <p>A parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>" (case-insensitive).</p> </li>   <li> <p>Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li>   <li> <p>A parameter name can't include spaces.</p> </li>   <li> <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p> </li>  </ul>  <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>   <p>The maximum length constraint of 2048 characters listed below includes 1037 characters reserved for internal use by Systems Manager. The maximum length for a parameter name that you create is 1011 characters. This includes the characters in the ARN that precede the name you specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>  </note>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::PutParameter::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::PutParameter::set_description): <p>Information about the parameter that you want to add to the system. Optional but recommended.</p> <important>   <p>Don't enter personally identifiable information in this field.</p>  </important>
     ///   - [`value(impl Into<String>)`](crate::client::fluent_builders::PutParameter::value) / [`set_value(Option<String>)`](crate::client::fluent_builders::PutParameter::set_value): <p>The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p> <note>   <p>Parameters can't be referenced or nested in the values of other parameters. You can't include <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p>  </note>
     ///   - [`r#type(ParameterType)`](crate::client::fluent_builders::PutParameter::type) / [`set_type(Option<ParameterType>)`](crate::client::fluent_builders::PutParameter::set_type): <p>The type of parameter that you want to add to the system.</p> <note>   <p> <code>SecureString</code> isn't currently supported for CloudFormation templates.</p>  </note>  <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special character to escape items in the list. If you have a parameter value that requires a comma, then use the <code>String</code> data type.</p> <important>   <p>Specifying a parameter type isn't required when updating a parameter. You must specify a parameter type when creating a parameter.</p>  </important>
@@ -1905,7 +1905,7 @@ impl Client {
     ///   - [`target(impl Into<String>)`](crate::client::fluent_builders::StartSession::target) / [`set_target(Option<String>)`](crate::client::fluent_builders::StartSession::set_target): <p>The managed node to connect to for the session.</p>
     ///   - [`document_name(impl Into<String>)`](crate::client::fluent_builders::StartSession::document_name) / [`set_document_name(Option<String>)`](crate::client::fluent_builders::StartSession::set_document_name): <p>The name of the SSM document to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default.</p>
     ///   - [`reason(impl Into<String>)`](crate::client::fluent_builders::StartSession::reason) / [`set_reason(Option<String>)`](crate::client::fluent_builders::StartSession::set_reason): <p>The reason for connecting to the instance. This value is included in the details for the Amazon CloudWatch Events event created when you start the session.</p>
-    ///   - [`parameters(HashMap<String, Vec<String>>)`](crate::client::fluent_builders::StartSession::parameters) / [`set_parameters(Option<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::StartSession::set_parameters): <p>Reserved for future use.</p>
+    ///   - [`parameters(HashMap<String, Vec<String>>)`](crate::client::fluent_builders::StartSession::parameters) / [`set_parameters(Option<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::StartSession::set_parameters): <p>The values you want to specify for the parameters defined in the Session document.</p>
     /// - On success, responds with [`StartSessionOutput`](crate::output::StartSessionOutput) with field(s):
     ///   - [`session_id(Option<String>)`](crate::output::StartSessionOutput::session_id): <p>The ID of the session.</p>
     ///   - [`token_value(Option<String>)`](crate::output::StartSessionOutput::token_value): <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
@@ -1965,7 +1965,7 @@ impl Client {
     ///   - [`max_concurrency(impl Into<String>)`](crate::client::fluent_builders::UpdateAssociation::max_concurrency) / [`set_max_concurrency(Option<String>)`](crate::client::fluent_builders::UpdateAssociation::set_max_concurrency): <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>  <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
     ///   - [`compliance_severity(AssociationComplianceSeverity)`](crate::client::fluent_builders::UpdateAssociation::compliance_severity) / [`set_compliance_severity(Option<AssociationComplianceSeverity>)`](crate::client::fluent_builders::UpdateAssociation::set_compliance_severity): <p>The severity level to assign to the association.</p>
     ///   - [`sync_compliance(AssociationSyncCompliance)`](crate::client::fluent_builders::UpdateAssociation::sync_compliance) / [`set_sync_compliance(Option<AssociationSyncCompliance>)`](crate::client::fluent_builders::UpdateAssociation::set_sync_compliance): <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.</p>  <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>  <p>By default, all associations use <code>AUTO</code> mode.</p>
-    ///   - [`apply_only_at_cron_interval(bool)`](crate::client::fluent_builders::UpdateAssociation::apply_only_at_cron_interval) / [`set_apply_only_at_cron_interval(bool)`](crate::client::fluent_builders::UpdateAssociation::set_apply_only_at_cron_interval): <p>By default, when you update an association, the system runs it immediately after it is updated and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you update it. This parameter isn't supported for rate expressions.</p>  <p>Also, if you specified this option when you created the association, you can reset it. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
+    ///   - [`apply_only_at_cron_interval(bool)`](crate::client::fluent_builders::UpdateAssociation::apply_only_at_cron_interval) / [`set_apply_only_at_cron_interval(bool)`](crate::client::fluent_builders::UpdateAssociation::set_apply_only_at_cron_interval): <p>By default, when you update an association, the system runs it immediately after it is updated and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you update it. This parameter isn't supported for rate expressions.</p>  <p>If you chose this option when you created an association and later you edit that association or you make changes to the SSM document on which that association is based (by using the Documents page in the console), State Manager applies the association at the next specified cron interval. For example, if you chose the <code>Latest</code> version of an SSM document when you created an association and you edit the association by choosing a different document version on the Documents page, State Manager applies the association at the next specified cron interval if you previously selected this option. If this option wasn't selected, State Manager immediately runs the association.</p>  <p>You can reset this option. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
     ///   - [`calendar_names(Vec<String>)`](crate::client::fluent_builders::UpdateAssociation::calendar_names) / [`set_calendar_names(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateAssociation::set_calendar_names): <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
     ///   - [`target_locations(Vec<TargetLocation>)`](crate::client::fluent_builders::UpdateAssociation::target_locations) / [`set_target_locations(Option<Vec<TargetLocation>>)`](crate::client::fluent_builders::UpdateAssociation::set_target_locations): <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to update an association in multiple Regions and multiple accounts.</p>
     /// - On success, responds with [`UpdateAssociationOutput`](crate::output::UpdateAssociationOutput) with field(s):
@@ -1994,7 +1994,7 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDocument::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDocument::set_name): <p>The name of the SSM document that you want to update.</p>
     ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDocument::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::UpdateDocument::set_display_name): <p>The friendly name of the SSM document that you want to update. This value can differ for each version of the document. If you don't specify a value for this parameter in your request, the existing value is applied to the new document version.</p>
     ///   - [`version_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDocument::version_name) / [`set_version_name(Option<String>)`](crate::client::fluent_builders::UpdateDocument::set_version_name): <p>An optional field specifying the version of the artifact you are updating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
-    ///   - [`document_version(impl Into<String>)`](crate::client::fluent_builders::UpdateDocument::document_version) / [`set_document_version(Option<String>)`](crate::client::fluent_builders::UpdateDocument::set_document_version): <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p>
+    ///   - [`document_version(impl Into<String>)`](crate::client::fluent_builders::UpdateDocument::document_version) / [`set_document_version(Option<String>)`](crate::client::fluent_builders::UpdateDocument::set_document_version): <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p> <note>   <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>  </note>
     ///   - [`document_format(DocumentFormat)`](crate::client::fluent_builders::UpdateDocument::document_format) / [`set_document_format(Option<DocumentFormat>)`](crate::client::fluent_builders::UpdateDocument::set_document_format): <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
     ///   - [`target_type(impl Into<String>)`](crate::client::fluent_builders::UpdateDocument::target_type) / [`set_target_type(Option<String>)`](crate::client::fluent_builders::UpdateDocument::set_target_type): <p>Specify a new target type for the document.</p>
     /// - On success, responds with [`UpdateDocumentOutput`](crate::output::UpdateDocumentOutput) with field(s):
@@ -9418,9 +9418,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMaintenanceWindowTask`.
     ///
-    /// <p>Lists the tasks in a maintenance window.</p> <note>
+    /// <p>Retrieves the details of a maintenance window task.</p> <note>
     /// <p>For maintenance window tasks without a specified target, you can't supply values for <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. These values don't affect the running of your task and can be ignored.</p>
     /// </note>
+    /// <p>To retrieve a list of tasks in a maintenance window, instead use the <code>DescribeMaintenanceWindowTasks</code> command.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMaintenanceWindowTask {
         handle: std::sync::Arc<super::Handle>,
@@ -10212,12 +10213,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_patch_group(input);
             self
         }
-        /// <p>Returns he operating system rule specified for patch groups using the patch baseline.</p>
+        /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
         pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
             self.inner = self.inner.operating_system(input);
             self
         }
-        /// <p>Returns he operating system rule specified for patch groups using the patch baseline.</p>
+        /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
         pub fn set_operating_system(
             mut self,
             input: std::option::Option<crate::model::OperatingSystem>,
@@ -12276,8 +12277,7 @@ pub mod fluent_builders {
         /// <li> <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p> </li>
         /// </ul>
         /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
-        /// <p>The maximum length constraint listed below includes capacity for additional system attributes that aren't part of the name. The maximum length for a parameter name, including the full length of the parameter ARN, is 1011 characters. For example, the length of the following parameter name is 65 characters, not 20 characters:</p>
-        /// <p> <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code> </p>
+        /// <p>The maximum length constraint of 2048 characters listed below includes 1037 characters reserved for internal use by Systems Manager. The maximum length for a parameter name that you create is 1011 characters. This includes the characters in the ARN that precede the name you specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>
         /// </note>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
@@ -12294,8 +12294,7 @@ pub mod fluent_builders {
         /// <li> <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p> </li>
         /// </ul>
         /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
-        /// <p>The maximum length constraint listed below includes capacity for additional system attributes that aren't part of the name. The maximum length for a parameter name, including the full length of the parameter ARN, is 1011 characters. For example, the length of the following parameter name is 65 characters, not 20 characters:</p>
-        /// <p> <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code> </p>
+        /// <p>The maximum length constraint of 2048 characters listed below includes 1037 characters reserved for internal use by Systems Manager. The maximum length for a parameter name that you create is 1011 characters. This includes the characters in the ARN that precede the name you specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>
         /// </note>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
@@ -14391,7 +14390,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>Reserved for future use.</p>
+        /// <p>The values you want to specify for the parameters defined in the Session document.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -14400,7 +14399,7 @@ pub mod fluent_builders {
             self.inner = self.inner.parameters(k.into(), v);
             self
         }
-        /// <p>Reserved for future use.</p>
+        /// <p>The values you want to specify for the parameters defined in the Session document.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -14883,13 +14882,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>By default, when you update an association, the system runs it immediately after it is updated and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you update it. This parameter isn't supported for rate expressions.</p>
-        /// <p>Also, if you specified this option when you created the association, you can reset it. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
+        /// <p>If you chose this option when you created an association and later you edit that association or you make changes to the SSM document on which that association is based (by using the Documents page in the console), State Manager applies the association at the next specified cron interval. For example, if you chose the <code>Latest</code> version of an SSM document when you created an association and you edit the association by choosing a different document version on the Documents page, State Manager applies the association at the next specified cron interval if you previously selected this option. If this option wasn't selected, State Manager immediately runs the association.</p>
+        /// <p>You can reset this option. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
         pub fn apply_only_at_cron_interval(mut self, input: bool) -> Self {
             self.inner = self.inner.apply_only_at_cron_interval(input);
             self
         }
         /// <p>By default, when you update an association, the system runs it immediately after it is updated and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you update it. This parameter isn't supported for rate expressions.</p>
-        /// <p>Also, if you specified this option when you created the association, you can reset it. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
+        /// <p>If you chose this option when you created an association and later you edit that association or you make changes to the SSM document on which that association is based (by using the Documents page in the console), State Manager applies the association at the next specified cron interval. For example, if you chose the <code>Latest</code> version of an SSM document when you created an association and you edit the association by choosing a different document version on the Documents page, State Manager applies the association at the next specified cron interval if you previously selected this option. If this option wasn't selected, State Manager immediately runs the association.</p>
+        /// <p>You can reset this option. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
         pub fn set_apply_only_at_cron_interval(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_apply_only_at_cron_interval(input);
             self
@@ -15105,12 +15106,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_version_name(input);
             self
         }
-        /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p>
+        /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p> <note>
+        /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
+        /// </note>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.document_version(input.into());
             self
         }
-        /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p>
+        /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p> <note>
+        /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
+        /// </note>
         pub fn set_document_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15144,7 +15149,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDocumentDefaultVersion`.
     ///
-    /// <p>Set the default version of a document. </p>
+    /// <p>Set the default version of a document. </p> <note>
+    /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDocumentDefaultVersion {
         handle: std::sync::Arc<super::Handle>,

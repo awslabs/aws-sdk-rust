@@ -3145,6 +3145,11 @@ where
                                     crate::json_deser::deser_structure_crate_model_slack_configuration(tokens)?
                                 );
                             }
+                            "BoxConfiguration" => {
+                                builder = builder.set_box_configuration(
+                                    crate::json_deser::deser_structure_crate_model_box_configuration(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -5862,6 +5867,124 @@ where
                             "FieldMappings" => {
                                 builder = builder.set_field_mappings(
                                     crate::json_deser::deser_list_com_amazonaws_kendra_data_source_to_index_field_mapping_list(tokens)?
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_box_configuration<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::BoxConfiguration>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::BoxConfiguration::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "EnterpriseId" => {
+                                builder = builder.set_enterprise_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "SecretArn" => {
+                                builder = builder.set_secret_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "UseChangeLog" => {
+                                builder = builder.set_use_change_log(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "CrawlComments" => {
+                                builder = builder.set_crawl_comments(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "CrawlTasks" => {
+                                builder = builder.set_crawl_tasks(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "CrawlWebLinks" => {
+                                builder = builder.set_crawl_web_links(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "FileFieldMappings" => {
+                                builder = builder.set_file_field_mappings(
+                                    crate::json_deser::deser_list_com_amazonaws_kendra_data_source_to_index_field_mapping_list(tokens)?
+                                );
+                            }
+                            "TaskFieldMappings" => {
+                                builder = builder.set_task_field_mappings(
+                                    crate::json_deser::deser_list_com_amazonaws_kendra_data_source_to_index_field_mapping_list(tokens)?
+                                );
+                            }
+                            "CommentFieldMappings" => {
+                                builder = builder.set_comment_field_mappings(
+                                    crate::json_deser::deser_list_com_amazonaws_kendra_data_source_to_index_field_mapping_list(tokens)?
+                                );
+                            }
+                            "WebLinkFieldMappings" => {
+                                builder = builder.set_web_link_field_mappings(
+                                    crate::json_deser::deser_list_com_amazonaws_kendra_data_source_to_index_field_mapping_list(tokens)?
+                                );
+                            }
+                            "InclusionPatterns" => {
+                                builder = builder.set_inclusion_patterns(
+                                    crate::json_deser::deser_list_com_amazonaws_kendra_data_source_inclusions_exclusions_strings(tokens)?
+                                );
+                            }
+                            "ExclusionPatterns" => {
+                                builder = builder.set_exclusion_patterns(
+                                    crate::json_deser::deser_list_com_amazonaws_kendra_data_source_inclusions_exclusions_strings(tokens)?
+                                );
+                            }
+                            "VpcConfiguration" => {
+                                builder = builder.set_vpc_configuration(
+                                    crate::json_deser::deser_structure_crate_model_data_source_vpc_configuration(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

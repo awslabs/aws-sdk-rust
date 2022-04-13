@@ -37,6 +37,9 @@ pub struct Service {
         std::option::Option<crate::model::AutoScalingConfigurationSummary>,
     /// <p>Configuration settings related to network traffic of the web application that this service runs.</p>
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
+    /// <p>The observability configuration of this service.</p>
+    pub observability_configuration:
+        std::option::Option<crate::model::ServiceObservabilityConfiguration>,
 }
 impl Service {
     /// <p>The customer-provided service name.</p>
@@ -109,6 +112,12 @@ impl Service {
     ) -> std::option::Option<&crate::model::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
+    /// <p>The observability configuration of this service.</p>
+    pub fn observability_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceObservabilityConfiguration> {
+        self.observability_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for Service {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -133,6 +142,10 @@ impl std::fmt::Debug for Service {
             &self.auto_scaling_configuration_summary,
         );
         formatter.field("network_configuration", &self.network_configuration);
+        formatter.field(
+            "observability_configuration",
+            &self.observability_configuration,
+        );
         formatter.finish()
     }
 }
@@ -159,6 +172,8 @@ pub mod service {
         pub(crate) auto_scaling_configuration_summary:
             std::option::Option<crate::model::AutoScalingConfigurationSummary>,
         pub(crate) network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
+        pub(crate) observability_configuration:
+            std::option::Option<crate::model::ServiceObservabilityConfiguration>,
     }
     impl Builder {
         /// <p>The customer-provided service name.</p>
@@ -351,6 +366,22 @@ pub mod service {
             self.network_configuration = input;
             self
         }
+        /// <p>The observability configuration of this service.</p>
+        pub fn observability_configuration(
+            mut self,
+            input: crate::model::ServiceObservabilityConfiguration,
+        ) -> Self {
+            self.observability_configuration = Some(input);
+            self
+        }
+        /// <p>The observability configuration of this service.</p>
+        pub fn set_observability_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ServiceObservabilityConfiguration>,
+        ) -> Self {
+            self.observability_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Service`](crate::model::Service)
         pub fn build(self) -> crate::model::Service {
             crate::model::Service {
@@ -368,6 +399,7 @@ pub mod service {
                 health_check_configuration: self.health_check_configuration,
                 auto_scaling_configuration_summary: self.auto_scaling_configuration_summary,
                 network_configuration: self.network_configuration,
+                observability_configuration: self.observability_configuration,
             }
         }
     }
@@ -376,6 +408,96 @@ impl Service {
     /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service)
     pub fn builder() -> crate::model::service::Builder {
         crate::model::service::Builder::default()
+    }
+}
+
+/// <p>Describes the observability configuration of an App Runner service. These are additional observability features, like tracing, that you choose to enable. They're configured in a separate resource that you associate with your service.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceObservabilityConfiguration {
+    /// <p>When <code>true</code>, an observability configuration resource is associated with the service, and an <code>ObservabilityConfigurationArn</code> is specified.</p>
+    pub observability_enabled: bool,
+    /// <p>The Amazon Resource Name (ARN) of the observability configuration that is associated with the service. Specified only when <code>ObservabilityEnabled</code> is <code>true</code>.</p>
+    /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing/3</code> </p>
+    /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing</code> </p>
+    pub observability_configuration_arn: std::option::Option<std::string::String>,
+}
+impl ServiceObservabilityConfiguration {
+    /// <p>When <code>true</code>, an observability configuration resource is associated with the service, and an <code>ObservabilityConfigurationArn</code> is specified.</p>
+    pub fn observability_enabled(&self) -> bool {
+        self.observability_enabled
+    }
+    /// <p>The Amazon Resource Name (ARN) of the observability configuration that is associated with the service. Specified only when <code>ObservabilityEnabled</code> is <code>true</code>.</p>
+    /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing/3</code> </p>
+    /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing</code> </p>
+    pub fn observability_configuration_arn(&self) -> std::option::Option<&str> {
+        self.observability_configuration_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for ServiceObservabilityConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServiceObservabilityConfiguration");
+        formatter.field("observability_enabled", &self.observability_enabled);
+        formatter.field(
+            "observability_configuration_arn",
+            &self.observability_configuration_arn,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ServiceObservabilityConfiguration`](crate::model::ServiceObservabilityConfiguration)
+pub mod service_observability_configuration {
+    /// A builder for [`ServiceObservabilityConfiguration`](crate::model::ServiceObservabilityConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) observability_enabled: std::option::Option<bool>,
+        pub(crate) observability_configuration_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>When <code>true</code>, an observability configuration resource is associated with the service, and an <code>ObservabilityConfigurationArn</code> is specified.</p>
+        pub fn observability_enabled(mut self, input: bool) -> Self {
+            self.observability_enabled = Some(input);
+            self
+        }
+        /// <p>When <code>true</code>, an observability configuration resource is associated with the service, and an <code>ObservabilityConfigurationArn</code> is specified.</p>
+        pub fn set_observability_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.observability_enabled = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the observability configuration that is associated with the service. Specified only when <code>ObservabilityEnabled</code> is <code>true</code>.</p>
+        /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing/3</code> </p>
+        /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing</code> </p>
+        pub fn observability_configuration_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.observability_configuration_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the observability configuration that is associated with the service. Specified only when <code>ObservabilityEnabled</code> is <code>true</code>.</p>
+        /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing/3</code> </p>
+        /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing</code> </p>
+        pub fn set_observability_configuration_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.observability_configuration_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceObservabilityConfiguration`](crate::model::ServiceObservabilityConfiguration)
+        pub fn build(self) -> crate::model::ServiceObservabilityConfiguration {
+            crate::model::ServiceObservabilityConfiguration {
+                observability_enabled: self.observability_enabled.unwrap_or_default(),
+                observability_configuration_arn: self.observability_configuration_arn,
+            }
+        }
+    }
+}
+impl ServiceObservabilityConfiguration {
+    /// Creates a new builder-style object to manufacture [`ServiceObservabilityConfiguration`](crate::model::ServiceObservabilityConfiguration)
+    pub fn builder() -> crate::model::service_observability_configuration::Builder {
+        crate::model::service_observability_configuration::Builder::default()
     }
 }
 
@@ -3193,6 +3315,125 @@ impl AsRef<str> for OperationType {
     }
 }
 
+/// <p>Provides summary information about an App Runner observability configuration resource.</p>
+/// <p>This type contains limited information about an observability configuration. It includes only identification information, without configuration details. It's returned by the <code>ListObservabilityConfigurations</code> action. Complete configuration information is returned by the <code>CreateObservabilityConfiguration</code>, <code>DescribeObservabilityConfiguration</code>, and <code>DeleteObservabilityConfiguration</code> actions using the <code>ObservabilityConfiguration</code> type.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ObservabilityConfigurationSummary {
+    /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
+    pub observability_configuration_arn: std::option::Option<std::string::String>,
+    /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
+    pub observability_configuration_name: std::option::Option<std::string::String>,
+    /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
+    pub observability_configuration_revision: i32,
+}
+impl ObservabilityConfigurationSummary {
+    /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
+    pub fn observability_configuration_arn(&self) -> std::option::Option<&str> {
+        self.observability_configuration_arn.as_deref()
+    }
+    /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
+    pub fn observability_configuration_name(&self) -> std::option::Option<&str> {
+        self.observability_configuration_name.as_deref()
+    }
+    /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
+    pub fn observability_configuration_revision(&self) -> i32 {
+        self.observability_configuration_revision
+    }
+}
+impl std::fmt::Debug for ObservabilityConfigurationSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ObservabilityConfigurationSummary");
+        formatter.field(
+            "observability_configuration_arn",
+            &self.observability_configuration_arn,
+        );
+        formatter.field(
+            "observability_configuration_name",
+            &self.observability_configuration_name,
+        );
+        formatter.field(
+            "observability_configuration_revision",
+            &self.observability_configuration_revision,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ObservabilityConfigurationSummary`](crate::model::ObservabilityConfigurationSummary)
+pub mod observability_configuration_summary {
+    /// A builder for [`ObservabilityConfigurationSummary`](crate::model::ObservabilityConfigurationSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) observability_configuration_arn: std::option::Option<std::string::String>,
+        pub(crate) observability_configuration_name: std::option::Option<std::string::String>,
+        pub(crate) observability_configuration_revision: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
+        pub fn observability_configuration_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.observability_configuration_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
+        pub fn set_observability_configuration_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.observability_configuration_arn = input;
+            self
+        }
+        /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
+        pub fn observability_configuration_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.observability_configuration_name = Some(input.into());
+            self
+        }
+        /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
+        pub fn set_observability_configuration_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.observability_configuration_name = input;
+            self
+        }
+        /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
+        pub fn observability_configuration_revision(mut self, input: i32) -> Self {
+            self.observability_configuration_revision = Some(input);
+            self
+        }
+        /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
+        pub fn set_observability_configuration_revision(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.observability_configuration_revision = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ObservabilityConfigurationSummary`](crate::model::ObservabilityConfigurationSummary)
+        pub fn build(self) -> crate::model::ObservabilityConfigurationSummary {
+            crate::model::ObservabilityConfigurationSummary {
+                observability_configuration_arn: self.observability_configuration_arn,
+                observability_configuration_name: self.observability_configuration_name,
+                observability_configuration_revision: self
+                    .observability_configuration_revision
+                    .unwrap_or_default(),
+            }
+        }
+    }
+}
+impl ObservabilityConfigurationSummary {
+    /// Creates a new builder-style object to manufacture [`ObservabilityConfigurationSummary`](crate::model::ObservabilityConfigurationSummary)
+    pub fn builder() -> crate::model::observability_configuration_summary::Builder {
+        crate::model::observability_configuration_summary::Builder::default()
+    }
+}
+
 /// <p>Provides summary information about an App Runner connection resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3845,6 +4086,395 @@ impl AsRef<str> for CertificateValidationRecordStatus {
     }
 }
 
+/// <p>Describes an App Runner observability configuration resource. Multiple revisions of a configuration have the same <code>ObservabilityConfigurationName</code> and different <code>ObservabilityConfigurationRevision</code> values.</p>
+/// <p>The resource is designed to configure multiple features (currently one feature, tracing). This type contains optional members that describe the configuration of these features (currently one member, <code>TraceConfiguration</code>). If a feature member isn't specified, the feature isn't enabled.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ObservabilityConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
+    pub observability_configuration_arn: std::option::Option<std::string::String>,
+    /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
+    pub observability_configuration_name: std::option::Option<std::string::String>,
+    /// <p>The configuration of the tracing feature within this observability configuration. If not specified, tracing isn't enabled.</p>
+    pub trace_configuration: std::option::Option<crate::model::TraceConfiguration>,
+    /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
+    pub observability_configuration_revision: i32,
+    /// <p>It's set to <code>true</code> for the configuration with the highest <code>Revision</code> among all configurations that share the same <code>ObservabilityConfigurationName</code>. It's set to <code>false</code> otherwise.</p>
+    pub latest: bool,
+    /// <p>The current state of the observability configuration. If the status of a configuration revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed some time after they are deleted.</p>
+    pub status: std::option::Option<crate::model::ObservabilityConfigurationStatus>,
+    /// <p>The time when the observability configuration was created. It's in Unix time stamp format.</p>
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The time when the observability configuration was deleted. It's in Unix time stamp format.</p>
+    pub deleted_at: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ObservabilityConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
+    pub fn observability_configuration_arn(&self) -> std::option::Option<&str> {
+        self.observability_configuration_arn.as_deref()
+    }
+    /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
+    pub fn observability_configuration_name(&self) -> std::option::Option<&str> {
+        self.observability_configuration_name.as_deref()
+    }
+    /// <p>The configuration of the tracing feature within this observability configuration. If not specified, tracing isn't enabled.</p>
+    pub fn trace_configuration(&self) -> std::option::Option<&crate::model::TraceConfiguration> {
+        self.trace_configuration.as_ref()
+    }
+    /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
+    pub fn observability_configuration_revision(&self) -> i32 {
+        self.observability_configuration_revision
+    }
+    /// <p>It's set to <code>true</code> for the configuration with the highest <code>Revision</code> among all configurations that share the same <code>ObservabilityConfigurationName</code>. It's set to <code>false</code> otherwise.</p>
+    pub fn latest(&self) -> bool {
+        self.latest
+    }
+    /// <p>The current state of the observability configuration. If the status of a configuration revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed some time after they are deleted.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ObservabilityConfigurationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time when the observability configuration was created. It's in Unix time stamp format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when the observability configuration was deleted. It's in Unix time stamp format.</p>
+    pub fn deleted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.deleted_at.as_ref()
+    }
+}
+impl std::fmt::Debug for ObservabilityConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ObservabilityConfiguration");
+        formatter.field(
+            "observability_configuration_arn",
+            &self.observability_configuration_arn,
+        );
+        formatter.field(
+            "observability_configuration_name",
+            &self.observability_configuration_name,
+        );
+        formatter.field("trace_configuration", &self.trace_configuration);
+        formatter.field(
+            "observability_configuration_revision",
+            &self.observability_configuration_revision,
+        );
+        formatter.field("latest", &self.latest);
+        formatter.field("status", &self.status);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("deleted_at", &self.deleted_at);
+        formatter.finish()
+    }
+}
+/// See [`ObservabilityConfiguration`](crate::model::ObservabilityConfiguration)
+pub mod observability_configuration {
+    /// A builder for [`ObservabilityConfiguration`](crate::model::ObservabilityConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) observability_configuration_arn: std::option::Option<std::string::String>,
+        pub(crate) observability_configuration_name: std::option::Option<std::string::String>,
+        pub(crate) trace_configuration: std::option::Option<crate::model::TraceConfiguration>,
+        pub(crate) observability_configuration_revision: std::option::Option<i32>,
+        pub(crate) latest: std::option::Option<bool>,
+        pub(crate) status: std::option::Option<crate::model::ObservabilityConfigurationStatus>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) deleted_at: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
+        pub fn observability_configuration_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.observability_configuration_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
+        pub fn set_observability_configuration_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.observability_configuration_arn = input;
+            self
+        }
+        /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
+        pub fn observability_configuration_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.observability_configuration_name = Some(input.into());
+            self
+        }
+        /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
+        pub fn set_observability_configuration_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.observability_configuration_name = input;
+            self
+        }
+        /// <p>The configuration of the tracing feature within this observability configuration. If not specified, tracing isn't enabled.</p>
+        pub fn trace_configuration(mut self, input: crate::model::TraceConfiguration) -> Self {
+            self.trace_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration of the tracing feature within this observability configuration. If not specified, tracing isn't enabled.</p>
+        pub fn set_trace_configuration(
+            mut self,
+            input: std::option::Option<crate::model::TraceConfiguration>,
+        ) -> Self {
+            self.trace_configuration = input;
+            self
+        }
+        /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
+        pub fn observability_configuration_revision(mut self, input: i32) -> Self {
+            self.observability_configuration_revision = Some(input);
+            self
+        }
+        /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
+        pub fn set_observability_configuration_revision(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.observability_configuration_revision = input;
+            self
+        }
+        /// <p>It's set to <code>true</code> for the configuration with the highest <code>Revision</code> among all configurations that share the same <code>ObservabilityConfigurationName</code>. It's set to <code>false</code> otherwise.</p>
+        pub fn latest(mut self, input: bool) -> Self {
+            self.latest = Some(input);
+            self
+        }
+        /// <p>It's set to <code>true</code> for the configuration with the highest <code>Revision</code> among all configurations that share the same <code>ObservabilityConfigurationName</code>. It's set to <code>false</code> otherwise.</p>
+        pub fn set_latest(mut self, input: std::option::Option<bool>) -> Self {
+            self.latest = input;
+            self
+        }
+        /// <p>The current state of the observability configuration. If the status of a configuration revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed some time after they are deleted.</p>
+        pub fn status(mut self, input: crate::model::ObservabilityConfigurationStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The current state of the observability configuration. If the status of a configuration revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed some time after they are deleted.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ObservabilityConfigurationStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The time when the observability configuration was created. It's in Unix time stamp format.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>The time when the observability configuration was created. It's in Unix time stamp format.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>The time when the observability configuration was deleted. It's in Unix time stamp format.</p>
+        pub fn deleted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.deleted_at = Some(input);
+            self
+        }
+        /// <p>The time when the observability configuration was deleted. It's in Unix time stamp format.</p>
+        pub fn set_deleted_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.deleted_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ObservabilityConfiguration`](crate::model::ObservabilityConfiguration)
+        pub fn build(self) -> crate::model::ObservabilityConfiguration {
+            crate::model::ObservabilityConfiguration {
+                observability_configuration_arn: self.observability_configuration_arn,
+                observability_configuration_name: self.observability_configuration_name,
+                trace_configuration: self.trace_configuration,
+                observability_configuration_revision: self
+                    .observability_configuration_revision
+                    .unwrap_or_default(),
+                latest: self.latest.unwrap_or_default(),
+                status: self.status,
+                created_at: self.created_at,
+                deleted_at: self.deleted_at,
+            }
+        }
+    }
+}
+impl ObservabilityConfiguration {
+    /// Creates a new builder-style object to manufacture [`ObservabilityConfiguration`](crate::model::ObservabilityConfiguration)
+    pub fn builder() -> crate::model::observability_configuration::Builder {
+        crate::model::observability_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ObservabilityConfigurationStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Inactive,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ObservabilityConfigurationStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => ObservabilityConfigurationStatus::Active,
+            "INACTIVE" => ObservabilityConfigurationStatus::Inactive,
+            other => ObservabilityConfigurationStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ObservabilityConfigurationStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ObservabilityConfigurationStatus::from(s))
+    }
+}
+impl ObservabilityConfigurationStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ObservabilityConfigurationStatus::Active => "ACTIVE",
+            ObservabilityConfigurationStatus::Inactive => "INACTIVE",
+            ObservabilityConfigurationStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "INACTIVE"]
+    }
+}
+impl AsRef<str> for ObservabilityConfigurationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes the configuration of the tracing feature within an App Runner observability configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TraceConfiguration {
+    /// <p>The implementation provider chosen for tracing App Runner services.</p>
+    pub vendor: std::option::Option<crate::model::TracingVendor>,
+}
+impl TraceConfiguration {
+    /// <p>The implementation provider chosen for tracing App Runner services.</p>
+    pub fn vendor(&self) -> std::option::Option<&crate::model::TracingVendor> {
+        self.vendor.as_ref()
+    }
+}
+impl std::fmt::Debug for TraceConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TraceConfiguration");
+        formatter.field("vendor", &self.vendor);
+        formatter.finish()
+    }
+}
+/// See [`TraceConfiguration`](crate::model::TraceConfiguration)
+pub mod trace_configuration {
+    /// A builder for [`TraceConfiguration`](crate::model::TraceConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vendor: std::option::Option<crate::model::TracingVendor>,
+    }
+    impl Builder {
+        /// <p>The implementation provider chosen for tracing App Runner services.</p>
+        pub fn vendor(mut self, input: crate::model::TracingVendor) -> Self {
+            self.vendor = Some(input);
+            self
+        }
+        /// <p>The implementation provider chosen for tracing App Runner services.</p>
+        pub fn set_vendor(
+            mut self,
+            input: std::option::Option<crate::model::TracingVendor>,
+        ) -> Self {
+            self.vendor = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TraceConfiguration`](crate::model::TraceConfiguration)
+        pub fn build(self) -> crate::model::TraceConfiguration {
+            crate::model::TraceConfiguration {
+                vendor: self.vendor,
+            }
+        }
+    }
+}
+impl TraceConfiguration {
+    /// Creates a new builder-style object to manufacture [`TraceConfiguration`](crate::model::TraceConfiguration)
+    pub fn builder() -> crate::model::trace_configuration::Builder {
+        crate::model::trace_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TracingVendor {
+    #[allow(missing_docs)] // documentation missing in model
+    Awsxray,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TracingVendor {
+    fn from(s: &str) -> Self {
+        match s {
+            "AWSXRAY" => TracingVendor::Awsxray,
+            other => TracingVendor::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TracingVendor {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TracingVendor::from(s))
+    }
+}
+impl TracingVendor {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TracingVendor::Awsxray => "AWSXRAY",
+            TracingVendor::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AWSXRAY"]
+    }
+}
+impl AsRef<str> for TracingVendor {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Describes an App Runner automatic scaling configuration resource.</p>
 /// <p>A higher <code>MinSize</code> increases the spread of your App Runner service over more Availability Zones in the Amazon Web Services Region. The tradeoff is a higher minimal cost.</p>
 /// <p>A lower <code>MaxSize</code> controls your cost. The tradeoff is lower responsiveness during peak demand.</p>
@@ -3858,7 +4488,7 @@ pub struct AutoScalingConfiguration {
     pub auto_scaling_configuration_name: std::option::Option<std::string::String>,
     /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>AutoScalingConfigurationName</code>.</p>
     pub auto_scaling_configuration_revision: i32,
-    /// <p>It's set to <code>true</code> for the configuration with the highest <code>Revision</code> among all configurations that share the same <code>Name</code>. It's set to <code>false</code> otherwise.</p>
+    /// <p>It's set to <code>true</code> for the configuration with the highest <code>Revision</code> among all configurations that share the same <code>AutoScalingConfigurationName</code>. It's set to <code>false</code> otherwise.</p>
     pub latest: bool,
     /// <p>The current state of the auto scaling configuration. If the status of a configuration revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed some time after they are deleted.</p>
     pub status: std::option::Option<crate::model::AutoScalingConfigurationStatus>,
@@ -3887,7 +4517,7 @@ impl AutoScalingConfiguration {
     pub fn auto_scaling_configuration_revision(&self) -> i32 {
         self.auto_scaling_configuration_revision
     }
-    /// <p>It's set to <code>true</code> for the configuration with the highest <code>Revision</code> among all configurations that share the same <code>Name</code>. It's set to <code>false</code> otherwise.</p>
+    /// <p>It's set to <code>true</code> for the configuration with the highest <code>Revision</code> among all configurations that share the same <code>AutoScalingConfigurationName</code>. It's set to <code>false</code> otherwise.</p>
     pub fn latest(&self) -> bool {
         self.latest
     }
@@ -4005,12 +4635,12 @@ pub mod auto_scaling_configuration {
             self.auto_scaling_configuration_revision = input;
             self
         }
-        /// <p>It's set to <code>true</code> for the configuration with the highest <code>Revision</code> among all configurations that share the same <code>Name</code>. It's set to <code>false</code> otherwise.</p>
+        /// <p>It's set to <code>true</code> for the configuration with the highest <code>Revision</code> among all configurations that share the same <code>AutoScalingConfigurationName</code>. It's set to <code>false</code> otherwise.</p>
         pub fn latest(mut self, input: bool) -> Self {
             self.latest = Some(input);
             self
         }
-        /// <p>It's set to <code>true</code> for the configuration with the highest <code>Revision</code> among all configurations that share the same <code>Name</code>. It's set to <code>false</code> otherwise.</p>
+        /// <p>It's set to <code>true</code> for the configuration with the highest <code>Revision</code> among all configurations that share the same <code>AutoScalingConfigurationName</code>. It's set to <code>false</code> otherwise.</p>
         pub fn set_latest(mut self, input: std::option::Option<bool>) -> Self {
             self.latest = input;
             self

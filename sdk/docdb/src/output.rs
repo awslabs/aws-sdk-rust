@@ -2311,13 +2311,13 @@ impl DescribeDbClusterParameterGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificatesOutput {
-    /// <p>A list of certificates for this account.</p>
+    /// <p>A list of certificates for this Amazon Web Services account.</p>
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
     /// <p>An optional pagination token provided if the number of records retrieved is greater than <code>MaxRecords</code>. If this parameter is specified, the marker specifies the next record in the list. Including the value of <code>Marker</code> in the next call to <code>DescribeCertificates</code> results in the next page of certificates.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeCertificatesOutput {
-    /// <p>A list of certificates for this account.</p>
+    /// <p>A list of certificates for this Amazon Web Services account.</p>
     pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
         self.certificates.as_deref()
     }
@@ -2348,14 +2348,14 @@ pub mod describe_certificates_output {
         ///
         /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
         ///
-        /// <p>A list of certificates for this account.</p>
+        /// <p>A list of certificates for this Amazon Web Services account.</p>
         pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
             v.push(input);
             self.certificates = Some(v);
             self
         }
-        /// <p>A list of certificates for this account.</p>
+        /// <p>A list of certificates for this Amazon Web Services account.</p>
         pub fn set_certificates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Certificate>>,

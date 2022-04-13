@@ -522,7 +522,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`transcription_job_name(impl Into<String>)`](crate::client::fluent_builders::StartTranscriptionJob::transcription_job_name) / [`set_transcription_job_name(Option<String>)`](crate::client::fluent_builders::StartTranscriptionJob::set_transcription_job_name): <p>The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name must also be unique within an Amazon Web Services account. If you try to create a transcription job with the same name as a previous transcription job, you get a <code>ConflictException</code> error.</p>
-    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::StartTranscriptionJob::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::StartTranscriptionJob::set_language_code): <p>The language code for the language used in the input media file.</p>  <p>To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::StartTranscriptionJob::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::StartTranscriptionJob::set_language_code): <p>The language code for the language used in the input media file. You must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request.</p>  <p>To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate of 16,000 Hz or higher.</p>
     ///   - [`media_sample_rate_hertz(i32)`](crate::client::fluent_builders::StartTranscriptionJob::media_sample_rate_hertz) / [`set_media_sample_rate_hertz(Option<i32>)`](crate::client::fluent_builders::StartTranscriptionJob::set_media_sample_rate_hertz): <p>The sample rate, in Hertz, of the audio track in the input media file. </p>  <p>If you do not specify the media sample rate, Amazon Transcribe determines the sample rate. If you specify the sample rate, it must match the sample rate detected by Amazon Transcribe. In most cases, you should leave the <code>MediaSampleRateHertz</code> field blank and let Amazon Transcribe determine the sample rate.</p>
     ///   - [`media_format(MediaFormat)`](crate::client::fluent_builders::StartTranscriptionJob::media_format) / [`set_media_format(Option<MediaFormat>)`](crate::client::fluent_builders::StartTranscriptionJob::set_media_format): <p>The format of the input media file.</p>
     ///   - [`media(Media)`](crate::client::fluent_builders::StartTranscriptionJob::media) / [`set_media(Option<Media>)`](crate::client::fluent_builders::StartTranscriptionJob::set_media): <p>An object that describes the input media for a transcription job.</p>
@@ -534,13 +534,13 @@ impl Client {
     ///   - [`model_settings(ModelSettings)`](crate::client::fluent_builders::StartTranscriptionJob::model_settings) / [`set_model_settings(Option<ModelSettings>)`](crate::client::fluent_builders::StartTranscriptionJob::set_model_settings): <p>Choose the custom language model you use for your transcription job in this parameter.</p>
     ///   - [`job_execution_settings(JobExecutionSettings)`](crate::client::fluent_builders::StartTranscriptionJob::job_execution_settings) / [`set_job_execution_settings(Option<JobExecutionSettings>)`](crate::client::fluent_builders::StartTranscriptionJob::set_job_execution_settings): <p>Provides information about how a transcription job is executed. Use this field to indicate that the job can be queued for deferred execution if the concurrency limit is reached and there are no slots available to immediately run the job.</p>
     ///   - [`content_redaction(ContentRedaction)`](crate::client::fluent_builders::StartTranscriptionJob::content_redaction) / [`set_content_redaction(Option<ContentRedaction>)`](crate::client::fluent_builders::StartTranscriptionJob::set_content_redaction): <p>An object that contains the request parameters for content redaction.</p>
-    ///   - [`identify_language(bool)`](crate::client::fluent_builders::StartTranscriptionJob::identify_language) / [`set_identify_language(Option<bool>)`](crate::client::fluent_builders::StartTranscriptionJob::set_identify_language): <p>Set this field to <code>true</code> to enable automatic language identification. Automatic language identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value for a <code>LanguageCode</code>.</p>
+    ///   - [`identify_language(bool)`](crate::client::fluent_builders::StartTranscriptionJob::identify_language) / [`set_identify_language(Option<bool>)`](crate::client::fluent_builders::StartTranscriptionJob::set_identify_language): <p>Set this field to <code>true</code> to enable automatic language identification. Automatic language identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value for a <code>LanguageCode</code>.</p>  <p>You must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request.</p>
     ///   - [`language_options(Vec<LanguageCode>)`](crate::client::fluent_builders::StartTranscriptionJob::language_options) / [`set_language_options(Option<Vec<LanguageCode>>)`](crate::client::fluent_builders::StartTranscriptionJob::set_language_options): <p>An object containing a list of languages that might be present in your collection of audio files. Automatic language identification chooses a language that best matches the source audio from that list.</p>  <p>To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate of 16,000 Hz or higher.</p>
     ///   - [`subtitles(Subtitles)`](crate::client::fluent_builders::StartTranscriptionJob::subtitles) / [`set_subtitles(Option<Subtitles>)`](crate::client::fluent_builders::StartTranscriptionJob::set_subtitles): <p>Add subtitles to your batch transcription job.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::StartTranscriptionJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::StartTranscriptionJob::set_tags): <p>Add tags to an Amazon Transcribe transcription job.</p>
     ///   - [`language_id_settings(HashMap<LanguageCode, LanguageIdSettings>)`](crate::client::fluent_builders::StartTranscriptionJob::language_id_settings) / [`set_language_id_settings(Option<HashMap<LanguageCode, LanguageIdSettings>>)`](crate::client::fluent_builders::StartTranscriptionJob::set_language_id_settings): <p>The language identification settings associated with your transcription job. These settings include <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
     /// - On success, responds with [`StartTranscriptionJobOutput`](crate::output::StartTranscriptionJobOutput) with field(s):
-    ///   - [`transcription_job(Option<TranscriptionJob>)`](crate::output::StartTranscriptionJobOutput::transcription_job): <p>An object containing details of the asynchronous transcription job.</p>
+    ///   - [`transcription_job(Option<TranscriptionJob>)`](crate::output::StartTranscriptionJobOutput::transcription_job): <p>Provides information about your asynchronous transcription job.</p>
     /// - On failure, responds with [`SdkError<StartTranscriptionJobError>`](crate::error::StartTranscriptionJobError)
     pub fn start_transcription_job(&self) -> fluent_builders::StartTranscriptionJob {
         fluent_builders::StartTranscriptionJob::new(self.handle.clone())
@@ -3354,13 +3354,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_transcription_job_name(input);
             self
         }
-        /// <p>The language code for the language used in the input media file.</p>
+        /// <p>The language code for the language used in the input media file. You must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request.</p>
         /// <p>To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate of 16,000 Hz or higher.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language code for the language used in the input media file.</p>
+        /// <p>The language code for the language used in the input media file. You must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request.</p>
         /// <p>To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate of 16,000 Hz or higher.</p>
         pub fn set_language_code(
             mut self,
@@ -3552,11 +3552,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set this field to <code>true</code> to enable automatic language identification. Automatic language identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value for a <code>LanguageCode</code>.</p>
+        /// <p>You must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request.</p>
         pub fn identify_language(mut self, input: bool) -> Self {
             self.inner = self.inner.identify_language(input);
             self
         }
         /// <p>Set this field to <code>true</code> to enable automatic language identification. Automatic language identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value for a <code>LanguageCode</code>.</p>
+        /// <p>You must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request.</p>
         pub fn set_identify_language(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_identify_language(input);
             self

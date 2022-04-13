@@ -977,6 +977,58 @@ impl StopTriggerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopSessionOutput {
+    /// <p>Returns the Id of the stopped session.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl StopSessionOutput {
+    /// <p>Returns the Id of the stopped session.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for StopSessionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopSessionOutput");
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+/// See [`StopSessionOutput`](crate::output::StopSessionOutput)
+pub mod stop_session_output {
+    /// A builder for [`StopSessionOutput`](crate::output::StopSessionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Returns the Id of the stopped session.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>Returns the Id of the stopped session.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopSessionOutput`](crate::output::StopSessionOutput)
+        pub fn build(self) -> crate::output::StopSessionOutput {
+            crate::output::StopSessionOutput { id: self.id }
+        }
+    }
+}
+impl StopSessionOutput {
+    /// Creates a new builder-style object to manufacture [`StopSessionOutput`](crate::output::StopSessionOutput)
+    pub fn builder() -> crate::output::stop_session_output::Builder {
+        crate::output::stop_session_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopCrawlerScheduleOutput {}
 impl std::fmt::Debug for StopCrawlerScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1603,6 +1655,60 @@ impl SearchTablesOutput {
     /// Creates a new builder-style object to manufacture [`SearchTablesOutput`](crate::output::SearchTablesOutput)
     pub fn builder() -> crate::output::search_tables_output::Builder {
         crate::output::search_tables_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RunStatementOutput {
+    /// <p>Returns the Id of the statement that was run.</p>
+    pub id: i32,
+}
+impl RunStatementOutput {
+    /// <p>Returns the Id of the statement that was run.</p>
+    pub fn id(&self) -> i32 {
+        self.id
+    }
+}
+impl std::fmt::Debug for RunStatementOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RunStatementOutput");
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+/// See [`RunStatementOutput`](crate::output::RunStatementOutput)
+pub mod run_statement_output {
+    /// A builder for [`RunStatementOutput`](crate::output::RunStatementOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Returns the Id of the statement that was run.</p>
+        pub fn id(mut self, input: i32) -> Self {
+            self.id = Some(input);
+            self
+        }
+        /// <p>Returns the Id of the statement that was run.</p>
+        pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RunStatementOutput`](crate::output::RunStatementOutput)
+        pub fn build(self) -> crate::output::RunStatementOutput {
+            crate::output::RunStatementOutput {
+                id: self.id.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl RunStatementOutput {
+    /// Creates a new builder-style object to manufacture [`RunStatementOutput`](crate::output::RunStatementOutput)
+    pub fn builder() -> crate::output::run_statement_output::Builder {
+        crate::output::run_statement_output::Builder::default()
     }
 }
 
@@ -2628,6 +2734,198 @@ impl ListTriggersOutput {
     /// Creates a new builder-style object to manufacture [`ListTriggersOutput`](crate::output::ListTriggersOutput)
     pub fn builder() -> crate::output::list_triggers_output::Builder {
         crate::output::list_triggers_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListStatementsOutput {
+    /// <p>Returns the list of statements.</p>
+    pub statements: std::option::Option<std::vec::Vec<crate::model::Statement>>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListStatementsOutput {
+    /// <p>Returns the list of statements.</p>
+    pub fn statements(&self) -> std::option::Option<&[crate::model::Statement]> {
+        self.statements.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListStatementsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListStatementsOutput");
+        formatter.field("statements", &self.statements);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListStatementsOutput`](crate::output::ListStatementsOutput)
+pub mod list_statements_output {
+    /// A builder for [`ListStatementsOutput`](crate::output::ListStatementsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) statements: std::option::Option<std::vec::Vec<crate::model::Statement>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `statements`.
+        ///
+        /// To override the contents of this collection use [`set_statements`](Self::set_statements).
+        ///
+        /// <p>Returns the list of statements.</p>
+        pub fn statements(mut self, input: crate::model::Statement) -> Self {
+            let mut v = self.statements.unwrap_or_default();
+            v.push(input);
+            self.statements = Some(v);
+            self
+        }
+        /// <p>Returns the list of statements.</p>
+        pub fn set_statements(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Statement>>,
+        ) -> Self {
+            self.statements = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListStatementsOutput`](crate::output::ListStatementsOutput)
+        pub fn build(self) -> crate::output::ListStatementsOutput {
+            crate::output::ListStatementsOutput {
+                statements: self.statements,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListStatementsOutput {
+    /// Creates a new builder-style object to manufacture [`ListStatementsOutput`](crate::output::ListStatementsOutput)
+    pub fn builder() -> crate::output::list_statements_output::Builder {
+        crate::output::list_statements_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListSessionsOutput {
+    /// <p>Returns the Id of the session. </p>
+    pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Returns the session object. </p>
+    pub sessions: std::option::Option<std::vec::Vec<crate::model::Session>>,
+    /// <p>The token for the next set of results, or null if there are no more result. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSessionsOutput {
+    /// <p>Returns the Id of the session. </p>
+    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ids.as_deref()
+    }
+    /// <p>Returns the session object. </p>
+    pub fn sessions(&self) -> std::option::Option<&[crate::model::Session]> {
+        self.sessions.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more result. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListSessionsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListSessionsOutput");
+        formatter.field("ids", &self.ids);
+        formatter.field("sessions", &self.sessions);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListSessionsOutput`](crate::output::ListSessionsOutput)
+pub mod list_sessions_output {
+    /// A builder for [`ListSessionsOutput`](crate::output::ListSessionsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) sessions: std::option::Option<std::vec::Vec<crate::model::Session>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `ids`.
+        ///
+        /// To override the contents of this collection use [`set_ids`](Self::set_ids).
+        ///
+        /// <p>Returns the Id of the session. </p>
+        pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.ids.unwrap_or_default();
+            v.push(input.into());
+            self.ids = Some(v);
+            self
+        }
+        /// <p>Returns the Id of the session. </p>
+        pub fn set_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.ids = input;
+            self
+        }
+        /// Appends an item to `sessions`.
+        ///
+        /// To override the contents of this collection use [`set_sessions`](Self::set_sessions).
+        ///
+        /// <p>Returns the session object. </p>
+        pub fn sessions(mut self, input: crate::model::Session) -> Self {
+            let mut v = self.sessions.unwrap_or_default();
+            v.push(input);
+            self.sessions = Some(v);
+            self
+        }
+        /// <p>Returns the session object. </p>
+        pub fn set_sessions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Session>>,
+        ) -> Self {
+            self.sessions = input;
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no more result. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no more result. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSessionsOutput`](crate::output::ListSessionsOutput)
+        pub fn build(self) -> crate::output::ListSessionsOutput {
+            crate::output::ListSessionsOutput {
+                ids: self.ids,
+                sessions: self.sessions,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListSessionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSessionsOutput`](crate::output::ListSessionsOutput)
+    pub fn builder() -> crate::output::list_sessions_output::Builder {
+        crate::output::list_sessions_output::Builder::default()
     }
 }
 
@@ -4533,6 +4831,117 @@ impl GetTableOutput {
     /// Creates a new builder-style object to manufacture [`GetTableOutput`](crate::output::GetTableOutput)
     pub fn builder() -> crate::output::get_table_output::Builder {
         crate::output::get_table_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetStatementOutput {
+    /// <p>Returns the statement.</p>
+    pub statement: std::option::Option<crate::model::Statement>,
+}
+impl GetStatementOutput {
+    /// <p>Returns the statement.</p>
+    pub fn statement(&self) -> std::option::Option<&crate::model::Statement> {
+        self.statement.as_ref()
+    }
+}
+impl std::fmt::Debug for GetStatementOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetStatementOutput");
+        formatter.field("statement", &self.statement);
+        formatter.finish()
+    }
+}
+/// See [`GetStatementOutput`](crate::output::GetStatementOutput)
+pub mod get_statement_output {
+    /// A builder for [`GetStatementOutput`](crate::output::GetStatementOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) statement: std::option::Option<crate::model::Statement>,
+    }
+    impl Builder {
+        /// <p>Returns the statement.</p>
+        pub fn statement(mut self, input: crate::model::Statement) -> Self {
+            self.statement = Some(input);
+            self
+        }
+        /// <p>Returns the statement.</p>
+        pub fn set_statement(
+            mut self,
+            input: std::option::Option<crate::model::Statement>,
+        ) -> Self {
+            self.statement = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetStatementOutput`](crate::output::GetStatementOutput)
+        pub fn build(self) -> crate::output::GetStatementOutput {
+            crate::output::GetStatementOutput {
+                statement: self.statement,
+            }
+        }
+    }
+}
+impl GetStatementOutput {
+    /// Creates a new builder-style object to manufacture [`GetStatementOutput`](crate::output::GetStatementOutput)
+    pub fn builder() -> crate::output::get_statement_output::Builder {
+        crate::output::get_statement_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetSessionOutput {
+    /// <p>The session object is returned in the response.</p>
+    pub session: std::option::Option<crate::model::Session>,
+}
+impl GetSessionOutput {
+    /// <p>The session object is returned in the response.</p>
+    pub fn session(&self) -> std::option::Option<&crate::model::Session> {
+        self.session.as_ref()
+    }
+}
+impl std::fmt::Debug for GetSessionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetSessionOutput");
+        formatter.field("session", &self.session);
+        formatter.finish()
+    }
+}
+/// See [`GetSessionOutput`](crate::output::GetSessionOutput)
+pub mod get_session_output {
+    /// A builder for [`GetSessionOutput`](crate::output::GetSessionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session: std::option::Option<crate::model::Session>,
+    }
+    impl Builder {
+        /// <p>The session object is returned in the response.</p>
+        pub fn session(mut self, input: crate::model::Session) -> Self {
+            self.session = Some(input);
+            self
+        }
+        /// <p>The session object is returned in the response.</p>
+        pub fn set_session(mut self, input: std::option::Option<crate::model::Session>) -> Self {
+            self.session = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetSessionOutput`](crate::output::GetSessionOutput)
+        pub fn build(self) -> crate::output::GetSessionOutput {
+            crate::output::GetSessionOutput {
+                session: self.session,
+            }
+        }
+    }
+}
+impl GetSessionOutput {
+    /// Creates a new builder-style object to manufacture [`GetSessionOutput`](crate::output::GetSessionOutput)
+    pub fn builder() -> crate::output::get_session_output::Builder {
+        crate::output::get_session_output::Builder::default()
     }
 }
 
@@ -8850,6 +9259,58 @@ impl DeleteTableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteSessionOutput {
+    /// <p>Returns the ID of the deleted session.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl DeleteSessionOutput {
+    /// <p>Returns the ID of the deleted session.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteSessionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteSessionOutput");
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+/// See [`DeleteSessionOutput`](crate::output::DeleteSessionOutput)
+pub mod delete_session_output {
+    /// A builder for [`DeleteSessionOutput`](crate::output::DeleteSessionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Returns the ID of the deleted session.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>Returns the ID of the deleted session.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteSessionOutput`](crate::output::DeleteSessionOutput)
+        pub fn build(self) -> crate::output::DeleteSessionOutput {
+            crate::output::DeleteSessionOutput { id: self.id }
+        }
+    }
+}
+impl DeleteSessionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSessionOutput`](crate::output::DeleteSessionOutput)
+    pub fn builder() -> crate::output::delete_session_output::Builder {
+        crate::output::delete_session_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSecurityConfigurationOutput {}
 impl std::fmt::Debug for DeleteSecurityConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9761,6 +10222,60 @@ impl CreateTableOutput {
     /// Creates a new builder-style object to manufacture [`CreateTableOutput`](crate::output::CreateTableOutput)
     pub fn builder() -> crate::output::create_table_output::Builder {
         crate::output::create_table_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateSessionOutput {
+    /// <p>Returns the session object in the response.</p>
+    pub session: std::option::Option<crate::model::Session>,
+}
+impl CreateSessionOutput {
+    /// <p>Returns the session object in the response.</p>
+    pub fn session(&self) -> std::option::Option<&crate::model::Session> {
+        self.session.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateSessionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateSessionOutput");
+        formatter.field("session", &self.session);
+        formatter.finish()
+    }
+}
+/// See [`CreateSessionOutput`](crate::output::CreateSessionOutput)
+pub mod create_session_output {
+    /// A builder for [`CreateSessionOutput`](crate::output::CreateSessionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session: std::option::Option<crate::model::Session>,
+    }
+    impl Builder {
+        /// <p>Returns the session object in the response.</p>
+        pub fn session(mut self, input: crate::model::Session) -> Self {
+            self.session = Some(input);
+            self
+        }
+        /// <p>Returns the session object in the response.</p>
+        pub fn set_session(mut self, input: std::option::Option<crate::model::Session>) -> Self {
+            self.session = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateSessionOutput`](crate::output::CreateSessionOutput)
+        pub fn build(self) -> crate::output::CreateSessionOutput {
+            crate::output::CreateSessionOutput {
+                session: self.session,
+            }
+        }
+    }
+}
+impl CreateSessionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSessionOutput`](crate::output::CreateSessionOutput)
+    pub fn builder() -> crate::output::create_session_output::Builder {
+        crate::output::create_session_output::Builder::default()
     }
 }
 
@@ -11284,6 +11799,36 @@ impl CheckSchemaVersionValidityOutput {
     /// Creates a new builder-style object to manufacture [`CheckSchemaVersionValidityOutput`](crate::output::CheckSchemaVersionValidityOutput)
     pub fn builder() -> crate::output::check_schema_version_validity_output::Builder {
         crate::output::check_schema_version_validity_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CancelStatementOutput {}
+impl std::fmt::Debug for CancelStatementOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CancelStatementOutput");
+        formatter.finish()
+    }
+}
+/// See [`CancelStatementOutput`](crate::output::CancelStatementOutput)
+pub mod cancel_statement_output {
+    /// A builder for [`CancelStatementOutput`](crate::output::CancelStatementOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`CancelStatementOutput`](crate::output::CancelStatementOutput)
+        pub fn build(self) -> crate::output::CancelStatementOutput {
+            crate::output::CancelStatementOutput {}
+        }
+    }
+}
+impl CancelStatementOutput {
+    /// Creates a new builder-style object to manufacture [`CancelStatementOutput`](crate::output::CancelStatementOutput)
+    pub fn builder() -> crate::output::cancel_statement_output::Builder {
+        crate::output::cancel_statement_output::Builder::default()
     }
 }
 

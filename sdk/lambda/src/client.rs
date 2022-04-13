@@ -121,6 +121,7 @@ impl Client {
     ///   - [`qualifier(impl Into<String>)`](crate::client::fluent_builders::AddPermission::qualifier) / [`set_qualifier(Option<String>)`](crate::client::fluent_builders::AddPermission::set_qualifier): <p>Specify a version or alias to add permissions to a published version of the function.</p>
     ///   - [`revision_id(impl Into<String>)`](crate::client::fluent_builders::AddPermission::revision_id) / [`set_revision_id(Option<String>)`](crate::client::fluent_builders::AddPermission::set_revision_id): <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     ///   - [`principal_org_id(impl Into<String>)`](crate::client::fluent_builders::AddPermission::principal_org_id) / [`set_principal_org_id(Option<String>)`](crate::client::fluent_builders::AddPermission::set_principal_org_id): <p>The identifier for your organization in Organizations. Use this to grant permissions to all the Amazon Web Services accounts under this organization.</p>
+    ///   - [`function_url_auth_type(FunctionUrlAuthType)`](crate::client::fluent_builders::AddPermission::function_url_auth_type) / [`set_function_url_auth_type(Option<FunctionUrlAuthType>)`](crate::client::fluent_builders::AddPermission::set_function_url_auth_type): <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
     /// - On success, responds with [`AddPermissionOutput`](crate::output::AddPermissionOutput) with field(s):
     ///   - [`statement(Option<String>)`](crate::output::AddPermissionOutput::statement): <p>The permission statement that's added to the function policy.</p>
     /// - On failure, responds with [`SdkError<AddPermissionError>`](crate::error::AddPermissionError)
@@ -232,6 +233,7 @@ impl Client {
     ///   - [`image_config(ImageConfig)`](crate::client::fluent_builders::CreateFunction::image_config) / [`set_image_config(Option<ImageConfig>)`](crate::client::fluent_builders::CreateFunction::set_image_config): <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration values</a> that override the values in the container image Dockerfile.</p>
     ///   - [`code_signing_config_arn(impl Into<String>)`](crate::client::fluent_builders::CreateFunction::code_signing_config_arn) / [`set_code_signing_config_arn(Option<String>)`](crate::client::fluent_builders::CreateFunction::set_code_signing_config_arn): <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration includes a set of signing profiles, which define the trusted publishers for this function.</p>
     ///   - [`architectures(Vec<Architecture>)`](crate::client::fluent_builders::CreateFunction::architectures) / [`set_architectures(Option<Vec<Architecture>>)`](crate::client::fluent_builders::CreateFunction::set_architectures): <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
+    ///   - [`ephemeral_storage(EphemeralStorage)`](crate::client::fluent_builders::CreateFunction::ephemeral_storage) / [`set_ephemeral_storage(Option<EphemeralStorage>)`](crate::client::fluent_builders::CreateFunction::set_ephemeral_storage): <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
     /// - On success, responds with [`CreateFunctionOutput`](crate::output::CreateFunctionOutput) with field(s):
     ///   - [`function_name(Option<String>)`](crate::output::CreateFunctionOutput::function_name): <p>The name of the function.</p>
     ///   - [`function_arn(Option<String>)`](crate::output::CreateFunctionOutput::function_arn): <p>The function's Amazon Resource Name (ARN).</p>
@@ -265,9 +267,27 @@ impl Client {
     ///   - [`signing_profile_version_arn(Option<String>)`](crate::output::CreateFunctionOutput::signing_profile_version_arn): <p>The ARN of the signing profile version.</p>
     ///   - [`signing_job_arn(Option<String>)`](crate::output::CreateFunctionOutput::signing_job_arn): <p>The ARN of the signing job.</p>
     ///   - [`architectures(Option<Vec<Architecture>>)`](crate::output::CreateFunctionOutput::architectures): <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
+    ///   - [`ephemeral_storage(Option<EphemeralStorage>)`](crate::output::CreateFunctionOutput::ephemeral_storage): <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
     /// - On failure, responds with [`SdkError<CreateFunctionError>`](crate::error::CreateFunctionError)
     pub fn create_function(&self) -> fluent_builders::CreateFunction {
         fluent_builders::CreateFunction::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateFunctionUrlConfig`](crate::client::fluent_builders::CreateFunctionUrlConfig) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`function_name(impl Into<String>)`](crate::client::fluent_builders::CreateFunctionUrlConfig::function_name) / [`set_function_name(Option<String>)`](crate::client::fluent_builders::CreateFunctionUrlConfig::set_function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`qualifier(impl Into<String>)`](crate::client::fluent_builders::CreateFunctionUrlConfig::qualifier) / [`set_qualifier(Option<String>)`](crate::client::fluent_builders::CreateFunctionUrlConfig::set_qualifier): <p>The alias name.</p>
+    ///   - [`auth_type(FunctionUrlAuthType)`](crate::client::fluent_builders::CreateFunctionUrlConfig::auth_type) / [`set_auth_type(Option<FunctionUrlAuthType>)`](crate::client::fluent_builders::CreateFunctionUrlConfig::set_auth_type): <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+    ///   - [`cors(Cors)`](crate::client::fluent_builders::CreateFunctionUrlConfig::cors) / [`set_cors(Option<Cors>)`](crate::client::fluent_builders::CreateFunctionUrlConfig::set_cors): <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+    /// - On success, responds with [`CreateFunctionUrlConfigOutput`](crate::output::CreateFunctionUrlConfigOutput) with field(s):
+    ///   - [`function_url(Option<String>)`](crate::output::CreateFunctionUrlConfigOutput::function_url): <p>The HTTP URL endpoint for your function.</p>
+    ///   - [`function_arn(Option<String>)`](crate::output::CreateFunctionUrlConfigOutput::function_arn): <p>The Amazon Resource Name (ARN) of your function.</p>
+    ///   - [`auth_type(Option<FunctionUrlAuthType>)`](crate::output::CreateFunctionUrlConfigOutput::auth_type): <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+    ///   - [`cors(Option<Cors>)`](crate::output::CreateFunctionUrlConfigOutput::cors): <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+    ///   - [`creation_time(Option<String>)`](crate::output::CreateFunctionUrlConfigOutput::creation_time): <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    /// - On failure, responds with [`SdkError<CreateFunctionUrlConfigError>`](crate::error::CreateFunctionUrlConfigError)
+    pub fn create_function_url_config(&self) -> fluent_builders::CreateFunctionUrlConfig {
+        fluent_builders::CreateFunctionUrlConfig::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteAlias`](crate::client::fluent_builders::DeleteAlias) operation.
     ///
@@ -367,6 +387,17 @@ impl Client {
         &self,
     ) -> fluent_builders::DeleteFunctionEventInvokeConfig {
         fluent_builders::DeleteFunctionEventInvokeConfig::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteFunctionUrlConfig`](crate::client::fluent_builders::DeleteFunctionUrlConfig) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`function_name(impl Into<String>)`](crate::client::fluent_builders::DeleteFunctionUrlConfig::function_name) / [`set_function_name(Option<String>)`](crate::client::fluent_builders::DeleteFunctionUrlConfig::set_function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`qualifier(impl Into<String>)`](crate::client::fluent_builders::DeleteFunctionUrlConfig::qualifier) / [`set_qualifier(Option<String>)`](crate::client::fluent_builders::DeleteFunctionUrlConfig::set_qualifier): <p>The alias name.</p>
+    /// - On success, responds with [`DeleteFunctionUrlConfigOutput`](crate::output::DeleteFunctionUrlConfigOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteFunctionUrlConfigError>`](crate::error::DeleteFunctionUrlConfigError)
+    pub fn delete_function_url_config(&self) -> fluent_builders::DeleteFunctionUrlConfig {
+        fluent_builders::DeleteFunctionUrlConfig::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteLayerVersion`](crate::client::fluent_builders::DeleteLayerVersion) operation.
     ///
@@ -536,6 +567,7 @@ impl Client {
     ///   - [`signing_profile_version_arn(Option<String>)`](crate::output::GetFunctionConfigurationOutput::signing_profile_version_arn): <p>The ARN of the signing profile version.</p>
     ///   - [`signing_job_arn(Option<String>)`](crate::output::GetFunctionConfigurationOutput::signing_job_arn): <p>The ARN of the signing job.</p>
     ///   - [`architectures(Option<Vec<Architecture>>)`](crate::output::GetFunctionConfigurationOutput::architectures): <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
+    ///   - [`ephemeral_storage(Option<EphemeralStorage>)`](crate::output::GetFunctionConfigurationOutput::ephemeral_storage): <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
     /// - On failure, responds with [`SdkError<GetFunctionConfigurationError>`](crate::error::GetFunctionConfigurationError)
     pub fn get_function_configuration(&self) -> fluent_builders::GetFunctionConfiguration {
         fluent_builders::GetFunctionConfiguration::new(self.handle.clone())
@@ -556,6 +588,22 @@ impl Client {
         &self,
     ) -> fluent_builders::GetFunctionEventInvokeConfig {
         fluent_builders::GetFunctionEventInvokeConfig::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetFunctionUrlConfig`](crate::client::fluent_builders::GetFunctionUrlConfig) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`function_name(impl Into<String>)`](crate::client::fluent_builders::GetFunctionUrlConfig::function_name) / [`set_function_name(Option<String>)`](crate::client::fluent_builders::GetFunctionUrlConfig::set_function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`qualifier(impl Into<String>)`](crate::client::fluent_builders::GetFunctionUrlConfig::qualifier) / [`set_qualifier(Option<String>)`](crate::client::fluent_builders::GetFunctionUrlConfig::set_qualifier): <p>The alias name.</p>
+    /// - On success, responds with [`GetFunctionUrlConfigOutput`](crate::output::GetFunctionUrlConfigOutput) with field(s):
+    ///   - [`function_url(Option<String>)`](crate::output::GetFunctionUrlConfigOutput::function_url): <p>The HTTP URL endpoint for your function.</p>
+    ///   - [`function_arn(Option<String>)`](crate::output::GetFunctionUrlConfigOutput::function_arn): <p>The Amazon Resource Name (ARN) of your function.</p>
+    ///   - [`auth_type(Option<FunctionUrlAuthType>)`](crate::output::GetFunctionUrlConfigOutput::auth_type): <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+    ///   - [`cors(Option<Cors>)`](crate::output::GetFunctionUrlConfigOutput::cors): <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+    ///   - [`creation_time(Option<String>)`](crate::output::GetFunctionUrlConfigOutput::creation_time): <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    ///   - [`last_modified_time(Option<String>)`](crate::output::GetFunctionUrlConfigOutput::last_modified_time): <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    /// - On failure, responds with [`SdkError<GetFunctionUrlConfigError>`](crate::error::GetFunctionUrlConfigError)
+    pub fn get_function_url_config(&self) -> fluent_builders::GetFunctionUrlConfig {
+        fluent_builders::GetFunctionUrlConfig::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetLayerVersion`](crate::client::fluent_builders::GetLayerVersion) operation.
     ///
@@ -756,6 +804,20 @@ impl Client {
     ) -> fluent_builders::ListFunctionsByCodeSigningConfig {
         fluent_builders::ListFunctionsByCodeSigningConfig::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListFunctionUrlConfigs`](crate::client::fluent_builders::ListFunctionUrlConfigs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFunctionUrlConfigs::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`function_name(impl Into<String>)`](crate::client::fluent_builders::ListFunctionUrlConfigs::function_name) / [`set_function_name(Option<String>)`](crate::client::fluent_builders::ListFunctionUrlConfigs::set_function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListFunctionUrlConfigs::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListFunctionUrlConfigs::set_marker): <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListFunctionUrlConfigs::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListFunctionUrlConfigs::set_max_items): <p>The maximum number of function URLs to return in the response. Note that <code>ListFunctionUrlConfigs</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
+    /// - On success, responds with [`ListFunctionUrlConfigsOutput`](crate::output::ListFunctionUrlConfigsOutput) with field(s):
+    ///   - [`function_url_configs(Option<Vec<FunctionUrlConfig>>)`](crate::output::ListFunctionUrlConfigsOutput::function_url_configs): <p>A list of function URL configurations.</p>
+    ///   - [`next_marker(Option<String>)`](crate::output::ListFunctionUrlConfigsOutput::next_marker): <p>The pagination token that's included if more results are available.</p>
+    /// - On failure, responds with [`SdkError<ListFunctionUrlConfigsError>`](crate::error::ListFunctionUrlConfigsError)
+    pub fn list_function_url_configs(&self) -> fluent_builders::ListFunctionUrlConfigs {
+        fluent_builders::ListFunctionUrlConfigs::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListLayers`](crate::client::fluent_builders::ListLayers) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLayers::into_paginator).
     ///
@@ -890,6 +952,7 @@ impl Client {
     ///   - [`signing_profile_version_arn(Option<String>)`](crate::output::PublishVersionOutput::signing_profile_version_arn): <p>The ARN of the signing profile version.</p>
     ///   - [`signing_job_arn(Option<String>)`](crate::output::PublishVersionOutput::signing_job_arn): <p>The ARN of the signing job.</p>
     ///   - [`architectures(Option<Vec<Architecture>>)`](crate::output::PublishVersionOutput::architectures): <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
+    ///   - [`ephemeral_storage(Option<EphemeralStorage>)`](crate::output::PublishVersionOutput::ephemeral_storage): <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
     /// - On failure, responds with [`SdkError<PublishVersionError>`](crate::error::PublishVersionError)
     pub fn publish_version(&self) -> fluent_builders::PublishVersion {
         fluent_builders::PublishVersion::new(self.handle.clone())
@@ -1130,6 +1193,7 @@ impl Client {
     ///   - [`signing_profile_version_arn(Option<String>)`](crate::output::UpdateFunctionCodeOutput::signing_profile_version_arn): <p>The ARN of the signing profile version.</p>
     ///   - [`signing_job_arn(Option<String>)`](crate::output::UpdateFunctionCodeOutput::signing_job_arn): <p>The ARN of the signing job.</p>
     ///   - [`architectures(Option<Vec<Architecture>>)`](crate::output::UpdateFunctionCodeOutput::architectures): <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
+    ///   - [`ephemeral_storage(Option<EphemeralStorage>)`](crate::output::UpdateFunctionCodeOutput::ephemeral_storage): <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
     /// - On failure, responds with [`SdkError<UpdateFunctionCodeError>`](crate::error::UpdateFunctionCodeError)
     pub fn update_function_code(&self) -> fluent_builders::UpdateFunctionCode {
         fluent_builders::UpdateFunctionCode::new(self.handle.clone())
@@ -1153,6 +1217,7 @@ impl Client {
     ///   - [`layers(Vec<String>)`](crate::client::fluent_builders::UpdateFunctionConfiguration::layers) / [`set_layers(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateFunctionConfiguration::set_layers): <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
     ///   - [`file_system_configs(Vec<FileSystemConfig>)`](crate::client::fluent_builders::UpdateFunctionConfiguration::file_system_configs) / [`set_file_system_configs(Option<Vec<FileSystemConfig>>)`](crate::client::fluent_builders::UpdateFunctionConfiguration::set_file_system_configs): <p>Connection settings for an Amazon EFS file system.</p>
     ///   - [`image_config(ImageConfig)`](crate::client::fluent_builders::UpdateFunctionConfiguration::image_config) / [`set_image_config(Option<ImageConfig>)`](crate::client::fluent_builders::UpdateFunctionConfiguration::set_image_config): <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
+    ///   - [`ephemeral_storage(EphemeralStorage)`](crate::client::fluent_builders::UpdateFunctionConfiguration::ephemeral_storage) / [`set_ephemeral_storage(Option<EphemeralStorage>)`](crate::client::fluent_builders::UpdateFunctionConfiguration::set_ephemeral_storage): <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
     /// - On success, responds with [`UpdateFunctionConfigurationOutput`](crate::output::UpdateFunctionConfigurationOutput) with field(s):
     ///   - [`function_name(Option<String>)`](crate::output::UpdateFunctionConfigurationOutput::function_name): <p>The name of the function.</p>
     ///   - [`function_arn(Option<String>)`](crate::output::UpdateFunctionConfigurationOutput::function_arn): <p>The function's Amazon Resource Name (ARN).</p>
@@ -1186,6 +1251,7 @@ impl Client {
     ///   - [`signing_profile_version_arn(Option<String>)`](crate::output::UpdateFunctionConfigurationOutput::signing_profile_version_arn): <p>The ARN of the signing profile version.</p>
     ///   - [`signing_job_arn(Option<String>)`](crate::output::UpdateFunctionConfigurationOutput::signing_job_arn): <p>The ARN of the signing job.</p>
     ///   - [`architectures(Option<Vec<Architecture>>)`](crate::output::UpdateFunctionConfigurationOutput::architectures): <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
+    ///   - [`ephemeral_storage(Option<EphemeralStorage>)`](crate::output::UpdateFunctionConfigurationOutput::ephemeral_storage): <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
     /// - On failure, responds with [`SdkError<UpdateFunctionConfigurationError>`](crate::error::UpdateFunctionConfigurationError)
     pub fn update_function_configuration(&self) -> fluent_builders::UpdateFunctionConfiguration {
         fluent_builders::UpdateFunctionConfiguration::new(self.handle.clone())
@@ -1209,6 +1275,24 @@ impl Client {
         &self,
     ) -> fluent_builders::UpdateFunctionEventInvokeConfig {
         fluent_builders::UpdateFunctionEventInvokeConfig::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateFunctionUrlConfig`](crate::client::fluent_builders::UpdateFunctionUrlConfig) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`function_name(impl Into<String>)`](crate::client::fluent_builders::UpdateFunctionUrlConfig::function_name) / [`set_function_name(Option<String>)`](crate::client::fluent_builders::UpdateFunctionUrlConfig::set_function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`qualifier(impl Into<String>)`](crate::client::fluent_builders::UpdateFunctionUrlConfig::qualifier) / [`set_qualifier(Option<String>)`](crate::client::fluent_builders::UpdateFunctionUrlConfig::set_qualifier): <p>The alias name.</p>
+    ///   - [`auth_type(FunctionUrlAuthType)`](crate::client::fluent_builders::UpdateFunctionUrlConfig::auth_type) / [`set_auth_type(Option<FunctionUrlAuthType>)`](crate::client::fluent_builders::UpdateFunctionUrlConfig::set_auth_type): <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+    ///   - [`cors(Cors)`](crate::client::fluent_builders::UpdateFunctionUrlConfig::cors) / [`set_cors(Option<Cors>)`](crate::client::fluent_builders::UpdateFunctionUrlConfig::set_cors): <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+    /// - On success, responds with [`UpdateFunctionUrlConfigOutput`](crate::output::UpdateFunctionUrlConfigOutput) with field(s):
+    ///   - [`function_url(Option<String>)`](crate::output::UpdateFunctionUrlConfigOutput::function_url): <p>The HTTP URL endpoint for your function.</p>
+    ///   - [`function_arn(Option<String>)`](crate::output::UpdateFunctionUrlConfigOutput::function_arn): <p>The Amazon Resource Name (ARN) of your function.</p>
+    ///   - [`auth_type(Option<FunctionUrlAuthType>)`](crate::output::UpdateFunctionUrlConfigOutput::auth_type): <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+    ///   - [`cors(Option<Cors>)`](crate::output::UpdateFunctionUrlConfigOutput::cors): <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+    ///   - [`creation_time(Option<String>)`](crate::output::UpdateFunctionUrlConfigOutput::creation_time): <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    ///   - [`last_modified_time(Option<String>)`](crate::output::UpdateFunctionUrlConfigOutput::last_modified_time): <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    /// - On failure, responds with [`SdkError<UpdateFunctionUrlConfigError>`](crate::error::UpdateFunctionUrlConfigError)
+    pub fn update_function_url_config(&self) -> fluent_builders::UpdateFunctionUrlConfig {
+        fluent_builders::UpdateFunctionUrlConfig::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
@@ -1506,6 +1590,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_principal_org_id(input);
+            self
+        }
+        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+        pub fn function_url_auth_type(mut self, input: crate::model::FunctionUrlAuthType) -> Self {
+            self.inner = self.inner.function_url_auth_type(input);
+            self
+        }
+        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+        pub fn set_function_url_auth_type(
+            mut self,
+            input: std::option::Option<crate::model::FunctionUrlAuthType>,
+        ) -> Self {
+            self.inner = self.inner.set_function_url_auth_type(input);
             self
         }
     }
@@ -2413,6 +2510,122 @@ pub mod fluent_builders {
             self.inner = self.inner.set_architectures(input);
             self
         }
+        /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+        pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
+            self.inner = self.inner.ephemeral_storage(input);
+            self
+        }
+        /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+        pub fn set_ephemeral_storage(
+            mut self,
+            input: std::option::Option<crate::model::EphemeralStorage>,
+        ) -> Self {
+            self.inner = self.inner.set_ephemeral_storage(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateFunctionUrlConfig`.
+    ///
+    /// <p>Creates a Lambda function URL with the specified configuration parameters. A function URL is a dedicated HTTP(S) endpoint that you can use to invoke your function.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateFunctionUrlConfig {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_function_url_config_input::Builder,
+    }
+    impl CreateFunctionUrlConfig {
+        /// Creates a new `CreateFunctionUrlConfig`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateFunctionUrlConfigOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateFunctionUrlConfigError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input.into());
+            self
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
+            self
+        }
+        /// <p>The alias name.</p>
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(input.into());
+            self
+        }
+        /// <p>The alias name.</p>
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_qualifier(input);
+            self
+        }
+        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+        pub fn auth_type(mut self, input: crate::model::FunctionUrlAuthType) -> Self {
+            self.inner = self.inner.auth_type(input);
+            self
+        }
+        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+        pub fn set_auth_type(
+            mut self,
+            input: std::option::Option<crate::model::FunctionUrlAuthType>,
+        ) -> Self {
+            self.inner = self.inner.set_auth_type(input);
+            self
+        }
+        /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+        pub fn cors(mut self, input: crate::model::Cors) -> Self {
+            self.inner = self.inner.cors(input);
+            self
+        }
+        /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+        pub fn set_cors(mut self, input: std::option::Option<crate::model::Cors>) -> Self {
+            self.inner = self.inner.set_cors(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DeleteAlias`.
     ///
@@ -2901,6 +3114,86 @@ pub mod fluent_builders {
             self
         }
         /// <p>A version number or alias name.</p>
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_qualifier(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteFunctionUrlConfig`.
+    ///
+    /// <p>Deletes a Lambda function URL. When you delete a function URL, you can't recover it. Creating a new function URL results in a different URL address.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteFunctionUrlConfig {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_function_url_config_input::Builder,
+    }
+    impl DeleteFunctionUrlConfig {
+        /// Creates a new `DeleteFunctionUrlConfig`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteFunctionUrlConfigOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteFunctionUrlConfigError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input.into());
+            self
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
+            self
+        }
+        /// <p>The alias name.</p>
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(input.into());
+            self
+        }
+        /// <p>The alias name.</p>
         pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_qualifier(input);
             self
@@ -3660,6 +3953,86 @@ pub mod fluent_builders {
             self
         }
         /// <p>A version number or alias name.</p>
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_qualifier(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetFunctionUrlConfig`.
+    ///
+    /// <p>Returns details about a Lambda function URL.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetFunctionUrlConfig {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_function_url_config_input::Builder,
+    }
+    impl GetFunctionUrlConfig {
+        /// Creates a new `GetFunctionUrlConfig`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetFunctionUrlConfigOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetFunctionUrlConfigError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input.into());
+            self
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
+            self
+        }
+        /// <p>The alias name.</p>
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(input.into());
+            self
+        }
+        /// <p>The alias name.</p>
         pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_qualifier(input);
             self
@@ -4810,6 +5183,102 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of items to return.</p>
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListFunctionUrlConfigs`.
+    ///
+    /// <p>Returns a list of Lambda function URLs for the specified function.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListFunctionUrlConfigs {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_function_url_configs_input::Builder,
+    }
+    impl ListFunctionUrlConfigs {
+        /// Creates a new `ListFunctionUrlConfigs`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListFunctionUrlConfigsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListFunctionUrlConfigsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFunctionUrlConfigsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFunctionUrlConfigsPaginator {
+            crate::paginator::ListFunctionUrlConfigsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input.into());
+            self
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
+            self
+        }
+        /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
+            self
+        }
+        /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
+            self
+        }
+        /// <p>The maximum number of function URLs to return in the response. Note that <code>ListFunctionUrlConfigs</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
+            self
+        }
+        /// <p>The maximum number of function URLs to return in the response. Note that <code>ListFunctionUrlConfigs</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_items(input);
             self
@@ -7147,6 +7616,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_config(input);
             self
         }
+        /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+        pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
+            self.inner = self.inner.ephemeral_storage(input);
+            self
+        }
+        /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+        pub fn set_ephemeral_storage(
+            mut self,
+            input: std::option::Option<crate::model::EphemeralStorage>,
+        ) -> Self {
+            self.inner = self.inner.set_ephemeral_storage(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateFunctionEventInvokeConfig`.
     ///
@@ -7273,6 +7755,109 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::DestinationConfig>,
         ) -> Self {
             self.inner = self.inner.set_destination_config(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateFunctionUrlConfig`.
+    ///
+    /// <p>Updates the configuration for a Lambda function URL.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateFunctionUrlConfig {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_function_url_config_input::Builder,
+    }
+    impl UpdateFunctionUrlConfig {
+        /// Creates a new `UpdateFunctionUrlConfig`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateFunctionUrlConfigOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateFunctionUrlConfigError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input.into());
+            self
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
+            self
+        }
+        /// <p>The alias name.</p>
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(input.into());
+            self
+        }
+        /// <p>The alias name.</p>
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_qualifier(input);
+            self
+        }
+        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+        pub fn auth_type(mut self, input: crate::model::FunctionUrlAuthType) -> Self {
+            self.inner = self.inner.auth_type(input);
+            self
+        }
+        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+        pub fn set_auth_type(
+            mut self,
+            input: std::option::Option<crate::model::FunctionUrlAuthType>,
+        ) -> Self {
+            self.inner = self.inner.set_auth_type(input);
+            self
+        }
+        /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+        pub fn cors(mut self, input: crate::model::Cors) -> Self {
+            self.inner = self.inner.cors(input);
+            self
+        }
+        /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+        pub fn set_cors(mut self, input: std::option::Option<crate::model::Cors>) -> Self {
+            self.inner = self.inner.set_cors(input);
             self
         }
     }

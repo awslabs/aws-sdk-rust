@@ -271,7 +271,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`resource_share_arns(Vec<String>)`](crate::client::fluent_builders::GetResourceShares::resource_share_arns) / [`set_resource_share_arns(Option<Vec<String>>)`](crate::client::fluent_builders::GetResourceShares::set_resource_share_arns): <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
     ///   - [`resource_share_status(ResourceShareStatus)`](crate::client::fluent_builders::GetResourceShares::resource_share_status) / [`set_resource_share_status(Option<ResourceShareStatus>)`](crate::client::fluent_builders::GetResourceShares::set_resource_share_status): <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
-    ///   - [`resource_owner(ResourceOwner)`](crate::client::fluent_builders::GetResourceShares::resource_owner) / [`set_resource_owner(Option<ResourceOwner>)`](crate::client::fluent_builders::GetResourceShares::set_resource_owner): <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>  <ul>   <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>   <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>  </ul>
+    ///   - [`resource_owner(ResourceOwner)`](crate::client::fluent_builders::GetResourceShares::resource_owner) / [`set_resource_owner(Option<ResourceOwner>)`](crate::client::fluent_builders::GetResourceShares::set_resource_owner): <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>  <ul>   <li> <p> <b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p> </li>   <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p> </li>  </ul>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetResourceShares::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetResourceShares::set_name): <p>Specifies the name of an individual resource share that you want to retrieve details about.</p>
     ///   - [`tag_filters(Vec<TagFilter>)`](crate::client::fluent_builders::GetResourceShares::tag_filters) / [`set_tag_filters(Option<Vec<TagFilter>>)`](crate::client::fluent_builders::GetResourceShares::set_tag_filters): <p>Specifies that you want to retrieve details of only those resource shares that match the specified tag keys and values.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetResourceShares::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetResourceShares::set_next_token): <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
@@ -333,7 +333,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPrincipals::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_owner(ResourceOwner)`](crate::client::fluent_builders::ListPrincipals::resource_owner) / [`set_resource_owner(Option<ResourceOwner>)`](crate::client::fluent_builders::ListPrincipals::set_resource_owner): <p>Specifies that you want to list information for only resource shares that match the following:</p>  <ul>   <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>   <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>  </ul>
+    ///   - [`resource_owner(ResourceOwner)`](crate::client::fluent_builders::ListPrincipals::resource_owner) / [`set_resource_owner(Option<ResourceOwner>)`](crate::client::fluent_builders::ListPrincipals::set_resource_owner): <p>Specifies that you want to list information for only resource shares that match the following:</p>  <ul>   <li> <p> <b> <code>SELF</code> </b> – principals that your account is sharing resources with</p> </li>   <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p> </li>  </ul>
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListPrincipals::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListPrincipals::set_resource_arn): <p>Specifies that you want to list principal information for the resource share with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.</p>
     ///   - [`principals(Vec<String>)`](crate::client::fluent_builders::ListPrincipals::principals) / [`set_principals(Option<Vec<String>>)`](crate::client::fluent_builders::ListPrincipals::set_principals): <p>Specifies that you want to list information for only the listed principals.</p>  <p>You can include the following values:</p>  <ul>   <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>   <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>   <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>   <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>   <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>  </ul> <note>   <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>  </note>
     ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::ListPrincipals::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::ListPrincipals::set_resource_type): <p>Specifies that you want to list information for only principals associated with resource shares that include the specified resource type.</p>  <p>For a list of valid values, query the <code>ListResourceTypes</code> operation.</p>
@@ -351,7 +351,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListResources::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_owner(ResourceOwner)`](crate::client::fluent_builders::ListResources::resource_owner) / [`set_resource_owner(Option<ResourceOwner>)`](crate::client::fluent_builders::ListResources::set_resource_owner): <p>Specifies that you want to list only the resource shares that match the following:</p>  <ul>   <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>   <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>  </ul>
+    ///   - [`resource_owner(ResourceOwner)`](crate::client::fluent_builders::ListResources::resource_owner) / [`set_resource_owner(Option<ResourceOwner>)`](crate::client::fluent_builders::ListResources::set_resource_owner): <p>Specifies that you want to list only the resource shares that match the following:</p>  <ul>   <li> <p> <b> <code>SELF</code> </b> – resources that your account shares with other accounts</p> </li>   <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p> </li>  </ul>
     ///   - [`principal(impl Into<String>)`](crate::client::fluent_builders::ListResources::principal) / [`set_principal(Option<String>)`](crate::client::fluent_builders::ListResources::set_principal): <p>Specifies that you want to list only the resource shares that are associated with the specified principal.</p>
     ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::ListResources::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::ListResources::set_resource_type): <p>Specifies that you want to list only the resource shares that include resources of the specified resource type.</p>  <p>For valid values, query the <code>ListResourceTypes</code> operation.</p>
     ///   - [`resource_arns(Vec<String>)`](crate::client::fluent_builders::ListResources::resource_arns) / [`set_resource_arns(Option<Vec<String>>)`](crate::client::fluent_builders::ListResources::set_resource_arns): <p>Specifies that you want to list only the resource shares that include resources with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
@@ -1745,8 +1745,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
         /// <ul>
-        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
-        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// <li> <p> <b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p> </li>
         /// </ul>
         pub fn resource_owner(mut self, input: crate::model::ResourceOwner) -> Self {
             self.inner = self.inner.resource_owner(input);
@@ -1754,8 +1754,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
         /// <ul>
-        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
-        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// <li> <p> <b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p> </li>
         /// </ul>
         pub fn set_resource_owner(
             mut self,
@@ -2152,8 +2152,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
         /// <ul>
-        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
-        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// <li> <p> <b> <code>SELF</code> </b> – principals that your account is sharing resources with</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p> </li>
         /// </ul>
         pub fn resource_owner(mut self, input: crate::model::ResourceOwner) -> Self {
             self.inner = self.inner.resource_owner(input);
@@ -2161,8 +2161,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
         /// <ul>
-        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
-        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// <li> <p> <b> <code>SELF</code> </b> – principals that your account is sharing resources with</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p> </li>
         /// </ul>
         pub fn set_resource_owner(
             mut self,
@@ -2273,7 +2273,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListResources`.
     ///
-    /// <p>Lists the resources that you added to a resource shares or the resources that are shared with you.</p>
+    /// <p>Lists the resources that you added to a resource share or the resources that are shared with you.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResources {
         handle: std::sync::Arc<super::Handle>,
@@ -2321,8 +2321,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies that you want to list only the resource shares that match the following:</p>
         /// <ul>
-        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
-        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// <li> <p> <b> <code>SELF</code> </b> – resources that your account shares with other accounts</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p> </li>
         /// </ul>
         pub fn resource_owner(mut self, input: crate::model::ResourceOwner) -> Self {
             self.inner = self.inner.resource_owner(input);
@@ -2330,8 +2330,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies that you want to list only the resource shares that match the following:</p>
         /// <ul>
-        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
-        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// <li> <p> <b> <code>SELF</code> </b> – resources that your account shares with other accounts</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p> </li>
         /// </ul>
         pub fn set_resource_owner(
             mut self,

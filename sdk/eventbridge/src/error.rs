@@ -639,6 +639,118 @@ impl std::error::Error for CreateConnectionError {
     }
 }
 
+/// Error type for the `CreateEndpoint` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateEndpointError {
+    /// Kind of error that occurred.
+    pub kind: CreateEndpointErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateEndpoint` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateEndpointErrorKind {
+    /// <p>This exception occurs due to unexpected causes.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>The request failed because it attempted to create resource beyond the allowed service quota.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The resource you are trying to create already exists.</p>
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateEndpointError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateEndpointErrorKind::InternalException(_inner) => _inner.fmt(f),
+            CreateEndpointErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateEndpointErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateEndpointError {
+    fn code(&self) -> Option<&str> {
+        CreateEndpointError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateEndpointError {
+    /// Creates a new `CreateEndpointError`.
+    pub fn new(kind: CreateEndpointErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateEndpointError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateEndpointErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateEndpointError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateEndpointErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateEndpointErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(&self.kind, CreateEndpointErrorKind::InternalException(_))
+    }
+    /// Returns `true` if the error kind is `CreateEndpointErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEndpointErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateEndpointErrorKind::ResourceAlreadyExistsException`.
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEndpointErrorKind::ResourceAlreadyExistsException(_)
+        )
+    }
+}
+impl std::error::Error for CreateEndpointError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateEndpointErrorKind::InternalException(_inner) => Some(_inner),
+            CreateEndpointErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateEndpointErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
+            CreateEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateEventBus` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1535,6 +1647,118 @@ impl std::error::Error for DeleteConnectionError {
     }
 }
 
+/// Error type for the `DeleteEndpoint` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteEndpointError {
+    /// Kind of error that occurred.
+    pub kind: DeleteEndpointErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteEndpoint` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteEndpointErrorKind {
+    /// <p>There is concurrent modification on a rule, target, archive, or replay.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>This exception occurs due to unexpected causes.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>An entity that you specified does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteEndpointError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteEndpointErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            DeleteEndpointErrorKind::InternalException(_inner) => _inner.fmt(f),
+            DeleteEndpointErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteEndpointError {
+    fn code(&self) -> Option<&str> {
+        DeleteEndpointError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteEndpointError {
+    /// Creates a new `DeleteEndpointError`.
+    pub fn new(kind: DeleteEndpointErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteEndpointError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteEndpointErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteEndpointError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteEndpointErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteEndpointErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEndpointErrorKind::ConcurrentModificationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteEndpointErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(&self.kind, DeleteEndpointErrorKind::InternalException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteEndpointErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEndpointErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteEndpointError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteEndpointErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            DeleteEndpointErrorKind::InternalException(_inner) => Some(_inner),
+            DeleteEndpointErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteEventBus` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2191,6 +2415,107 @@ impl std::error::Error for DescribeConnectionError {
             DescribeConnectionErrorKind::InternalException(_inner) => Some(_inner),
             DescribeConnectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeConnectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeEndpoint` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeEndpointError {
+    /// Kind of error that occurred.
+    pub kind: DescribeEndpointErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeEndpoint` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeEndpointErrorKind {
+    /// <p>This exception occurs due to unexpected causes.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>An entity that you specified does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeEndpointError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeEndpointErrorKind::InternalException(_inner) => _inner.fmt(f),
+            DescribeEndpointErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeEndpointError {
+    fn code(&self) -> Option<&str> {
+        DescribeEndpointError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeEndpointError {
+    /// Creates a new `DescribeEndpointError`.
+    pub fn new(kind: DescribeEndpointErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeEndpointError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeEndpointErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeEndpointError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeEndpointErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeEndpointErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(&self.kind, DescribeEndpointErrorKind::InternalException(_))
+    }
+    /// Returns `true` if the error kind is `DescribeEndpointErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEndpointErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeEndpointError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeEndpointErrorKind::InternalException(_inner) => Some(_inner),
+            DescribeEndpointErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3250,6 +3575,96 @@ impl std::error::Error for ListConnectionsError {
         match &self.kind {
             ListConnectionsErrorKind::InternalException(_inner) => Some(_inner),
             ListConnectionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListEndpoints` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListEndpointsError {
+    /// Kind of error that occurred.
+    pub kind: ListEndpointsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListEndpoints` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListEndpointsErrorKind {
+    /// <p>This exception occurs due to unexpected causes.</p>
+    InternalException(crate::error::InternalException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListEndpointsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListEndpointsErrorKind::InternalException(_inner) => _inner.fmt(f),
+            ListEndpointsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListEndpointsError {
+    fn code(&self) -> Option<&str> {
+        ListEndpointsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListEndpointsError {
+    /// Creates a new `ListEndpointsError`.
+    pub fn new(kind: ListEndpointsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListEndpointsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListEndpointsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListEndpointsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListEndpointsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListEndpointsErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(&self.kind, ListEndpointsErrorKind::InternalException(_))
+    }
+}
+impl std::error::Error for ListEndpointsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListEndpointsErrorKind::InternalException(_inner) => Some(_inner),
+            ListEndpointsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5859,6 +6274,118 @@ impl std::error::Error for UpdateConnectionError {
     }
 }
 
+/// Error type for the `UpdateEndpoint` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateEndpointError {
+    /// Kind of error that occurred.
+    pub kind: UpdateEndpointErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateEndpoint` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateEndpointErrorKind {
+    /// <p>There is concurrent modification on a rule, target, archive, or replay.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>This exception occurs due to unexpected causes.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>An entity that you specified does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateEndpointError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateEndpointErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            UpdateEndpointErrorKind::InternalException(_inner) => _inner.fmt(f),
+            UpdateEndpointErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateEndpointError {
+    fn code(&self) -> Option<&str> {
+        UpdateEndpointError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateEndpointError {
+    /// Creates a new `UpdateEndpointError`.
+    pub fn new(kind: UpdateEndpointErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateEndpointError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateEndpointErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateEndpointError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateEndpointErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateEndpointErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEndpointErrorKind::ConcurrentModificationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEndpointErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(&self.kind, UpdateEndpointErrorKind::InternalException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateEndpointErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEndpointErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateEndpointError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateEndpointErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            UpdateEndpointErrorKind::InternalException(_inner) => Some(_inner),
+            UpdateEndpointErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// <p>An entity that you specified does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5923,70 +6450,6 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The request failed because it attempted to create resource beyond the allowed service quota.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LimitExceededException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl LimitExceededException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LimitExceededException")?;
-        if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for LimitExceededException {}
-/// See [`LimitExceededException`](crate::error::LimitExceededException)
-pub mod limit_exceeded_exception {
-    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
-        pub fn build(self) -> crate::error::LimitExceededException {
-            crate::error::LimitExceededException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl LimitExceededException {
-    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
-    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
-        crate::error::limit_exceeded_exception::Builder::default()
-    }
-}
-
 /// <p>This exception occurs due to unexpected causes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6010,8 +6473,8 @@ impl InternalException {
 impl std::fmt::Display for InternalException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_2) = &self.message {
+            write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
@@ -6074,8 +6537,8 @@ impl ConcurrentModificationException {
 impl std::fmt::Display for ConcurrentModificationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConcurrentModificationException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
@@ -6112,6 +6575,70 @@ impl ConcurrentModificationException {
     /// Creates a new builder-style object to manufacture [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
     pub fn builder() -> crate::error::concurrent_modification_exception::Builder {
         crate::error::concurrent_modification_exception::Builder::default()
+    }
+}
+
+/// <p>The request failed because it attempted to create resource beyond the allowed service quota.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LimitExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for LimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LimitExceededException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl LimitExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for LimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "LimitExceededException")?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for LimitExceededException {}
+/// See [`LimitExceededException`](crate::error::LimitExceededException)
+pub mod limit_exceeded_exception {
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
+        pub fn build(self) -> crate::error::LimitExceededException {
+            crate::error::LimitExceededException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl LimitExceededException {
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
+    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
+        crate::error::limit_exceeded_exception::Builder::default()
     }
 }
 

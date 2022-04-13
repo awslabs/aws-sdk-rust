@@ -378,7 +378,7 @@ pub struct RegisterJobDefinitionOutput {
     /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
     pub job_definition_arn: std::option::Option<std::string::String>,
     /// <p>The revision of the job definition.</p>
-    pub revision: i32,
+    pub revision: std::option::Option<i32>,
 }
 impl RegisterJobDefinitionOutput {
     /// <p>The name of the job definition.</p>
@@ -390,7 +390,7 @@ impl RegisterJobDefinitionOutput {
         self.job_definition_arn.as_deref()
     }
     /// <p>The revision of the job definition.</p>
-    pub fn revision(&self) -> i32 {
+    pub fn revision(&self) -> std::option::Option<i32> {
         self.revision
     }
 }
@@ -455,7 +455,7 @@ pub mod register_job_definition_output {
             crate::output::RegisterJobDefinitionOutput {
                 job_definition_name: self.job_definition_name,
                 job_definition_arn: self.job_definition_arn,
-                revision: self.revision.unwrap_or_default(),
+                revision: self.revision,
             }
         }
     }

@@ -1871,17 +1871,17 @@ pub mod create_index_input {
             self.edition = input;
             self
         }
-        /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
+        /// <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role you use when you call the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
+        /// <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role you use when you call the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The identifier of the KMScustomer managed key (CMK) to use to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
+        /// <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
         pub fn server_side_encryption_configuration(
             mut self,
             input: crate::model::ServerSideEncryptionConfiguration,
@@ -1889,7 +1889,7 @@ pub mod create_index_input {
             self.server_side_encryption_configuration = Some(input);
             self
         }
-        /// <p>The identifier of the KMScustomer managed key (CMK) to use to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
+        /// <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
         pub fn set_server_side_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
@@ -4186,12 +4186,12 @@ pub mod describe_index_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the index to describe.</p>
+        /// <p>The identifier of the index to describe.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The name of the index to describe.</p>
+        /// <p>The identifier of the index to describe.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -9496,14 +9496,14 @@ pub mod update_index_input {
             self.document_metadata_configuration_updates = input;
             self
         }
-        /// <p>Sets the number of additional storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day.</p>
-        /// <p>If you are using extra storage units, you can't reduce the storage capacity below that required to meet the storage needs for your index.</p>
+        /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>
+        /// <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
         pub fn capacity_units(mut self, input: crate::model::CapacityUnitsConfiguration) -> Self {
             self.capacity_units = Some(input);
             self
         }
-        /// <p>Sets the number of additional storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day.</p>
-        /// <p>If you are using extra storage units, you can't reduce the storage capacity below that required to meet the storage needs for your index.</p>
+        /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>
+        /// <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
         pub fn set_capacity_units(
             mut self,
             input: std::option::Option<crate::model::CapacityUnitsConfiguration>,
@@ -10562,8 +10562,8 @@ pub struct UpdateIndexInput {
     /// <p>The document metadata you want to update.</p>
     pub document_metadata_configuration_updates:
         std::option::Option<std::vec::Vec<crate::model::DocumentMetadataConfiguration>>,
-    /// <p>Sets the number of additional storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day.</p>
-    /// <p>If you are using extra storage units, you can't reduce the storage capacity below that required to meet the storage needs for your index.</p>
+    /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>
+    /// <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
     pub capacity_units: std::option::Option<crate::model::CapacityUnitsConfiguration>,
     /// <p>The user token configuration.</p>
     pub user_token_configurations:
@@ -10597,8 +10597,8 @@ impl UpdateIndexInput {
     ) -> std::option::Option<&[crate::model::DocumentMetadataConfiguration]> {
         self.document_metadata_configuration_updates.as_deref()
     }
-    /// <p>Sets the number of additional storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day.</p>
-    /// <p>If you are using extra storage units, you can't reduce the storage capacity below that required to meet the storage needs for your index.</p>
+    /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>
+    /// <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
     pub fn capacity_units(&self) -> std::option::Option<&crate::model::CapacityUnitsConfiguration> {
         self.capacity_units.as_ref()
     }
@@ -11839,11 +11839,11 @@ impl std::fmt::Debug for DescribePrincipalMappingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIndexInput {
-    /// <p>The name of the index to describe.</p>
+    /// <p>The identifier of the index to describe.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeIndexInput {
-    /// <p>The name of the index to describe.</p>
+    /// <p>The identifier of the index to describe.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -12295,9 +12295,9 @@ pub struct CreateIndexInput {
     /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p>
     /// <p>For more information on quota limits for enterprise and developer editions, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     pub edition: std::option::Option<crate::model::IndexEdition>,
-    /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
+    /// <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role you use when you call the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The identifier of the KMScustomer managed key (CMK) to use to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
+    /// <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     /// <p>A description for the index.</p>
@@ -12340,11 +12340,11 @@ impl CreateIndexInput {
     pub fn edition(&self) -> std::option::Option<&crate::model::IndexEdition> {
         self.edition.as_ref()
     }
-    /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
+    /// <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role you use when you call the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The identifier of the KMScustomer managed key (CMK) to use to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
+    /// <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
     pub fn server_side_encryption_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {

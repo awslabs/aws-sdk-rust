@@ -443,13 +443,19 @@ pub fn serialize_structure_crate_input_get_device_position_history_input(
             .key("EndTimeExclusive")
             .date_time(var_107, aws_smithy_types::date_time::Format::DateTime)?;
     }
-    if let Some(var_108) = &input.next_token {
-        object.key("NextToken").string(var_108.as_str());
+    if let Some(var_108) = &input.max_results {
+        object.key("MaxResults").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_108).into()),
+        );
     }
-    if let Some(var_109) = &input.start_time_inclusive {
+    if let Some(var_109) = &input.next_token {
+        object.key("NextToken").string(var_109.as_str());
+    }
+    if let Some(var_110) = &input.start_time_inclusive {
         object
             .key("StartTimeInclusive")
-            .date_time(var_109, aws_smithy_types::date_time::Format::DateTime)?;
+            .date_time(var_110, aws_smithy_types::date_time::Format::DateTime)?;
     }
     Ok(())
 }
@@ -458,14 +464,14 @@ pub fn serialize_structure_crate_input_list_device_positions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListDevicePositionsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_110) = &input.max_results {
+    if let Some(var_111) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_110).into()),
+            aws_smithy_types::Number::NegInt((*var_111).into()),
         );
     }
-    if let Some(var_111) = &input.next_token {
-        object.key("NextToken").string(var_111.as_str());
+    if let Some(var_112) = &input.next_token {
+        object.key("NextToken").string(var_112.as_str());
     }
     Ok(())
 }
@@ -474,14 +480,14 @@ pub fn serialize_structure_crate_input_list_geofence_collections_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListGeofenceCollectionsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_112) = &input.max_results {
+    if let Some(var_113) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_112).into()),
+            aws_smithy_types::Number::NegInt((*var_113).into()),
         );
     }
-    if let Some(var_113) = &input.next_token {
-        object.key("NextToken").string(var_113.as_str());
+    if let Some(var_114) = &input.next_token {
+        object.key("NextToken").string(var_114.as_str());
     }
     Ok(())
 }
@@ -490,8 +496,8 @@ pub fn serialize_structure_crate_input_list_geofences_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListGeofencesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_114) = &input.next_token {
-        object.key("NextToken").string(var_114.as_str());
+    if let Some(var_115) = &input.next_token {
+        object.key("NextToken").string(var_115.as_str());
     }
     Ok(())
 }
@@ -500,14 +506,14 @@ pub fn serialize_structure_crate_input_list_maps_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListMapsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_115) = &input.max_results {
+    if let Some(var_116) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_115).into()),
+            aws_smithy_types::Number::NegInt((*var_116).into()),
         );
     }
-    if let Some(var_116) = &input.next_token {
-        object.key("NextToken").string(var_116.as_str());
+    if let Some(var_117) = &input.next_token {
+        object.key("NextToken").string(var_117.as_str());
     }
     Ok(())
 }
@@ -516,14 +522,14 @@ pub fn serialize_structure_crate_input_list_place_indexes_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListPlaceIndexesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_117) = &input.max_results {
+    if let Some(var_118) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_117).into()),
+            aws_smithy_types::Number::NegInt((*var_118).into()),
         );
     }
-    if let Some(var_118) = &input.next_token {
-        object.key("NextToken").string(var_118.as_str());
+    if let Some(var_119) = &input.next_token {
+        object.key("NextToken").string(var_119.as_str());
     }
     Ok(())
 }
@@ -532,14 +538,14 @@ pub fn serialize_structure_crate_input_list_route_calculators_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListRouteCalculatorsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_119) = &input.max_results {
+    if let Some(var_120) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_119).into()),
+            aws_smithy_types::Number::NegInt((*var_120).into()),
         );
     }
-    if let Some(var_120) = &input.next_token {
-        object.key("NextToken").string(var_120.as_str());
+    if let Some(var_121) = &input.next_token {
+        object.key("NextToken").string(var_121.as_str());
     }
     Ok(())
 }
@@ -548,14 +554,14 @@ pub fn serialize_structure_crate_input_list_tracker_consumers_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTrackerConsumersInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_121) = &input.max_results {
+    if let Some(var_122) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_121).into()),
+            aws_smithy_types::Number::NegInt((*var_122).into()),
         );
     }
-    if let Some(var_122) = &input.next_token {
-        object.key("NextToken").string(var_122.as_str());
+    if let Some(var_123) = &input.next_token {
+        object.key("NextToken").string(var_123.as_str());
     }
     Ok(())
 }
@@ -564,14 +570,14 @@ pub fn serialize_structure_crate_input_list_trackers_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTrackersInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_123) = &input.max_results {
+    if let Some(var_124) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_123).into()),
+            aws_smithy_types::Number::NegInt((*var_124).into()),
         );
     }
-    if let Some(var_124) = &input.next_token {
-        object.key("NextToken").string(var_124.as_str());
+    if let Some(var_125) = &input.next_token {
+        object.key("NextToken").string(var_125.as_str());
     }
     Ok(())
 }
@@ -580,13 +586,13 @@ pub fn serialize_structure_crate_input_put_geofence_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutGeofenceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_125) = &input.geometry {
-        let mut object_126 = object.key("Geometry").start_object();
+    if let Some(var_126) = &input.geometry {
+        let mut object_127 = object.key("Geometry").start_object();
         crate::json_ser::serialize_structure_crate_model_geofence_geometry(
-            &mut object_126,
-            var_125,
+            &mut object_127,
+            var_126,
         )?;
-        object_126.finish();
+        object_127.finish();
     }
     Ok(())
 }
@@ -595,8 +601,8 @@ pub fn serialize_structure_crate_input_search_place_index_for_position_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SearchPlaceIndexForPositionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_127) = &input.language {
-        object.key("Language").string(var_127.as_str());
+    if let Some(var_128) = &input.language {
+        object.key("Language").string(var_128.as_str());
     }
     if input.max_results != 0 {
         object.key("MaxResults").number(
@@ -604,17 +610,17 @@ pub fn serialize_structure_crate_input_search_place_index_for_position_input(
             aws_smithy_types::Number::NegInt((input.max_results).into()),
         );
     }
-    if let Some(var_128) = &input.position {
-        let mut array_129 = object.key("Position").start_array();
-        for item_130 in var_128 {
+    if let Some(var_129) = &input.position {
+        let mut array_130 = object.key("Position").start_array();
+        for item_131 in var_129 {
             {
-                array_129.value().number(
+                array_130.value().number(
                     #[allow(clippy::useless_conversion)]
-                    aws_smithy_types::Number::Float((*item_130).into()),
+                    aws_smithy_types::Number::Float((*item_131).into()),
                 );
             }
         }
-        array_129.finish();
+        array_130.finish();
     }
     Ok(())
 }
@@ -623,50 +629,50 @@ pub fn serialize_structure_crate_input_search_place_index_for_suggestions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SearchPlaceIndexForSuggestionsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_131) = &input.bias_position {
-        let mut array_132 = object.key("BiasPosition").start_array();
-        for item_133 in var_131 {
+    if let Some(var_132) = &input.bias_position {
+        let mut array_133 = object.key("BiasPosition").start_array();
+        for item_134 in var_132 {
             {
-                array_132.value().number(
+                array_133.value().number(
                     #[allow(clippy::useless_conversion)]
-                    aws_smithy_types::Number::Float((*item_133).into()),
+                    aws_smithy_types::Number::Float((*item_134).into()),
                 );
             }
         }
-        array_132.finish();
+        array_133.finish();
     }
-    if let Some(var_134) = &input.filter_b_box {
-        let mut array_135 = object.key("FilterBBox").start_array();
-        for item_136 in var_134 {
+    if let Some(var_135) = &input.filter_b_box {
+        let mut array_136 = object.key("FilterBBox").start_array();
+        for item_137 in var_135 {
             {
-                array_135.value().number(
+                array_136.value().number(
                     #[allow(clippy::useless_conversion)]
-                    aws_smithy_types::Number::Float((*item_136).into()),
+                    aws_smithy_types::Number::Float((*item_137).into()),
                 );
             }
         }
-        array_135.finish();
+        array_136.finish();
     }
-    if let Some(var_137) = &input.filter_countries {
-        let mut array_138 = object.key("FilterCountries").start_array();
-        for item_139 in var_137 {
+    if let Some(var_138) = &input.filter_countries {
+        let mut array_139 = object.key("FilterCountries").start_array();
+        for item_140 in var_138 {
             {
-                array_138.value().string(item_139.as_str());
+                array_139.value().string(item_140.as_str());
             }
         }
-        array_138.finish();
+        array_139.finish();
     }
-    if let Some(var_140) = &input.language {
-        object.key("Language").string(var_140.as_str());
+    if let Some(var_141) = &input.language {
+        object.key("Language").string(var_141.as_str());
     }
-    if let Some(var_141) = &input.max_results {
+    if let Some(var_142) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_141).into()),
+            aws_smithy_types::Number::NegInt((*var_142).into()),
         );
     }
-    if let Some(var_142) = &input.text {
-        object.key("Text").string(var_142.as_str());
+    if let Some(var_143) = &input.text {
+        object.key("Text").string(var_143.as_str());
     }
     Ok(())
 }
@@ -675,41 +681,41 @@ pub fn serialize_structure_crate_input_search_place_index_for_text_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SearchPlaceIndexForTextInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_143) = &input.bias_position {
-        let mut array_144 = object.key("BiasPosition").start_array();
-        for item_145 in var_143 {
+    if let Some(var_144) = &input.bias_position {
+        let mut array_145 = object.key("BiasPosition").start_array();
+        for item_146 in var_144 {
             {
-                array_144.value().number(
+                array_145.value().number(
                     #[allow(clippy::useless_conversion)]
-                    aws_smithy_types::Number::Float((*item_145).into()),
+                    aws_smithy_types::Number::Float((*item_146).into()),
                 );
             }
         }
-        array_144.finish();
+        array_145.finish();
     }
-    if let Some(var_146) = &input.filter_b_box {
-        let mut array_147 = object.key("FilterBBox").start_array();
-        for item_148 in var_146 {
+    if let Some(var_147) = &input.filter_b_box {
+        let mut array_148 = object.key("FilterBBox").start_array();
+        for item_149 in var_147 {
             {
-                array_147.value().number(
+                array_148.value().number(
                     #[allow(clippy::useless_conversion)]
-                    aws_smithy_types::Number::Float((*item_148).into()),
+                    aws_smithy_types::Number::Float((*item_149).into()),
                 );
             }
         }
-        array_147.finish();
+        array_148.finish();
     }
-    if let Some(var_149) = &input.filter_countries {
-        let mut array_150 = object.key("FilterCountries").start_array();
-        for item_151 in var_149 {
+    if let Some(var_150) = &input.filter_countries {
+        let mut array_151 = object.key("FilterCountries").start_array();
+        for item_152 in var_150 {
             {
-                array_150.value().string(item_151.as_str());
+                array_151.value().string(item_152.as_str());
             }
         }
-        array_150.finish();
+        array_151.finish();
     }
-    if let Some(var_152) = &input.language {
-        object.key("Language").string(var_152.as_str());
+    if let Some(var_153) = &input.language {
+        object.key("Language").string(var_153.as_str());
     }
     if input.max_results != 0 {
         object.key("MaxResults").number(
@@ -717,8 +723,8 @@ pub fn serialize_structure_crate_input_search_place_index_for_text_input(
             aws_smithy_types::Number::NegInt((input.max_results).into()),
         );
     }
-    if let Some(var_153) = &input.text {
-        object.key("Text").string(var_153.as_str());
+    if let Some(var_154) = &input.text {
+        object.key("Text").string(var_154.as_str());
     }
     Ok(())
 }
@@ -727,14 +733,14 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_154) = &input.tags {
-        let mut object_155 = object.key("Tags").start_object();
-        for (key_156, value_157) in var_154 {
+    if let Some(var_155) = &input.tags {
+        let mut object_156 = object.key("Tags").start_object();
+        for (key_157, value_158) in var_155 {
             {
-                object_155.key(key_156).string(value_157.as_str());
+                object_156.key(key_157).string(value_158.as_str());
             }
         }
-        object_155.finish();
+        object_156.finish();
     }
     Ok(())
 }
@@ -743,14 +749,14 @@ pub fn serialize_structure_crate_input_update_geofence_collection_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateGeofenceCollectionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_158) = &input.description {
-        object.key("Description").string(var_158.as_str());
+    if let Some(var_159) = &input.description {
+        object.key("Description").string(var_159.as_str());
     }
-    if let Some(var_159) = &input.pricing_plan {
-        object.key("PricingPlan").string(var_159.as_str());
+    if let Some(var_160) = &input.pricing_plan {
+        object.key("PricingPlan").string(var_160.as_str());
     }
-    if let Some(var_160) = &input.pricing_plan_data_source {
-        object.key("PricingPlanDataSource").string(var_160.as_str());
+    if let Some(var_161) = &input.pricing_plan_data_source {
+        object.key("PricingPlanDataSource").string(var_161.as_str());
     }
     Ok(())
 }
@@ -759,11 +765,11 @@ pub fn serialize_structure_crate_input_update_map_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateMapInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_161) = &input.description {
-        object.key("Description").string(var_161.as_str());
+    if let Some(var_162) = &input.description {
+        object.key("Description").string(var_162.as_str());
     }
-    if let Some(var_162) = &input.pricing_plan {
-        object.key("PricingPlan").string(var_162.as_str());
+    if let Some(var_163) = &input.pricing_plan {
+        object.key("PricingPlan").string(var_163.as_str());
     }
     Ok(())
 }
@@ -772,19 +778,19 @@ pub fn serialize_structure_crate_input_update_place_index_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdatePlaceIndexInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_163) = &input.data_source_configuration {
-        let mut object_164 = object.key("DataSourceConfiguration").start_object();
+    if let Some(var_164) = &input.data_source_configuration {
+        let mut object_165 = object.key("DataSourceConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_data_source_configuration(
-            &mut object_164,
-            var_163,
+            &mut object_165,
+            var_164,
         )?;
-        object_164.finish();
+        object_165.finish();
     }
-    if let Some(var_165) = &input.description {
-        object.key("Description").string(var_165.as_str());
+    if let Some(var_166) = &input.description {
+        object.key("Description").string(var_166.as_str());
     }
-    if let Some(var_166) = &input.pricing_plan {
-        object.key("PricingPlan").string(var_166.as_str());
+    if let Some(var_167) = &input.pricing_plan {
+        object.key("PricingPlan").string(var_167.as_str());
     }
     Ok(())
 }
@@ -793,11 +799,11 @@ pub fn serialize_structure_crate_input_update_route_calculator_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateRouteCalculatorInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_167) = &input.description {
-        object.key("Description").string(var_167.as_str());
+    if let Some(var_168) = &input.description {
+        object.key("Description").string(var_168.as_str());
     }
-    if let Some(var_168) = &input.pricing_plan {
-        object.key("PricingPlan").string(var_168.as_str());
+    if let Some(var_169) = &input.pricing_plan {
+        object.key("PricingPlan").string(var_169.as_str());
     }
     Ok(())
 }
@@ -806,17 +812,17 @@ pub fn serialize_structure_crate_input_update_tracker_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateTrackerInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_169) = &input.description {
-        object.key("Description").string(var_169.as_str());
+    if let Some(var_170) = &input.description {
+        object.key("Description").string(var_170.as_str());
     }
-    if let Some(var_170) = &input.position_filtering {
-        object.key("PositionFiltering").string(var_170.as_str());
+    if let Some(var_171) = &input.position_filtering {
+        object.key("PositionFiltering").string(var_171.as_str());
     }
-    if let Some(var_171) = &input.pricing_plan {
-        object.key("PricingPlan").string(var_171.as_str());
+    if let Some(var_172) = &input.pricing_plan {
+        object.key("PricingPlan").string(var_172.as_str());
     }
-    if let Some(var_172) = &input.pricing_plan_data_source {
-        object.key("PricingPlanDataSource").string(var_172.as_str());
+    if let Some(var_173) = &input.pricing_plan_data_source {
+        object.key("PricingPlanDataSource").string(var_173.as_str());
     }
     Ok(())
 }
@@ -825,42 +831,42 @@ pub fn serialize_structure_crate_model_device_position_update(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DevicePositionUpdate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_173) = &input.device_id {
-        object.key("DeviceId").string(var_173.as_str());
+    if let Some(var_174) = &input.device_id {
+        object.key("DeviceId").string(var_174.as_str());
     }
-    if let Some(var_174) = &input.sample_time {
+    if let Some(var_175) = &input.sample_time {
         object
             .key("SampleTime")
-            .date_time(var_174, aws_smithy_types::date_time::Format::DateTime)?;
+            .date_time(var_175, aws_smithy_types::date_time::Format::DateTime)?;
     }
-    if let Some(var_175) = &input.position {
-        let mut array_176 = object.key("Position").start_array();
-        for item_177 in var_175 {
+    if let Some(var_176) = &input.position {
+        let mut array_177 = object.key("Position").start_array();
+        for item_178 in var_176 {
             {
-                array_176.value().number(
+                array_177.value().number(
                     #[allow(clippy::useless_conversion)]
-                    aws_smithy_types::Number::Float((*item_177).into()),
+                    aws_smithy_types::Number::Float((*item_178).into()),
                 );
             }
         }
-        array_176.finish();
+        array_177.finish();
     }
-    if let Some(var_178) = &input.accuracy {
-        let mut object_179 = object.key("Accuracy").start_object();
+    if let Some(var_179) = &input.accuracy {
+        let mut object_180 = object.key("Accuracy").start_object();
         crate::json_ser::serialize_structure_crate_model_positional_accuracy(
-            &mut object_179,
-            var_178,
+            &mut object_180,
+            var_179,
         )?;
-        object_179.finish();
+        object_180.finish();
     }
-    if let Some(var_180) = &input.position_properties {
-        let mut object_181 = object.key("PositionProperties").start_object();
-        for (key_182, value_183) in var_180 {
+    if let Some(var_181) = &input.position_properties {
+        let mut object_182 = object.key("PositionProperties").start_object();
+        for (key_183, value_184) in var_181 {
             {
-                object_181.key(key_182).string(value_183.as_str());
+                object_182.key(key_183).string(value_184.as_str());
             }
         }
-        object_181.finish();
+        object_182.finish();
     }
     Ok(())
 }
@@ -869,16 +875,16 @@ pub fn serialize_structure_crate_model_batch_put_geofence_request_entry(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BatchPutGeofenceRequestEntry,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_184) = &input.geofence_id {
-        object.key("GeofenceId").string(var_184.as_str());
+    if let Some(var_185) = &input.geofence_id {
+        object.key("GeofenceId").string(var_185.as_str());
     }
-    if let Some(var_185) = &input.geometry {
-        let mut object_186 = object.key("Geometry").start_object();
+    if let Some(var_186) = &input.geometry {
+        let mut object_187 = object.key("Geometry").start_object();
         crate::json_ser::serialize_structure_crate_model_geofence_geometry(
-            &mut object_186,
-            var_185,
+            &mut object_187,
+            var_186,
         )?;
-        object_186.finish();
+        object_187.finish();
     }
     Ok(())
 }
@@ -887,11 +893,11 @@ pub fn serialize_structure_crate_model_calculate_route_car_mode_options(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CalculateRouteCarModeOptions,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_187) = &input.avoid_ferries {
-        object.key("AvoidFerries").boolean(*var_187);
+    if let Some(var_188) = &input.avoid_ferries {
+        object.key("AvoidFerries").boolean(*var_188);
     }
-    if let Some(var_188) = &input.avoid_tolls {
-        object.key("AvoidTolls").boolean(*var_188);
+    if let Some(var_189) = &input.avoid_tolls {
+        object.key("AvoidTolls").boolean(*var_189);
     }
     Ok(())
 }
@@ -900,24 +906,24 @@ pub fn serialize_structure_crate_model_calculate_route_truck_mode_options(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CalculateRouteTruckModeOptions,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_189) = &input.avoid_ferries {
-        object.key("AvoidFerries").boolean(*var_189);
+    if let Some(var_190) = &input.avoid_ferries {
+        object.key("AvoidFerries").boolean(*var_190);
     }
-    if let Some(var_190) = &input.avoid_tolls {
-        object.key("AvoidTolls").boolean(*var_190);
+    if let Some(var_191) = &input.avoid_tolls {
+        object.key("AvoidTolls").boolean(*var_191);
     }
-    if let Some(var_191) = &input.dimensions {
-        let mut object_192 = object.key("Dimensions").start_object();
+    if let Some(var_192) = &input.dimensions {
+        let mut object_193 = object.key("Dimensions").start_object();
         crate::json_ser::serialize_structure_crate_model_truck_dimensions(
-            &mut object_192,
-            var_191,
+            &mut object_193,
+            var_192,
         )?;
-        object_192.finish();
+        object_193.finish();
     }
-    if let Some(var_193) = &input.weight {
-        let mut object_194 = object.key("Weight").start_object();
-        crate::json_ser::serialize_structure_crate_model_truck_weight(&mut object_194, var_193)?;
-        object_194.finish();
+    if let Some(var_194) = &input.weight {
+        let mut object_195 = object.key("Weight").start_object();
+        crate::json_ser::serialize_structure_crate_model_truck_weight(&mut object_195, var_194)?;
+        object_195.finish();
     }
     Ok(())
 }
@@ -926,8 +932,8 @@ pub fn serialize_structure_crate_model_map_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MapConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_195) = &input.style {
-        object.key("Style").string(var_195.as_str());
+    if let Some(var_196) = &input.style {
+        object.key("Style").string(var_196.as_str());
     }
     Ok(())
 }
@@ -936,8 +942,8 @@ pub fn serialize_structure_crate_model_data_source_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DataSourceConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_196) = &input.intended_use {
-        object.key("IntendedUse").string(var_196.as_str());
+    if let Some(var_197) = &input.intended_use {
+        object.key("IntendedUse").string(var_197.as_str());
     }
     Ok(())
 }
@@ -946,29 +952,29 @@ pub fn serialize_structure_crate_model_geofence_geometry(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GeofenceGeometry,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_197) = &input.polygon {
-        let mut array_198 = object.key("Polygon").start_array();
-        for item_199 in var_197 {
+    if let Some(var_198) = &input.polygon {
+        let mut array_199 = object.key("Polygon").start_array();
+        for item_200 in var_198 {
             {
-                let mut array_200 = array_198.value().start_array();
-                for item_201 in item_199 {
+                let mut array_201 = array_199.value().start_array();
+                for item_202 in item_200 {
                     {
-                        let mut array_202 = array_200.value().start_array();
-                        for item_203 in item_201 {
+                        let mut array_203 = array_201.value().start_array();
+                        for item_204 in item_202 {
                             {
-                                array_202.value().number(
+                                array_203.value().number(
                                     #[allow(clippy::useless_conversion)]
-                                    aws_smithy_types::Number::Float((*item_203).into()),
+                                    aws_smithy_types::Number::Float((*item_204).into()),
                                 );
                             }
                         }
-                        array_202.finish();
+                        array_203.finish();
                     }
                 }
-                array_200.finish();
+                array_201.finish();
             }
         }
-        array_198.finish();
+        array_199.finish();
     }
     Ok(())
 }
@@ -977,10 +983,10 @@ pub fn serialize_structure_crate_model_positional_accuracy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PositionalAccuracy,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_204) = &input.horizontal {
+    if let Some(var_205) = &input.horizontal {
         object.key("Horizontal").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_204).into()),
+            aws_smithy_types::Number::Float((*var_205).into()),
         );
     }
     Ok(())
@@ -990,26 +996,26 @@ pub fn serialize_structure_crate_model_truck_dimensions(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TruckDimensions,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_205) = &input.length {
+    if let Some(var_206) = &input.length {
         object.key("Length").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_205).into()),
-        );
-    }
-    if let Some(var_206) = &input.height {
-        object.key("Height").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::Float((*var_206).into()),
         );
     }
-    if let Some(var_207) = &input.width {
-        object.key("Width").number(
+    if let Some(var_207) = &input.height {
+        object.key("Height").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::Float((*var_207).into()),
         );
     }
-    if let Some(var_208) = &input.unit {
-        object.key("Unit").string(var_208.as_str());
+    if let Some(var_208) = &input.width {
+        object.key("Width").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::Float((*var_208).into()),
+        );
+    }
+    if let Some(var_209) = &input.unit {
+        object.key("Unit").string(var_209.as_str());
     }
     Ok(())
 }
@@ -1018,14 +1024,14 @@ pub fn serialize_structure_crate_model_truck_weight(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TruckWeight,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_209) = &input.total {
+    if let Some(var_210) = &input.total {
         object.key("Total").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_209).into()),
+            aws_smithy_types::Number::Float((*var_210).into()),
         );
     }
-    if let Some(var_210) = &input.unit {
-        object.key("Unit").string(var_210.as_str());
+    if let Some(var_211) = &input.unit {
+        object.key("Unit").string(var_211.as_str());
     }
     Ok(())
 }

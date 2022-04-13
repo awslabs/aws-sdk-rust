@@ -174,7 +174,80 @@ impl CampaignConfig {
     }
 }
 
-/// <p>Provides a summary of the properties of a solution version. For a complete listing, call the <code>DescribeSolutionVersion</code> API.</p>
+/// <p>The optional metadata that you apply to resources to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging Personalize resources</a>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Tag {
+    /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    pub tag_key: std::option::Option<std::string::String>,
+    /// <p>The optional part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key).</p>
+    pub tag_value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    pub fn tag_key(&self) -> std::option::Option<&str> {
+        self.tag_key.as_deref()
+    }
+    /// <p>The optional part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key).</p>
+    pub fn tag_value(&self) -> std::option::Option<&str> {
+        self.tag_value.as_deref()
+    }
+}
+impl std::fmt::Debug for Tag {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Tag");
+        formatter.field("tag_key", &self.tag_key);
+        formatter.field("tag_value", &self.tag_value);
+        formatter.finish()
+    }
+}
+/// See [`Tag`](crate::model::Tag)
+pub mod tag {
+    /// A builder for [`Tag`](crate::model::Tag)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tag_key: std::option::Option<std::string::String>,
+        pub(crate) tag_value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+        pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tag_key = Some(input.into());
+            self
+        }
+        /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+        pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tag_key = input;
+            self
+        }
+        /// <p>The optional part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key).</p>
+        pub fn tag_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tag_value = Some(input.into());
+            self
+        }
+        /// <p>The optional part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key).</p>
+        pub fn set_tag_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tag_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        pub fn build(self) -> crate::model::Tag {
+            crate::model::Tag {
+                tag_key: self.tag_key,
+                tag_value: self.tag_value,
+            }
+        }
+    }
+}
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
+/// <p>Provides a summary of the properties of a solution version. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SolutionVersionSummary {
@@ -332,7 +405,7 @@ impl SolutionVersionSummary {
     }
 }
 
-/// <p>Provides a summary of the properties of a solution. For a complete listing, call the <code>DescribeSolution</code> API.</p>
+/// <p>Provides a summary of the properties of a solution. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SolutionSummary {
@@ -488,7 +561,7 @@ impl SolutionSummary {
     }
 }
 
-/// <p>Provides a summary of the properties of a dataset schema. For a complete listing, call the <code>DescribeSchema</code> API.</p>
+/// <p>Provides a summary of the properties of a dataset schema. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSchema.html">DescribeSchema</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetSchemaSummary {
@@ -897,7 +970,7 @@ impl RecommenderSummary {
     }
 }
 
-/// <p>Provides a summary of the properties of a recipe. For a complete listing, call the <code>DescribeRecipe</code> API.</p>
+/// <p>Provides a summary of the properties of a recipe. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecipe.html">DescribeRecipe</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecipeSummary {
@@ -1283,7 +1356,7 @@ impl FilterSummary {
     }
 }
 
-/// <p>Provides a summary of the properties of an event tracker. For a complete listing, call the <code>DescribeEventTracker</code> API.</p>
+/// <p>Provides a summary of the properties of an event tracker. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeEventTracker.html">DescribeEventTracker</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventTrackerSummary {
@@ -1442,7 +1515,7 @@ impl EventTrackerSummary {
     }
 }
 
-/// <p>Provides a summary of the properties of a dataset. For a complete listing, call the <code>DescribeDataset</code> API.</p>
+/// <p>Provides a summary of the properties of a dataset. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html">DescribeDataset</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetSummary {
@@ -1641,7 +1714,7 @@ impl DatasetSummary {
     }
 }
 
-/// <p>Provides a summary of the properties of a dataset import job. For a complete listing, call the <code>DescribeDatasetImportJob</code> API.</p>
+/// <p>Provides a summary of the properties of a dataset import job. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetImportJobSummary {
@@ -1818,7 +1891,7 @@ impl DatasetImportJobSummary {
     }
 }
 
-/// <p>Provides a summary of the properties of a dataset group. For a complete listing, call the <code>DescribeDatasetGroup</code> API.</p>
+/// <p>Provides a summary of the properties of a dataset group. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetGroupSummary {
@@ -2018,7 +2091,7 @@ impl DatasetGroupSummary {
     }
 }
 
-/// <p>Provides a summary of the properties of a dataset export job. For a complete listing, call the <code>DescribeDatasetExportJob</code> API.</p>
+/// <p>Provides a summary of the properties of a dataset export job. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetExportJob.html">DescribeDatasetExportJob</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetExportJobSummary {
@@ -2195,7 +2268,7 @@ impl DatasetExportJobSummary {
     }
 }
 
-/// <p>Provides a summary of the properties of a campaign. For a complete listing, call the <code>DescribeCampaign</code> API.</p>
+/// <p>Provides a summary of the properties of a campaign. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CampaignSummary {
@@ -2373,7 +2446,7 @@ impl CampaignSummary {
     }
 }
 
-/// <p>A truncated version of the <code>BatchSegmentJob</code> datatype. The <code>ListBatchSegmentJobs</code> operation returns a list of batch segment job summaries.</p>
+/// <p>A truncated version of the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_BatchSegmentJob.html">BatchSegmentJob</a> datatype. <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListBatchSegmentJobs.html">ListBatchSegmentJobs</a> operation returns a list of batch segment job summaries.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchSegmentJobSummary {
@@ -2580,7 +2653,7 @@ impl BatchSegmentJobSummary {
     }
 }
 
-/// <p>A truncated version of the <code>BatchInferenceJob</code> datatype. The <code>ListBatchInferenceJobs</code> operation returns a list of batch inference job summaries.</p>
+/// <p>A truncated version of the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_BatchInferenceJob.html">BatchInferenceJob</a>. The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListBatchInferenceJobs.html">ListBatchInferenceJobs</a> operation returns a list of batch inference job summaries.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchInferenceJobSummary {
@@ -2787,7 +2860,7 @@ impl BatchInferenceJobSummary {
     }
 }
 
-/// <p>An object that provides information about a specific version of a <code>Solution</code> in a Custom dataset group.</p>
+/// <p>An object that provides information about a specific version of a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_Solution.html">Solution</a> in a Custom dataset group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SolutionVersion {
@@ -3322,7 +3395,7 @@ pub struct SolutionConfig {
     /// <p>Lists the feature transformation parameters.</p>
     pub feature_transformation_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The <code>AutoMLConfig</code> object containing a list of recipes to search when AutoML is performed.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
     pub auto_ml_config: std::option::Option<crate::model::AutoMlConfig>,
     /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
     pub optimization_objective: std::option::Option<crate::model::OptimizationObjective>,
@@ -3350,7 +3423,7 @@ impl SolutionConfig {
     {
         self.feature_transformation_parameters.as_ref()
     }
-    /// <p>The <code>AutoMLConfig</code> object containing a list of recipes to search when AutoML is performed.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
     pub fn auto_ml_config(&self) -> std::option::Option<&crate::model::AutoMlConfig> {
         self.auto_ml_config.as_ref()
     }
@@ -3473,12 +3546,12 @@ pub mod solution_config {
             self.feature_transformation_parameters = input;
             self
         }
-        /// <p>The <code>AutoMLConfig</code> object containing a list of recipes to search when AutoML is performed.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
         pub fn auto_ml_config(mut self, input: crate::model::AutoMlConfig) -> Self {
             self.auto_ml_config = Some(input);
             self
         }
-        /// <p>The <code>AutoMLConfig</code> object containing a list of recipes to search when AutoML is performed.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
         pub fn set_auto_ml_config(
             mut self,
             input: std::option::Option<crate::model::AutoMlConfig>,
@@ -3666,7 +3739,7 @@ impl AsRef<str> for ObjectiveSensitivity {
     }
 }
 
-/// <p>When the solution performs AutoML (<code>performAutoML</code> is true in <code>CreateSolution</code>), Amazon Personalize determines which recipe, from the specified list, optimizes the given metric. Amazon Personalize then uses that recipe for the solution.</p>
+/// <p>When the solution performs AutoML (<code>performAutoML</code> is true in <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>), Amazon Personalize determines which recipe, from the specified list, optimizes the given metric. Amazon Personalize then uses that recipe for the solution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoMlConfig {
@@ -4789,7 +4862,7 @@ impl Solution {
     }
 }
 
-/// <p>When the solution performs AutoML (<code>performAutoML</code> is true in <code>CreateSolution</code>), specifies the recipe that best optimized the specified metric.</p>
+/// <p>When the solution performs AutoML (<code>performAutoML</code> is true in <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>), specifies the recipe that best optimized the specified metric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoMlResult {
@@ -4846,7 +4919,7 @@ impl AutoMlResult {
     }
 }
 
-/// <p>Describes the schema for a dataset. For more information on schemas, see <code>CreateSchema</code>.</p>
+/// <p>Describes the schema for a dataset. For more information on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetSchema {
@@ -5273,7 +5346,7 @@ impl Recommender {
     }
 }
 
-/// <p>Provides a summary of the properties of a recommender update. For a complete listing, call the DescribeRecommender API operation.</p>
+/// <p>Provides a summary of the properties of a recommender update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommenderUpdateSummary {
@@ -5435,7 +5508,7 @@ impl RecommenderUpdateSummary {
     }
 }
 
-/// <p>Provides information about a recipe. Each recipe provides an algorithm that Amazon Personalize uses in model training when you use the <code>CreateSolution</code> operation. </p>
+/// <p>Provides information about a recipe. Each recipe provides an algorithm that Amazon Personalize uses in model training when you use the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Recipe {
@@ -5692,7 +5765,7 @@ pub struct Filter {
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>If the filter failed, the reason for its failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>Specifies the type of item interactions to filter out of recommendation results. The filter expression must follow specific format rules. For information about filter expression structure and syntax, see <code>filter-expressions</code>.</p>
+    /// <p>Specifies the type of item interactions to filter out of recommendation results. The filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
     pub filter_expression: std::option::Option<std::string::String>,
     /// <p>The status of the filter.</p>
     pub status: std::option::Option<std::string::String>,
@@ -5722,7 +5795,7 @@ impl Filter {
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>Specifies the type of item interactions to filter out of recommendation results. The filter expression must follow specific format rules. For information about filter expression structure and syntax, see <code>filter-expressions</code>.</p>
+    /// <p>Specifies the type of item interactions to filter out of recommendation results. The filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
     pub fn filter_expression(&self) -> std::option::Option<&str> {
         self.filter_expression.as_deref()
     }
@@ -5833,12 +5906,12 @@ pub mod filter {
             self.failure_reason = input;
             self
         }
-        /// <p>Specifies the type of item interactions to filter out of recommendation results. The filter expression must follow specific format rules. For information about filter expression structure and syntax, see <code>filter-expressions</code>.</p>
+        /// <p>Specifies the type of item interactions to filter out of recommendation results. The filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
         pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.filter_expression = Some(input.into());
             self
         }
-        /// <p>Specifies the type of item interactions to filter out of recommendation results. The filter expression must follow specific format rules. For information about filter expression structure and syntax, see <code>filter-expressions</code>.</p>
+        /// <p>Specifies the type of item interactions to filter out of recommendation results. The filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
         pub fn set_filter_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6295,7 +6368,7 @@ impl EventTracker {
     }
 }
 
-/// <p>Describes a job that imports training data from a data source (Amazon S3 bucket) to an Amazon Personalize dataset. For more information, see <code>CreateDatasetImportJob</code>.</p>
+/// <p>Describes a job that imports training data from a data source (Amazon S3 bucket) to an Amazon Personalize dataset. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>.</p>
 /// <p>A dataset import job can be in one of the following states:</p>
 /// <ul>
 /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
@@ -6597,7 +6670,7 @@ impl DataSource {
     }
 }
 
-/// <p>A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling <code>CreateDatasetGroup</code>. You then create a dataset and add it to a dataset group by calling <code>CreateDataset</code>. The dataset group is used to create and train a solution by calling <code>CreateSolution</code>. A dataset group can contain only one of each type of dataset.</p>
+/// <p>A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>. You then create a dataset and add it to a dataset group by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>. The dataset group is used to create and train a solution by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>. A dataset group can contain only one of each type of dataset.</p>
 /// <p>You can specify an Key Management Service (KMS) key to encrypt the datasets in the group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6836,7 +6909,7 @@ impl DatasetGroup {
     }
 }
 
-/// <p>Describes a job that exports a dataset to an Amazon S3 bucket. For more information, see <code>CreateDatasetExportJob</code>.</p>
+/// <p>Describes a job that exports a dataset to an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html">CreateDatasetExportJob</a>.</p>
 /// <p>A dataset export job can be in one of the following states:</p>
 /// <ul>
 /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
@@ -7528,7 +7601,7 @@ impl Dataset {
     }
 }
 
-/// <p>An object that describes the deployment of a solution version. For more information on campaigns, see <code>CreateCampaign</code>.</p>
+/// <p>An object that describes the deployment of a solution version. For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Campaign {
@@ -7555,7 +7628,7 @@ pub struct Campaign {
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix format) that the campaign was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <code>DescribeCampaign</code> API.</p>
+    /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
     pub latest_campaign_update: std::option::Option<crate::model::CampaignUpdateSummary>,
 }
 impl Campaign {
@@ -7600,7 +7673,7 @@ impl Campaign {
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
-    /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <code>DescribeCampaign</code> API.</p>
+    /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
     pub fn latest_campaign_update(
         &self,
     ) -> std::option::Option<&crate::model::CampaignUpdateSummary> {
@@ -7756,7 +7829,7 @@ pub mod campaign {
             self.last_updated_date_time = input;
             self
         }
-        /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <code>DescribeCampaign</code> API.</p>
+        /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
         pub fn latest_campaign_update(
             mut self,
             input: crate::model::CampaignUpdateSummary,
@@ -7764,7 +7837,7 @@ pub mod campaign {
             self.latest_campaign_update = Some(input);
             self
         }
-        /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <code>DescribeCampaign</code> API.</p>
+        /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
         pub fn set_latest_campaign_update(
             mut self,
             input: std::option::Option<crate::model::CampaignUpdateSummary>,
@@ -7796,7 +7869,7 @@ impl Campaign {
     }
 }
 
-/// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <code>DescribeCampaign</code> API.</p>
+/// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CampaignUpdateSummary {

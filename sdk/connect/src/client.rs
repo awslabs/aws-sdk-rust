@@ -10975,7 +10975,6 @@ pub mod fluent_builders {
     ///
     /// <p>Ends the specified contact. This call does not work for the following initiation methods:</p>
     /// <ul>
-    /// <li> <p>CALLBACK</p> </li>
     /// <li> <p>DISCONNECT</p> </li>
     /// <li> <p>TRANSFER</p> </li>
     /// <li> <p>QUEUE_TRANSFER</p> </li>

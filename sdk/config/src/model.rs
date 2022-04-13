@@ -275,6 +275,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     EksCluster,
     #[allow(missing_docs)] // documentation missing in model
+    EmrSecurityConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     Application,
     #[allow(missing_docs)] // documentation missing in model
     ApplicationVersion,
@@ -286,6 +288,8 @@ pub enum ResourceType {
     LoadBalancerV2,
     #[allow(missing_docs)] // documentation missing in model
     Domain,
+    #[allow(missing_docs)] // documentation missing in model
+    GuardDutyDetector,
     #[allow(missing_docs)] // documentation missing in model
     Group,
     #[allow(missing_docs)] // documentation missing in model
@@ -354,6 +358,8 @@ pub enum ResourceType {
     ManagedInstanceInventory,
     #[allow(missing_docs)] // documentation missing in model
     PatchCompliance,
+    #[allow(missing_docs)] // documentation missing in model
+    SageMakerCodeRepository,
     #[allow(missing_docs)] // documentation missing in model
     Secret,
     #[allow(missing_docs)] // documentation missing in model
@@ -457,12 +463,14 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::EFS::AccessPoint" => ResourceType::EfsAccessPoint,
             "AWS::EFS::FileSystem" => ResourceType::EfsFileSystem,
             "AWS::EKS::Cluster" => ResourceType::EksCluster,
+            "AWS::EMR::SecurityConfiguration" => ResourceType::EmrSecurityConfiguration,
             "AWS::ElasticBeanstalk::Application" => ResourceType::Application,
             "AWS::ElasticBeanstalk::ApplicationVersion" => ResourceType::ApplicationVersion,
             "AWS::ElasticBeanstalk::Environment" => ResourceType::Environment,
             "AWS::ElasticLoadBalancing::LoadBalancer" => ResourceType::LoadBalancer,
             "AWS::ElasticLoadBalancingV2::LoadBalancer" => ResourceType::LoadBalancerV2,
             "AWS::Elasticsearch::Domain" => ResourceType::Domain,
+            "AWS::GuardDuty::Detector" => ResourceType::GuardDutyDetector,
             "AWS::IAM::Group" => ResourceType::Group,
             "AWS::IAM::Policy" => ResourceType::Policy,
             "AWS::IAM::Role" => ResourceType::Role,
@@ -497,6 +505,7 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::SSM::FileData" => ResourceType::FileData,
             "AWS::SSM::ManagedInstanceInventory" => ResourceType::ManagedInstanceInventory,
             "AWS::SSM::PatchCompliance" => ResourceType::PatchCompliance,
+            "AWS::SageMaker::CodeRepository" => ResourceType::SageMakerCodeRepository,
             "AWS::SecretsManager::Secret" => ResourceType::Secret,
             "AWS::ServiceCatalog::CloudFormationProduct" => ResourceType::CloudFormationProduct,
             "AWS::ServiceCatalog::CloudFormationProvisionedProduct" => {
@@ -591,12 +600,14 @@ impl ResourceType {
             ResourceType::EfsAccessPoint => "AWS::EFS::AccessPoint",
             ResourceType::EfsFileSystem => "AWS::EFS::FileSystem",
             ResourceType::EksCluster => "AWS::EKS::Cluster",
+            ResourceType::EmrSecurityConfiguration => "AWS::EMR::SecurityConfiguration",
             ResourceType::Application => "AWS::ElasticBeanstalk::Application",
             ResourceType::ApplicationVersion => "AWS::ElasticBeanstalk::ApplicationVersion",
             ResourceType::Environment => "AWS::ElasticBeanstalk::Environment",
             ResourceType::LoadBalancer => "AWS::ElasticLoadBalancing::LoadBalancer",
             ResourceType::LoadBalancerV2 => "AWS::ElasticLoadBalancingV2::LoadBalancer",
             ResourceType::Domain => "AWS::Elasticsearch::Domain",
+            ResourceType::GuardDutyDetector => "AWS::GuardDuty::Detector",
             ResourceType::Group => "AWS::IAM::Group",
             ResourceType::Policy => "AWS::IAM::Policy",
             ResourceType::Role => "AWS::IAM::Role",
@@ -631,6 +642,7 @@ impl ResourceType {
             ResourceType::FileData => "AWS::SSM::FileData",
             ResourceType::ManagedInstanceInventory => "AWS::SSM::ManagedInstanceInventory",
             ResourceType::PatchCompliance => "AWS::SSM::PatchCompliance",
+            ResourceType::SageMakerCodeRepository => "AWS::SageMaker::CodeRepository",
             ResourceType::Secret => "AWS::SecretsManager::Secret",
             ResourceType::CloudFormationProduct => "AWS::ServiceCatalog::CloudFormationProduct",
             ResourceType::CloudFormationProvisionedProduct => {
@@ -716,12 +728,14 @@ impl ResourceType {
             "AWS::EFS::AccessPoint",
             "AWS::EFS::FileSystem",
             "AWS::EKS::Cluster",
+            "AWS::EMR::SecurityConfiguration",
             "AWS::ElasticBeanstalk::Application",
             "AWS::ElasticBeanstalk::ApplicationVersion",
             "AWS::ElasticBeanstalk::Environment",
             "AWS::ElasticLoadBalancing::LoadBalancer",
             "AWS::ElasticLoadBalancingV2::LoadBalancer",
             "AWS::Elasticsearch::Domain",
+            "AWS::GuardDuty::Detector",
             "AWS::IAM::Group",
             "AWS::IAM::Policy",
             "AWS::IAM::Role",
@@ -756,6 +770,7 @@ impl ResourceType {
             "AWS::SSM::FileData",
             "AWS::SSM::ManagedInstanceInventory",
             "AWS::SSM::PatchCompliance",
+            "AWS::SageMaker::CodeRepository",
             "AWS::SecretsManager::Secret",
             "AWS::ServiceCatalog::CloudFormationProduct",
             "AWS::ServiceCatalog::CloudFormationProvisionedProduct",
@@ -2338,11 +2353,485 @@ impl ConformancePackInputParameter {
     }
 }
 
+/// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OrganizationCustomPolicyRuleMetadata {
+    /// <p>The description that you provide for your organization Config Custom Policy rule.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The type of notification that initiates Config to run an evaluation for a rule. For Config Custom Policy rules, Config supports change-initiated notification types:</p>
+    /// <ul>
+    /// <li> <p> <code>ConfigurationItemChangeNotification</code> - Initiates an evaluation when Config delivers a configuration item as a result of a resource change.</p> </li>
+    /// <li> <p> <code>OversizedConfigurationItemChangeNotification</code> - Initiates an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p> </li>
+    /// </ul>
+    pub organization_config_rule_trigger_types:
+        std::option::Option<std::vec::Vec<crate::model::OrganizationConfigRuleTriggerTypeNoSn>>,
+    /// <p>A string, in JSON format, that is passed to your organization Config Custom Policy rule.</p>
+    pub input_parameters: std::option::Option<std::string::String>,
+    /// <p>The maximum frequency with which Config runs evaluations for a rule. Your Config Custom Policy rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p>
+    pub maximum_execution_frequency: std::option::Option<crate::model::MaximumExecutionFrequency>,
+    /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
+    pub resource_types_scope: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
+    pub resource_id_scope: std::option::Option<std::string::String>,
+    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    pub tag_key_scope: std::option::Option<std::string::String>,
+    /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
+    pub tag_value_scope: std::option::Option<std::string::String>,
+    /// <p>The runtime system for your organization Config Custom Policy rules. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
+    pub policy_runtime: std::option::Option<std::string::String>,
+    /// <p>The policy definition containing the logic for your organization Config Custom Policy rule.</p>
+    pub policy_text: std::option::Option<std::string::String>,
+    /// <p>A list of accounts that you can enable debug logging for your organization Config Custom Policy rule. List is null when debug logging is enabled for all accounts.</p>
+    pub debug_log_delivery_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl OrganizationCustomPolicyRuleMetadata {
+    /// <p>The description that you provide for your organization Config Custom Policy rule.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of notification that initiates Config to run an evaluation for a rule. For Config Custom Policy rules, Config supports change-initiated notification types:</p>
+    /// <ul>
+    /// <li> <p> <code>ConfigurationItemChangeNotification</code> - Initiates an evaluation when Config delivers a configuration item as a result of a resource change.</p> </li>
+    /// <li> <p> <code>OversizedConfigurationItemChangeNotification</code> - Initiates an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p> </li>
+    /// </ul>
+    pub fn organization_config_rule_trigger_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::OrganizationConfigRuleTriggerTypeNoSn]> {
+        self.organization_config_rule_trigger_types.as_deref()
+    }
+    /// <p>A string, in JSON format, that is passed to your organization Config Custom Policy rule.</p>
+    pub fn input_parameters(&self) -> std::option::Option<&str> {
+        self.input_parameters.as_deref()
+    }
+    /// <p>The maximum frequency with which Config runs evaluations for a rule. Your Config Custom Policy rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p>
+    pub fn maximum_execution_frequency(
+        &self,
+    ) -> std::option::Option<&crate::model::MaximumExecutionFrequency> {
+        self.maximum_execution_frequency.as_ref()
+    }
+    /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
+    pub fn resource_types_scope(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_types_scope.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
+    pub fn resource_id_scope(&self) -> std::option::Option<&str> {
+        self.resource_id_scope.as_deref()
+    }
+    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    pub fn tag_key_scope(&self) -> std::option::Option<&str> {
+        self.tag_key_scope.as_deref()
+    }
+    /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
+    pub fn tag_value_scope(&self) -> std::option::Option<&str> {
+        self.tag_value_scope.as_deref()
+    }
+    /// <p>The runtime system for your organization Config Custom Policy rules. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
+    pub fn policy_runtime(&self) -> std::option::Option<&str> {
+        self.policy_runtime.as_deref()
+    }
+    /// <p>The policy definition containing the logic for your organization Config Custom Policy rule.</p>
+    pub fn policy_text(&self) -> std::option::Option<&str> {
+        self.policy_text.as_deref()
+    }
+    /// <p>A list of accounts that you can enable debug logging for your organization Config Custom Policy rule. List is null when debug logging is enabled for all accounts.</p>
+    pub fn debug_log_delivery_accounts(&self) -> std::option::Option<&[std::string::String]> {
+        self.debug_log_delivery_accounts.as_deref()
+    }
+}
+impl std::fmt::Debug for OrganizationCustomPolicyRuleMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OrganizationCustomPolicyRuleMetadata");
+        formatter.field("description", &self.description);
+        formatter.field(
+            "organization_config_rule_trigger_types",
+            &self.organization_config_rule_trigger_types,
+        );
+        formatter.field("input_parameters", &self.input_parameters);
+        formatter.field(
+            "maximum_execution_frequency",
+            &self.maximum_execution_frequency,
+        );
+        formatter.field("resource_types_scope", &self.resource_types_scope);
+        formatter.field("resource_id_scope", &self.resource_id_scope);
+        formatter.field("tag_key_scope", &self.tag_key_scope);
+        formatter.field("tag_value_scope", &self.tag_value_scope);
+        formatter.field("policy_runtime", &self.policy_runtime);
+        formatter.field("policy_text", &self.policy_text);
+        formatter.field(
+            "debug_log_delivery_accounts",
+            &self.debug_log_delivery_accounts,
+        );
+        formatter.finish()
+    }
+}
+/// See [`OrganizationCustomPolicyRuleMetadata`](crate::model::OrganizationCustomPolicyRuleMetadata)
+pub mod organization_custom_policy_rule_metadata {
+    /// A builder for [`OrganizationCustomPolicyRuleMetadata`](crate::model::OrganizationCustomPolicyRuleMetadata)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) organization_config_rule_trigger_types:
+            std::option::Option<std::vec::Vec<crate::model::OrganizationConfigRuleTriggerTypeNoSn>>,
+        pub(crate) input_parameters: std::option::Option<std::string::String>,
+        pub(crate) maximum_execution_frequency:
+            std::option::Option<crate::model::MaximumExecutionFrequency>,
+        pub(crate) resource_types_scope: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) resource_id_scope: std::option::Option<std::string::String>,
+        pub(crate) tag_key_scope: std::option::Option<std::string::String>,
+        pub(crate) tag_value_scope: std::option::Option<std::string::String>,
+        pub(crate) policy_runtime: std::option::Option<std::string::String>,
+        pub(crate) policy_text: std::option::Option<std::string::String>,
+        pub(crate) debug_log_delivery_accounts:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The description that you provide for your organization Config Custom Policy rule.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description that you provide for your organization Config Custom Policy rule.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `organization_config_rule_trigger_types`.
+        ///
+        /// To override the contents of this collection use [`set_organization_config_rule_trigger_types`](Self::set_organization_config_rule_trigger_types).
+        ///
+        /// <p>The type of notification that initiates Config to run an evaluation for a rule. For Config Custom Policy rules, Config supports change-initiated notification types:</p>
+        /// <ul>
+        /// <li> <p> <code>ConfigurationItemChangeNotification</code> - Initiates an evaluation when Config delivers a configuration item as a result of a resource change.</p> </li>
+        /// <li> <p> <code>OversizedConfigurationItemChangeNotification</code> - Initiates an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p> </li>
+        /// </ul>
+        pub fn organization_config_rule_trigger_types(
+            mut self,
+            input: crate::model::OrganizationConfigRuleTriggerTypeNoSn,
+        ) -> Self {
+            let mut v = self
+                .organization_config_rule_trigger_types
+                .unwrap_or_default();
+            v.push(input);
+            self.organization_config_rule_trigger_types = Some(v);
+            self
+        }
+        /// <p>The type of notification that initiates Config to run an evaluation for a rule. For Config Custom Policy rules, Config supports change-initiated notification types:</p>
+        /// <ul>
+        /// <li> <p> <code>ConfigurationItemChangeNotification</code> - Initiates an evaluation when Config delivers a configuration item as a result of a resource change.</p> </li>
+        /// <li> <p> <code>OversizedConfigurationItemChangeNotification</code> - Initiates an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p> </li>
+        /// </ul>
+        pub fn set_organization_config_rule_trigger_types(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::OrganizationConfigRuleTriggerTypeNoSn>,
+            >,
+        ) -> Self {
+            self.organization_config_rule_trigger_types = input;
+            self
+        }
+        /// <p>A string, in JSON format, that is passed to your organization Config Custom Policy rule.</p>
+        pub fn input_parameters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_parameters = Some(input.into());
+            self
+        }
+        /// <p>A string, in JSON format, that is passed to your organization Config Custom Policy rule.</p>
+        pub fn set_input_parameters(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.input_parameters = input;
+            self
+        }
+        /// <p>The maximum frequency with which Config runs evaluations for a rule. Your Config Custom Policy rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p>
+        pub fn maximum_execution_frequency(
+            mut self,
+            input: crate::model::MaximumExecutionFrequency,
+        ) -> Self {
+            self.maximum_execution_frequency = Some(input);
+            self
+        }
+        /// <p>The maximum frequency with which Config runs evaluations for a rule. Your Config Custom Policy rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p>
+        pub fn set_maximum_execution_frequency(
+            mut self,
+            input: std::option::Option<crate::model::MaximumExecutionFrequency>,
+        ) -> Self {
+            self.maximum_execution_frequency = input;
+            self
+        }
+        /// Appends an item to `resource_types_scope`.
+        ///
+        /// To override the contents of this collection use [`set_resource_types_scope`](Self::set_resource_types_scope).
+        ///
+        /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
+        pub fn resource_types_scope(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.resource_types_scope.unwrap_or_default();
+            v.push(input.into());
+            self.resource_types_scope = Some(v);
+            self
+        }
+        /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
+        pub fn set_resource_types_scope(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.resource_types_scope = input;
+            self
+        }
+        /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
+        pub fn resource_id_scope(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id_scope = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
+        pub fn set_resource_id_scope(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_id_scope = input;
+            self
+        }
+        /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+        pub fn tag_key_scope(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tag_key_scope = Some(input.into());
+            self
+        }
+        /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+        pub fn set_tag_key_scope(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.tag_key_scope = input;
+            self
+        }
+        /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
+        pub fn tag_value_scope(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tag_value_scope = Some(input.into());
+            self
+        }
+        /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
+        pub fn set_tag_value_scope(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.tag_value_scope = input;
+            self
+        }
+        /// <p>The runtime system for your organization Config Custom Policy rules. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
+        pub fn policy_runtime(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_runtime = Some(input.into());
+            self
+        }
+        /// <p>The runtime system for your organization Config Custom Policy rules. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
+        pub fn set_policy_runtime(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_runtime = input;
+            self
+        }
+        /// <p>The policy definition containing the logic for your organization Config Custom Policy rule.</p>
+        pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_text = Some(input.into());
+            self
+        }
+        /// <p>The policy definition containing the logic for your organization Config Custom Policy rule.</p>
+        pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_text = input;
+            self
+        }
+        /// Appends an item to `debug_log_delivery_accounts`.
+        ///
+        /// To override the contents of this collection use [`set_debug_log_delivery_accounts`](Self::set_debug_log_delivery_accounts).
+        ///
+        /// <p>A list of accounts that you can enable debug logging for your organization Config Custom Policy rule. List is null when debug logging is enabled for all accounts.</p>
+        pub fn debug_log_delivery_accounts(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.debug_log_delivery_accounts.unwrap_or_default();
+            v.push(input.into());
+            self.debug_log_delivery_accounts = Some(v);
+            self
+        }
+        /// <p>A list of accounts that you can enable debug logging for your organization Config Custom Policy rule. List is null when debug logging is enabled for all accounts.</p>
+        pub fn set_debug_log_delivery_accounts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.debug_log_delivery_accounts = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OrganizationCustomPolicyRuleMetadata`](crate::model::OrganizationCustomPolicyRuleMetadata)
+        pub fn build(self) -> crate::model::OrganizationCustomPolicyRuleMetadata {
+            crate::model::OrganizationCustomPolicyRuleMetadata {
+                description: self.description,
+                organization_config_rule_trigger_types: self.organization_config_rule_trigger_types,
+                input_parameters: self.input_parameters,
+                maximum_execution_frequency: self.maximum_execution_frequency,
+                resource_types_scope: self.resource_types_scope,
+                resource_id_scope: self.resource_id_scope,
+                tag_key_scope: self.tag_key_scope,
+                tag_value_scope: self.tag_value_scope,
+                policy_runtime: self.policy_runtime,
+                policy_text: self.policy_text,
+                debug_log_delivery_accounts: self.debug_log_delivery_accounts,
+            }
+        }
+    }
+}
+impl OrganizationCustomPolicyRuleMetadata {
+    /// Creates a new builder-style object to manufacture [`OrganizationCustomPolicyRuleMetadata`](crate::model::OrganizationCustomPolicyRuleMetadata)
+    pub fn builder() -> crate::model::organization_custom_policy_rule_metadata::Builder {
+        crate::model::organization_custom_policy_rule_metadata::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MaximumExecutionFrequency {
+    #[allow(missing_docs)] // documentation missing in model
+    OneHour,
+    #[allow(missing_docs)] // documentation missing in model
+    SixHours,
+    #[allow(missing_docs)] // documentation missing in model
+    ThreeHours,
+    #[allow(missing_docs)] // documentation missing in model
+    TwelveHours,
+    #[allow(missing_docs)] // documentation missing in model
+    TwentyFourHours,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MaximumExecutionFrequency {
+    fn from(s: &str) -> Self {
+        match s {
+            "One_Hour" => MaximumExecutionFrequency::OneHour,
+            "Six_Hours" => MaximumExecutionFrequency::SixHours,
+            "Three_Hours" => MaximumExecutionFrequency::ThreeHours,
+            "Twelve_Hours" => MaximumExecutionFrequency::TwelveHours,
+            "TwentyFour_Hours" => MaximumExecutionFrequency::TwentyFourHours,
+            other => MaximumExecutionFrequency::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MaximumExecutionFrequency {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MaximumExecutionFrequency::from(s))
+    }
+}
+impl MaximumExecutionFrequency {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MaximumExecutionFrequency::OneHour => "One_Hour",
+            MaximumExecutionFrequency::SixHours => "Six_Hours",
+            MaximumExecutionFrequency::ThreeHours => "Three_Hours",
+            MaximumExecutionFrequency::TwelveHours => "Twelve_Hours",
+            MaximumExecutionFrequency::TwentyFourHours => "TwentyFour_Hours",
+            MaximumExecutionFrequency::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "One_Hour",
+            "Six_Hours",
+            "Three_Hours",
+            "Twelve_Hours",
+            "TwentyFour_Hours",
+        ]
+    }
+}
+impl AsRef<str> for MaximumExecutionFrequency {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum OrganizationConfigRuleTriggerTypeNoSn {
+    #[allow(missing_docs)] // documentation missing in model
+    ConfigurationItemChangeNotification,
+    #[allow(missing_docs)] // documentation missing in model
+    OversizedConfigurationItemChangeNotifcation,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for OrganizationConfigRuleTriggerTypeNoSn {
+    fn from(s: &str) -> Self {
+        match s {
+            "ConfigurationItemChangeNotification" => {
+                OrganizationConfigRuleTriggerTypeNoSn::ConfigurationItemChangeNotification
+            }
+            "OversizedConfigurationItemChangeNotification" => {
+                OrganizationConfigRuleTriggerTypeNoSn::OversizedConfigurationItemChangeNotifcation
+            }
+            other => OrganizationConfigRuleTriggerTypeNoSn::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for OrganizationConfigRuleTriggerTypeNoSn {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OrganizationConfigRuleTriggerTypeNoSn::from(s))
+    }
+}
+impl OrganizationConfigRuleTriggerTypeNoSn {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            OrganizationConfigRuleTriggerTypeNoSn::ConfigurationItemChangeNotification => {
+                "ConfigurationItemChangeNotification"
+            }
+            OrganizationConfigRuleTriggerTypeNoSn::OversizedConfigurationItemChangeNotifcation => {
+                "OversizedConfigurationItemChangeNotification"
+            }
+            OrganizationConfigRuleTriggerTypeNoSn::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ConfigurationItemChangeNotification",
+            "OversizedConfigurationItemChangeNotification",
+        ]
+    }
+}
+impl AsRef<str> for OrganizationConfigRuleTriggerTypeNoSn {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>An object that specifies organization custom rule metadata such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and organization trigger types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationCustomRuleMetadata {
-    /// <p>The description that you provide for organization config rule.</p>
+    /// <p>The description that you provide for your organization Config rule.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The lambda function ARN.</p>
     pub lambda_function_arn: std::option::Option<std::string::String>,
@@ -2354,7 +2843,7 @@ pub struct OrganizationCustomRuleMetadata {
     /// </ul>
     pub organization_config_rule_trigger_types:
         std::option::Option<std::vec::Vec<crate::model::OrganizationConfigRuleTriggerType>>,
-    /// <p>A string, in JSON format, that is passed to organization config rule Lambda function.</p>
+    /// <p>A string, in JSON format, that is passed to your organization Config rule Lambda function.</p>
     pub input_parameters: std::option::Option<std::string::String>,
     /// <p>The maximum frequency with which Config runs evaluations for a rule. Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
@@ -2370,7 +2859,7 @@ pub struct OrganizationCustomRuleMetadata {
     pub tag_value_scope: std::option::Option<std::string::String>,
 }
 impl OrganizationCustomRuleMetadata {
-    /// <p>The description that you provide for organization config rule.</p>
+    /// <p>The description that you provide for your organization Config rule.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -2389,7 +2878,7 @@ impl OrganizationCustomRuleMetadata {
     ) -> std::option::Option<&[crate::model::OrganizationConfigRuleTriggerType]> {
         self.organization_config_rule_trigger_types.as_deref()
     }
-    /// <p>A string, in JSON format, that is passed to organization config rule Lambda function.</p>
+    /// <p>A string, in JSON format, that is passed to your organization Config rule Lambda function.</p>
     pub fn input_parameters(&self) -> std::option::Option<&str> {
         self.input_parameters.as_deref()
     }
@@ -2458,12 +2947,12 @@ pub mod organization_custom_rule_metadata {
         pub(crate) tag_value_scope: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The description that you provide for organization config rule.</p>
+        /// <p>The description that you provide for your organization Config rule.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description that you provide for organization config rule.</p>
+        /// <p>The description that you provide for your organization Config rule.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2517,12 +3006,12 @@ pub mod organization_custom_rule_metadata {
             self.organization_config_rule_trigger_types = input;
             self
         }
-        /// <p>A string, in JSON format, that is passed to organization config rule Lambda function.</p>
+        /// <p>A string, in JSON format, that is passed to your organization Config rule Lambda function.</p>
         pub fn input_parameters(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_parameters = Some(input.into());
             self
         }
-        /// <p>A string, in JSON format, that is passed to organization config rule Lambda function.</p>
+        /// <p>A string, in JSON format, that is passed to your organization Config rule Lambda function.</p>
         pub fn set_input_parameters(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2642,79 +3131,6 @@ impl OrganizationCustomRuleMetadata {
     std::fmt::Debug,
     std::hash::Hash,
 )]
-pub enum MaximumExecutionFrequency {
-    #[allow(missing_docs)] // documentation missing in model
-    OneHour,
-    #[allow(missing_docs)] // documentation missing in model
-    SixHours,
-    #[allow(missing_docs)] // documentation missing in model
-    ThreeHours,
-    #[allow(missing_docs)] // documentation missing in model
-    TwelveHours,
-    #[allow(missing_docs)] // documentation missing in model
-    TwentyFourHours,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for MaximumExecutionFrequency {
-    fn from(s: &str) -> Self {
-        match s {
-            "One_Hour" => MaximumExecutionFrequency::OneHour,
-            "Six_Hours" => MaximumExecutionFrequency::SixHours,
-            "Three_Hours" => MaximumExecutionFrequency::ThreeHours,
-            "Twelve_Hours" => MaximumExecutionFrequency::TwelveHours,
-            "TwentyFour_Hours" => MaximumExecutionFrequency::TwentyFourHours,
-            other => MaximumExecutionFrequency::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for MaximumExecutionFrequency {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MaximumExecutionFrequency::from(s))
-    }
-}
-impl MaximumExecutionFrequency {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MaximumExecutionFrequency::OneHour => "One_Hour",
-            MaximumExecutionFrequency::SixHours => "Six_Hours",
-            MaximumExecutionFrequency::ThreeHours => "Three_Hours",
-            MaximumExecutionFrequency::TwelveHours => "Twelve_Hours",
-            MaximumExecutionFrequency::TwentyFourHours => "TwentyFour_Hours",
-            MaximumExecutionFrequency::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "One_Hour",
-            "Six_Hours",
-            "Three_Hours",
-            "Twelve_Hours",
-            "TwentyFour_Hours",
-        ]
-    }
-}
-impl AsRef<str> for MaximumExecutionFrequency {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
 pub enum OrganizationConfigRuleTriggerType {
     #[allow(missing_docs)] // documentation missing in model
     ConfigurationItemChangeNotification,
@@ -2779,11 +3195,11 @@ impl AsRef<str> for OrganizationConfigRuleTriggerType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationManagedRuleMetadata {
-    /// <p>The description that you provide for organization config rule.</p>
+    /// <p>The description that you provide for your organization Config rule.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>For organization config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using Config managed rules</a>.</p>
     pub rule_identifier: std::option::Option<std::string::String>,
-    /// <p>A string, in JSON format, that is passed to organization config rule Lambda function.</p>
+    /// <p>A string, in JSON format, that is passed to your organization Config rule Lambda function.</p>
     pub input_parameters: std::option::Option<std::string::String>,
     /// <p>The maximum frequency with which Config runs evaluations for a rule. You are using an Config managed rule that is triggered at a periodic frequency.</p> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
@@ -2799,7 +3215,7 @@ pub struct OrganizationManagedRuleMetadata {
     pub tag_value_scope: std::option::Option<std::string::String>,
 }
 impl OrganizationManagedRuleMetadata {
-    /// <p>The description that you provide for organization config rule.</p>
+    /// <p>The description that you provide for your organization Config rule.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -2807,7 +3223,7 @@ impl OrganizationManagedRuleMetadata {
     pub fn rule_identifier(&self) -> std::option::Option<&str> {
         self.rule_identifier.as_deref()
     }
-    /// <p>A string, in JSON format, that is passed to organization config rule Lambda function.</p>
+    /// <p>A string, in JSON format, that is passed to your organization Config rule Lambda function.</p>
     pub fn input_parameters(&self) -> std::option::Option<&str> {
         self.input_parameters.as_deref()
     }
@@ -2870,12 +3286,12 @@ pub mod organization_managed_rule_metadata {
         pub(crate) tag_value_scope: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The description that you provide for organization config rule.</p>
+        /// <p>The description that you provide for your organization Config rule.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description that you provide for organization config rule.</p>
+        /// <p>The description that you provide for your organization Config rule.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2893,12 +3309,12 @@ pub mod organization_managed_rule_metadata {
             self.rule_identifier = input;
             self
         }
-        /// <p>A string, in JSON format, that is passed to organization config rule Lambda function.</p>
+        /// <p>A string, in JSON format, that is passed to your organization Config rule Lambda function.</p>
         pub fn input_parameters(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_parameters = Some(input.into());
             self
         }
-        /// <p>A string, in JSON format, that is passed to organization config rule Lambda function.</p>
+        /// <p>A string, in JSON format, that is passed to your organization Config rule Lambda function.</p>
         pub fn set_input_parameters(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4673,31 +5089,45 @@ impl AsRef<str> for ConfigRuleState {
     }
 }
 
-/// <p>Provides the Config rule owner (Amazon Web Services or customer), the rule identifier, and the events that trigger the evaluation of your Amazon Web Services resources.</p>
+/// <p>Provides the CustomPolicyDetails, the rule owner (Amazon Web Services or customer), the rule identifier, and the events that cause the evaluation of your Amazon Web Services resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Source {
     /// <p>Indicates whether Amazon Web Services or the customer owns and manages the Config rule.</p>
+    /// <p>Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config Managed Rules</a> in the Config developer guide.</p>
+    /// <p>Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom Rules </a> in the Config developer guide.</p>
     pub owner: std::option::Option<crate::model::Owner>,
-    /// <p>For Config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using Config managed rules</a>.</p>
-    /// <p>For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's Lambda function, such as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
+    /// <p>For Config Managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List of Config Managed Rules</a>.</p>
+    /// <p>For Config Custom Lambda rules, the identifier is the Amazon Resource Name (ARN) of the rule's Lambda function, such as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
+    /// <p>For Config Custom Policy rules, this field will be ignored.</p>
     pub source_identifier: std::option::Option<std::string::String>,
-    /// <p>Provides the source and type of the event that causes Config to evaluate your Amazon Web Services resources.</p>
+    /// <p>Provides the source and the message types that cause Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
+    /// <p>If the owner is set to <code>CUSTOM_POLICY</code>, the only acceptable values for the Config rule trigger message type are <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.</p>
     pub source_details: std::option::Option<std::vec::Vec<crate::model::SourceDetail>>,
+    /// <p>Provides the runtime system, policy definition, and whether debug logging is enabled. Required when owner is set to <code>CUSTOM_POLICY</code>.</p>
+    pub custom_policy_details: std::option::Option<crate::model::CustomPolicyDetails>,
 }
 impl Source {
     /// <p>Indicates whether Amazon Web Services or the customer owns and manages the Config rule.</p>
+    /// <p>Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config Managed Rules</a> in the Config developer guide.</p>
+    /// <p>Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom Rules </a> in the Config developer guide.</p>
     pub fn owner(&self) -> std::option::Option<&crate::model::Owner> {
         self.owner.as_ref()
     }
-    /// <p>For Config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using Config managed rules</a>.</p>
-    /// <p>For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's Lambda function, such as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
+    /// <p>For Config Managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List of Config Managed Rules</a>.</p>
+    /// <p>For Config Custom Lambda rules, the identifier is the Amazon Resource Name (ARN) of the rule's Lambda function, such as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
+    /// <p>For Config Custom Policy rules, this field will be ignored.</p>
     pub fn source_identifier(&self) -> std::option::Option<&str> {
         self.source_identifier.as_deref()
     }
-    /// <p>Provides the source and type of the event that causes Config to evaluate your Amazon Web Services resources.</p>
+    /// <p>Provides the source and the message types that cause Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
+    /// <p>If the owner is set to <code>CUSTOM_POLICY</code>, the only acceptable values for the Config rule trigger message type are <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.</p>
     pub fn source_details(&self) -> std::option::Option<&[crate::model::SourceDetail]> {
         self.source_details.as_deref()
+    }
+    /// <p>Provides the runtime system, policy definition, and whether debug logging is enabled. Required when owner is set to <code>CUSTOM_POLICY</code>.</p>
+    pub fn custom_policy_details(&self) -> std::option::Option<&crate::model::CustomPolicyDetails> {
+        self.custom_policy_details.as_ref()
     }
 }
 impl std::fmt::Debug for Source {
@@ -4706,6 +5136,7 @@ impl std::fmt::Debug for Source {
         formatter.field("owner", &self.owner);
         formatter.field("source_identifier", &self.source_identifier);
         formatter.field("source_details", &self.source_details);
+        formatter.field("custom_policy_details", &self.custom_policy_details);
         formatter.finish()
     }
 }
@@ -4718,26 +5149,33 @@ pub mod source {
         pub(crate) owner: std::option::Option<crate::model::Owner>,
         pub(crate) source_identifier: std::option::Option<std::string::String>,
         pub(crate) source_details: std::option::Option<std::vec::Vec<crate::model::SourceDetail>>,
+        pub(crate) custom_policy_details: std::option::Option<crate::model::CustomPolicyDetails>,
     }
     impl Builder {
         /// <p>Indicates whether Amazon Web Services or the customer owns and manages the Config rule.</p>
+        /// <p>Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config Managed Rules</a> in the Config developer guide.</p>
+        /// <p>Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom Rules </a> in the Config developer guide.</p>
         pub fn owner(mut self, input: crate::model::Owner) -> Self {
             self.owner = Some(input);
             self
         }
         /// <p>Indicates whether Amazon Web Services or the customer owns and manages the Config rule.</p>
+        /// <p>Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config Managed Rules</a> in the Config developer guide.</p>
+        /// <p>Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom Rules </a> in the Config developer guide.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Owner>) -> Self {
             self.owner = input;
             self
         }
-        /// <p>For Config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using Config managed rules</a>.</p>
-        /// <p>For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's Lambda function, such as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
+        /// <p>For Config Managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List of Config Managed Rules</a>.</p>
+        /// <p>For Config Custom Lambda rules, the identifier is the Amazon Resource Name (ARN) of the rule's Lambda function, such as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
+        /// <p>For Config Custom Policy rules, this field will be ignored.</p>
         pub fn source_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_identifier = Some(input.into());
             self
         }
-        /// <p>For Config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using Config managed rules</a>.</p>
-        /// <p>For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's Lambda function, such as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
+        /// <p>For Config Managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List of Config Managed Rules</a>.</p>
+        /// <p>For Config Custom Lambda rules, the identifier is the Amazon Resource Name (ARN) of the rule's Lambda function, such as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
+        /// <p>For Config Custom Policy rules, this field will be ignored.</p>
         pub fn set_source_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4749,19 +5187,34 @@ pub mod source {
         ///
         /// To override the contents of this collection use [`set_source_details`](Self::set_source_details).
         ///
-        /// <p>Provides the source and type of the event that causes Config to evaluate your Amazon Web Services resources.</p>
+        /// <p>Provides the source and the message types that cause Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
+        /// <p>If the owner is set to <code>CUSTOM_POLICY</code>, the only acceptable values for the Config rule trigger message type are <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.</p>
         pub fn source_details(mut self, input: crate::model::SourceDetail) -> Self {
             let mut v = self.source_details.unwrap_or_default();
             v.push(input);
             self.source_details = Some(v);
             self
         }
-        /// <p>Provides the source and type of the event that causes Config to evaluate your Amazon Web Services resources.</p>
+        /// <p>Provides the source and the message types that cause Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
+        /// <p>If the owner is set to <code>CUSTOM_POLICY</code>, the only acceptable values for the Config rule trigger message type are <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.</p>
         pub fn set_source_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SourceDetail>>,
         ) -> Self {
             self.source_details = input;
+            self
+        }
+        /// <p>Provides the runtime system, policy definition, and whether debug logging is enabled. Required when owner is set to <code>CUSTOM_POLICY</code>.</p>
+        pub fn custom_policy_details(mut self, input: crate::model::CustomPolicyDetails) -> Self {
+            self.custom_policy_details = Some(input);
+            self
+        }
+        /// <p>Provides the runtime system, policy definition, and whether debug logging is enabled. Required when owner is set to <code>CUSTOM_POLICY</code>.</p>
+        pub fn set_custom_policy_details(
+            mut self,
+            input: std::option::Option<crate::model::CustomPolicyDetails>,
+        ) -> Self {
+            self.custom_policy_details = input;
             self
         }
         /// Consumes the builder and constructs a [`Source`](crate::model::Source)
@@ -4770,6 +5223,7 @@ pub mod source {
                 owner: self.owner,
                 source_identifier: self.source_identifier,
                 source_details: self.source_details,
+                custom_policy_details: self.custom_policy_details,
             }
         }
     }
@@ -4778,6 +5232,101 @@ impl Source {
     /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source)
     pub fn builder() -> crate::model::source::Builder {
         crate::model::source::Builder::default()
+    }
+}
+
+/// <p>Provides the runtime system, policy definition, and whether debug logging enabled. You can specify the following CustomPolicyDetails parameter values only for Config Custom Policy rules.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CustomPolicyDetails {
+    /// <p>The runtime system for your Config Custom Policy rule. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
+    pub policy_runtime: std::option::Option<std::string::String>,
+    /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
+    pub policy_text: std::option::Option<std::string::String>,
+    /// <p>The boolean expression for enabling debug logging for your Config Custom Policy rule. The default value is <code>false</code>.</p>
+    pub enable_debug_log_delivery: bool,
+}
+impl CustomPolicyDetails {
+    /// <p>The runtime system for your Config Custom Policy rule. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
+    pub fn policy_runtime(&self) -> std::option::Option<&str> {
+        self.policy_runtime.as_deref()
+    }
+    /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
+    pub fn policy_text(&self) -> std::option::Option<&str> {
+        self.policy_text.as_deref()
+    }
+    /// <p>The boolean expression for enabling debug logging for your Config Custom Policy rule. The default value is <code>false</code>.</p>
+    pub fn enable_debug_log_delivery(&self) -> bool {
+        self.enable_debug_log_delivery
+    }
+}
+impl std::fmt::Debug for CustomPolicyDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomPolicyDetails");
+        formatter.field("policy_runtime", &self.policy_runtime);
+        formatter.field("policy_text", &self.policy_text);
+        formatter.field("enable_debug_log_delivery", &self.enable_debug_log_delivery);
+        formatter.finish()
+    }
+}
+/// See [`CustomPolicyDetails`](crate::model::CustomPolicyDetails)
+pub mod custom_policy_details {
+    /// A builder for [`CustomPolicyDetails`](crate::model::CustomPolicyDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) policy_runtime: std::option::Option<std::string::String>,
+        pub(crate) policy_text: std::option::Option<std::string::String>,
+        pub(crate) enable_debug_log_delivery: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The runtime system for your Config Custom Policy rule. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
+        pub fn policy_runtime(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_runtime = Some(input.into());
+            self
+        }
+        /// <p>The runtime system for your Config Custom Policy rule. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
+        pub fn set_policy_runtime(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_runtime = input;
+            self
+        }
+        /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
+        pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_text = Some(input.into());
+            self
+        }
+        /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
+        pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_text = input;
+            self
+        }
+        /// <p>The boolean expression for enabling debug logging for your Config Custom Policy rule. The default value is <code>false</code>.</p>
+        pub fn enable_debug_log_delivery(mut self, input: bool) -> Self {
+            self.enable_debug_log_delivery = Some(input);
+            self
+        }
+        /// <p>The boolean expression for enabling debug logging for your Config Custom Policy rule. The default value is <code>false</code>.</p>
+        pub fn set_enable_debug_log_delivery(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_debug_log_delivery = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CustomPolicyDetails`](crate::model::CustomPolicyDetails)
+        pub fn build(self) -> crate::model::CustomPolicyDetails {
+            crate::model::CustomPolicyDetails {
+                policy_runtime: self.policy_runtime,
+                policy_text: self.policy_text,
+                enable_debug_log_delivery: self.enable_debug_log_delivery.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl CustomPolicyDetails {
+    /// Creates a new builder-style object to manufacture [`CustomPolicyDetails`](crate::model::CustomPolicyDetails)
+    pub fn builder() -> crate::model::custom_policy_details::Builder {
+        crate::model::custom_policy_details::Builder::default()
     }
 }
 
@@ -5078,6 +5627,8 @@ pub enum Owner {
     Aws,
     #[allow(missing_docs)] // documentation missing in model
     CustomLambda,
+    #[allow(missing_docs)] // documentation missing in model
+    CustomPolicy,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -5086,6 +5637,7 @@ impl std::convert::From<&str> for Owner {
         match s {
             "AWS" => Owner::Aws,
             "CUSTOM_LAMBDA" => Owner::CustomLambda,
+            "CUSTOM_POLICY" => Owner::CustomPolicy,
             other => Owner::Unknown(other.to_owned()),
         }
     }
@@ -5103,12 +5655,13 @@ impl Owner {
         match self {
             Owner::Aws => "AWS",
             Owner::CustomLambda => "CUSTOM_LAMBDA",
+            Owner::CustomPolicy => "CUSTOM_POLICY",
             Owner::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["AWS", "CUSTOM_LAMBDA"]
+        &["AWS", "CUSTOM_LAMBDA", "CUSTOM_POLICY"]
     }
 }
 impl AsRef<str> for Owner {
@@ -7066,31 +7619,31 @@ impl OrganizationResourceDetailedStatusFilters {
     }
 }
 
-/// <p>Organization config rule creation or deletion status in each member account. This includes the name of the rule, the status, error code and error message when the rule creation or deletion failed.</p>
+/// <p>Organization Config rule creation or deletion status in each member account. This includes the name of the rule, the status, error code and error message when the rule creation or deletion failed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MemberAccountStatus {
     /// <p>The 12-digit account ID of a member account.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The name of config rule deployed in the member account.</p>
+    /// <p>The name of Config rule deployed in the member account.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
-    /// <p>Indicates deployment status for config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+    /// <p>Indicates deployment status for Config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p> Config sets the state of the rule to:</p>
     /// <ul>
-    /// <li> <p> <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member account. </p> </li>
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> when config rule is being created in the member account.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code> when config rule creation has failed in the member account.</p> </li>
-    /// <li> <p> <code>DELETE_FAILED</code> when config rule deletion has failed in the member account.</p> </li>
-    /// <li> <p> <code>DELETE_IN_PROGRESS</code> when config rule is being deleted in the member account.</p> </li>
-    /// <li> <p> <code>DELETE_SUCCESSFUL</code> when config rule has been deleted in the member account. </p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when config rule has been updated in the member account.</p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when config rule is being updated in the member account.</p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> when config rule deletion has failed in the member account.</p> </li>
+    /// <li> <p> <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account. </p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member account.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> when Config rule creation has failed in the member account.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
+    /// <li> <p> <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member account.</p> </li>
+    /// <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has been deleted in the member account. </p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member account.</p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
     /// </ul>
     pub member_account_rule_status: std::option::Option<crate::model::MemberAccountRuleStatus>,
-    /// <p>An error code that is returned when config rule creation or deletion failed in the member account.</p>
+    /// <p>An error code that is returned when Config rule creation or deletion failed in the member account.</p>
     pub error_code: std::option::Option<std::string::String>,
-    /// <p>An error message indicating that config rule account creation or deletion has failed due to an error in the member account.</p>
+    /// <p>An error message indicating that Config rule account creation or deletion has failed due to an error in the member account.</p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The timestamp of the last status update.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -7100,33 +7653,33 @@ impl MemberAccountStatus {
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The name of config rule deployed in the member account.</p>
+    /// <p>The name of Config rule deployed in the member account.</p>
     pub fn config_rule_name(&self) -> std::option::Option<&str> {
         self.config_rule_name.as_deref()
     }
-    /// <p>Indicates deployment status for config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+    /// <p>Indicates deployment status for Config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p> Config sets the state of the rule to:</p>
     /// <ul>
-    /// <li> <p> <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member account. </p> </li>
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> when config rule is being created in the member account.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code> when config rule creation has failed in the member account.</p> </li>
-    /// <li> <p> <code>DELETE_FAILED</code> when config rule deletion has failed in the member account.</p> </li>
-    /// <li> <p> <code>DELETE_IN_PROGRESS</code> when config rule is being deleted in the member account.</p> </li>
-    /// <li> <p> <code>DELETE_SUCCESSFUL</code> when config rule has been deleted in the member account. </p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when config rule has been updated in the member account.</p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when config rule is being updated in the member account.</p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> when config rule deletion has failed in the member account.</p> </li>
+    /// <li> <p> <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account. </p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member account.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> when Config rule creation has failed in the member account.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
+    /// <li> <p> <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member account.</p> </li>
+    /// <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has been deleted in the member account. </p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member account.</p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
     /// </ul>
     pub fn member_account_rule_status(
         &self,
     ) -> std::option::Option<&crate::model::MemberAccountRuleStatus> {
         self.member_account_rule_status.as_ref()
     }
-    /// <p>An error code that is returned when config rule creation or deletion failed in the member account.</p>
+    /// <p>An error code that is returned when Config rule creation or deletion failed in the member account.</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
-    /// <p>An error message indicating that config rule account creation or deletion has failed due to an error in the member account.</p>
+    /// <p>An error message indicating that Config rule account creation or deletion has failed due to an error in the member account.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -7175,12 +7728,12 @@ pub mod member_account_status {
             self.account_id = input;
             self
         }
-        /// <p>The name of config rule deployed in the member account.</p>
+        /// <p>The name of Config rule deployed in the member account.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
         }
-        /// <p>The name of config rule deployed in the member account.</p>
+        /// <p>The name of Config rule deployed in the member account.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7188,18 +7741,18 @@ pub mod member_account_status {
             self.config_rule_name = input;
             self
         }
-        /// <p>Indicates deployment status for config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+        /// <p>Indicates deployment status for Config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
         /// <p> Config sets the state of the rule to:</p>
         /// <ul>
-        /// <li> <p> <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member account. </p> </li>
-        /// <li> <p> <code>CREATE_IN_PROGRESS</code> when config rule is being created in the member account.</p> </li>
-        /// <li> <p> <code>CREATE_FAILED</code> when config rule creation has failed in the member account.</p> </li>
-        /// <li> <p> <code>DELETE_FAILED</code> when config rule deletion has failed in the member account.</p> </li>
-        /// <li> <p> <code>DELETE_IN_PROGRESS</code> when config rule is being deleted in the member account.</p> </li>
-        /// <li> <p> <code>DELETE_SUCCESSFUL</code> when config rule has been deleted in the member account. </p> </li>
-        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when config rule has been updated in the member account.</p> </li>
-        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when config rule is being updated in the member account.</p> </li>
-        /// <li> <p> <code>UPDATE_FAILED</code> when config rule deletion has failed in the member account.</p> </li>
+        /// <li> <p> <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account. </p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member account.</p> </li>
+        /// <li> <p> <code>CREATE_FAILED</code> when Config rule creation has failed in the member account.</p> </li>
+        /// <li> <p> <code>DELETE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
+        /// <li> <p> <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member account.</p> </li>
+        /// <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has been deleted in the member account. </p> </li>
+        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member account.</p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p> </li>
+        /// <li> <p> <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
         /// </ul>
         pub fn member_account_rule_status(
             mut self,
@@ -7208,18 +7761,18 @@ pub mod member_account_status {
             self.member_account_rule_status = Some(input);
             self
         }
-        /// <p>Indicates deployment status for config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+        /// <p>Indicates deployment status for Config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
         /// <p> Config sets the state of the rule to:</p>
         /// <ul>
-        /// <li> <p> <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member account. </p> </li>
-        /// <li> <p> <code>CREATE_IN_PROGRESS</code> when config rule is being created in the member account.</p> </li>
-        /// <li> <p> <code>CREATE_FAILED</code> when config rule creation has failed in the member account.</p> </li>
-        /// <li> <p> <code>DELETE_FAILED</code> when config rule deletion has failed in the member account.</p> </li>
-        /// <li> <p> <code>DELETE_IN_PROGRESS</code> when config rule is being deleted in the member account.</p> </li>
-        /// <li> <p> <code>DELETE_SUCCESSFUL</code> when config rule has been deleted in the member account. </p> </li>
-        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when config rule has been updated in the member account.</p> </li>
-        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when config rule is being updated in the member account.</p> </li>
-        /// <li> <p> <code>UPDATE_FAILED</code> when config rule deletion has failed in the member account.</p> </li>
+        /// <li> <p> <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account. </p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member account.</p> </li>
+        /// <li> <p> <code>CREATE_FAILED</code> when Config rule creation has failed in the member account.</p> </li>
+        /// <li> <p> <code>DELETE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
+        /// <li> <p> <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member account.</p> </li>
+        /// <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has been deleted in the member account. </p> </li>
+        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member account.</p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p> </li>
+        /// <li> <p> <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
         /// </ul>
         pub fn set_member_account_rule_status(
             mut self,
@@ -7228,22 +7781,22 @@ pub mod member_account_status {
             self.member_account_rule_status = input;
             self
         }
-        /// <p>An error code that is returned when config rule creation or deletion failed in the member account.</p>
+        /// <p>An error code that is returned when Config rule creation or deletion failed in the member account.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        /// <p>An error code that is returned when config rule creation or deletion failed in the member account.</p>
+        /// <p>An error code that is returned when Config rule creation or deletion failed in the member account.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        /// <p>An error message indicating that config rule account creation or deletion has failed due to an error in the member account.</p>
+        /// <p>An error message indicating that Config rule account creation or deletion has failed due to an error in the member account.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_message = Some(input.into());
             self
         }
-        /// <p>An error message indicating that config rule account creation or deletion has failed due to an error in the member account.</p>
+        /// <p>An error message indicating that Config rule account creation or deletion has failed due to an error in the member account.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7377,24 +7930,24 @@ impl AsRef<str> for MemberAccountRuleStatus {
     }
 }
 
-/// <p>Status filter object to filter results based on specific member account ID or status type for an organization config rule. </p>
+/// <p>Status filter object to filter results based on specific member account ID or status type for an organization Config rule. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatusDetailFilters {
     /// <p>The 12-digit account ID of the member account within an organization.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>Indicates deployment status for config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+    /// <p>Indicates deployment status for Config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p>Config sets the state of the rule to:</p>
     /// <ul>
-    /// <li> <p> <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member account.</p> </li>
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> when config rule is being created in the member account.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code> when config rule creation has failed in the member account.</p> </li>
-    /// <li> <p> <code>DELETE_FAILED</code> when config rule deletion has failed in the member account.</p> </li>
-    /// <li> <p> <code>DELETE_IN_PROGRESS</code> when config rule is being deleted in the member account.</p> </li>
-    /// <li> <p> <code>DELETE_SUCCESSFUL</code> when config rule has been deleted in the member account.</p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when config rule has been updated in the member account.</p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when config rule is being updated in the member account.</p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> when config rule deletion has failed in the member account.</p> </li>
+    /// <li> <p> <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member account.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> when Config rule creation has failed in the member account.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
+    /// <li> <p> <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member account.</p> </li>
+    /// <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has been deleted in the member account.</p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member account.</p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
     /// </ul>
     pub member_account_rule_status: std::option::Option<crate::model::MemberAccountRuleStatus>,
 }
@@ -7403,18 +7956,18 @@ impl StatusDetailFilters {
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>Indicates deployment status for config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+    /// <p>Indicates deployment status for Config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p>Config sets the state of the rule to:</p>
     /// <ul>
-    /// <li> <p> <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member account.</p> </li>
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> when config rule is being created in the member account.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code> when config rule creation has failed in the member account.</p> </li>
-    /// <li> <p> <code>DELETE_FAILED</code> when config rule deletion has failed in the member account.</p> </li>
-    /// <li> <p> <code>DELETE_IN_PROGRESS</code> when config rule is being deleted in the member account.</p> </li>
-    /// <li> <p> <code>DELETE_SUCCESSFUL</code> when config rule has been deleted in the member account.</p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when config rule has been updated in the member account.</p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when config rule is being updated in the member account.</p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> when config rule deletion has failed in the member account.</p> </li>
+    /// <li> <p> <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member account.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> when Config rule creation has failed in the member account.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
+    /// <li> <p> <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member account.</p> </li>
+    /// <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has been deleted in the member account.</p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member account.</p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
     /// </ul>
     pub fn member_account_rule_status(
         &self,
@@ -7454,18 +8007,18 @@ pub mod status_detail_filters {
             self.account_id = input;
             self
         }
-        /// <p>Indicates deployment status for config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+        /// <p>Indicates deployment status for Config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
         /// <p>Config sets the state of the rule to:</p>
         /// <ul>
-        /// <li> <p> <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member account.</p> </li>
-        /// <li> <p> <code>CREATE_IN_PROGRESS</code> when config rule is being created in the member account.</p> </li>
-        /// <li> <p> <code>CREATE_FAILED</code> when config rule creation has failed in the member account.</p> </li>
-        /// <li> <p> <code>DELETE_FAILED</code> when config rule deletion has failed in the member account.</p> </li>
-        /// <li> <p> <code>DELETE_IN_PROGRESS</code> when config rule is being deleted in the member account.</p> </li>
-        /// <li> <p> <code>DELETE_SUCCESSFUL</code> when config rule has been deleted in the member account.</p> </li>
-        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when config rule has been updated in the member account.</p> </li>
-        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when config rule is being updated in the member account.</p> </li>
-        /// <li> <p> <code>UPDATE_FAILED</code> when config rule deletion has failed in the member account.</p> </li>
+        /// <li> <p> <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member account.</p> </li>
+        /// <li> <p> <code>CREATE_FAILED</code> when Config rule creation has failed in the member account.</p> </li>
+        /// <li> <p> <code>DELETE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
+        /// <li> <p> <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member account.</p> </li>
+        /// <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has been deleted in the member account.</p> </li>
+        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member account.</p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p> </li>
+        /// <li> <p> <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
         /// </ul>
         pub fn member_account_rule_status(
             mut self,
@@ -7474,18 +8027,18 @@ pub mod status_detail_filters {
             self.member_account_rule_status = Some(input);
             self
         }
-        /// <p>Indicates deployment status for config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+        /// <p>Indicates deployment status for Config rule in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When master account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
         /// <p>Config sets the state of the rule to:</p>
         /// <ul>
-        /// <li> <p> <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member account.</p> </li>
-        /// <li> <p> <code>CREATE_IN_PROGRESS</code> when config rule is being created in the member account.</p> </li>
-        /// <li> <p> <code>CREATE_FAILED</code> when config rule creation has failed in the member account.</p> </li>
-        /// <li> <p> <code>DELETE_FAILED</code> when config rule deletion has failed in the member account.</p> </li>
-        /// <li> <p> <code>DELETE_IN_PROGRESS</code> when config rule is being deleted in the member account.</p> </li>
-        /// <li> <p> <code>DELETE_SUCCESSFUL</code> when config rule has been deleted in the member account.</p> </li>
-        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when config rule has been updated in the member account.</p> </li>
-        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when config rule is being updated in the member account.</p> </li>
-        /// <li> <p> <code>UPDATE_FAILED</code> when config rule deletion has failed in the member account.</p> </li>
+        /// <li> <p> <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member account.</p> </li>
+        /// <li> <p> <code>CREATE_FAILED</code> when Config rule creation has failed in the member account.</p> </li>
+        /// <li> <p> <code>DELETE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
+        /// <li> <p> <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member account.</p> </li>
+        /// <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has been deleted in the member account.</p> </li>
+        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member account.</p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p> </li>
+        /// <li> <p> <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
         /// </ul>
         pub fn set_member_account_rule_status(
             mut self,
@@ -10623,61 +11176,61 @@ impl OrganizationConformancePack {
     }
 }
 
-/// <p>Returns the status for an organization config rule in an organization.</p>
+/// <p>Returns the status for an organization Config rule in an organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationConfigRuleStatus {
-    /// <p>The name that you assign to organization config rule.</p>
+    /// <p>The name that you assign to organization Config rule.</p>
     pub organization_config_rule_name: std::option::Option<std::string::String>,
-    /// <p>Indicates deployment status of an organization config rule. When master account calls PutOrganizationConfigRule action for the first time, config rule status is created in all the member accounts. When master account calls PutOrganizationConfigRule action for the second time, config rule status is updated in all the member accounts. Additionally, config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+    /// <p>Indicates deployment status of an organization Config rule. When master account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When master account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the rule to:</p>
     /// <ul>
-    /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization config rule has been successfully created in all the member accounts. </p> </li>
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> when an organization config rule creation is in progress.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code> when an organization config rule creation failed in one or more member accounts within that organization.</p> </li>
-    /// <li> <p> <code>DELETE_FAILED</code> when an organization config rule deletion failed in one or more member accounts within that organization.</p> </li>
-    /// <li> <p> <code>DELETE_IN_PROGRESS</code> when an organization config rule deletion is in progress.</p> </li>
-    /// <li> <p> <code>DELETE_SUCCESSFUL</code> when an organization config rule has been successfully deleted from all the member accounts.</p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when an organization config rule has been successfully updated in all the member accounts.</p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when an organization config rule update is in progress.</p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> when an organization config rule update failed in one or more member accounts within that organization.</p> </li>
+    /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization Config rule has been successfully created in all the member accounts. </p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> when an organization Config rule creation is in progress.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> when an organization Config rule creation failed in one or more member accounts within that organization.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> when an organization Config rule deletion failed in one or more member accounts within that organization.</p> </li>
+    /// <li> <p> <code>DELETE_IN_PROGRESS</code> when an organization Config rule deletion is in progress.</p> </li>
+    /// <li> <p> <code>DELETE_SUCCESSFUL</code> when an organization Config rule has been successfully deleted from all the member accounts.</p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when an organization Config rule has been successfully updated in all the member accounts.</p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when an organization Config rule update is in progress.</p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> when an organization Config rule update failed in one or more member accounts within that organization.</p> </li>
     /// </ul>
     pub organization_rule_status: std::option::Option<crate::model::OrganizationRuleStatus>,
-    /// <p>An error code that is returned when organization config rule creation or deletion has failed.</p>
+    /// <p>An error code that is returned when organization Config rule creation or deletion has failed.</p>
     pub error_code: std::option::Option<std::string::String>,
-    /// <p>An error message indicating that organization config rule creation or deletion failed due to an error.</p>
+    /// <p>An error message indicating that organization Config rule creation or deletion failed due to an error.</p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The timestamp of the last update.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl OrganizationConfigRuleStatus {
-    /// <p>The name that you assign to organization config rule.</p>
+    /// <p>The name that you assign to organization Config rule.</p>
     pub fn organization_config_rule_name(&self) -> std::option::Option<&str> {
         self.organization_config_rule_name.as_deref()
     }
-    /// <p>Indicates deployment status of an organization config rule. When master account calls PutOrganizationConfigRule action for the first time, config rule status is created in all the member accounts. When master account calls PutOrganizationConfigRule action for the second time, config rule status is updated in all the member accounts. Additionally, config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+    /// <p>Indicates deployment status of an organization Config rule. When master account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When master account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the rule to:</p>
     /// <ul>
-    /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization config rule has been successfully created in all the member accounts. </p> </li>
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> when an organization config rule creation is in progress.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code> when an organization config rule creation failed in one or more member accounts within that organization.</p> </li>
-    /// <li> <p> <code>DELETE_FAILED</code> when an organization config rule deletion failed in one or more member accounts within that organization.</p> </li>
-    /// <li> <p> <code>DELETE_IN_PROGRESS</code> when an organization config rule deletion is in progress.</p> </li>
-    /// <li> <p> <code>DELETE_SUCCESSFUL</code> when an organization config rule has been successfully deleted from all the member accounts.</p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when an organization config rule has been successfully updated in all the member accounts.</p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when an organization config rule update is in progress.</p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> when an organization config rule update failed in one or more member accounts within that organization.</p> </li>
+    /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization Config rule has been successfully created in all the member accounts. </p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> when an organization Config rule creation is in progress.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> when an organization Config rule creation failed in one or more member accounts within that organization.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> when an organization Config rule deletion failed in one or more member accounts within that organization.</p> </li>
+    /// <li> <p> <code>DELETE_IN_PROGRESS</code> when an organization Config rule deletion is in progress.</p> </li>
+    /// <li> <p> <code>DELETE_SUCCESSFUL</code> when an organization Config rule has been successfully deleted from all the member accounts.</p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when an organization Config rule has been successfully updated in all the member accounts.</p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when an organization Config rule update is in progress.</p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> when an organization Config rule update failed in one or more member accounts within that organization.</p> </li>
     /// </ul>
     pub fn organization_rule_status(
         &self,
     ) -> std::option::Option<&crate::model::OrganizationRuleStatus> {
         self.organization_rule_status.as_ref()
     }
-    /// <p>An error code that is returned when organization config rule creation or deletion has failed.</p>
+    /// <p>An error code that is returned when organization Config rule creation or deletion has failed.</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
-    /// <p>An error message indicating that organization config rule creation or deletion failed due to an error.</p>
+    /// <p>An error message indicating that organization Config rule creation or deletion failed due to an error.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -10714,7 +11267,7 @@ pub mod organization_config_rule_status {
         pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The name that you assign to organization config rule.</p>
+        /// <p>The name that you assign to organization Config rule.</p>
         pub fn organization_config_rule_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -10722,7 +11275,7 @@ pub mod organization_config_rule_status {
             self.organization_config_rule_name = Some(input.into());
             self
         }
-        /// <p>The name that you assign to organization config rule.</p>
+        /// <p>The name that you assign to organization Config rule.</p>
         pub fn set_organization_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10730,18 +11283,18 @@ pub mod organization_config_rule_status {
             self.organization_config_rule_name = input;
             self
         }
-        /// <p>Indicates deployment status of an organization config rule. When master account calls PutOrganizationConfigRule action for the first time, config rule status is created in all the member accounts. When master account calls PutOrganizationConfigRule action for the second time, config rule status is updated in all the member accounts. Additionally, config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+        /// <p>Indicates deployment status of an organization Config rule. When master account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When master account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
         /// <p>Config sets the state of the rule to:</p>
         /// <ul>
-        /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization config rule has been successfully created in all the member accounts. </p> </li>
-        /// <li> <p> <code>CREATE_IN_PROGRESS</code> when an organization config rule creation is in progress.</p> </li>
-        /// <li> <p> <code>CREATE_FAILED</code> when an organization config rule creation failed in one or more member accounts within that organization.</p> </li>
-        /// <li> <p> <code>DELETE_FAILED</code> when an organization config rule deletion failed in one or more member accounts within that organization.</p> </li>
-        /// <li> <p> <code>DELETE_IN_PROGRESS</code> when an organization config rule deletion is in progress.</p> </li>
-        /// <li> <p> <code>DELETE_SUCCESSFUL</code> when an organization config rule has been successfully deleted from all the member accounts.</p> </li>
-        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when an organization config rule has been successfully updated in all the member accounts.</p> </li>
-        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when an organization config rule update is in progress.</p> </li>
-        /// <li> <p> <code>UPDATE_FAILED</code> when an organization config rule update failed in one or more member accounts within that organization.</p> </li>
+        /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization Config rule has been successfully created in all the member accounts. </p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> when an organization Config rule creation is in progress.</p> </li>
+        /// <li> <p> <code>CREATE_FAILED</code> when an organization Config rule creation failed in one or more member accounts within that organization.</p> </li>
+        /// <li> <p> <code>DELETE_FAILED</code> when an organization Config rule deletion failed in one or more member accounts within that organization.</p> </li>
+        /// <li> <p> <code>DELETE_IN_PROGRESS</code> when an organization Config rule deletion is in progress.</p> </li>
+        /// <li> <p> <code>DELETE_SUCCESSFUL</code> when an organization Config rule has been successfully deleted from all the member accounts.</p> </li>
+        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when an organization Config rule has been successfully updated in all the member accounts.</p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when an organization Config rule update is in progress.</p> </li>
+        /// <li> <p> <code>UPDATE_FAILED</code> when an organization Config rule update failed in one or more member accounts within that organization.</p> </li>
         /// </ul>
         pub fn organization_rule_status(
             mut self,
@@ -10750,18 +11303,18 @@ pub mod organization_config_rule_status {
             self.organization_rule_status = Some(input);
             self
         }
-        /// <p>Indicates deployment status of an organization config rule. When master account calls PutOrganizationConfigRule action for the first time, config rule status is created in all the member accounts. When master account calls PutOrganizationConfigRule action for the second time, config rule status is updated in all the member accounts. Additionally, config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+        /// <p>Indicates deployment status of an organization Config rule. When master account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When master account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
         /// <p>Config sets the state of the rule to:</p>
         /// <ul>
-        /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization config rule has been successfully created in all the member accounts. </p> </li>
-        /// <li> <p> <code>CREATE_IN_PROGRESS</code> when an organization config rule creation is in progress.</p> </li>
-        /// <li> <p> <code>CREATE_FAILED</code> when an organization config rule creation failed in one or more member accounts within that organization.</p> </li>
-        /// <li> <p> <code>DELETE_FAILED</code> when an organization config rule deletion failed in one or more member accounts within that organization.</p> </li>
-        /// <li> <p> <code>DELETE_IN_PROGRESS</code> when an organization config rule deletion is in progress.</p> </li>
-        /// <li> <p> <code>DELETE_SUCCESSFUL</code> when an organization config rule has been successfully deleted from all the member accounts.</p> </li>
-        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when an organization config rule has been successfully updated in all the member accounts.</p> </li>
-        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when an organization config rule update is in progress.</p> </li>
-        /// <li> <p> <code>UPDATE_FAILED</code> when an organization config rule update failed in one or more member accounts within that organization.</p> </li>
+        /// <li> <p> <code>CREATE_SUCCESSFUL</code> when an organization Config rule has been successfully created in all the member accounts. </p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> when an organization Config rule creation is in progress.</p> </li>
+        /// <li> <p> <code>CREATE_FAILED</code> when an organization Config rule creation failed in one or more member accounts within that organization.</p> </li>
+        /// <li> <p> <code>DELETE_FAILED</code> when an organization Config rule deletion failed in one or more member accounts within that organization.</p> </li>
+        /// <li> <p> <code>DELETE_IN_PROGRESS</code> when an organization Config rule deletion is in progress.</p> </li>
+        /// <li> <p> <code>DELETE_SUCCESSFUL</code> when an organization Config rule has been successfully deleted from all the member accounts.</p> </li>
+        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when an organization Config rule has been successfully updated in all the member accounts.</p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when an organization Config rule update is in progress.</p> </li>
+        /// <li> <p> <code>UPDATE_FAILED</code> when an organization Config rule update failed in one or more member accounts within that organization.</p> </li>
         /// </ul>
         pub fn set_organization_rule_status(
             mut self,
@@ -10770,22 +11323,22 @@ pub mod organization_config_rule_status {
             self.organization_rule_status = input;
             self
         }
-        /// <p>An error code that is returned when organization config rule creation or deletion has failed.</p>
+        /// <p>An error code that is returned when organization Config rule creation or deletion has failed.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        /// <p>An error code that is returned when organization config rule creation or deletion has failed.</p>
+        /// <p>An error code that is returned when organization Config rule creation or deletion has failed.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        /// <p>An error message indicating that organization config rule creation or deletion failed due to an error.</p>
+        /// <p>An error message indicating that organization Config rule creation or deletion failed due to an error.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_message = Some(input.into());
             self
         }
-        /// <p>An error message indicating that organization config rule creation or deletion failed due to an error.</p>
+        /// <p>An error message indicating that organization Config rule creation or deletion failed due to an error.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10918,13 +11471,13 @@ impl AsRef<str> for OrganizationRuleStatus {
     }
 }
 
-/// <p>An organization config rule that has information about config rules that Config creates in member accounts.</p>
+/// <p>An organization Config rule that has information about Config rules that Config creates in member accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationConfigRule {
-    /// <p>The name that you assign to organization config rule.</p>
+    /// <p>The name that you assign to organization Config rule.</p>
     pub organization_config_rule_name: std::option::Option<std::string::String>,
-    /// <p>Amazon Resource Name (ARN) of organization config rule.</p>
+    /// <p>Amazon Resource Name (ARN) of organization Config rule.</p>
     pub organization_config_rule_arn: std::option::Option<std::string::String>,
     /// <p>An <code>OrganizationManagedRuleMetadata</code> object.</p>
     pub organization_managed_rule_metadata:
@@ -10932,17 +11485,20 @@ pub struct OrganizationConfigRule {
     /// <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
     pub organization_custom_rule_metadata:
         std::option::Option<crate::model::OrganizationCustomRuleMetadata>,
-    /// <p>A comma-separated list of accounts excluded from organization config rule.</p>
+    /// <p>A comma-separated list of accounts excluded from organization Config rule.</p>
     pub excluded_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The timestamp of the last update.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
+    pub organization_custom_policy_rule_metadata:
+        std::option::Option<crate::model::OrganizationCustomPolicyRuleMetadataNoPolicy>,
 }
 impl OrganizationConfigRule {
-    /// <p>The name that you assign to organization config rule.</p>
+    /// <p>The name that you assign to organization Config rule.</p>
     pub fn organization_config_rule_name(&self) -> std::option::Option<&str> {
         self.organization_config_rule_name.as_deref()
     }
-    /// <p>Amazon Resource Name (ARN) of organization config rule.</p>
+    /// <p>Amazon Resource Name (ARN) of organization Config rule.</p>
     pub fn organization_config_rule_arn(&self) -> std::option::Option<&str> {
         self.organization_config_rule_arn.as_deref()
     }
@@ -10958,13 +11514,19 @@ impl OrganizationConfigRule {
     ) -> std::option::Option<&crate::model::OrganizationCustomRuleMetadata> {
         self.organization_custom_rule_metadata.as_ref()
     }
-    /// <p>A comma-separated list of accounts excluded from organization config rule.</p>
+    /// <p>A comma-separated list of accounts excluded from organization Config rule.</p>
     pub fn excluded_accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.excluded_accounts.as_deref()
     }
     /// <p>The timestamp of the last update.</p>
     pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
+    }
+    /// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
+    pub fn organization_custom_policy_rule_metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationCustomPolicyRuleMetadataNoPolicy> {
+        self.organization_custom_policy_rule_metadata.as_ref()
     }
 }
 impl std::fmt::Debug for OrganizationConfigRule {
@@ -10988,6 +11550,10 @@ impl std::fmt::Debug for OrganizationConfigRule {
         );
         formatter.field("excluded_accounts", &self.excluded_accounts);
         formatter.field("last_update_time", &self.last_update_time);
+        formatter.field(
+            "organization_custom_policy_rule_metadata",
+            &self.organization_custom_policy_rule_metadata,
+        );
         formatter.finish()
     }
 }
@@ -11005,9 +11571,11 @@ pub mod organization_config_rule {
             std::option::Option<crate::model::OrganizationCustomRuleMetadata>,
         pub(crate) excluded_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) organization_custom_policy_rule_metadata:
+            std::option::Option<crate::model::OrganizationCustomPolicyRuleMetadataNoPolicy>,
     }
     impl Builder {
-        /// <p>The name that you assign to organization config rule.</p>
+        /// <p>The name that you assign to organization Config rule.</p>
         pub fn organization_config_rule_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -11015,7 +11583,7 @@ pub mod organization_config_rule {
             self.organization_config_rule_name = Some(input.into());
             self
         }
-        /// <p>The name that you assign to organization config rule.</p>
+        /// <p>The name that you assign to organization Config rule.</p>
         pub fn set_organization_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11023,7 +11591,7 @@ pub mod organization_config_rule {
             self.organization_config_rule_name = input;
             self
         }
-        /// <p>Amazon Resource Name (ARN) of organization config rule.</p>
+        /// <p>Amazon Resource Name (ARN) of organization Config rule.</p>
         pub fn organization_config_rule_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -11031,7 +11599,7 @@ pub mod organization_config_rule {
             self.organization_config_rule_arn = Some(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) of organization config rule.</p>
+        /// <p>Amazon Resource Name (ARN) of organization Config rule.</p>
         pub fn set_organization_config_rule_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11075,14 +11643,14 @@ pub mod organization_config_rule {
         ///
         /// To override the contents of this collection use [`set_excluded_accounts`](Self::set_excluded_accounts).
         ///
-        /// <p>A comma-separated list of accounts excluded from organization config rule.</p>
+        /// <p>A comma-separated list of accounts excluded from organization Config rule.</p>
         pub fn excluded_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.excluded_accounts.unwrap_or_default();
             v.push(input.into());
             self.excluded_accounts = Some(v);
             self
         }
-        /// <p>A comma-separated list of accounts excluded from organization config rule.</p>
+        /// <p>A comma-separated list of accounts excluded from organization Config rule.</p>
         pub fn set_excluded_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11103,6 +11671,22 @@ pub mod organization_config_rule {
             self.last_update_time = input;
             self
         }
+        /// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
+        pub fn organization_custom_policy_rule_metadata(
+            mut self,
+            input: crate::model::OrganizationCustomPolicyRuleMetadataNoPolicy,
+        ) -> Self {
+            self.organization_custom_policy_rule_metadata = Some(input);
+            self
+        }
+        /// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
+        pub fn set_organization_custom_policy_rule_metadata(
+            mut self,
+            input: std::option::Option<crate::model::OrganizationCustomPolicyRuleMetadataNoPolicy>,
+        ) -> Self {
+            self.organization_custom_policy_rule_metadata = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OrganizationConfigRule`](crate::model::OrganizationConfigRule)
         pub fn build(self) -> crate::model::OrganizationConfigRule {
             crate::model::OrganizationConfigRule {
@@ -11112,6 +11696,8 @@ pub mod organization_config_rule {
                 organization_custom_rule_metadata: self.organization_custom_rule_metadata,
                 excluded_accounts: self.excluded_accounts,
                 last_update_time: self.last_update_time,
+                organization_custom_policy_rule_metadata: self
+                    .organization_custom_policy_rule_metadata,
             }
         }
     }
@@ -11120,6 +11706,322 @@ impl OrganizationConfigRule {
     /// Creates a new builder-style object to manufacture [`OrganizationConfigRule`](crate::model::OrganizationConfigRule)
     pub fn builder() -> crate::model::organization_config_rule::Builder {
         crate::model::organization_config_rule::Builder::default()
+    }
+}
+
+/// <p>An object that specifies metadata for your organization Config Custom Policy rule including the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that trigger Config to evaluate Amazon Web Services resources against a rule.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OrganizationCustomPolicyRuleMetadataNoPolicy {
+    /// <p>The description that you provide for your organization Config Custom Policy rule.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The type of notification that triggers Config to run an evaluation for a rule. For Config Custom Policy rules, Config supports change triggered notification types:</p>
+    /// <ul>
+    /// <li> <p> <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p> </li>
+    /// <li> <p> <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p> </li>
+    /// </ul>
+    pub organization_config_rule_trigger_types:
+        std::option::Option<std::vec::Vec<crate::model::OrganizationConfigRuleTriggerTypeNoSn>>,
+    /// <p>A string, in JSON format, that is passed to your organization Config Custom Policy rule.</p>
+    pub input_parameters: std::option::Option<std::string::String>,
+    /// <p>The maximum frequency with which Config runs evaluations for a rule. Your Config Custom Policy rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p>
+    pub maximum_execution_frequency: std::option::Option<crate::model::MaximumExecutionFrequency>,
+    /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
+    pub resource_types_scope: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
+    pub resource_id_scope: std::option::Option<std::string::String>,
+    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    pub tag_key_scope: std::option::Option<std::string::String>,
+    /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
+    pub tag_value_scope: std::option::Option<std::string::String>,
+    /// <p>The runtime system for your organization Config Custom Policy rules. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
+    pub policy_runtime: std::option::Option<std::string::String>,
+    /// <p>A list of accounts that you can enable debug logging for your organization Config Custom Policy rule. List is null when debug logging is enabled for all accounts.</p>
+    pub debug_log_delivery_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl OrganizationCustomPolicyRuleMetadataNoPolicy {
+    /// <p>The description that you provide for your organization Config Custom Policy rule.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of notification that triggers Config to run an evaluation for a rule. For Config Custom Policy rules, Config supports change triggered notification types:</p>
+    /// <ul>
+    /// <li> <p> <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p> </li>
+    /// <li> <p> <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p> </li>
+    /// </ul>
+    pub fn organization_config_rule_trigger_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::OrganizationConfigRuleTriggerTypeNoSn]> {
+        self.organization_config_rule_trigger_types.as_deref()
+    }
+    /// <p>A string, in JSON format, that is passed to your organization Config Custom Policy rule.</p>
+    pub fn input_parameters(&self) -> std::option::Option<&str> {
+        self.input_parameters.as_deref()
+    }
+    /// <p>The maximum frequency with which Config runs evaluations for a rule. Your Config Custom Policy rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p>
+    pub fn maximum_execution_frequency(
+        &self,
+    ) -> std::option::Option<&crate::model::MaximumExecutionFrequency> {
+        self.maximum_execution_frequency.as_ref()
+    }
+    /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
+    pub fn resource_types_scope(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_types_scope.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
+    pub fn resource_id_scope(&self) -> std::option::Option<&str> {
+        self.resource_id_scope.as_deref()
+    }
+    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    pub fn tag_key_scope(&self) -> std::option::Option<&str> {
+        self.tag_key_scope.as_deref()
+    }
+    /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
+    pub fn tag_value_scope(&self) -> std::option::Option<&str> {
+        self.tag_value_scope.as_deref()
+    }
+    /// <p>The runtime system for your organization Config Custom Policy rules. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
+    pub fn policy_runtime(&self) -> std::option::Option<&str> {
+        self.policy_runtime.as_deref()
+    }
+    /// <p>A list of accounts that you can enable debug logging for your organization Config Custom Policy rule. List is null when debug logging is enabled for all accounts.</p>
+    pub fn debug_log_delivery_accounts(&self) -> std::option::Option<&[std::string::String]> {
+        self.debug_log_delivery_accounts.as_deref()
+    }
+}
+impl std::fmt::Debug for OrganizationCustomPolicyRuleMetadataNoPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OrganizationCustomPolicyRuleMetadataNoPolicy");
+        formatter.field("description", &self.description);
+        formatter.field(
+            "organization_config_rule_trigger_types",
+            &self.organization_config_rule_trigger_types,
+        );
+        formatter.field("input_parameters", &self.input_parameters);
+        formatter.field(
+            "maximum_execution_frequency",
+            &self.maximum_execution_frequency,
+        );
+        formatter.field("resource_types_scope", &self.resource_types_scope);
+        formatter.field("resource_id_scope", &self.resource_id_scope);
+        formatter.field("tag_key_scope", &self.tag_key_scope);
+        formatter.field("tag_value_scope", &self.tag_value_scope);
+        formatter.field("policy_runtime", &self.policy_runtime);
+        formatter.field(
+            "debug_log_delivery_accounts",
+            &self.debug_log_delivery_accounts,
+        );
+        formatter.finish()
+    }
+}
+/// See [`OrganizationCustomPolicyRuleMetadataNoPolicy`](crate::model::OrganizationCustomPolicyRuleMetadataNoPolicy)
+pub mod organization_custom_policy_rule_metadata_no_policy {
+    /// A builder for [`OrganizationCustomPolicyRuleMetadataNoPolicy`](crate::model::OrganizationCustomPolicyRuleMetadataNoPolicy)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) organization_config_rule_trigger_types:
+            std::option::Option<std::vec::Vec<crate::model::OrganizationConfigRuleTriggerTypeNoSn>>,
+        pub(crate) input_parameters: std::option::Option<std::string::String>,
+        pub(crate) maximum_execution_frequency:
+            std::option::Option<crate::model::MaximumExecutionFrequency>,
+        pub(crate) resource_types_scope: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) resource_id_scope: std::option::Option<std::string::String>,
+        pub(crate) tag_key_scope: std::option::Option<std::string::String>,
+        pub(crate) tag_value_scope: std::option::Option<std::string::String>,
+        pub(crate) policy_runtime: std::option::Option<std::string::String>,
+        pub(crate) debug_log_delivery_accounts:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The description that you provide for your organization Config Custom Policy rule.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description that you provide for your organization Config Custom Policy rule.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `organization_config_rule_trigger_types`.
+        ///
+        /// To override the contents of this collection use [`set_organization_config_rule_trigger_types`](Self::set_organization_config_rule_trigger_types).
+        ///
+        /// <p>The type of notification that triggers Config to run an evaluation for a rule. For Config Custom Policy rules, Config supports change triggered notification types:</p>
+        /// <ul>
+        /// <li> <p> <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p> </li>
+        /// <li> <p> <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p> </li>
+        /// </ul>
+        pub fn organization_config_rule_trigger_types(
+            mut self,
+            input: crate::model::OrganizationConfigRuleTriggerTypeNoSn,
+        ) -> Self {
+            let mut v = self
+                .organization_config_rule_trigger_types
+                .unwrap_or_default();
+            v.push(input);
+            self.organization_config_rule_trigger_types = Some(v);
+            self
+        }
+        /// <p>The type of notification that triggers Config to run an evaluation for a rule. For Config Custom Policy rules, Config supports change triggered notification types:</p>
+        /// <ul>
+        /// <li> <p> <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p> </li>
+        /// <li> <p> <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p> </li>
+        /// </ul>
+        pub fn set_organization_config_rule_trigger_types(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::OrganizationConfigRuleTriggerTypeNoSn>,
+            >,
+        ) -> Self {
+            self.organization_config_rule_trigger_types = input;
+            self
+        }
+        /// <p>A string, in JSON format, that is passed to your organization Config Custom Policy rule.</p>
+        pub fn input_parameters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_parameters = Some(input.into());
+            self
+        }
+        /// <p>A string, in JSON format, that is passed to your organization Config Custom Policy rule.</p>
+        pub fn set_input_parameters(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.input_parameters = input;
+            self
+        }
+        /// <p>The maximum frequency with which Config runs evaluations for a rule. Your Config Custom Policy rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p>
+        pub fn maximum_execution_frequency(
+            mut self,
+            input: crate::model::MaximumExecutionFrequency,
+        ) -> Self {
+            self.maximum_execution_frequency = Some(input);
+            self
+        }
+        /// <p>The maximum frequency with which Config runs evaluations for a rule. Your Config Custom Policy rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p>
+        pub fn set_maximum_execution_frequency(
+            mut self,
+            input: std::option::Option<crate::model::MaximumExecutionFrequency>,
+        ) -> Self {
+            self.maximum_execution_frequency = input;
+            self
+        }
+        /// Appends an item to `resource_types_scope`.
+        ///
+        /// To override the contents of this collection use [`set_resource_types_scope`](Self::set_resource_types_scope).
+        ///
+        /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
+        pub fn resource_types_scope(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.resource_types_scope.unwrap_or_default();
+            v.push(input.into());
+            self.resource_types_scope = Some(v);
+            self
+        }
+        /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
+        pub fn set_resource_types_scope(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.resource_types_scope = input;
+            self
+        }
+        /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
+        pub fn resource_id_scope(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id_scope = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
+        pub fn set_resource_id_scope(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_id_scope = input;
+            self
+        }
+        /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+        pub fn tag_key_scope(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tag_key_scope = Some(input.into());
+            self
+        }
+        /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+        pub fn set_tag_key_scope(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.tag_key_scope = input;
+            self
+        }
+        /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
+        pub fn tag_value_scope(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tag_value_scope = Some(input.into());
+            self
+        }
+        /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
+        pub fn set_tag_value_scope(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.tag_value_scope = input;
+            self
+        }
+        /// <p>The runtime system for your organization Config Custom Policy rules. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
+        pub fn policy_runtime(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_runtime = Some(input.into());
+            self
+        }
+        /// <p>The runtime system for your organization Config Custom Policy rules. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
+        pub fn set_policy_runtime(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_runtime = input;
+            self
+        }
+        /// Appends an item to `debug_log_delivery_accounts`.
+        ///
+        /// To override the contents of this collection use [`set_debug_log_delivery_accounts`](Self::set_debug_log_delivery_accounts).
+        ///
+        /// <p>A list of accounts that you can enable debug logging for your organization Config Custom Policy rule. List is null when debug logging is enabled for all accounts.</p>
+        pub fn debug_log_delivery_accounts(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.debug_log_delivery_accounts.unwrap_or_default();
+            v.push(input.into());
+            self.debug_log_delivery_accounts = Some(v);
+            self
+        }
+        /// <p>A list of accounts that you can enable debug logging for your organization Config Custom Policy rule. List is null when debug logging is enabled for all accounts.</p>
+        pub fn set_debug_log_delivery_accounts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.debug_log_delivery_accounts = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OrganizationCustomPolicyRuleMetadataNoPolicy`](crate::model::OrganizationCustomPolicyRuleMetadataNoPolicy)
+        pub fn build(self) -> crate::model::OrganizationCustomPolicyRuleMetadataNoPolicy {
+            crate::model::OrganizationCustomPolicyRuleMetadataNoPolicy {
+                description: self.description,
+                organization_config_rule_trigger_types: self.organization_config_rule_trigger_types,
+                input_parameters: self.input_parameters,
+                maximum_execution_frequency: self.maximum_execution_frequency,
+                resource_types_scope: self.resource_types_scope,
+                resource_id_scope: self.resource_id_scope,
+                tag_key_scope: self.tag_key_scope,
+                tag_value_scope: self.tag_value_scope,
+                policy_runtime: self.policy_runtime,
+                debug_log_delivery_accounts: self.debug_log_delivery_accounts,
+            }
+        }
+    }
+}
+impl OrganizationCustomPolicyRuleMetadataNoPolicy {
+    /// Creates a new builder-style object to manufacture [`OrganizationCustomPolicyRuleMetadataNoPolicy`](crate::model::OrganizationCustomPolicyRuleMetadataNoPolicy)
+    pub fn builder() -> crate::model::organization_custom_policy_rule_metadata_no_policy::Builder {
+        crate::model::organization_custom_policy_rule_metadata_no_policy::Builder::default()
     }
 }
 
@@ -12198,7 +13100,7 @@ impl ConformancePackDetail {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConformancePackRuleCompliance {
-    /// <p>Name of the config rule.</p>
+    /// <p>Name of the Config rule.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>Compliance of the Config rule.</p>
     /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
@@ -12207,7 +13109,7 @@ pub struct ConformancePackRuleCompliance {
     pub controls: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ConformancePackRuleCompliance {
-    /// <p>Name of the config rule.</p>
+    /// <p>Name of the Config rule.</p>
     pub fn config_rule_name(&self) -> std::option::Option<&str> {
         self.config_rule_name.as_deref()
     }
@@ -12244,12 +13146,12 @@ pub mod conformance_pack_rule_compliance {
         pub(crate) controls: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Name of the config rule.</p>
+        /// <p>Name of the Config rule.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
         }
-        /// <p>Name of the config rule.</p>
+        /// <p>Name of the Config rule.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12993,8 +13895,8 @@ impl AsRef<str> for AggregatedSourceType {
     }
 }
 
-/// <p>Status information for your Config managed rules. The status includes information such as the last time the rule ran, the last time it failed, and the related error for the last failure.</p>
-/// <p>This action does not return status information about custom Config rules.</p>
+/// <p>Status information for your Config Managed rules and Config Custom Policy rules. The status includes information such as the last time the rule ran, the last time it failed, and the related error for the last failure.</p>
+/// <p>This action does not return status information about Config Custom Lambda rules.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigRuleEvaluationStatus {
@@ -13023,9 +13925,15 @@ pub struct ConfigRuleEvaluationStatus {
     /// <p>Indicates whether Config has evaluated your resources against the rule at least once.</p>
     /// <ul>
     /// <li> <p> <code>true</code> - Config has evaluated your Amazon Web Services resources against the rule at least once.</p> </li>
-    /// <li> <p> <code>false</code> - Config has not once finished evaluating your Amazon Web Services resources against the rule.</p> </li>
+    /// <li> <p> <code>false</code> - Config has not finished evaluating your Amazon Web Services resources against the rule at least once.</p> </li>
     /// </ul>
     pub first_evaluation_started: bool,
+    /// <p>The status of the last attempted delivery of a debug log for your Config Custom Policy rules. Either <code>Successful</code> or <code>Failed</code>.</p>
+    pub last_debug_log_delivery_status: std::option::Option<std::string::String>,
+    /// <p>The reason Config was not able to deliver a debug log. This is for the last failed attempt to retrieve a debug log for your Config Custom Policy rules.</p>
+    pub last_debug_log_delivery_status_reason: std::option::Option<std::string::String>,
+    /// <p>The time Config last attempted to deliver a debug log for your Config Custom Policy rules.</p>
+    pub last_debug_log_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ConfigRuleEvaluationStatus {
     /// <p>The name of the Config rule.</p>
@@ -13079,10 +13987,22 @@ impl ConfigRuleEvaluationStatus {
     /// <p>Indicates whether Config has evaluated your resources against the rule at least once.</p>
     /// <ul>
     /// <li> <p> <code>true</code> - Config has evaluated your Amazon Web Services resources against the rule at least once.</p> </li>
-    /// <li> <p> <code>false</code> - Config has not once finished evaluating your Amazon Web Services resources against the rule.</p> </li>
+    /// <li> <p> <code>false</code> - Config has not finished evaluating your Amazon Web Services resources against the rule at least once.</p> </li>
     /// </ul>
     pub fn first_evaluation_started(&self) -> bool {
         self.first_evaluation_started
+    }
+    /// <p>The status of the last attempted delivery of a debug log for your Config Custom Policy rules. Either <code>Successful</code> or <code>Failed</code>.</p>
+    pub fn last_debug_log_delivery_status(&self) -> std::option::Option<&str> {
+        self.last_debug_log_delivery_status.as_deref()
+    }
+    /// <p>The reason Config was not able to deliver a debug log. This is for the last failed attempt to retrieve a debug log for your Config Custom Policy rules.</p>
+    pub fn last_debug_log_delivery_status_reason(&self) -> std::option::Option<&str> {
+        self.last_debug_log_delivery_status_reason.as_deref()
+    }
+    /// <p>The time Config last attempted to deliver a debug log for your Config Custom Policy rules.</p>
+    pub fn last_debug_log_delivery_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_debug_log_delivery_time.as_ref()
     }
 }
 impl std::fmt::Debug for ConfigRuleEvaluationStatus {
@@ -13112,6 +14032,18 @@ impl std::fmt::Debug for ConfigRuleEvaluationStatus {
         formatter.field("last_error_code", &self.last_error_code);
         formatter.field("last_error_message", &self.last_error_message);
         formatter.field("first_evaluation_started", &self.first_evaluation_started);
+        formatter.field(
+            "last_debug_log_delivery_status",
+            &self.last_debug_log_delivery_status,
+        );
+        formatter.field(
+            "last_debug_log_delivery_status_reason",
+            &self.last_debug_log_delivery_status_reason,
+        );
+        formatter.field(
+            "last_debug_log_delivery_time",
+            &self.last_debug_log_delivery_time,
+        );
         formatter.finish()
     }
 }
@@ -13133,6 +14065,9 @@ pub mod config_rule_evaluation_status {
         pub(crate) last_error_code: std::option::Option<std::string::String>,
         pub(crate) last_error_message: std::option::Option<std::string::String>,
         pub(crate) first_evaluation_started: std::option::Option<bool>,
+        pub(crate) last_debug_log_delivery_status: std::option::Option<std::string::String>,
+        pub(crate) last_debug_log_delivery_status_reason: std::option::Option<std::string::String>,
+        pub(crate) last_debug_log_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the Config rule.</p>
@@ -13287,7 +14222,7 @@ pub mod config_rule_evaluation_status {
         /// <p>Indicates whether Config has evaluated your resources against the rule at least once.</p>
         /// <ul>
         /// <li> <p> <code>true</code> - Config has evaluated your Amazon Web Services resources against the rule at least once.</p> </li>
-        /// <li> <p> <code>false</code> - Config has not once finished evaluating your Amazon Web Services resources against the rule.</p> </li>
+        /// <li> <p> <code>false</code> - Config has not finished evaluating your Amazon Web Services resources against the rule at least once.</p> </li>
         /// </ul>
         pub fn first_evaluation_started(mut self, input: bool) -> Self {
             self.first_evaluation_started = Some(input);
@@ -13296,10 +14231,55 @@ pub mod config_rule_evaluation_status {
         /// <p>Indicates whether Config has evaluated your resources against the rule at least once.</p>
         /// <ul>
         /// <li> <p> <code>true</code> - Config has evaluated your Amazon Web Services resources against the rule at least once.</p> </li>
-        /// <li> <p> <code>false</code> - Config has not once finished evaluating your Amazon Web Services resources against the rule.</p> </li>
+        /// <li> <p> <code>false</code> - Config has not finished evaluating your Amazon Web Services resources against the rule at least once.</p> </li>
         /// </ul>
         pub fn set_first_evaluation_started(mut self, input: std::option::Option<bool>) -> Self {
             self.first_evaluation_started = input;
+            self
+        }
+        /// <p>The status of the last attempted delivery of a debug log for your Config Custom Policy rules. Either <code>Successful</code> or <code>Failed</code>.</p>
+        pub fn last_debug_log_delivery_status(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.last_debug_log_delivery_status = Some(input.into());
+            self
+        }
+        /// <p>The status of the last attempted delivery of a debug log for your Config Custom Policy rules. Either <code>Successful</code> or <code>Failed</code>.</p>
+        pub fn set_last_debug_log_delivery_status(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_debug_log_delivery_status = input;
+            self
+        }
+        /// <p>The reason Config was not able to deliver a debug log. This is for the last failed attempt to retrieve a debug log for your Config Custom Policy rules.</p>
+        pub fn last_debug_log_delivery_status_reason(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.last_debug_log_delivery_status_reason = Some(input.into());
+            self
+        }
+        /// <p>The reason Config was not able to deliver a debug log. This is for the last failed attempt to retrieve a debug log for your Config Custom Policy rules.</p>
+        pub fn set_last_debug_log_delivery_status_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_debug_log_delivery_status_reason = input;
+            self
+        }
+        /// <p>The time Config last attempted to deliver a debug log for your Config Custom Policy rules.</p>
+        pub fn last_debug_log_delivery_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_debug_log_delivery_time = Some(input);
+            self
+        }
+        /// <p>The time Config last attempted to deliver a debug log for your Config Custom Policy rules.</p>
+        pub fn set_last_debug_log_delivery_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_debug_log_delivery_time = input;
             self
         }
         /// Consumes the builder and constructs a [`ConfigRuleEvaluationStatus`](crate::model::ConfigRuleEvaluationStatus)
@@ -13317,6 +14297,9 @@ pub mod config_rule_evaluation_status {
                 last_error_code: self.last_error_code,
                 last_error_message: self.last_error_message,
                 first_evaluation_started: self.first_evaluation_started.unwrap_or_default(),
+                last_debug_log_delivery_status: self.last_debug_log_delivery_status,
+                last_debug_log_delivery_status_reason: self.last_debug_log_delivery_status_reason,
+                last_debug_log_delivery_time: self.last_debug_log_delivery_time,
             }
         }
     }

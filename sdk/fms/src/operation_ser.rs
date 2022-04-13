@@ -12,6 +12,19 @@ pub fn serialize_operation_crate_operation_associate_admin_account(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_associate_third_party_firewall(
+    input: &crate::input::AssociateThirdPartyFirewallInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_associate_third_party_firewall_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_delete_apps_list(
     input: &crate::input::DeleteAppsListInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
@@ -55,6 +68,19 @@ pub fn serialize_operation_crate_operation_disassociate_admin_account(
     _input: &crate::input::DisassociateAdminAccountInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
     Ok(aws_smithy_http::body::SdkBody::from("{}"))
+}
+
+pub fn serialize_operation_crate_operation_disassociate_third_party_firewall(
+    input: &crate::input::DisassociateThirdPartyFirewallInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_disassociate_third_party_firewall_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
 pub fn serialize_operation_crate_operation_get_admin_account(
@@ -121,6 +147,16 @@ pub fn serialize_operation_crate_operation_get_protocols_list(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_get_protocols_list_input(&mut object, input)?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_get_third_party_firewall_association_status(
+    input: &crate::input::GetThirdPartyFirewallAssociationStatusInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_get_third_party_firewall_association_status_input(&mut object, input)?;
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -206,6 +242,16 @@ pub fn serialize_operation_crate_operation_list_tags_for_resource(
         &mut object,
         input,
     )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_list_third_party_firewall_firewall_policies(
+    input: &crate::input::ListThirdPartyFirewallFirewallPoliciesInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_list_third_party_firewall_firewall_policies_input(&mut object, input)?;
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

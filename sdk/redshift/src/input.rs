@@ -21316,6 +21316,7 @@ pub mod restore_from_cluster_snapshot_input {
         pub(crate) default_iam_role_arn: std::option::Option<std::string::String>,
         pub(crate) reserved_node_id: std::option::Option<std::string::String>,
         pub(crate) target_reserved_node_offering_id: std::option::Option<std::string::String>,
+        pub(crate) encrypted: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The identifier of the cluster that will be created from restoring the snapshot.</p>
@@ -21635,12 +21636,12 @@ pub mod restore_from_cluster_snapshot_input {
             self.manual_snapshot_retention_period = input;
             self
         }
-        /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster that you restore from a shared snapshot.</p>
+        /// <p>The Key Management Service (KMS) key ID of the encryption key to encrypt data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster that you restore from a shared snapshot.</p>
+        /// <p>The Key Management Service (KMS) key ID of the encryption key to encrypt data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -21825,6 +21826,16 @@ pub mod restore_from_cluster_snapshot_input {
             self.target_reserved_node_offering_id = input;
             self
         }
+        /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a CMK.</p>
+        pub fn encrypted(mut self, input: bool) -> Self {
+            self.encrypted = Some(input);
+            self
+        }
+        /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a CMK.</p>
+        pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.encrypted = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreFromClusterSnapshotInput`](crate::input::RestoreFromClusterSnapshotInput)
         pub fn build(
             self,
@@ -21864,6 +21875,7 @@ pub mod restore_from_cluster_snapshot_input {
                 default_iam_role_arn: self.default_iam_role_arn,
                 reserved_node_id: self.reserved_node_id,
                 target_reserved_node_offering_id: self.target_reserved_node_offering_id,
+                encrypted: self.encrypted,
             })
         }
     }
@@ -23668,7 +23680,7 @@ pub struct RestoreFromClusterSnapshotInput {
     /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub manual_snapshot_retention_period: std::option::Option<i32>,
-    /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster that you restore from a shared snapshot.</p>
+    /// <p>The Key Management Service (KMS) key ID of the encryption key to encrypt data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The node type that the restored cluster will be provisioned with.</p>
     /// <p>Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are using any DS node type. In that case, you can choose to restore into another DS node type of the same size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you must restore into that same instance type and size. In other words, you can only restore a dc1.large instance type into another dc1.large instance type or dc2.large instance type. You can't restore dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize to a dc2.8large cluster. For more information about node types, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes"> About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
@@ -23703,6 +23715,8 @@ pub struct RestoreFromClusterSnapshotInput {
     pub reserved_node_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the target reserved node offering.</p>
     pub target_reserved_node_offering_id: std::option::Option<std::string::String>,
+    /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a CMK.</p>
+    pub encrypted: std::option::Option<bool>,
 }
 impl RestoreFromClusterSnapshotInput {
     /// <p>The identifier of the cluster that will be created from restoring the snapshot.</p>
@@ -23811,7 +23825,7 @@ impl RestoreFromClusterSnapshotInput {
     pub fn manual_snapshot_retention_period(&self) -> std::option::Option<i32> {
         self.manual_snapshot_retention_period
     }
-    /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster that you restore from a shared snapshot.</p>
+    /// <p>The Key Management Service (KMS) key ID of the encryption key to encrypt data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -23873,6 +23887,10 @@ impl RestoreFromClusterSnapshotInput {
     /// <p>The identifier of the target reserved node offering.</p>
     pub fn target_reserved_node_offering_id(&self) -> std::option::Option<&str> {
         self.target_reserved_node_offering_id.as_deref()
+    }
+    /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a CMK.</p>
+    pub fn encrypted(&self) -> std::option::Option<bool> {
+        self.encrypted
     }
 }
 impl std::fmt::Debug for RestoreFromClusterSnapshotInput {
@@ -23939,6 +23957,7 @@ impl std::fmt::Debug for RestoreFromClusterSnapshotInput {
             "target_reserved_node_offering_id",
             &self.target_reserved_node_offering_id,
         );
+        formatter.field("encrypted", &self.encrypted);
         formatter.finish()
     }
 }

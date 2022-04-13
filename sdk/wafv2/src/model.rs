@@ -3863,6 +3863,7 @@ pub struct ManagedRuleGroupStatement {
     pub scope_down_statement: std::option::Option<std::boxed::Box<crate::model::Statement>>,
     /// <p>Additional information that's used by a managed rule group. Most managed rule groups don't require this.</p>
     /// <p>Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide information about the sign-in page of your application. </p>
+    /// <p>You can provide multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule group configuration, for example <code>UsernameField</code> and <code>PasswordField</code>. The configuration that you provide depends on the needs of the managed rule group. For the ATP managed rule group, you provide the following individual configuration objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code> and <code>UsernameField</code>.</p>
     pub managed_rule_group_configs:
         std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupConfig>>,
 }
@@ -3889,6 +3890,7 @@ impl ManagedRuleGroupStatement {
     }
     /// <p>Additional information that's used by a managed rule group. Most managed rule groups don't require this.</p>
     /// <p>Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide information about the sign-in page of your application. </p>
+    /// <p>You can provide multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule group configuration, for example <code>UsernameField</code> and <code>PasswordField</code>. The configuration that you provide depends on the needs of the managed rule group. For the ATP managed rule group, you provide the following individual configuration objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code> and <code>UsernameField</code>.</p>
     pub fn managed_rule_group_configs(
         &self,
     ) -> std::option::Option<&[crate::model::ManagedRuleGroupConfig]> {
@@ -3997,6 +3999,7 @@ pub mod managed_rule_group_statement {
         ///
         /// <p>Additional information that's used by a managed rule group. Most managed rule groups don't require this.</p>
         /// <p>Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide information about the sign-in page of your application. </p>
+        /// <p>You can provide multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule group configuration, for example <code>UsernameField</code> and <code>PasswordField</code>. The configuration that you provide depends on the needs of the managed rule group. For the ATP managed rule group, you provide the following individual configuration objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code> and <code>UsernameField</code>.</p>
         pub fn managed_rule_group_configs(
             mut self,
             input: crate::model::ManagedRuleGroupConfig,
@@ -4008,6 +4011,7 @@ pub mod managed_rule_group_statement {
         }
         /// <p>Additional information that's used by a managed rule group. Most managed rule groups don't require this.</p>
         /// <p>Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide information about the sign-in page of your application. </p>
+        /// <p>You can provide multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule group configuration, for example <code>UsernameField</code> and <code>PasswordField</code>. The configuration that you provide depends on the needs of the managed rule group. For the ATP managed rule group, you provide the following individual configuration objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code> and <code>UsernameField</code>.</p>
         pub fn set_managed_rule_group_configs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupConfig>>,
@@ -4037,6 +4041,7 @@ impl ManagedRuleGroupStatement {
 
 /// <p>Additional information that's used by a managed rule group. Most managed rule groups don't require this.</p>
 /// <p>Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide information about the sign-in page of your application. </p>
+/// <p>You can provide multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule group configuration, for example <code>UsernameField</code> and <code>PasswordField</code>. The configuration that you provide depends on the needs of the managed rule group. For the ATP managed rule group, you provide the following individual configuration objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code> and <code>UsernameField</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedRuleGroupConfig {
@@ -9427,6 +9432,8 @@ pub struct ManagedRuleGroupSummary {
     pub vendor_name: std::option::Option<std::string::String>,
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
     pub name: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the managed rule group is versioned. If it is, you can retrieve the versions list by calling <code>ListAvailableManagedRuleGroupVersions</code>. </p>
+    pub versioning_supported: bool,
     /// <p>The description of the managed rule group, provided by Amazon Web Services Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
     pub description: std::option::Option<std::string::String>,
 }
@@ -9439,6 +9446,10 @@ impl ManagedRuleGroupSummary {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>Indicates whether the managed rule group is versioned. If it is, you can retrieve the versions list by calling <code>ListAvailableManagedRuleGroupVersions</code>. </p>
+    pub fn versioning_supported(&self) -> bool {
+        self.versioning_supported
+    }
     /// <p>The description of the managed rule group, provided by Amazon Web Services Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
@@ -9449,6 +9460,7 @@ impl std::fmt::Debug for ManagedRuleGroupSummary {
         let mut formatter = f.debug_struct("ManagedRuleGroupSummary");
         formatter.field("vendor_name", &self.vendor_name);
         formatter.field("name", &self.name);
+        formatter.field("versioning_supported", &self.versioning_supported);
         formatter.field("description", &self.description);
         formatter.finish()
     }
@@ -9461,6 +9473,7 @@ pub mod managed_rule_group_summary {
     pub struct Builder {
         pub(crate) vendor_name: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) versioning_supported: std::option::Option<bool>,
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -9484,6 +9497,16 @@ pub mod managed_rule_group_summary {
             self.name = input;
             self
         }
+        /// <p>Indicates whether the managed rule group is versioned. If it is, you can retrieve the versions list by calling <code>ListAvailableManagedRuleGroupVersions</code>. </p>
+        pub fn versioning_supported(mut self, input: bool) -> Self {
+            self.versioning_supported = Some(input);
+            self
+        }
+        /// <p>Indicates whether the managed rule group is versioned. If it is, you can retrieve the versions list by calling <code>ListAvailableManagedRuleGroupVersions</code>. </p>
+        pub fn set_versioning_supported(mut self, input: std::option::Option<bool>) -> Self {
+            self.versioning_supported = input;
+            self
+        }
         /// <p>The description of the managed rule group, provided by Amazon Web Services Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
@@ -9499,6 +9522,7 @@ pub mod managed_rule_group_summary {
             crate::model::ManagedRuleGroupSummary {
                 vendor_name: self.vendor_name,
                 name: self.name,
+                versioning_supported: self.versioning_supported.unwrap_or_default(),
                 description: self.description,
             }
         }

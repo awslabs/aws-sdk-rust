@@ -64,6 +64,36 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateThirdPartyFirewallError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::AssociateThirdPartyFirewallError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::AssociateThirdPartyFirewallErrorKind::InternalErrorException(
+                    inner,
+                ) => Error::InternalErrorException(inner),
+                crate::error::AssociateThirdPartyFirewallErrorKind::InvalidInputException(
+                    inner,
+                ) => Error::InvalidInputException(inner),
+                crate::error::AssociateThirdPartyFirewallErrorKind::InvalidOperationException(
+                    inner,
+                ) => Error::InvalidOperationException(inner),
+                crate::error::AssociateThirdPartyFirewallErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::AssociateThirdPartyFirewallErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAppsListError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -190,6 +220,30 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DisassociateThirdPartyFirewallError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DisassociateThirdPartyFirewallError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DisassociateThirdPartyFirewallErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
+                crate::error::DisassociateThirdPartyFirewallErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+                crate::error::DisassociateThirdPartyFirewallErrorKind::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+                crate::error::DisassociateThirdPartyFirewallErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DisassociateThirdPartyFirewallErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -371,6 +425,34 @@ where
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::GetThirdPartyFirewallAssociationStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetThirdPartyFirewallAssociationStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetThirdPartyFirewallAssociationStatusErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
+                crate::error::GetThirdPartyFirewallAssociationStatusErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+                crate::error::GetThirdPartyFirewallAssociationStatusErrorKind::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+                crate::error::GetThirdPartyFirewallAssociationStatusErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::GetThirdPartyFirewallAssociationStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetViolationDetailsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -545,6 +627,34 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::ListThirdPartyFirewallFirewallPoliciesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ListThirdPartyFirewallFirewallPoliciesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListThirdPartyFirewallFirewallPoliciesErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
+                crate::error::ListThirdPartyFirewallFirewallPoliciesErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+                crate::error::ListThirdPartyFirewallFirewallPoliciesErrorKind::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+                crate::error::ListThirdPartyFirewallFirewallPoliciesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::ListThirdPartyFirewallFirewallPoliciesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

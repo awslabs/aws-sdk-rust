@@ -4238,6 +4238,22 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlG4DnXlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlG512Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG516Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG524Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG52Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG548Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG54Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG58Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG5Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlM410Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlM416Xlarge,
@@ -4345,6 +4361,14 @@ impl std::convert::From<&str> for InstanceType {
             "ml.g4dn.4xlarge" => InstanceType::MlG4Dn4Xlarge,
             "ml.g4dn.8xlarge" => InstanceType::MlG4Dn8Xlarge,
             "ml.g4dn.xlarge" => InstanceType::MlG4DnXlarge,
+            "ml.g5.12xlarge" => InstanceType::MlG512Xlarge,
+            "ml.g5.16xlarge" => InstanceType::MlG516Xlarge,
+            "ml.g5.24xlarge" => InstanceType::MlG524Xlarge,
+            "ml.g5.2xlarge" => InstanceType::MlG52Xlarge,
+            "ml.g5.48xlarge" => InstanceType::MlG548Xlarge,
+            "ml.g5.4xlarge" => InstanceType::MlG54Xlarge,
+            "ml.g5.8xlarge" => InstanceType::MlG58Xlarge,
+            "ml.g5.xlarge" => InstanceType::MlG5Xlarge,
             "ml.m4.10xlarge" => InstanceType::MlM410Xlarge,
             "ml.m4.16xlarge" => InstanceType::MlM416Xlarge,
             "ml.m4.2xlarge" => InstanceType::MlM42Xlarge,
@@ -4421,6 +4445,14 @@ impl InstanceType {
             InstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
             InstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
             InstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
+            InstanceType::MlG512Xlarge => "ml.g5.12xlarge",
+            InstanceType::MlG516Xlarge => "ml.g5.16xlarge",
+            InstanceType::MlG524Xlarge => "ml.g5.24xlarge",
+            InstanceType::MlG52Xlarge => "ml.g5.2xlarge",
+            InstanceType::MlG548Xlarge => "ml.g5.48xlarge",
+            InstanceType::MlG54Xlarge => "ml.g5.4xlarge",
+            InstanceType::MlG58Xlarge => "ml.g5.8xlarge",
+            InstanceType::MlG5Xlarge => "ml.g5.xlarge",
             InstanceType::MlM410Xlarge => "ml.m4.10xlarge",
             InstanceType::MlM416Xlarge => "ml.m4.16xlarge",
             InstanceType::MlM42Xlarge => "ml.m4.2xlarge",
@@ -4488,6 +4520,14 @@ impl InstanceType {
             "ml.g4dn.4xlarge",
             "ml.g4dn.8xlarge",
             "ml.g4dn.xlarge",
+            "ml.g5.12xlarge",
+            "ml.g5.16xlarge",
+            "ml.g5.24xlarge",
+            "ml.g5.2xlarge",
+            "ml.g5.48xlarge",
+            "ml.g5.4xlarge",
+            "ml.g5.8xlarge",
+            "ml.g5.xlarge",
             "ml.m4.10xlarge",
             "ml.m4.16xlarge",
             "ml.m4.2xlarge",

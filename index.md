@@ -135,6 +135,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS WAFV2 | [aws-sdk-wafv2](https://crates.io/crates/aws-sdk-wafv2) ([docs](https://docs.rs/aws-sdk-wafv2)) |
 | AWS Well-Architected Tool | [aws-sdk-wellarchitected](https://crates.io/crates/aws-sdk-wellarchitected) ([docs](https://docs.rs/aws-sdk-wellarchitected)) |
 | AWS X-Ray | [aws-sdk-xray](https://crates.io/crates/aws-sdk-xray) ([docs](https://docs.rs/aws-sdk-xray)) |
+| AWSBillingConductor | [aws-sdk-billingconductor](https://crates.io/crates/aws-sdk-billingconductor) ([docs](https://docs.rs/aws-sdk-billingconductor)) |
 | AWSKendraFrontendService | [aws-sdk-kendra](https://crates.io/crates/aws-sdk-kendra) ([docs](https://docs.rs/aws-sdk-kendra)) |
 | AWSMarketplace Metering | [aws-sdk-marketplacemetering](https://crates.io/crates/aws-sdk-marketplacemetering) ([docs](https://docs.rs/aws-sdk-marketplacemetering)) |
 | AWSServerlessApplicationRepository | [aws-sdk-serverlessapplicationrepository](https://crates.io/crates/aws-sdk-serverlessapplicationrepository) ([docs](https://docs.rs/aws-sdk-serverlessapplicationrepository)) |
@@ -237,6 +238,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Personalize Runtime | [aws-sdk-personalizeruntime](https://crates.io/crates/aws-sdk-personalizeruntime) ([docs](https://docs.rs/aws-sdk-personalizeruntime)) |
 | Amazon Pinpoint | [aws-sdk-pinpoint](https://crates.io/crates/aws-sdk-pinpoint) ([docs](https://docs.rs/aws-sdk-pinpoint)) |
 | Amazon Pinpoint Email Service | [aws-sdk-pinpointemail](https://crates.io/crates/aws-sdk-pinpointemail) ([docs](https://docs.rs/aws-sdk-pinpointemail)) |
+| Amazon Pinpoint SMS Voice V2 | [aws-sdk-pinpointsmsvoicev2](https://crates.io/crates/aws-sdk-pinpointsmsvoicev2) ([docs](https://docs.rs/aws-sdk-pinpointsmsvoicev2)) |
 | Amazon Pinpoint SMS and Voice Service | [aws-sdk-pinpointsmsvoice](https://crates.io/crates/aws-sdk-pinpointsmsvoice) ([docs](https://docs.rs/aws-sdk-pinpointsmsvoice)) |
 | Amazon Polly | [aws-sdk-polly](https://crates.io/crates/aws-sdk-polly) ([docs](https://docs.rs/aws-sdk-polly)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/polly)) |
 | Amazon Prometheus Service | [aws-sdk-amp](https://crates.io/crates/aws-sdk-amp) ([docs](https://docs.rs/aws-sdk-amp)) |
@@ -292,6 +294,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | FinSpace Public API | [aws-sdk-finspacedata](https://crates.io/crates/aws-sdk-finspacedata) ([docs](https://docs.rs/aws-sdk-finspacedata)) |
 | FinSpace User Environment Management service | [aws-sdk-finspace](https://crates.io/crates/aws-sdk-finspace) ([docs](https://docs.rs/aws-sdk-finspace)) |
 | Firewall Management Service | [aws-sdk-fms](https://crates.io/crates/aws-sdk-fms) ([docs](https://docs.rs/aws-sdk-fms)) |
+| GameSparks | [aws-sdk-gamesparks](https://crates.io/crates/aws-sdk-gamesparks) ([docs](https://docs.rs/aws-sdk-gamesparks)) |
 | Inspector2 | [aws-sdk-inspector2](https://crates.io/crates/aws-sdk-inspector2) ([docs](https://docs.rs/aws-sdk-inspector2)) |
 | Managed Streaming for Kafka | [aws-sdk-kafka](https://crates.io/crates/aws-sdk-kafka) ([docs](https://docs.rs/aws-sdk-kafka)) |
 | Managed Streaming for Kafka Connect | [aws-sdk-kafkaconnect](https://crates.io/crates/aws-sdk-kafkaconnect) ([docs](https://docs.rs/aws-sdk-kafkaconnect)) |

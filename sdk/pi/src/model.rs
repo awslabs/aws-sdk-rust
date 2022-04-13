@@ -532,8 +532,9 @@ pub struct ResponseResourceMetricKey {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>db.load.avg</code> - a scaled representation of the number of active sessions for the database engine.</p> </li>
-    /// <li> <p> <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine.</p> </li>
+    /// <li> <p> <code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p> </li>
+    /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p> </li>
+    /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
     pub metric: std::option::Option<std::string::String>,
@@ -545,8 +546,9 @@ impl ResponseResourceMetricKey {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>db.load.avg</code> - a scaled representation of the number of active sessions for the database engine.</p> </li>
-    /// <li> <p> <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine.</p> </li>
+    /// <li> <p> <code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p> </li>
+    /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p> </li>
+    /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
     pub fn metric(&self) -> std::option::Option<&str> {
@@ -583,8 +585,9 @@ pub mod response_resource_metric_key {
         /// <p>The name of a Performance Insights metric to be measured.</p>
         /// <p>Valid values for <code>Metric</code> are:</p>
         /// <ul>
-        /// <li> <p> <code>db.load.avg</code> - a scaled representation of the number of active sessions for the database engine.</p> </li>
-        /// <li> <p> <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine.</p> </li>
+        /// <li> <p> <code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p> </li>
+        /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p> </li>
+        /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
         /// </ul>
         /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
         pub fn metric(mut self, input: impl Into<std::string::String>) -> Self {
@@ -594,8 +597,9 @@ pub mod response_resource_metric_key {
         /// <p>The name of a Performance Insights metric to be measured.</p>
         /// <p>Valid values for <code>Metric</code> are:</p>
         /// <ul>
-        /// <li> <p> <code>db.load.avg</code> - a scaled representation of the number of active sessions for the database engine.</p> </li>
-        /// <li> <p> <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine.</p> </li>
+        /// <li> <p> <code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p> </li>
+        /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p> </li>
+        /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
         /// </ul>
         /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
         pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -650,10 +654,11 @@ pub struct MetricQuery {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>db.load.avg</code> - a scaled representation of the number of active sessions for the database engine.</p> </li>
-    /// <li> <p> <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine.</p> </li>
+    /// <li> <p> <code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p> </li>
+    /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p> </li>
+    /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
     /// </ul>
-    /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
+    /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
     pub metric: std::option::Option<std::string::String>,
     /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights will return all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
     pub group_by: std::option::Option<crate::model::DimensionGroup>,
@@ -669,10 +674,11 @@ impl MetricQuery {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>db.load.avg</code> - a scaled representation of the number of active sessions for the database engine.</p> </li>
-    /// <li> <p> <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine.</p> </li>
+    /// <li> <p> <code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p> </li>
+    /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p> </li>
+    /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
     /// </ul>
-    /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
+    /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
     pub fn metric(&self) -> std::option::Option<&str> {
         self.metric.as_deref()
     }
@@ -717,10 +723,11 @@ pub mod metric_query {
         /// <p>The name of a Performance Insights metric to be measured.</p>
         /// <p>Valid values for <code>Metric</code> are:</p>
         /// <ul>
-        /// <li> <p> <code>db.load.avg</code> - a scaled representation of the number of active sessions for the database engine.</p> </li>
-        /// <li> <p> <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine.</p> </li>
+        /// <li> <p> <code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p> </li>
+        /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p> </li>
+        /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
         /// </ul>
-        /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
+        /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
         pub fn metric(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric = Some(input.into());
             self
@@ -728,10 +735,11 @@ pub mod metric_query {
         /// <p>The name of a Performance Insights metric to be measured.</p>
         /// <p>Valid values for <code>Metric</code> are:</p>
         /// <ul>
-        /// <li> <p> <code>db.load.avg</code> - a scaled representation of the number of active sessions for the database engine.</p> </li>
-        /// <li> <p> <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine.</p> </li>
+        /// <li> <p> <code>db.load.avg</code> - A scaled representation of the number of active sessions for the database engine.</p> </li>
+        /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine.</p> </li>
+        /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
         /// </ul>
-        /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
+        /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
         pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric = input;
             self
@@ -799,62 +807,121 @@ impl MetricQuery {
     }
 }
 
-/// <p>A logical grouping of Performance Insights metrics for a related subject area. For example, the <code>db.sql</code> dimension group consists of the following dimensions: <code>db.sql.id</code>, <code>db.sql.db_id</code>, <code>db.sql.statement</code>, and <code>db.sql.tokenized_id</code>.</p> <note>
+/// <p>A logical grouping of Performance Insights metrics for a related subject area. For example, the <code>db.sql</code> dimension group consists of the following dimensions:</p>
+/// <ul>
+/// <li> <p> <code>db.sql.id</code> - The hash of a running SQL statement, generated by Performance Insights.</p> </li>
+/// <li> <p> <code>db.sql.db_id</code> - Either the SQL ID generated by the database engine, or a value generated by Performance Insights that begins with <code>pi-</code>.</p> </li>
+/// <li> <p> <code>db.sql.statement</code> - The full text of the SQL statement that is running, for example, <code>SELECT * FROM employees</code>.</p> </li>
+/// <li> <p> <code>db.sql_tokenized.id</code> - The hash of the SQL digest generated by Performance Insights.</p> </li>
+/// </ul> <note>
 /// <p>Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first 500 bytes are returned.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DimensionGroup {
-    /// <p>The name of the dimension group. Valid values are:</p>
+    /// <p>The name of the dimension group. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>db</code> - The name of the database to which the client is connected (only Aurora PostgreSQL, Amazon RDS PostgreSQL, Aurora MySQL, Amazon RDS MySQL, and MariaDB)</p> </li>
-    /// <li> <p> <code>db.application</code> - The name of the application that is connected to the database (only Aurora PostgreSQL and RDS PostgreSQL)</p> </li>
-    /// <li> <p> <code>db.host</code> - The host name of the connected client (all engines)</p> </li>
-    /// <li> <p> <code>db.session_type</code> - The type of the current session (only Aurora PostgreSQL and RDS PostgreSQL)</p> </li>
-    /// <li> <p> <code>db.sql</code> - The SQL that is currently executing (all engines)</p> </li>
-    /// <li> <p> <code>db.sql_tokenized</code> - The SQL digest (all engines)</p> </li>
-    /// <li> <p> <code>db.wait_event</code> - The event for which the database backend is waiting (all engines)</p> </li>
-    /// <li> <p> <code>db.wait_event_type</code> - The type of event for which the database backend is waiting (all engines)</p> </li>
-    /// <li> <p> <code>db.user</code> - The user logged in to the database (all engines)</p> </li>
+    /// <li> <p> <code>db</code> - The name of the database to which the client is connected. The following values are permitted:</p>
+    /// <ul>
+    /// <li> <p>Aurora PostgreSQL</p> </li>
+    /// <li> <p>Amazon RDS PostgreSQL</p> </li>
+    /// <li> <p>Aurora MySQL</p> </li>
+    /// <li> <p>Amazon RDS MySQL</p> </li>
+    /// <li> <p>Amazon RDS MariaDB</p> </li>
+    /// <li> <p>Amazon DocumentDB</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>db.application</code> - The name of the application that is connected to the database. The following values are permitted:</p>
+    /// <ul>
+    /// <li> <p>Aurora PostgreSQL</p> </li>
+    /// <li> <p>Amazon RDS PostgreSQL</p> </li>
+    /// <li> <p>Amazon DocumentDB</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>db.host</code> - The host name of the connected client (all engines).</p> </li>
+    /// <li> <p> <code>db.query</code> - The query that is currently running (only Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.query_tokenized</code> - The digest query (only Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.session_type</code> - The type of the current session (only Aurora PostgreSQL and RDS PostgreSQL).</p> </li>
+    /// <li> <p> <code>db.sql</code> - The text of the SQL statement that is currently running (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.sql_tokenized</code> - The SQL digest (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.user</code> - The user logged in to the database (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.wait_event</code> - The event for which the database backend is waiting (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.wait_event_type</code> - The type of event for which the database backend is waiting (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.wait_state</code> - The event for which the database backend is waiting (only Amazon DocumentDB).</p> </li>
     /// </ul>
     pub group: std::option::Option<std::string::String>,
     /// <p>A list of specific dimensions from a dimension group. If this parameter is not present, then it signifies that all of the dimensions in the group were requested, or are present in the response.</p>
     /// <p>Valid values for elements in the <code>Dimensions</code> array are:</p>
     /// <ul>
-    /// <li> <p> <code>db.application.name</code> - The name of the application that is connected to the database (only Aurora PostgreSQL and RDS PostgreSQL)</p> </li>
-    /// <li> <p> <code>db.host.id</code> - The host ID of the connected client (all engines)</p> </li>
-    /// <li> <p> <code>db.host.name</code> - The host name of the connected client (all engines)</p> </li>
-    /// <li> <p> <code>db.name</code> - The name of the database to which the client is connected (only Aurora PostgreSQL, Amazon RDS PostgreSQL, Aurora MySQL, Amazon RDS MySQL, and MariaDB)</p> </li>
-    /// <li> <p> <code>db.session_type.name</code> - The type of the current session (only Aurora PostgreSQL and RDS PostgreSQL)</p> </li>
-    /// <li> <p> <code>db.sql.id</code> - The SQL ID generated by Performance Insights (all engines)</p> </li>
-    /// <li> <p> <code>db.sql.db_id</code> - The SQL ID generated by the database (all engines)</p> </li>
-    /// <li> <p> <code>db.sql.statement</code> - The SQL text that is being executed (all engines)</p> </li>
+    /// <li> <p> <code>db.application.name</code> - The name of the application that is connected to the database. Valid values are as follows: </p>
+    /// <ul>
+    /// <li> <p>Aurora PostgreSQL</p> </li>
+    /// <li> <p>Amazon RDS PostgreSQL</p> </li>
+    /// <li> <p>Amazon DocumentDB</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>db.host.id</code> - The host ID of the connected client (all engines).</p> </li>
+    /// <li> <p> <code>db.host.name</code> - The host name of the connected client (all engines).</p> </li>
+    /// <li> <p> <code>db.name</code> - The name of the database to which the client is connected. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p>Aurora PostgreSQL</p> </li>
+    /// <li> <p>Amazon RDS PostgreSQL</p> </li>
+    /// <li> <p>Aurora MySQL</p> </li>
+    /// <li> <p>Amazon RDS MySQL</p> </li>
+    /// <li> <p>Amazon RDS MariaDB</p> </li>
+    /// <li> <p>Amazon DocumentDB</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>db.query.id</code> - The query ID generated by Performance Insights (only Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.query.db_id</code> - The query ID generated by the database (only Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.query.statement</code> - The text of the query that is being run (only Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.query.tokenized_id</code> </p> </li>
+    /// <li> <p> <code>db.query.tokenized.id</code> - The query digest ID generated by Performance Insights (only Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.query.tokenized.db_id</code> - The query digest ID generated by Performance Insights (only Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.query.tokenized.statement</code> - The text of the query digest (only Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.session_type.name</code> - The type of the current session (only Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.sql.id</code> - The hash of the full, non-tokenized SQL statement generated by Performance Insights (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.sql.db_id</code> - Either the SQL ID generated by the database engine, or a value generated by Performance Insights that begins with <code>pi-</code> (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.sql.statement</code> - The full text of the SQL statement that is running, as in <code>SELECT * FROM employees</code> (all engines except Amazon DocumentDB)</p> </li>
     /// <li> <p> <code>db.sql.tokenized_id</code> </p> </li>
-    /// <li> <p> <code>db.sql_tokenized.id</code> - The SQL digest ID generated by Performance Insights (all engines)</p> </li>
-    /// <li> <p> <code>db.sql_tokenized.db_id</code> - SQL digest ID generated by the database (all engines)</p> </li>
-    /// <li> <p> <code>db.sql_tokenized.statement</code> - The SQL digest text (all engines)</p> </li>
-    /// <li> <p> <code>db.user.id</code> - The ID of the user logged in to the database (all engines)</p> </li>
-    /// <li> <p> <code>db.user.name</code> - The name of the user logged in to the database (all engines)</p> </li>
-    /// <li> <p> <code>db.wait_event.name</code> - The event for which the backend is waiting (all engines)</p> </li>
-    /// <li> <p> <code>db.wait_event.type</code> - The type of event for which the backend is waiting (all engines)</p> </li>
-    /// <li> <p> <code>db.wait_event_type.name</code> - The name of the event type for which the backend is waiting (all engines)</p> </li>
+    /// <li> <p> <code>db.sql_tokenized.id</code> - The hash of the SQL digest generated by Performance Insights (all engines except Amazon DocumentDB). In the console, <code>db.sql_tokenized.id</code> is called the Support ID because Amazon Web Services Support can look at this data to help you troubleshoot database issues.</p> </li>
+    /// <li> <p> <code>db.sql_tokenized.db_id</code> - Either the native database ID used to refer to the SQL statement, or a synthetic ID such as <code>pi-2372568224</code> that Performance Insights generates if the native database ID isn't available (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.sql_tokenized.statement</code> - The text of the SQL digest, as in <code>SELECT * FROM employees WHERE employee_id = ?</code> (all engines except Amazon DocumentDB)</p> </li>
+    /// <li> <p> <code>db.user.id</code> - The ID of the user logged in to the database (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.user.name</code> - The name of the user logged in to the database (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.wait_event.name</code> - The event for which the backend is waiting (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.wait_event.type</code> - The type of event for which the backend is waiting (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.wait_event_type.name</code> - The name of the event type for which the backend is waiting (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.wait_state.name</code> - The event for which the backend is waiting (only Amazon DocumentDB).</p> </li>
     /// </ul>
     pub dimensions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of items to fetch for this dimension group.</p>
     pub limit: std::option::Option<i32>,
 }
 impl DimensionGroup {
-    /// <p>The name of the dimension group. Valid values are:</p>
+    /// <p>The name of the dimension group. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>db</code> - The name of the database to which the client is connected (only Aurora PostgreSQL, Amazon RDS PostgreSQL, Aurora MySQL, Amazon RDS MySQL, and MariaDB)</p> </li>
-    /// <li> <p> <code>db.application</code> - The name of the application that is connected to the database (only Aurora PostgreSQL and RDS PostgreSQL)</p> </li>
-    /// <li> <p> <code>db.host</code> - The host name of the connected client (all engines)</p> </li>
-    /// <li> <p> <code>db.session_type</code> - The type of the current session (only Aurora PostgreSQL and RDS PostgreSQL)</p> </li>
-    /// <li> <p> <code>db.sql</code> - The SQL that is currently executing (all engines)</p> </li>
-    /// <li> <p> <code>db.sql_tokenized</code> - The SQL digest (all engines)</p> </li>
-    /// <li> <p> <code>db.wait_event</code> - The event for which the database backend is waiting (all engines)</p> </li>
-    /// <li> <p> <code>db.wait_event_type</code> - The type of event for which the database backend is waiting (all engines)</p> </li>
-    /// <li> <p> <code>db.user</code> - The user logged in to the database (all engines)</p> </li>
+    /// <li> <p> <code>db</code> - The name of the database to which the client is connected. The following values are permitted:</p>
+    /// <ul>
+    /// <li> <p>Aurora PostgreSQL</p> </li>
+    /// <li> <p>Amazon RDS PostgreSQL</p> </li>
+    /// <li> <p>Aurora MySQL</p> </li>
+    /// <li> <p>Amazon RDS MySQL</p> </li>
+    /// <li> <p>Amazon RDS MariaDB</p> </li>
+    /// <li> <p>Amazon DocumentDB</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>db.application</code> - The name of the application that is connected to the database. The following values are permitted:</p>
+    /// <ul>
+    /// <li> <p>Aurora PostgreSQL</p> </li>
+    /// <li> <p>Amazon RDS PostgreSQL</p> </li>
+    /// <li> <p>Amazon DocumentDB</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>db.host</code> - The host name of the connected client (all engines).</p> </li>
+    /// <li> <p> <code>db.query</code> - The query that is currently running (only Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.query_tokenized</code> - The digest query (only Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.session_type</code> - The type of the current session (only Aurora PostgreSQL and RDS PostgreSQL).</p> </li>
+    /// <li> <p> <code>db.sql</code> - The text of the SQL statement that is currently running (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.sql_tokenized</code> - The SQL digest (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.user</code> - The user logged in to the database (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.wait_event</code> - The event for which the database backend is waiting (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.wait_event_type</code> - The type of event for which the database backend is waiting (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.wait_state</code> - The event for which the database backend is waiting (only Amazon DocumentDB).</p> </li>
     /// </ul>
     pub fn group(&self) -> std::option::Option<&str> {
         self.group.as_deref()
@@ -862,23 +929,44 @@ impl DimensionGroup {
     /// <p>A list of specific dimensions from a dimension group. If this parameter is not present, then it signifies that all of the dimensions in the group were requested, or are present in the response.</p>
     /// <p>Valid values for elements in the <code>Dimensions</code> array are:</p>
     /// <ul>
-    /// <li> <p> <code>db.application.name</code> - The name of the application that is connected to the database (only Aurora PostgreSQL and RDS PostgreSQL)</p> </li>
-    /// <li> <p> <code>db.host.id</code> - The host ID of the connected client (all engines)</p> </li>
-    /// <li> <p> <code>db.host.name</code> - The host name of the connected client (all engines)</p> </li>
-    /// <li> <p> <code>db.name</code> - The name of the database to which the client is connected (only Aurora PostgreSQL, Amazon RDS PostgreSQL, Aurora MySQL, Amazon RDS MySQL, and MariaDB)</p> </li>
-    /// <li> <p> <code>db.session_type.name</code> - The type of the current session (only Aurora PostgreSQL and RDS PostgreSQL)</p> </li>
-    /// <li> <p> <code>db.sql.id</code> - The SQL ID generated by Performance Insights (all engines)</p> </li>
-    /// <li> <p> <code>db.sql.db_id</code> - The SQL ID generated by the database (all engines)</p> </li>
-    /// <li> <p> <code>db.sql.statement</code> - The SQL text that is being executed (all engines)</p> </li>
+    /// <li> <p> <code>db.application.name</code> - The name of the application that is connected to the database. Valid values are as follows: </p>
+    /// <ul>
+    /// <li> <p>Aurora PostgreSQL</p> </li>
+    /// <li> <p>Amazon RDS PostgreSQL</p> </li>
+    /// <li> <p>Amazon DocumentDB</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>db.host.id</code> - The host ID of the connected client (all engines).</p> </li>
+    /// <li> <p> <code>db.host.name</code> - The host name of the connected client (all engines).</p> </li>
+    /// <li> <p> <code>db.name</code> - The name of the database to which the client is connected. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p>Aurora PostgreSQL</p> </li>
+    /// <li> <p>Amazon RDS PostgreSQL</p> </li>
+    /// <li> <p>Aurora MySQL</p> </li>
+    /// <li> <p>Amazon RDS MySQL</p> </li>
+    /// <li> <p>Amazon RDS MariaDB</p> </li>
+    /// <li> <p>Amazon DocumentDB</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>db.query.id</code> - The query ID generated by Performance Insights (only Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.query.db_id</code> - The query ID generated by the database (only Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.query.statement</code> - The text of the query that is being run (only Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.query.tokenized_id</code> </p> </li>
+    /// <li> <p> <code>db.query.tokenized.id</code> - The query digest ID generated by Performance Insights (only Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.query.tokenized.db_id</code> - The query digest ID generated by Performance Insights (only Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.query.tokenized.statement</code> - The text of the query digest (only Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.session_type.name</code> - The type of the current session (only Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.sql.id</code> - The hash of the full, non-tokenized SQL statement generated by Performance Insights (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.sql.db_id</code> - Either the SQL ID generated by the database engine, or a value generated by Performance Insights that begins with <code>pi-</code> (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.sql.statement</code> - The full text of the SQL statement that is running, as in <code>SELECT * FROM employees</code> (all engines except Amazon DocumentDB)</p> </li>
     /// <li> <p> <code>db.sql.tokenized_id</code> </p> </li>
-    /// <li> <p> <code>db.sql_tokenized.id</code> - The SQL digest ID generated by Performance Insights (all engines)</p> </li>
-    /// <li> <p> <code>db.sql_tokenized.db_id</code> - SQL digest ID generated by the database (all engines)</p> </li>
-    /// <li> <p> <code>db.sql_tokenized.statement</code> - The SQL digest text (all engines)</p> </li>
-    /// <li> <p> <code>db.user.id</code> - The ID of the user logged in to the database (all engines)</p> </li>
-    /// <li> <p> <code>db.user.name</code> - The name of the user logged in to the database (all engines)</p> </li>
-    /// <li> <p> <code>db.wait_event.name</code> - The event for which the backend is waiting (all engines)</p> </li>
-    /// <li> <p> <code>db.wait_event.type</code> - The type of event for which the backend is waiting (all engines)</p> </li>
-    /// <li> <p> <code>db.wait_event_type.name</code> - The name of the event type for which the backend is waiting (all engines)</p> </li>
+    /// <li> <p> <code>db.sql_tokenized.id</code> - The hash of the SQL digest generated by Performance Insights (all engines except Amazon DocumentDB). In the console, <code>db.sql_tokenized.id</code> is called the Support ID because Amazon Web Services Support can look at this data to help you troubleshoot database issues.</p> </li>
+    /// <li> <p> <code>db.sql_tokenized.db_id</code> - Either the native database ID used to refer to the SQL statement, or a synthetic ID such as <code>pi-2372568224</code> that Performance Insights generates if the native database ID isn't available (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.sql_tokenized.statement</code> - The text of the SQL digest, as in <code>SELECT * FROM employees WHERE employee_id = ?</code> (all engines except Amazon DocumentDB)</p> </li>
+    /// <li> <p> <code>db.user.id</code> - The ID of the user logged in to the database (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.user.name</code> - The name of the user logged in to the database (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.wait_event.name</code> - The event for which the backend is waiting (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.wait_event.type</code> - The type of event for which the backend is waiting (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.wait_event_type.name</code> - The name of the event type for which the backend is waiting (all engines except Amazon DocumentDB).</p> </li>
+    /// <li> <p> <code>db.wait_state.name</code> - The event for which the backend is waiting (only Amazon DocumentDB).</p> </li>
     /// </ul>
     pub fn dimensions(&self) -> std::option::Option<&[std::string::String]> {
         self.dimensions.as_deref()
@@ -908,33 +996,65 @@ pub mod dimension_group {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The name of the dimension group. Valid values are:</p>
+        /// <p>The name of the dimension group. Valid values are as follows:</p>
         /// <ul>
-        /// <li> <p> <code>db</code> - The name of the database to which the client is connected (only Aurora PostgreSQL, Amazon RDS PostgreSQL, Aurora MySQL, Amazon RDS MySQL, and MariaDB)</p> </li>
-        /// <li> <p> <code>db.application</code> - The name of the application that is connected to the database (only Aurora PostgreSQL and RDS PostgreSQL)</p> </li>
-        /// <li> <p> <code>db.host</code> - The host name of the connected client (all engines)</p> </li>
-        /// <li> <p> <code>db.session_type</code> - The type of the current session (only Aurora PostgreSQL and RDS PostgreSQL)</p> </li>
-        /// <li> <p> <code>db.sql</code> - The SQL that is currently executing (all engines)</p> </li>
-        /// <li> <p> <code>db.sql_tokenized</code> - The SQL digest (all engines)</p> </li>
-        /// <li> <p> <code>db.wait_event</code> - The event for which the database backend is waiting (all engines)</p> </li>
-        /// <li> <p> <code>db.wait_event_type</code> - The type of event for which the database backend is waiting (all engines)</p> </li>
-        /// <li> <p> <code>db.user</code> - The user logged in to the database (all engines)</p> </li>
+        /// <li> <p> <code>db</code> - The name of the database to which the client is connected. The following values are permitted:</p>
+        /// <ul>
+        /// <li> <p>Aurora PostgreSQL</p> </li>
+        /// <li> <p>Amazon RDS PostgreSQL</p> </li>
+        /// <li> <p>Aurora MySQL</p> </li>
+        /// <li> <p>Amazon RDS MySQL</p> </li>
+        /// <li> <p>Amazon RDS MariaDB</p> </li>
+        /// <li> <p>Amazon DocumentDB</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>db.application</code> - The name of the application that is connected to the database. The following values are permitted:</p>
+        /// <ul>
+        /// <li> <p>Aurora PostgreSQL</p> </li>
+        /// <li> <p>Amazon RDS PostgreSQL</p> </li>
+        /// <li> <p>Amazon DocumentDB</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>db.host</code> - The host name of the connected client (all engines).</p> </li>
+        /// <li> <p> <code>db.query</code> - The query that is currently running (only Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.query_tokenized</code> - The digest query (only Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.session_type</code> - The type of the current session (only Aurora PostgreSQL and RDS PostgreSQL).</p> </li>
+        /// <li> <p> <code>db.sql</code> - The text of the SQL statement that is currently running (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.sql_tokenized</code> - The SQL digest (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.user</code> - The user logged in to the database (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.wait_event</code> - The event for which the database backend is waiting (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.wait_event_type</code> - The type of event for which the database backend is waiting (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.wait_state</code> - The event for which the database backend is waiting (only Amazon DocumentDB).</p> </li>
         /// </ul>
         pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
             self.group = Some(input.into());
             self
         }
-        /// <p>The name of the dimension group. Valid values are:</p>
+        /// <p>The name of the dimension group. Valid values are as follows:</p>
         /// <ul>
-        /// <li> <p> <code>db</code> - The name of the database to which the client is connected (only Aurora PostgreSQL, Amazon RDS PostgreSQL, Aurora MySQL, Amazon RDS MySQL, and MariaDB)</p> </li>
-        /// <li> <p> <code>db.application</code> - The name of the application that is connected to the database (only Aurora PostgreSQL and RDS PostgreSQL)</p> </li>
-        /// <li> <p> <code>db.host</code> - The host name of the connected client (all engines)</p> </li>
-        /// <li> <p> <code>db.session_type</code> - The type of the current session (only Aurora PostgreSQL and RDS PostgreSQL)</p> </li>
-        /// <li> <p> <code>db.sql</code> - The SQL that is currently executing (all engines)</p> </li>
-        /// <li> <p> <code>db.sql_tokenized</code> - The SQL digest (all engines)</p> </li>
-        /// <li> <p> <code>db.wait_event</code> - The event for which the database backend is waiting (all engines)</p> </li>
-        /// <li> <p> <code>db.wait_event_type</code> - The type of event for which the database backend is waiting (all engines)</p> </li>
-        /// <li> <p> <code>db.user</code> - The user logged in to the database (all engines)</p> </li>
+        /// <li> <p> <code>db</code> - The name of the database to which the client is connected. The following values are permitted:</p>
+        /// <ul>
+        /// <li> <p>Aurora PostgreSQL</p> </li>
+        /// <li> <p>Amazon RDS PostgreSQL</p> </li>
+        /// <li> <p>Aurora MySQL</p> </li>
+        /// <li> <p>Amazon RDS MySQL</p> </li>
+        /// <li> <p>Amazon RDS MariaDB</p> </li>
+        /// <li> <p>Amazon DocumentDB</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>db.application</code> - The name of the application that is connected to the database. The following values are permitted:</p>
+        /// <ul>
+        /// <li> <p>Aurora PostgreSQL</p> </li>
+        /// <li> <p>Amazon RDS PostgreSQL</p> </li>
+        /// <li> <p>Amazon DocumentDB</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>db.host</code> - The host name of the connected client (all engines).</p> </li>
+        /// <li> <p> <code>db.query</code> - The query that is currently running (only Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.query_tokenized</code> - The digest query (only Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.session_type</code> - The type of the current session (only Aurora PostgreSQL and RDS PostgreSQL).</p> </li>
+        /// <li> <p> <code>db.sql</code> - The text of the SQL statement that is currently running (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.sql_tokenized</code> - The SQL digest (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.user</code> - The user logged in to the database (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.wait_event</code> - The event for which the database backend is waiting (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.wait_event_type</code> - The type of event for which the database backend is waiting (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.wait_state</code> - The event for which the database backend is waiting (only Amazon DocumentDB).</p> </li>
         /// </ul>
         pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group = input;
@@ -947,23 +1067,44 @@ pub mod dimension_group {
         /// <p>A list of specific dimensions from a dimension group. If this parameter is not present, then it signifies that all of the dimensions in the group were requested, or are present in the response.</p>
         /// <p>Valid values for elements in the <code>Dimensions</code> array are:</p>
         /// <ul>
-        /// <li> <p> <code>db.application.name</code> - The name of the application that is connected to the database (only Aurora PostgreSQL and RDS PostgreSQL)</p> </li>
-        /// <li> <p> <code>db.host.id</code> - The host ID of the connected client (all engines)</p> </li>
-        /// <li> <p> <code>db.host.name</code> - The host name of the connected client (all engines)</p> </li>
-        /// <li> <p> <code>db.name</code> - The name of the database to which the client is connected (only Aurora PostgreSQL, Amazon RDS PostgreSQL, Aurora MySQL, Amazon RDS MySQL, and MariaDB)</p> </li>
-        /// <li> <p> <code>db.session_type.name</code> - The type of the current session (only Aurora PostgreSQL and RDS PostgreSQL)</p> </li>
-        /// <li> <p> <code>db.sql.id</code> - The SQL ID generated by Performance Insights (all engines)</p> </li>
-        /// <li> <p> <code>db.sql.db_id</code> - The SQL ID generated by the database (all engines)</p> </li>
-        /// <li> <p> <code>db.sql.statement</code> - The SQL text that is being executed (all engines)</p> </li>
+        /// <li> <p> <code>db.application.name</code> - The name of the application that is connected to the database. Valid values are as follows: </p>
+        /// <ul>
+        /// <li> <p>Aurora PostgreSQL</p> </li>
+        /// <li> <p>Amazon RDS PostgreSQL</p> </li>
+        /// <li> <p>Amazon DocumentDB</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>db.host.id</code> - The host ID of the connected client (all engines).</p> </li>
+        /// <li> <p> <code>db.host.name</code> - The host name of the connected client (all engines).</p> </li>
+        /// <li> <p> <code>db.name</code> - The name of the database to which the client is connected. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p>Aurora PostgreSQL</p> </li>
+        /// <li> <p>Amazon RDS PostgreSQL</p> </li>
+        /// <li> <p>Aurora MySQL</p> </li>
+        /// <li> <p>Amazon RDS MySQL</p> </li>
+        /// <li> <p>Amazon RDS MariaDB</p> </li>
+        /// <li> <p>Amazon DocumentDB</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>db.query.id</code> - The query ID generated by Performance Insights (only Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.query.db_id</code> - The query ID generated by the database (only Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.query.statement</code> - The text of the query that is being run (only Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.query.tokenized_id</code> </p> </li>
+        /// <li> <p> <code>db.query.tokenized.id</code> - The query digest ID generated by Performance Insights (only Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.query.tokenized.db_id</code> - The query digest ID generated by Performance Insights (only Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.query.tokenized.statement</code> - The text of the query digest (only Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.session_type.name</code> - The type of the current session (only Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.sql.id</code> - The hash of the full, non-tokenized SQL statement generated by Performance Insights (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.sql.db_id</code> - Either the SQL ID generated by the database engine, or a value generated by Performance Insights that begins with <code>pi-</code> (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.sql.statement</code> - The full text of the SQL statement that is running, as in <code>SELECT * FROM employees</code> (all engines except Amazon DocumentDB)</p> </li>
         /// <li> <p> <code>db.sql.tokenized_id</code> </p> </li>
-        /// <li> <p> <code>db.sql_tokenized.id</code> - The SQL digest ID generated by Performance Insights (all engines)</p> </li>
-        /// <li> <p> <code>db.sql_tokenized.db_id</code> - SQL digest ID generated by the database (all engines)</p> </li>
-        /// <li> <p> <code>db.sql_tokenized.statement</code> - The SQL digest text (all engines)</p> </li>
-        /// <li> <p> <code>db.user.id</code> - The ID of the user logged in to the database (all engines)</p> </li>
-        /// <li> <p> <code>db.user.name</code> - The name of the user logged in to the database (all engines)</p> </li>
-        /// <li> <p> <code>db.wait_event.name</code> - The event for which the backend is waiting (all engines)</p> </li>
-        /// <li> <p> <code>db.wait_event.type</code> - The type of event for which the backend is waiting (all engines)</p> </li>
-        /// <li> <p> <code>db.wait_event_type.name</code> - The name of the event type for which the backend is waiting (all engines)</p> </li>
+        /// <li> <p> <code>db.sql_tokenized.id</code> - The hash of the SQL digest generated by Performance Insights (all engines except Amazon DocumentDB). In the console, <code>db.sql_tokenized.id</code> is called the Support ID because Amazon Web Services Support can look at this data to help you troubleshoot database issues.</p> </li>
+        /// <li> <p> <code>db.sql_tokenized.db_id</code> - Either the native database ID used to refer to the SQL statement, or a synthetic ID such as <code>pi-2372568224</code> that Performance Insights generates if the native database ID isn't available (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.sql_tokenized.statement</code> - The text of the SQL digest, as in <code>SELECT * FROM employees WHERE employee_id = ?</code> (all engines except Amazon DocumentDB)</p> </li>
+        /// <li> <p> <code>db.user.id</code> - The ID of the user logged in to the database (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.user.name</code> - The name of the user logged in to the database (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.wait_event.name</code> - The event for which the backend is waiting (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.wait_event.type</code> - The type of event for which the backend is waiting (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.wait_event_type.name</code> - The name of the event type for which the backend is waiting (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.wait_state.name</code> - The event for which the backend is waiting (only Amazon DocumentDB).</p> </li>
         /// </ul>
         pub fn dimensions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
@@ -974,23 +1115,44 @@ pub mod dimension_group {
         /// <p>A list of specific dimensions from a dimension group. If this parameter is not present, then it signifies that all of the dimensions in the group were requested, or are present in the response.</p>
         /// <p>Valid values for elements in the <code>Dimensions</code> array are:</p>
         /// <ul>
-        /// <li> <p> <code>db.application.name</code> - The name of the application that is connected to the database (only Aurora PostgreSQL and RDS PostgreSQL)</p> </li>
-        /// <li> <p> <code>db.host.id</code> - The host ID of the connected client (all engines)</p> </li>
-        /// <li> <p> <code>db.host.name</code> - The host name of the connected client (all engines)</p> </li>
-        /// <li> <p> <code>db.name</code> - The name of the database to which the client is connected (only Aurora PostgreSQL, Amazon RDS PostgreSQL, Aurora MySQL, Amazon RDS MySQL, and MariaDB)</p> </li>
-        /// <li> <p> <code>db.session_type.name</code> - The type of the current session (only Aurora PostgreSQL and RDS PostgreSQL)</p> </li>
-        /// <li> <p> <code>db.sql.id</code> - The SQL ID generated by Performance Insights (all engines)</p> </li>
-        /// <li> <p> <code>db.sql.db_id</code> - The SQL ID generated by the database (all engines)</p> </li>
-        /// <li> <p> <code>db.sql.statement</code> - The SQL text that is being executed (all engines)</p> </li>
+        /// <li> <p> <code>db.application.name</code> - The name of the application that is connected to the database. Valid values are as follows: </p>
+        /// <ul>
+        /// <li> <p>Aurora PostgreSQL</p> </li>
+        /// <li> <p>Amazon RDS PostgreSQL</p> </li>
+        /// <li> <p>Amazon DocumentDB</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>db.host.id</code> - The host ID of the connected client (all engines).</p> </li>
+        /// <li> <p> <code>db.host.name</code> - The host name of the connected client (all engines).</p> </li>
+        /// <li> <p> <code>db.name</code> - The name of the database to which the client is connected. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p>Aurora PostgreSQL</p> </li>
+        /// <li> <p>Amazon RDS PostgreSQL</p> </li>
+        /// <li> <p>Aurora MySQL</p> </li>
+        /// <li> <p>Amazon RDS MySQL</p> </li>
+        /// <li> <p>Amazon RDS MariaDB</p> </li>
+        /// <li> <p>Amazon DocumentDB</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>db.query.id</code> - The query ID generated by Performance Insights (only Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.query.db_id</code> - The query ID generated by the database (only Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.query.statement</code> - The text of the query that is being run (only Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.query.tokenized_id</code> </p> </li>
+        /// <li> <p> <code>db.query.tokenized.id</code> - The query digest ID generated by Performance Insights (only Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.query.tokenized.db_id</code> - The query digest ID generated by Performance Insights (only Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.query.tokenized.statement</code> - The text of the query digest (only Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.session_type.name</code> - The type of the current session (only Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.sql.id</code> - The hash of the full, non-tokenized SQL statement generated by Performance Insights (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.sql.db_id</code> - Either the SQL ID generated by the database engine, or a value generated by Performance Insights that begins with <code>pi-</code> (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.sql.statement</code> - The full text of the SQL statement that is running, as in <code>SELECT * FROM employees</code> (all engines except Amazon DocumentDB)</p> </li>
         /// <li> <p> <code>db.sql.tokenized_id</code> </p> </li>
-        /// <li> <p> <code>db.sql_tokenized.id</code> - The SQL digest ID generated by Performance Insights (all engines)</p> </li>
-        /// <li> <p> <code>db.sql_tokenized.db_id</code> - SQL digest ID generated by the database (all engines)</p> </li>
-        /// <li> <p> <code>db.sql_tokenized.statement</code> - The SQL digest text (all engines)</p> </li>
-        /// <li> <p> <code>db.user.id</code> - The ID of the user logged in to the database (all engines)</p> </li>
-        /// <li> <p> <code>db.user.name</code> - The name of the user logged in to the database (all engines)</p> </li>
-        /// <li> <p> <code>db.wait_event.name</code> - The event for which the backend is waiting (all engines)</p> </li>
-        /// <li> <p> <code>db.wait_event.type</code> - The type of event for which the backend is waiting (all engines)</p> </li>
-        /// <li> <p> <code>db.wait_event_type.name</code> - The name of the event type for which the backend is waiting (all engines)</p> </li>
+        /// <li> <p> <code>db.sql_tokenized.id</code> - The hash of the SQL digest generated by Performance Insights (all engines except Amazon DocumentDB). In the console, <code>db.sql_tokenized.id</code> is called the Support ID because Amazon Web Services Support can look at this data to help you troubleshoot database issues.</p> </li>
+        /// <li> <p> <code>db.sql_tokenized.db_id</code> - Either the native database ID used to refer to the SQL statement, or a synthetic ID such as <code>pi-2372568224</code> that Performance Insights generates if the native database ID isn't available (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.sql_tokenized.statement</code> - The text of the SQL digest, as in <code>SELECT * FROM employees WHERE employee_id = ?</code> (all engines except Amazon DocumentDB)</p> </li>
+        /// <li> <p> <code>db.user.id</code> - The ID of the user logged in to the database (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.user.name</code> - The name of the user logged in to the database (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.wait_event.name</code> - The event for which the backend is waiting (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.wait_event.type</code> - The type of event for which the backend is waiting (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.wait_event_type.name</code> - The name of the event type for which the backend is waiting (all engines except Amazon DocumentDB).</p> </li>
+        /// <li> <p> <code>db.wait_state.name</code> - The event for which the backend is waiting (only Amazon DocumentDB).</p> </li>
         /// </ul>
         pub fn set_dimensions(
             mut self,
@@ -1030,26 +1192,26 @@ impl DimensionGroup {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FeatureMetadata {
-    /// <p>The status of the feature on the DB instance. Possible values include the following: </p>
+    /// <p>The status of the feature on the DB instance. Possible values include the following:</p>
     /// <ul>
-    /// <li> <p> <code>ENABLED</code>: the feature is enabled on the instance.</p> </li>
-    /// <li> <p> <code>DISABLED</code>: the feature is disabled on the instance.</p> </li>
-    /// <li> <p> <code>UNSUPPORTED</code>: the feature isn't supported on the instance.</p> </li>
-    /// <li> <p> <code>ENABLED_PENDING_REBOOT</code>: the feature is enabled on the instance but requires a reboot to take effect.</p> </li>
-    /// <li> <p> <code>DISABLED_PENDING_REBOOT</code>: the feature is disabled on the instance but requires a reboot to take effect.</p> </li>
-    /// <li> <p> <code>UNKNOWN</code>: the feature status couldn't be determined.</p> </li>
+    /// <li> <p> <code>ENABLED</code> - The feature is enabled on the instance.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - The feature is disabled on the instance.</p> </li>
+    /// <li> <p> <code>UNSUPPORTED</code> - The feature isn't supported on the instance.</p> </li>
+    /// <li> <p> <code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but requires a reboot to take effect.</p> </li>
+    /// <li> <p> <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance but requires a reboot to take effect.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code> - The feature status couldn't be determined.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::FeatureStatus>,
 }
 impl FeatureMetadata {
-    /// <p>The status of the feature on the DB instance. Possible values include the following: </p>
+    /// <p>The status of the feature on the DB instance. Possible values include the following:</p>
     /// <ul>
-    /// <li> <p> <code>ENABLED</code>: the feature is enabled on the instance.</p> </li>
-    /// <li> <p> <code>DISABLED</code>: the feature is disabled on the instance.</p> </li>
-    /// <li> <p> <code>UNSUPPORTED</code>: the feature isn't supported on the instance.</p> </li>
-    /// <li> <p> <code>ENABLED_PENDING_REBOOT</code>: the feature is enabled on the instance but requires a reboot to take effect.</p> </li>
-    /// <li> <p> <code>DISABLED_PENDING_REBOOT</code>: the feature is disabled on the instance but requires a reboot to take effect.</p> </li>
-    /// <li> <p> <code>UNKNOWN</code>: the feature status couldn't be determined.</p> </li>
+    /// <li> <p> <code>ENABLED</code> - The feature is enabled on the instance.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - The feature is disabled on the instance.</p> </li>
+    /// <li> <p> <code>UNSUPPORTED</code> - The feature isn't supported on the instance.</p> </li>
+    /// <li> <p> <code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but requires a reboot to take effect.</p> </li>
+    /// <li> <p> <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance but requires a reboot to take effect.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code> - The feature status couldn't be determined.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::FeatureStatus> {
         self.status.as_ref()
@@ -1071,27 +1233,27 @@ pub mod feature_metadata {
         pub(crate) status: std::option::Option<crate::model::FeatureStatus>,
     }
     impl Builder {
-        /// <p>The status of the feature on the DB instance. Possible values include the following: </p>
+        /// <p>The status of the feature on the DB instance. Possible values include the following:</p>
         /// <ul>
-        /// <li> <p> <code>ENABLED</code>: the feature is enabled on the instance.</p> </li>
-        /// <li> <p> <code>DISABLED</code>: the feature is disabled on the instance.</p> </li>
-        /// <li> <p> <code>UNSUPPORTED</code>: the feature isn't supported on the instance.</p> </li>
-        /// <li> <p> <code>ENABLED_PENDING_REBOOT</code>: the feature is enabled on the instance but requires a reboot to take effect.</p> </li>
-        /// <li> <p> <code>DISABLED_PENDING_REBOOT</code>: the feature is disabled on the instance but requires a reboot to take effect.</p> </li>
-        /// <li> <p> <code>UNKNOWN</code>: the feature status couldn't be determined.</p> </li>
+        /// <li> <p> <code>ENABLED</code> - The feature is enabled on the instance.</p> </li>
+        /// <li> <p> <code>DISABLED</code> - The feature is disabled on the instance.</p> </li>
+        /// <li> <p> <code>UNSUPPORTED</code> - The feature isn't supported on the instance.</p> </li>
+        /// <li> <p> <code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but requires a reboot to take effect.</p> </li>
+        /// <li> <p> <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance but requires a reboot to take effect.</p> </li>
+        /// <li> <p> <code>UNKNOWN</code> - The feature status couldn't be determined.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::FeatureStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the feature on the DB instance. Possible values include the following: </p>
+        /// <p>The status of the feature on the DB instance. Possible values include the following:</p>
         /// <ul>
-        /// <li> <p> <code>ENABLED</code>: the feature is enabled on the instance.</p> </li>
-        /// <li> <p> <code>DISABLED</code>: the feature is disabled on the instance.</p> </li>
-        /// <li> <p> <code>UNSUPPORTED</code>: the feature isn't supported on the instance.</p> </li>
-        /// <li> <p> <code>ENABLED_PENDING_REBOOT</code>: the feature is enabled on the instance but requires a reboot to take effect.</p> </li>
-        /// <li> <p> <code>DISABLED_PENDING_REBOOT</code>: the feature is disabled on the instance but requires a reboot to take effect.</p> </li>
-        /// <li> <p> <code>UNKNOWN</code>: the feature status couldn't be determined.</p> </li>
+        /// <li> <p> <code>ENABLED</code> - The feature is enabled on the instance.</p> </li>
+        /// <li> <p> <code>DISABLED</code> - The feature is disabled on the instance.</p> </li>
+        /// <li> <p> <code>UNSUPPORTED</code> - The feature isn't supported on the instance.</p> </li>
+        /// <li> <p> <code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but requires a reboot to take effect.</p> </li>
+        /// <li> <p> <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance but requires a reboot to take effect.</p> </li>
+        /// <li> <p> <code>UNKNOWN</code> - The feature status couldn't be determined.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -1197,31 +1359,47 @@ impl AsRef<str> for FeatureStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DimensionKeyDetail {
-    /// <p>The value of the dimension detail data. For the <code>db.sql.statement</code> dimension, this value is either the full or truncated SQL query, depending on the return status.</p>
+    /// <p>The value of the dimension detail data. Depending on the return status, this value is either the full or truncated SQL query for the following dimensions:</p>
+    /// <ul>
+    /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
+    /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
+    /// </ul>
     pub value: std::option::Option<std::string::String>,
-    /// <p>The full name of the dimension. The full name includes the group name and key name. The only valid value is <code>db.sql.statement</code>. </p>
+    /// <p>The full name of the dimension. The full name includes the group name and key name. The following values are valid:</p>
+    /// <ul>
+    /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
+    /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
+    /// </ul>
     pub dimension: std::option::Option<std::string::String>,
     /// <p>The status of the dimension detail data. Possible values include the following:</p>
     /// <ul>
     /// <li> <p> <code>AVAILABLE</code> - The dimension detail data is ready to be retrieved.</p> </li>
-    /// <li> <p> <code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is required. If the requested detail data for <code>db.sql.statement</code> has the status <code>PROCESSING</code>, Performance Insights returns the truncated query.</p> </li>
+    /// <li> <p> <code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is required. If the requested detail data has the status <code>PROCESSING</code>, Performance Insights returns the truncated query.</p> </li>
     /// <li> <p> <code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::DetailStatus>,
 }
 impl DimensionKeyDetail {
-    /// <p>The value of the dimension detail data. For the <code>db.sql.statement</code> dimension, this value is either the full or truncated SQL query, depending on the return status.</p>
+    /// <p>The value of the dimension detail data. Depending on the return status, this value is either the full or truncated SQL query for the following dimensions:</p>
+    /// <ul>
+    /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
+    /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
+    /// </ul>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
-    /// <p>The full name of the dimension. The full name includes the group name and key name. The only valid value is <code>db.sql.statement</code>. </p>
+    /// <p>The full name of the dimension. The full name includes the group name and key name. The following values are valid:</p>
+    /// <ul>
+    /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
+    /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
+    /// </ul>
     pub fn dimension(&self) -> std::option::Option<&str> {
         self.dimension.as_deref()
     }
     /// <p>The status of the dimension detail data. Possible values include the following:</p>
     /// <ul>
     /// <li> <p> <code>AVAILABLE</code> - The dimension detail data is ready to be retrieved.</p> </li>
-    /// <li> <p> <code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is required. If the requested detail data for <code>db.sql.statement</code> has the status <code>PROCESSING</code>, Performance Insights returns the truncated query.</p> </li>
+    /// <li> <p> <code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is required. If the requested detail data has the status <code>PROCESSING</code>, Performance Insights returns the truncated query.</p> </li>
     /// <li> <p> <code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::DetailStatus> {
@@ -1248,22 +1426,38 @@ pub mod dimension_key_detail {
         pub(crate) status: std::option::Option<crate::model::DetailStatus>,
     }
     impl Builder {
-        /// <p>The value of the dimension detail data. For the <code>db.sql.statement</code> dimension, this value is either the full or truncated SQL query, depending on the return status.</p>
+        /// <p>The value of the dimension detail data. Depending on the return status, this value is either the full or truncated SQL query for the following dimensions:</p>
+        /// <ul>
+        /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
+        /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
+        /// </ul>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The value of the dimension detail data. For the <code>db.sql.statement</code> dimension, this value is either the full or truncated SQL query, depending on the return status.</p>
+        /// <p>The value of the dimension detail data. Depending on the return status, this value is either the full or truncated SQL query for the following dimensions:</p>
+        /// <ul>
+        /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
+        /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
+        /// </ul>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
         }
-        /// <p>The full name of the dimension. The full name includes the group name and key name. The only valid value is <code>db.sql.statement</code>. </p>
+        /// <p>The full name of the dimension. The full name includes the group name and key name. The following values are valid:</p>
+        /// <ul>
+        /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
+        /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
+        /// </ul>
         pub fn dimension(mut self, input: impl Into<std::string::String>) -> Self {
             self.dimension = Some(input.into());
             self
         }
-        /// <p>The full name of the dimension. The full name includes the group name and key name. The only valid value is <code>db.sql.statement</code>. </p>
+        /// <p>The full name of the dimension. The full name includes the group name and key name. The following values are valid:</p>
+        /// <ul>
+        /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
+        /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
+        /// </ul>
         pub fn set_dimension(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dimension = input;
             self
@@ -1271,7 +1465,7 @@ pub mod dimension_key_detail {
         /// <p>The status of the dimension detail data. Possible values include the following:</p>
         /// <ul>
         /// <li> <p> <code>AVAILABLE</code> - The dimension detail data is ready to be retrieved.</p> </li>
-        /// <li> <p> <code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is required. If the requested detail data for <code>db.sql.statement</code> has the status <code>PROCESSING</code>, Performance Insights returns the truncated query.</p> </li>
+        /// <li> <p> <code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is required. If the requested detail data has the status <code>PROCESSING</code>, Performance Insights returns the truncated query.</p> </li>
         /// <li> <p> <code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::DetailStatus) -> Self {
@@ -1281,7 +1475,7 @@ pub mod dimension_key_detail {
         /// <p>The status of the dimension detail data. Possible values include the following:</p>
         /// <ul>
         /// <li> <p> <code>AVAILABLE</code> - The dimension detail data is ready to be retrieved.</p> </li>
-        /// <li> <p> <code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is required. If the requested detail data for <code>db.sql.statement</code> has the status <code>PROCESSING</code>, Performance Insights returns the truncated query.</p> </li>
+        /// <li> <p> <code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is required. If the requested detail data has the status <code>PROCESSING</code>, Performance Insights returns the truncated query.</p> </li>
         /// <li> <p> <code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.</p> </li>
         /// </ul>
         pub fn set_status(

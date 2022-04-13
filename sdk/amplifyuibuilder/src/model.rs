@@ -1370,6 +1370,8 @@ pub struct ComponentEvent {
     pub action: std::option::Option<std::string::String>,
     /// <p>Describes information about the action.</p>
     pub parameters: std::option::Option<crate::model::ActionParameters>,
+    /// <p>Binds an event to an action on a component. When you specify a <code>bindingEvent</code>, the event is called when the action is performed.</p>
+    pub binding_event: std::option::Option<std::string::String>,
 }
 impl ComponentEvent {
     /// <p>The action to perform when a specific event is raised.</p>
@@ -1380,12 +1382,17 @@ impl ComponentEvent {
     pub fn parameters(&self) -> std::option::Option<&crate::model::ActionParameters> {
         self.parameters.as_ref()
     }
+    /// <p>Binds an event to an action on a component. When you specify a <code>bindingEvent</code>, the event is called when the action is performed.</p>
+    pub fn binding_event(&self) -> std::option::Option<&str> {
+        self.binding_event.as_deref()
+    }
 }
 impl std::fmt::Debug for ComponentEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComponentEvent");
         formatter.field("action", &self.action);
         formatter.field("parameters", &self.parameters);
+        formatter.field("binding_event", &self.binding_event);
         formatter.finish()
     }
 }
@@ -1397,6 +1404,7 @@ pub mod component_event {
     pub struct Builder {
         pub(crate) action: std::option::Option<std::string::String>,
         pub(crate) parameters: std::option::Option<crate::model::ActionParameters>,
+        pub(crate) binding_event: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The action to perform when a specific event is raised.</p>
@@ -1422,11 +1430,25 @@ pub mod component_event {
             self.parameters = input;
             self
         }
+        /// <p>Binds an event to an action on a component. When you specify a <code>bindingEvent</code>, the event is called when the action is performed.</p>
+        pub fn binding_event(mut self, input: impl Into<std::string::String>) -> Self {
+            self.binding_event = Some(input.into());
+            self
+        }
+        /// <p>Binds an event to an action on a component. When you specify a <code>bindingEvent</code>, the event is called when the action is performed.</p>
+        pub fn set_binding_event(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.binding_event = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ComponentEvent`](crate::model::ComponentEvent)
         pub fn build(self) -> crate::model::ComponentEvent {
             crate::model::ComponentEvent {
                 action: self.action,
                 parameters: self.parameters,
+                binding_event: self.binding_event,
             }
         }
     }
@@ -3323,6 +3345,8 @@ pub struct ComponentChild {
     pub events: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ComponentEvent>,
     >,
+    /// <p>The unique ID of the child component in its original source system, such as Figma.</p>
+    pub source_id: std::option::Option<std::string::String>,
 }
 impl ComponentChild {
     /// <p>The type of the child component. </p>
@@ -3353,6 +3377,10 @@ impl ComponentChild {
     > {
         self.events.as_ref()
     }
+    /// <p>The unique ID of the child component in its original source system, such as Figma.</p>
+    pub fn source_id(&self) -> std::option::Option<&str> {
+        self.source_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ComponentChild {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3362,6 +3390,7 @@ impl std::fmt::Debug for ComponentChild {
         formatter.field("properties", &self.properties);
         formatter.field("children", &self.children);
         formatter.field("events", &self.events);
+        formatter.field("source_id", &self.source_id);
         formatter.finish()
     }
 }
@@ -3380,6 +3409,7 @@ pub mod component_child {
         pub(crate) events: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::ComponentEvent>,
         >,
+        pub(crate) source_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The type of the child component. </p>
@@ -3474,6 +3504,16 @@ pub mod component_child {
             self.events = input;
             self
         }
+        /// <p>The unique ID of the child component in its original source system, such as Figma.</p>
+        pub fn source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_id = Some(input.into());
+            self
+        }
+        /// <p>The unique ID of the child component in its original source system, such as Figma.</p>
+        pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ComponentChild`](crate::model::ComponentChild)
         pub fn build(self) -> crate::model::ComponentChild {
             crate::model::ComponentChild {
@@ -3482,6 +3522,7 @@ pub mod component_child {
                 properties: self.properties,
                 children: self.children,
                 events: self.events,
+                source_id: self.source_id,
             }
         }
     }

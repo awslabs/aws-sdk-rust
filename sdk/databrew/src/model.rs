@@ -7,7 +7,7 @@ pub struct Rule {
     pub name: std::option::Option<std::string::String>,
     /// <p>A value that specifies whether the rule is disabled. Once a rule is disabled, a profile job will not validate it during a job run. Default value is false.</p>
     pub disabled: bool,
-    /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no columnn reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p>
+    /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no column reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available checks</a> </p>
     pub check_expression: std::option::Option<std::string::String>,
     /// <p>The map of substitution variable names to their values used in a check expression. Variable names should start with a ':' (colon). Variable values can either be actual values or column names. To differentiate between the two, column names should be enclosed in backticks, for example, <code>":col1": "`Column A`".</code> </p>
@@ -27,7 +27,7 @@ impl Rule {
     pub fn disabled(&self) -> bool {
         self.disabled
     }
-    /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no columnn reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p>
+    /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no column reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available checks</a> </p>
     pub fn check_expression(&self) -> std::option::Option<&str> {
         self.check_expression.as_deref()
@@ -97,13 +97,13 @@ pub mod rule {
             self.disabled = input;
             self
         }
-        /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no columnn reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p>
+        /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no column reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available checks</a> </p>
         pub fn check_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.check_expression = Some(input.into());
             self
         }
-        /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no columnn reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p>
+        /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no column reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available checks</a> </p>
         pub fn set_check_expression(
             mut self,
@@ -3101,7 +3101,7 @@ impl PathOptions {
     }
 }
 
-/// <p>Represents a dataset paramater that defines type and conditions for a parameter in the Amazon S3 path of the dataset.</p>
+/// <p>Represents a dataset parameter that defines type and conditions for a parameter in the Amazon S3 path of the dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetParameter {
@@ -3493,7 +3493,7 @@ pub struct FilesLimit {
     pub max_files: i32,
     /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a sorting criteria. Currently it's the only allowed value.</p>
     pub ordered_by: std::option::Option<crate::model::OrderedBy>,
-    /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent files are selected first. Anotherpossible value is ASCENDING.</p>
+    /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent files are selected first. Another possible value is ASCENDING.</p>
     pub order: std::option::Option<crate::model::Order>,
 }
 impl FilesLimit {
@@ -3505,7 +3505,7 @@ impl FilesLimit {
     pub fn ordered_by(&self) -> std::option::Option<&crate::model::OrderedBy> {
         self.ordered_by.as_ref()
     }
-    /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent files are selected first. Anotherpossible value is ASCENDING.</p>
+    /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent files are selected first. Another possible value is ASCENDING.</p>
     pub fn order(&self) -> std::option::Option<&crate::model::Order> {
         self.order.as_ref()
     }
@@ -3553,12 +3553,12 @@ pub mod files_limit {
             self.ordered_by = input;
             self
         }
-        /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent files are selected first. Anotherpossible value is ASCENDING.</p>
+        /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent files are selected first. Another possible value is ASCENDING.</p>
         pub fn order(mut self, input: crate::model::Order) -> Self {
             self.order = Some(input);
             self
         }
-        /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent files are selected first. Anotherpossible value is ASCENDING.</p>
+        /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent files are selected first. Another possible value is ASCENDING.</p>
         pub fn set_order(mut self, input: std::option::Option<crate::model::Order>) -> Self {
             self.order = input;
             self
@@ -4458,6 +4458,8 @@ pub enum InputFormat {
     #[allow(missing_docs)] // documentation missing in model
     Json,
     #[allow(missing_docs)] // documentation missing in model
+    Orc,
+    #[allow(missing_docs)] // documentation missing in model
     Parquet,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4468,6 +4470,7 @@ impl std::convert::From<&str> for InputFormat {
             "CSV" => InputFormat::Csv,
             "EXCEL" => InputFormat::Excel,
             "JSON" => InputFormat::Json,
+            "ORC" => InputFormat::Orc,
             "PARQUET" => InputFormat::Parquet,
             other => InputFormat::Unknown(other.to_owned()),
         }
@@ -4487,13 +4490,14 @@ impl InputFormat {
             InputFormat::Csv => "CSV",
             InputFormat::Excel => "EXCEL",
             InputFormat::Json => "JSON",
+            InputFormat::Orc => "ORC",
             InputFormat::Parquet => "PARQUET",
             InputFormat::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["CSV", "EXCEL", "JSON", "PARQUET"]
+        &["CSV", "EXCEL", "JSON", "ORC", "PARQUET"]
     }
 }
 impl AsRef<str> for InputFormat {

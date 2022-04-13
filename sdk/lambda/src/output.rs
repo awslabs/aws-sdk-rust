@@ -2,6 +2,164 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFunctionUrlConfigOutput {
+    /// <p>The HTTP URL endpoint for your function.</p>
+    pub function_url: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of your function.</p>
+    pub function_arn: std::option::Option<std::string::String>,
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+    pub auth_type: std::option::Option<crate::model::FunctionUrlAuthType>,
+    /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+    pub cors: std::option::Option<crate::model::Cors>,
+    /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub creation_time: std::option::Option<std::string::String>,
+    /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub last_modified_time: std::option::Option<std::string::String>,
+}
+impl UpdateFunctionUrlConfigOutput {
+    /// <p>The HTTP URL endpoint for your function.</p>
+    pub fn function_url(&self) -> std::option::Option<&str> {
+        self.function_url.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of your function.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+    pub fn auth_type(&self) -> std::option::Option<&crate::model::FunctionUrlAuthType> {
+        self.auth_type.as_ref()
+    }
+    /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+    pub fn cors(&self) -> std::option::Option<&crate::model::Cors> {
+        self.cors.as_ref()
+    }
+    /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub fn creation_time(&self) -> std::option::Option<&str> {
+        self.creation_time.as_deref()
+    }
+    /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&str> {
+        self.last_modified_time.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateFunctionUrlConfigOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateFunctionUrlConfigOutput");
+        formatter.field("function_url", &self.function_url);
+        formatter.field("function_arn", &self.function_arn);
+        formatter.field("auth_type", &self.auth_type);
+        formatter.field("cors", &self.cors);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.finish()
+    }
+}
+/// See [`UpdateFunctionUrlConfigOutput`](crate::output::UpdateFunctionUrlConfigOutput)
+pub mod update_function_url_config_output {
+    /// A builder for [`UpdateFunctionUrlConfigOutput`](crate::output::UpdateFunctionUrlConfigOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) function_url: std::option::Option<std::string::String>,
+        pub(crate) function_arn: std::option::Option<std::string::String>,
+        pub(crate) auth_type: std::option::Option<crate::model::FunctionUrlAuthType>,
+        pub(crate) cors: std::option::Option<crate::model::Cors>,
+        pub(crate) creation_time: std::option::Option<std::string::String>,
+        pub(crate) last_modified_time: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The HTTP URL endpoint for your function.</p>
+        pub fn function_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_url = Some(input.into());
+            self
+        }
+        /// <p>The HTTP URL endpoint for your function.</p>
+        pub fn set_function_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_url = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of your function.</p>
+        pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of your function.</p>
+        pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_arn = input;
+            self
+        }
+        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+        pub fn auth_type(mut self, input: crate::model::FunctionUrlAuthType) -> Self {
+            self.auth_type = Some(input);
+            self
+        }
+        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+        pub fn set_auth_type(
+            mut self,
+            input: std::option::Option<crate::model::FunctionUrlAuthType>,
+        ) -> Self {
+            self.auth_type = input;
+            self
+        }
+        /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+        pub fn cors(mut self, input: crate::model::Cors) -> Self {
+            self.cors = Some(input);
+            self
+        }
+        /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+        pub fn set_cors(mut self, input: std::option::Option<crate::model::Cors>) -> Self {
+            self.cors = input;
+            self
+        }
+        /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+        pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.creation_time = Some(input.into());
+            self
+        }
+        /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+        pub fn last_modified_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_modified_time = Some(input.into());
+            self
+        }
+        /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateFunctionUrlConfigOutput`](crate::output::UpdateFunctionUrlConfigOutput)
+        pub fn build(self) -> crate::output::UpdateFunctionUrlConfigOutput {
+            crate::output::UpdateFunctionUrlConfigOutput {
+                function_url: self.function_url,
+                function_arn: self.function_arn,
+                auth_type: self.auth_type,
+                cors: self.cors,
+                creation_time: self.creation_time,
+                last_modified_time: self.last_modified_time,
+            }
+        }
+    }
+}
+impl UpdateFunctionUrlConfigOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFunctionUrlConfigOutput`](crate::output::UpdateFunctionUrlConfigOutput)
+    pub fn builder() -> crate::output::update_function_url_config_output::Builder {
+        crate::output::update_function_url_config_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFunctionEventInvokeConfigOutput {
     /// <p>The date and time that the configuration was last updated.</p>
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
@@ -235,6 +393,8 @@ pub struct UpdateFunctionConfigurationOutput {
     pub signing_job_arn: std::option::Option<std::string::String>,
     /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+    /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+    pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
 }
 impl UpdateFunctionConfigurationOutput {
     /// <p>The name of the function.</p>
@@ -367,6 +527,10 @@ impl UpdateFunctionConfigurationOutput {
     pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.architectures.as_deref()
     }
+    /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
+        self.ephemeral_storage.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateFunctionConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -409,6 +573,7 @@ impl std::fmt::Debug for UpdateFunctionConfigurationOutput {
         );
         formatter.field("signing_job_arn", &self.signing_job_arn);
         formatter.field("architectures", &self.architectures);
+        formatter.field("ephemeral_storage", &self.ephemeral_storage);
         formatter.finish()
     }
 }
@@ -452,6 +617,7 @@ pub mod update_function_configuration_output {
         pub(crate) signing_profile_version_arn: std::option::Option<std::string::String>,
         pub(crate) signing_job_arn: std::option::Option<std::string::String>,
         pub(crate) architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        pub(crate) ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
     }
     impl Builder {
         /// <p>The name of the function.</p>
@@ -849,6 +1015,19 @@ pub mod update_function_configuration_output {
             self.architectures = input;
             self
         }
+        /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+        pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
+            self.ephemeral_storage = Some(input);
+            self
+        }
+        /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+        pub fn set_ephemeral_storage(
+            mut self,
+            input: std::option::Option<crate::model::EphemeralStorage>,
+        ) -> Self {
+            self.ephemeral_storage = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateFunctionConfigurationOutput`](crate::output::UpdateFunctionConfigurationOutput)
         pub fn build(self) -> crate::output::UpdateFunctionConfigurationOutput {
             crate::output::UpdateFunctionConfigurationOutput {
@@ -884,6 +1063,7 @@ pub mod update_function_configuration_output {
                 signing_profile_version_arn: self.signing_profile_version_arn,
                 signing_job_arn: self.signing_job_arn,
                 architectures: self.architectures,
+                ephemeral_storage: self.ephemeral_storage,
             }
         }
     }
@@ -964,6 +1144,8 @@ pub struct UpdateFunctionCodeOutput {
     pub signing_job_arn: std::option::Option<std::string::String>,
     /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+    /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+    pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
 }
 impl UpdateFunctionCodeOutput {
     /// <p>The name of the function.</p>
@@ -1096,6 +1278,10 @@ impl UpdateFunctionCodeOutput {
     pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.architectures.as_deref()
     }
+    /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
+        self.ephemeral_storage.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateFunctionCodeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1138,6 +1324,7 @@ impl std::fmt::Debug for UpdateFunctionCodeOutput {
         );
         formatter.field("signing_job_arn", &self.signing_job_arn);
         formatter.field("architectures", &self.architectures);
+        formatter.field("ephemeral_storage", &self.ephemeral_storage);
         formatter.finish()
     }
 }
@@ -1181,6 +1368,7 @@ pub mod update_function_code_output {
         pub(crate) signing_profile_version_arn: std::option::Option<std::string::String>,
         pub(crate) signing_job_arn: std::option::Option<std::string::String>,
         pub(crate) architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        pub(crate) ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
     }
     impl Builder {
         /// <p>The name of the function.</p>
@@ -1578,6 +1766,19 @@ pub mod update_function_code_output {
             self.architectures = input;
             self
         }
+        /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+        pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
+            self.ephemeral_storage = Some(input);
+            self
+        }
+        /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+        pub fn set_ephemeral_storage(
+            mut self,
+            input: std::option::Option<crate::model::EphemeralStorage>,
+        ) -> Self {
+            self.ephemeral_storage = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateFunctionCodeOutput`](crate::output::UpdateFunctionCodeOutput)
         pub fn build(self) -> crate::output::UpdateFunctionCodeOutput {
             crate::output::UpdateFunctionCodeOutput {
@@ -1613,6 +1814,7 @@ pub mod update_function_code_output {
                 signing_profile_version_arn: self.signing_profile_version_arn,
                 signing_job_arn: self.signing_job_arn,
                 architectures: self.architectures,
+                ephemeral_storage: self.ephemeral_storage,
             }
         }
     }
@@ -3136,6 +3338,8 @@ pub struct PublishVersionOutput {
     pub signing_job_arn: std::option::Option<std::string::String>,
     /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+    /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+    pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
 }
 impl PublishVersionOutput {
     /// <p>The name of the function.</p>
@@ -3268,6 +3472,10 @@ impl PublishVersionOutput {
     pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.architectures.as_deref()
     }
+    /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
+        self.ephemeral_storage.as_ref()
+    }
 }
 impl std::fmt::Debug for PublishVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3310,6 +3518,7 @@ impl std::fmt::Debug for PublishVersionOutput {
         );
         formatter.field("signing_job_arn", &self.signing_job_arn);
         formatter.field("architectures", &self.architectures);
+        formatter.field("ephemeral_storage", &self.ephemeral_storage);
         formatter.finish()
     }
 }
@@ -3353,6 +3562,7 @@ pub mod publish_version_output {
         pub(crate) signing_profile_version_arn: std::option::Option<std::string::String>,
         pub(crate) signing_job_arn: std::option::Option<std::string::String>,
         pub(crate) architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        pub(crate) ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
     }
     impl Builder {
         /// <p>The name of the function.</p>
@@ -3750,6 +3960,19 @@ pub mod publish_version_output {
             self.architectures = input;
             self
         }
+        /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+        pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
+            self.ephemeral_storage = Some(input);
+            self
+        }
+        /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+        pub fn set_ephemeral_storage(
+            mut self,
+            input: std::option::Option<crate::model::EphemeralStorage>,
+        ) -> Self {
+            self.ephemeral_storage = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PublishVersionOutput`](crate::output::PublishVersionOutput)
         pub fn build(self) -> crate::output::PublishVersionOutput {
             crate::output::PublishVersionOutput {
@@ -3785,6 +4008,7 @@ pub mod publish_version_output {
                 signing_profile_version_arn: self.signing_profile_version_arn,
                 signing_job_arn: self.signing_job_arn,
                 architectures: self.architectures,
+                ephemeral_storage: self.ephemeral_storage,
             }
         }
     }
@@ -4439,6 +4663,89 @@ impl ListLayersOutput {
     /// Creates a new builder-style object to manufacture [`ListLayersOutput`](crate::output::ListLayersOutput)
     pub fn builder() -> crate::output::list_layers_output::Builder {
         crate::output::list_layers_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListFunctionUrlConfigsOutput {
+    /// <p>A list of function URL configurations.</p>
+    pub function_url_configs: std::option::Option<std::vec::Vec<crate::model::FunctionUrlConfig>>,
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub next_marker: std::option::Option<std::string::String>,
+}
+impl ListFunctionUrlConfigsOutput {
+    /// <p>A list of function URL configurations.</p>
+    pub fn function_url_configs(&self) -> std::option::Option<&[crate::model::FunctionUrlConfig]> {
+        self.function_url_configs.as_deref()
+    }
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+}
+impl std::fmt::Debug for ListFunctionUrlConfigsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListFunctionUrlConfigsOutput");
+        formatter.field("function_url_configs", &self.function_url_configs);
+        formatter.field("next_marker", &self.next_marker);
+        formatter.finish()
+    }
+}
+/// See [`ListFunctionUrlConfigsOutput`](crate::output::ListFunctionUrlConfigsOutput)
+pub mod list_function_url_configs_output {
+    /// A builder for [`ListFunctionUrlConfigsOutput`](crate::output::ListFunctionUrlConfigsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) function_url_configs:
+            std::option::Option<std::vec::Vec<crate::model::FunctionUrlConfig>>,
+        pub(crate) next_marker: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `function_url_configs`.
+        ///
+        /// To override the contents of this collection use [`set_function_url_configs`](Self::set_function_url_configs).
+        ///
+        /// <p>A list of function URL configurations.</p>
+        pub fn function_url_configs(mut self, input: crate::model::FunctionUrlConfig) -> Self {
+            let mut v = self.function_url_configs.unwrap_or_default();
+            v.push(input);
+            self.function_url_configs = Some(v);
+            self
+        }
+        /// <p>A list of function URL configurations.</p>
+        pub fn set_function_url_configs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FunctionUrlConfig>>,
+        ) -> Self {
+            self.function_url_configs = input;
+            self
+        }
+        /// <p>The pagination token that's included if more results are available.</p>
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
+            self
+        }
+        /// <p>The pagination token that's included if more results are available.</p>
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListFunctionUrlConfigsOutput`](crate::output::ListFunctionUrlConfigsOutput)
+        pub fn build(self) -> crate::output::ListFunctionUrlConfigsOutput {
+            crate::output::ListFunctionUrlConfigsOutput {
+                function_url_configs: self.function_url_configs,
+                next_marker: self.next_marker,
+            }
+        }
+    }
+}
+impl ListFunctionUrlConfigsOutput {
+    /// Creates a new builder-style object to manufacture [`ListFunctionUrlConfigsOutput`](crate::output::ListFunctionUrlConfigsOutput)
+    pub fn builder() -> crate::output::list_function_url_configs_output::Builder {
+        crate::output::list_function_url_configs_output::Builder::default()
     }
 }
 
@@ -5935,6 +6242,164 @@ impl GetLayerVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetFunctionUrlConfigOutput {
+    /// <p>The HTTP URL endpoint for your function.</p>
+    pub function_url: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of your function.</p>
+    pub function_arn: std::option::Option<std::string::String>,
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+    pub auth_type: std::option::Option<crate::model::FunctionUrlAuthType>,
+    /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+    pub cors: std::option::Option<crate::model::Cors>,
+    /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub creation_time: std::option::Option<std::string::String>,
+    /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub last_modified_time: std::option::Option<std::string::String>,
+}
+impl GetFunctionUrlConfigOutput {
+    /// <p>The HTTP URL endpoint for your function.</p>
+    pub fn function_url(&self) -> std::option::Option<&str> {
+        self.function_url.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of your function.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+    pub fn auth_type(&self) -> std::option::Option<&crate::model::FunctionUrlAuthType> {
+        self.auth_type.as_ref()
+    }
+    /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+    pub fn cors(&self) -> std::option::Option<&crate::model::Cors> {
+        self.cors.as_ref()
+    }
+    /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub fn creation_time(&self) -> std::option::Option<&str> {
+        self.creation_time.as_deref()
+    }
+    /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&str> {
+        self.last_modified_time.as_deref()
+    }
+}
+impl std::fmt::Debug for GetFunctionUrlConfigOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetFunctionUrlConfigOutput");
+        formatter.field("function_url", &self.function_url);
+        formatter.field("function_arn", &self.function_arn);
+        formatter.field("auth_type", &self.auth_type);
+        formatter.field("cors", &self.cors);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.finish()
+    }
+}
+/// See [`GetFunctionUrlConfigOutput`](crate::output::GetFunctionUrlConfigOutput)
+pub mod get_function_url_config_output {
+    /// A builder for [`GetFunctionUrlConfigOutput`](crate::output::GetFunctionUrlConfigOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) function_url: std::option::Option<std::string::String>,
+        pub(crate) function_arn: std::option::Option<std::string::String>,
+        pub(crate) auth_type: std::option::Option<crate::model::FunctionUrlAuthType>,
+        pub(crate) cors: std::option::Option<crate::model::Cors>,
+        pub(crate) creation_time: std::option::Option<std::string::String>,
+        pub(crate) last_modified_time: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The HTTP URL endpoint for your function.</p>
+        pub fn function_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_url = Some(input.into());
+            self
+        }
+        /// <p>The HTTP URL endpoint for your function.</p>
+        pub fn set_function_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_url = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of your function.</p>
+        pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of your function.</p>
+        pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_arn = input;
+            self
+        }
+        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+        pub fn auth_type(mut self, input: crate::model::FunctionUrlAuthType) -> Self {
+            self.auth_type = Some(input);
+            self
+        }
+        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+        pub fn set_auth_type(
+            mut self,
+            input: std::option::Option<crate::model::FunctionUrlAuthType>,
+        ) -> Self {
+            self.auth_type = input;
+            self
+        }
+        /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+        pub fn cors(mut self, input: crate::model::Cors) -> Self {
+            self.cors = Some(input);
+            self
+        }
+        /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+        pub fn set_cors(mut self, input: std::option::Option<crate::model::Cors>) -> Self {
+            self.cors = input;
+            self
+        }
+        /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+        pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.creation_time = Some(input.into());
+            self
+        }
+        /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+        pub fn last_modified_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_modified_time = Some(input.into());
+            self
+        }
+        /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetFunctionUrlConfigOutput`](crate::output::GetFunctionUrlConfigOutput)
+        pub fn build(self) -> crate::output::GetFunctionUrlConfigOutput {
+            crate::output::GetFunctionUrlConfigOutput {
+                function_url: self.function_url,
+                function_arn: self.function_arn,
+                auth_type: self.auth_type,
+                cors: self.cors,
+                creation_time: self.creation_time,
+                last_modified_time: self.last_modified_time,
+            }
+        }
+    }
+}
+impl GetFunctionUrlConfigOutput {
+    /// Creates a new builder-style object to manufacture [`GetFunctionUrlConfigOutput`](crate::output::GetFunctionUrlConfigOutput)
+    pub fn builder() -> crate::output::get_function_url_config_output::Builder {
+        crate::output::get_function_url_config_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFunctionEventInvokeConfigOutput {
     /// <p>The date and time that the configuration was last updated.</p>
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
@@ -6168,6 +6633,8 @@ pub struct GetFunctionConfigurationOutput {
     pub signing_job_arn: std::option::Option<std::string::String>,
     /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+    /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+    pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
 }
 impl GetFunctionConfigurationOutput {
     /// <p>The name of the function.</p>
@@ -6300,6 +6767,10 @@ impl GetFunctionConfigurationOutput {
     pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.architectures.as_deref()
     }
+    /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
+        self.ephemeral_storage.as_ref()
+    }
 }
 impl std::fmt::Debug for GetFunctionConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6342,6 +6813,7 @@ impl std::fmt::Debug for GetFunctionConfigurationOutput {
         );
         formatter.field("signing_job_arn", &self.signing_job_arn);
         formatter.field("architectures", &self.architectures);
+        formatter.field("ephemeral_storage", &self.ephemeral_storage);
         formatter.finish()
     }
 }
@@ -6385,6 +6857,7 @@ pub mod get_function_configuration_output {
         pub(crate) signing_profile_version_arn: std::option::Option<std::string::String>,
         pub(crate) signing_job_arn: std::option::Option<std::string::String>,
         pub(crate) architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        pub(crate) ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
     }
     impl Builder {
         /// <p>The name of the function.</p>
@@ -6782,6 +7255,19 @@ pub mod get_function_configuration_output {
             self.architectures = input;
             self
         }
+        /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+        pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
+            self.ephemeral_storage = Some(input);
+            self
+        }
+        /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+        pub fn set_ephemeral_storage(
+            mut self,
+            input: std::option::Option<crate::model::EphemeralStorage>,
+        ) -> Self {
+            self.ephemeral_storage = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetFunctionConfigurationOutput`](crate::output::GetFunctionConfigurationOutput)
         pub fn build(self) -> crate::output::GetFunctionConfigurationOutput {
             crate::output::GetFunctionConfigurationOutput {
@@ -6817,6 +7303,7 @@ pub mod get_function_configuration_output {
                 signing_profile_version_arn: self.signing_profile_version_arn,
                 signing_job_arn: self.signing_job_arn,
                 architectures: self.architectures,
+                ephemeral_storage: self.ephemeral_storage,
             }
         }
     }
@@ -8088,6 +8575,36 @@ impl DeleteLayerVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteFunctionUrlConfigOutput {}
+impl std::fmt::Debug for DeleteFunctionUrlConfigOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteFunctionUrlConfigOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteFunctionUrlConfigOutput`](crate::output::DeleteFunctionUrlConfigOutput)
+pub mod delete_function_url_config_output {
+    /// A builder for [`DeleteFunctionUrlConfigOutput`](crate::output::DeleteFunctionUrlConfigOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteFunctionUrlConfigOutput`](crate::output::DeleteFunctionUrlConfigOutput)
+        pub fn build(self) -> crate::output::DeleteFunctionUrlConfigOutput {
+            crate::output::DeleteFunctionUrlConfigOutput {}
+        }
+    }
+}
+impl DeleteFunctionUrlConfigOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFunctionUrlConfigOutput`](crate::output::DeleteFunctionUrlConfigOutput)
+    pub fn builder() -> crate::output::delete_function_url_config_output::Builder {
+        crate::output::delete_function_url_config_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFunctionEventInvokeConfigOutput {}
 impl std::fmt::Debug for DeleteFunctionEventInvokeConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8863,6 +9380,142 @@ impl DeleteAliasOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateFunctionUrlConfigOutput {
+    /// <p>The HTTP URL endpoint for your function.</p>
+    pub function_url: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of your function.</p>
+    pub function_arn: std::option::Option<std::string::String>,
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+    pub auth_type: std::option::Option<crate::model::FunctionUrlAuthType>,
+    /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+    pub cors: std::option::Option<crate::model::Cors>,
+    /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub creation_time: std::option::Option<std::string::String>,
+}
+impl CreateFunctionUrlConfigOutput {
+    /// <p>The HTTP URL endpoint for your function.</p>
+    pub fn function_url(&self) -> std::option::Option<&str> {
+        self.function_url.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of your function.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+    pub fn auth_type(&self) -> std::option::Option<&crate::model::FunctionUrlAuthType> {
+        self.auth_type.as_ref()
+    }
+    /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+    pub fn cors(&self) -> std::option::Option<&crate::model::Cors> {
+        self.cors.as_ref()
+    }
+    /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub fn creation_time(&self) -> std::option::Option<&str> {
+        self.creation_time.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateFunctionUrlConfigOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateFunctionUrlConfigOutput");
+        formatter.field("function_url", &self.function_url);
+        formatter.field("function_arn", &self.function_arn);
+        formatter.field("auth_type", &self.auth_type);
+        formatter.field("cors", &self.cors);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.finish()
+    }
+}
+/// See [`CreateFunctionUrlConfigOutput`](crate::output::CreateFunctionUrlConfigOutput)
+pub mod create_function_url_config_output {
+    /// A builder for [`CreateFunctionUrlConfigOutput`](crate::output::CreateFunctionUrlConfigOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) function_url: std::option::Option<std::string::String>,
+        pub(crate) function_arn: std::option::Option<std::string::String>,
+        pub(crate) auth_type: std::option::Option<crate::model::FunctionUrlAuthType>,
+        pub(crate) cors: std::option::Option<crate::model::Cors>,
+        pub(crate) creation_time: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The HTTP URL endpoint for your function.</p>
+        pub fn function_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_url = Some(input.into());
+            self
+        }
+        /// <p>The HTTP URL endpoint for your function.</p>
+        pub fn set_function_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_url = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of your function.</p>
+        pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of your function.</p>
+        pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_arn = input;
+            self
+        }
+        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+        pub fn auth_type(mut self, input: crate::model::FunctionUrlAuthType) -> Self {
+            self.auth_type = Some(input);
+            self
+        }
+        /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function URLs</a>.</p>
+        pub fn set_auth_type(
+            mut self,
+            input: std::option::Option<crate::model::FunctionUrlAuthType>,
+        ) -> Self {
+            self.auth_type = input;
+            self
+        }
+        /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+        pub fn cors(mut self, input: crate::model::Cors) -> Self {
+            self.cors = Some(input);
+            self
+        }
+        /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+        pub fn set_cors(mut self, input: std::option::Option<crate::model::Cors>) -> Self {
+            self.cors = input;
+            self
+        }
+        /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+        pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.creation_time = Some(input.into());
+            self
+        }
+        /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateFunctionUrlConfigOutput`](crate::output::CreateFunctionUrlConfigOutput)
+        pub fn build(self) -> crate::output::CreateFunctionUrlConfigOutput {
+            crate::output::CreateFunctionUrlConfigOutput {
+                function_url: self.function_url,
+                function_arn: self.function_arn,
+                auth_type: self.auth_type,
+                cors: self.cors,
+                creation_time: self.creation_time,
+            }
+        }
+    }
+}
+impl CreateFunctionUrlConfigOutput {
+    /// Creates a new builder-style object to manufacture [`CreateFunctionUrlConfigOutput`](crate::output::CreateFunctionUrlConfigOutput)
+    pub fn builder() -> crate::output::create_function_url_config_output::Builder {
+        crate::output::create_function_url_config_output::Builder::default()
+    }
+}
+
 /// <p>Details about a function's configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8932,6 +9585,8 @@ pub struct CreateFunctionOutput {
     pub signing_job_arn: std::option::Option<std::string::String>,
     /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+    /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+    pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
 }
 impl CreateFunctionOutput {
     /// <p>The name of the function.</p>
@@ -9064,6 +9719,10 @@ impl CreateFunctionOutput {
     pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.architectures.as_deref()
     }
+    /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
+        self.ephemeral_storage.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFunctionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9106,6 +9765,7 @@ impl std::fmt::Debug for CreateFunctionOutput {
         );
         formatter.field("signing_job_arn", &self.signing_job_arn);
         formatter.field("architectures", &self.architectures);
+        formatter.field("ephemeral_storage", &self.ephemeral_storage);
         formatter.finish()
     }
 }
@@ -9149,6 +9809,7 @@ pub mod create_function_output {
         pub(crate) signing_profile_version_arn: std::option::Option<std::string::String>,
         pub(crate) signing_job_arn: std::option::Option<std::string::String>,
         pub(crate) architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        pub(crate) ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
     }
     impl Builder {
         /// <p>The name of the function.</p>
@@ -9546,6 +10207,19 @@ pub mod create_function_output {
             self.architectures = input;
             self
         }
+        /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+        pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
+            self.ephemeral_storage = Some(input);
+            self
+        }
+        /// <p>The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512 and 10240 MB.</p>
+        pub fn set_ephemeral_storage(
+            mut self,
+            input: std::option::Option<crate::model::EphemeralStorage>,
+        ) -> Self {
+            self.ephemeral_storage = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateFunctionOutput`](crate::output::CreateFunctionOutput)
         pub fn build(self) -> crate::output::CreateFunctionOutput {
             crate::output::CreateFunctionOutput {
@@ -9581,6 +10255,7 @@ pub mod create_function_output {
                 signing_profile_version_arn: self.signing_profile_version_arn,
                 signing_job_arn: self.signing_job_arn,
                 architectures: self.architectures,
+                ephemeral_storage: self.ephemeral_storage,
             }
         }
     }

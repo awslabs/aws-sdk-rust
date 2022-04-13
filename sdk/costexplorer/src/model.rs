@@ -1815,6 +1815,81 @@ impl AsRef<str> for AnomalySubscriptionFrequency {
     }
 }
 
+/// <p> The tag structure that contains a tag key and value. </p> <note>
+/// <p>Tagging is supported only for the following Cost Explorer resource types: <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html"> <code>AnomalyMonitor</code> </a>, <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>, <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>.</p>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceTag {
+    /// <p> The key that is associated with the tag. </p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p> The value that is associated with the tag. </p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl ResourceTag {
+    /// <p> The key that is associated with the tag. </p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p> The value that is associated with the tag. </p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for ResourceTag {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceTag");
+        formatter.field("key", &self.key);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`ResourceTag`](crate::model::ResourceTag)
+pub mod resource_tag {
+    /// A builder for [`ResourceTag`](crate::model::ResourceTag)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The key that is associated with the tag. </p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        /// <p> The key that is associated with the tag. </p>
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p> The value that is associated with the tag. </p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p> The value that is associated with the tag. </p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceTag`](crate::model::ResourceTag)
+        pub fn build(self) -> crate::model::ResourceTag {
+            crate::model::ResourceTag {
+                key: self.key,
+                value: self.value,
+            }
+        }
+    }
+}
+impl ResourceTag {
+    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag)
+    pub fn builder() -> crate::model::resource_tag::Builder {
+        crate::model::resource_tag::Builder::default()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(

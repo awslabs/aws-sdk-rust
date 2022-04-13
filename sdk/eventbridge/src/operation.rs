@@ -165,6 +165,38 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConnection {
     }
 }
 
+/// Operation shape for `CreateEndpoint`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_endpoint`](crate::client::Client::create_endpoint).
+///
+/// See [`crate::client::fluent_builders::CreateEndpoint`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateEndpoint {
+    _private: (),
+}
+impl CreateEndpoint {
+    /// Creates a new builder-style object to manufacture [`CreateEndpointInput`](crate::input::CreateEndpointInput)
+    pub fn builder() -> crate::input::create_endpoint_input::Builder {
+        crate::input::create_endpoint_input::Builder::default()
+    }
+    /// Creates a new `CreateEndpoint` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateEndpoint {
+    type Output =
+        std::result::Result<crate::output::CreateEndpointOutput, crate::error::CreateEndpointError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_endpoint_error(response)
+        } else {
+            crate::operation_deser::parse_create_endpoint_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateEventBus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -399,6 +431,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConnection {
     }
 }
 
+/// Operation shape for `DeleteEndpoint`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_endpoint`](crate::client::Client::delete_endpoint).
+///
+/// See [`crate::client::fluent_builders::DeleteEndpoint`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteEndpoint {
+    _private: (),
+}
+impl DeleteEndpoint {
+    /// Creates a new builder-style object to manufacture [`DeleteEndpointInput`](crate::input::DeleteEndpointInput)
+    pub fn builder() -> crate::input::delete_endpoint_input::Builder {
+        crate::input::delete_endpoint_input::Builder::default()
+    }
+    /// Creates a new `DeleteEndpoint` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteEndpoint {
+    type Output =
+        std::result::Result<crate::output::DeleteEndpointOutput, crate::error::DeleteEndpointError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_endpoint_error(response)
+        } else {
+            crate::operation_deser::parse_delete_endpoint_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteEventBus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -595,6 +659,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConnection {
             crate::operation_deser::parse_describe_connection_error(response)
         } else {
             crate::operation_deser::parse_describe_connection_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeEndpoint`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_endpoint`](crate::client::Client::describe_endpoint).
+///
+/// See [`crate::client::fluent_builders::DescribeEndpoint`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeEndpoint {
+    _private: (),
+}
+impl DescribeEndpoint {
+    /// Creates a new builder-style object to manufacture [`DescribeEndpointInput`](crate::input::DescribeEndpointInput)
+    pub fn builder() -> crate::input::describe_endpoint_input::Builder {
+        crate::input::describe_endpoint_input::Builder::default()
+    }
+    /// Creates a new `DescribeEndpoint` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeEndpoint {
+    type Output = std::result::Result<
+        crate::output::DescribeEndpointOutput,
+        crate::error::DescribeEndpointError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_endpoint_error(response)
+        } else {
+            crate::operation_deser::parse_describe_endpoint_response(response)
         }
     }
 }
@@ -925,6 +1023,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConnections {
             crate::operation_deser::parse_list_connections_error(response)
         } else {
             crate::operation_deser::parse_list_connections_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListEndpoints`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_endpoints`](crate::client::Client::list_endpoints).
+///
+/// See [`crate::client::fluent_builders::ListEndpoints`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListEndpoints {
+    _private: (),
+}
+impl ListEndpoints {
+    /// Creates a new builder-style object to manufacture [`ListEndpointsInput`](crate::input::ListEndpointsInput)
+    pub fn builder() -> crate::input::list_endpoints_input::Builder {
+        crate::input::list_endpoints_input::Builder::default()
+    }
+    /// Creates a new `ListEndpoints` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListEndpoints {
+    type Output =
+        std::result::Result<crate::output::ListEndpointsOutput, crate::error::ListEndpointsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_endpoints_error(response)
+        } else {
+            crate::operation_deser::parse_list_endpoints_response(response)
         }
     }
 }
@@ -1680,6 +1810,38 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConnection {
             crate::operation_deser::parse_update_connection_error(response)
         } else {
             crate::operation_deser::parse_update_connection_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateEndpoint`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_endpoint`](crate::client::Client::update_endpoint).
+///
+/// See [`crate::client::fluent_builders::UpdateEndpoint`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateEndpoint {
+    _private: (),
+}
+impl UpdateEndpoint {
+    /// Creates a new builder-style object to manufacture [`UpdateEndpointInput`](crate::input::UpdateEndpointInput)
+    pub fn builder() -> crate::input::update_endpoint_input::Builder {
+        crate::input::update_endpoint_input::Builder::default()
+    }
+    /// Creates a new `UpdateEndpoint` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateEndpoint {
+    type Output =
+        std::result::Result<crate::output::UpdateEndpointOutput, crate::error::UpdateEndpointError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_endpoint_error(response)
+        } else {
+            crate::operation_deser::parse_update_endpoint_response(response)
         }
     }
 }

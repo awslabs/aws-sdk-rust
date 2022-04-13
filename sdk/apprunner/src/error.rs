@@ -361,6 +361,137 @@ impl std::error::Error for CreateConnectionError {
     }
 }
 
+/// Error type for the `CreateObservabilityConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateObservabilityConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: CreateObservabilityConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateObservabilityConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateObservabilityConfigurationErrorKind {
+    /// <p>An unexpected service exception occurred.</p>
+    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    /// <p>One or more input parameters aren't valid. Refer to the API action's document page, correct the input parameters, and try the action again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>App Runner can't create this resource. You've reached your account quota for this resource type.</p>
+    /// <p>For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App Runner endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateObservabilityConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateObservabilityConfigurationErrorKind::InternalServiceErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateObservabilityConfigurationErrorKind::InvalidRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateObservabilityConfigurationErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateObservabilityConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateObservabilityConfigurationError {
+    fn code(&self) -> Option<&str> {
+        CreateObservabilityConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateObservabilityConfigurationError {
+    /// Creates a new `CreateObservabilityConfigurationError`.
+    pub fn new(
+        kind: CreateObservabilityConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateObservabilityConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateObservabilityConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateObservabilityConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateObservabilityConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateObservabilityConfigurationErrorKind::InternalServiceErrorException`.
+    pub fn is_internal_service_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateObservabilityConfigurationErrorKind::InternalServiceErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateObservabilityConfigurationErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateObservabilityConfigurationErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateObservabilityConfigurationErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateObservabilityConfigurationErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+}
+impl std::error::Error for CreateObservabilityConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateObservabilityConfigurationErrorKind::InternalServiceErrorException(_inner) => {
+                Some(_inner)
+            }
+            CreateObservabilityConfigurationErrorKind::InvalidRequestException(_inner) => {
+                Some(_inner)
+            }
+            CreateObservabilityConfigurationErrorKind::ServiceQuotaExceededException(_inner) => {
+                Some(_inner)
+            }
+            CreateObservabilityConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateService` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -834,6 +965,136 @@ impl std::error::Error for DeleteConnectionError {
             DeleteConnectionErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteConnectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteConnectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteObservabilityConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteObservabilityConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: DeleteObservabilityConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteObservabilityConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteObservabilityConfigurationErrorKind {
+    /// <p>An unexpected service exception occurred.</p>
+    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    /// <p>One or more input parameters aren't valid. Refer to the API action's document page, correct the input parameters, and try the action again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteObservabilityConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteObservabilityConfigurationErrorKind::InternalServiceErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteObservabilityConfigurationErrorKind::InvalidRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteObservabilityConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteObservabilityConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteObservabilityConfigurationError {
+    fn code(&self) -> Option<&str> {
+        DeleteObservabilityConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteObservabilityConfigurationError {
+    /// Creates a new `DeleteObservabilityConfigurationError`.
+    pub fn new(
+        kind: DeleteObservabilityConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteObservabilityConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteObservabilityConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteObservabilityConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteObservabilityConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteObservabilityConfigurationErrorKind::InternalServiceErrorException`.
+    pub fn is_internal_service_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteObservabilityConfigurationErrorKind::InternalServiceErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteObservabilityConfigurationErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteObservabilityConfigurationErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteObservabilityConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteObservabilityConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteObservabilityConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteObservabilityConfigurationErrorKind::InternalServiceErrorException(_inner) => {
+                Some(_inner)
+            }
+            DeleteObservabilityConfigurationErrorKind::InvalidRequestException(_inner) => {
+                Some(_inner)
+            }
+            DeleteObservabilityConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DeleteObservabilityConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1317,6 +1578,136 @@ impl std::error::Error for DescribeCustomDomainsError {
             DescribeCustomDomainsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeCustomDomainsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeCustomDomainsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeObservabilityConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeObservabilityConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: DescribeObservabilityConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeObservabilityConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeObservabilityConfigurationErrorKind {
+    /// <p>An unexpected service exception occurred.</p>
+    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    /// <p>One or more input parameters aren't valid. Refer to the API action's document page, correct the input parameters, and try the action again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeObservabilityConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeObservabilityConfigurationErrorKind::InternalServiceErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeObservabilityConfigurationErrorKind::InvalidRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeObservabilityConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeObservabilityConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeObservabilityConfigurationError {
+    fn code(&self) -> Option<&str> {
+        DescribeObservabilityConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeObservabilityConfigurationError {
+    /// Creates a new `DescribeObservabilityConfigurationError`.
+    pub fn new(
+        kind: DescribeObservabilityConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeObservabilityConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeObservabilityConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeObservabilityConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeObservabilityConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeObservabilityConfigurationErrorKind::InternalServiceErrorException`.
+    pub fn is_internal_service_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeObservabilityConfigurationErrorKind::InternalServiceErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeObservabilityConfigurationErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeObservabilityConfigurationErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeObservabilityConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeObservabilityConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeObservabilityConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeObservabilityConfigurationErrorKind::InternalServiceErrorException(_inner) => {
+                Some(_inner)
+            }
+            DescribeObservabilityConfigurationErrorKind::InvalidRequestException(_inner) => {
+                Some(_inner)
+            }
+            DescribeObservabilityConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DescribeObservabilityConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1894,6 +2285,121 @@ impl std::error::Error for ListConnectionsError {
             ListConnectionsErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             ListConnectionsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListConnectionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListObservabilityConfigurations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListObservabilityConfigurationsError {
+    /// Kind of error that occurred.
+    pub kind: ListObservabilityConfigurationsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListObservabilityConfigurations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListObservabilityConfigurationsErrorKind {
+    /// <p>An unexpected service exception occurred.</p>
+    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    /// <p>One or more input parameters aren't valid. Refer to the API action's document page, correct the input parameters, and try the action again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListObservabilityConfigurationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListObservabilityConfigurationsErrorKind::InternalServiceErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListObservabilityConfigurationsErrorKind::InvalidRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListObservabilityConfigurationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListObservabilityConfigurationsError {
+    fn code(&self) -> Option<&str> {
+        ListObservabilityConfigurationsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListObservabilityConfigurationsError {
+    /// Creates a new `ListObservabilityConfigurationsError`.
+    pub fn new(
+        kind: ListObservabilityConfigurationsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListObservabilityConfigurationsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListObservabilityConfigurationsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListObservabilityConfigurationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListObservabilityConfigurationsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListObservabilityConfigurationsErrorKind::InternalServiceErrorException`.
+    pub fn is_internal_service_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListObservabilityConfigurationsErrorKind::InternalServiceErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListObservabilityConfigurationsErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListObservabilityConfigurationsErrorKind::InvalidRequestException(_)
+        )
+    }
+}
+impl std::error::Error for ListObservabilityConfigurationsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListObservabilityConfigurationsErrorKind::InternalServiceErrorException(_inner) => {
+                Some(_inner)
+            }
+            ListObservabilityConfigurationsErrorKind::InvalidRequestException(_inner) => {
+                Some(_inner)
+            }
+            ListObservabilityConfigurationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

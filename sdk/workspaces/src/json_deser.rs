@@ -926,6 +926,72 @@ pub fn deser_operation_crate_operation_describe_account_modifications(
     Ok(builder)
 }
 
+pub fn deser_operation_crate_operation_describe_client_branding(
+    value: &[u8],
+    mut builder: crate::output::describe_client_branding_output::Builder,
+) -> Result<
+    crate::output::describe_client_branding_output::Builder,
+    aws_smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "DeviceTypeWindows" => {
+                        builder = builder.set_device_type_windows(
+                            crate::json_deser::deser_structure_crate_model_default_client_branding_attributes(tokens)?
+                        );
+                    }
+                    "DeviceTypeOsx" => {
+                        builder = builder.set_device_type_osx(
+                            crate::json_deser::deser_structure_crate_model_default_client_branding_attributes(tokens)?
+                        );
+                    }
+                    "DeviceTypeAndroid" => {
+                        builder = builder.set_device_type_android(
+                            crate::json_deser::deser_structure_crate_model_default_client_branding_attributes(tokens)?
+                        );
+                    }
+                    "DeviceTypeIos" => {
+                        builder = builder.set_device_type_ios(
+                            crate::json_deser::deser_structure_crate_model_ios_client_branding_attributes(tokens)?
+                        );
+                    }
+                    "DeviceTypeLinux" => {
+                        builder = builder.set_device_type_linux(
+                            crate::json_deser::deser_structure_crate_model_default_client_branding_attributes(tokens)?
+                        );
+                    }
+                    "DeviceTypeWeb" => {
+                        builder = builder.set_device_type_web(
+                            crate::json_deser::deser_structure_crate_model_default_client_branding_attributes(tokens)?
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_operation_crate_operation_describe_client_properties(
     value: &[u8],
     mut builder: crate::output::describe_client_properties_output::Builder,
@@ -1556,6 +1622,72 @@ pub fn deser_operation_crate_operation_describe_workspace_snapshots(
                             crate::json_deser::deser_list_com_amazonaws_workspaces_snapshot_list(
                                 tokens,
                             )?,
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_import_client_branding(
+    value: &[u8],
+    mut builder: crate::output::import_client_branding_output::Builder,
+) -> Result<
+    crate::output::import_client_branding_output::Builder,
+    aws_smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "DeviceTypeWindows" => {
+                        builder = builder.set_device_type_windows(
+                            crate::json_deser::deser_structure_crate_model_default_client_branding_attributes(tokens)?
+                        );
+                    }
+                    "DeviceTypeOsx" => {
+                        builder = builder.set_device_type_osx(
+                            crate::json_deser::deser_structure_crate_model_default_client_branding_attributes(tokens)?
+                        );
+                    }
+                    "DeviceTypeAndroid" => {
+                        builder = builder.set_device_type_android(
+                            crate::json_deser::deser_structure_crate_model_default_client_branding_attributes(tokens)?
+                        );
+                    }
+                    "DeviceTypeIos" => {
+                        builder = builder.set_device_type_ios(
+                            crate::json_deser::deser_structure_crate_model_ios_client_branding_attributes(tokens)?
+                        );
+                    }
+                    "DeviceTypeLinux" => {
+                        builder = builder.set_device_type_linux(
+                            crate::json_deser::deser_structure_crate_model_default_client_branding_attributes(tokens)?
+                        );
+                    }
+                    "DeviceTypeWeb" => {
+                        builder = builder.set_device_type_web(
+                            crate::json_deser::deser_structure_crate_model_default_client_branding_attributes(tokens)?
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2335,6 +2467,183 @@ where
         }
         _ => Err(aws_smithy_json::deserialize::Error::custom(
             "expected start array or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_default_client_branding_attributes<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::DefaultClientBrandingAttributes>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::DefaultClientBrandingAttributes::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "LogoUrl" => {
+                                builder = builder.set_logo_url(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "SupportEmail" => {
+                                builder = builder.set_support_email(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "SupportLink" => {
+                                builder = builder.set_support_link(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "ForgotPasswordLink" => {
+                                builder = builder.set_forgot_password_link(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "LoginMessage" => {
+                                builder = builder.set_login_message(
+                                    crate::json_deser::deser_map_com_amazonaws_workspaces_login_message(tokens)?
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_ios_client_branding_attributes<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::IosClientBrandingAttributes>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::IosClientBrandingAttributes::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "LogoUrl" => {
+                                builder = builder.set_logo_url(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Logo2xUrl" => {
+                                builder = builder.set_logo2x_url(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Logo3xUrl" => {
+                                builder = builder.set_logo3x_url(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "SupportEmail" => {
+                                builder = builder.set_support_email(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "SupportLink" => {
+                                builder = builder.set_support_link(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "ForgotPasswordLink" => {
+                                builder = builder.set_forgot_password_link(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "LoginMessage" => {
+                                builder = builder.set_login_message(
+                                    crate::json_deser::deser_map_com_amazonaws_workspaces_login_message(tokens)?
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
         )),
     }
 }
@@ -3495,6 +3804,52 @@ where
                 }
             }
             Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_map_com_amazonaws_workspaces_login_message<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            let mut map = std::collections::HashMap::new();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        let key = key.to_unescaped().map(|u| u.into_owned())?;
+                        let value = aws_smithy_json::deserialize::token::expect_string_or_null(
+                            tokens.next(),
+                        )?
+                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                        .transpose()?;
+                        if let Some(value) = value {
+                            map.insert(key, value);
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(map))
         }
         _ => Err(aws_smithy_json::deserialize::Error::custom(
             "expected start object or null",

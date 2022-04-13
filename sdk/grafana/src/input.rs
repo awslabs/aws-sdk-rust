@@ -194,6 +194,9 @@ pub mod create_workspace_input {
         pub(crate) workspace_role_arn: std::option::Option<std::string::String>,
         pub(crate) authentication_providers:
             std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
@@ -232,16 +235,16 @@ pub mod create_workspace_input {
             self.organization_role_name = input;
             self
         }
-        /// <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
+        /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p>
         /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
         pub fn permission_type(mut self, input: crate::model::PermissionType) -> Self {
             self.permission_type = Some(input);
             self
         }
-        /// <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
+        /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p>
         /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
         pub fn set_permission_type(
             mut self,
             input: std::option::Option<crate::model::PermissionType>,
@@ -284,11 +287,13 @@ pub mod create_workspace_input {
             self
         }
         /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
+        /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> </p>
         pub fn workspace_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.workspace_description = Some(input.into());
             self
         }
         /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
+        /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> </p>
         pub fn set_workspace_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -353,12 +358,12 @@ pub mod create_workspace_input {
             self.workspace_organizational_units = input;
             self
         }
-        /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. If you omit this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically created.</p>
+        /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. The permission type should be set to <code>CUSTOMER_MANAGED</code>.</p>
         pub fn workspace_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.workspace_role_arn = Some(input.into());
             self
         }
-        /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. If you omit this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically created.</p>
+        /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. The permission type should be set to <code>CUSTOMER_MANAGED</code>.</p>
         pub fn set_workspace_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -388,6 +393,31 @@ pub mod create_workspace_input {
             self.authentication_providers = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of tags associated with the workspace.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The list of tags associated with the workspace.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateWorkspaceInput`](crate::input::CreateWorkspaceInput)
         pub fn build(
             self,
@@ -408,6 +438,7 @@ pub mod create_workspace_input {
                 workspace_organizational_units: self.workspace_organizational_units,
                 workspace_role_arn: self.workspace_role_arn,
                 authentication_providers: self.authentication_providers,
+                tags: self.tags,
             })
         }
     }
@@ -1348,6 +1379,144 @@ impl ListPermissionsInput {
     }
 }
 
+/// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+pub mod list_tags_for_resource_input {
+    /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the resource the list of tags are associated with.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the resource the list of tags are associated with.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListTagsForResourceInput {
+                resource_arn: self.resource_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
+#[doc(hidden)]
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListTagsForResourceInput {
+    /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTagsForResource,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListTagsForResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_14 = &_input.resource_arn;
+                let input_14 = input_14.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_14, false);
+                if resource_arn.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListTagsForResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTagsForResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTagsForResource",
+            "grafana",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
+        crate::input::list_tags_for_resource_input::Builder::default()
+    }
+}
+
 /// See [`ListWorkspacesInput`](crate::input::ListWorkspacesInput)
 pub mod list_workspaces_input {
     /// A builder for [`ListWorkspacesInput`](crate::input::ListWorkspacesInput)
@@ -1424,14 +1593,14 @@ impl ListWorkspacesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_14) = &_input.max_results {
+                if let Some(inner_15) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_15).encode(),
                     );
                 }
-                if let Some(inner_15) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_15));
+                if let Some(inner_16) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_16));
                 }
                 Ok(())
             }
@@ -1497,6 +1666,359 @@ impl ListWorkspacesInput {
     /// Creates a new builder-style object to manufacture [`ListWorkspacesInput`](crate::input::ListWorkspacesInput)
     pub fn builder() -> crate::input::list_workspaces_input::Builder {
         crate::input::list_workspaces_input::Builder::default()
+    }
+}
+
+/// See [`TagResourceInput`](crate::input::TagResourceInput)
+pub mod tag_resource_input {
+    /// A builder for [`TagResourceInput`](crate::input::TagResourceInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The ARN of the resource the tag is associated with.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the resource the tag is associated with.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of tag keys and values to associate with the resource. You can associate tag keys only, tags (key and values) only or a combination of tag keys and tags.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The list of tag keys and values to associate with the resource. You can associate tag keys only, tags (key and values) only or a combination of tag keys and tags.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::TagResourceInput {
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
+#[doc(hidden)]
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl TagResourceInput {
+    /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::TagResource,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::TagResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_17 = &_input.resource_arn;
+                let input_17 = input_17.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_17, false);
+                if resource_arn.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::TagResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "grafana",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    pub fn builder() -> crate::input::tag_resource_input::Builder {
+        crate::input::tag_resource_input::Builder::default()
+    }
+}
+
+/// See [`UntagResourceInput`](crate::input::UntagResourceInput)
+pub mod untag_resource_input {
+    /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The ARN of the resource the tag association is removed from. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the resource the tag association is removed from. </p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The key values of the tag to be removed from the resource.</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.tag_keys.unwrap_or_default();
+            v.push(input.into());
+            self.tag_keys = Some(v);
+            self
+        }
+        /// <p>The key values of the tag to be removed from the resource.</p>
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tag_keys = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UntagResourceInput {
+                resource_arn: self.resource_arn,
+                tag_keys: self.tag_keys,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
+#[doc(hidden)]
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UntagResourceInput {
+    /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UntagResource,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UntagResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_18 = &_input.resource_arn;
+                let input_18 = input_18.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_18, false);
+                if resource_arn.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::UntagResourceInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_19) = &_input.tag_keys {
+                    for inner_20 in inner_19 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_20));
+                    }
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UntagResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "grafana",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    pub fn builder() -> crate::input::untag_resource_input::Builder {
+        crate::input::untag_resource_input::Builder::default()
     }
 }
 
@@ -1578,14 +2100,14 @@ impl UpdatePermissionsInput {
                 _input: &crate::input::UpdatePermissionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_16 = &_input.workspace_id;
-                let input_16 = input_16.as_ref().ok_or(
+                let input_21 = &_input.workspace_id;
+                let input_21 = input_21.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_21, false);
                 if workspace_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
@@ -1917,14 +2439,14 @@ impl UpdateWorkspaceInput {
                 _input: &crate::input::UpdateWorkspaceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_17 = &_input.workspace_id;
-                let input_17 = input_17.as_ref().ok_or(
+                let input_22 = &_input.workspace_id;
+                let input_22 = input_22.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_17, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_22, false);
                 if workspace_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
@@ -2115,14 +2637,14 @@ impl UpdateWorkspaceAuthenticationInput {
                 _input: &crate::input::UpdateWorkspaceAuthenticationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_18 = &_input.workspace_id;
-                let input_18 = input_18.as_ref().ok_or(
+                let input_23 = &_input.workspace_id;
+                let input_23 = input_23.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_18, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_23, false);
                 if workspace_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
@@ -2252,9 +2774,9 @@ pub struct CreateWorkspaceInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of an IAM role that already exists to use with Organizations to access Amazon Web Services data sources and notification channels in other accounts in an organization.</p>
     pub organization_role_name: std::option::Option<std::string::String>,
-    /// <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
+    /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p>
     /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
     pub permission_type: std::option::Option<crate::model::PermissionType>,
     /// <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
     pub stack_set_name: std::option::Option<std::string::String>,
@@ -2262,6 +2784,7 @@ pub struct CreateWorkspaceInput {
     /// <p>If you don't specify a data source here, you can still add it as a data source in the workspace console later. However, you will then have to manually configure permissions for it.</p>
     pub workspace_data_sources: std::option::Option<std::vec::Vec<crate::model::DataSourceType>>,
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
+    /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> </p>
     pub workspace_description: std::option::Option<std::string::String>,
     /// <p>The name for the workspace. It does not have to be unique.</p>
     pub workspace_name: std::option::Option<std::string::String>,
@@ -2270,11 +2793,14 @@ pub struct CreateWorkspaceInput {
         std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>,
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
     pub workspace_organizational_units: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. If you omit this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically created.</p>
+    /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. The permission type should be set to <code>CUSTOMER_MANAGED</code>.</p>
     pub workspace_role_arn: std::option::Option<std::string::String>,
     /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
     pub authentication_providers:
         std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
+    /// <p>The list of tags associated with the workspace.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateWorkspaceInput {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
@@ -2289,9 +2815,9 @@ impl CreateWorkspaceInput {
     pub fn organization_role_name(&self) -> std::option::Option<&str> {
         self.organization_role_name.as_deref()
     }
-    /// <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
+    /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p>
     /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
     pub fn permission_type(&self) -> std::option::Option<&crate::model::PermissionType> {
         self.permission_type.as_ref()
     }
@@ -2305,6 +2831,7 @@ impl CreateWorkspaceInput {
         self.workspace_data_sources.as_deref()
     }
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
+    /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> </p>
     pub fn workspace_description(&self) -> std::option::Option<&str> {
         self.workspace_description.as_deref()
     }
@@ -2322,7 +2849,7 @@ impl CreateWorkspaceInput {
     pub fn workspace_organizational_units(&self) -> std::option::Option<&[std::string::String]> {
         self.workspace_organizational_units.as_deref()
     }
-    /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. If you omit this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically created.</p>
+    /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. The permission type should be set to <code>CUSTOMER_MANAGED</code>.</p>
     pub fn workspace_role_arn(&self) -> std::option::Option<&str> {
         self.workspace_role_arn.as_deref()
     }
@@ -2331,6 +2858,13 @@ impl CreateWorkspaceInput {
         &self,
     ) -> std::option::Option<&[crate::model::AuthenticationProviderTypes]> {
         self.authentication_providers.as_deref()
+    }
+    /// <p>The list of tags associated with the workspace.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
     }
 }
 impl std::fmt::Debug for CreateWorkspaceInput {
@@ -2354,6 +2888,7 @@ impl std::fmt::Debug for CreateWorkspaceInput {
         );
         formatter.field("workspace_role_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("authentication_providers", &self.authentication_providers);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -2704,6 +3239,87 @@ impl std::fmt::Debug for DescribeWorkspaceAuthenticationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkspaceAuthenticationInput");
         formatter.field("workspace_id", &self.workspace_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceInput {
+    /// <p>The ARN of the resource the tag association is removed from. </p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The key values of the tag to be removed from the resource.</p>
+    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The ARN of the resource the tag association is removed from. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The key values of the tag to be removed from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
+impl std::fmt::Debug for UntagResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UntagResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("tag_keys", &self.tag_keys);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceInput {
+    /// <p>The ARN of the resource the tag is associated with.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The list of tag keys and values to associate with the resource. You can associate tag keys only, tags (key and values) only or a combination of tag keys and tags.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TagResourceInput {
+    /// <p>The ARN of the resource the tag is associated with.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The list of tag keys and values to associate with the resource. You can associate tag keys only, tags (key and values) only or a combination of tag keys and tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for TagResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TagResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceInput {
+    /// <p>The ARN of the resource the list of tags are associated with.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the resource the list of tags are associated with.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for ListTagsForResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTagsForResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
         formatter.finish()
     }
 }

@@ -606,11 +606,11 @@ impl PutFileSystemPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBackupPolicyOutput {
-    /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off..</p>
+    /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
     pub backup_policy: std::option::Option<crate::model::BackupPolicy>,
 }
 impl PutBackupPolicyOutput {
-    /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off..</p>
+    /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
     pub fn backup_policy(&self) -> std::option::Option<&crate::model::BackupPolicy> {
         self.backup_policy.as_ref()
     }
@@ -631,12 +631,12 @@ pub mod put_backup_policy_output {
         pub(crate) backup_policy: std::option::Option<crate::model::BackupPolicy>,
     }
     impl Builder {
-        /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off..</p>
+        /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
         pub fn backup_policy(mut self, input: crate::model::BackupPolicy) -> Self {
             self.backup_policy = Some(input);
             self
         }
-        /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off..</p>
+        /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
         pub fn set_backup_policy(
             mut self,
             input: std::option::Option<crate::model::BackupPolicy>,
@@ -935,14 +935,14 @@ impl DescribeTagsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationConfigurationsOutput {
-    /// <p>The collection of replication configurations returned.</p>
+    /// <p>The collection of replication configurations that is returned.</p>
     pub replications:
         std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationDescription>>,
     /// <p>You can use the <code>NextToken</code> from the previous response in a subsequent request to fetch the additional descriptions.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationConfigurationsOutput {
-    /// <p>The collection of replication configurations returned.</p>
+    /// <p>The collection of replication configurations that is returned.</p>
     pub fn replications(
         &self,
     ) -> std::option::Option<&[crate::model::ReplicationConfigurationDescription]> {
@@ -976,7 +976,7 @@ pub mod describe_replication_configurations_output {
         ///
         /// To override the contents of this collection use [`set_replications`](Self::set_replications).
         ///
-        /// <p>The collection of replication configurations returned.</p>
+        /// <p>The collection of replication configurations that is returned.</p>
         pub fn replications(
             mut self,
             input: crate::model::ReplicationConfigurationDescription,
@@ -986,7 +986,7 @@ pub mod describe_replication_configurations_output {
             self.replications = Some(v);
             self
         }
-        /// <p>The collection of replication configurations returned.</p>
+        /// <p>The collection of replication configurations that is returned.</p>
         pub fn set_replications(
             mut self,
             input: std::option::Option<
@@ -1433,11 +1433,11 @@ impl DescribeFileSystemPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBackupPolicyOutput {
-    /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off..</p>
+    /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
     pub backup_policy: std::option::Option<crate::model::BackupPolicy>,
 }
 impl DescribeBackupPolicyOutput {
-    /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off..</p>
+    /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
     pub fn backup_policy(&self) -> std::option::Option<&crate::model::BackupPolicy> {
         self.backup_policy.as_ref()
     }
@@ -1458,12 +1458,12 @@ pub mod describe_backup_policy_output {
         pub(crate) backup_policy: std::option::Option<crate::model::BackupPolicy>,
     }
     impl Builder {
-        /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off..</p>
+        /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
         pub fn backup_policy(mut self, input: crate::model::BackupPolicy) -> Self {
             self.backup_policy = Some(input);
             self
         }
-        /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off..</p>
+        /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
         pub fn set_backup_policy(
             mut self,
             input: std::option::Option<crate::model::BackupPolicy>,
@@ -1865,13 +1865,13 @@ pub struct CreateReplicationConfigurationOutput {
     pub source_file_system_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
     pub source_file_system_region: std::option::Option<std::string::String>,
-    /// <p>The ARN of the current source file system in the replication configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
     pub source_file_system_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
     pub original_source_file_system_arn: std::option::Option<std::string::String>,
     /// <p>Describes when the replication configuration was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Array of destination objects. Only one destination object is supported.</p>
+    /// <p>An array of destination objects. Only one destination object is supported.</p>
     pub destinations: std::option::Option<std::vec::Vec<crate::model::Destination>>,
 }
 impl CreateReplicationConfigurationOutput {
@@ -1883,7 +1883,7 @@ impl CreateReplicationConfigurationOutput {
     pub fn source_file_system_region(&self) -> std::option::Option<&str> {
         self.source_file_system_region.as_deref()
     }
-    /// <p>The ARN of the current source file system in the replication configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
     pub fn source_file_system_arn(&self) -> std::option::Option<&str> {
         self.source_file_system_arn.as_deref()
     }
@@ -1895,7 +1895,7 @@ impl CreateReplicationConfigurationOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>Array of destination objects. Only one destination object is supported.</p>
+    /// <p>An array of destination objects. Only one destination object is supported.</p>
     pub fn destinations(&self) -> std::option::Option<&[crate::model::Destination]> {
         self.destinations.as_deref()
     }
@@ -1955,12 +1955,12 @@ pub mod create_replication_configuration_output {
             self.source_file_system_region = input;
             self
         }
-        /// <p>The ARN of the current source file system in the replication configuration.</p>
+        /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
         pub fn source_file_system_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_file_system_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the current source file system in the replication configuration.</p>
+        /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
         pub fn set_source_file_system_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2001,14 +2001,14 @@ pub mod create_replication_configuration_output {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// <p>Array of destination objects. Only one destination object is supported.</p>
+        /// <p>An array of destination objects. Only one destination object is supported.</p>
         pub fn destinations(mut self, input: crate::model::Destination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input);
             self.destinations = Some(v);
             self
         }
-        /// <p>Array of destination objects. Only one destination object is supported.</p>
+        /// <p>An array of destination objects. Only one destination object is supported.</p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Destination>>,

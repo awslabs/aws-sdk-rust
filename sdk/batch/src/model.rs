@@ -4,25 +4,25 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FairsharePolicy {
     /// <p>The time period to use to calculate a fair share percentage for each fair share identifier in use, in seconds. A value of zero (0) indicates that only current usage should be measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
-    pub share_decay_seconds: i32,
+    pub share_decay_seconds: std::option::Option<i32>,
     /// <p>A value used to reserve some of the available maximum vCPU for fair share identifiers that have not yet been used.</p>
     /// <p>The reserved ratio is <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </code> where <code> <i>ActiveFairShares</i> </code> is the number of active fair share identifiers.</p>
     /// <p>For example, a <code>computeReservation</code> value of 50 indicates that Batch should reserve 50% of the maximum available vCPU if there is only one fair share identifier, 25% if there are two fair share identifiers, and 12.5% if there are three fair share identifiers. A <code>computeReservation</code> value of 25 indicates that Batch should reserve 25% of the maximum available vCPU if there is only one fair share identifier, 6.25% if there are two fair share identifiers, and 1.56% if there are three fair share identifiers.</p>
     /// <p>The minimum value is 0 and the maximum value is 99.</p>
-    pub compute_reservation: i32,
+    pub compute_reservation: std::option::Option<i32>,
     /// <p>An array of <code>SharedIdentifier</code> objects that contain the weights for the fair share identifiers for the fair share policy. Fair share identifiers that aren't included have a default weight of <code>1.0</code>.</p>
     pub share_distribution: std::option::Option<std::vec::Vec<crate::model::ShareAttributes>>,
 }
 impl FairsharePolicy {
     /// <p>The time period to use to calculate a fair share percentage for each fair share identifier in use, in seconds. A value of zero (0) indicates that only current usage should be measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
-    pub fn share_decay_seconds(&self) -> i32 {
+    pub fn share_decay_seconds(&self) -> std::option::Option<i32> {
         self.share_decay_seconds
     }
     /// <p>A value used to reserve some of the available maximum vCPU for fair share identifiers that have not yet been used.</p>
     /// <p>The reserved ratio is <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </code> where <code> <i>ActiveFairShares</i> </code> is the number of active fair share identifiers.</p>
     /// <p>For example, a <code>computeReservation</code> value of 50 indicates that Batch should reserve 50% of the maximum available vCPU if there is only one fair share identifier, 25% if there are two fair share identifiers, and 12.5% if there are three fair share identifiers. A <code>computeReservation</code> value of 25 indicates that Batch should reserve 25% of the maximum available vCPU if there is only one fair share identifier, 6.25% if there are two fair share identifiers, and 1.56% if there are three fair share identifiers.</p>
     /// <p>The minimum value is 0 and the maximum value is 99.</p>
-    pub fn compute_reservation(&self) -> i32 {
+    pub fn compute_reservation(&self) -> std::option::Option<i32> {
         self.compute_reservation
     }
     /// <p>An array of <code>SharedIdentifier</code> objects that contain the weights for the fair share identifiers for the fair share policy. Fair share identifiers that aren't included have a default weight of <code>1.0</code>.</p>
@@ -99,8 +99,8 @@ pub mod fairshare_policy {
         /// Consumes the builder and constructs a [`FairsharePolicy`](crate::model::FairsharePolicy)
         pub fn build(self) -> crate::model::FairsharePolicy {
             crate::model::FairsharePolicy {
-                share_decay_seconds: self.share_decay_seconds.unwrap_or_default(),
-                compute_reservation: self.compute_reservation.unwrap_or_default(),
+                share_decay_seconds: self.share_decay_seconds,
+                compute_reservation: self.compute_reservation,
                 share_distribution: self.share_distribution,
             }
         }
@@ -123,7 +123,7 @@ pub struct ShareAttributes {
     pub share_identifier: std::option::Option<std::string::String>,
     /// <p>The weight factor for the fair share identifier. The default value is 1.0. A lower value has a higher priority for compute resources. For example, jobs that use a share identifier with a weight factor of 0.125 (1/8) get 8 times the compute resources of jobs that use a share identifier with a weight factor of 1.</p>
     /// <p>The smallest supported value is 0.0001, and the largest supported value is 999.9999.</p>
-    pub weight_factor: f32,
+    pub weight_factor: std::option::Option<f32>,
 }
 impl ShareAttributes {
     /// <p>A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for fair share identifiers that start with that prefix. The list of fair share identifiers in a fair share policy cannot overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
@@ -134,7 +134,7 @@ impl ShareAttributes {
     }
     /// <p>The weight factor for the fair share identifier. The default value is 1.0. A lower value has a higher priority for compute resources. For example, jobs that use a share identifier with a weight factor of 0.125 (1/8) get 8 times the compute resources of jobs that use a share identifier with a weight factor of 1.</p>
     /// <p>The smallest supported value is 0.0001, and the largest supported value is 999.9999.</p>
-    pub fn weight_factor(&self) -> f32 {
+    pub fn weight_factor(&self) -> std::option::Option<f32> {
         self.weight_factor
     }
 }
@@ -189,7 +189,7 @@ pub mod share_attributes {
         pub fn build(self) -> crate::model::ShareAttributes {
             crate::model::ShareAttributes {
                 share_identifier: self.share_identifier,
-                weight_factor: self.weight_factor.unwrap_or_default(),
+                weight_factor: self.weight_factor,
             }
         }
     }
@@ -208,13 +208,13 @@ impl ShareAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComputeEnvironmentOrder {
     /// <p>The order of the compute environment. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower <code>order</code> integer value is tried for job placement first.</p>
-    pub order: i32,
+    pub order: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
     pub compute_environment: std::option::Option<std::string::String>,
 }
 impl ComputeEnvironmentOrder {
     /// <p>The order of the compute environment. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower <code>order</code> integer value is tried for job placement first.</p>
-    pub fn order(&self) -> i32 {
+    pub fn order(&self) -> std::option::Option<i32> {
         self.order
     }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
@@ -266,7 +266,7 @@ pub mod compute_environment_order {
         /// Consumes the builder and constructs a [`ComputeEnvironmentOrder`](crate::model::ComputeEnvironmentOrder)
         pub fn build(self) -> crate::model::ComputeEnvironmentOrder {
             crate::model::ComputeEnvironmentOrder {
-                order: self.order.unwrap_or_default(),
+                order: self.order,
                 compute_environment: self.compute_environment,
             }
         }
@@ -341,15 +341,15 @@ pub struct ComputeResourceUpdate {
     /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    pub minv_cpus: i32,
+    pub minv_cpus: std::option::Option<i32>,
     /// <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p> <note>
     /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those specified in your compute environment.</p>
     /// </note>
-    pub maxv_cpus: i32,
+    pub maxv_cpus: std::option::Option<i32>,
     /// <p>The desired number of Amazon EC2 vCPUS in the compute environment.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    pub desiredv_cpus: i32,
+    pub desiredv_cpus: std::option::Option<i32>,
     /// <p>The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets. Providing an empty list will be handled as if this parameter wasn't specified and no change is made. This can't be specified for EC2 compute resources. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon EC2 security groups associated with instances launched in the compute environment. This parameter is required for Fargate compute resources, where it can contain up to 5 security groups. This can't be specified for EC2 compute resources. Providing an empty list is handled as if this parameter wasn't specified and no change is made.</p>
@@ -359,19 +359,19 @@ impl ComputeResourceUpdate {
     /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    pub fn minv_cpus(&self) -> i32 {
+    pub fn minv_cpus(&self) -> std::option::Option<i32> {
         self.minv_cpus
     }
     /// <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p> <note>
     /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those specified in your compute environment.</p>
     /// </note>
-    pub fn maxv_cpus(&self) -> i32 {
+    pub fn maxv_cpus(&self) -> std::option::Option<i32> {
         self.maxv_cpus
     }
     /// <p>The desired number of Amazon EC2 vCPUS in the compute environment.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    pub fn desiredv_cpus(&self) -> i32 {
+    pub fn desiredv_cpus(&self) -> std::option::Option<i32> {
         self.desiredv_cpus
     }
     /// <p>The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets. Providing an empty list will be handled as if this parameter wasn't specified and no change is made. This can't be specified for EC2 compute resources. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
@@ -490,9 +490,9 @@ pub mod compute_resource_update {
         /// Consumes the builder and constructs a [`ComputeResourceUpdate`](crate::model::ComputeResourceUpdate)
         pub fn build(self) -> crate::model::ComputeResourceUpdate {
             crate::model::ComputeResourceUpdate {
-                minv_cpus: self.minv_cpus.unwrap_or_default(),
-                maxv_cpus: self.maxv_cpus.unwrap_or_default(),
-                desiredv_cpus: self.desiredv_cpus.unwrap_or_default(),
+                minv_cpus: self.minv_cpus,
+                maxv_cpus: self.maxv_cpus,
+                desiredv_cpus: self.desiredv_cpus,
                 subnets: self.subnets,
                 security_group_ids: self.security_group_ids,
             }
@@ -566,11 +566,11 @@ impl AsRef<str> for CeState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobTimeout {
     /// <p>The time duration in seconds (measured from the job attempt's <code>startedAt</code> timestamp) after which Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60 seconds.</p>
-    pub attempt_duration_seconds: i32,
+    pub attempt_duration_seconds: std::option::Option<i32>,
 }
 impl JobTimeout {
     /// <p>The time duration in seconds (measured from the job attempt's <code>startedAt</code> timestamp) after which Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60 seconds.</p>
-    pub fn attempt_duration_seconds(&self) -> i32 {
+    pub fn attempt_duration_seconds(&self) -> std::option::Option<i32> {
         self.attempt_duration_seconds
     }
 }
@@ -603,7 +603,7 @@ pub mod job_timeout {
         /// Consumes the builder and constructs a [`JobTimeout`](crate::model::JobTimeout)
         pub fn build(self) -> crate::model::JobTimeout {
             crate::model::JobTimeout {
-                attempt_duration_seconds: self.attempt_duration_seconds.unwrap_or_default(),
+                attempt_duration_seconds: self.attempt_duration_seconds,
             }
         }
     }
@@ -620,13 +620,13 @@ impl JobTimeout {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetryStrategy {
     /// <p>The number of times to move a job to the <code>RUNNABLE</code> status. You can specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of attempts as the value.</p>
-    pub attempts: i32,
+    pub attempts: std::option::Option<i32>,
     /// <p>Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this parameter is specified, then the <code>attempts</code> parameter must also be specified.</p>
     pub evaluate_on_exit: std::option::Option<std::vec::Vec<crate::model::EvaluateOnExit>>,
 }
 impl RetryStrategy {
     /// <p>The number of times to move a job to the <code>RUNNABLE</code> status. You can specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of attempts as the value.</p>
-    pub fn attempts(&self) -> i32 {
+    pub fn attempts(&self) -> std::option::Option<i32> {
         self.attempts
     }
     /// <p>Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this parameter is specified, then the <code>attempts</code> parameter must also be specified.</p>
@@ -685,7 +685,7 @@ pub mod retry_strategy {
         /// Consumes the builder and constructs a [`RetryStrategy`](crate::model::RetryStrategy)
         pub fn build(self) -> crate::model::RetryStrategy {
             crate::model::RetryStrategy {
-                attempts: self.attempts.unwrap_or_default(),
+                attempts: self.attempts,
                 evaluate_on_exit: self.evaluate_on_exit,
             }
         }
@@ -891,7 +891,7 @@ pub struct NodeOverrides {
     /// <li> <p>The lower boundary of the node range specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
     /// <li> <p>The main node index specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
     /// </ul>
-    pub num_nodes: i32,
+    pub num_nodes: std::option::Option<i32>,
     /// <p>The node property overrides for the job.</p>
     pub node_property_overrides:
         std::option::Option<std::vec::Vec<crate::model::NodePropertyOverride>>,
@@ -903,7 +903,7 @@ impl NodeOverrides {
     /// <li> <p>The lower boundary of the node range specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
     /// <li> <p>The main node index specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
     /// </ul>
-    pub fn num_nodes(&self) -> i32 {
+    pub fn num_nodes(&self) -> std::option::Option<i32> {
         self.num_nodes
     }
     /// <p>The node property overrides for the job.</p>
@@ -977,7 +977,7 @@ pub mod node_overrides {
         /// Consumes the builder and constructs a [`NodeOverrides`](crate::model::NodeOverrides)
         pub fn build(self) -> crate::model::NodeOverrides {
             crate::model::NodeOverrides {
-                num_nodes: self.num_nodes.unwrap_or_default(),
+                num_nodes: self.num_nodes,
                 node_property_overrides: self.node_property_overrides,
             }
         }
@@ -1070,10 +1070,10 @@ impl NodePropertyOverride {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerOverrides {
-    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs that run on Fargate resources. For jobs run on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
-    pub vcpus: i32,
-    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs that run on Fargate resources. For jobs run on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
-    pub memory: i32,
+    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+    pub vcpus: std::option::Option<i32>,
+    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+    pub memory: std::option::Option<i32>,
     /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p>
     pub command: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The instance type to use for a multi-node parallel job.</p> <note>
@@ -1089,12 +1089,12 @@ pub struct ContainerOverrides {
         std::option::Option<std::vec::Vec<crate::model::ResourceRequirement>>,
 }
 impl ContainerOverrides {
-    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs that run on Fargate resources. For jobs run on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
-    pub fn vcpus(&self) -> i32 {
+    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+    pub fn vcpus(&self) -> std::option::Option<i32> {
         self.vcpus
     }
-    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs that run on Fargate resources. For jobs run on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
-    pub fn memory(&self) -> i32 {
+    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+    pub fn memory(&self) -> std::option::Option<i32> {
         self.memory
     }
     /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p>
@@ -1147,22 +1147,22 @@ pub mod container_overrides {
             std::option::Option<std::vec::Vec<crate::model::ResourceRequirement>>,
     }
     impl Builder {
-        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs that run on Fargate resources. For jobs run on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
         pub fn vcpus(mut self, input: i32) -> Self {
             self.vcpus = Some(input);
             self
         }
-        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs that run on Fargate resources. For jobs run on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
         pub fn set_vcpus(mut self, input: std::option::Option<i32>) -> Self {
             self.vcpus = input;
             self
         }
-        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs that run on Fargate resources. For jobs run on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
         pub fn memory(mut self, input: i32) -> Self {
             self.memory = Some(input);
             self
         }
-        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs that run on Fargate resources. For jobs run on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
         pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
             self.memory = input;
             self
@@ -1248,8 +1248,8 @@ pub mod container_overrides {
         /// Consumes the builder and constructs a [`ContainerOverrides`](crate::model::ContainerOverrides)
         pub fn build(self) -> crate::model::ContainerOverrides {
             crate::model::ContainerOverrides {
-                vcpus: self.vcpus.unwrap_or_default(),
-                memory: self.memory.unwrap_or_default(),
+                vcpus: self.vcpus,
+                memory: self.memory,
                 command: self.command,
                 instance_type: self.instance_type,
                 environment: self.environment,
@@ -2062,11 +2062,11 @@ impl AsRef<str> for ArrayJobDependency {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArrayProperties {
     /// <p>The size of the array job.</p>
-    pub size: i32,
+    pub size: std::option::Option<i32>,
 }
 impl ArrayProperties {
     /// <p>The size of the array job.</p>
-    pub fn size(&self) -> i32 {
+    pub fn size(&self) -> std::option::Option<i32> {
         self.size
     }
 }
@@ -2098,9 +2098,7 @@ pub mod array_properties {
         }
         /// Consumes the builder and constructs a [`ArrayProperties`](crate::model::ArrayProperties)
         pub fn build(self) -> crate::model::ArrayProperties {
-            crate::model::ArrayProperties {
-                size: self.size.unwrap_or_default(),
-            }
+            crate::model::ArrayProperties { size: self.size }
         }
     }
 }
@@ -2171,19 +2169,19 @@ impl AsRef<str> for PlatformCapability {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeProperties {
     /// <p>The number of nodes associated with a multi-node parallel job.</p>
-    pub num_nodes: i32,
+    pub num_nodes: std::option::Option<i32>,
     /// <p>Specifies the node index for the main node of a multi-node parallel job. This node index value must be fewer than the number of nodes.</p>
-    pub main_node: i32,
+    pub main_node: std::option::Option<i32>,
     /// <p>A list of node ranges and their properties associated with a multi-node parallel job.</p>
     pub node_range_properties: std::option::Option<std::vec::Vec<crate::model::NodeRangeProperty>>,
 }
 impl NodeProperties {
     /// <p>The number of nodes associated with a multi-node parallel job.</p>
-    pub fn num_nodes(&self) -> i32 {
+    pub fn num_nodes(&self) -> std::option::Option<i32> {
         self.num_nodes
     }
     /// <p>Specifies the node index for the main node of a multi-node parallel job. This node index value must be fewer than the number of nodes.</p>
-    pub fn main_node(&self) -> i32 {
+    pub fn main_node(&self) -> std::option::Option<i32> {
         self.main_node
     }
     /// <p>A list of node ranges and their properties associated with a multi-node parallel job.</p>
@@ -2254,8 +2252,8 @@ pub mod node_properties {
         /// Consumes the builder and constructs a [`NodeProperties`](crate::model::NodeProperties)
         pub fn build(self) -> crate::model::NodeProperties {
             crate::model::NodeProperties {
-                num_nodes: self.num_nodes.unwrap_or_default(),
-                main_node: self.main_node.unwrap_or_default(),
+                num_nodes: self.num_nodes,
+                main_node: self.main_node,
                 node_range_properties: self.node_range_properties,
             }
         }
@@ -2352,6 +2350,7 @@ pub struct ContainerProperties {
     /// <p>Docker image architecture must match the processor architecture of the compute resources that they're scheduled on. For example, ARM-based Docker images can only run on ARM-based compute resources.</p>
     /// </note>
     /// <ul>
+    /// <li> <p>Images in Amazon ECR Public repositories use the full <code>registry/repository[:tag]</code> or <code>registry/repository[@digest]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i> </code>.</p> </li>
     /// <li> <p>Images in Amazon ECR repositories use the full registry and repository URI (for example, <code>012345678910.dkr.ecr.
     /// <region-name>
     /// .amazonaws.com/
@@ -2362,11 +2361,11 @@ pub struct ContainerProperties {
     /// <li> <p>Images in other online repositories are qualified further by a domain name (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li>
     /// </ul>
     pub image: std::option::Option<std::string::String>,
-    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for the job definition. It's not supported for jobs that run on Fargate resources. For jobs run on EC2 resources, it specifies the number of vCPUs reserved for the job.</p>
+    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the number of vCPUs reserved for the job.</p>
     /// <p>Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The number of vCPUs must be specified but can be specified in several places. You must specify it at least once for each node.</p>
-    pub vcpus: i32,
-    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs that run on Fargate resources. For jobs run on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
-    pub memory: i32,
+    pub vcpus: std::option::Option<i32>,
+    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
+    pub memory: std::option::Option<i32>,
     /// <p>The command that's passed to the container. This parameter maps to <code>Cmd</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>COMMAND</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
     pub command: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume for Amazon Web Services permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -2384,11 +2383,11 @@ pub struct ContainerProperties {
     /// <p>The mount points for data volumes in your container. This parameter maps to <code>Volumes</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--volume</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
     pub mount_points: std::option::Option<std::vec::Vec<crate::model::MountPoint>>,
     /// <p>When this parameter is true, the container is given read-only access to its root file system. This parameter maps to <code>ReadonlyRootfs</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--read-only</code> option to <code>docker run</code>.</p>
-    pub readonly_root_filesystem: bool,
+    pub readonly_root_filesystem: std::option::Option<bool>,
     /// <p>When this parameter is true, the container is given elevated permissions on the host container instance (similar to the <code>root</code> user). This parameter maps to <code>Privileged</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--privileged</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The default value is false.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or specified as false.</p>
     /// </note>
-    pub privileged: bool,
+    pub privileged: std::option::Option<bool>,
     /// <p>A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
     /// </note>
@@ -2425,6 +2424,7 @@ impl ContainerProperties {
     /// <p>Docker image architecture must match the processor architecture of the compute resources that they're scheduled on. For example, ARM-based Docker images can only run on ARM-based compute resources.</p>
     /// </note>
     /// <ul>
+    /// <li> <p>Images in Amazon ECR Public repositories use the full <code>registry/repository[:tag]</code> or <code>registry/repository[@digest]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i> </code>.</p> </li>
     /// <li> <p>Images in Amazon ECR repositories use the full registry and repository URI (for example, <code>012345678910.dkr.ecr.
     /// <region-name>
     /// .amazonaws.com/
@@ -2437,13 +2437,13 @@ impl ContainerProperties {
     pub fn image(&self) -> std::option::Option<&str> {
         self.image.as_deref()
     }
-    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for the job definition. It's not supported for jobs that run on Fargate resources. For jobs run on EC2 resources, it specifies the number of vCPUs reserved for the job.</p>
+    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the number of vCPUs reserved for the job.</p>
     /// <p>Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The number of vCPUs must be specified but can be specified in several places. You must specify it at least once for each node.</p>
-    pub fn vcpus(&self) -> i32 {
+    pub fn vcpus(&self) -> std::option::Option<i32> {
         self.vcpus
     }
-    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs that run on Fargate resources. For jobs run on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
-    pub fn memory(&self) -> i32 {
+    /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
+    pub fn memory(&self) -> std::option::Option<i32> {
         self.memory
     }
     /// <p>The command that's passed to the container. This parameter maps to <code>Cmd</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>COMMAND</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
@@ -2475,13 +2475,13 @@ impl ContainerProperties {
         self.mount_points.as_deref()
     }
     /// <p>When this parameter is true, the container is given read-only access to its root file system. This parameter maps to <code>ReadonlyRootfs</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--read-only</code> option to <code>docker run</code>.</p>
-    pub fn readonly_root_filesystem(&self) -> bool {
+    pub fn readonly_root_filesystem(&self) -> std::option::Option<bool> {
         self.readonly_root_filesystem
     }
     /// <p>When this parameter is true, the container is given elevated permissions on the host container instance (similar to the <code>root</code> user). This parameter maps to <code>Privileged</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--privileged</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The default value is false.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or specified as false.</p>
     /// </note>
-    pub fn privileged(&self) -> bool {
+    pub fn privileged(&self) -> std::option::Option<bool> {
         self.privileged
     }
     /// <p>A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
@@ -2600,6 +2600,7 @@ pub mod container_properties {
         /// <p>Docker image architecture must match the processor architecture of the compute resources that they're scheduled on. For example, ARM-based Docker images can only run on ARM-based compute resources.</p>
         /// </note>
         /// <ul>
+        /// <li> <p>Images in Amazon ECR Public repositories use the full <code>registry/repository[:tag]</code> or <code>registry/repository[@digest]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i> </code>.</p> </li>
         /// <li> <p>Images in Amazon ECR repositories use the full registry and repository URI (for example, <code>012345678910.dkr.ecr.
         /// <region-name>
         /// .amazonaws.com/
@@ -2617,6 +2618,7 @@ pub mod container_properties {
         /// <p>Docker image architecture must match the processor architecture of the compute resources that they're scheduled on. For example, ARM-based Docker images can only run on ARM-based compute resources.</p>
         /// </note>
         /// <ul>
+        /// <li> <p>Images in Amazon ECR Public repositories use the full <code>registry/repository[:tag]</code> or <code>registry/repository[@digest]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i> </code>.</p> </li>
         /// <li> <p>Images in Amazon ECR repositories use the full registry and repository URI (for example, <code>012345678910.dkr.ecr.
         /// <region-name>
         /// .amazonaws.com/
@@ -2630,24 +2632,24 @@ pub mod container_properties {
             self.image = input;
             self
         }
-        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for the job definition. It's not supported for jobs that run on Fargate resources. For jobs run on EC2 resources, it specifies the number of vCPUs reserved for the job.</p>
+        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the number of vCPUs reserved for the job.</p>
         /// <p>Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The number of vCPUs must be specified but can be specified in several places. You must specify it at least once for each node.</p>
         pub fn vcpus(mut self, input: i32) -> Self {
             self.vcpus = Some(input);
             self
         }
-        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for the job definition. It's not supported for jobs that run on Fargate resources. For jobs run on EC2 resources, it specifies the number of vCPUs reserved for the job.</p>
+        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the number of vCPUs reserved for the job.</p>
         /// <p>Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The number of vCPUs must be specified but can be specified in several places. You must specify it at least once for each node.</p>
         pub fn set_vcpus(mut self, input: std::option::Option<i32>) -> Self {
             self.vcpus = input;
             self
         }
-        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs that run on Fargate resources. For jobs run on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
+        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
         pub fn memory(mut self, input: i32) -> Self {
             self.memory = Some(input);
             self
         }
-        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs that run on Fargate resources. For jobs run on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
+        /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
         pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
             self.memory = input;
             self
@@ -2942,16 +2944,16 @@ pub mod container_properties {
         pub fn build(self) -> crate::model::ContainerProperties {
             crate::model::ContainerProperties {
                 image: self.image,
-                vcpus: self.vcpus.unwrap_or_default(),
-                memory: self.memory.unwrap_or_default(),
+                vcpus: self.vcpus,
+                memory: self.memory,
                 command: self.command,
                 job_role_arn: self.job_role_arn,
                 execution_role_arn: self.execution_role_arn,
                 volumes: self.volumes,
                 environment: self.environment,
                 mount_points: self.mount_points,
-                readonly_root_filesystem: self.readonly_root_filesystem.unwrap_or_default(),
-                privileged: self.privileged.unwrap_or_default(),
+                readonly_root_filesystem: self.readonly_root_filesystem,
+                privileged: self.privileged,
                 ulimits: self.ulimits,
                 user: self.user,
                 instance_type: self.instance_type,
@@ -3644,11 +3646,11 @@ pub struct LinuxParameters {
     /// </note>
     pub devices: std::option::Option<std::vec::Vec<crate::model::Device>>,
     /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
-    pub init_process_enabled: bool,
+    pub init_process_enabled: std::option::Option<bool>,
     /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
     /// </note>
-    pub shared_memory_size: i32,
+    pub shared_memory_size: std::option::Option<i32>,
     /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
     /// </note>
@@ -3657,7 +3659,7 @@ pub struct LinuxParameters {
     /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
     /// </note>
-    pub max_swap: i32,
+    pub max_swap: std::option::Option<i32>,
     /// <p>This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this parameter is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
     /// <p>Consider the following when you use a per-container swap configuration.</p>
     /// <ul>
@@ -3669,7 +3671,7 @@ pub struct LinuxParameters {
     /// </ul> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
     /// </note>
-    pub swappiness: i32,
+    pub swappiness: std::option::Option<i32>,
 }
 impl LinuxParameters {
     /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
@@ -3679,13 +3681,13 @@ impl LinuxParameters {
         self.devices.as_deref()
     }
     /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log into your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
-    pub fn init_process_enabled(&self) -> bool {
+    pub fn init_process_enabled(&self) -> std::option::Option<bool> {
         self.init_process_enabled
     }
     /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
     /// </note>
-    pub fn shared_memory_size(&self) -> i32 {
+    pub fn shared_memory_size(&self) -> std::option::Option<i32> {
         self.shared_memory_size
     }
     /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
@@ -3698,7 +3700,7 @@ impl LinuxParameters {
     /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
     /// </note>
-    pub fn max_swap(&self) -> i32 {
+    pub fn max_swap(&self) -> std::option::Option<i32> {
         self.max_swap
     }
     /// <p>This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this parameter is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
@@ -3712,7 +3714,7 @@ impl LinuxParameters {
     /// </ul> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
     /// </note>
-    pub fn swappiness(&self) -> i32 {
+    pub fn swappiness(&self) -> std::option::Option<i32> {
         self.swappiness
     }
 }
@@ -3862,11 +3864,11 @@ pub mod linux_parameters {
         pub fn build(self) -> crate::model::LinuxParameters {
             crate::model::LinuxParameters {
                 devices: self.devices,
-                init_process_enabled: self.init_process_enabled.unwrap_or_default(),
-                shared_memory_size: self.shared_memory_size.unwrap_or_default(),
+                init_process_enabled: self.init_process_enabled,
+                shared_memory_size: self.shared_memory_size,
                 tmpfs: self.tmpfs,
-                max_swap: self.max_swap.unwrap_or_default(),
-                swappiness: self.swappiness.unwrap_or_default(),
+                max_swap: self.max_swap,
+                swappiness: self.swappiness,
             }
         }
     }
@@ -3887,7 +3889,7 @@ pub struct Tmpfs {
     /// <p>The absolute file path in the container where the tmpfs volume is mounted.</p>
     pub container_path: std::option::Option<std::string::String>,
     /// <p>The size (in MiB) of the tmpfs volume.</p>
-    pub size: i32,
+    pub size: std::option::Option<i32>,
     /// <p>The list of tmpfs volume mount options.</p>
     /// <p>Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "<code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "<code>noexec</code>" | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "<code>remount</code>" | "<code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>" | "<code>noatime</code>" | "<code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>" | "<code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>" | "<code>norelatime</code>" | "<code>strictatime</code>" | "<code>nostrictatime</code>" | "<code>mode</code>" | "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>" | "<code>mpol</code>"</p>
     pub mount_options: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3898,7 +3900,7 @@ impl Tmpfs {
         self.container_path.as_deref()
     }
     /// <p>The size (in MiB) of the tmpfs volume.</p>
-    pub fn size(&self) -> i32 {
+    pub fn size(&self) -> std::option::Option<i32> {
         self.size
     }
     /// <p>The list of tmpfs volume mount options.</p>
@@ -3975,7 +3977,7 @@ pub mod tmpfs {
         pub fn build(self) -> crate::model::Tmpfs {
             crate::model::Tmpfs {
                 container_path: self.container_path,
-                size: self.size.unwrap_or_default(),
+                size: self.size,
                 mount_options: self.mount_options,
             }
         }
@@ -4161,15 +4163,15 @@ impl AsRef<str> for DeviceCgroupPermission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ulimit {
     /// <p>The hard limit for the <code>ulimit</code> type.</p>
-    pub hard_limit: i32,
+    pub hard_limit: std::option::Option<i32>,
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
-    pub soft_limit: i32,
+    pub soft_limit: std::option::Option<i32>,
 }
 impl Ulimit {
     /// <p>The hard limit for the <code>ulimit</code> type.</p>
-    pub fn hard_limit(&self) -> i32 {
+    pub fn hard_limit(&self) -> std::option::Option<i32> {
         self.hard_limit
     }
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
@@ -4177,7 +4179,7 @@ impl Ulimit {
         self.name.as_deref()
     }
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
-    pub fn soft_limit(&self) -> i32 {
+    pub fn soft_limit(&self) -> std::option::Option<i32> {
         self.soft_limit
     }
 }
@@ -4234,9 +4236,9 @@ pub mod ulimit {
         /// Consumes the builder and constructs a [`Ulimit`](crate::model::Ulimit)
         pub fn build(self) -> crate::model::Ulimit {
             crate::model::Ulimit {
-                hard_limit: self.hard_limit.unwrap_or_default(),
+                hard_limit: self.hard_limit,
                 name: self.name,
-                soft_limit: self.soft_limit.unwrap_or_default(),
+                soft_limit: self.soft_limit,
             }
         }
     }
@@ -4255,7 +4257,7 @@ pub struct MountPoint {
     /// <p>The path on the container where the host volume is mounted.</p>
     pub container_path: std::option::Option<std::string::String>,
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the container can write to the volume. The default value is <code>false</code>.</p>
-    pub read_only: bool,
+    pub read_only: std::option::Option<bool>,
     /// <p>The name of the volume to mount.</p>
     pub source_volume: std::option::Option<std::string::String>,
 }
@@ -4265,7 +4267,7 @@ impl MountPoint {
         self.container_path.as_deref()
     }
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the container can write to the volume. The default value is <code>false</code>.</p>
-    pub fn read_only(&self) -> bool {
+    pub fn read_only(&self) -> std::option::Option<bool> {
         self.read_only
     }
     /// <p>The name of the volume to mount.</p>
@@ -4333,7 +4335,7 @@ pub mod mount_point {
         pub fn build(self) -> crate::model::MountPoint {
             crate::model::MountPoint {
                 container_path: self.container_path,
-                read_only: self.read_only.unwrap_or_default(),
+                read_only: self.read_only,
                 source_volume: self.source_volume,
             }
         }
@@ -4468,7 +4470,7 @@ pub struct EfsVolumeConfiguration {
     /// <p>Determines whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
     pub transit_encryption: std::option::Option<crate::model::EfsTransitEncryption>,
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you don't specify a transit encryption port, it uses the port selection strategy that the Amazon EFS mount helper uses. The value must be between 0 and 65,535. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount Helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
-    pub transit_encryption_port: i32,
+    pub transit_encryption_port: std::option::Option<i32>,
     /// <p>The authorization configuration details for the Amazon EFS file system.</p>
     pub authorization_config: std::option::Option<crate::model::EfsAuthorizationConfig>,
 }
@@ -4488,7 +4490,7 @@ impl EfsVolumeConfiguration {
         self.transit_encryption.as_ref()
     }
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you don't specify a transit encryption port, it uses the port selection strategy that the Amazon EFS mount helper uses. The value must be between 0 and 65,535. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount Helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
-    pub fn transit_encryption_port(&self) -> i32 {
+    pub fn transit_encryption_port(&self) -> std::option::Option<i32> {
         self.transit_encryption_port
     }
     /// <p>The authorization configuration details for the Amazon EFS file system.</p>
@@ -4594,7 +4596,7 @@ pub mod efs_volume_configuration {
                 file_system_id: self.file_system_id,
                 root_directory: self.root_directory,
                 transit_encryption: self.transit_encryption,
-                transit_encryption_port: self.transit_encryption_port.unwrap_or_default(),
+                transit_encryption_port: self.transit_encryption_port,
                 authorization_config: self.authorization_config,
             }
         }
@@ -4976,15 +4978,15 @@ pub struct JobSummary {
     /// <p>The name of the job.</p>
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <code>SubmitJob</code> was called). For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
-    pub created_at: i64,
+    pub created_at: std::option::Option<i64>,
     /// <p>The current status for the job.</p>
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p>A short, human-readable string to provide additional details about the current status of the job.</p>
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for when the job was started (when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
-    pub started_at: i64,
+    pub started_at: std::option::Option<i64>,
     /// <p>The Unix timestamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
-    pub stopped_at: i64,
+    pub stopped_at: std::option::Option<i64>,
     /// <p>An object representing the details of the container that's associated with the job.</p>
     pub container: std::option::Option<crate::model::ContainerSummary>,
     /// <p>The array properties of the job, if it is an array job.</p>
@@ -5010,7 +5012,7 @@ impl JobSummary {
         self.job_name.as_deref()
     }
     /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <code>SubmitJob</code> was called). For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
-    pub fn created_at(&self) -> i64 {
+    pub fn created_at(&self) -> std::option::Option<i64> {
         self.created_at
     }
     /// <p>The current status for the job.</p>
@@ -5022,11 +5024,11 @@ impl JobSummary {
         self.status_reason.as_deref()
     }
     /// <p>The Unix timestamp for when the job was started (when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
-    pub fn started_at(&self) -> i64 {
+    pub fn started_at(&self) -> std::option::Option<i64> {
         self.started_at
     }
     /// <p>The Unix timestamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
-    pub fn stopped_at(&self) -> i64 {
+    pub fn stopped_at(&self) -> std::option::Option<i64> {
         self.stopped_at
     }
     /// <p>An object representing the details of the container that's associated with the job.</p>
@@ -5231,11 +5233,11 @@ pub mod job_summary {
                 job_arn: self.job_arn,
                 job_id: self.job_id,
                 job_name: self.job_name,
-                created_at: self.created_at.unwrap_or_default(),
+                created_at: self.created_at,
                 status: self.status,
                 status_reason: self.status_reason,
-                started_at: self.started_at.unwrap_or_default(),
-                stopped_at: self.stopped_at.unwrap_or_default(),
+                started_at: self.started_at,
+                stopped_at: self.stopped_at,
                 container: self.container,
                 array_properties: self.array_properties,
                 node_properties: self.node_properties,
@@ -5256,23 +5258,23 @@ impl JobSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodePropertiesSummary {
     /// <p>Specifies whether the current node is the main node for a multi-node parallel job.</p>
-    pub is_main_node: bool,
+    pub is_main_node: std::option::Option<bool>,
     /// <p>The number of nodes associated with a multi-node parallel job.</p>
-    pub num_nodes: i32,
+    pub num_nodes: std::option::Option<i32>,
     /// <p>The node index for the node. Node index numbering begins at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
-    pub node_index: i32,
+    pub node_index: std::option::Option<i32>,
 }
 impl NodePropertiesSummary {
     /// <p>Specifies whether the current node is the main node for a multi-node parallel job.</p>
-    pub fn is_main_node(&self) -> bool {
+    pub fn is_main_node(&self) -> std::option::Option<bool> {
         self.is_main_node
     }
     /// <p>The number of nodes associated with a multi-node parallel job.</p>
-    pub fn num_nodes(&self) -> i32 {
+    pub fn num_nodes(&self) -> std::option::Option<i32> {
         self.num_nodes
     }
     /// <p>The node index for the node. Node index numbering begins at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
-    pub fn node_index(&self) -> i32 {
+    pub fn node_index(&self) -> std::option::Option<i32> {
         self.node_index
     }
 }
@@ -5329,9 +5331,9 @@ pub mod node_properties_summary {
         /// Consumes the builder and constructs a [`NodePropertiesSummary`](crate::model::NodePropertiesSummary)
         pub fn build(self) -> crate::model::NodePropertiesSummary {
             crate::model::NodePropertiesSummary {
-                is_main_node: self.is_main_node.unwrap_or_default(),
-                num_nodes: self.num_nodes.unwrap_or_default(),
-                node_index: self.node_index.unwrap_or_default(),
+                is_main_node: self.is_main_node,
+                num_nodes: self.num_nodes,
+                node_index: self.node_index,
             }
         }
     }
@@ -5348,17 +5350,17 @@ impl NodePropertiesSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArrayPropertiesSummary {
     /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
-    pub size: i32,
+    pub size: std::option::Option<i32>,
     /// <p>The job index within the array that's associated with this job. This parameter is returned for children of array jobs.</p>
-    pub index: i32,
+    pub index: std::option::Option<i32>,
 }
 impl ArrayPropertiesSummary {
     /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
-    pub fn size(&self) -> i32 {
+    pub fn size(&self) -> std::option::Option<i32> {
         self.size
     }
     /// <p>The job index within the array that's associated with this job. This parameter is returned for children of array jobs.</p>
-    pub fn index(&self) -> i32 {
+    pub fn index(&self) -> std::option::Option<i32> {
         self.index
     }
 }
@@ -5403,8 +5405,8 @@ pub mod array_properties_summary {
         /// Consumes the builder and constructs a [`ArrayPropertiesSummary`](crate::model::ArrayPropertiesSummary)
         pub fn build(self) -> crate::model::ArrayPropertiesSummary {
             crate::model::ArrayPropertiesSummary {
-                size: self.size.unwrap_or_default(),
-                index: self.index.unwrap_or_default(),
+                size: self.size,
+                index: self.index,
             }
         }
     }
@@ -5421,13 +5423,13 @@ impl ArrayPropertiesSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerSummary {
     /// <p>The exit code to return upon completion.</p>
-    pub exit_code: i32,
+    pub exit_code: std::option::Option<i32>,
     /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
     pub reason: std::option::Option<std::string::String>,
 }
 impl ContainerSummary {
     /// <p>The exit code to return upon completion.</p>
-    pub fn exit_code(&self) -> i32 {
+    pub fn exit_code(&self) -> std::option::Option<i32> {
         self.exit_code
     }
     /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
@@ -5476,7 +5478,7 @@ pub mod container_summary {
         /// Consumes the builder and constructs a [`ContainerSummary`](crate::model::ContainerSummary)
         pub fn build(self) -> crate::model::ContainerSummary {
             crate::model::ContainerSummary {
-                exit_code: self.exit_code.unwrap_or_default(),
+                exit_code: self.exit_code,
                 reason: self.reason,
             }
         }
@@ -5808,19 +5810,19 @@ pub struct JobDetail {
     /// <p>The share identifier for the job.</p>
     pub share_identifier: std::option::Option<std::string::String>,
     /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
-    pub scheduling_priority: i32,
+    pub scheduling_priority: std::option::Option<i32>,
     /// <p>A list of job attempts associated with this job.</p>
     pub attempts: std::option::Option<std::vec::Vec<crate::model::AttemptDetail>>,
     /// <p>A short, human-readable string to provide additional details about the current status of the job.</p>
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <code>SubmitJob</code> was called). For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
-    pub created_at: i64,
+    pub created_at: std::option::Option<i64>,
     /// <p>The retry strategy to use for this job if an attempt fails.</p>
     pub retry_strategy: std::option::Option<crate::model::RetryStrategy>,
     /// <p>The Unix timestamp (in milliseconds) for when the job was started (when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter isn't provided for child jobs of array jobs or multi-node parallel jobs.</p>
-    pub started_at: i64,
+    pub started_at: std::option::Option<i64>,
     /// <p>The Unix timestamp (in milliseconds) for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
-    pub stopped_at: i64,
+    pub stopped_at: std::option::Option<i64>,
     /// <p>A list of job IDs that this job depends on.</p>
     pub depends_on: std::option::Option<std::vec::Vec<crate::model::JobDependency>>,
     /// <p>The job definition that's used by this job.</p>
@@ -5844,7 +5846,7 @@ pub struct JobDetail {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
-    pub propagate_tags: bool,
+    pub propagate_tags: std::option::Option<bool>,
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
     pub platform_capabilities: std::option::Option<std::vec::Vec<crate::model::PlatformCapability>>,
 }
@@ -5876,7 +5878,7 @@ impl JobDetail {
         self.share_identifier.as_deref()
     }
     /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
-    pub fn scheduling_priority(&self) -> i32 {
+    pub fn scheduling_priority(&self) -> std::option::Option<i32> {
         self.scheduling_priority
     }
     /// <p>A list of job attempts associated with this job.</p>
@@ -5888,7 +5890,7 @@ impl JobDetail {
         self.status_reason.as_deref()
     }
     /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <code>SubmitJob</code> was called). For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
-    pub fn created_at(&self) -> i64 {
+    pub fn created_at(&self) -> std::option::Option<i64> {
         self.created_at
     }
     /// <p>The retry strategy to use for this job if an attempt fails.</p>
@@ -5896,11 +5898,11 @@ impl JobDetail {
         self.retry_strategy.as_ref()
     }
     /// <p>The Unix timestamp (in milliseconds) for when the job was started (when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter isn't provided for child jobs of array jobs or multi-node parallel jobs.</p>
-    pub fn started_at(&self) -> i64 {
+    pub fn started_at(&self) -> std::option::Option<i64> {
         self.started_at
     }
     /// <p>The Unix timestamp (in milliseconds) for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
-    pub fn stopped_at(&self) -> i64 {
+    pub fn stopped_at(&self) -> std::option::Option<i64> {
         self.stopped_at
     }
     /// <p>A list of job IDs that this job depends on.</p>
@@ -5948,7 +5950,7 @@ impl JobDetail {
         self.tags.as_ref()
     }
     /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
-    pub fn propagate_tags(&self) -> bool {
+    pub fn propagate_tags(&self) -> std::option::Option<bool> {
         self.propagate_tags
     }
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
@@ -6363,13 +6365,13 @@ pub mod job_detail {
                 job_queue: self.job_queue,
                 status: self.status,
                 share_identifier: self.share_identifier,
-                scheduling_priority: self.scheduling_priority.unwrap_or_default(),
+                scheduling_priority: self.scheduling_priority,
                 attempts: self.attempts,
                 status_reason: self.status_reason,
-                created_at: self.created_at.unwrap_or_default(),
+                created_at: self.created_at,
                 retry_strategy: self.retry_strategy,
-                started_at: self.started_at.unwrap_or_default(),
-                stopped_at: self.stopped_at.unwrap_or_default(),
+                started_at: self.started_at,
+                stopped_at: self.stopped_at,
                 depends_on: self.depends_on,
                 job_definition: self.job_definition,
                 parameters: self.parameters,
@@ -6379,7 +6381,7 @@ pub mod job_detail {
                 array_properties: self.array_properties,
                 timeout: self.timeout,
                 tags: self.tags,
-                propagate_tags: self.propagate_tags.unwrap_or_default(),
+                propagate_tags: self.propagate_tags,
                 platform_capabilities: self.platform_capabilities,
             }
         }
@@ -6399,9 +6401,9 @@ pub struct ArrayPropertiesDetail {
     /// <p>A summary of the number of array job children in each available job status. This parameter is returned for parent array jobs.</p>
     pub status_summary: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
     /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
-    pub size: i32,
+    pub size: std::option::Option<i32>,
     /// <p>The job index within the array that's associated with this job. This parameter is returned for array job children.</p>
-    pub index: i32,
+    pub index: std::option::Option<i32>,
 }
 impl ArrayPropertiesDetail {
     /// <p>A summary of the number of array job children in each available job status. This parameter is returned for parent array jobs.</p>
@@ -6411,11 +6413,11 @@ impl ArrayPropertiesDetail {
         self.status_summary.as_ref()
     }
     /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
-    pub fn size(&self) -> i32 {
+    pub fn size(&self) -> std::option::Option<i32> {
         self.size
     }
     /// <p>The job index within the array that's associated with this job. This parameter is returned for array job children.</p>
-    pub fn index(&self) -> i32 {
+    pub fn index(&self) -> std::option::Option<i32> {
         self.index
     }
 }
@@ -6483,8 +6485,8 @@ pub mod array_properties_detail {
         pub fn build(self) -> crate::model::ArrayPropertiesDetail {
             crate::model::ArrayPropertiesDetail {
                 status_summary: self.status_summary,
-                size: self.size.unwrap_or_default(),
-                index: self.index.unwrap_or_default(),
+                size: self.size,
+                index: self.index,
             }
         }
     }
@@ -6501,17 +6503,17 @@ impl ArrayPropertiesDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeDetails {
     /// <p>The node index for the node. Node index numbering begins at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
-    pub node_index: i32,
+    pub node_index: std::option::Option<i32>,
     /// <p>Specifies whether the current node is the main node for a multi-node parallel job.</p>
-    pub is_main_node: bool,
+    pub is_main_node: std::option::Option<bool>,
 }
 impl NodeDetails {
     /// <p>The node index for the node. Node index numbering begins at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
-    pub fn node_index(&self) -> i32 {
+    pub fn node_index(&self) -> std::option::Option<i32> {
         self.node_index
     }
     /// <p>Specifies whether the current node is the main node for a multi-node parallel job.</p>
-    pub fn is_main_node(&self) -> bool {
+    pub fn is_main_node(&self) -> std::option::Option<bool> {
         self.is_main_node
     }
 }
@@ -6556,8 +6558,8 @@ pub mod node_details {
         /// Consumes the builder and constructs a [`NodeDetails`](crate::model::NodeDetails)
         pub fn build(self) -> crate::model::NodeDetails {
             crate::model::NodeDetails {
-                node_index: self.node_index.unwrap_or_default(),
-                is_main_node: self.is_main_node.unwrap_or_default(),
+                node_index: self.node_index,
+                is_main_node: self.is_main_node,
             }
         }
     }
@@ -6578,9 +6580,9 @@ pub struct ContainerDetail {
     /// <p>The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required but can be specified in several places. It must be specified for each node at least once.</p> <note>
     /// <p>This parameter isn't applicable to jobs that run on Fargate resources. For jobs that run on Fargate resources, you must specify the vCPU requirement for the job using <code>resourceRequirements</code>.</p>
     /// </note>
-    pub vcpus: i32,
-    /// <p>For jobs run on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see <code>resourceRequirements</code>.</p>
-    pub memory: i32,
+    pub vcpus: std::option::Option<i32>,
+    /// <p>For jobs running on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see <code>resourceRequirements</code>.</p>
+    pub memory: std::option::Option<i32>,
     /// <p>The command that's passed to the container.</p>
     pub command: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) associated with the job upon execution.</p>
@@ -6596,7 +6598,7 @@ pub struct ContainerDetail {
     /// <p>The mount points for data volumes in your container.</p>
     pub mount_points: std::option::Option<std::vec::Vec<crate::model::MountPoint>>,
     /// <p>When this parameter is true, the container is given read-only access to its root file system. This parameter maps to <code>ReadonlyRootfs</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--read-only</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.</p>
-    pub readonly_root_filesystem: bool,
+    pub readonly_root_filesystem: std::option::Option<bool>,
     /// <p>A list of <code>ulimit</code> values to set in the container. This parameter maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources.</p>
     /// </note>
@@ -6604,11 +6606,11 @@ pub struct ContainerDetail {
     /// <p>When this parameter is true, the container is given elevated permissions on the host container instance (similar to the <code>root</code> user). The default value is false.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or specified as false.</p>
     /// </note>
-    pub privileged: bool,
+    pub privileged: std::option::Option<bool>,
     /// <p>The user name to use inside the container. This parameter maps to <code>User</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
     pub user: std::option::Option<std::string::String>,
     /// <p>The exit code to return upon completion.</p>
-    pub exit_code: i32,
+    pub exit_code: std::option::Option<i32>,
     /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
     pub reason: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the container instance that the container is running on.</p>
@@ -6652,11 +6654,11 @@ impl ContainerDetail {
     /// <p>The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required but can be specified in several places. It must be specified for each node at least once.</p> <note>
     /// <p>This parameter isn't applicable to jobs that run on Fargate resources. For jobs that run on Fargate resources, you must specify the vCPU requirement for the job using <code>resourceRequirements</code>.</p>
     /// </note>
-    pub fn vcpus(&self) -> i32 {
+    pub fn vcpus(&self) -> std::option::Option<i32> {
         self.vcpus
     }
-    /// <p>For jobs run on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see <code>resourceRequirements</code>.</p>
-    pub fn memory(&self) -> i32 {
+    /// <p>For jobs running on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see <code>resourceRequirements</code>.</p>
+    pub fn memory(&self) -> std::option::Option<i32> {
         self.memory
     }
     /// <p>The command that's passed to the container.</p>
@@ -6686,7 +6688,7 @@ impl ContainerDetail {
         self.mount_points.as_deref()
     }
     /// <p>When this parameter is true, the container is given read-only access to its root file system. This parameter maps to <code>ReadonlyRootfs</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--read-only</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.</p>
-    pub fn readonly_root_filesystem(&self) -> bool {
+    pub fn readonly_root_filesystem(&self) -> std::option::Option<bool> {
         self.readonly_root_filesystem
     }
     /// <p>A list of <code>ulimit</code> values to set in the container. This parameter maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
@@ -6698,7 +6700,7 @@ impl ContainerDetail {
     /// <p>When this parameter is true, the container is given elevated permissions on the host container instance (similar to the <code>root</code> user). The default value is false.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or specified as false.</p>
     /// </note>
-    pub fn privileged(&self) -> bool {
+    pub fn privileged(&self) -> std::option::Option<bool> {
         self.privileged
     }
     /// <p>The user name to use inside the container. This parameter maps to <code>User</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
@@ -6706,7 +6708,7 @@ impl ContainerDetail {
         self.user.as_deref()
     }
     /// <p>The exit code to return upon completion.</p>
-    pub fn exit_code(&self) -> i32 {
+    pub fn exit_code(&self) -> std::option::Option<i32> {
         self.exit_code
     }
     /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
@@ -6868,12 +6870,12 @@ pub mod container_detail {
             self.vcpus = input;
             self
         }
-        /// <p>For jobs run on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see <code>resourceRequirements</code>.</p>
+        /// <p>For jobs running on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see <code>resourceRequirements</code>.</p>
         pub fn memory(mut self, input: i32) -> Self {
             self.memory = Some(input);
             self
         }
-        /// <p>For jobs run on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see <code>resourceRequirements</code>.</p>
+        /// <p>For jobs running on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see <code>resourceRequirements</code>.</p>
         pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
             self.memory = input;
             self
@@ -7239,19 +7241,19 @@ pub mod container_detail {
         pub fn build(self) -> crate::model::ContainerDetail {
             crate::model::ContainerDetail {
                 image: self.image,
-                vcpus: self.vcpus.unwrap_or_default(),
-                memory: self.memory.unwrap_or_default(),
+                vcpus: self.vcpus,
+                memory: self.memory,
                 command: self.command,
                 job_role_arn: self.job_role_arn,
                 execution_role_arn: self.execution_role_arn,
                 volumes: self.volumes,
                 environment: self.environment,
                 mount_points: self.mount_points,
-                readonly_root_filesystem: self.readonly_root_filesystem.unwrap_or_default(),
+                readonly_root_filesystem: self.readonly_root_filesystem,
                 ulimits: self.ulimits,
-                privileged: self.privileged.unwrap_or_default(),
+                privileged: self.privileged,
                 user: self.user,
-                exit_code: self.exit_code.unwrap_or_default(),
+                exit_code: self.exit_code,
                 reason: self.reason,
                 container_instance_arn: self.container_instance_arn,
                 task_arn: self.task_arn,
@@ -7380,9 +7382,9 @@ pub struct AttemptDetail {
     /// <p>Details about the container in this job attempt.</p>
     pub container: std::option::Option<crate::model::AttemptContainerDetail>,
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
-    pub started_at: i64,
+    pub started_at: std::option::Option<i64>,
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was stopped (when the attempt transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
-    pub stopped_at: i64,
+    pub stopped_at: std::option::Option<i64>,
     /// <p>A short, human-readable string to provide additional details about the current status of the job attempt.</p>
     pub status_reason: std::option::Option<std::string::String>,
 }
@@ -7392,11 +7394,11 @@ impl AttemptDetail {
         self.container.as_ref()
     }
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
-    pub fn started_at(&self) -> i64 {
+    pub fn started_at(&self) -> std::option::Option<i64> {
         self.started_at
     }
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was stopped (when the attempt transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
-    pub fn stopped_at(&self) -> i64 {
+    pub fn stopped_at(&self) -> std::option::Option<i64> {
         self.stopped_at
     }
     /// <p>A short, human-readable string to provide additional details about the current status of the job attempt.</p>
@@ -7476,8 +7478,8 @@ pub mod attempt_detail {
         pub fn build(self) -> crate::model::AttemptDetail {
             crate::model::AttemptDetail {
                 container: self.container,
-                started_at: self.started_at.unwrap_or_default(),
-                stopped_at: self.stopped_at.unwrap_or_default(),
+                started_at: self.started_at,
+                stopped_at: self.stopped_at,
                 status_reason: self.status_reason,
             }
         }
@@ -7499,7 +7501,7 @@ pub struct AttemptContainerDetail {
     /// <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the job attempt. Each container attempt receives a task ARN when they reach the <code>STARTING</code> status.</p>
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The exit code for the job attempt. A non-zero exit code is considered a failure.</p>
-    pub exit_code: i32,
+    pub exit_code: std::option::Option<i32>,
     /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
     pub reason: std::option::Option<std::string::String>,
     /// <p>The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the <code>RUNNING</code> status.</p>
@@ -7517,7 +7519,7 @@ impl AttemptContainerDetail {
         self.task_arn.as_deref()
     }
     /// <p>The exit code for the job attempt. A non-zero exit code is considered a failure.</p>
-    pub fn exit_code(&self) -> i32 {
+    pub fn exit_code(&self) -> std::option::Option<i32> {
         self.exit_code
     }
     /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
@@ -7640,7 +7642,7 @@ pub mod attempt_container_detail {
             crate::model::AttemptContainerDetail {
                 container_instance_arn: self.container_instance_arn,
                 task_arn: self.task_arn,
-                exit_code: self.exit_code.unwrap_or_default(),
+                exit_code: self.exit_code,
                 reason: self.reason,
                 log_stream_name: self.log_stream_name,
                 network_interfaces: self.network_interfaces,
@@ -7672,7 +7674,7 @@ pub struct JobQueueDetail {
     /// <p>A short, human-readable string to provide additional details about the current status of the job queue.</p>
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p>
-    pub priority: i32,
+    pub priority: std::option::Option<i32>,
     /// <p>The compute environments that are attached to the job queue and the order that job placement is preferred. Compute environments are selected for job placement in ascending order.</p>
     pub compute_environment_order:
         std::option::Option<std::vec::Vec<crate::model::ComputeEnvironmentOrder>>,
@@ -7706,7 +7708,7 @@ impl JobQueueDetail {
         self.status_reason.as_deref()
     }
     /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p>
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
     /// <p>The compute environments that are attached to the job queue and the order that job placement is preferred. Compute environments are selected for job placement in ascending order.</p>
@@ -7896,7 +7898,7 @@ pub mod job_queue_detail {
                 scheduling_policy_arn: self.scheduling_policy_arn,
                 status: self.status,
                 status_reason: self.status_reason,
-                priority: self.priority.unwrap_or_default(),
+                priority: self.priority,
                 compute_environment_order: self.compute_environment_order,
                 tags: self.tags,
             }
@@ -7992,13 +7994,13 @@ pub struct JobDefinition {
     /// <p>The Amazon Resource Name (ARN) for the job definition.</p>
     pub job_definition_arn: std::option::Option<std::string::String>,
     /// <p>The revision of the job definition.</p>
-    pub revision: i32,
+    pub revision: std::option::Option<i32>,
     /// <p>The status of the job definition.</p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The type of job definition, either <code>container</code> or <code>multinode</code>. If the job is run on Fargate resources, then <code>multinode</code> isn't supported. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The scheduling priority of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
-    pub scheduling_priority: i32,
+    pub scheduling_priority: std::option::Option<i32>,
     /// <p>Default parameters or parameter substitution placeholders that are set in the job definition. Parameters are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition. For more information about specifying parameters, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition Parameters</a> in the <i>Batch User Guide</i>.</p>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -8016,7 +8018,7 @@ pub struct JobDefinition {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
-    pub propagate_tags: bool,
+    pub propagate_tags: std::option::Option<bool>,
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
     pub platform_capabilities: std::option::Option<std::vec::Vec<crate::model::PlatformCapability>>,
 }
@@ -8030,7 +8032,7 @@ impl JobDefinition {
         self.job_definition_arn.as_deref()
     }
     /// <p>The revision of the job definition.</p>
-    pub fn revision(&self) -> i32 {
+    pub fn revision(&self) -> std::option::Option<i32> {
         self.revision
     }
     /// <p>The status of the job definition.</p>
@@ -8042,7 +8044,7 @@ impl JobDefinition {
         self.r#type.as_deref()
     }
     /// <p>The scheduling priority of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
-    pub fn scheduling_priority(&self) -> i32 {
+    pub fn scheduling_priority(&self) -> std::option::Option<i32> {
         self.scheduling_priority
     }
     /// <p>Default parameters or parameter substitution placeholders that are set in the job definition. Parameters are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition. For more information about specifying parameters, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition Parameters</a> in the <i>Batch User Guide</i>.</p>
@@ -8078,7 +8080,7 @@ impl JobDefinition {
         self.tags.as_ref()
     }
     /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
-    pub fn propagate_tags(&self) -> bool {
+    pub fn propagate_tags(&self) -> std::option::Option<bool> {
         self.propagate_tags
     }
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
@@ -8338,17 +8340,17 @@ pub mod job_definition {
             crate::model::JobDefinition {
                 job_definition_name: self.job_definition_name,
                 job_definition_arn: self.job_definition_arn,
-                revision: self.revision.unwrap_or_default(),
+                revision: self.revision,
                 status: self.status,
                 r#type: self.r#type,
-                scheduling_priority: self.scheduling_priority.unwrap_or_default(),
+                scheduling_priority: self.scheduling_priority,
                 parameters: self.parameters,
                 retry_strategy: self.retry_strategy,
                 container_properties: self.container_properties,
                 timeout: self.timeout,
                 node_properties: self.node_properties,
                 tags: self.tags,
-                propagate_tags: self.propagate_tags.unwrap_or_default(),
+                propagate_tags: self.propagate_tags,
                 platform_capabilities: self.platform_capabilities,
             }
         }
@@ -8370,7 +8372,7 @@ pub struct ComputeEnvironmentDetail {
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
     pub compute_environment_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of VCPUs expected to be used for an unmanaged compute environment.</p>
-    pub unmanagedv_cpus: i32,
+    pub unmanagedv_cpus: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by the compute environment.</p>
     pub ecs_cluster_arn: std::option::Option<std::string::String>,
     /// <p>The tags applied to the compute environment.</p>
@@ -8401,7 +8403,7 @@ impl ComputeEnvironmentDetail {
         self.compute_environment_arn.as_deref()
     }
     /// <p>The maximum number of VCPUs expected to be used for an unmanaged compute environment.</p>
-    pub fn unmanagedv_cpus(&self) -> i32 {
+    pub fn unmanagedv_cpus(&self) -> std::option::Option<i32> {
         self.unmanagedv_cpus
     }
     /// <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by the compute environment.</p>
@@ -8629,7 +8631,7 @@ pub mod compute_environment_detail {
             crate::model::ComputeEnvironmentDetail {
                 compute_environment_name: self.compute_environment_name,
                 compute_environment_arn: self.compute_environment_arn,
-                unmanagedv_cpus: self.unmanagedv_cpus.unwrap_or_default(),
+                unmanagedv_cpus: self.unmanagedv_cpus,
                 ecs_cluster_arn: self.ecs_cluster_arn,
                 tags: self.tags,
                 r#type: self.r#type,
@@ -8684,15 +8686,15 @@ pub struct ComputeResource {
     /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    pub minv_cpus: i32,
+    pub minv_cpus: std::option::Option<i32>,
     /// <p>The maximum number of Amazon EC2 vCPUs that a compute environment can reach.</p> <note>
     /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
     /// </note>
-    pub maxv_cpus: i32,
+    pub maxv_cpus: std::option::Option<i32>,
     /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values, based on job queue demand.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    pub desiredv_cpus: i32,
+    pub desiredv_cpus: std::option::Option<i32>,
     /// <p>The instances types that can be launched. You can specify instance families to launch any instance type within those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes within a family (such as <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select instance types (from the C4, M4, and R4 instance families) that match the demand of your job queues.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
     /// </note> <note>
@@ -8732,7 +8734,7 @@ pub struct ComputeResource {
     /// <p>The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price and never more than your maximum percentage. If you leave this field empty, the default value is 100% of the On-Demand price.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    pub bid_percentage: i32,
+    pub bid_percentage: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code> compute environment. This role is required if the allocation strategy set to <code>BEST_FIT</code> or if the allocation strategy isn't specified. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet Role</a> in the <i>Batch User Guide</i>.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
     /// </note> <important>
@@ -8785,19 +8787,19 @@ impl ComputeResource {
     /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    pub fn minv_cpus(&self) -> i32 {
+    pub fn minv_cpus(&self) -> std::option::Option<i32> {
         self.minv_cpus
     }
     /// <p>The maximum number of Amazon EC2 vCPUs that a compute environment can reach.</p> <note>
     /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
     /// </note>
-    pub fn maxv_cpus(&self) -> i32 {
+    pub fn maxv_cpus(&self) -> std::option::Option<i32> {
         self.maxv_cpus
     }
     /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values, based on job queue demand.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    pub fn desiredv_cpus(&self) -> i32 {
+    pub fn desiredv_cpus(&self) -> std::option::Option<i32> {
         self.desiredv_cpus
     }
     /// <p>The instances types that can be launched. You can specify instance families to launch any instance type within those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes within a family (such as <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select instance types (from the C4, M4, and R4 instance families) that match the demand of your job queues.</p> <note>
@@ -8857,7 +8859,7 @@ impl ComputeResource {
     /// <p>The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price and never more than your maximum percentage. If you leave this field empty, the default value is 100% of the On-Demand price.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be specified.</p>
     /// </note>
-    pub fn bid_percentage(&self) -> i32 {
+    pub fn bid_percentage(&self) -> std::option::Option<i32> {
         self.bid_percentage
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code> compute environment. This role is required if the allocation strategy set to <code>BEST_FIT</code> or if the allocation strategy isn't specified. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet Role</a> in the <i>Batch User Guide</i>.</p> <note>
@@ -9296,9 +9298,9 @@ pub mod compute_resource {
             crate::model::ComputeResource {
                 r#type: self.r#type,
                 allocation_strategy: self.allocation_strategy,
-                minv_cpus: self.minv_cpus.unwrap_or_default(),
-                maxv_cpus: self.maxv_cpus.unwrap_or_default(),
-                desiredv_cpus: self.desiredv_cpus.unwrap_or_default(),
+                minv_cpus: self.minv_cpus,
+                maxv_cpus: self.maxv_cpus,
+                desiredv_cpus: self.desiredv_cpus,
                 instance_types: self.instance_types,
                 image_id: self.image_id,
                 subnets: self.subnets,
@@ -9307,7 +9309,7 @@ pub mod compute_resource {
                 instance_role: self.instance_role,
                 tags: self.tags,
                 placement_group: self.placement_group,
-                bid_percentage: self.bid_percentage.unwrap_or_default(),
+                bid_percentage: self.bid_percentage,
                 spot_iam_fleet_role: self.spot_iam_fleet_role,
                 launch_template: self.launch_template,
                 ec2_configuration: self.ec2_configuration,

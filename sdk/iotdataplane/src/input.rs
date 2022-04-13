@@ -843,13 +843,13 @@ pub mod publish_input {
             self
         }
         /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
-        /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
+        /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
         pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
             self.payload = Some(input);
             self
         }
         /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
-        /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
+        /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
         pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.payload = input;
             self
@@ -1242,7 +1242,7 @@ pub struct PublishInput {
     /// <p>Default value: <code>false</code> </p>
     pub retain: bool,
     /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
-    /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
+    /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
     pub payload: std::option::Option<aws_smithy_types::Blob>,
 }
 impl PublishInput {
@@ -1262,7 +1262,7 @@ impl PublishInput {
         self.retain
     }
     /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
-    /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
+    /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
     pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.payload.as_ref()
     }

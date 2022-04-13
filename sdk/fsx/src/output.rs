@@ -57,11 +57,11 @@ impl UpdateVolumeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStorageVirtualMachineOutput {
-    /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuraton.</p>
+    /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.</p>
     pub storage_virtual_machine: std::option::Option<crate::model::StorageVirtualMachine>,
 }
 impl UpdateStorageVirtualMachineOutput {
-    /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuraton.</p>
+    /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.</p>
     pub fn storage_virtual_machine(
         &self,
     ) -> std::option::Option<&crate::model::StorageVirtualMachine> {
@@ -85,7 +85,7 @@ pub mod update_storage_virtual_machine_output {
             std::option::Option<crate::model::StorageVirtualMachine>,
     }
     impl Builder {
-        /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuraton.</p>
+        /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.</p>
         pub fn storage_virtual_machine(
             mut self,
             input: crate::model::StorageVirtualMachine,
@@ -93,7 +93,7 @@ pub mod update_storage_virtual_machine_output {
             self.storage_virtual_machine = Some(input);
             self
         }
-        /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuraton.</p>
+        /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.</p>
         pub fn set_storage_virtual_machine(
             mut self,
             input: std::option::Option<crate::model::StorageVirtualMachine>,

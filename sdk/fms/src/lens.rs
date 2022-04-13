@@ -49,6 +49,16 @@ pub(crate) fn reflens_structure_crate_output_list_protocols_lists_output_next_to
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_third_party_firewall_firewall_policies_output_next_token(
+    input: &crate::output::ListThirdPartyFirewallFirewallPoliciesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_list_apps_lists_output_apps_lists(
     input: crate::output::ListAppsListsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::AppsListDataSummary>> {
@@ -93,6 +103,16 @@ pub(crate) fn lens_structure_crate_output_list_protocols_lists_output_protocols_
     input: crate::output::ListProtocolsListsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::ProtocolsListDataSummary>> {
     let input = match input.protocols_lists {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_third_party_firewall_firewall_policies_output_third_party_firewall_firewall_policies(
+    input: crate::output::ListThirdPartyFirewallFirewallPoliciesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ThirdPartyFirewallFirewallPolicy>> {
+    let input = match input.third_party_firewall_firewall_policies {
         None => return None,
         Some(t) => t,
     };

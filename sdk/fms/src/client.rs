@@ -101,6 +101,16 @@ impl Client {
     pub fn associate_admin_account(&self) -> fluent_builders::AssociateAdminAccount {
         fluent_builders::AssociateAdminAccount::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`AssociateThirdPartyFirewall`](crate::client::fluent_builders::AssociateThirdPartyFirewall) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`third_party_firewall(ThirdPartyFirewall)`](crate::client::fluent_builders::AssociateThirdPartyFirewall::third_party_firewall) / [`set_third_party_firewall(Option<ThirdPartyFirewall>)`](crate::client::fluent_builders::AssociateThirdPartyFirewall::set_third_party_firewall): <p>The name of the third-party firewall vendor.</p>
+    /// - On success, responds with [`AssociateThirdPartyFirewallOutput`](crate::output::AssociateThirdPartyFirewallOutput) with field(s):
+    ///   - [`third_party_firewall_status(Option<ThirdPartyFirewallAssociationStatus>)`](crate::output::AssociateThirdPartyFirewallOutput::third_party_firewall_status): <p>The current status for setting a Firewall Manager policy administrator's account as an administrator of the third-party firewall tenant.</p>  <ul>   <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li>   <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li>   <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li>   <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>   <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<AssociateThirdPartyFirewallError>`](crate::error::AssociateThirdPartyFirewallError)
+    pub fn associate_third_party_firewall(&self) -> fluent_builders::AssociateThirdPartyFirewall {
+        fluent_builders::AssociateThirdPartyFirewall::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteAppsList`](crate::client::fluent_builders::DeleteAppsList) operation.
     ///
     /// - The fluent builder is configurable:
@@ -151,6 +161,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<DisassociateAdminAccountError>`](crate::error::DisassociateAdminAccountError)
     pub fn disassociate_admin_account(&self) -> fluent_builders::DisassociateAdminAccount {
         fluent_builders::DisassociateAdminAccount::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DisassociateThirdPartyFirewall`](crate::client::fluent_builders::DisassociateThirdPartyFirewall) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`third_party_firewall(ThirdPartyFirewall)`](crate::client::fluent_builders::DisassociateThirdPartyFirewall::third_party_firewall) / [`set_third_party_firewall(Option<ThirdPartyFirewall>)`](crate::client::fluent_builders::DisassociateThirdPartyFirewall::set_third_party_firewall): <p>The name of the third-party firewall vendor.</p>
+    /// - On success, responds with [`DisassociateThirdPartyFirewallOutput`](crate::output::DisassociateThirdPartyFirewallOutput) with field(s):
+    ///   - [`third_party_firewall_status(Option<ThirdPartyFirewallAssociationStatus>)`](crate::output::DisassociateThirdPartyFirewallOutput::third_party_firewall_status): <p>The current status for the disassociation of a Firewall Manager administrators account with a third-party firewall.</p>
+    /// - On failure, responds with [`SdkError<DisassociateThirdPartyFirewallError>`](crate::error::DisassociateThirdPartyFirewallError)
+    pub fn disassociate_third_party_firewall(
+        &self,
+    ) -> fluent_builders::DisassociateThirdPartyFirewall {
+        fluent_builders::DisassociateThirdPartyFirewall::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetAdminAccount`](crate::client::fluent_builders::GetAdminAccount) operation.
     ///
@@ -237,6 +259,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetProtocolsListError>`](crate::error::GetProtocolsListError)
     pub fn get_protocols_list(&self) -> fluent_builders::GetProtocolsList {
         fluent_builders::GetProtocolsList::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetThirdPartyFirewallAssociationStatus`](crate::client::fluent_builders::GetThirdPartyFirewallAssociationStatus) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`third_party_firewall(ThirdPartyFirewall)`](crate::client::fluent_builders::GetThirdPartyFirewallAssociationStatus::third_party_firewall) / [`set_third_party_firewall(Option<ThirdPartyFirewall>)`](crate::client::fluent_builders::GetThirdPartyFirewallAssociationStatus::set_third_party_firewall): <p>The name of the third-party firewall vendor.</p>
+    /// - On success, responds with [`GetThirdPartyFirewallAssociationStatusOutput`](crate::output::GetThirdPartyFirewallAssociationStatusOutput) with field(s):
+    ///   - [`third_party_firewall_status(Option<ThirdPartyFirewallAssociationStatus>)`](crate::output::GetThirdPartyFirewallAssociationStatusOutput::third_party_firewall_status): <p>The current status for setting a Firewall Manager policy administrators account as an administrator of the third-party firewall tenant.</p>  <ul>   <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li>   <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li>   <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li>   <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>   <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>  </ul>
+    ///   - [`marketplace_onboarding_status(Option<MarketplaceSubscriptionOnboardingStatus>)`](crate::output::GetThirdPartyFirewallAssociationStatusOutput::marketplace_onboarding_status): <p>The status for subscribing to the third-party firewall vendor in the AWS Marketplace.</p>  <ul>   <li> <p> <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the third-party firewall service in the AWS Marketplace.</p> </li>   <li> <p> <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the process of subscribing to the third-party firewall service in the Amazon Web Services Marketplace, but doesn't yet have an active subscription.</p> </li>   <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has an active subscription to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<GetThirdPartyFirewallAssociationStatusError>`](crate::error::GetThirdPartyFirewallAssociationStatusError)
+    pub fn get_third_party_firewall_association_status(
+        &self,
+    ) -> fluent_builders::GetThirdPartyFirewallAssociationStatus {
+        fluent_builders::GetThirdPartyFirewallAssociationStatus::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetViolationDetails`](crate::client::fluent_builders::GetViolationDetails) operation.
     ///
@@ -328,6 +363,22 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListThirdPartyFirewallFirewallPolicies`](crate::client::fluent_builders::ListThirdPartyFirewallFirewallPolicies) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListThirdPartyFirewallFirewallPolicies::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`third_party_firewall(ThirdPartyFirewall)`](crate::client::fluent_builders::ListThirdPartyFirewallFirewallPolicies::third_party_firewall) / [`set_third_party_firewall(Option<ThirdPartyFirewall>)`](crate::client::fluent_builders::ListThirdPartyFirewallFirewallPolicies::set_third_party_firewall): <p>The name of the third-party firewall vendor.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListThirdPartyFirewallFirewallPolicies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListThirdPartyFirewallFirewallPolicies::set_next_token): <p>If the previous response included a <code>NextToken</code> element, the specified third-party firewall vendor is associated with more third-party firewall policies. To get more third-party firewall policies, submit another <code>ListThirdPartyFirewallFirewallPoliciesRequest</code> request.</p>  <p> For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response. If the previous response didn't include a <code>NextToken</code> element, there are no more third-party firewall policies to get. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListThirdPartyFirewallFirewallPolicies::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListThirdPartyFirewallFirewallPolicies::set_max_results): <p>The maximum number of third-party firewall policies that you want Firewall Manager to return. If the specified third-party firewall vendor is associated with more than <code>MaxResults</code> firewall policies, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first third-party firewall policies that Firewall Manager will return if you submit another request.</p>
+    /// - On success, responds with [`ListThirdPartyFirewallFirewallPoliciesOutput`](crate::output::ListThirdPartyFirewallFirewallPoliciesOutput) with field(s):
+    ///   - [`third_party_firewall_firewall_policies(Option<Vec<ThirdPartyFirewallFirewallPolicy>>)`](crate::output::ListThirdPartyFirewallFirewallPoliciesOutput::third_party_firewall_firewall_policies): <p>A list that contains one <code>ThirdPartyFirewallFirewallPolicies</code> element for each third-party firewall policies that the specified third-party firewall vendor is associated with. Each <code>ThirdPartyFirewallFirewallPolicies</code> element contains the firewall policy name and ID.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListThirdPartyFirewallFirewallPoliciesOutput::next_token): <p>The value that you will use for <code>NextToken</code> in the next <code>ListThirdPartyFirewallFirewallPolicies</code> request.</p>
+    /// - On failure, responds with [`SdkError<ListThirdPartyFirewallFirewallPoliciesError>`](crate::error::ListThirdPartyFirewallFirewallPoliciesError)
+    pub fn list_third_party_firewall_firewall_policies(
+        &self,
+    ) -> fluent_builders::ListThirdPartyFirewallFirewallPolicies {
+        fluent_builders::ListThirdPartyFirewallFirewallPolicies::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`PutAppsList`](crate::client::fluent_builders::PutAppsList) operation.
     ///
@@ -461,6 +512,62 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_admin_account(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `AssociateThirdPartyFirewall`.
+    ///
+    /// <p>Sets the Firewall Manager policy administrator as a tenant administrator of a third-party firewall service. A tenant is an instance of the third-party firewall service that's associated with your Amazon Web Services customer account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct AssociateThirdPartyFirewall {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::associate_third_party_firewall_input::Builder,
+    }
+    impl AssociateThirdPartyFirewall {
+        /// Creates a new `AssociateThirdPartyFirewall`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociateThirdPartyFirewallOutput,
+            aws_smithy_http::result::SdkError<crate::error::AssociateThirdPartyFirewallError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the third-party firewall vendor.</p>
+        pub fn third_party_firewall(mut self, input: crate::model::ThirdPartyFirewall) -> Self {
+            self.inner = self.inner.third_party_firewall(input);
+            self
+        }
+        /// <p>The name of the third-party firewall vendor.</p>
+        pub fn set_third_party_firewall(
+            mut self,
+            input: std::option::Option<crate::model::ThirdPartyFirewall>,
+        ) -> Self {
+            self.inner = self.inner.set_third_party_firewall(input);
             self
         }
     }
@@ -741,6 +848,62 @@ pub mod fluent_builders {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+    }
+    /// Fluent builder constructing a request to `DisassociateThirdPartyFirewall`.
+    ///
+    /// <p>Disassociates a Firewall Manager policy administrator from a third-party firewall tenant. When you call <code>DisassociateThirdPartyFirewall</code>, the third-party firewall vendor deletes all of the firewalls that are associated with the account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DisassociateThirdPartyFirewall {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::disassociate_third_party_firewall_input::Builder,
+    }
+    impl DisassociateThirdPartyFirewall {
+        /// Creates a new `DisassociateThirdPartyFirewall`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociateThirdPartyFirewallOutput,
+            aws_smithy_http::result::SdkError<crate::error::DisassociateThirdPartyFirewallError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the third-party firewall vendor.</p>
+        pub fn third_party_firewall(mut self, input: crate::model::ThirdPartyFirewall) -> Self {
+            self.inner = self.inner.third_party_firewall(input);
+            self
+        }
+        /// <p>The name of the third-party firewall vendor.</p>
+        pub fn set_third_party_firewall(
+            mut self,
+            input: std::option::Option<crate::model::ThirdPartyFirewall>,
+        ) -> Self {
+            self.inner = self.inner.set_third_party_firewall(input);
+            self
         }
     }
     /// Fluent builder constructing a request to `GetAdminAccount`.
@@ -1189,6 +1352,64 @@ pub mod fluent_builders {
         /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
         pub fn set_default_list(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_default_list(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetThirdPartyFirewallAssociationStatus`.
+    ///
+    /// <p>The onboarding status of a Firewall Manager admin account to third-party firewall vendor tenant.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetThirdPartyFirewallAssociationStatus {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_third_party_firewall_association_status_input::Builder,
+    }
+    impl GetThirdPartyFirewallAssociationStatus {
+        /// Creates a new `GetThirdPartyFirewallAssociationStatus`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetThirdPartyFirewallAssociationStatusOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::GetThirdPartyFirewallAssociationStatusError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the third-party firewall vendor.</p>
+        pub fn third_party_firewall(mut self, input: crate::model::ThirdPartyFirewall) -> Self {
+            self.inner = self.inner.third_party_firewall(input);
+            self
+        }
+        /// <p>The name of the third-party firewall vendor.</p>
+        pub fn set_third_party_firewall(
+            mut self,
+            input: std::option::Option<crate::model::ThirdPartyFirewall>,
+        ) -> Self {
+            self.inner = self.inner.set_third_party_firewall(input);
             self
         }
     }
@@ -1711,6 +1932,97 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListThirdPartyFirewallFirewallPolicies`.
+    ///
+    /// <p>Retrieves a list of all of the third-party firewall policies that are associated with the third-party firewall administrator's account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListThirdPartyFirewallFirewallPolicies {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_third_party_firewall_firewall_policies_input::Builder,
+    }
+    impl ListThirdPartyFirewallFirewallPolicies {
+        /// Creates a new `ListThirdPartyFirewallFirewallPolicies`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListThirdPartyFirewallFirewallPoliciesOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListThirdPartyFirewallFirewallPoliciesError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListThirdPartyFirewallFirewallPoliciesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListThirdPartyFirewallFirewallPoliciesPaginator {
+            crate::paginator::ListThirdPartyFirewallFirewallPoliciesPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The name of the third-party firewall vendor.</p>
+        pub fn third_party_firewall(mut self, input: crate::model::ThirdPartyFirewall) -> Self {
+            self.inner = self.inner.third_party_firewall(input);
+            self
+        }
+        /// <p>The name of the third-party firewall vendor.</p>
+        pub fn set_third_party_firewall(
+            mut self,
+            input: std::option::Option<crate::model::ThirdPartyFirewall>,
+        ) -> Self {
+            self.inner = self.inner.set_third_party_firewall(input);
+            self
+        }
+        /// <p>If the previous response included a <code>NextToken</code> element, the specified third-party firewall vendor is associated with more third-party firewall policies. To get more third-party firewall policies, submit another <code>ListThirdPartyFirewallFirewallPoliciesRequest</code> request.</p>
+        /// <p> For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response. If the previous response didn't include a <code>NextToken</code> element, there are no more third-party firewall policies to get. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If the previous response included a <code>NextToken</code> element, the specified third-party firewall vendor is associated with more third-party firewall policies. To get more third-party firewall policies, submit another <code>ListThirdPartyFirewallFirewallPoliciesRequest</code> request.</p>
+        /// <p> For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response. If the previous response didn't include a <code>NextToken</code> element, there are no more third-party firewall policies to get. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of third-party firewall policies that you want Firewall Manager to return. If the specified third-party firewall vendor is associated with more than <code>MaxResults</code> firewall policies, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first third-party firewall policies that Firewall Manager will return if you submit another request.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of third-party firewall policies that you want Firewall Manager to return. If the specified third-party firewall vendor is associated with more than <code>MaxResults</code> firewall policies, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first third-party firewall policies that Firewall Manager will return if you submit another request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }

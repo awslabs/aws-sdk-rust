@@ -671,16 +671,16 @@ impl AsRef<str> for UpdateResourceCollectionAction {
     }
 }
 
-/// <p>Describes the event sources.</p>
+/// <p>Information about the integration of DevOps Guru as consumer with another AWS service, such as AWS CodeGuru Profiler via EventBridge.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventSourcesConfig {
-    /// <p></p>
+    /// <p>Information about whether DevOps Guru is configured to consume recommendations which are generated from AWS CodeGuru Profiler.</p>
     pub amazon_code_guru_profiler:
         std::option::Option<crate::model::AmazonCodeGuruProfilerIntegration>,
 }
 impl EventSourcesConfig {
-    /// <p></p>
+    /// <p>Information about whether DevOps Guru is configured to consume recommendations which are generated from AWS CodeGuru Profiler.</p>
     pub fn amazon_code_guru_profiler(
         &self,
     ) -> std::option::Option<&crate::model::AmazonCodeGuruProfilerIntegration> {
@@ -704,7 +704,7 @@ pub mod event_sources_config {
             std::option::Option<crate::model::AmazonCodeGuruProfilerIntegration>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>Information about whether DevOps Guru is configured to consume recommendations which are generated from AWS CodeGuru Profiler.</p>
         pub fn amazon_code_guru_profiler(
             mut self,
             input: crate::model::AmazonCodeGuruProfilerIntegration,
@@ -712,7 +712,7 @@ pub mod event_sources_config {
             self.amazon_code_guru_profiler = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>Information about whether DevOps Guru is configured to consume recommendations which are generated from AWS CodeGuru Profiler.</p>
         pub fn set_amazon_code_guru_profiler(
             mut self,
             input: std::option::Option<crate::model::AmazonCodeGuruProfilerIntegration>,
@@ -735,15 +735,15 @@ impl EventSourcesConfig {
     }
 }
 
-/// <p>Information about your account's integration with Amazon CodeGuru Profiler.</p>
+/// <p>Information about your account's integration with Amazon CodeGuru Profiler. This returns whether DevOps Guru is configured to consume recommendations generated from Amazon CodeGuru Profiler.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AmazonCodeGuruProfilerIntegration {
-    /// <p>The status of the CodeGuru Profiler integration.</p>
+    /// <p>The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is enabled to consume recommendations that are generated from Amazon CodeGuru Profiler.</p>
     pub status: std::option::Option<crate::model::EventSourceOptInStatus>,
 }
 impl AmazonCodeGuruProfilerIntegration {
-    /// <p>The status of the CodeGuru Profiler integration.</p>
+    /// <p>The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is enabled to consume recommendations that are generated from Amazon CodeGuru Profiler.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::EventSourceOptInStatus> {
         self.status.as_ref()
     }
@@ -764,12 +764,12 @@ pub mod amazon_code_guru_profiler_integration {
         pub(crate) status: std::option::Option<crate::model::EventSourceOptInStatus>,
     }
     impl Builder {
-        /// <p>The status of the CodeGuru Profiler integration.</p>
+        /// <p>The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is enabled to consume recommendations that are generated from Amazon CodeGuru Profiler.</p>
         pub fn status(mut self, input: crate::model::EventSourceOptInStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the CodeGuru Profiler integration.</p>
+        /// <p>The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is enabled to consume recommendations that are generated from Amazon CodeGuru Profiler.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::EventSourceOptInStatus>,
@@ -4609,7 +4609,8 @@ impl ListInsightsOngoingStatusFilter {
 }
 
 /// <p> Information about a notification channel. A notification channel is used to notify you when DevOps Guru creates an insight. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
-/// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for cross account Amazon SNS topics</a>.</p>
+/// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. DevOps Guru only supports standard SNS topics. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for cross account Amazon SNS topics</a>.</p>
+/// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see Permissions for cross account Amazon SNS topics.</p>
 /// <p>If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions to the CMK. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4691,13 +4692,15 @@ impl NotificationChannel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationChannelConfig {
     /// <p> Information about a notification channel configured in DevOps Guru to send notifications when insights are created. </p>
-    /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for cross account Amazon SNS topics</a>.</p>
+    /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. DevOps Guru only supports standard SNS topics. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for cross account Amazon SNS topics</a>.</p>
+    /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see Permissions for cross account Amazon SNS topics.</p>
     /// <p>If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions to the CMK. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
     pub sns: std::option::Option<crate::model::SnsChannelConfig>,
 }
 impl NotificationChannelConfig {
     /// <p> Information about a notification channel configured in DevOps Guru to send notifications when insights are created. </p>
-    /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for cross account Amazon SNS topics</a>.</p>
+    /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. DevOps Guru only supports standard SNS topics. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for cross account Amazon SNS topics</a>.</p>
+    /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see Permissions for cross account Amazon SNS topics.</p>
     /// <p>If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions to the CMK. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
     pub fn sns(&self) -> std::option::Option<&crate::model::SnsChannelConfig> {
         self.sns.as_ref()
@@ -4720,14 +4723,16 @@ pub mod notification_channel_config {
     }
     impl Builder {
         /// <p> Information about a notification channel configured in DevOps Guru to send notifications when insights are created. </p>
-        /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for cross account Amazon SNS topics</a>.</p>
+        /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. DevOps Guru only supports standard SNS topics. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for cross account Amazon SNS topics</a>.</p>
+        /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see Permissions for cross account Amazon SNS topics.</p>
         /// <p>If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions to the CMK. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
         pub fn sns(mut self, input: crate::model::SnsChannelConfig) -> Self {
             self.sns = Some(input);
             self
         }
         /// <p> Information about a notification channel configured in DevOps Guru to send notifications when insights are created. </p>
-        /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for cross account Amazon SNS topics</a>.</p>
+        /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. DevOps Guru only supports standard SNS topics. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for cross account Amazon SNS topics</a>.</p>
+        /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see Permissions for cross account Amazon SNS topics.</p>
         /// <p>If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions to the CMK. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
         pub fn set_sns(
             mut self,
@@ -4750,7 +4755,8 @@ impl NotificationChannelConfig {
 }
 
 /// <p> Contains the Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic. </p>
-/// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for cross account Amazon SNS topics</a>.</p>
+/// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. DevOps Guru only supports standard SNS topics. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for cross account Amazon SNS topics</a>.</p>
+/// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see Permissions for cross account Amazon SNS topics.</p>
 /// <p>If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions to the CMK. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7889,7 +7895,7 @@ pub struct ProactiveAnomalySummary {
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
     /// <p> A threshold that was exceeded by behavior in analyzed resources. Exceeding this threshold is related to the anomalous behavior that generated this anomaly. </p>
     pub limit: std::option::Option<f64>,
-    /// <p>Returns the metadata of the source.</p>
+    /// <p>The metadata of the source which detects proactive anomalies.</p>
     pub source_metadata: std::option::Option<crate::model::AnomalySourceMetadata>,
     /// <p>Information about a resource in which DevOps Guru detected anomalous behavior.</p>
     pub anomaly_resources: std::option::Option<std::vec::Vec<crate::model::AnomalyResource>>,
@@ -7941,7 +7947,7 @@ impl ProactiveAnomalySummary {
     pub fn limit(&self) -> std::option::Option<f64> {
         self.limit
     }
-    /// <p>Returns the metadata of the source.</p>
+    /// <p>The metadata of the source which detects proactive anomalies.</p>
     pub fn source_metadata(&self) -> std::option::Option<&crate::model::AnomalySourceMetadata> {
         self.source_metadata.as_ref()
     }
@@ -8135,12 +8141,12 @@ pub mod proactive_anomaly_summary {
             self.limit = input;
             self
         }
-        /// <p>Returns the metadata of the source.</p>
+        /// <p>The metadata of the source which detects proactive anomalies.</p>
         pub fn source_metadata(mut self, input: crate::model::AnomalySourceMetadata) -> Self {
             self.source_metadata = Some(input);
             self
         }
-        /// <p>Returns the metadata of the source.</p>
+        /// <p>The metadata of the source which detects proactive anomalies.</p>
         pub fn set_source_metadata(
             mut self,
             input: std::option::Option<crate::model::AnomalySourceMetadata>,
@@ -8194,7 +8200,7 @@ impl ProactiveAnomalySummary {
     }
 }
 
-/// <p>Metadata about an anomaly. The anomaly is detected using analysis of the metric data  over a period of time</p>
+/// <p>Metadata about the detection source that generates proactive anomalies. The anomaly is detected using analysis of the metric data  over a period of time</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalySourceMetadata {

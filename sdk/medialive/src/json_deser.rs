@@ -899,6 +899,13 @@ pub fn deser_operation_crate_operation_delete_channel(
                             .transpose()?,
                         );
                     }
+                    "maintenance" => {
+                        builder = builder.set_maintenance(
+                            crate::json_deser::deser_structure_crate_model_maintenance_status(
+                                tokens,
+                            )?,
+                        );
+                    }
                     "name" => {
                         builder = builder.set_name(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -1433,6 +1440,13 @@ pub fn deser_operation_crate_operation_describe_channel(
                                     .map(|u| crate::model::LogLevel::from(u.as_ref()))
                             })
                             .transpose()?,
+                        );
+                    }
+                    "maintenance" => {
+                        builder = builder.set_maintenance(
+                            crate::json_deser::deser_structure_crate_model_maintenance_status(
+                                tokens,
+                            )?,
                         );
                     }
                     "name" => {
@@ -3047,6 +3061,13 @@ pub fn deser_operation_crate_operation_start_channel(
                             .transpose()?,
                         );
                     }
+                    "maintenance" => {
+                        builder = builder.set_maintenance(
+                            crate::json_deser::deser_structure_crate_model_maintenance_status(
+                                tokens,
+                            )?,
+                        );
+                    }
                     "name" => {
                         builder = builder.set_name(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -3319,6 +3340,13 @@ pub fn deser_operation_crate_operation_stop_channel(
                                     .map(|u| crate::model::LogLevel::from(u.as_ref()))
                             })
                             .transpose()?,
+                        );
+                    }
+                    "maintenance" => {
+                        builder = builder.set_maintenance(
+                            crate::json_deser::deser_structure_crate_model_maintenance_status(
+                                tokens,
+                            )?,
                         );
                     }
                     "name" => {
@@ -4231,6 +4259,11 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "maintenance" => {
+                                builder = builder.set_maintenance(
+                                    crate::json_deser::deser_structure_crate_model_maintenance_status(tokens)?
+                                );
+                            }
                             "name" => {
                                 builder = builder.set_name(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -5064,6 +5097,82 @@ where
                                             crate::model::InputResolution::from(u.as_ref())
                                         })
                                     })
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_maintenance_status<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::MaintenanceStatus>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::MaintenanceStatus::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "maintenanceDay" => {
+                                builder = builder.set_maintenance_day(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::MaintenanceDay::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "maintenanceDeadline" => {
+                                builder = builder.set_maintenance_deadline(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "maintenanceScheduledDate" => {
+                                builder = builder.set_maintenance_scheduled_date(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "maintenanceStartTime" => {
+                                builder = builder.set_maintenance_start_time(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                                 );
                             }
@@ -8633,6 +8742,11 @@ where
                                             .map(|u| crate::model::LogLevel::from(u.as_ref()))
                                     })
                                     .transpose()?,
+                                );
+                            }
+                            "maintenance" => {
+                                builder = builder.set_maintenance(
+                                    crate::json_deser::deser_structure_crate_model_maintenance_status(tokens)?
                                 );
                             }
                             "name" => {

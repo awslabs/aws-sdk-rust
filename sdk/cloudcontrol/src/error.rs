@@ -14,7 +14,7 @@ pub struct CancelResourceRequestError {
 pub enum CancelResourceRequestErrorKind {
     /// <p>The resource is currently being modified by another operation.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>A resource operation with the specified request token cannot be found.</p>
+    /// <p>A resource operation with the specified request token can't be found.</p>
     RequestTokenNotFoundException(crate::error::RequestTokenNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -121,11 +121,11 @@ pub enum CreateResourceErrorKind {
     /// <p>The resource with the name requested already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
     /// <p>The specified client token has already been used in another resource request.</p>
-    /// <p>It is best practice for client tokens to be unique for each resource operation request. However, client token expire after 36 hours.</p>
+    /// <p>It's best practice for client tokens to be unique for each resource operation request. However, client token expire after 36 hours.</p>
     ClientTokenConflictException(crate::error::ClientTokenConflictException),
     /// <p>Another resource operation is currently being performed on this resource.</p>
     ConcurrentOperationException(crate::error::ConcurrentOperationException),
-    /// <p>The resource handler has returned that the downstream service generated an error that does not map to any other handler error code.</p>
+    /// <p>The resource handler has returned that the downstream service generated an error that doesn't map to any other handler error code.</p>
     GeneralServiceException(crate::error::GeneralServiceException),
     /// <p>The resource handler has failed without a returning a more specific error code. This can include timeouts.</p>
     HandlerFailureException(crate::error::HandlerFailureException),
@@ -135,17 +135,17 @@ pub enum CreateResourceErrorKind {
     InvalidCredentialsException(crate::error::InvalidCredentialsException),
     /// <p>The resource handler has returned that invalid input from the user has generated a generic exception.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource handler has returned that the request could not be completed due to networking issues, such as a failure to receive a response from the server.</p>
+    /// <p>The resource handler has returned that the request couldn't be completed due to networking issues, such as a failure to receive a response from the server.</p>
     NetworkFailureException(crate::error::NetworkFailureException),
     /// <p>The resource handler has returned that the downstream resource failed to complete all of its ready-state checks.</p>
     NotStabilizedException(crate::error::NotStabilizedException),
-    /// <p>One or more properties included in this resource operation are defined as create-only, and therefore cannot be updated.</p>
+    /// <p>One or more properties included in this resource operation are defined as create-only, and therefore can't be updated.</p>
     NotUpdatableException(crate::error::NotUpdatableException),
-    /// <p>Cloud Control API has not received a valid response from the resource handler, due to a configuration error. This includes issues such as the resource handler returning an invalid response, or timing out.</p>
+    /// <p>Cloud Control API hasn't received a valid response from the resource handler, due to a configuration error. This includes issues such as the resource handler returning an invalid response, or timing out.</p>
     PrivateTypeException(crate::error::PrivateTypeException),
-    /// <p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and cannot be acted upon until that operation is finished.</p>
+    /// <p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and can't be acted upon until that operation is finished.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// <p>A resource with the specified identifier cannot be found.</p>
+    /// <p>A resource with the specified identifier can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The resource handler has returned that the downstream service returned an internal error, typically with a <code>5XX HTTP</code> status code.</p>
     ServiceInternalErrorException(crate::error::ServiceInternalErrorException),
@@ -153,9 +153,9 @@ pub enum CreateResourceErrorKind {
     ServiceLimitExceededException(crate::error::ServiceLimitExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The specified extension does not exist in the CloudFormation registry.</p>
+    /// <p>The specified extension doesn't exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
-    /// <p>The specified resource does not support this resource operation.</p>
+    /// <p>The specified resource doesn't support this resource operation.</p>
     UnsupportedActionException(crate::error::UnsupportedActionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -407,11 +407,11 @@ pub enum DeleteResourceErrorKind {
     /// <p>The resource with the name requested already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
     /// <p>The specified client token has already been used in another resource request.</p>
-    /// <p>It is best practice for client tokens to be unique for each resource operation request. However, client token expire after 36 hours.</p>
+    /// <p>It's best practice for client tokens to be unique for each resource operation request. However, client token expire after 36 hours.</p>
     ClientTokenConflictException(crate::error::ClientTokenConflictException),
     /// <p>Another resource operation is currently being performed on this resource.</p>
     ConcurrentOperationException(crate::error::ConcurrentOperationException),
-    /// <p>The resource handler has returned that the downstream service generated an error that does not map to any other handler error code.</p>
+    /// <p>The resource handler has returned that the downstream service generated an error that doesn't map to any other handler error code.</p>
     GeneralServiceException(crate::error::GeneralServiceException),
     /// <p>The resource handler has failed without a returning a more specific error code. This can include timeouts.</p>
     HandlerFailureException(crate::error::HandlerFailureException),
@@ -421,17 +421,17 @@ pub enum DeleteResourceErrorKind {
     InvalidCredentialsException(crate::error::InvalidCredentialsException),
     /// <p>The resource handler has returned that invalid input from the user has generated a generic exception.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource handler has returned that the request could not be completed due to networking issues, such as a failure to receive a response from the server.</p>
+    /// <p>The resource handler has returned that the request couldn't be completed due to networking issues, such as a failure to receive a response from the server.</p>
     NetworkFailureException(crate::error::NetworkFailureException),
     /// <p>The resource handler has returned that the downstream resource failed to complete all of its ready-state checks.</p>
     NotStabilizedException(crate::error::NotStabilizedException),
-    /// <p>One or more properties included in this resource operation are defined as create-only, and therefore cannot be updated.</p>
+    /// <p>One or more properties included in this resource operation are defined as create-only, and therefore can't be updated.</p>
     NotUpdatableException(crate::error::NotUpdatableException),
-    /// <p>Cloud Control API has not received a valid response from the resource handler, due to a configuration error. This includes issues such as the resource handler returning an invalid response, or timing out.</p>
+    /// <p>Cloud Control API hasn't received a valid response from the resource handler, due to a configuration error. This includes issues such as the resource handler returning an invalid response, or timing out.</p>
     PrivateTypeException(crate::error::PrivateTypeException),
-    /// <p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and cannot be acted upon until that operation is finished.</p>
+    /// <p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and can't be acted upon until that operation is finished.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// <p>A resource with the specified identifier cannot be found.</p>
+    /// <p>A resource with the specified identifier can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The resource handler has returned that the downstream service returned an internal error, typically with a <code>5XX HTTP</code> status code.</p>
     ServiceInternalErrorException(crate::error::ServiceInternalErrorException),
@@ -439,9 +439,9 @@ pub enum DeleteResourceErrorKind {
     ServiceLimitExceededException(crate::error::ServiceLimitExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The specified extension does not exist in the CloudFormation registry.</p>
+    /// <p>The specified extension doesn't exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
-    /// <p>The specified resource does not support this resource operation.</p>
+    /// <p>The specified resource doesn't support this resource operation.</p>
     UnsupportedActionException(crate::error::UnsupportedActionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -692,7 +692,7 @@ pub struct GetResourceError {
 pub enum GetResourceErrorKind {
     /// <p>The resource with the name requested already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>The resource handler has returned that the downstream service generated an error that does not map to any other handler error code.</p>
+    /// <p>The resource handler has returned that the downstream service generated an error that doesn't map to any other handler error code.</p>
     GeneralServiceException(crate::error::GeneralServiceException),
     /// <p>The resource handler has failed without a returning a more specific error code. This can include timeouts.</p>
     HandlerFailureException(crate::error::HandlerFailureException),
@@ -702,17 +702,17 @@ pub enum GetResourceErrorKind {
     InvalidCredentialsException(crate::error::InvalidCredentialsException),
     /// <p>The resource handler has returned that invalid input from the user has generated a generic exception.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource handler has returned that the request could not be completed due to networking issues, such as a failure to receive a response from the server.</p>
+    /// <p>The resource handler has returned that the request couldn't be completed due to networking issues, such as a failure to receive a response from the server.</p>
     NetworkFailureException(crate::error::NetworkFailureException),
     /// <p>The resource handler has returned that the downstream resource failed to complete all of its ready-state checks.</p>
     NotStabilizedException(crate::error::NotStabilizedException),
-    /// <p>One or more properties included in this resource operation are defined as create-only, and therefore cannot be updated.</p>
+    /// <p>One or more properties included in this resource operation are defined as create-only, and therefore can't be updated.</p>
     NotUpdatableException(crate::error::NotUpdatableException),
-    /// <p>Cloud Control API has not received a valid response from the resource handler, due to a configuration error. This includes issues such as the resource handler returning an invalid response, or timing out.</p>
+    /// <p>Cloud Control API hasn't received a valid response from the resource handler, due to a configuration error. This includes issues such as the resource handler returning an invalid response, or timing out.</p>
     PrivateTypeException(crate::error::PrivateTypeException),
-    /// <p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and cannot be acted upon until that operation is finished.</p>
+    /// <p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and can't be acted upon until that operation is finished.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// <p>A resource with the specified identifier cannot be found.</p>
+    /// <p>A resource with the specified identifier can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The resource handler has returned that the downstream service returned an internal error, typically with a <code>5XX HTTP</code> status code.</p>
     ServiceInternalErrorException(crate::error::ServiceInternalErrorException),
@@ -720,9 +720,9 @@ pub enum GetResourceErrorKind {
     ServiceLimitExceededException(crate::error::ServiceLimitExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The specified extension does not exist in the CloudFormation registry.</p>
+    /// <p>The specified extension doesn't exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
-    /// <p>The specified resource does not support this resource operation.</p>
+    /// <p>The specified resource doesn't support this resource operation.</p>
     UnsupportedActionException(crate::error::UnsupportedActionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -929,7 +929,7 @@ pub struct GetResourceRequestStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetResourceRequestStatusErrorKind {
-    /// <p>A resource operation with the specified request token cannot be found.</p>
+    /// <p>A resource operation with the specified request token can't be found.</p>
     RequestTokenNotFoundException(crate::error::RequestTokenNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1110,7 +1110,7 @@ pub struct ListResourcesError {
 pub enum ListResourcesErrorKind {
     /// <p>The resource with the name requested already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>The resource handler has returned that the downstream service generated an error that does not map to any other handler error code.</p>
+    /// <p>The resource handler has returned that the downstream service generated an error that doesn't map to any other handler error code.</p>
     GeneralServiceException(crate::error::GeneralServiceException),
     /// <p>The resource handler has failed without a returning a more specific error code. This can include timeouts.</p>
     HandlerFailureException(crate::error::HandlerFailureException),
@@ -1120,17 +1120,17 @@ pub enum ListResourcesErrorKind {
     InvalidCredentialsException(crate::error::InvalidCredentialsException),
     /// <p>The resource handler has returned that invalid input from the user has generated a generic exception.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource handler has returned that the request could not be completed due to networking issues, such as a failure to receive a response from the server.</p>
+    /// <p>The resource handler has returned that the request couldn't be completed due to networking issues, such as a failure to receive a response from the server.</p>
     NetworkFailureException(crate::error::NetworkFailureException),
     /// <p>The resource handler has returned that the downstream resource failed to complete all of its ready-state checks.</p>
     NotStabilizedException(crate::error::NotStabilizedException),
-    /// <p>One or more properties included in this resource operation are defined as create-only, and therefore cannot be updated.</p>
+    /// <p>One or more properties included in this resource operation are defined as create-only, and therefore can't be updated.</p>
     NotUpdatableException(crate::error::NotUpdatableException),
-    /// <p>Cloud Control API has not received a valid response from the resource handler, due to a configuration error. This includes issues such as the resource handler returning an invalid response, or timing out.</p>
+    /// <p>Cloud Control API hasn't received a valid response from the resource handler, due to a configuration error. This includes issues such as the resource handler returning an invalid response, or timing out.</p>
     PrivateTypeException(crate::error::PrivateTypeException),
-    /// <p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and cannot be acted upon until that operation is finished.</p>
+    /// <p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and can't be acted upon until that operation is finished.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// <p>A resource with the specified identifier cannot be found.</p>
+    /// <p>A resource with the specified identifier can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The resource handler has returned that the downstream service returned an internal error, typically with a <code>5XX HTTP</code> status code.</p>
     ServiceInternalErrorException(crate::error::ServiceInternalErrorException),
@@ -1138,9 +1138,9 @@ pub enum ListResourcesErrorKind {
     ServiceLimitExceededException(crate::error::ServiceLimitExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The specified extension does not exist in the CloudFormation registry.</p>
+    /// <p>The specified extension doesn't exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
-    /// <p>The specified resource does not support this resource operation.</p>
+    /// <p>The specified resource doesn't support this resource operation.</p>
     UnsupportedActionException(crate::error::UnsupportedActionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1368,11 +1368,11 @@ pub enum UpdateResourceErrorKind {
     /// <p>The resource with the name requested already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
     /// <p>The specified client token has already been used in another resource request.</p>
-    /// <p>It is best practice for client tokens to be unique for each resource operation request. However, client token expire after 36 hours.</p>
+    /// <p>It's best practice for client tokens to be unique for each resource operation request. However, client token expire after 36 hours.</p>
     ClientTokenConflictException(crate::error::ClientTokenConflictException),
     /// <p>Another resource operation is currently being performed on this resource.</p>
     ConcurrentOperationException(crate::error::ConcurrentOperationException),
-    /// <p>The resource handler has returned that the downstream service generated an error that does not map to any other handler error code.</p>
+    /// <p>The resource handler has returned that the downstream service generated an error that doesn't map to any other handler error code.</p>
     GeneralServiceException(crate::error::GeneralServiceException),
     /// <p>The resource handler has failed without a returning a more specific error code. This can include timeouts.</p>
     HandlerFailureException(crate::error::HandlerFailureException),
@@ -1382,17 +1382,17 @@ pub enum UpdateResourceErrorKind {
     InvalidCredentialsException(crate::error::InvalidCredentialsException),
     /// <p>The resource handler has returned that invalid input from the user has generated a generic exception.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource handler has returned that the request could not be completed due to networking issues, such as a failure to receive a response from the server.</p>
+    /// <p>The resource handler has returned that the request couldn't be completed due to networking issues, such as a failure to receive a response from the server.</p>
     NetworkFailureException(crate::error::NetworkFailureException),
     /// <p>The resource handler has returned that the downstream resource failed to complete all of its ready-state checks.</p>
     NotStabilizedException(crate::error::NotStabilizedException),
-    /// <p>One or more properties included in this resource operation are defined as create-only, and therefore cannot be updated.</p>
+    /// <p>One or more properties included in this resource operation are defined as create-only, and therefore can't be updated.</p>
     NotUpdatableException(crate::error::NotUpdatableException),
-    /// <p>Cloud Control API has not received a valid response from the resource handler, due to a configuration error. This includes issues such as the resource handler returning an invalid response, or timing out.</p>
+    /// <p>Cloud Control API hasn't received a valid response from the resource handler, due to a configuration error. This includes issues such as the resource handler returning an invalid response, or timing out.</p>
     PrivateTypeException(crate::error::PrivateTypeException),
-    /// <p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and cannot be acted upon until that operation is finished.</p>
+    /// <p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and can't be acted upon until that operation is finished.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// <p>A resource with the specified identifier cannot be found.</p>
+    /// <p>A resource with the specified identifier can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The resource handler has returned that the downstream service returned an internal error, typically with a <code>5XX HTTP</code> status code.</p>
     ServiceInternalErrorException(crate::error::ServiceInternalErrorException),
@@ -1400,9 +1400,9 @@ pub enum UpdateResourceErrorKind {
     ServiceLimitExceededException(crate::error::ServiceLimitExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The specified extension does not exist in the CloudFormation registry.</p>
+    /// <p>The specified extension doesn't exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
-    /// <p>The specified resource does not support this resource operation.</p>
+    /// <p>The specified resource doesn't support this resource operation.</p>
     UnsupportedActionException(crate::error::UnsupportedActionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1638,7 +1638,7 @@ impl std::error::Error for UpdateResourceError {
     }
 }
 
-/// <p>The specified resource does not support this resource operation.</p>
+/// <p>The specified resource doesn't support this resource operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedActionException {
@@ -1702,7 +1702,7 @@ impl UnsupportedActionException {
     }
 }
 
-/// <p>The specified extension does not exist in the CloudFormation registry.</p>
+/// <p>The specified extension doesn't exist in the CloudFormation registry.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypeNotFoundException {
@@ -1958,7 +1958,7 @@ impl ServiceInternalErrorException {
     }
 }
 
-/// <p>A resource with the specified identifier cannot be found.</p>
+/// <p>A resource with the specified identifier can't be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -2022,7 +2022,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and cannot be acted upon until that operation is finished.</p>
+/// <p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and can't be acted upon until that operation is finished.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceConflictException {
@@ -2086,7 +2086,7 @@ impl ResourceConflictException {
     }
 }
 
-/// <p>Cloud Control API has not received a valid response from the resource handler, due to a configuration error. This includes issues such as the resource handler returning an invalid response, or timing out.</p>
+/// <p>Cloud Control API hasn't received a valid response from the resource handler, due to a configuration error. This includes issues such as the resource handler returning an invalid response, or timing out.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrivateTypeException {
@@ -2150,7 +2150,7 @@ impl PrivateTypeException {
     }
 }
 
-/// <p>One or more properties included in this resource operation are defined as create-only, and therefore cannot be updated.</p>
+/// <p>One or more properties included in this resource operation are defined as create-only, and therefore can't be updated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotUpdatableException {
@@ -2278,7 +2278,7 @@ impl NotStabilizedException {
     }
 }
 
-/// <p>The resource handler has returned that the request could not be completed due to networking issues, such as a failure to receive a response from the server.</p>
+/// <p>The resource handler has returned that the request couldn't be completed due to networking issues, such as a failure to receive a response from the server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkFailureException {
@@ -2598,7 +2598,7 @@ impl HandlerFailureException {
     }
 }
 
-/// <p>The resource handler has returned that the downstream service generated an error that does not map to any other handler error code.</p>
+/// <p>The resource handler has returned that the downstream service generated an error that doesn't map to any other handler error code.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GeneralServiceException {
@@ -2727,7 +2727,7 @@ impl ConcurrentOperationException {
 }
 
 /// <p>The specified client token has already been used in another resource request.</p>
-/// <p>It is best practice for client tokens to be unique for each resource operation request. However, client token expire after 36 hours.</p>
+/// <p>It's best practice for client tokens to be unique for each resource operation request. However, client token expire after 36 hours.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientTokenConflictException {
@@ -2855,7 +2855,7 @@ impl AlreadyExistsException {
     }
 }
 
-/// <p>A resource operation with the specified request token cannot be found.</p>
+/// <p>A resource operation with the specified request token can't be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestTokenNotFoundException {

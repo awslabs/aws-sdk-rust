@@ -373,6 +373,132 @@ impl std::error::Error for ListEndpointsError {
     }
 }
 
+/// Error type for the `ListSharedEndpoints` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListSharedEndpointsError {
+    /// Kind of error that occurred.
+    pub kind: ListSharedEndpointsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListSharedEndpoints` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListSharedEndpointsErrorKind {
+    /// <p>Access was denied for this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>There was an exception with the internal server.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>There was an exception validating this data.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListSharedEndpointsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListSharedEndpointsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListSharedEndpointsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListSharedEndpointsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListSharedEndpointsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListSharedEndpointsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListSharedEndpointsError {
+    fn code(&self) -> Option<&str> {
+        ListSharedEndpointsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListSharedEndpointsError {
+    /// Creates a new `ListSharedEndpointsError`.
+    pub fn new(kind: ListSharedEndpointsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListSharedEndpointsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListSharedEndpointsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListSharedEndpointsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListSharedEndpointsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListSharedEndpointsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSharedEndpointsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSharedEndpointsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSharedEndpointsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSharedEndpointsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSharedEndpointsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSharedEndpointsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSharedEndpointsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListSharedEndpointsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListSharedEndpointsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListSharedEndpointsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListSharedEndpointsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListSharedEndpointsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListSharedEndpointsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// <p>There was an exception validating this data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

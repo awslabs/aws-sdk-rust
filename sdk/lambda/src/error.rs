@@ -885,6 +885,147 @@ impl std::error::Error for CreateFunctionError {
     }
 }
 
+/// Error type for the `CreateFunctionUrlConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateFunctionUrlConfigError {
+    /// Kind of error that occurred.
+    pub kind: CreateFunctionUrlConfigErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateFunctionUrlConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateFunctionUrlConfigErrorKind {
+    /// <p>One of the parameters in the request is invalid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The resource already exists, or another operation is in progress.</p>
+    ResourceConflictException(crate::error::ResourceConflictException),
+    /// <p>The resource specified in the request does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The Lambda service encountered an internal error.</p>
+    ServiceException(crate::error::ServiceException),
+    /// <p>The request throughput limit was exceeded.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateFunctionUrlConfigError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateFunctionUrlConfigErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateFunctionUrlConfigErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            CreateFunctionUrlConfigErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateFunctionUrlConfigErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            CreateFunctionUrlConfigErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateFunctionUrlConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateFunctionUrlConfigError {
+    fn code(&self) -> Option<&str> {
+        CreateFunctionUrlConfigError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateFunctionUrlConfigError {
+    /// Creates a new `CreateFunctionUrlConfigError`.
+    pub fn new(kind: CreateFunctionUrlConfigErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateFunctionUrlConfigError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateFunctionUrlConfigErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateFunctionUrlConfigError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateFunctionUrlConfigErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateFunctionUrlConfigErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFunctionUrlConfigErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateFunctionUrlConfigErrorKind::ResourceConflictException`.
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFunctionUrlConfigErrorKind::ResourceConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateFunctionUrlConfigErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFunctionUrlConfigErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateFunctionUrlConfigErrorKind::ServiceException`.
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFunctionUrlConfigErrorKind::ServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateFunctionUrlConfigErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFunctionUrlConfigErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for CreateFunctionUrlConfigError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateFunctionUrlConfigErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            CreateFunctionUrlConfigErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            CreateFunctionUrlConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateFunctionUrlConfigErrorKind::ServiceException(_inner) => Some(_inner),
+            CreateFunctionUrlConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateFunctionUrlConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteAlias` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1877,6 +2018,132 @@ impl std::error::Error for DeleteFunctionEventInvokeConfigError {
                 Some(_inner)
             }
             DeleteFunctionEventInvokeConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteFunctionUrlConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteFunctionUrlConfigError {
+    /// Kind of error that occurred.
+    pub kind: DeleteFunctionUrlConfigErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteFunctionUrlConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteFunctionUrlConfigErrorKind {
+    /// <p>The resource already exists, or another operation is in progress.</p>
+    ResourceConflictException(crate::error::ResourceConflictException),
+    /// <p>The resource specified in the request does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The Lambda service encountered an internal error.</p>
+    ServiceException(crate::error::ServiceException),
+    /// <p>The request throughput limit was exceeded.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteFunctionUrlConfigError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteFunctionUrlConfigErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            DeleteFunctionUrlConfigErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteFunctionUrlConfigErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            DeleteFunctionUrlConfigErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteFunctionUrlConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteFunctionUrlConfigError {
+    fn code(&self) -> Option<&str> {
+        DeleteFunctionUrlConfigError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteFunctionUrlConfigError {
+    /// Creates a new `DeleteFunctionUrlConfigError`.
+    pub fn new(kind: DeleteFunctionUrlConfigErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteFunctionUrlConfigError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteFunctionUrlConfigErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteFunctionUrlConfigError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteFunctionUrlConfigErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteFunctionUrlConfigErrorKind::ResourceConflictException`.
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionUrlConfigErrorKind::ResourceConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteFunctionUrlConfigErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionUrlConfigErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteFunctionUrlConfigErrorKind::ServiceException`.
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionUrlConfigErrorKind::ServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteFunctionUrlConfigErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionUrlConfigErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteFunctionUrlConfigError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteFunctionUrlConfigErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            DeleteFunctionUrlConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteFunctionUrlConfigErrorKind::ServiceException(_inner) => Some(_inner),
+            DeleteFunctionUrlConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteFunctionUrlConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3246,6 +3513,132 @@ impl std::error::Error for GetFunctionEventInvokeConfigError {
             GetFunctionEventInvokeConfigErrorKind::ServiceException(_inner) => Some(_inner),
             GetFunctionEventInvokeConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetFunctionEventInvokeConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetFunctionUrlConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetFunctionUrlConfigError {
+    /// Kind of error that occurred.
+    pub kind: GetFunctionUrlConfigErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetFunctionUrlConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetFunctionUrlConfigErrorKind {
+    /// <p>One of the parameters in the request is invalid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The resource specified in the request does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The Lambda service encountered an internal error.</p>
+    ServiceException(crate::error::ServiceException),
+    /// <p>The request throughput limit was exceeded.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetFunctionUrlConfigError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetFunctionUrlConfigErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            GetFunctionUrlConfigErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetFunctionUrlConfigErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            GetFunctionUrlConfigErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetFunctionUrlConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetFunctionUrlConfigError {
+    fn code(&self) -> Option<&str> {
+        GetFunctionUrlConfigError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetFunctionUrlConfigError {
+    /// Creates a new `GetFunctionUrlConfigError`.
+    pub fn new(kind: GetFunctionUrlConfigErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetFunctionUrlConfigError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetFunctionUrlConfigErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetFunctionUrlConfigError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetFunctionUrlConfigErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetFunctionUrlConfigErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionUrlConfigErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetFunctionUrlConfigErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionUrlConfigErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetFunctionUrlConfigErrorKind::ServiceException`.
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionUrlConfigErrorKind::ServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetFunctionUrlConfigErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionUrlConfigErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for GetFunctionUrlConfigError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetFunctionUrlConfigErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            GetFunctionUrlConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetFunctionUrlConfigErrorKind::ServiceException(_inner) => Some(_inner),
+            GetFunctionUrlConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetFunctionUrlConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5083,6 +5476,134 @@ impl std::error::Error for ListFunctionsByCodeSigningConfigError {
             }
             ListFunctionsByCodeSigningConfigErrorKind::ServiceException(_inner) => Some(_inner),
             ListFunctionsByCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListFunctionUrlConfigs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListFunctionUrlConfigsError {
+    /// Kind of error that occurred.
+    pub kind: ListFunctionUrlConfigsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListFunctionUrlConfigs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListFunctionUrlConfigsErrorKind {
+    /// <p>One of the parameters in the request is invalid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The resource specified in the request does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The Lambda service encountered an internal error.</p>
+    ServiceException(crate::error::ServiceException),
+    /// <p>The request throughput limit was exceeded.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListFunctionUrlConfigsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListFunctionUrlConfigsErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListFunctionUrlConfigsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListFunctionUrlConfigsErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            ListFunctionUrlConfigsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            ListFunctionUrlConfigsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListFunctionUrlConfigsError {
+    fn code(&self) -> Option<&str> {
+        ListFunctionUrlConfigsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListFunctionUrlConfigsError {
+    /// Creates a new `ListFunctionUrlConfigsError`.
+    pub fn new(kind: ListFunctionUrlConfigsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListFunctionUrlConfigsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListFunctionUrlConfigsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListFunctionUrlConfigsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListFunctionUrlConfigsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListFunctionUrlConfigsErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFunctionUrlConfigsErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListFunctionUrlConfigsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFunctionUrlConfigsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListFunctionUrlConfigsErrorKind::ServiceException`.
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFunctionUrlConfigsErrorKind::ServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListFunctionUrlConfigsErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFunctionUrlConfigsErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for ListFunctionUrlConfigsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListFunctionUrlConfigsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            ListFunctionUrlConfigsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListFunctionUrlConfigsErrorKind::ServiceException(_inner) => Some(_inner),
+            ListFunctionUrlConfigsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            ListFunctionUrlConfigsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -8127,6 +8648,147 @@ impl std::error::Error for UpdateFunctionEventInvokeConfigError {
                 Some(_inner)
             }
             UpdateFunctionEventInvokeConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateFunctionUrlConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateFunctionUrlConfigError {
+    /// Kind of error that occurred.
+    pub kind: UpdateFunctionUrlConfigErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateFunctionUrlConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateFunctionUrlConfigErrorKind {
+    /// <p>One of the parameters in the request is invalid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The resource already exists, or another operation is in progress.</p>
+    ResourceConflictException(crate::error::ResourceConflictException),
+    /// <p>The resource specified in the request does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The Lambda service encountered an internal error.</p>
+    ServiceException(crate::error::ServiceException),
+    /// <p>The request throughput limit was exceeded.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateFunctionUrlConfigError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateFunctionUrlConfigErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateFunctionUrlConfigErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            UpdateFunctionUrlConfigErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateFunctionUrlConfigErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            UpdateFunctionUrlConfigErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateFunctionUrlConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateFunctionUrlConfigError {
+    fn code(&self) -> Option<&str> {
+        UpdateFunctionUrlConfigError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateFunctionUrlConfigError {
+    /// Creates a new `UpdateFunctionUrlConfigError`.
+    pub fn new(kind: UpdateFunctionUrlConfigErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateFunctionUrlConfigError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateFunctionUrlConfigErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateFunctionUrlConfigError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateFunctionUrlConfigErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateFunctionUrlConfigErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionUrlConfigErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateFunctionUrlConfigErrorKind::ResourceConflictException`.
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionUrlConfigErrorKind::ResourceConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateFunctionUrlConfigErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionUrlConfigErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateFunctionUrlConfigErrorKind::ServiceException`.
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionUrlConfigErrorKind::ServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateFunctionUrlConfigErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionUrlConfigErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateFunctionUrlConfigError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateFunctionUrlConfigErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            UpdateFunctionUrlConfigErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            UpdateFunctionUrlConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateFunctionUrlConfigErrorKind::ServiceException(_inner) => Some(_inner),
+            UpdateFunctionUrlConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateFunctionUrlConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

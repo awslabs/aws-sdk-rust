@@ -1310,9 +1310,7 @@ pub enum Permission {
     #[allow(missing_docs)] // documentation missing in model
     Alter,
     #[allow(missing_docs)] // documentation missing in model
-    AlterTag,
-    #[allow(missing_docs)] // documentation missing in model
-    AssociateTag,
+    Associate,
     #[allow(missing_docs)] // documentation missing in model
     CreateDatabase,
     #[allow(missing_docs)] // documentation missing in model
@@ -1324,11 +1322,7 @@ pub enum Permission {
     #[allow(missing_docs)] // documentation missing in model
     Delete,
     #[allow(missing_docs)] // documentation missing in model
-    DeleteTag,
-    #[allow(missing_docs)] // documentation missing in model
     Describe,
-    #[allow(missing_docs)] // documentation missing in model
-    DescribeTag,
     #[allow(missing_docs)] // documentation missing in model
     Drop,
     #[allow(missing_docs)] // documentation missing in model
@@ -1343,16 +1337,13 @@ impl std::convert::From<&str> for Permission {
         match s {
             "ALL" => Permission::All,
             "ALTER" => Permission::Alter,
-            "ALTER_TAG" => Permission::AlterTag,
-            "ASSOCIATE_TAG" => Permission::AssociateTag,
+            "ASSOCIATE" => Permission::Associate,
             "CREATE_DATABASE" => Permission::CreateDatabase,
             "CREATE_TABLE" => Permission::CreateTable,
             "CREATE_TAG" => Permission::CreateTag,
             "DATA_LOCATION_ACCESS" => Permission::DataLocationAccess,
             "DELETE" => Permission::Delete,
-            "DELETE_TAG" => Permission::DeleteTag,
             "DESCRIBE" => Permission::Describe,
-            "DESCRIBE_TAG" => Permission::DescribeTag,
             "DROP" => Permission::Drop,
             "INSERT" => Permission::Insert,
             "SELECT" => Permission::Select,
@@ -1373,16 +1364,13 @@ impl Permission {
         match self {
             Permission::All => "ALL",
             Permission::Alter => "ALTER",
-            Permission::AlterTag => "ALTER_TAG",
-            Permission::AssociateTag => "ASSOCIATE_TAG",
+            Permission::Associate => "ASSOCIATE",
             Permission::CreateDatabase => "CREATE_DATABASE",
             Permission::CreateTable => "CREATE_TABLE",
             Permission::CreateTag => "CREATE_TAG",
             Permission::DataLocationAccess => "DATA_LOCATION_ACCESS",
             Permission::Delete => "DELETE",
-            Permission::DeleteTag => "DELETE_TAG",
             Permission::Describe => "DESCRIBE",
-            Permission::DescribeTag => "DESCRIBE_TAG",
             Permission::Drop => "DROP",
             Permission::Insert => "INSERT",
             Permission::Select => "SELECT",
@@ -1394,16 +1382,13 @@ impl Permission {
         &[
             "ALL",
             "ALTER",
-            "ALTER_TAG",
-            "ASSOCIATE_TAG",
+            "ASSOCIATE",
             "CREATE_DATABASE",
             "CREATE_TABLE",
             "CREATE_TAG",
             "DATA_LOCATION_ACCESS",
             "DELETE",
-            "DELETE_TAG",
             "DESCRIBE",
-            "DESCRIBE_TAG",
             "DROP",
             "INSERT",
             "SELECT",

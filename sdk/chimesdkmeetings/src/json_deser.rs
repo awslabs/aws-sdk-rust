@@ -947,6 +947,15 @@ where
                                     crate::json_deser::deser_structure_crate_model_meeting_features_configuration(tokens)?
                                 );
                             }
+                            "PrimaryMeetingId" => {
+                                builder = builder.set_primary_meeting_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

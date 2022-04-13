@@ -3242,6 +3242,11 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "verificationMessage" => {
+                                builder = builder.set_verification_message(
+                                    crate::json_deser::deser_structure_crate_model_create_backend_auth_verification_message_config(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -3875,6 +3880,72 @@ where
         }
         _ => Err(aws_smithy_json::deserialize::Error::custom(
             "expected start array or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_create_backend_auth_verification_message_config<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::CreateBackendAuthVerificationMessageConfig>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::CreateBackendAuthVerificationMessageConfig::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "deliveryMethod" => {
+                                builder = builder.set_delivery_method(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::DeliveryMethod::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "emailSettings" => {
+                                builder = builder.set_email_settings(
+                                    crate::json_deser::deser_structure_crate_model_email_settings(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "smsSettings" => {
+                                builder = builder.set_sms_settings(
+                                    crate::json_deser::deser_structure_crate_model_sms_settings(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
         )),
     }
 }

@@ -398,10 +398,13 @@ pub fn serialize_structure_crate_model_dash_manifest(
     if let Some(var_81) = &input.profile {
         object.key("profile").string(var_81.as_str());
     }
-    if let Some(var_82) = &input.stream_selection {
-        let mut object_83 = object.key("streamSelection").start_object();
-        crate::json_ser::serialize_structure_crate_model_stream_selection(&mut object_83, var_82)?;
-        object_83.finish();
+    if let Some(var_82) = &input.scte_markers_source {
+        object.key("scteMarkersSource").string(var_82.as_str());
+    }
+    if let Some(var_83) = &input.stream_selection {
+        let mut object_84 = object.key("streamSelection").start_object();
+        crate::json_ser::serialize_structure_crate_model_stream_selection(&mut object_84, var_83)?;
+        object_84.finish();
     }
     Ok(())
 }
@@ -410,13 +413,13 @@ pub fn serialize_structure_crate_model_dash_encryption(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DashEncryption,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_84) = &input.speke_key_provider {
-        let mut object_85 = object.key("spekeKeyProvider").start_object();
+    if let Some(var_85) = &input.speke_key_provider {
+        let mut object_86 = object.key("spekeKeyProvider").start_object();
         crate::json_ser::serialize_structure_crate_model_speke_key_provider(
-            &mut object_85,
-            var_84,
+            &mut object_86,
+            var_85,
         )?;
-        object_85.finish();
+        object_86.finish();
     }
     Ok(())
 }
@@ -425,21 +428,21 @@ pub fn serialize_structure_crate_model_hls_encryption(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HlsEncryption,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_86) = &input.constant_initialization_vector {
+    if let Some(var_87) = &input.constant_initialization_vector {
         object
             .key("constantInitializationVector")
-            .string(var_86.as_str());
+            .string(var_87.as_str());
     }
-    if let Some(var_87) = &input.encryption_method {
-        object.key("encryptionMethod").string(var_87.as_str());
+    if let Some(var_88) = &input.encryption_method {
+        object.key("encryptionMethod").string(var_88.as_str());
     }
-    if let Some(var_88) = &input.speke_key_provider {
-        let mut object_89 = object.key("spekeKeyProvider").start_object();
+    if let Some(var_89) = &input.speke_key_provider {
+        let mut object_90 = object.key("spekeKeyProvider").start_object();
         crate::json_ser::serialize_structure_crate_model_speke_key_provider(
-            &mut object_89,
-            var_88,
+            &mut object_90,
+            var_89,
         )?;
-        object_89.finish();
+        object_90.finish();
     }
     Ok(())
 }
@@ -448,13 +451,13 @@ pub fn serialize_structure_crate_model_mss_encryption(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MssEncryption,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_90) = &input.speke_key_provider {
-        let mut object_91 = object.key("spekeKeyProvider").start_object();
+    if let Some(var_91) = &input.speke_key_provider {
+        let mut object_92 = object.key("spekeKeyProvider").start_object();
         crate::json_ser::serialize_structure_crate_model_speke_key_provider(
-            &mut object_91,
-            var_90,
+            &mut object_92,
+            var_91,
         )?;
-        object_91.finish();
+        object_92.finish();
     }
     Ok(())
 }
@@ -463,13 +466,13 @@ pub fn serialize_structure_crate_model_mss_manifest(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MssManifest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_92) = &input.manifest_name {
-        object.key("manifestName").string(var_92.as_str());
+    if let Some(var_93) = &input.manifest_name {
+        object.key("manifestName").string(var_93.as_str());
     }
-    if let Some(var_93) = &input.stream_selection {
-        let mut object_94 = object.key("streamSelection").start_object();
-        crate::json_ser::serialize_structure_crate_model_stream_selection(&mut object_94, var_93)?;
-        object_94.finish();
+    if let Some(var_94) = &input.stream_selection {
+        let mut object_95 = object.key("streamSelection").start_object();
+        crate::json_ser::serialize_structure_crate_model_stream_selection(&mut object_95, var_94)?;
+        object_95.finish();
     }
     Ok(())
 }
@@ -478,20 +481,20 @@ pub fn serialize_structure_crate_model_speke_key_provider(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SpekeKeyProvider,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_95) = &input.role_arn {
-        object.key("roleArn").string(var_95.as_str());
+    if let Some(var_96) = &input.role_arn {
+        object.key("roleArn").string(var_96.as_str());
     }
-    if let Some(var_96) = &input.system_ids {
-        let mut array_97 = object.key("systemIds").start_array();
-        for item_98 in var_96 {
+    if let Some(var_97) = &input.system_ids {
+        let mut array_98 = object.key("systemIds").start_array();
+        for item_99 in var_97 {
             {
-                array_97.value().string(item_98.as_str());
+                array_98.value().string(item_99.as_str());
             }
         }
-        array_97.finish();
+        array_98.finish();
     }
-    if let Some(var_99) = &input.url {
-        object.key("url").string(var_99.as_str());
+    if let Some(var_100) = &input.url {
+        object.key("url").string(var_100.as_str());
     }
     Ok(())
 }
@@ -512,8 +515,8 @@ pub fn serialize_structure_crate_model_stream_selection(
             aws_smithy_types::Number::NegInt((input.min_video_bits_per_second).into()),
         );
     }
-    if let Some(var_100) = &input.stream_order {
-        object.key("streamOrder").string(var_100.as_str());
+    if let Some(var_101) = &input.stream_order {
+        object.key("streamOrder").string(var_101.as_str());
     }
     Ok(())
 }

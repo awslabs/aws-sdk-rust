@@ -13,7 +13,7 @@ pub enum Error {
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
     /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
@@ -72,7 +72,7 @@ pub enum Error {
     MaxNumberOfDeliveryChannelsExceededException(
         crate::error::MaxNumberOfDeliveryChannelsExceededException,
     ),
-    /// <p>You have reached the limit of the number of organization config rules you can create.</p>
+    /// <p>You have reached the limit of the number of organization Config rules you can create.</p>
     MaxNumberOfOrganizationConfigRulesExceededException(
         crate::error::MaxNumberOfOrganizationConfigRulesExceededException,
     ),
@@ -96,7 +96,7 @@ pub enum Error {
     NoRunningConfigurationRecorderException(crate::error::NoRunningConfigurationRecorderException),
     /// <p>The specified Amazon S3 bucket does not exist.</p>
     NoSuchBucketException(crate::error::NoSuchBucketException),
-    /// <p>One or more Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchConfigRuleException(crate::error::NoSuchConfigRuleException),
     /// <p>Config rule that you passed in the filter does not exist.</p>
     NoSuchConfigRuleInConformancePackException(
@@ -110,7 +110,7 @@ pub enum Error {
     NoSuchConformancePackException(crate::error::NoSuchConformancePackException),
     /// <p>You have specified a delivery channel that does not exist.</p>
     NoSuchDeliveryChannelException(crate::error::NoSuchDeliveryChannelException),
-    /// <p>You specified one or more organization config rules that do not exist.</p>
+    /// <p>The Config rule in the request is not valid. Verify that the rule is an organization Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchOrganizationConfigRuleException(crate::error::NoSuchOrganizationConfigRuleException),
     /// <p>Config organization conformance pack that you passed in the filter does not exist.</p>
     /// <p>For DeleteOrganizationConformancePack, you tried to delete an organization conformance pack that does not exist.</p>
@@ -151,8 +151,8 @@ pub enum Error {
     /// <li> <p>For DeleteConfigRule, Config is deleting this rule. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConfigRule, a remediation action is associated with the rule and Config cannot delete this rule. Delete the remediation action associated with the rule before deleting the rule and try your request again later.</p> </li>
-    /// <li> <p>For PutConfigOrganizationRule, organization config rule deletion is in progress. Try your request again later.</p> </li>
-    /// <li> <p>For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For DeleteOrganizationConfigRule, organization Config rule creation is in progress. Try your request again later.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// </ul>
@@ -1468,6 +1468,26 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCustomRulePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetCustomRulePolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetCustomRulePolicyErrorKind::NoSuchConfigRuleException(inner) => {
+                    Error::NoSuchConfigRuleException(inner)
+                }
+                crate::error::GetCustomRulePolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDiscoveredResourceCountsError, R>>
     for Error
 where
@@ -1546,6 +1566,28 @@ where
                 crate::error::GetOrganizationConformancePackDetailedStatusErrorKind::NoSuchOrganizationConformancePackException(inner) => Error::NoSuchOrganizationConformancePackException(inner),
                 crate::error::GetOrganizationConformancePackDetailedStatusErrorKind::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
                 crate::error::GetOrganizationConformancePackDetailedStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::GetOrganizationCustomRulePolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetOrganizationCustomRulePolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetOrganizationCustomRulePolicyErrorKind::NoSuchOrganizationConfigRuleException(inner) => Error::NoSuchOrganizationConfigRuleException(inner),
+                crate::error::GetOrganizationCustomRulePolicyErrorKind::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
+                crate::error::GetOrganizationCustomRulePolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
         }

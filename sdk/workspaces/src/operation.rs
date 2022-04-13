@@ -369,6 +369,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkspaces {
     }
 }
 
+/// Operation shape for `DeleteClientBranding`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_client_branding`](crate::client::Client::delete_client_branding).
+///
+/// See [`crate::client::fluent_builders::DeleteClientBranding`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteClientBranding {
+    _private: (),
+}
+impl DeleteClientBranding {
+    /// Creates a new builder-style object to manufacture [`DeleteClientBrandingInput`](crate::input::DeleteClientBrandingInput)
+    pub fn builder() -> crate::input::delete_client_branding_input::Builder {
+        crate::input::delete_client_branding_input::Builder::default()
+    }
+    /// Creates a new `DeleteClientBranding` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteClientBranding {
+    type Output = std::result::Result<
+        crate::output::DeleteClientBrandingOutput,
+        crate::error::DeleteClientBrandingError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_client_branding_error(response)
+        } else {
+            crate::operation_deser::parse_delete_client_branding_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteConnectClientAddIn`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -667,6 +701,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountModificat
             crate::operation_deser::parse_describe_account_modifications_error(response)
         } else {
             crate::operation_deser::parse_describe_account_modifications_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeClientBranding`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_client_branding`](crate::client::Client::describe_client_branding).
+///
+/// See [`crate::client::fluent_builders::DescribeClientBranding`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeClientBranding {
+    _private: (),
+}
+impl DescribeClientBranding {
+    /// Creates a new builder-style object to manufacture [`DescribeClientBrandingInput`](crate::input::DescribeClientBrandingInput)
+    pub fn builder() -> crate::input::describe_client_branding_input::Builder {
+        crate::input::describe_client_branding_input::Builder::default()
+    }
+    /// Creates a new `DescribeClientBranding` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeClientBranding {
+    type Output = std::result::Result<
+        crate::output::DescribeClientBrandingOutput,
+        crate::error::DescribeClientBrandingError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_client_branding_error(response)
+        } else {
+            crate::operation_deser::parse_describe_client_branding_response(response)
         }
     }
 }
@@ -1175,6 +1243,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateIpGroups {
             crate::operation_deser::parse_disassociate_ip_groups_error(response)
         } else {
             crate::operation_deser::parse_disassociate_ip_groups_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ImportClientBranding`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`import_client_branding`](crate::client::Client::import_client_branding).
+///
+/// See [`crate::client::fluent_builders::ImportClientBranding`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ImportClientBranding {
+    _private: (),
+}
+impl ImportClientBranding {
+    /// Creates a new builder-style object to manufacture [`ImportClientBrandingInput`](crate::input::ImportClientBrandingInput)
+    pub fn builder() -> crate::input::import_client_branding_input::Builder {
+        crate::input::import_client_branding_input::Builder::default()
+    }
+    /// Creates a new `ImportClientBranding` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ImportClientBranding {
+    type Output = std::result::Result<
+        crate::output::ImportClientBrandingOutput,
+        crate::error::ImportClientBrandingError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_import_client_branding_error(response)
+        } else {
+            crate::operation_deser::parse_import_client_branding_response(response)
         }
     }
 }

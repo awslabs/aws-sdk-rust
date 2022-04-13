@@ -886,6 +886,227 @@ impl CreateConnectionInput {
     }
 }
 
+/// See [`CreateEndpointInput`](crate::input::CreateEndpointInput)
+pub mod create_endpoint_input {
+    /// A builder for [`CreateEndpointInput`](crate::input::CreateEndpointInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) routing_config: std::option::Option<crate::model::RoutingConfig>,
+        pub(crate) replication_config: std::option::Option<crate::model::ReplicationConfig>,
+        pub(crate) event_buses: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the global endpoint. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the global endpoint. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A description of the global endpoint.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description of the global endpoint.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+        pub fn routing_config(mut self, input: crate::model::RoutingConfig) -> Self {
+            self.routing_config = Some(input);
+            self
+        }
+        /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+        pub fn set_routing_config(
+            mut self,
+            input: std::option::Option<crate::model::RoutingConfig>,
+        ) -> Self {
+            self.routing_config = input;
+            self
+        }
+        /// <p>Enable or disable event replication.</p>
+        pub fn replication_config(mut self, input: crate::model::ReplicationConfig) -> Self {
+            self.replication_config = Some(input);
+            self
+        }
+        /// <p>Enable or disable event replication.</p>
+        pub fn set_replication_config(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationConfig>,
+        ) -> Self {
+            self.replication_config = input;
+            self
+        }
+        /// Appends an item to `event_buses`.
+        ///
+        /// To override the contents of this collection use [`set_event_buses`](Self::set_event_buses).
+        ///
+        /// <p>Define the event buses used. </p> <important>
+        /// <p>The names of the event buses must be identical in each Region.</p>
+        /// </important>
+        pub fn event_buses(mut self, input: crate::model::EndpointEventBus) -> Self {
+            let mut v = self.event_buses.unwrap_or_default();
+            v.push(input);
+            self.event_buses = Some(v);
+            self
+        }
+        /// <p>Define the event buses used. </p> <important>
+        /// <p>The names of the event buses must be identical in each Region.</p>
+        /// </important>
+        pub fn set_event_buses(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
+        ) -> Self {
+            self.event_buses = input;
+            self
+        }
+        /// <p>The ARN of the role used for replication.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the role used for replication.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateEndpointInput`](crate::input::CreateEndpointInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateEndpointInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateEndpointInput {
+                name: self.name,
+                description: self.description,
+                routing_config: self.routing_config,
+                replication_config: self.replication_config,
+                event_buses: self.event_buses,
+                role_arn: self.role_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateEndpointInputOperationOutputAlias = crate::operation::CreateEndpoint;
+#[doc(hidden)]
+pub type CreateEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateEndpointInput {
+    /// Consumes the builder and constructs an Operation<[`CreateEndpoint`](crate::operation::CreateEndpoint)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateEndpoint,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateEndpointInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateEndpointInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSEvents.CreateEndpoint",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_endpoint(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateEndpoint::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateEndpoint",
+            "eventbridge",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateEndpointInput`](crate::input::CreateEndpointInput)
+    pub fn builder() -> crate::input::create_endpoint_input::Builder {
+        crate::input::create_endpoint_input::Builder::default()
+    }
+}
+
 /// See [`CreateEventBusInput`](crate::input::CreateEventBusInput)
 pub mod create_event_bus_input {
     /// A builder for [`CreateEventBusInput`](crate::input::CreateEventBusInput)
@@ -1933,6 +2154,146 @@ impl DeleteConnectionInput {
     }
 }
 
+/// See [`DeleteEndpointInput`](crate::input::DeleteEndpointInput)
+pub mod delete_endpoint_input {
+    /// A builder for [`DeleteEndpointInput`](crate::input::DeleteEndpointInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the endpoint you want to delete. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>..</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the endpoint you want to delete. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>..</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteEndpointInput`](crate::input::DeleteEndpointInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteEndpointInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteEndpointInput { name: self.name })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteEndpointInputOperationOutputAlias = crate::operation::DeleteEndpoint;
+#[doc(hidden)]
+pub type DeleteEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteEndpointInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteEndpoint`](crate::operation::DeleteEndpoint)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteEndpoint,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteEndpointInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteEndpointInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSEvents.DeleteEndpoint",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_endpoint(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteEndpoint::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteEndpoint",
+            "eventbridge",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteEndpointInput`](crate::input::DeleteEndpointInput)
+    pub fn builder() -> crate::input::delete_endpoint_input::Builder {
+        crate::input::delete_endpoint_input::Builder::default()
+    }
+}
+
 /// See [`DeleteEventBusInput`](crate::input::DeleteEventBusInput)
 pub mod delete_event_bus_input {
     /// A builder for [`DeleteEventBusInput`](crate::input::DeleteEventBusInput)
@@ -2820,6 +3181,160 @@ impl DescribeConnectionInput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionInput`](crate::input::DescribeConnectionInput)
     pub fn builder() -> crate::input::describe_connection_input::Builder {
         crate::input::describe_connection_input::Builder::default()
+    }
+}
+
+/// See [`DescribeEndpointInput`](crate::input::DescribeEndpointInput)
+pub mod describe_endpoint_input {
+    /// A builder for [`DescribeEndpointInput`](crate::input::DescribeEndpointInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) home_region: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the endpoint you want to get information about. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the endpoint you want to get information about. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The primary Region of the endpoint you want to get information about. For example <code>"HomeRegion": "us-east-1"</code>.</p>
+        pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.home_region = Some(input.into());
+            self
+        }
+        /// <p>The primary Region of the endpoint you want to get information about. For example <code>"HomeRegion": "us-east-1"</code>.</p>
+        pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.home_region = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeEndpointInput`](crate::input::DescribeEndpointInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeEndpointInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeEndpointInput {
+                name: self.name,
+                home_region: self.home_region,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeEndpointInputOperationOutputAlias = crate::operation::DescribeEndpoint;
+#[doc(hidden)]
+pub type DescribeEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeEndpointInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeEndpoint`](crate::operation::DescribeEndpoint)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeEndpoint,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeEndpointInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeEndpointInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSEvents.DescribeEndpoint",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_endpoint(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeEndpoint::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeEndpoint",
+            "eventbridge",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeEndpointInput`](crate::input::DescribeEndpointInput)
+    pub fn builder() -> crate::input::describe_endpoint_input::Builder {
+        crate::input::describe_endpoint_input::Builder::default()
     }
 }
 
@@ -4411,6 +4926,184 @@ impl ListConnectionsInput {
     }
 }
 
+/// See [`ListEndpointsInput`](crate::input::ListEndpointsInput)
+pub mod list_endpoints_input {
+    /// A builder for [`ListEndpointsInput`](crate::input::ListEndpointsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name_prefix: std::option::Option<std::string::String>,
+        pub(crate) home_region: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>A value that will return a subset of the endpoints associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</p>
+        pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name_prefix = Some(input.into());
+            self
+        }
+        /// <p>A value that will return a subset of the endpoints associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</p>
+        pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name_prefix = input;
+            self
+        }
+        /// <p>The primary Region of the endpoints associated with this account. For example <code>"HomeRegion": "us-east-1"</code>.</p>
+        pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.home_region = Some(input.into());
+            self
+        }
+        /// <p>The primary Region of the endpoints associated with this account. For example <code>"HomeRegion": "us-east-1"</code>.</p>
+        pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.home_region = input;
+            self
+        }
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results returned by the call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results returned by the call.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListEndpointsInput`](crate::input::ListEndpointsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListEndpointsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListEndpointsInput {
+                name_prefix: self.name_prefix,
+                home_region: self.home_region,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListEndpointsInputOperationOutputAlias = crate::operation::ListEndpoints;
+#[doc(hidden)]
+pub type ListEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListEndpointsInput {
+    /// Consumes the builder and constructs an Operation<[`ListEndpoints`](crate::operation::ListEndpoints)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListEndpoints,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListEndpointsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListEndpointsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSEvents.ListEndpoints",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_endpoints(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListEndpoints::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListEndpoints",
+            "eventbridge",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListEndpointsInput`](crate::input::ListEndpointsInput)
+    pub fn builder() -> crate::input::list_endpoints_input::Builder {
+        crate::input::list_endpoints_input::Builder::default()
+    }
+}
+
 /// See [`ListEventBusesInput`](crate::input::ListEventBusesInput)
 pub mod list_event_buses_input {
     /// A builder for [`ListEventBusesInput`](crate::input::ListEventBusesInput)
@@ -5967,6 +6660,7 @@ pub mod put_events_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entries: std::option::Option<std::vec::Vec<crate::model::PutEventsRequestEntry>>,
+        pub(crate) endpoint_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// Appends an item to `entries`.
@@ -5988,6 +6682,20 @@ pub mod put_events_input {
             self.entries = input;
             self
         }
+        /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
+        /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
+        /// </important>
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_id = Some(input.into());
+            self
+        }
+        /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
+        /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
+        /// </important>
+        pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PutEventsInput`](crate::input::PutEventsInput)
         pub fn build(
             self,
@@ -5995,6 +6703,7 @@ pub mod put_events_input {
         {
             Ok(crate::input::PutEventsInput {
                 entries: self.entries,
+                endpoint_id: self.endpoint_id,
             })
         }
     }
@@ -6516,12 +7225,12 @@ pub mod put_rule_input {
             self.schedule_expression = input;
             self
         }
-        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
         pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_pattern = Some(input.into());
             self
         }
-        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
         pub fn set_event_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8560,6 +9269,279 @@ impl UpdateConnectionInput {
     }
 }
 
+/// See [`UpdateEndpointInput`](crate::input::UpdateEndpointInput)
+pub mod update_endpoint_input {
+    /// A builder for [`UpdateEndpointInput`](crate::input::UpdateEndpointInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) routing_config: std::option::Option<crate::model::RoutingConfig>,
+        pub(crate) replication_config: std::option::Option<crate::model::ReplicationConfig>,
+        pub(crate) event_buses: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the endpoint you want to update.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the endpoint you want to update.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A description for the endpoint.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description for the endpoint.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+        pub fn routing_config(mut self, input: crate::model::RoutingConfig) -> Self {
+            self.routing_config = Some(input);
+            self
+        }
+        /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+        pub fn set_routing_config(
+            mut self,
+            input: std::option::Option<crate::model::RoutingConfig>,
+        ) -> Self {
+            self.routing_config = input;
+            self
+        }
+        /// <p>Whether event replication was enabled or disabled by this request.</p>
+        pub fn replication_config(mut self, input: crate::model::ReplicationConfig) -> Self {
+            self.replication_config = Some(input);
+            self
+        }
+        /// <p>Whether event replication was enabled or disabled by this request.</p>
+        pub fn set_replication_config(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationConfig>,
+        ) -> Self {
+            self.replication_config = input;
+            self
+        }
+        /// Appends an item to `event_buses`.
+        ///
+        /// To override the contents of this collection use [`set_event_buses`](Self::set_event_buses).
+        ///
+        /// <p>Define event buses used for replication.</p>
+        pub fn event_buses(mut self, input: crate::model::EndpointEventBus) -> Self {
+            let mut v = self.event_buses.unwrap_or_default();
+            v.push(input);
+            self.event_buses = Some(v);
+            self
+        }
+        /// <p>Define event buses used for replication.</p>
+        pub fn set_event_buses(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
+        ) -> Self {
+            self.event_buses = input;
+            self
+        }
+        /// <p>The ARN of the role used by event replication for this request.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the role used by event replication for this request.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateEndpointInput`](crate::input::UpdateEndpointInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateEndpointInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateEndpointInput {
+                name: self.name,
+                description: self.description,
+                routing_config: self.routing_config,
+                replication_config: self.replication_config,
+                event_buses: self.event_buses,
+                role_arn: self.role_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateEndpointInputOperationOutputAlias = crate::operation::UpdateEndpoint;
+#[doc(hidden)]
+pub type UpdateEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateEndpointInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateEndpoint`](crate::operation::UpdateEndpoint)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateEndpoint,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateEndpointInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateEndpointInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSEvents.UpdateEndpoint",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_endpoint(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateEndpoint::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateEndpoint",
+            "eventbridge",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateEndpointInput`](crate::input::UpdateEndpointInput)
+    pub fn builder() -> crate::input::update_endpoint_input::Builder {
+        crate::input::update_endpoint_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateEndpointInput {
+    /// <p>The name of the endpoint you want to update.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A description for the endpoint.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+    pub routing_config: std::option::Option<crate::model::RoutingConfig>,
+    /// <p>Whether event replication was enabled or disabled by this request.</p>
+    pub replication_config: std::option::Option<crate::model::ReplicationConfig>,
+    /// <p>Define event buses used for replication.</p>
+    pub event_buses: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
+    /// <p>The ARN of the role used by event replication for this request.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+}
+impl UpdateEndpointInput {
+    /// <p>The name of the endpoint you want to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description for the endpoint.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+    pub fn routing_config(&self) -> std::option::Option<&crate::model::RoutingConfig> {
+        self.routing_config.as_ref()
+    }
+    /// <p>Whether event replication was enabled or disabled by this request.</p>
+    pub fn replication_config(&self) -> std::option::Option<&crate::model::ReplicationConfig> {
+        self.replication_config.as_ref()
+    }
+    /// <p>Define event buses used for replication.</p>
+    pub fn event_buses(&self) -> std::option::Option<&[crate::model::EndpointEventBus]> {
+        self.event_buses.as_deref()
+    }
+    /// <p>The ARN of the role used by event replication for this request.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateEndpointInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateEndpointInput");
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("routing_config", &self.routing_config);
+        formatter.field("replication_config", &self.replication_config);
+        formatter.field("event_buses", &self.event_buses);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.finish()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8985,7 +9967,7 @@ pub struct PutRuleInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".</p>
     pub schedule_expression: std::option::Option<std::string::String>,
-    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub event_pattern: std::option::Option<std::string::String>,
     /// <p>Indicates whether the rule is enabled or disabled.</p>
     pub state: std::option::Option<crate::model::RuleState>,
@@ -9008,7 +9990,7 @@ impl PutRuleInput {
     pub fn schedule_expression(&self) -> std::option::Option<&str> {
         self.schedule_expression.as_deref()
     }
-    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn event_pattern(&self) -> std::option::Option<&str> {
         self.event_pattern.as_deref()
     }
@@ -9142,17 +10124,28 @@ impl std::fmt::Debug for PutPartnerEventsInput {
 pub struct PutEventsInput {
     /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::PutEventsRequestEntry>>,
+    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
+    /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
+    /// </important>
+    pub endpoint_id: std::option::Option<std::string::String>,
 }
 impl PutEventsInput {
     /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
     pub fn entries(&self) -> std::option::Option<&[crate::model::PutEventsRequestEntry]> {
         self.entries.as_deref()
     }
+    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
+    /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
+    /// </important>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
 }
 impl std::fmt::Debug for PutEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutEventsInput");
         formatter.field("entries", &self.entries);
+        formatter.field("endpoint_id", &self.endpoint_id);
         formatter.finish()
     }
 }
@@ -9496,6 +10489,48 @@ impl std::fmt::Debug for ListEventBusesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListEndpointsInput {
+    /// <p>A value that will return a subset of the endpoints associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</p>
+    pub name_prefix: std::option::Option<std::string::String>,
+    /// <p>The primary Region of the endpoints associated with this account. For example <code>"HomeRegion": "us-east-1"</code>.</p>
+    pub home_region: std::option::Option<std::string::String>,
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results returned by the call.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListEndpointsInput {
+    /// <p>A value that will return a subset of the endpoints associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</p>
+    pub fn name_prefix(&self) -> std::option::Option<&str> {
+        self.name_prefix.as_deref()
+    }
+    /// <p>The primary Region of the endpoints associated with this account. For example <code>"HomeRegion": "us-east-1"</code>.</p>
+    pub fn home_region(&self) -> std::option::Option<&str> {
+        self.home_region.as_deref()
+    }
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results returned by the call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListEndpointsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListEndpointsInput");
+        formatter.field("name_prefix", &self.name_prefix);
+        formatter.field("home_region", &self.home_region);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectionsInput {
     /// <p>A name prefix to filter results returned. Only connections with a name that starts with the prefix are returned.</p>
     pub name_prefix: std::option::Option<std::string::String>,
@@ -9797,6 +10832,34 @@ impl std::fmt::Debug for DescribeEventBusInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeEndpointInput {
+    /// <p>The name of the endpoint you want to get information about. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The primary Region of the endpoint you want to get information about. For example <code>"HomeRegion": "us-east-1"</code>.</p>
+    pub home_region: std::option::Option<std::string::String>,
+}
+impl DescribeEndpointInput {
+    /// <p>The name of the endpoint you want to get information about. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The primary Region of the endpoint you want to get information about. For example <code>"HomeRegion": "us-east-1"</code>.</p>
+    pub fn home_region(&self) -> std::option::Option<&str> {
+        self.home_region.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeEndpointInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeEndpointInput");
+        formatter.field("name", &self.name);
+        formatter.field("home_region", &self.home_region);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectionInput {
     /// <p>The name of the connection to retrieve.</p>
     pub name: std::option::Option<std::string::String>,
@@ -9936,6 +10999,27 @@ impl DeleteEventBusInput {
 impl std::fmt::Debug for DeleteEventBusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEventBusInput");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteEndpointInput {
+    /// <p>The name of the endpoint you want to delete. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>..</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl DeleteEndpointInput {
+    /// <p>The name of the endpoint you want to delete. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>..</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteEndpointInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteEndpointInput");
         formatter.field("name", &self.name);
         formatter.finish()
     }
@@ -10109,6 +11193,66 @@ impl std::fmt::Debug for CreateEventBusInput {
         formatter.field("name", &self.name);
         formatter.field("event_source_name", &self.event_source_name);
         formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateEndpointInput {
+    /// <p>The name of the global endpoint. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A description of the global endpoint.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+    pub routing_config: std::option::Option<crate::model::RoutingConfig>,
+    /// <p>Enable or disable event replication.</p>
+    pub replication_config: std::option::Option<crate::model::ReplicationConfig>,
+    /// <p>Define the event buses used. </p> <important>
+    /// <p>The names of the event buses must be identical in each Region.</p>
+    /// </important>
+    pub event_buses: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
+    /// <p>The ARN of the role used for replication.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+}
+impl CreateEndpointInput {
+    /// <p>The name of the global endpoint. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the global endpoint.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+    pub fn routing_config(&self) -> std::option::Option<&crate::model::RoutingConfig> {
+        self.routing_config.as_ref()
+    }
+    /// <p>Enable or disable event replication.</p>
+    pub fn replication_config(&self) -> std::option::Option<&crate::model::ReplicationConfig> {
+        self.replication_config.as_ref()
+    }
+    /// <p>Define the event buses used. </p> <important>
+    /// <p>The names of the event buses must be identical in each Region.</p>
+    /// </important>
+    pub fn event_buses(&self) -> std::option::Option<&[crate::model::EndpointEventBus]> {
+        self.event_buses.as_deref()
+    }
+    /// <p>The ARN of the role used for replication.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateEndpointInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateEndpointInput");
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("routing_config", &self.routing_config);
+        formatter.field("replication_config", &self.replication_config);
+        formatter.field("event_buses", &self.event_buses);
+        formatter.field("role_arn", &self.role_arn);
         formatter.finish()
     }
 }

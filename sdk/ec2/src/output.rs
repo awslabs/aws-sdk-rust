@@ -5493,11 +5493,11 @@ impl ModifySubnetAttributeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifySpotFleetRequestOutput {
-    /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    /// <p>If the request succeeds, the response returns <code>true</code>. If the request fails, no response is returned, and instead an error message is returned.</p>
     pub r#return: std::option::Option<bool>,
 }
 impl ModifySpotFleetRequestOutput {
-    /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    /// <p>If the request succeeds, the response returns <code>true</code>. If the request fails, no response is returned, and instead an error message is returned.</p>
     pub fn r#return(&self) -> std::option::Option<bool> {
         self.r#return
     }
@@ -5518,12 +5518,12 @@ pub mod modify_spot_fleet_request_output {
         pub(crate) r#return: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+        /// <p>If the request succeeds, the response returns <code>true</code>. If the request fails, no response is returned, and instead an error message is returned.</p>
         pub fn r#return(mut self, input: bool) -> Self {
             self.r#return = Some(input);
             self
         }
-        /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+        /// <p>If the request succeeds, the response returns <code>true</code>. If the request fails, no response is returned, and instead an error message is returned.</p>
         pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
             self.r#return = input;
             self
@@ -6324,6 +6324,82 @@ impl ModifyInstanceMetadataOptionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModifyInstanceMaintenanceOptionsOutput {
+    /// <p>The ID of the instance.</p>
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
+    pub auto_recovery: std::option::Option<crate::model::InstanceAutoRecoveryState>,
+}
+impl ModifyInstanceMaintenanceOptionsOutput {
+    /// <p>The ID of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
+    pub fn auto_recovery(&self) -> std::option::Option<&crate::model::InstanceAutoRecoveryState> {
+        self.auto_recovery.as_ref()
+    }
+}
+impl std::fmt::Debug for ModifyInstanceMaintenanceOptionsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyInstanceMaintenanceOptionsOutput");
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("auto_recovery", &self.auto_recovery);
+        formatter.finish()
+    }
+}
+/// See [`ModifyInstanceMaintenanceOptionsOutput`](crate::output::ModifyInstanceMaintenanceOptionsOutput)
+pub mod modify_instance_maintenance_options_output {
+    /// A builder for [`ModifyInstanceMaintenanceOptionsOutput`](crate::output::ModifyInstanceMaintenanceOptionsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) auto_recovery: std::option::Option<crate::model::InstanceAutoRecoveryState>,
+    }
+    impl Builder {
+        /// <p>The ID of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
+        pub fn auto_recovery(mut self, input: crate::model::InstanceAutoRecoveryState) -> Self {
+            self.auto_recovery = Some(input);
+            self
+        }
+        /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
+        pub fn set_auto_recovery(
+            mut self,
+            input: std::option::Option<crate::model::InstanceAutoRecoveryState>,
+        ) -> Self {
+            self.auto_recovery = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyInstanceMaintenanceOptionsOutput`](crate::output::ModifyInstanceMaintenanceOptionsOutput)
+        pub fn build(self) -> crate::output::ModifyInstanceMaintenanceOptionsOutput {
+            crate::output::ModifyInstanceMaintenanceOptionsOutput {
+                instance_id: self.instance_id,
+                auto_recovery: self.auto_recovery,
+            }
+        }
+    }
+}
+impl ModifyInstanceMaintenanceOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyInstanceMaintenanceOptionsOutput`](crate::output::ModifyInstanceMaintenanceOptionsOutput)
+    pub fn builder() -> crate::output::modify_instance_maintenance_options_output::Builder {
+        crate::output::modify_instance_maintenance_options_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyInstanceEventWindowOutput {
     /// <p>Information about the event window.</p>
     pub instance_event_window: std::option::Option<crate::model::InstanceEventWindow>,
@@ -6884,11 +6960,11 @@ impl ModifyFpgaImageAttributeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyFleetOutput {
-    /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    /// <p>If the request succeeds, the response returns <code>true</code>. If the request fails, no response is returned, and instead an error message is returned.</p>
     pub r#return: std::option::Option<bool>,
 }
 impl ModifyFleetOutput {
-    /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    /// <p>If the request succeeds, the response returns <code>true</code>. If the request fails, no response is returned, and instead an error message is returned.</p>
     pub fn r#return(&self) -> std::option::Option<bool> {
         self.r#return
     }
@@ -6909,12 +6985,12 @@ pub mod modify_fleet_output {
         pub(crate) r#return: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+        /// <p>If the request succeeds, the response returns <code>true</code>. If the request fails, no response is returned, and instead an error message is returned.</p>
         pub fn r#return(mut self, input: bool) -> Self {
             self.r#return = Some(input);
             self
         }
-        /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+        /// <p>If the request succeeds, the response returns <code>true</code>. If the request fails, no response is returned, and instead an error message is returned.</p>
         pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
             self.r#return = input;
             self

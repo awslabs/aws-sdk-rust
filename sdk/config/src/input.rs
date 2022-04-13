@@ -1381,7 +1381,7 @@ pub mod delete_organization_config_rule_input {
         pub(crate) organization_config_rule_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of organization config rule that you want to delete.</p>
+        /// <p>The name of organization Config rule that you want to delete.</p>
         pub fn organization_config_rule_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -1389,7 +1389,7 @@ pub mod delete_organization_config_rule_input {
             self.organization_config_rule_name = Some(input.into());
             self
         }
-        /// <p>The name of organization config rule that you want to delete.</p>
+        /// <p>The name of organization Config rule that you want to delete.</p>
         pub fn set_organization_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5599,7 +5599,7 @@ pub mod describe_organization_config_rules_input {
         ///
         /// To override the contents of this collection use [`set_organization_config_rule_names`](Self::set_organization_config_rule_names).
         ///
-        /// <p>The names of organization config rules for which you want details. If you do not specify any names, Config returns details for all your organization config rules.</p>
+        /// <p>The names of organization Config rules for which you want details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
         pub fn organization_config_rule_names(
             mut self,
             input: impl Into<std::string::String>,
@@ -5609,7 +5609,7 @@ pub mod describe_organization_config_rules_input {
             self.organization_config_rule_names = Some(v);
             self
         }
-        /// <p>The names of organization config rules for which you want details. If you do not specify any names, Config returns details for all your organization config rules.</p>
+        /// <p>The names of organization Config rules for which you want details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
         pub fn set_organization_config_rule_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5617,12 +5617,12 @@ pub mod describe_organization_config_rules_input {
             self.organization_config_rule_names = input;
             self
         }
-        /// <p>The maximum number of organization config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+        /// <p>The maximum number of organization Config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of organization config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+        /// <p>The maximum number of organization Config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5779,7 +5779,7 @@ pub mod describe_organization_config_rule_statuses_input {
         ///
         /// To override the contents of this collection use [`set_organization_config_rule_names`](Self::set_organization_config_rule_names).
         ///
-        /// <p>The names of organization config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
+        /// <p>The names of organization Config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
         pub fn organization_config_rule_names(
             mut self,
             input: impl Into<std::string::String>,
@@ -5789,7 +5789,7 @@ pub mod describe_organization_config_rule_statuses_input {
             self.organization_config_rule_names = Some(v);
             self
         }
-        /// <p>The names of organization config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
+        /// <p>The names of organization Config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
         pub fn set_organization_config_rule_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9227,6 +9227,153 @@ impl GetConformancePackComplianceSummaryInput {
     }
 }
 
+/// See [`GetCustomRulePolicyInput`](crate::input::GetCustomRulePolicyInput)
+pub mod get_custom_rule_policy_input {
+    /// A builder for [`GetCustomRulePolicyInput`](crate::input::GetCustomRulePolicyInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) config_rule_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of your Config Custom Policy rule.</p>
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.config_rule_name = Some(input.into());
+            self
+        }
+        /// <p>The name of your Config Custom Policy rule.</p>
+        pub fn set_config_rule_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.config_rule_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetCustomRulePolicyInput`](crate::input::GetCustomRulePolicyInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetCustomRulePolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetCustomRulePolicyInput {
+                config_rule_name: self.config_rule_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetCustomRulePolicyInputOperationOutputAlias = crate::operation::GetCustomRulePolicy;
+#[doc(hidden)]
+pub type GetCustomRulePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetCustomRulePolicyInput {
+    /// Consumes the builder and constructs an Operation<[`GetCustomRulePolicy`](crate::operation::GetCustomRulePolicy)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetCustomRulePolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetCustomRulePolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetCustomRulePolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "StarlingDoveService.GetCustomRulePolicy",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_custom_rule_policy(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetCustomRulePolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetCustomRulePolicy",
+            "configservice",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetCustomRulePolicyInput`](crate::input::GetCustomRulePolicyInput)
+    pub fn builder() -> crate::input::get_custom_rule_policy_input::Builder {
+        crate::input::get_custom_rule_policy_input::Builder::default()
+    }
+}
+
 /// See [`GetDiscoveredResourceCountsInput`](crate::input::GetDiscoveredResourceCountsInput)
 pub mod get_discovered_resource_counts_input {
     /// A builder for [`GetDiscoveredResourceCountsInput`](crate::input::GetDiscoveredResourceCountsInput)
@@ -9420,7 +9567,7 @@ pub mod get_organization_config_rule_detailed_status_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of organization config rule for which you want status details for member accounts.</p>
+        /// <p>The name of your organization Config rule for which you want status details for member accounts.</p>
         pub fn organization_config_rule_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -9428,7 +9575,7 @@ pub mod get_organization_config_rule_detailed_status_input {
             self.organization_config_rule_name = Some(input.into());
             self
         }
-        /// <p>The name of organization config rule for which you want status details for member accounts.</p>
+        /// <p>The name of your organization Config rule for which you want status details for member accounts.</p>
         pub fn set_organization_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9788,6 +9935,155 @@ impl GetOrganizationConformancePackDetailedStatusInput {
     pub fn builder(
     ) -> crate::input::get_organization_conformance_pack_detailed_status_input::Builder {
         crate::input::get_organization_conformance_pack_detailed_status_input::Builder::default()
+    }
+}
+
+/// See [`GetOrganizationCustomRulePolicyInput`](crate::input::GetOrganizationCustomRulePolicyInput)
+pub mod get_organization_custom_rule_policy_input {
+    /// A builder for [`GetOrganizationCustomRulePolicyInput`](crate::input::GetOrganizationCustomRulePolicyInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_config_rule_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of your organization Config Custom Policy rule. </p>
+        pub fn organization_config_rule_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.organization_config_rule_name = Some(input.into());
+            self
+        }
+        /// <p>The name of your organization Config Custom Policy rule. </p>
+        pub fn set_organization_config_rule_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_config_rule_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetOrganizationCustomRulePolicyInput`](crate::input::GetOrganizationCustomRulePolicyInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetOrganizationCustomRulePolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetOrganizationCustomRulePolicyInput {
+                organization_config_rule_name: self.organization_config_rule_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetOrganizationCustomRulePolicyInputOperationOutputAlias =
+    crate::operation::GetOrganizationCustomRulePolicy;
+#[doc(hidden)]
+pub type GetOrganizationCustomRulePolicyInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl GetOrganizationCustomRulePolicyInput {
+    /// Consumes the builder and constructs an Operation<[`GetOrganizationCustomRulePolicy`](crate::operation::GetOrganizationCustomRulePolicy)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetOrganizationCustomRulePolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetOrganizationCustomRulePolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetOrganizationCustomRulePolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "StarlingDoveService.GetOrganizationCustomRulePolicy",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_organization_custom_rule_policy(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetOrganizationCustomRulePolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetOrganizationCustomRulePolicy",
+            "configservice",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetOrganizationCustomRulePolicyInput`](crate::input::GetOrganizationCustomRulePolicyInput)
+    pub fn builder() -> crate::input::get_organization_custom_rule_policy_input::Builder {
+        crate::input::get_organization_custom_rule_policy_input::Builder::default()
     }
 }
 
@@ -11667,14 +11963,14 @@ pub mod put_conformance_pack_input {
             self
         }
         /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
-        /// <p>You can only use a YAML template with two resource types: config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
+        /// <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
         /// </note>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_body = Some(input.into());
             self
         }
         /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
-        /// <p>You can only use a YAML template with two resource types: config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
+        /// <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
         /// </note>
         pub fn set_template_body(
             mut self,
@@ -12365,9 +12661,11 @@ pub mod put_organization_config_rule_input {
         pub(crate) organization_custom_rule_metadata:
             std::option::Option<crate::model::OrganizationCustomRuleMetadata>,
         pub(crate) excluded_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) organization_custom_policy_rule_metadata:
+            std::option::Option<crate::model::OrganizationCustomPolicyRuleMetadata>,
     }
     impl Builder {
-        /// <p>The name that you assign to an organization config rule.</p>
+        /// <p>The name that you assign to an organization Config rule.</p>
         pub fn organization_config_rule_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -12375,7 +12673,7 @@ pub mod put_organization_config_rule_input {
             self.organization_config_rule_name = Some(input.into());
             self
         }
-        /// <p>The name that you assign to an organization config rule.</p>
+        /// <p>The name that you assign to an organization Config rule.</p>
         pub fn set_organization_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12419,19 +12717,35 @@ pub mod put_organization_config_rule_input {
         ///
         /// To override the contents of this collection use [`set_excluded_accounts`](Self::set_excluded_accounts).
         ///
-        /// <p>A comma-separated list of accounts that you want to exclude from an organization config rule.</p>
+        /// <p>A comma-separated list of accounts that you want to exclude from an organization Config rule.</p>
         pub fn excluded_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.excluded_accounts.unwrap_or_default();
             v.push(input.into());
             self.excluded_accounts = Some(v);
             self
         }
-        /// <p>A comma-separated list of accounts that you want to exclude from an organization config rule.</p>
+        /// <p>A comma-separated list of accounts that you want to exclude from an organization Config rule.</p>
         pub fn set_excluded_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.excluded_accounts = input;
+            self
+        }
+        /// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
+        pub fn organization_custom_policy_rule_metadata(
+            mut self,
+            input: crate::model::OrganizationCustomPolicyRuleMetadata,
+        ) -> Self {
+            self.organization_custom_policy_rule_metadata = Some(input);
+            self
+        }
+        /// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
+        pub fn set_organization_custom_policy_rule_metadata(
+            mut self,
+            input: std::option::Option<crate::model::OrganizationCustomPolicyRuleMetadata>,
+        ) -> Self {
+            self.organization_custom_policy_rule_metadata = input;
             self
         }
         /// Consumes the builder and constructs a [`PutOrganizationConfigRuleInput`](crate::input::PutOrganizationConfigRuleInput)
@@ -12446,6 +12760,8 @@ pub mod put_organization_config_rule_input {
                 organization_managed_rule_metadata: self.organization_managed_rule_metadata,
                 organization_custom_rule_metadata: self.organization_custom_rule_metadata,
                 excluded_accounts: self.excluded_accounts,
+                organization_custom_policy_rule_metadata: self
+                    .organization_custom_policy_rule_metadata,
             })
         }
     }
@@ -15584,7 +15900,7 @@ impl std::fmt::Debug for PutOrganizationConformancePackInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutOrganizationConfigRuleInput {
-    /// <p>The name that you assign to an organization config rule.</p>
+    /// <p>The name that you assign to an organization Config rule.</p>
     pub organization_config_rule_name: std::option::Option<std::string::String>,
     /// <p>An <code>OrganizationManagedRuleMetadata</code> object. </p>
     pub organization_managed_rule_metadata:
@@ -15592,11 +15908,14 @@ pub struct PutOrganizationConfigRuleInput {
     /// <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
     pub organization_custom_rule_metadata:
         std::option::Option<crate::model::OrganizationCustomRuleMetadata>,
-    /// <p>A comma-separated list of accounts that you want to exclude from an organization config rule.</p>
+    /// <p>A comma-separated list of accounts that you want to exclude from an organization Config rule.</p>
     pub excluded_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
+    pub organization_custom_policy_rule_metadata:
+        std::option::Option<crate::model::OrganizationCustomPolicyRuleMetadata>,
 }
 impl PutOrganizationConfigRuleInput {
-    /// <p>The name that you assign to an organization config rule.</p>
+    /// <p>The name that you assign to an organization Config rule.</p>
     pub fn organization_config_rule_name(&self) -> std::option::Option<&str> {
         self.organization_config_rule_name.as_deref()
     }
@@ -15612,9 +15931,15 @@ impl PutOrganizationConfigRuleInput {
     ) -> std::option::Option<&crate::model::OrganizationCustomRuleMetadata> {
         self.organization_custom_rule_metadata.as_ref()
     }
-    /// <p>A comma-separated list of accounts that you want to exclude from an organization config rule.</p>
+    /// <p>A comma-separated list of accounts that you want to exclude from an organization Config rule.</p>
     pub fn excluded_accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.excluded_accounts.as_deref()
+    }
+    /// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
+    pub fn organization_custom_policy_rule_metadata(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationCustomPolicyRuleMetadata> {
+        self.organization_custom_policy_rule_metadata.as_ref()
     }
 }
 impl std::fmt::Debug for PutOrganizationConfigRuleInput {
@@ -15633,6 +15958,10 @@ impl std::fmt::Debug for PutOrganizationConfigRuleInput {
             &self.organization_custom_rule_metadata,
         );
         formatter.field("excluded_accounts", &self.excluded_accounts);
+        formatter.field(
+            "organization_custom_policy_rule_metadata",
+            &self.organization_custom_policy_rule_metadata,
+        );
         formatter.finish()
     }
 }
@@ -15736,7 +16065,7 @@ pub struct PutConformancePackInput {
     /// </note>
     pub template_s3_uri: std::option::Option<std::string::String>,
     /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
-    /// <p>You can only use a YAML template with two resource types: config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
+    /// <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
     /// </note>
     pub template_body: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
@@ -15763,7 +16092,7 @@ impl PutConformancePackInput {
         self.template_s3_uri.as_deref()
     }
     /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
-    /// <p>You can only use a YAML template with two resource types: config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
+    /// <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
     /// </note>
     pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()
@@ -16204,6 +16533,30 @@ impl std::fmt::Debug for GetResourceConfigHistoryInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetOrganizationCustomRulePolicyInput {
+    /// <p>The name of your organization Config Custom Policy rule. </p>
+    pub organization_config_rule_name: std::option::Option<std::string::String>,
+}
+impl GetOrganizationCustomRulePolicyInput {
+    /// <p>The name of your organization Config Custom Policy rule. </p>
+    pub fn organization_config_rule_name(&self) -> std::option::Option<&str> {
+        self.organization_config_rule_name.as_deref()
+    }
+}
+impl std::fmt::Debug for GetOrganizationCustomRulePolicyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetOrganizationCustomRulePolicyInput");
+        formatter.field(
+            "organization_config_rule_name",
+            &self.organization_config_rule_name,
+        );
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOrganizationConformancePackDetailedStatusInput {
     /// <p>The name of organization conformance pack for which you want status details for member accounts.</p>
     pub organization_conformance_pack_name: std::option::Option<std::string::String>,
@@ -16252,7 +16605,7 @@ impl std::fmt::Debug for GetOrganizationConformancePackDetailedStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOrganizationConfigRuleDetailedStatusInput {
-    /// <p>The name of organization config rule for which you want status details for member accounts.</p>
+    /// <p>The name of your organization Config rule for which you want status details for member accounts.</p>
     pub organization_config_rule_name: std::option::Option<std::string::String>,
     /// <p>A <code>StatusDetailFilters</code> object.</p>
     pub filters: std::option::Option<crate::model::StatusDetailFilters>,
@@ -16262,7 +16615,7 @@ pub struct GetOrganizationConfigRuleDetailedStatusInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetOrganizationConfigRuleDetailedStatusInput {
-    /// <p>The name of organization config rule for which you want status details for member accounts.</p>
+    /// <p>The name of your organization Config rule for which you want status details for member accounts.</p>
     pub fn organization_config_rule_name(&self) -> std::option::Option<&str> {
         self.organization_config_rule_name.as_deref()
     }
@@ -16330,6 +16683,27 @@ impl std::fmt::Debug for GetDiscoveredResourceCountsInput {
         formatter.field("resource_types", &self.resource_types);
         formatter.field("limit", &self.limit);
         formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetCustomRulePolicyInput {
+    /// <p>The name of your Config Custom Policy rule.</p>
+    pub config_rule_name: std::option::Option<std::string::String>,
+}
+impl GetCustomRulePolicyInput {
+    /// <p>The name of your Config Custom Policy rule.</p>
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+        self.config_rule_name.as_deref()
+    }
+}
+impl std::fmt::Debug for GetCustomRulePolicyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetCustomRulePolicyInput");
+        formatter.field("config_rule_name", &self.config_rule_name);
         formatter.finish()
     }
 }
@@ -17059,7 +17433,7 @@ impl std::fmt::Debug for DescribeOrganizationConformancePacksInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConfigRuleStatusesInput {
-    /// <p>The names of organization config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
+    /// <p>The names of organization Config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
     pub organization_config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub limit: i32,
@@ -17067,7 +17441,7 @@ pub struct DescribeOrganizationConfigRuleStatusesInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConfigRuleStatusesInput {
-    /// <p>The names of organization config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
+    /// <p>The names of organization Config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
     pub fn organization_config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
         self.organization_config_rule_names.as_deref()
     }
@@ -17097,19 +17471,19 @@ impl std::fmt::Debug for DescribeOrganizationConfigRuleStatusesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConfigRulesInput {
-    /// <p>The names of organization config rules for which you want details. If you do not specify any names, Config returns details for all your organization config rules.</p>
+    /// <p>The names of organization Config rules for which you want details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
     pub organization_config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of organization config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    /// <p>The maximum number of organization Config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConfigRulesInput {
-    /// <p>The names of organization config rules for which you want details. If you do not specify any names, Config returns details for all your organization config rules.</p>
+    /// <p>The names of organization Config rules for which you want details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
     pub fn organization_config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
         self.organization_config_rule_names.as_deref()
     }
-    /// <p>The maximum number of organization config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    /// <p>The maximum number of organization Config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -17912,11 +18286,11 @@ impl std::fmt::Debug for DeleteOrganizationConformancePackInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOrganizationConfigRuleInput {
-    /// <p>The name of organization config rule that you want to delete.</p>
+    /// <p>The name of organization Config rule that you want to delete.</p>
     pub organization_config_rule_name: std::option::Option<std::string::String>,
 }
 impl DeleteOrganizationConfigRuleInput {
-    /// <p>The name of organization config rule that you want to delete.</p>
+    /// <p>The name of organization Config rule that you want to delete.</p>
     pub fn organization_config_rule_name(&self) -> std::option::Option<&str> {
         self.organization_config_rule_name.as_deref()
     }
