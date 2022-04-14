@@ -1848,7 +1848,7 @@ source_hash = '11d8e41736f326fe2f6dca34a8fa80d817a708675034081391b8f641a344256e'
 [crates.aws-smithy-http]
 category = 'SmithyRuntime'
 version = '0.40.0'
-source_hash = '7465d1d956cf34a83e9c7f358e31010e1185e0cb94899165bdbe60a3dac70f4f'
+source_hash = 'd5dfc458a3813a9c1e7ef2d1e748134b048c24823ccecf0f70d5b538401c4007'
 
 [crates.aws-smithy-http-tower]
 category = 'SmithyRuntime'

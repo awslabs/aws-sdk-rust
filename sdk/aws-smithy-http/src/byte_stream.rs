@@ -80,7 +80,7 @@
 //!
 //! ```no_run
 //! # #[cfg(feature = "rt-tokio")]
-//! {
+//! # {
 //! use aws_smithy_http::byte_stream::ByteStream;
 //! use std::path::Path;
 //! struct GetObjectInput {
@@ -93,7 +93,7 @@
 //!         .expect("valid path");
 //!     GetObjectInput { body: bytestream }
 //! }
-//! }
+//! # }
 //! ```
 
 use crate::body::SdkBody;
