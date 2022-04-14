@@ -1,6 +1,7 @@
 <!-- Do not manually edit this file, use `update-changelogs` -->
-0.10.0 (April 13th, 2022)
+0.10.1 (April 14th, 2022)
 =========================
+
 **Breaking Changes:**
 - ⚠ ([aws-sdk-rust#490](https://github.com/awslabs/aws-sdk-rust/issues/490)) Update all SDK and runtime crates to [edition 2021](https://blog.rust-lang.org/2021/10/21/Rust-1.56.0.html)
 
