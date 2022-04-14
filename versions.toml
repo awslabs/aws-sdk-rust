@@ -1,5 +1,5 @@
-smithy_rs_revision = 'd16ee113adff5e800a961f9ecfd64ba4bd6b58cf'
-aws_doc_sdk_examples_revision = 'f51d41a6d9a82e3a62a50fa8042b6a9d57bdb7d0'
+smithy_rs_revision = '7885dc71977aaaa544b31c544106cc58463dfe48'
+aws_doc_sdk_examples_revision = 'd9ad3f130d88c8453af5df381fdda688435fcc30'
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '0.10.0'
@@ -1848,7 +1848,7 @@ source_hash = '11d8e41736f326fe2f6dca34a8fa80d817a708675034081391b8f641a344256e'
 [crates.aws-smithy-http]
 category = 'SmithyRuntime'
 version = '0.40.0'
-source_hash = '7465d1d956cf34a83e9c7f358e31010e1185e0cb94899165bdbe60a3dac70f4f'
+source_hash = 'd5dfc458a3813a9c1e7ef2d1e748134b048c24823ccecf0f70d5b538401c4007'
 
 [crates.aws-smithy-http-tower]
 category = 'SmithyRuntime'

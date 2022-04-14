@@ -8,7 +8,7 @@
 //! - Endpoint support
 //! - HTTP header deserialization
 //! - Event streams
-//! - `ByteStream`: a misuse-resistant abstraction for streaming binary data
+//! - [`ByteStream`](byte_stream::ByteStream): a misuse-resistant abstraction for streaming binary data
 //!
 //! | Feature        | Description |
 //! |----------------|-------------|
