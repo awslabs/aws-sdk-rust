@@ -480,7 +480,7 @@ impl<'a> fmt::Display for StringToSign<'a> {
             "{}\n{}\n{}\n{}",
             HMAC_256,
             format_date_time(self.time),
-            self.scope.to_string(),
+            self.scope,
             self.hashed_creq
         )
     }

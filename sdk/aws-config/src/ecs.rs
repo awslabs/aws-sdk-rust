@@ -131,6 +131,7 @@ impl ProvideCredentials for EcsCredentialsProvider {
 
 /// Inner Provider that can record failed configuration state
 #[derive(Debug)]
+#[allow(clippy::large_enum_variant)]
 enum Provider {
     Configured(HttpCredentialProvider),
     NotConfigured,
