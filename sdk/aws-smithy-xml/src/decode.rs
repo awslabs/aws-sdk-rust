@@ -300,7 +300,7 @@ impl<'inp> ScopedDecoder<'inp, '_> {
 
     fn nested_decoder<'a>(&'a mut self, start_el: StartEl<'inp>) -> ScopedDecoder<'inp, 'a> {
         ScopedDecoder {
-            doc: &mut self.doc,
+            doc: self.doc,
             start_el,
             terminated: false,
         }

@@ -99,7 +99,7 @@ pub fn parse_generic_error(
     if let Some(code) = error_type_from_header(headers)
         .map_err(|_| DeserializeError::custom("X-Amzn-Errortype header was not valid UTF-8"))?
         .or_else(|| code.as_deref())
-        .map(|c| sanitize_error_code(c))
+        .map(sanitize_error_code)
     {
         err_builder.code(code);
     }

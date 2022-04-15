@@ -144,7 +144,7 @@ impl<'a> JsonObjectWriter<'a> {
         self.json.push_str(&escape_string(key));
         self.json.push_str("\":");
 
-        JsonValueWriter::new(&mut self.json)
+        JsonValueWriter::new(self.json)
     }
 
     /// Finishes the object.
@@ -170,7 +170,7 @@ impl<'a> JsonArrayWriter<'a> {
     /// Starts a new value in the array.
     pub fn value(&mut self) -> JsonValueWriter {
         self.comma_delimit();
-        JsonValueWriter::new(&mut self.json)
+        JsonValueWriter::new(self.json)
     }
 
     /// Finishes the array.
