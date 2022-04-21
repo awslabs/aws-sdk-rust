@@ -293,6 +293,18 @@ impl ByteStream {
         ));
         Ok(ByteStream::new(body))
     }
+
+    /// Create a ByteStream from a file specifying offset and length
+    #[cfg(feature = "rt-tokio")]
+    pub async fn from_path_chunk(path: &std::path::Path, offset: u64, sz: u64) -> Result<Self, Error> {
+        let mut file = tokio::fs::File::open(path).await.map_err(|err| Error(err.into()))?;
+        use tokio::io::AsyncSeekExt;
+        let _s = file.seek(std::io::SeekFrom::Start(offset)).await.map_err(|err| Error(err.into()))?;
+        let body = SdkBody::from_dyn(http_body::combinators::BoxBody::new(
+            bytestream_util::PathBody::from_file(file, sz),
+        ));
+        Ok(ByteStream::new(body))
+    }
 }
 
 impl Default for ByteStream {
