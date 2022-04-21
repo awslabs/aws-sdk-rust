@@ -12,8 +12,7 @@ use std::fmt;
 use std::fmt::{Display, Formatter};
 use std::str::FromStr;
 
-use http::header::{HeaderName, ValueIter};
-use http::HeaderValue;
+use http::header::{HeaderMap, HeaderName, HeaderValue, ValueIter};
 
 use aws_smithy_types::date_time::Format;
 use aws_smithy_types::primitive::Parse;
@@ -295,16 +294,44 @@ pub fn quote_header_value<'a>(value: impl Into<Cow<'a, str>>) -> Cow<'a, str> {
     }
 }
 
+/// Given two [`HeaderMap`][HeaderMap]s, merge them together and return the merged `HeaderMap`. If the
+/// two `HeaderMap`s share any keys, values from the right `HeaderMap` be appended to the left `HeaderMap`.
+pub(crate) fn append_merge_header_maps(
+    mut lhs: HeaderMap<HeaderValue>,
+    rhs: HeaderMap<HeaderValue>,
+) -> HeaderMap<HeaderValue> {
+    let mut last_header_name_seen = None;
+    for (header_name, header_value) in rhs.into_iter() {
+        // For each yielded item that has None provided for the `HeaderName`,
+        // then the associated header name is the same as that of the previously
+        // yielded item. The first yielded item will have `HeaderName` set.
+        // https://docs.rs/http/latest/http/header/struct.HeaderMap.html#method.into_iter-2
+        match (&mut last_header_name_seen, header_name) {
+            (_, Some(header_name)) => {
+                lhs.append(header_name.clone(), header_value);
+                last_header_name_seen = Some(header_name);
+            }
+            (Some(header_name), None) => {
+                lhs.append(header_name.clone(), header_value);
+            }
+            (None, None) => unreachable!(),
+        };
+    }
+
+    lhs
+}
+
 #[cfg(test)]
 mod test {
     use std::collections::HashMap;
 
     use aws_smithy_types::{date_time::Format, DateTime};
-    use http::header::HeaderName;
+    use http::header::{HeaderMap, HeaderName, HeaderValue};
 
     use crate::header::{
-        headers_for_prefix, many_dates, read_many_from_str, read_many_primitive,
-        set_request_header_if_absent, set_response_header_if_absent, ParseError,
+        append_merge_header_maps, headers_for_prefix, many_dates, read_many_from_str,
+        read_many_primitive, set_request_header_if_absent, set_response_header_if_absent,
+        ParseError,
     };
 
     use super::quote_header_value;
@@ -559,5 +586,80 @@ mod test {
         assert_eq!("\"\\\"f\\\\oo\\\"\"", &quote_header_value("\"f\\oo\""));
         assert_eq!("\"(\"", &quote_header_value("("));
         assert_eq!("\")\"", &quote_header_value(")"));
+    }
+
+    #[test]
+    fn test_append_merge_header_maps_with_shared_key() {
+        let header_name = HeaderName::from_static("some_key");
+        let left_header_value = HeaderValue::from_static("lhs value");
+        let right_header_value = HeaderValue::from_static("rhs value");
+
+        let mut left_hand_side_headers = HeaderMap::new();
+        left_hand_side_headers.insert(header_name.clone(), left_header_value.clone());
+
+        let mut right_hand_side_headers = HeaderMap::new();
+        right_hand_side_headers.insert(header_name.clone(), right_header_value.clone());
+
+        let merged_header_map =
+            append_merge_header_maps(left_hand_side_headers, right_hand_side_headers);
+        let actual_merged_values: Vec<_> = merged_header_map
+            .get_all(header_name.clone())
+            .into_iter()
+            .collect();
+
+        let expected_merged_values = vec![left_header_value, right_header_value];
+
+        assert_eq!(actual_merged_values, expected_merged_values);
+    }
+
+    #[test]
+    fn test_append_merge_header_maps_with_multiple_values_in_left_hand_map() {
+        let header_name = HeaderName::from_static("some_key");
+        let left_header_value_1 = HeaderValue::from_static("lhs value 1");
+        let left_header_value_2 = HeaderValue::from_static("lhs_value 2");
+        let right_header_value = HeaderValue::from_static("rhs value");
+
+        let mut left_hand_side_headers = HeaderMap::new();
+        left_hand_side_headers.insert(header_name.clone(), left_header_value_1.clone());
+        left_hand_side_headers.append(header_name.clone(), left_header_value_2.clone());
+
+        let mut right_hand_side_headers = HeaderMap::new();
+        right_hand_side_headers.insert(header_name.clone(), right_header_value.clone());
+
+        let merged_header_map =
+            append_merge_header_maps(left_hand_side_headers, right_hand_side_headers);
+        let actual_merged_values: Vec<_> = merged_header_map
+            .get_all(header_name.clone())
+            .into_iter()
+            .collect();
+
+        let expected_merged_values =
+            vec![left_header_value_1, left_header_value_2, right_header_value];
+
+        assert_eq!(actual_merged_values, expected_merged_values);
+    }
+
+    #[test]
+    fn test_append_merge_header_maps_with_empty_left_hand_map() {
+        let header_name = HeaderName::from_static("some_key");
+        let right_header_value_1 = HeaderValue::from_static("rhs value 1");
+        let right_header_value_2 = HeaderValue::from_static("rhs_value 2");
+
+        let left_hand_side_headers = HeaderMap::new();
+
+        let mut right_hand_side_headers = HeaderMap::new();
+        right_hand_side_headers.insert(header_name.clone(), right_header_value_1.clone());
+        right_hand_side_headers.append(header_name.clone(), right_header_value_2.clone());
+
+        let merged_header_map =
+            append_merge_header_maps(left_hand_side_headers, right_hand_side_headers);
+        let actual_merged_values: Vec<_> = merged_header_map
+            .get_all(header_name.clone())
+            .into_iter()
+            .collect();
+
+        let expected_merged_values = vec![right_header_value_1, right_header_value_2];
+
+        assert_eq!(actual_merged_values, expected_merged_values);
     }
 }
