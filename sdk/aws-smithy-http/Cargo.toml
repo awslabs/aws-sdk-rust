@@ -48,9 +48,11 @@ optional = true
 [dev-dependencies]
 async-stream = "0.3"
 futures-util = "0.3"
+pretty_assertions = "1.2"
 proptest = "1"
 tokio-stream = "0.1.5"
 tempfile = "3.2.0"
+tracing-test = "0.2.1"
 
 [dev-dependencies.hyper]
 version = "0.14"
