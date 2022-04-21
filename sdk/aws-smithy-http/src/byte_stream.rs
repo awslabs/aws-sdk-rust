@@ -294,9 +294,42 @@ impl ByteStream {
         Ok(ByteStream::new(body))
     }
 
-    /// Create a ByteStream from a file specifying offset and length
+    /// Create a ByteStream from a file path specifying offset and length.
+    /// 
+    /// # Examples
+    ///```no_run
+    ///use std::time::Instant;
+    ///pub async fn upload_chunk(
+    ///    client: &Client,
+    ///    bucket: &str,
+    ///    file_name: &str,
+    ///    key: &str,
+    ///    start_offset: u64,
+    ///    chunk_size: u64
+    ///) -> Result<(), Error> {
+    ///    let body = ByteStream::from_path_chunk(Path::new(file_name), start_offset, chunk_size)
+    ///        .await
+    ///        .expect(&format!("Cannot read from {}", file_name));
+    ///    let start = Instant::now();
+    ///    client
+    ///        .put_object()
+    ///        .bucket(bucket)
+    ///        .key(key)
+    ///        .body(body)
+    ///        .send()
+    ///        .await?;
+    ///    let elapsed = start.elapsed();
+    ///    println!(
+    ///        "Uploaded chunk of size {} from file {} in {:.2} s",
+    ///        chunk_size,
+    ///        file_name,
+    ///        elapsed.as_secs_f32()
+    ///    );
+    ///    Ok(())
+    ///}
+    ///```
     #[cfg(feature = "rt-tokio")]
-    pub async fn from_path_chunk(path: &std::path::Path, offset: u64, sz: u64) -> Result<Self, Error> {
+    pub async fn from_path_chunk(path: impl AsRef<std::path::Path>, offset: u64, sz: u64) -> Result<Self, Error> {
         let mut file = tokio::fs::File::open(path).await.map_err(|err| Error(err.into()))?;
         use tokio::io::AsyncSeekExt;
         let _s = file.seek(std::io::SeekFrom::Start(offset)).await.map_err(|err| Error(err.into()))?;
