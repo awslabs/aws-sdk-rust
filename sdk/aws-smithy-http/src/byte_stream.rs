@@ -110,6 +110,7 @@ use std::task::{Context, Poll};
 
 #[cfg(feature = "rt-tokio")]
 mod bytestream_util;
+use tokio::io::AsyncSeekExt; //to enable tokio::fs::File::seek
 
 /// Stream of binary data
 ///
@@ -294,6 +295,25 @@ impl ByteStream {
         Ok(ByteStream::new(body))
     }
 
+    /// Create a ByteStream from a file chunk. In order to keep the file
+    /// argument immutable the current offset in the file cannot be checked
+    /// because a call to `stream_position()` requires the file handle to
+    /// be mutable.
+    ///
+    /// Applications must call `file.seek()` before passing the file
+    /// handle to this function.
+    ///
+    /// NOTE: This will NOT result in a retryable ByteStream. For a ByteStream that can be retried in the case of
+    /// upstream failures, use [`ByteStream::from_path`](ByteStream::from_path)
+    #[cfg(feature = "rt-tokio")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "rt-tokio")))]
+    pub async fn from_file_chunk(file: tokio::fs::File, chunk_size: u64) -> Result<Self, Error> {
+        let body = SdkBody::from_dyn(http_body::combinators::BoxBody::new(
+            bytestream_util::PathBody::from_file(file, chunk_size),
+        ));
+        Ok(ByteStream::new(body))
+    }
+
     /// Create a ByteStream from a file path specifying offset and length.
     /// 
     /// # Examples
@@ -329,12 +349,23 @@ impl ByteStream {
     ///}
     ///```
     #[cfg(feature = "rt-tokio")]
-    pub async fn from_path_chunk(path: impl AsRef<std::path::Path>, offset: u64, sz: u64) -> Result<Self, Error> {
+    #[cfg_attr(docsrs, doc(cfg(feature = "rt-tokio")))]
+    pub async fn from_path_chunk(path: impl AsRef<std::path::Path>, start_offset: u64, chunk_size: u64) -> Result<Self, Error> {
+        let path = path.as_ref();
+        let sz = tokio::fs::metadata(path)
+            .await
+            .map_err(|err| Error(err.into()))?
+            .len();
+        if start_offset >= sz {
+            return Err(Error(Box::new(std::io::Error::new(std::io::ErrorKind::InvalidData, "Offset exceeds file size"))));
+        }
+        if chunk_size > (sz - start_offset) || chunk_size == 0 {
+            return Err(Error(Box::new(std::io::Error::new(std::io::ErrorKind::InvalidData, "Chunk size out of range"))));
+        }
         let mut file = tokio::fs::File::open(path).await.map_err(|err| Error(err.into()))?;
-        use tokio::io::AsyncSeekExt;
-        let _s = file.seek(std::io::SeekFrom::Start(offset)).await.map_err(|err| Error(err.into()))?;
+        let _s = file.seek(std::io::SeekFrom::Start(start_offset)).await.map_err(|err| Error(err.into()))?;
         let body = SdkBody::from_dyn(http_body::combinators::BoxBody::new(
-            bytestream_util::PathBody::from_file(file, sz),
+            bytestream_util::PathBody::from_file(file, chunk_size),
         ));
         Ok(ByteStream::new(body))
     }
