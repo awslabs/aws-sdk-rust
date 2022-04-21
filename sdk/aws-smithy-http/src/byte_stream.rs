@@ -95,6 +95,30 @@
 //! }
 //! # }
 //! ```
+//!
+//! If you want more control over how the file is read, such as specifying the size of the buffer used to read the file
+//! or the length of the file, use an [`FsBuilder`](crate::byte_stream::FsBuilder).
+//!
+//! ```no_run
+//! # #[cfg(feature = "rt-tokio")]
+//! # {
+//! use aws_smithy_http::byte_stream::ByteStream;
+//! use std::path::Path;
+//! struct GetObjectInput {
+//!     body: ByteStream
+//! }
+//!
+//! async fn bytestream_from_file() -> GetObjectInput {
+//!     let bytestream = ByteStream::read_from().path("docs/some-large-file.csv")
+//!         .buffer_size(32_784)
+//!         .file_size(123_456)
+//!         .build()
+//!         .await
+//!         .expect("valid path");
+//!     GetObjectInput { body: bytestream }
+//! }
+//! # }
+//! ```
 
 use crate::body::SdkBody;
 use bytes::Buf;
@@ -110,6 +134,9 @@ use std::task::{Context, Poll};
 
 #[cfg(feature = "rt-tokio")]
 mod bytestream_util;
+
+#[cfg(feature = "rt-tokio")]
+pub use self::bytestream_util::FsBuilder;
 
 /// Stream of binary data
 ///
@@ -239,6 +266,33 @@ impl ByteStream {
         self.0.collect().await.map_err(|err| Error(err))
     }
 
+    /// Returns a [`FsBuilder`](crate::byte_stream::FsBuilder), allowing you to build a `ByteStream` with
+    /// full control over how the file is read (eg. specifying the length of the file or the size of the buffer used to read the file).
+    /// ```no_run
+    /// # #[cfg(feature = "rt-tokio")]
+    /// # {
+    /// use aws_smithy_http::byte_stream::ByteStream;
+    ///
+    /// async fn bytestream_from_file() -> ByteStream {
+    ///     let bytestream = ByteStream::read_from()
+    ///         .path("docs/some-large-file.csv")
+    ///         // Specify the size of the buffer used to read the file (in bytes, default is 4096)
+    ///         .buffer_size(32_784)
+    ///         // Specify the length of the file used (skips an additional call to retrieve the size)
+    ///         .file_size(123_456)
+    ///         .build()
+    ///         .await
+    ///         .expect("valid path");
+    ///     bytestream
+    /// }
+    /// # }
+    /// ```
+    #[cfg(feature = "rt-tokio")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "rt-tokio")))]
+    pub fn read_from() -> FsBuilder {
+        FsBuilder::new()
+    }
+
     /// Create a ByteStream that streams data from the filesystem
     ///
     /// This function creates a retryable ByteStream for a given `path`. The returned ByteStream
@@ -251,6 +305,10 @@ impl ByteStream {
     ///
     /// Furthermore, a partial write MAY seek in the file and resume from the previous location.
     ///
+    /// Note: If you want more control, such as specifying the size of the buffer used to read the file
+    /// or the length of the file, use a [`FsBuilder`](crate::byte_stream::FsBuilder) as returned
+    /// from `ByteStream::read_from`
+    ///
     /// # Examples
     /// ```no_run
     /// use aws_smithy_http::byte_stream::ByteStream;
@@ -262,36 +320,21 @@ impl ByteStream {
     #[cfg(feature = "rt-tokio")]
     #[cfg_attr(docsrs, doc(cfg(feature = "rt-tokio")))]
     pub async fn from_path(path: impl AsRef<std::path::Path>) -> Result<Self, Error> {
-        let path = path.as_ref();
-        let path_buf = path.to_path_buf();
-        let sz = tokio::fs::metadata(path)
-            .await
-            .map_err(|err| Error(err.into()))?
-            .len();
-        let body_loader = move || {
-            SdkBody::from_dyn(http_body::combinators::BoxBody::new(
-                bytestream_util::PathBody::from_path(path_buf.as_path(), sz),
-            ))
-        };
-        Ok(ByteStream::new(SdkBody::retryable(body_loader)))
+        FsBuilder::new().path(path).build().await
     }
 
     /// Create a ByteStream from a file
     ///
     /// NOTE: This will NOT result in a retryable ByteStream. For a ByteStream that can be retried in the case of
     /// upstream failures, use [`ByteStream::from_path`](ByteStream::from_path)
+    #[deprecated(
+        since = "0.40.0",
+        note = "Prefer the more extensible ByteStream::read_from() API"
+    )]
     #[cfg(feature = "rt-tokio")]
     #[cfg_attr(docsrs, doc(cfg(feature = "rt-tokio")))]
     pub async fn from_file(file: tokio::fs::File) -> Result<Self, Error> {
-        let sz = file
-            .metadata()
-            .await
-            .map_err(|err| Error(err.into()))?
-            .len();
-        let body = SdkBody::from_dyn(http_body::combinators::BoxBody::new(
-            bytestream_util::PathBody::from_file(file, sz),
-        ));
-        Ok(ByteStream::new(body))
+        FsBuilder::new().file(file).build().await
     }
 }
 
@@ -527,6 +570,49 @@ mod tests {
         assert!(body2.starts_with(b"Brian was here."));
         assert!(body2.ends_with(b"9999\n"));
         assert_eq!(body2.len(), 298890);
+
+        assert_eq!(
+            ByteStream::new(body1).collect().await?.remaining(),
+            298890 - some_data.len()
+        );
+
+        Ok(())
+    }
+
+    #[cfg(feature = "rt-tokio")]
+    #[tokio::test]
+    async fn path_based_bytestreams_with_builder() -> Result<(), Box<dyn std::error::Error>> {
+        use super::ByteStream;
+        use bytes::Buf;
+        use http_body::Body;
+        use std::io::Write;
+        use tempfile::NamedTempFile;
+        let mut file = NamedTempFile::new()?;
+
+        for i in 0..10000 {
+            writeln!(file, "Brian was here. Briefly. {}", i)?;
+        }
+        let body = ByteStream::read_from()
+            .path(&file)
+            .buffer_size(16384)
+            // This isn't the right file length - one shouldn't do this in real code
+            .file_size(200)
+            .build()
+            .await?
+            .into_inner();
+
+        // assert that the file length specified size is used as size hint
+        assert_eq!(body.size_hint().exact(), Some(200));
+
+        let mut body1 = body.try_clone().expect("retryable bodies are cloneable");
+        // read a little bit from one of the clones
+        let some_data = body1
+            .data()
+            .await
+            .expect("should have some data")
+            .expect("read should not fail");
+        // The size of one read should be equal to that of the buffer size
+        assert_eq!(some_data.len(), 16384);
 
         assert_eq!(
             ByteStream::new(body1).collect().await?.remaining(),
