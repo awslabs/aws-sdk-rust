@@ -1,5 +1,5 @@
-smithy_rs_revision = '7675210fbcee2e720e85708882e757ddf012b486'
-aws_doc_sdk_examples_revision = '8ebb71d3a28fdb8ee8bd87b05d8475dfa29a0908'
+smithy_rs_revision = '572448b89260b08e929ad014faab2c0f6ba542b3'
+aws_doc_sdk_examples_revision = '55e2f0148a41bbc33127c110e4a9a0c1d9eadce6'
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '0.10.1'
