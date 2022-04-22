@@ -40,3 +40,6 @@ features = ["env-filter"]
 [dependencies.uuid]
 version = "0.8"
 features = ["serde", "v4"]
+
+[dependencies.http]
+version = "0.2"
