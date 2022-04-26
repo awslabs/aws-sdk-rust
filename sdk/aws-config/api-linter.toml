@@ -1,0 +1,25 @@
+# IMPORTANT: Types from `aws-sdk-*` crates MUST NOT be allowed to be
+# exposed in `aws-config`'s public API. Otherwise, `aws-config` will
+# require manual version bumping every time an automated version bump
+# to the exposed SDK crates happens.
+allowed_external_types = [
+   "aws_smithy_async::rt::sleep::AsyncSleep",
+   "aws_smithy_client::bounds::SmithyConnector",
+   "aws_smithy_client::erase::DynConnector",
+   "aws_smithy_client::erase::boxclone::BoxCloneService",
+   "aws_smithy_client::http_connector::HttpConnector",
+   "aws_smithy_client::http_connector::HttpSettings",
+   "aws_smithy_http::body::SdkBody",
+   "aws_smithy_http::result::SdkError",
+   "aws_smithy_types::retry::RetryConfig*",
+   "aws_smithy_types::timeout::config::Config",
+   "aws_smithy_types::timeout::error::ConfigError",
+   "aws_types::*",
+   "http::response::Response",
+   "http::uri::InvalidUri",
+   "http::uri::Uri",
+   "hyper::client::connect::Connection",
+   "tokio::io::async_read::AsyncRead",
+   "tokio::io::async_write::AsyncWrite",
+   "tower_service::Service",
+]
