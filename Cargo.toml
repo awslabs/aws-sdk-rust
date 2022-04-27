@@ -46,6 +46,7 @@ members = [
     "examples/sns",
     "examples/sqs",
     "examples/ssm",
+    "examples/stepfunction",
     "examples/testing",
     "examples/tls",
     "examples/transcribestreaming",
