@@ -183,8 +183,8 @@ fn expand_home(
 /// [Lambdas set many environment variables](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime)
 /// that we can check.
 fn check_is_likely_running_on_a_lambda(environment: &aws_types::os_shim_internal::Env) -> bool {
-    // LAMBDA_TASK_ROOT – The path to your Lambda function code.
-    environment.get("LAMBDA_TASK_ROOT").is_ok()
+    // AWS_LAMBDA_FUNCTION_NAME – The name of the running Lambda function. Available both in Functions and Extensions
+    environment.get("AWS_LAMBDA_FUNCTION_NAME").is_ok()
 }
 
 #[cfg(test)]
@@ -261,7 +261,7 @@ mod tests {
     #[traced_test]
     #[test]
     fn load_config_file_should_not_emit_warning_on_lambda() {
-        let env = Env::from_slice(&[("LAMBDA_TASK_ROOT", "/")]);
+        let env = Env::from_slice(&[("AWS_LAMBDA_FUNCTION_NAME", "someName")]);
         let fs = Fs::from_slice(&[]);
 
         let _src = load_config_file(FileKind::Config, &None, &fs, &env).now_or_never();
