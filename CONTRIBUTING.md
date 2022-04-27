@@ -6,13 +6,17 @@ documentation, we greatly value feedback and contributions from our community.
 Please read through this document before submitting any contributions to ensure your contribution goes to the correct code repository and we have all the necessary
 information to effectively respond to your request.
 
-## The AWS SDK for Rust has two GitHub repositories
+## The AWS SDK for Rust has three GitHub repositories
 
 1) This repository ([awslabs/aws-sdk-rust](https://github.com/awslabs/aws-sdk-rust)) 
 
-    This repository contains code generated from [awslabs/smithy-rs](https://github.com/awslabs/smithy-rs). If you want to contribute to the SDK by submitting feedback to our roadmap or filing a bug report, you can do so using this GitHub repository. However, because this repository is code generated from Smithy models, **please do not submit PRs modifying code to this repository.**
+    This repository contains code generated from [awslabs/smithy-rs](https://github.com/awslabs/smithy-rs). If you want to contribute to the SDK by submitting feedback to our roadmap or filing a bug report, you can do so using this GitHub repository. However, because this repository is code generated from Smithy models, **please do not submit PRs modifying code or examples to this repository.**
 
-2) Smithy-based SDK generation repo ([awslabs/smithy-rs](https://github.com/awslabs/smithy-rs))
+2) Examples repository ([awsdocs/aws-doc-sdk-examples](https://github.com/awsdocs/aws-doc-sdk-examples))
+
+    All the SDK code examples are in the [`rust_dev_preview`](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview) directory of `aws-doc-sdk-examples`. They are automatically copied over to `aws-sdk-rust` when a new release is cut. Please make example contributions there, and be sure to take a look at its [CONTRIBUTING.md](https://github.com/awsdocs/aws-doc-sdk-examples/blob/main/CONTRIBUTING.md).
+
+3) Smithy-based SDK generation repo ([awslabs/smithy-rs](https://github.com/awslabs/smithy-rs))
 
     If you want to contribute by diving into the codegen machinery and helping develop the SDK, please navigate to the [Smithy code gen machinery repo](https://github.com/awslabs/smithy-rs).  Here you'll be able to see all the ins-and-outs of the code generator. We welcome PRs and other contributions to this repository, but please make sure to review its [CONTRIBUTING.MD](https://github.com/awslabs/smithy-rs/blob/main/CONTRIBUTING.md)
 
