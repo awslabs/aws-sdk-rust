@@ -110,7 +110,7 @@ impl Client {
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::AddTags::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::AddTags::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::AddTags::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::AddTags::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     /// - On success, responds with [`AddTagsOutput`](crate::output::AddTagsOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::AddTagsOutput::tags): <p>A list of tags associated with the Amazon SageMaker resource.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::AddTagsOutput::tags): <p>A list of tags associated with the SageMaker resource.</p>
     /// - On failure, responds with [`SdkError<AddTagsError>`](crate::error::AddTagsError)
     pub fn add_tags(&self) -> fluent_builders::AddTags {
         fluent_builders::AddTags::new(self.handle.clone())
@@ -162,7 +162,7 @@ impl Client {
     ///   - [`algorithm_description(impl Into<String>)`](crate::client::fluent_builders::CreateAlgorithm::algorithm_description) / [`set_algorithm_description(Option<String>)`](crate::client::fluent_builders::CreateAlgorithm::set_algorithm_description): <p>A description of the algorithm.</p>
     ///   - [`training_specification(TrainingSpecification)`](crate::client::fluent_builders::CreateAlgorithm::training_specification) / [`set_training_specification(Option<TrainingSpecification>)`](crate::client::fluent_builders::CreateAlgorithm::set_training_specification): <p>Specifies details about training jobs run by this algorithm, including the following:</p>  <ul>   <li> <p>The Amazon ECR path of the container and the version digest of the algorithm.</p> </li>   <li> <p>The hyperparameters that the algorithm supports.</p> </li>   <li> <p>The instance types that the algorithm supports for training.</p> </li>   <li> <p>Whether the algorithm supports distributed training.</p> </li>   <li> <p>The metrics that the algorithm emits to Amazon CloudWatch.</p> </li>   <li> <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p> </li>   <li> <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p> </li>  </ul>
     ///   - [`inference_specification(InferenceSpecification)`](crate::client::fluent_builders::CreateAlgorithm::inference_specification) / [`set_inference_specification(Option<InferenceSpecification>)`](crate::client::fluent_builders::CreateAlgorithm::set_inference_specification): <p>Specifies details about inference jobs that the algorithm runs, including the following:</p>  <ul>   <li> <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p> </li>   <li> <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p> </li>   <li> <p>The input and output content formats that the algorithm supports for inference.</p> </li>  </ul>
-    ///   - [`validation_specification(AlgorithmValidationSpecification)`](crate::client::fluent_builders::CreateAlgorithm::validation_specification) / [`set_validation_specification(Option<AlgorithmValidationSpecification>)`](crate::client::fluent_builders::CreateAlgorithm::set_validation_specification): <p>Specifies configurations for one or more training jobs and that Amazon SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that Amazon SageMaker runs to test the algorithm's inference code.</p>
+    ///   - [`validation_specification(AlgorithmValidationSpecification)`](crate::client::fluent_builders::CreateAlgorithm::validation_specification) / [`set_validation_specification(Option<AlgorithmValidationSpecification>)`](crate::client::fluent_builders::CreateAlgorithm::set_validation_specification): <p>Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.</p>
     ///   - [`certify_for_marketplace(bool)`](crate::client::fluent_builders::CreateAlgorithm::certify_for_marketplace) / [`set_certify_for_marketplace(bool)`](crate::client::fluent_builders::CreateAlgorithm::set_certify_for_marketplace): <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAlgorithm::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAlgorithm::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     /// - On success, responds with [`CreateAlgorithmOutput`](crate::output::CreateAlgorithmOutput) with field(s):
@@ -370,7 +370,7 @@ impl Client {
     ///   - [`production_variants(Vec<ProductionVariant>)`](crate::client::fluent_builders::CreateEndpointConfig::production_variants) / [`set_production_variants(Option<Vec<ProductionVariant>>)`](crate::client::fluent_builders::CreateEndpointConfig::set_production_variants): <p>An list of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
     ///   - [`data_capture_config(DataCaptureConfig)`](crate::client::fluent_builders::CreateEndpointConfig::data_capture_config) / [`set_data_capture_config(Option<DataCaptureConfig>)`](crate::client::fluent_builders::CreateEndpointConfig::set_data_capture_config): <p></p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEndpointConfig::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEndpointConfig::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateEndpointConfig::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateEndpointConfig::set_kms_key_id): <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>  <p>The KmsKeyId can be any of the following formats: </p>  <ul>   <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>   <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>  </ul>  <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information, refer to the Amazon Web Services Key Management Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in Amazon Web Services KMS </a> </p> <note>   <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>KmsKeyId</code> when using an instance type with local storage. If any of the models that you specify in the <code>ProductionVariants</code> parameter use nitro-based instances with local storage, do not specify a value for the <code>KmsKeyId</code> parameter. If you specify a value for <code>KmsKeyId</code> when using any nitro-based instances with local storage, the call to <code>CreateEndpointConfig</code> fails.</p>   <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>   <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>  </note>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateEndpointConfig::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateEndpointConfig::set_kms_key_id): <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>  <p>The KmsKeyId can be any of the following formats: </p>  <ul>   <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>   <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>  </ul>  <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information, refer to the Amazon Web Services Key Management Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in Amazon Web Services KMS </a> </p> <note>   <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>KmsKeyId</code> when using an instance type with local storage. If any of the models that you specify in the <code>ProductionVariants</code> parameter use nitro-based instances with local storage, do not specify a value for the <code>KmsKeyId</code> parameter. If you specify a value for <code>KmsKeyId</code> when using any nitro-based instances with local storage, the call to <code>CreateEndpointConfig</code> fails.</p>   <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>   <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>  </note>
     ///   - [`async_inference_config(AsyncInferenceConfig)`](crate::client::fluent_builders::CreateEndpointConfig::async_inference_config) / [`set_async_inference_config(Option<AsyncInferenceConfig>)`](crate::client::fluent_builders::CreateEndpointConfig::set_async_inference_config): <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
     /// - On success, responds with [`CreateEndpointConfigOutput`](crate::output::CreateEndpointConfigOutput) with field(s):
     ///   - [`endpoint_config_arn(Option<String>)`](crate::output::CreateEndpointConfigOutput::endpoint_config_arn): <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
@@ -447,7 +447,7 @@ impl Client {
     ///   - [`warm_start_config(HyperParameterTuningJobWarmStartConfig)`](crate::client::fluent_builders::CreateHyperParameterTuningJob::warm_start_config) / [`set_warm_start_config(Option<HyperParameterTuningJobWarmStartConfig>)`](crate::client::fluent_builders::CreateHyperParameterTuningJob::set_warm_start_config): <p>Specifies the configuration for starting the hyperparameter tuning job using one or more previous tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>  <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric. If you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the <code>WarmStartType</code> value for the warm start configuration, the training job that performs the best in the new tuning job is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note>   <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p>  </note>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateHyperParameterTuningJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateHyperParameterTuningJob::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>  <p>Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.</p>
     /// - On success, responds with [`CreateHyperParameterTuningJobOutput`](crate::output::CreateHyperParameterTuningJobOutput) with field(s):
-    ///   - [`hyper_parameter_tuning_job_arn(Option<String>)`](crate::output::CreateHyperParameterTuningJobOutput::hyper_parameter_tuning_job_arn): <p>The Amazon Resource Name (ARN) of the tuning job. Amazon SageMaker assigns an ARN to a hyperparameter tuning job when you create it.</p>
+    ///   - [`hyper_parameter_tuning_job_arn(Option<String>)`](crate::output::CreateHyperParameterTuningJobOutput::hyper_parameter_tuning_job_arn): <p>The Amazon Resource Name (ARN) of the tuning job. SageMaker assigns an ARN to a hyperparameter tuning job when you create it.</p>
     /// - On failure, responds with [`SdkError<CreateHyperParameterTuningJobError>`](crate::error::CreateHyperParameterTuningJobError)
     pub fn create_hyper_parameter_tuning_job(
         &self,
@@ -471,7 +471,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateImageVersion`](crate::client::fluent_builders::CreateImageVersion) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`base_image(impl Into<String>)`](crate::client::fluent_builders::CreateImageVersion::base_image) / [`set_base_image(Option<String>)`](crate::client::fluent_builders::CreateImageVersion::set_base_image): <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Container Registry (ECR) URI in the following format:</p>  <p> <code>   <acct-id>    .dkr.ecr.    <region>     .amazonaws.com/     <repo-name[:tag] or [@digest]></repo-name[:tag]>    </region>   </acct-id></code> </p>
+    ///   - [`base_image(impl Into<String>)`](crate::client::fluent_builders::CreateImageVersion::base_image) / [`set_base_image(Option<String>)`](crate::client::fluent_builders::CreateImageVersion::set_base_image): <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Elastic Container Registry (ECR) URI in the following format:</p>  <p> <code>   <acct-id>    .dkr.ecr.    <region>     .amazonaws.com/     <repo-name[:tag] or [@digest]></repo-name[:tag]>    </region>   </acct-id></code> </p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateImageVersion::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateImageVersion::set_client_token): <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python (Boto3), add a unique value to the call.</p>
     ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::CreateImageVersion::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::CreateImageVersion::set_image_name): <p>The <code>ImageName</code> of the <code>Image</code> to create a version of.</p>
     /// - On success, responds with [`CreateImageVersionOutput`](crate::output::CreateImageVersionOutput) with field(s):
@@ -489,6 +489,7 @@ impl Client {
     ///   - [`input_config(RecommendationJobInputConfig)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::input_config) / [`set_input_config(Option<RecommendationJobInputConfig>)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::set_input_config): <p>Provides information about the versioned model package Amazon Resource Name (ARN), the traffic pattern, and endpoint configurations.</p>
     ///   - [`job_description(impl Into<String>)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::job_description) / [`set_job_description(Option<String>)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::set_job_description): <p>Description of the recommendation job.</p>
     ///   - [`stopping_conditions(RecommendationJobStoppingConditions)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::stopping_conditions) / [`set_stopping_conditions(Option<RecommendationJobStoppingConditions>)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::set_stopping_conditions): <p>A set of conditions for stopping a recommendation job. If any of the conditions are met, the job is automatically stopped.</p>
+    ///   - [`output_config(RecommendationJobOutputConfig)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::output_config) / [`set_output_config(Option<RecommendationJobOutputConfig>)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::set_output_config): <p>Provides information about the output artifacts and the KMS key to use for Amazon S3 server-side encryption.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::set_tags): <p>The metadata that you apply to Amazon Web Services resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the Amazon Web Services General Reference.</p>
     /// - On success, responds with [`CreateInferenceRecommendationsJobOutput`](crate::output::CreateInferenceRecommendationsJobOutput) with field(s):
     ///   - [`job_arn(Option<String>)`](crate::output::CreateInferenceRecommendationsJobOutput::job_arn): <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
@@ -524,12 +525,12 @@ impl Client {
     ///   - [`primary_container(ContainerDefinition)`](crate::client::fluent_builders::CreateModel::primary_container) / [`set_primary_container(Option<ContainerDefinition>)`](crate::client::fluent_builders::CreateModel::set_primary_container): <p>The location of the primary docker image containing inference code, associated artifacts, and custom environment map that the inference code uses when the model is deployed for predictions. </p>
     ///   - [`containers(Vec<ContainerDefinition>)`](crate::client::fluent_builders::CreateModel::containers) / [`set_containers(Option<Vec<ContainerDefinition>>)`](crate::client::fluent_builders::CreateModel::set_containers): <p>Specifies the containers in the inference pipeline.</p>
     ///   - [`inference_execution_config(InferenceExecutionConfig)`](crate::client::fluent_builders::CreateModel::inference_execution_config) / [`set_inference_execution_config(Option<InferenceExecutionConfig>)`](crate::client::fluent_builders::CreateModel::set_inference_execution_config): <p>Specifies details of how containers in a multi-container endpoint are called.</p>
-    ///   - [`execution_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateModel::execution_role_arn) / [`set_execution_role_arn(Option<String>)`](crate::client::fluent_builders::CreateModel::set_execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>   <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>  </note>
+    ///   - [`execution_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateModel::execution_role_arn) / [`set_execution_role_arn(Option<String>)`](crate::client::fluent_builders::CreateModel::set_execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>   <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>  </note>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateModel::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateModel::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     ///   - [`vpc_config(VpcConfig)`](crate::client::fluent_builders::CreateModel::vpc_config) / [`set_vpc_config(Option<VpcConfig>)`](crate::client::fluent_builders::CreateModel::set_vpc_config): <p>A <code>VpcConfig</code> object that specifies the VPC that you want your model to connect to. Control access to and from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services and in batch transform. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     ///   - [`enable_network_isolation(bool)`](crate::client::fluent_builders::CreateModel::enable_network_isolation) / [`set_enable_network_isolation(bool)`](crate::client::fluent_builders::CreateModel::set_enable_network_isolation): <p>Isolates the model container. No inbound or outbound network calls can be made to or from the model container.</p>
     /// - On success, responds with [`CreateModelOutput`](crate::output::CreateModelOutput) with field(s):
-    ///   - [`model_arn(Option<String>)`](crate::output::CreateModelOutput::model_arn): <p>The ARN of the model created in Amazon SageMaker.</p>
+    ///   - [`model_arn(Option<String>)`](crate::output::CreateModelOutput::model_arn): <p>The ARN of the model created in SageMaker.</p>
     /// - On failure, responds with [`SdkError<CreateModelError>`](crate::error::CreateModelError)
     pub fn create_model(&self) -> fluent_builders::CreateModel {
         fluent_builders::CreateModel::new(self.handle.clone())
@@ -583,7 +584,7 @@ impl Client {
     ///   - [`model_package_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateModelPackage::model_package_group_name) / [`set_model_package_group_name(Option<String>)`](crate::client::fluent_builders::CreateModelPackage::set_model_package_group_name): <p>The name or Amazon Resource Name (ARN) of the model package group that this model version belongs to.</p>  <p>This parameter is required for versioned models, and does not apply to unversioned models.</p>
     ///   - [`model_package_description(impl Into<String>)`](crate::client::fluent_builders::CreateModelPackage::model_package_description) / [`set_model_package_description(Option<String>)`](crate::client::fluent_builders::CreateModelPackage::set_model_package_description): <p>A description of the model package.</p>
     ///   - [`inference_specification(InferenceSpecification)`](crate::client::fluent_builders::CreateModelPackage::inference_specification) / [`set_inference_specification(Option<InferenceSpecification>)`](crate::client::fluent_builders::CreateModelPackage::set_inference_specification): <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>  <ul>   <li> <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p> </li>   <li> <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p> </li>   <li> <p>The input and output content formats that the model package supports for inference.</p> </li>  </ul>
-    ///   - [`validation_specification(ModelPackageValidationSpecification)`](crate::client::fluent_builders::CreateModelPackage::validation_specification) / [`set_validation_specification(Option<ModelPackageValidationSpecification>)`](crate::client::fluent_builders::CreateModelPackage::set_validation_specification): <p>Specifies configurations for one or more transform jobs that Amazon SageMaker runs to test the model package.</p>
+    ///   - [`validation_specification(ModelPackageValidationSpecification)`](crate::client::fluent_builders::CreateModelPackage::validation_specification) / [`set_validation_specification(Option<ModelPackageValidationSpecification>)`](crate::client::fluent_builders::CreateModelPackage::set_validation_specification): <p>Specifies configurations for one or more transform jobs that SageMaker runs to test the model package.</p>
     ///   - [`source_algorithm_specification(SourceAlgorithmSpecification)`](crate::client::fluent_builders::CreateModelPackage::source_algorithm_specification) / [`set_source_algorithm_specification(Option<SourceAlgorithmSpecification>)`](crate::client::fluent_builders::CreateModelPackage::set_source_algorithm_specification): <p>Details about the algorithm that was used to create the model package.</p>
     ///   - [`certify_for_marketplace(bool)`](crate::client::fluent_builders::CreateModelPackage::certify_for_marketplace) / [`set_certify_for_marketplace(bool)`](crate::client::fluent_builders::CreateModelPackage::set_certify_for_marketplace): <p>Whether to certify the model package for listing on Amazon Web Services Marketplace.</p>  <p>This parameter is optional for unversioned models, and does not apply to versioned models.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateModelPackage::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateModelPackage::set_tags): <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
@@ -655,15 +656,15 @@ impl Client {
     ///   - [`instance_type(InstanceType)`](crate::client::fluent_builders::CreateNotebookInstance::instance_type) / [`set_instance_type(Option<InstanceType>)`](crate::client::fluent_builders::CreateNotebookInstance::set_instance_type): <p>The type of ML compute instance to launch for the notebook instance.</p>
     ///   - [`subnet_id(impl Into<String>)`](crate::client::fluent_builders::CreateNotebookInstance::subnet_id) / [`set_subnet_id(Option<String>)`](crate::client::fluent_builders::CreateNotebookInstance::set_subnet_id): <p>The ID of the subnet in a VPC to which you would like to have a connectivity from your ML compute instance. </p>
     ///   - [`security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateNotebookInstance::security_group_ids) / [`set_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateNotebookInstance::set_security_group_ids): <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet. </p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateNotebookInstance::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateNotebookInstance::set_role_arn): <p> When you send any requests to Amazon Web Services resources from the notebook instance, Amazon SageMaker assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can perform these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>   <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>  </note>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateNotebookInstance::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateNotebookInstance::set_kms_key_id): <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateNotebookInstance::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateNotebookInstance::set_role_arn): <p> When you send any requests to Amazon Web Services resources from the notebook instance, SageMaker assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so SageMaker can perform these tasks. The policy must allow the SageMaker service principal (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>   <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>  </note>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateNotebookInstance::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateNotebookInstance::set_kms_key_id): <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateNotebookInstance::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateNotebookInstance::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     ///   - [`lifecycle_config_name(impl Into<String>)`](crate::client::fluent_builders::CreateNotebookInstance::lifecycle_config_name) / [`set_lifecycle_config_name(Option<String>)`](crate::client::fluent_builders::CreateNotebookInstance::set_lifecycle_config_name): <p>The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
-    ///   - [`direct_internet_access(DirectInternetAccess)`](crate::client::fluent_builders::CreateNotebookInstance::direct_internet_access) / [`set_direct_internet_access(Option<DirectInternetAccess>)`](crate::client::fluent_builders::CreateNotebookInstance::set_direct_internet_access): <p>Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.</p>
+    ///   - [`direct_internet_access(DirectInternetAccess)`](crate::client::fluent_builders::CreateNotebookInstance::direct_internet_access) / [`set_direct_internet_access(Option<DirectInternetAccess>)`](crate::client::fluent_builders::CreateNotebookInstance::set_direct_internet_access): <p>Sets whether SageMaker provides internet access to the notebook instance. If you set this to <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to connect to SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.</p>
     ///   - [`volume_size_in_gb(i32)`](crate::client::fluent_builders::CreateNotebookInstance::volume_size_in_gb) / [`set_volume_size_in_gb(Option<i32>)`](crate::client::fluent_builders::CreateNotebookInstance::set_volume_size_in_gb): <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.</p>
     ///   - [`accelerator_types(Vec<NotebookInstanceAcceleratorType>)`](crate::client::fluent_builders::CreateNotebookInstance::accelerator_types) / [`set_accelerator_types(Option<Vec<NotebookInstanceAcceleratorType>>)`](crate::client::fluent_builders::CreateNotebookInstance::set_accelerator_types): <p>A list of Elastic Inference (EI) instance types to associate with this notebook instance. Currently, only one instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
-    ///   - [`default_code_repository(impl Into<String>)`](crate::client::fluent_builders::CreateNotebookInstance::default_code_repository) / [`set_default_code_repository(Option<String>)`](crate::client::fluent_builders::CreateNotebookInstance::set_default_code_repository): <p>A Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
-    ///   - [`additional_code_repositories(Vec<String>)`](crate::client::fluent_builders::CreateNotebookInstance::additional_code_repositories) / [`set_additional_code_repositories(Option<Vec<String>>)`](crate::client::fluent_builders::CreateNotebookInstance::set_additional_code_repositories): <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+    ///   - [`default_code_repository(impl Into<String>)`](crate::client::fluent_builders::CreateNotebookInstance::default_code_repository) / [`set_default_code_repository(Option<String>)`](crate::client::fluent_builders::CreateNotebookInstance::set_default_code_repository): <p>A Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
+    ///   - [`additional_code_repositories(Vec<String>)`](crate::client::fluent_builders::CreateNotebookInstance::additional_code_repositories) / [`set_additional_code_repositories(Option<Vec<String>>)`](crate::client::fluent_builders::CreateNotebookInstance::set_additional_code_repositories): <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     ///   - [`root_access(RootAccess)`](crate::client::fluent_builders::CreateNotebookInstance::root_access) / [`set_root_access(Option<RootAccess>)`](crate::client::fluent_builders::CreateNotebookInstance::set_root_access): <p>Whether root access is enabled or disabled for users of the notebook instance. The default value is <code>Enabled</code>.</p> <note>   <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>  </note>
     ///   - [`platform_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateNotebookInstance::platform_identifier) / [`set_platform_identifier(Option<String>)`](crate::client::fluent_builders::CreateNotebookInstance::set_platform_identifier): <p>The platform identifier of the notebook instance runtime environment.</p>
     /// - On success, responds with [`CreateNotebookInstanceOutput`](crate::output::CreateNotebookInstanceOutput) with field(s):
@@ -781,16 +782,16 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`training_job_name(impl Into<String>)`](crate::client::fluent_builders::CreateTrainingJob::training_job_name) / [`set_training_job_name(Option<String>)`](crate::client::fluent_builders::CreateTrainingJob::set_training_job_name): <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
-    ///   - [`hyper_parameters(HashMap<String, String>)`](crate::client::fluent_builders::CreateTrainingJob::hyper_parameters) / [`set_hyper_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTrainingJob::set_hyper_parameters): <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>  <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p>
-    ///   - [`algorithm_specification(AlgorithmSpecification)`](crate::client::fluent_builders::CreateTrainingJob::algorithm_specification) / [`set_algorithm_specification(Option<AlgorithmSpecification>)`](crate::client::fluent_builders::CreateTrainingJob::set_algorithm_specification): <p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTrainingJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateTrainingJob::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf. </p>  <p>During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket, download a Docker image that contains training code, write model artifacts to an S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these tasks to an IAM role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>   <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>  </note>
-    ///   - [`input_data_config(Vec<Channel>)`](crate::client::fluent_builders::CreateTrainingJob::input_data_config) / [`set_input_data_config(Option<Vec<Channel>>)`](crate::client::fluent_builders::CreateTrainingJob::set_input_data_config): <p>An array of <code>Channel</code> objects. Each channel is a named input source. <code>InputDataConfig</code> describes the input data and its location. </p>  <p>Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of input data, <code>training_data</code> and <code>validation_data</code>. The configuration for each channel provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format. </p>  <p>Depending on the input mode that the algorithm supports, Amazon SageMaker either copies input data files from an S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you specify an EFS location, input data files will be made available as input streams. They do not need to be downloaded.</p>
-    ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::CreateTrainingJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_output_data_config): <p>Specifies the path to the S3 location where you want to store model artifacts. Amazon SageMaker creates subfolders for the artifacts. </p>
-    ///   - [`resource_config(ResourceConfig)`](crate::client::fluent_builders::CreateTrainingJob::resource_config) / [`set_resource_config(Option<ResourceConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_resource_config): <p>The resources, including the ML compute instances and ML storage volumes, to use for model training. </p>  <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use ML storage volumes for scratch space. If you want Amazon SageMaker to use the ML storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
+    ///   - [`hyper_parameters(HashMap<String, String>)`](crate::client::fluent_builders::CreateTrainingJob::hyper_parameters) / [`set_hyper_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTrainingJob::set_hyper_parameters): <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>  <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p>
+    ///   - [`algorithm_specification(AlgorithmSpecification)`](crate::client::fluent_builders::CreateTrainingJob::algorithm_specification) / [`set_algorithm_specification(Option<AlgorithmSpecification>)`](crate::client::fluent_builders::CreateTrainingJob::set_algorithm_specification): <p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTrainingJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateTrainingJob::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that SageMaker can assume to perform tasks on your behalf. </p>  <p>During model training, SageMaker needs your permission to read input data from an S3 bucket, download a Docker image that contains training code, write model artifacts to an S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these tasks to an IAM role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>   <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>  </note>
+    ///   - [`input_data_config(Vec<Channel>)`](crate::client::fluent_builders::CreateTrainingJob::input_data_config) / [`set_input_data_config(Option<Vec<Channel>>)`](crate::client::fluent_builders::CreateTrainingJob::set_input_data_config): <p>An array of <code>Channel</code> objects. Each channel is a named input source. <code>InputDataConfig</code> describes the input data and its location. </p>  <p>Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of input data, <code>training_data</code> and <code>validation_data</code>. The configuration for each channel provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format. </p>  <p>Depending on the input mode that the algorithm supports, SageMaker either copies input data files from an S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you specify an EFS location, input data files are available as input streams. They do not need to be downloaded.</p>
+    ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::CreateTrainingJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_output_data_config): <p>Specifies the path to the S3 location where you want to store model artifacts. SageMaker creates subfolders for the artifacts. </p>
+    ///   - [`resource_config(ResourceConfig)`](crate::client::fluent_builders::CreateTrainingJob::resource_config) / [`set_resource_config(Option<ResourceConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_resource_config): <p>The resources, including the ML compute instances and ML storage volumes, to use for model training. </p>  <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use ML storage volumes for scratch space. If you want SageMaker to use the ML storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
     ///   - [`vpc_config(VpcConfig)`](crate::client::fluent_builders::CreateTrainingJob::vpc_config) / [`set_vpc_config(Option<VpcConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_vpc_config): <p>A <code>VpcConfig</code> object that specifies the VPC that you want your training job to connect to. Control access to and from your training container by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
-    ///   - [`stopping_condition(StoppingCondition)`](crate::client::fluent_builders::CreateTrainingJob::stopping_condition) / [`set_stopping_condition(Option<StoppingCondition>)`](crate::client::fluent_builders::CreateTrainingJob::set_stopping_condition): <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>  <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
+    ///   - [`stopping_condition(StoppingCondition)`](crate::client::fluent_builders::CreateTrainingJob::stopping_condition) / [`set_stopping_condition(Option<StoppingCondition>)`](crate::client::fluent_builders::CreateTrainingJob::set_stopping_condition): <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>  <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateTrainingJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateTrainingJob::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    ///   - [`enable_network_isolation(bool)`](crate::client::fluent_builders::CreateTrainingJob::enable_network_isolation) / [`set_enable_network_isolation(bool)`](crate::client::fluent_builders::CreateTrainingJob::set_enable_network_isolation): <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If you enable network isolation for training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
+    ///   - [`enable_network_isolation(bool)`](crate::client::fluent_builders::CreateTrainingJob::enable_network_isolation) / [`set_enable_network_isolation(bool)`](crate::client::fluent_builders::CreateTrainingJob::set_enable_network_isolation): <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If you enable network isolation for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
     ///   - [`enable_inter_container_traffic_encryption(bool)`](crate::client::fluent_builders::CreateTrainingJob::enable_inter_container_traffic_encryption) / [`set_enable_inter_container_traffic_encryption(bool)`](crate::client::fluent_builders::CreateTrainingJob::set_enable_inter_container_traffic_encryption): <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html">Protect Communications Between ML Compute Instances in a Distributed Training Job</a>.</p>
     ///   - [`enable_managed_spot_training(bool)`](crate::client::fluent_builders::CreateTrainingJob::enable_managed_spot_training) / [`set_enable_managed_spot_training(bool)`](crate::client::fluent_builders::CreateTrainingJob::set_enable_managed_spot_training): <p>To train models using managed spot training, choose <code>True</code>. Managed spot training provides a fully managed and scalable infrastructure for training machine learning models. this option is useful when training jobs can be interrupted and when there is flexibility when the training job is run. </p>  <p>The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a starting point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch. They can be used to see when managed spot training jobs are running, interrupted, resumed, or completed. </p>
     ///   - [`checkpoint_config(CheckpointConfig)`](crate::client::fluent_builders::CreateTrainingJob::checkpoint_config) / [`set_checkpoint_config(Option<CheckpointConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_checkpoint_config): <p>Contains information about the output location for managed spot training checkpoint data.</p>
@@ -815,7 +816,7 @@ impl Client {
     ///   - [`model_name(impl Into<String>)`](crate::client::fluent_builders::CreateTransformJob::model_name) / [`set_model_name(Option<String>)`](crate::client::fluent_builders::CreateTransformJob::set_model_name): <p>The name of the model that you want to use for the transform job. <code>ModelName</code> must be the name of an existing Amazon SageMaker model within an Amazon Web Services Region in an Amazon Web Services account.</p>
     ///   - [`max_concurrent_transforms(i32)`](crate::client::fluent_builders::CreateTransformJob::max_concurrent_transforms) / [`set_max_concurrent_transforms(Option<i32>)`](crate::client::fluent_builders::CreateTransformJob::set_max_concurrent_transforms): <p>The maximum number of parallel requests that can be sent to each instance in a transform job. If <code>MaxConcurrentTransforms</code> is set to <code>0</code> or left unset, Amazon SageMaker checks the optional execution-parameters to determine the settings for your chosen algorithm. If the execution-parameters endpoint is not enabled, the default value is <code>1</code>. For more information on execution-parameters, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How Containers Serve Requests</a>. For built-in algorithms, you don't need to set a value for <code>MaxConcurrentTransforms</code>.</p>
     ///   - [`model_client_config(ModelClientConfig)`](crate::client::fluent_builders::CreateTransformJob::model_client_config) / [`set_model_client_config(Option<ModelClientConfig>)`](crate::client::fluent_builders::CreateTransformJob::set_model_client_config): <p>Configures the timeout and maximum number of retries for processing a transform job invocation.</p>
-    ///   - [`max_payload_in_mb(i32)`](crate::client::fluent_builders::CreateTransformJob::max_payload_in_mb) / [`set_max_payload_in_mb(Option<i32>)`](crate::client::fluent_builders::CreateTransformJob::set_max_payload_in_mb): <p>The maximum allowed size of the payload, in MB. A <i>payload</i> is the data portion of a record (without metadata). The value in <code>MaxPayloadInMB</code> must be greater than, or equal to, the size of a single record. To estimate the size of a record in MB, divide the size of your dataset by the number of records. To ensure that the records fit within the maximum payload size, we recommend using a slightly larger value. The default value is <code>6</code> MB. </p>  <p>For cases where the payload might be arbitrarily large and is transmitted using HTTP chunked encoding, set the value to <code>0</code>. This feature works only in supported algorithms. Currently, Amazon SageMaker built-in algorithms do not support HTTP chunked encoding.</p>
+    ///   - [`max_payload_in_mb(i32)`](crate::client::fluent_builders::CreateTransformJob::max_payload_in_mb) / [`set_max_payload_in_mb(Option<i32>)`](crate::client::fluent_builders::CreateTransformJob::set_max_payload_in_mb): <p>The maximum allowed size of the payload, in MB. A <i>payload</i> is the data portion of a record (without metadata). The value in <code>MaxPayloadInMB</code> must be greater than, or equal to, the size of a single record. To estimate the size of a record in MB, divide the size of your dataset by the number of records. To ensure that the records fit within the maximum payload size, we recommend using a slightly larger value. The default value is <code>6</code> MB. </p>  <p>The value of <code>MaxPayloadInMB</code> cannot be greater than 100 MB. If you specify the <code>MaxConcurrentTransforms</code> parameter, the value of <code>(MaxConcurrentTransforms * MaxPayloadInMB)</code> also cannot exceed 100 MB.</p>  <p>For cases where the payload might be arbitrarily large and is transmitted using HTTP chunked encoding, set the value to <code>0</code>. This feature works only in supported algorithms. Currently, Amazon SageMaker built-in algorithms do not support HTTP chunked encoding.</p>
     ///   - [`batch_strategy(BatchStrategy)`](crate::client::fluent_builders::CreateTransformJob::batch_strategy) / [`set_batch_strategy(Option<BatchStrategy>)`](crate::client::fluent_builders::CreateTransformJob::set_batch_strategy): <p>Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i> <i></i> is a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record. </p>  <p>To enable the batch strategy, you must set the <code>SplitType</code> property to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>  <p>To use only one record when making an HTTP invocation request to a container, set <code>BatchStrategy</code> to <code>SingleRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>  <p>To fit as many records in a mini-batch as can fit within the <code>MaxPayloadInMB</code> limit, set <code>BatchStrategy</code> to <code>MultiRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>
     ///   - [`environment(HashMap<String, String>)`](crate::client::fluent_builders::CreateTransformJob::environment) / [`set_environment(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTransformJob::set_environment): <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
     ///   - [`transform_input(TransformInput)`](crate::client::fluent_builders::CreateTransformJob::transform_input) / [`set_transform_input(Option<TransformInput>)`](crate::client::fluent_builders::CreateTransformJob::set_transform_input): <p>Describes the input source and the way the transform job consumes it.</p>
@@ -1198,7 +1199,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteNotebookInstance`](crate::client::fluent_builders::DeleteNotebookInstance) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`notebook_instance_name(impl Into<String>)`](crate::client::fluent_builders::DeleteNotebookInstance::notebook_instance_name) / [`set_notebook_instance_name(Option<String>)`](crate::client::fluent_builders::DeleteNotebookInstance::set_notebook_instance_name): <p>The name of the Amazon SageMaker notebook instance to delete.</p>
+    ///   - [`notebook_instance_name(impl Into<String>)`](crate::client::fluent_builders::DeleteNotebookInstance::notebook_instance_name) / [`set_notebook_instance_name(Option<String>)`](crate::client::fluent_builders::DeleteNotebookInstance::set_notebook_instance_name): <p>The name of the SageMaker notebook instance to delete.</p>
     /// - On success, responds with [`DeleteNotebookInstanceOutput`](crate::output::DeleteNotebookInstanceOutput)
 
     /// - On failure, responds with [`SdkError<DeleteNotebookInstanceError>`](crate::error::DeleteNotebookInstanceError)
@@ -1354,7 +1355,7 @@ impl Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeAlgorithmOutput::creation_time): <p>A timestamp specifying when the algorithm was created.</p>
     ///   - [`training_specification(Option<TrainingSpecification>)`](crate::output::DescribeAlgorithmOutput::training_specification): <p>Details about training jobs run by this algorithm.</p>
     ///   - [`inference_specification(Option<InferenceSpecification>)`](crate::output::DescribeAlgorithmOutput::inference_specification): <p>Details about inference jobs that the algorithm runs.</p>
-    ///   - [`validation_specification(Option<AlgorithmValidationSpecification>)`](crate::output::DescribeAlgorithmOutput::validation_specification): <p>Details about configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm.</p>
+    ///   - [`validation_specification(Option<AlgorithmValidationSpecification>)`](crate::output::DescribeAlgorithmOutput::validation_specification): <p>Details about configurations for one or more training jobs that SageMaker runs to test the algorithm.</p>
     ///   - [`algorithm_status(Option<AlgorithmStatus>)`](crate::output::DescribeAlgorithmOutput::algorithm_status): <p>The current status of the algorithm.</p>
     ///   - [`algorithm_status_details(Option<AlgorithmStatusDetails>)`](crate::output::DescribeAlgorithmOutput::algorithm_status_details): <p>Details about the current status of the algorithm.</p>
     ///   - [`product_id(Option<String>)`](crate::output::DescribeAlgorithmOutput::product_id): <p>The product identifier of the algorithm.</p>
@@ -1650,7 +1651,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`endpoint_config_name(impl Into<String>)`](crate::client::fluent_builders::DescribeEndpointConfig::endpoint_config_name) / [`set_endpoint_config_name(Option<String>)`](crate::client::fluent_builders::DescribeEndpointConfig::set_endpoint_config_name): <p>The name of the endpoint configuration.</p>
     /// - On success, responds with [`DescribeEndpointConfigOutput`](crate::output::DescribeEndpointConfigOutput) with field(s):
-    ///   - [`endpoint_config_name(Option<String>)`](crate::output::DescribeEndpointConfigOutput::endpoint_config_name): <p>Name of the Amazon SageMaker endpoint configuration.</p>
+    ///   - [`endpoint_config_name(Option<String>)`](crate::output::DescribeEndpointConfigOutput::endpoint_config_name): <p>Name of the SageMaker endpoint configuration.</p>
     ///   - [`endpoint_config_arn(Option<String>)`](crate::output::DescribeEndpointConfigOutput::endpoint_config_arn): <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
     ///   - [`production_variants(Option<Vec<ProductionVariant>>)`](crate::output::DescribeEndpointConfigOutput::production_variants): <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
     ///   - [`data_capture_config(Option<DataCaptureConfig>)`](crate::output::DescribeEndpointConfigOutput::data_capture_config): <p></p>
@@ -1839,7 +1840,7 @@ impl Client {
     ///   - [`label_attribute_name(Option<String>)`](crate::output::DescribeLabelingJobOutput::label_attribute_name): <p>The attribute used as the label in the output manifest file.</p>
     ///   - [`input_config(Option<LabelingJobInputConfig>)`](crate::output::DescribeLabelingJobOutput::input_config): <p>Input configuration information for the labeling job, such as the Amazon S3 location of the data objects and the location of the manifest file that describes the data objects.</p>
     ///   - [`output_config(Option<LabelingJobOutputConfig>)`](crate::output::DescribeLabelingJobOutput::output_config): <p>The location of the job's output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt the output data, if any.</p>
-    ///   - [`role_arn(Option<String>)`](crate::output::DescribeLabelingJobOutput::role_arn): <p>The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data labeling.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeLabelingJobOutput::role_arn): <p>The Amazon Resource Name (ARN) that SageMaker assumes to perform tasks on your behalf during data labeling.</p>
     ///   - [`label_category_config_s3_uri(Option<String>)`](crate::output::DescribeLabelingJobOutput::label_category_config_s3_uri): <p>The S3 location of the JSON file that defines the categories used to label data objects. Please note the following label-category limits:</p>  <ul>   <li> <p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p> </li>   <li> <p>Box bounding labeling jobs (all): 10 labels</p> </li>  </ul>  <p>The file is a JSON structure in the following format:</p>  <p> <code>{</code> </p>  <p> <code> "document-version": "2018-11-28"</code> </p>  <p> <code> "labels": [</code> </p>  <p> <code> {</code> </p>  <p> <code> "label": "<i>label 1</i>"</code> </p>  <p> <code> },</code> </p>  <p> <code> {</code> </p>  <p> <code> "label": "<i>label 2</i>"</code> </p>  <p> <code> },</code> </p>  <p> <code> ...</code> </p>  <p> <code> {</code> </p>  <p> <code> "label": "<i>label n</i>"</code> </p>  <p> <code> }</code> </p>  <p> <code> ]</code> </p>  <p> <code>}</code> </p>
     ///   - [`stopping_conditions(Option<LabelingJobStoppingConditions>)`](crate::output::DescribeLabelingJobOutput::stopping_conditions): <p>A set of conditions for stopping a labeling job. If any of the conditions are met, the job is automatically stopped.</p>
     ///   - [`labeling_job_algorithms_config(Option<LabelingJobAlgorithmsConfig>)`](crate::output::DescribeLabelingJobOutput::labeling_job_algorithms_config): <p>Configuration information for automated data labeling.</p>
@@ -1872,7 +1873,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`model_name(impl Into<String>)`](crate::client::fluent_builders::DescribeModel::model_name) / [`set_model_name(Option<String>)`](crate::client::fluent_builders::DescribeModel::set_model_name): <p>The name of the model.</p>
     /// - On success, responds with [`DescribeModelOutput`](crate::output::DescribeModelOutput) with field(s):
-    ///   - [`model_name(Option<String>)`](crate::output::DescribeModelOutput::model_name): <p>Name of the Amazon SageMaker model.</p>
+    ///   - [`model_name(Option<String>)`](crate::output::DescribeModelOutput::model_name): <p>Name of the SageMaker model.</p>
     ///   - [`primary_container(Option<ContainerDefinition>)`](crate::output::DescribeModelOutput::primary_container): <p>The location of the primary inference code, associated artifacts, and custom environment map that the inference code uses when it is deployed in production. </p>
     ///   - [`containers(Option<Vec<ContainerDefinition>>)`](crate::output::DescribeModelOutput::containers): <p>The containers in the inference pipeline.</p>
     ///   - [`inference_execution_config(Option<InferenceExecutionConfig>)`](crate::output::DescribeModelOutput::inference_execution_config): <p>Specifies details of how containers in a multi-container endpoint are called.</p>
@@ -1950,7 +1951,7 @@ impl Client {
     ///   - [`created_by(Option<UserContext>)`](crate::output::DescribeModelPackageOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
     ///   - [`metadata_properties(Option<MetadataProperties>)`](crate::output::DescribeModelPackageOutput::metadata_properties): <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     ///   - [`model_metrics(Option<ModelMetrics>)`](crate::output::DescribeModelPackageOutput::model_metrics): <p>Metrics for the model.</p>
-    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeModelPackageOutput::last_modified_time): <p>The last time the model package was modified.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeModelPackageOutput::last_modified_time): <p>The last time that the model package was modified.</p>
     ///   - [`last_modified_by(Option<UserContext>)`](crate::output::DescribeModelPackageOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
     ///   - [`approval_description(Option<String>)`](crate::output::DescribeModelPackageOutput::approval_description): <p>A description provided for the model approval.</p>
     ///   - [`customer_metadata_properties(Option<HashMap<String, String>>)`](crate::output::DescribeModelPackageOutput::customer_metadata_properties): <p>The metadata properties associated with the model package versions.</p>
@@ -1966,7 +1967,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeModelPackageGroup`](crate::client::fluent_builders::DescribeModelPackageGroup) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`model_package_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeModelPackageGroup::model_package_group_name) / [`set_model_package_group_name(Option<String>)`](crate::client::fluent_builders::DescribeModelPackageGroup::set_model_package_group_name): <p>The name of the model group to describe.</p>
+    ///   - [`model_package_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeModelPackageGroup::model_package_group_name) / [`set_model_package_group_name(Option<String>)`](crate::client::fluent_builders::DescribeModelPackageGroup::set_model_package_group_name): <p>The name of gthe model group to describe.</p>
     /// - On success, responds with [`DescribeModelPackageGroupOutput`](crate::output::DescribeModelPackageGroupOutput) with field(s):
     ///   - [`model_package_group_name(Option<String>)`](crate::output::DescribeModelPackageGroupOutput::model_package_group_name): <p>The name of the model group.</p>
     ///   - [`model_package_group_arn(Option<String>)`](crate::output::DescribeModelPackageGroupOutput::model_package_group_arn): <p>The Amazon Resource Name (ARN) of the model group.</p>
@@ -2025,7 +2026,7 @@ impl Client {
     ///   - [`notebook_instance_name(impl Into<String>)`](crate::client::fluent_builders::DescribeNotebookInstance::notebook_instance_name) / [`set_notebook_instance_name(Option<String>)`](crate::client::fluent_builders::DescribeNotebookInstance::set_notebook_instance_name): <p>The name of the notebook instance that you want information about.</p>
     /// - On success, responds with [`DescribeNotebookInstanceOutput`](crate::output::DescribeNotebookInstanceOutput) with field(s):
     ///   - [`notebook_instance_arn(Option<String>)`](crate::output::DescribeNotebookInstanceOutput::notebook_instance_arn): <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
-    ///   - [`notebook_instance_name(Option<String>)`](crate::output::DescribeNotebookInstanceOutput::notebook_instance_name): <p>The name of the Amazon SageMaker notebook instance. </p>
+    ///   - [`notebook_instance_name(Option<String>)`](crate::output::DescribeNotebookInstanceOutput::notebook_instance_name): <p>The name of the SageMaker notebook instance. </p>
     ///   - [`notebook_instance_status(Option<NotebookInstanceStatus>)`](crate::output::DescribeNotebookInstanceOutput::notebook_instance_status): <p>The status of the notebook instance.</p>
     ///   - [`failure_reason(Option<String>)`](crate::output::DescribeNotebookInstanceOutput::failure_reason): <p>If status is <code>Failed</code>, the reason it failed.</p>
     ///   - [`url(Option<String>)`](crate::output::DescribeNotebookInstanceOutput::url): <p>The URL that you use to connect to the Jupyter notebook that is running in your notebook instance. </p>
@@ -2033,16 +2034,16 @@ impl Client {
     ///   - [`subnet_id(Option<String>)`](crate::output::DescribeNotebookInstanceOutput::subnet_id): <p>The ID of the VPC subnet.</p>
     ///   - [`security_groups(Option<Vec<String>>)`](crate::output::DescribeNotebookInstanceOutput::security_groups): <p>The IDs of the VPC security groups.</p>
     ///   - [`role_arn(Option<String>)`](crate::output::DescribeNotebookInstanceOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role associated with the instance. </p>
-    ///   - [`kms_key_id(Option<String>)`](crate::output::DescribeNotebookInstanceOutput::kms_key_id): <p>The Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance. </p>
-    ///   - [`network_interface_id(Option<String>)`](crate::output::DescribeNotebookInstanceOutput::network_interface_id): <p>The network interface IDs that Amazon SageMaker created at the time of creating the instance. </p>
+    ///   - [`kms_key_id(Option<String>)`](crate::output::DescribeNotebookInstanceOutput::kms_key_id): <p>The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance. </p>
+    ///   - [`network_interface_id(Option<String>)`](crate::output::DescribeNotebookInstanceOutput::network_interface_id): <p>The network interface IDs that SageMaker created at the time of creating the instance. </p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeNotebookInstanceOutput::last_modified_time): <p>A timestamp. Use this parameter to retrieve the time when the notebook instance was last modified. </p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeNotebookInstanceOutput::creation_time): <p>A timestamp. Use this parameter to return the time when the notebook instance was created</p>
     ///   - [`notebook_instance_lifecycle_config_name(Option<String>)`](crate::output::DescribeNotebookInstanceOutput::notebook_instance_lifecycle_config_name): <p>Returns the name of a notebook instance lifecycle configuration.</p>  <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a> </p>
-    ///   - [`direct_internet_access(Option<DirectInternetAccess>)`](crate::output::DescribeNotebookInstanceOutput::direct_internet_access): <p>Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>.</p>
+    ///   - [`direct_internet_access(Option<DirectInternetAccess>)`](crate::output::DescribeNotebookInstanceOutput::direct_internet_access): <p>Describes whether SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to SageMaker training and endpoint services.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>.</p>
     ///   - [`volume_size_in_gb(Option<i32>)`](crate::output::DescribeNotebookInstanceOutput::volume_size_in_gb): <p>The size, in GB, of the ML storage volume attached to the notebook instance.</p>
     ///   - [`accelerator_types(Option<Vec<NotebookInstanceAcceleratorType>>)`](crate::output::DescribeNotebookInstanceOutput::accelerator_types): <p>A list of the Elastic Inference (EI) instance types associated with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
-    ///   - [`default_code_repository(Option<String>)`](crate::output::DescribeNotebookInstanceOutput::default_code_repository): <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
-    ///   - [`additional_code_repositories(Option<Vec<String>>)`](crate::output::DescribeNotebookInstanceOutput::additional_code_repositories): <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+    ///   - [`default_code_repository(Option<String>)`](crate::output::DescribeNotebookInstanceOutput::default_code_repository): <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
+    ///   - [`additional_code_repositories(Option<Vec<String>>)`](crate::output::DescribeNotebookInstanceOutput::additional_code_repositories): <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     ///   - [`root_access(Option<RootAccess>)`](crate::output::DescribeNotebookInstanceOutput::root_access): <p>Whether root access is enabled or disabled for users of the notebook instance.</p> <note>   <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>  </note>
     ///   - [`platform_identifier(Option<String>)`](crate::output::DescribeNotebookInstanceOutput::platform_identifier): <p>The platform identifier of the notebook instance runtime environment.</p>
     /// - On failure, responds with [`SdkError<DescribeNotebookInstanceError>`](crate::error::DescribeNotebookInstanceError)
@@ -2207,32 +2208,32 @@ impl Client {
     ///   - [`training_job_name(Option<String>)`](crate::output::DescribeTrainingJobOutput::training_job_name): <p> Name of the model training job. </p>
     ///   - [`training_job_arn(Option<String>)`](crate::output::DescribeTrainingJobOutput::training_job_arn): <p>The Amazon Resource Name (ARN) of the training job.</p>
     ///   - [`tuning_job_arn(Option<String>)`](crate::output::DescribeTrainingJobOutput::tuning_job_arn): <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if the training job was launched by a hyperparameter tuning job.</p>
-    ///   - [`labeling_job_arn(Option<String>)`](crate::output::DescribeTrainingJobOutput::labeling_job_arn): <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or training job.</p>
+    ///   - [`labeling_job_arn(Option<String>)`](crate::output::DescribeTrainingJobOutput::labeling_job_arn): <p>The Amazon Resource Name (ARN) of the SageMaker Ground Truth labeling job that created the transform or training job.</p>
     ///   - [`auto_ml_job_arn(Option<String>)`](crate::output::DescribeTrainingJobOutput::auto_ml_job_arn): <p>The Amazon Resource Name (ARN) of an AutoML job.</p>
     ///   - [`model_artifacts(Option<ModelArtifacts>)`](crate::output::DescribeTrainingJobOutput::model_artifacts): <p>Information about the Amazon S3 location that is configured for storing model artifacts. </p>
-    ///   - [`training_job_status(Option<TrainingJobStatus>)`](crate::output::DescribeTrainingJobOutput::training_job_status): <p>The status of the training job.</p>  <p>Amazon SageMaker provides the following training job statuses:</p>  <ul>   <li> <p> <code>InProgress</code> - The training is in progress.</p> </li>   <li> <p> <code>Completed</code> - The training job has completed.</p> </li>   <li> <p> <code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p> </li>   <li> <p> <code>Stopping</code> - The training job is stopping.</p> </li>   <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li>  </ul>  <p>For more detailed information, see <code>SecondaryStatus</code>. </p>
-    ///   - [`secondary_status(Option<SecondaryStatus>)`](crate::output::DescribeTrainingJobOutput::secondary_status): <p> Provides detailed information about the state of the training job. For detailed information on the secondary status of the training job, see <code>StatusMessage</code> under <code>SecondaryStatusTransition</code>.</p>  <p>Amazon SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>  <dl>   <dt>   InProgress  </dt>   <dd>    <ul>     <li> <p> <code>Starting</code> - Starting the training job.</p> </li>     <li> <p> <code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p> </li>     <li> <p> <code>Training</code> - Training is in progress.</p> </li>     <li> <p> <code>Interrupted</code> - The job stopped because the managed spot training instances were interrupted. </p> </li>     <li> <p> <code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p> </li>    </ul>   </dd>   <dt>   Completed  </dt>   <dd>    <ul>     <li> <p> <code>Completed</code> - The training job has completed.</p> </li>    </ul>   </dd>   <dt>   Failed  </dt>   <dd>    <ul>     <li> <p> <code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p> </li>    </ul>   </dd>   <dt>   Stopped  </dt>   <dd>    <ul>     <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p> </li>     <li> <p> <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.</p> </li>     <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li>    </ul>   </dd>   <dt>   Stopping  </dt>   <dd>    <ul>     <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li>    </ul>   </dd>  </dl> <important>   <p>Valid values for <code>SecondaryStatus</code> are subject to change. </p>  </important>  <p>We no longer support the following secondary statuses:</p>  <ul>   <li> <p> <code>LaunchingMLInstances</code> </p> </li>   <li> <p> <code>PreparingTraining</code> </p> </li>   <li> <p> <code>DownloadingTrainingImage</code> </p> </li>  </ul>
+    ///   - [`training_job_status(Option<TrainingJobStatus>)`](crate::output::DescribeTrainingJobOutput::training_job_status): <p>The status of the training job.</p>  <p>SageMaker provides the following training job statuses:</p>  <ul>   <li> <p> <code>InProgress</code> - The training is in progress.</p> </li>   <li> <p> <code>Completed</code> - The training job has completed.</p> </li>   <li> <p> <code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p> </li>   <li> <p> <code>Stopping</code> - The training job is stopping.</p> </li>   <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li>  </ul>  <p>For more detailed information, see <code>SecondaryStatus</code>. </p>
+    ///   - [`secondary_status(Option<SecondaryStatus>)`](crate::output::DescribeTrainingJobOutput::secondary_status): <p> Provides detailed information about the state of the training job. For detailed information on the secondary status of the training job, see <code>StatusMessage</code> under <code>SecondaryStatusTransition</code>.</p>  <p>SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>  <dl>   <dt>   InProgress  </dt>   <dd>    <ul>     <li> <p> <code>Starting</code> - Starting the training job.</p> </li>     <li> <p> <code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p> </li>     <li> <p> <code>Training</code> - Training is in progress.</p> </li>     <li> <p> <code>Interrupted</code> - The job stopped because the managed spot training instances were interrupted. </p> </li>     <li> <p> <code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p> </li>    </ul>   </dd>   <dt>   Completed  </dt>   <dd>    <ul>     <li> <p> <code>Completed</code> - The training job has completed.</p> </li>    </ul>   </dd>   <dt>   Failed  </dt>   <dd>    <ul>     <li> <p> <code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p> </li>    </ul>   </dd>   <dt>   Stopped  </dt>   <dd>    <ul>     <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p> </li>     <li> <p> <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.</p> </li>     <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li>    </ul>   </dd>   <dt>   Stopping  </dt>   <dd>    <ul>     <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li>    </ul>   </dd>  </dl> <important>   <p>Valid values for <code>SecondaryStatus</code> are subject to change. </p>  </important>  <p>We no longer support the following secondary statuses:</p>  <ul>   <li> <p> <code>LaunchingMLInstances</code> </p> </li>   <li> <p> <code>PreparingTraining</code> </p> </li>   <li> <p> <code>DownloadingTrainingImage</code> </p> </li>  </ul>
     ///   - [`failure_reason(Option<String>)`](crate::output::DescribeTrainingJobOutput::failure_reason): <p>If the training job failed, the reason it failed. </p>
     ///   - [`hyper_parameters(Option<HashMap<String, String>>)`](crate::output::DescribeTrainingJobOutput::hyper_parameters): <p>Algorithm-specific parameters. </p>
     ///   - [`algorithm_specification(Option<AlgorithmSpecification>)`](crate::output::DescribeTrainingJobOutput::algorithm_specification): <p>Information about the algorithm used for training, and algorithm metadata. </p>
     ///   - [`role_arn(Option<String>)`](crate::output::DescribeTrainingJobOutput::role_arn): <p>The Amazon Web Services Identity and Access Management (IAM) role configured for the training job. </p>
     ///   - [`input_data_config(Option<Vec<Channel>>)`](crate::output::DescribeTrainingJobOutput::input_data_config): <p>An array of <code>Channel</code> objects that describes each data input channel. </p>
-    ///   - [`output_data_config(Option<OutputDataConfig>)`](crate::output::DescribeTrainingJobOutput::output_data_config): <p>The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker creates subfolders for model artifacts. </p>
+    ///   - [`output_data_config(Option<OutputDataConfig>)`](crate::output::DescribeTrainingJobOutput::output_data_config): <p>The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates subfolders for model artifacts. </p>
     ///   - [`resource_config(Option<ResourceConfig>)`](crate::output::DescribeTrainingJobOutput::resource_config): <p>Resources, including ML compute instances and ML storage volumes, that are configured for model training. </p>
     ///   - [`vpc_config(Option<VpcConfig>)`](crate::output::DescribeTrainingJobOutput::vpc_config): <p>A <code>VpcConfig</code> object that specifies the VPC that this training job has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
-    ///   - [`stopping_condition(Option<StoppingCondition>)`](crate::output::DescribeTrainingJobOutput::stopping_condition): <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>  <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
+    ///   - [`stopping_condition(Option<StoppingCondition>)`](crate::output::DescribeTrainingJobOutput::stopping_condition): <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>  <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeTrainingJobOutput::creation_time): <p>A timestamp that indicates when the training job was created.</p>
     ///   - [`training_start_time(Option<DateTime>)`](crate::output::DescribeTrainingJobOutput::training_start_time): <p>Indicates the time when the training job starts on training instances. You are billed for the time interval between this time and the value of <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later than this time. The difference is due to the time it takes to download the training data and to the size of the training container.</p>
-    ///   - [`training_end_time(Option<DateTime>)`](crate::output::DescribeTrainingJobOutput::training_end_time): <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job failure.</p>
+    ///   - [`training_end_time(Option<DateTime>)`](crate::output::DescribeTrainingJobOutput::training_end_time): <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeTrainingJobOutput::last_modified_time): <p>A timestamp that indicates when the status of the training job was last modified.</p>
     ///   - [`secondary_status_transitions(Option<Vec<SecondaryStatusTransition>>)`](crate::output::DescribeTrainingJobOutput::secondary_status_transitions): <p>A history of all of the secondary statuses that the training job has transitioned through.</p>
     ///   - [`final_metric_data_list(Option<Vec<MetricData>>)`](crate::output::DescribeTrainingJobOutput::final_metric_data_list): <p>A collection of <code>MetricData</code> objects that specify the names, values, and dates and times that the training algorithm emitted to Amazon CloudWatch.</p>
-    ///   - [`enable_network_isolation(bool)`](crate::output::DescribeTrainingJobOutput::enable_network_isolation): <p>If you want to allow inbound or outbound network calls, except for calls between peers within a training cluster for distributed training, choose <code>True</code>. If you enable network isolation for training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
+    ///   - [`enable_network_isolation(bool)`](crate::output::DescribeTrainingJobOutput::enable_network_isolation): <p>If you want to allow inbound or outbound network calls, except for calls between peers within a training cluster for distributed training, choose <code>True</code>. If you enable network isolation for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
     ///   - [`enable_inter_container_traffic_encryption(bool)`](crate::output::DescribeTrainingJobOutput::enable_inter_container_traffic_encryption): <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithms in distributed training.</p>
     ///   - [`enable_managed_spot_training(bool)`](crate::output::DescribeTrainingJobOutput::enable_managed_spot_training): <p>A Boolean indicating whether managed spot training is enabled (<code>True</code>) or not (<code>False</code>).</p>
     ///   - [`checkpoint_config(Option<CheckpointConfig>)`](crate::output::DescribeTrainingJobOutput::checkpoint_config): <p>Contains information about the output location for managed spot training checkpoint data. </p>
     ///   - [`training_time_in_seconds(Option<i32>)`](crate::output::DescribeTrainingJobOutput::training_time_in_seconds): <p>The training time in seconds.</p>
-    ///   - [`billable_time_in_seconds(Option<i32>)`](crate::output::DescribeTrainingJobOutput::billable_time_in_seconds): <p>The billable time in seconds. Billable time refers to the absolute wall-clock time.</p>  <p>Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your training cluster to get the total compute time SageMaker will bill you if you run distributed training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .</p>  <p>You can calculate the savings from using managed spot training using the formula <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>. For example, if <code>BillableTimeInSeconds</code> is 100 and <code>TrainingTimeInSeconds</code> is 500, the savings is 80%.</p>
+    ///   - [`billable_time_in_seconds(Option<i32>)`](crate::output::DescribeTrainingJobOutput::billable_time_in_seconds): <p>The billable time in seconds. Billable time refers to the absolute wall-clock time.</p>  <p>Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your training cluster to get the total compute time SageMaker bills you if you run distributed training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .</p>  <p>You can calculate the savings from using managed spot training using the formula <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>. For example, if <code>BillableTimeInSeconds</code> is 100 and <code>TrainingTimeInSeconds</code> is 500, the savings is 80%.</p>
     ///   - [`debug_hook_config(Option<DebugHookConfig>)`](crate::output::DescribeTrainingJobOutput::debug_hook_config): <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
     ///   - [`experiment_config(Option<ExperimentConfig>)`](crate::output::DescribeTrainingJobOutput::experiment_config): <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>  <ul>   <li> <p> <code>CreateProcessingJob</code> </p> </li>   <li> <p> <code>CreateTrainingJob</code> </p> </li>   <li> <p> <code>CreateTransformJob</code> </p> </li>  </ul>
     ///   - [`debug_rule_configurations(Option<Vec<DebugRuleConfiguration>>)`](crate::output::DescribeTrainingJobOutput::debug_rule_configurations): <p>Configuration information for Debugger rules for debugging output tensors.</p>
@@ -2492,7 +2493,7 @@ impl Client {
     ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListAlgorithms::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListAlgorithms::set_sort_order): <p>The sort order for the results. The default is <code>Ascending</code>.</p>
     /// - On success, responds with [`ListAlgorithmsOutput`](crate::output::ListAlgorithmsOutput) with field(s):
     ///   - [`algorithm_summary_list(Option<Vec<AlgorithmSummary>>)`](crate::output::ListAlgorithmsOutput::algorithm_summary_list): <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an algorithm.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListAlgorithmsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAlgorithmsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListAlgorithmsError>`](crate::error::ListAlgorithmsError)
     pub fn list_algorithms(&self) -> fluent_builders::ListAlgorithms {
         fluent_builders::ListAlgorithms::new(self.handle.clone())
@@ -2779,7 +2780,7 @@ impl Client {
     ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListEndpointConfigs::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListEndpointConfigs::set_creation_time_after): <p>A filter that returns only endpoint configurations with a creation time greater than or equal to the specified time (timestamp).</p>
     /// - On success, responds with [`ListEndpointConfigsOutput`](crate::output::ListEndpointConfigsOutput) with field(s):
     ///   - [`endpoint_configs(Option<Vec<EndpointConfigSummary>>)`](crate::output::ListEndpointConfigsOutput::endpoint_configs): <p>An array of endpoint configurations.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListEndpointConfigsOutput::next_token): <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEndpointConfigsOutput::next_token): <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>
     /// - On failure, responds with [`SdkError<ListEndpointConfigsError>`](crate::error::ListEndpointConfigsError)
     pub fn list_endpoint_configs(&self) -> fluent_builders::ListEndpointConfigs {
         fluent_builders::ListEndpointConfigs::new(self.handle.clone())
@@ -2800,7 +2801,7 @@ impl Client {
     ///   - [`status_equals(EndpointStatus)`](crate::client::fluent_builders::ListEndpoints::status_equals) / [`set_status_equals(Option<EndpointStatus>)`](crate::client::fluent_builders::ListEndpoints::set_status_equals): <p> A filter that returns only endpoints with the specified status.</p>
     /// - On success, responds with [`ListEndpointsOutput`](crate::output::ListEndpointsOutput) with field(s):
     ///   - [`endpoints(Option<Vec<EndpointSummary>>)`](crate::output::ListEndpointsOutput::endpoints): <p> An array or endpoint objects. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListEndpointsOutput::next_token): <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEndpointsOutput::next_token): <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request. </p>
     /// - On failure, responds with [`SdkError<ListEndpointsError>`](crate::error::ListEndpointsError)
     pub fn list_endpoints(&self) -> fluent_builders::ListEndpoints {
         fluent_builders::ListEndpoints::new(self.handle.clone())
@@ -2975,7 +2976,7 @@ impl Client {
     ///   - [`status_equals(LabelingJobStatus)`](crate::client::fluent_builders::ListLabelingJobs::status_equals) / [`set_status_equals(Option<LabelingJobStatus>)`](crate::client::fluent_builders::ListLabelingJobs::set_status_equals): <p>A filter that retrieves only labeling jobs with a specific status.</p>
     /// - On success, responds with [`ListLabelingJobsOutput`](crate::output::ListLabelingJobsOutput) with field(s):
     ///   - [`labeling_job_summary_list(Option<Vec<LabelingJobSummary>>)`](crate::output::ListLabelingJobsOutput::labeling_job_summary_list): <p>An array of <code>LabelingJobSummary</code> objects, each describing a labeling job.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListLabelingJobsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLabelingJobsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListLabelingJobsError>`](crate::error::ListLabelingJobsError)
     pub fn list_labeling_jobs(&self) -> fluent_builders::ListLabelingJobs {
         fluent_builders::ListLabelingJobs::new(self.handle.clone())
@@ -2994,7 +2995,7 @@ impl Client {
     ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::set_sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
     /// - On success, responds with [`ListLabelingJobsForWorkteamOutput`](crate::output::ListLabelingJobsForWorkteamOutput) with field(s):
     ///   - [`labeling_job_summary_list(Option<Vec<LabelingJobForWorkteamSummary>>)`](crate::output::ListLabelingJobsForWorkteamOutput::labeling_job_summary_list): <p>An array of <code>LabelingJobSummary</code> objects, each describing a labeling job.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListLabelingJobsForWorkteamOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLabelingJobsForWorkteamOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListLabelingJobsForWorkteamError>`](crate::error::ListLabelingJobsForWorkteamError)
     pub fn list_labeling_jobs_for_workteam(&self) -> fluent_builders::ListLabelingJobsForWorkteam {
         fluent_builders::ListLabelingJobsForWorkteam::new(self.handle.clone())
@@ -3104,7 +3105,7 @@ impl Client {
     ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListModelPackages::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListModelPackages::set_sort_order): <p>The sort order for the results. The default is <code>Ascending</code>.</p>
     /// - On success, responds with [`ListModelPackagesOutput`](crate::output::ListModelPackagesOutput) with field(s):
     ///   - [`model_package_summary_list(Option<Vec<ModelPackageSummary>>)`](crate::output::ListModelPackagesOutput::model_package_summary_list): <p>An array of <code>ModelPackageSummary</code> objects, each of which lists a model package.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListModelPackagesOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of model packages, use it in the subsequent request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListModelPackagesOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model packages, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListModelPackagesError>`](crate::error::ListModelPackagesError)
     pub fn list_model_packages(&self) -> fluent_builders::ListModelPackages {
         fluent_builders::ListModelPackages::new(self.handle.clone())
@@ -3143,7 +3144,7 @@ impl Client {
     ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListModels::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListModels::set_creation_time_after): <p>A filter that returns only models with a creation time greater than or equal to the specified time (timestamp).</p>
     /// - On success, responds with [`ListModelsOutput`](crate::output::ListModelsOutput) with field(s):
     ///   - [`models(Option<Vec<ModelSummary>>)`](crate::output::ListModelsOutput::models): <p>An array of <code>ModelSummary</code> objects, each of which lists a model.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListModelsOutput::next_token): <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of models, use it in the subsequent request. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListModelsOutput::next_token): <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of models, use it in the subsequent request. </p>
     /// - On failure, responds with [`SdkError<ListModelsError>`](crate::error::ListModelsError)
     pub fn list_models(&self) -> fluent_builders::ListModels {
         fluent_builders::ListModels::new(self.handle.clone())
@@ -3212,7 +3213,7 @@ impl Client {
     ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::set_last_modified_time_before): <p>A filter that returns only lifecycle configurations that were modified before the specified time (timestamp).</p>
     ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::set_last_modified_time_after): <p>A filter that returns only lifecycle configurations that were modified after the specified time (timestamp).</p>
     /// - On success, responds with [`ListNotebookInstanceLifecycleConfigsOutput`](crate::output::ListNotebookInstanceLifecycleConfigsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListNotebookInstanceLifecycleConfigsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To get the next set of lifecycle configurations, use it in the next request. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListNotebookInstanceLifecycleConfigsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To get the next set of lifecycle configurations, use it in the next request. </p>
     ///   - [`notebook_instance_lifecycle_configs(Option<Vec<NotebookInstanceLifecycleConfigSummary>>)`](crate::output::ListNotebookInstanceLifecycleConfigsOutput::notebook_instance_lifecycle_configs): <p>An array of <code>NotebookInstanceLifecycleConfiguration</code> objects, each listing a lifecycle configuration.</p>
     /// - On failure, responds with [`SdkError<ListNotebookInstanceLifecycleConfigsError>`](crate::error::ListNotebookInstanceLifecycleConfigsError)
     pub fn list_notebook_instance_lifecycle_configs(
@@ -3238,7 +3239,7 @@ impl Client {
     ///   - [`default_code_repository_contains(impl Into<String>)`](crate::client::fluent_builders::ListNotebookInstances::default_code_repository_contains) / [`set_default_code_repository_contains(Option<String>)`](crate::client::fluent_builders::ListNotebookInstances::set_default_code_repository_contains): <p>A string in the name or URL of a Git repository associated with this notebook instance. This filter returns only notebook instances associated with a git repository with a name that contains the specified string.</p>
     ///   - [`additional_code_repository_equals(impl Into<String>)`](crate::client::fluent_builders::ListNotebookInstances::additional_code_repository_equals) / [`set_additional_code_repository_equals(Option<String>)`](crate::client::fluent_builders::ListNotebookInstances::set_additional_code_repository_equals): <p>A filter that returns only notebook instances with associated with the specified git repository.</p>
     /// - On success, responds with [`ListNotebookInstancesOutput`](crate::output::ListNotebookInstancesOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListNotebookInstancesOutput::next_token): <p>If the response to the previous <code>ListNotebookInstances</code> request was truncated, Amazon SageMaker returns this token. To retrieve the next set of notebook instances, use the token in the next request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListNotebookInstancesOutput::next_token): <p>If the response to the previous <code>ListNotebookInstances</code> request was truncated, SageMaker returns this token. To retrieve the next set of notebook instances, use the token in the next request.</p>
     ///   - [`notebook_instances(Option<Vec<NotebookInstanceSummary>>)`](crate::output::ListNotebookInstancesOutput::notebook_instances): <p>An array of <code>NotebookInstanceSummary</code> objects, one for each notebook instance.</p>
     /// - On failure, responds with [`SdkError<ListNotebookInstancesError>`](crate::error::ListNotebookInstancesError)
     pub fn list_notebook_instances(&self) -> fluent_builders::ListNotebookInstances {
@@ -3390,11 +3391,11 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTags::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTags::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTags::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTags::set_next_token): <p> If the response to the previous <code>ListTags</code> request is truncated, Amazon SageMaker returns this token. To retrieve the next set of tags, use it in the subsequent request. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTags::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTags::set_next_token): <p> If the response to the previous <code>ListTags</code> request is truncated, SageMaker returns this token. To retrieve the next set of tags, use it in the subsequent request. </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTags::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTags::set_max_results): <p>Maximum number of tags to return.</p>
     /// - On success, responds with [`ListTagsOutput`](crate::output::ListTagsOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsOutput::tags): <p>An array of <code>Tag</code> objects, each with a tag key and a value.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListTagsOutput::next_token): <p> If response is truncated, Amazon SageMaker includes a token in the response. You can use this token in your subsequent request to fetch next set of tokens. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsOutput::next_token): <p> If response is truncated, SageMaker includes a token in the response. You can use this token in your subsequent request to fetch next set of tokens. </p>
     /// - On failure, responds with [`SdkError<ListTagsError>`](crate::error::ListTagsError)
     pub fn list_tags(&self) -> fluent_builders::ListTags {
         fluent_builders::ListTags::new(self.handle.clone())
@@ -3415,7 +3416,7 @@ impl Client {
     ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListTrainingJobs::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListTrainingJobs::set_sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
     /// - On success, responds with [`ListTrainingJobsOutput`](crate::output::ListTrainingJobsOutput) with field(s):
     ///   - [`training_job_summaries(Option<Vec<TrainingJobSummary>>)`](crate::output::ListTrainingJobsOutput::training_job_summaries): <p>An array of <code>TrainingJobSummary</code> objects, each listing a training job.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListTrainingJobsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTrainingJobsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListTrainingJobsError>`](crate::error::ListTrainingJobsError)
     pub fn list_training_jobs(&self) -> fluent_builders::ListTrainingJobs {
         fluent_builders::ListTrainingJobs::new(self.handle.clone())
@@ -3564,10 +3565,10 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`start_arns(Vec<String>)`](crate::client::fluent_builders::QueryLineage::start_arns) / [`set_start_arns(Option<Vec<String>>)`](crate::client::fluent_builders::QueryLineage::set_start_arns): <p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>
-    ///   - [`direction(Direction)`](crate::client::fluent_builders::QueryLineage::direction) / [`set_direction(Option<Direction>)`](crate::client::fluent_builders::QueryLineage::set_direction): <p>Associations between lineage entities are directed. This parameter determines the direction from the StartArn(s) the query will look.</p>
-    ///   - [`include_edges(bool)`](crate::client::fluent_builders::QueryLineage::include_edges) / [`set_include_edges(bool)`](crate::client::fluent_builders::QueryLineage::set_include_edges): <p> Setting this value to <code>True</code> will retrieve not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
+    ///   - [`direction(Direction)`](crate::client::fluent_builders::QueryLineage::direction) / [`set_direction(Option<Direction>)`](crate::client::fluent_builders::QueryLineage::set_direction): <p>Associations between lineage entities have a direction. This parameter determines the direction from the StartArn(s) that the query traverses.</p>
+    ///   - [`include_edges(bool)`](crate::client::fluent_builders::QueryLineage::include_edges) / [`set_include_edges(bool)`](crate::client::fluent_builders::QueryLineage::set_include_edges): <p> Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
     ///   - [`filters(QueryFilters)`](crate::client::fluent_builders::QueryLineage::filters) / [`set_filters(Option<QueryFilters>)`](crate::client::fluent_builders::QueryLineage::set_filters): <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>  <ul>   <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li>   <li> <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p> </li>   <li> <p>CreatedBefore - Filter entities created before this date.</p> </li>   <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li>   <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li>  </ul>
-    ///   - [`max_depth(i32)`](crate::client::fluent_builders::QueryLineage::max_depth) / [`set_max_depth(Option<i32>)`](crate::client::fluent_builders::QueryLineage::set_max_depth): <p>The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
+    ///   - [`max_depth(i32)`](crate::client::fluent_builders::QueryLineage::max_depth) / [`set_max_depth(Option<i32>)`](crate::client::fluent_builders::QueryLineage::set_max_depth): <p>The maximum depth in lineage relationships from the <code>StartArns</code> that are traversed. Depth is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::QueryLineage::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::QueryLineage::set_max_results): <p>Limits the number of vertices in the results. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::QueryLineage::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::QueryLineage::set_next_token): <p>Limits the number of vertices in the request. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
     /// - On success, responds with [`QueryLineageOutput`](crate::output::QueryLineageOutput) with field(s):
@@ -3936,7 +3937,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateEndpointWeightsAndCapacities`](crate::client::fluent_builders::UpdateEndpointWeightsAndCapacities) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`endpoint_name(impl Into<String>)`](crate::client::fluent_builders::UpdateEndpointWeightsAndCapacities::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::client::fluent_builders::UpdateEndpointWeightsAndCapacities::set_endpoint_name): <p>The name of an existing Amazon SageMaker endpoint.</p>
+    ///   - [`endpoint_name(impl Into<String>)`](crate::client::fluent_builders::UpdateEndpointWeightsAndCapacities::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::client::fluent_builders::UpdateEndpointWeightsAndCapacities::set_endpoint_name): <p>The name of an existing SageMaker endpoint.</p>
     ///   - [`desired_weights_and_capacities(Vec<DesiredWeightAndCapacity>)`](crate::client::fluent_builders::UpdateEndpointWeightsAndCapacities::desired_weights_and_capacities) / [`set_desired_weights_and_capacities(Option<Vec<DesiredWeightAndCapacity>>)`](crate::client::fluent_builders::UpdateEndpointWeightsAndCapacities::set_desired_weights_and_capacities): <p>An object that provides new capacity and weight values for a variant.</p>
     /// - On success, responds with [`UpdateEndpointWeightsAndCapacitiesOutput`](crate::output::UpdateEndpointWeightsAndCapacitiesOutput) with field(s):
     ///   - [`endpoint_arn(Option<String>)`](crate::output::UpdateEndpointWeightsAndCapacitiesOutput::endpoint_arn): <p>The Amazon Resource Name (ARN) of the updated endpoint.</p>
@@ -4003,12 +4004,12 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`notebook_instance_name(impl Into<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::notebook_instance_name) / [`set_notebook_instance_name(Option<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_notebook_instance_name): <p>The name of the notebook instance to update.</p>
     ///   - [`instance_type(InstanceType)`](crate::client::fluent_builders::UpdateNotebookInstance::instance_type) / [`set_instance_type(Option<InstanceType>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_instance_type): <p>The Amazon ML compute instance type.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>   <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>  </note>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>   <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>  </note>
     ///   - [`lifecycle_config_name(impl Into<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::lifecycle_config_name) / [`set_lifecycle_config_name(Option<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_lifecycle_config_name): <p>The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
     ///   - [`disassociate_lifecycle_config(bool)`](crate::client::fluent_builders::UpdateNotebookInstance::disassociate_lifecycle_config) / [`set_disassociate_lifecycle_config(bool)`](crate::client::fluent_builders::UpdateNotebookInstance::set_disassociate_lifecycle_config): <p>Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with the notebook instance. This operation is idempotent. If you specify a lifecycle configuration that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
-    ///   - [`volume_size_in_gb(i32)`](crate::client::fluent_builders::UpdateNotebookInstance::volume_size_in_gb) / [`set_volume_size_in_gb(Option<i32>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_volume_size_in_gb): <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB. ML storage volumes are encrypted, so Amazon SageMaker can't determine the amount of available free space on the volume. Because of this, you can increase the volume size when you update a notebook instance, but you can't decrease the volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook instance with the desired size.</p>
-    ///   - [`default_code_repository(impl Into<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::default_code_repository) / [`set_default_code_repository(Option<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_default_code_repository): <p>The Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
-    ///   - [`additional_code_repositories(Vec<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::additional_code_repositories) / [`set_additional_code_repositories(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_additional_code_repositories): <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+    ///   - [`volume_size_in_gb(i32)`](crate::client::fluent_builders::UpdateNotebookInstance::volume_size_in_gb) / [`set_volume_size_in_gb(Option<i32>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_volume_size_in_gb): <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB. ML storage volumes are encrypted, so SageMaker can't determine the amount of available free space on the volume. Because of this, you can increase the volume size when you update a notebook instance, but you can't decrease the volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook instance with the desired size.</p>
+    ///   - [`default_code_repository(impl Into<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::default_code_repository) / [`set_default_code_repository(Option<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_default_code_repository): <p>The Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
+    ///   - [`additional_code_repositories(Vec<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::additional_code_repositories) / [`set_additional_code_repositories(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_additional_code_repositories): <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     ///   - [`accelerator_types(Vec<NotebookInstanceAcceleratorType>)`](crate::client::fluent_builders::UpdateNotebookInstance::accelerator_types) / [`set_accelerator_types(Option<Vec<NotebookInstanceAcceleratorType>>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_accelerator_types): <p>A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
     ///   - [`disassociate_accelerator_types(bool)`](crate::client::fluent_builders::UpdateNotebookInstance::disassociate_accelerator_types) / [`set_disassociate_accelerator_types(bool)`](crate::client::fluent_builders::UpdateNotebookInstance::set_disassociate_accelerator_types): <p>A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
     ///   - [`disassociate_default_code_repository(bool)`](crate::client::fluent_builders::UpdateNotebookInstance::disassociate_default_code_repository) / [`set_disassociate_default_code_repository(bool)`](crate::client::fluent_builders::UpdateNotebookInstance::set_disassociate_default_code_repository): <p>The name or URL of the default Git repository to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
@@ -4258,7 +4259,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AddTags`.
     ///
-    /// <p>Adds or overwrites one or more tags for the specified Amazon SageMaker resource. You can add tags to notebook instances, training jobs, hyperparameter tuning jobs, batch transform jobs, models, labeling jobs, work teams, endpoint configurations, and endpoints.</p>
+    /// <p>Adds or overwrites one or more tags for the specified SageMaker resource. You can add tags to notebook instances, training jobs, hyperparameter tuning jobs, batch transform jobs, models, labeling jobs, work teams, endpoint configurations, and endpoints.</p>
     /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource. For more information about tags, see For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Amazon Web Services Tagging Strategies</a>.</p> <note>
     /// <p>Tags that you add to a hyperparameter tuning job by calling this API are also added to any training jobs that the hyperparameter tuning job launches after you call this API, but not to training jobs that the hyperparameter tuning job launched before you called this API. To make sure that the tags associated with a hyperparameter tuning job are also added to all training jobs that the hyperparameter tuning job launches, add the tags when you first create the tuning job by specifying them in the <code>Tags</code> parameter of <code>CreateHyperParameterTuningJob</code> </p>
     /// </note> <note>
@@ -4611,7 +4612,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAlgorithm`.
     ///
-    /// <p>Create a machine learning algorithm that you can use in Amazon SageMaker and list in the Amazon Web Services Marketplace.</p>
+    /// <p>Create a machine learning algorithm that you can use in SageMaker and list in the Amazon Web Services Marketplace.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAlgorithm {
         handle: std::sync::Arc<super::Handle>,
@@ -4737,7 +4738,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_inference_specification(input);
             self
         }
-        /// <p>Specifies configurations for one or more training jobs and that Amazon SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that Amazon SageMaker runs to test the algorithm's inference code.</p>
+        /// <p>Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.</p>
         pub fn validation_specification(
             mut self,
             input: crate::model::AlgorithmValidationSpecification,
@@ -4745,7 +4746,7 @@ pub mod fluent_builders {
             self.inner = self.inner.validation_specification(input);
             self
         }
-        /// <p>Specifies configurations for one or more training jobs and that Amazon SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that Amazon SageMaker runs to test the algorithm's inference code.</p>
+        /// <p>Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.</p>
         pub fn set_validation_specification(
             mut self,
             input: std::option::Option<crate::model::AlgorithmValidationSpecification>,
@@ -5303,7 +5304,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateCodeRepository`.
     ///
-    /// <p>Creates a Git repository as a resource in your Amazon SageMaker account. You can associate the repository with notebook instances so that you can use Git source control for the notebooks you create. The Git repository is a resource in your Amazon SageMaker account, so it can be associated with more than one notebook instance, and it persists independently from the lifecycle of any notebook instances it is associated with.</p>
+    /// <p>Creates a Git repository as a resource in your SageMaker account. You can associate the repository with notebook instances so that you can use Git source control for the notebooks you create. The Git repository is a resource in your SageMaker account, so it can be associated with more than one notebook instance, and it persists independently from the lifecycle of any notebook instances it is associated with.</p>
     /// <p>The repository can be hosted either in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCodeRepository {
@@ -6351,17 +6352,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEndpoint`.
     ///
-    /// <p>Creates an endpoint using the endpoint configuration specified in the request. Amazon SageMaker uses the endpoint to provision resources and deploy models. You create the endpoint configuration with the <code>CreateEndpointConfig</code> API. </p>
-    /// <p> Use this API to deploy models using Amazon SageMaker hosting services. </p>
-    /// <p>For an example that calls this method when deploying a model to Amazon SageMaker hosting services, see the <a href="https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-fundamentals/create-endpoint/create_endpoint.ipynb">Create Endpoint example notebook.</a> </p> <note>
+    /// <p>Creates an endpoint using the endpoint configuration specified in the request. SageMaker uses the endpoint to provision resources and deploy models. You create the endpoint configuration with the <code>CreateEndpointConfig</code> API. </p>
+    /// <p> Use this API to deploy models using SageMaker hosting services. </p>
+    /// <p>For an example that calls this method when deploying a model to SageMaker hosting services, see the <a href="https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-fundamentals/create-endpoint/create_endpoint.ipynb">Create Endpoint example notebook.</a> </p> <note>
     /// <p> You must not delete an <code>EndpointConfig</code> that is in use by an endpoint that is live or while the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being performed on the endpoint. To update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
     /// </note>
     /// <p>The endpoint name must be unique within an Amazon Web Services Region in your Amazon Web Services account. </p>
-    /// <p>When it receives the request, Amazon SageMaker creates the endpoint, launches the resources (ML compute instances), and deploys the model(s) on them. </p> <note>
+    /// <p>When it receives the request, SageMaker creates the endpoint, launches the resources (ML compute instances), and deploys the model(s) on them. </p> <note>
     /// <p>When you call <code>CreateEndpoint</code>, a load call is made to DynamoDB to verify that your endpoint configuration exists. When you read data from a DynamoDB table supporting <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html"> <code>Eventually Consistent Reads</code> </a>, the response might not reflect the results of a recently completed write operation. The response might include some stale data. If the dependent entities are not yet in DynamoDB, this causes a validation error. If you repeat your read request after a short time, the response should return the latest data. So retry logic is recommended to handle these possible issues. We also recommend that customers call <code>DescribeEndpointConfig</code> before calling <code>CreateEndpoint</code> to minimize the potential impact of a DynamoDB eventually consistent read.</p>
     /// </note>
-    /// <p>When Amazon SageMaker receives the request, it sets the endpoint status to <code>Creating</code>. After it creates the endpoint, it sets the status to <code>InService</code>. Amazon SageMaker can then process incoming requests for inferences. To check the status of an endpoint, use the <code>DescribeEndpoint</code> API.</p>
-    /// <p>If any of the models hosted at this endpoint get model data from an Amazon S3 location, Amazon SageMaker uses Amazon Web Services Security Token Service to download model artifacts from the S3 path you provided. Amazon Web Services STS is activated in your IAM user account by default. If you previously deactivated Amazon Web Services STS for a region, you need to reactivate Amazon Web Services STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> <note>
+    /// <p>When SageMaker receives the request, it sets the endpoint status to <code>Creating</code>. After it creates the endpoint, it sets the status to <code>InService</code>. SageMaker can then process incoming requests for inferences. To check the status of an endpoint, use the <code>DescribeEndpoint</code> API.</p>
+    /// <p>If any of the models hosted at this endpoint get model data from an Amazon S3 location, SageMaker uses Amazon Web Services Security Token Service to download model artifacts from the S3 path you provided. Amazon Web Services STS is activated in your IAM user account by default. If you previously deactivated Amazon Web Services STS for a region, you need to reactivate Amazon Web Services STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> <note>
     /// <p> To add the IAM role policies for using this API operation, go to the <a href="https://console.aws.amazon.com/iam/">IAM console</a>, and choose Roles in the left navigation pane. Search the IAM role that you want to grant access to use the <code>CreateEndpoint</code> and <code>CreateEndpointConfig</code> API operations, add the following policies to the role. </p>
     /// <ul>
     /// <li> <p>Option 1: For a full SageMaker access, search and attach the <code>AmazonSageMakerFullAccess</code> policy.</p> </li>
@@ -6466,11 +6467,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEndpointConfig`.
     ///
-    /// <p>Creates an endpoint configuration that Amazon SageMaker hosting services uses to deploy models. In the configuration, you identify one or more models, created using the <code>CreateModel</code> API, to deploy and the resources that you want Amazon SageMaker to provision. Then you call the <code>CreateEndpoint</code> API.</p> <note>
-    /// <p> Use this API if you want to use Amazon SageMaker hosting services to deploy models into production. </p>
+    /// <p>Creates an endpoint configuration that SageMaker hosting services uses to deploy models. In the configuration, you identify one or more models, created using the <code>CreateModel</code> API, to deploy and the resources that you want SageMaker to provision. Then you call the <code>CreateEndpoint</code> API.</p> <note>
+    /// <p> Use this API if you want to use SageMaker hosting services to deploy models into production. </p>
     /// </note>
-    /// <p>In the request, you define a <code>ProductionVariant</code>, for each model that you want to deploy. Each <code>ProductionVariant</code> parameter also describes the resources that you want Amazon SageMaker to provision. This includes the number and type of ML compute instances to deploy. </p>
-    /// <p>If you are hosting multiple models, you also assign a <code>VariantWeight</code> to specify how much traffic you want to allocate to each model. For example, suppose that you want to host two models, A and B, and you assign traffic weight 2 for model A and 1 for model B. Amazon SageMaker distributes two-thirds of the traffic to Model A, and one-third to model B. </p> <note>
+    /// <p>In the request, you define a <code>ProductionVariant</code>, for each model that you want to deploy. Each <code>ProductionVariant</code> parameter also describes the resources that you want SageMaker to provision. This includes the number and type of ML compute instances to deploy. </p>
+    /// <p>If you are hosting multiple models, you also assign a <code>VariantWeight</code> to specify how much traffic you want to allocate to each model. For example, suppose that you want to host two models, A and B, and you assign traffic weight 2 for model A and 1 for model B. SageMaker distributes two-thirds of the traffic to Model A, and one-third to model B. </p> <note>
     /// <p>When you call <code>CreateEndpoint</code>, a load call is made to DynamoDB to verify that your endpoint configuration exists. When you read data from a DynamoDB table supporting <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html"> <code>Eventually Consistent Reads</code> </a>, the response might not reflect the results of a recently completed write operation. The response might include some stale data. If the dependent entities are not yet in DynamoDB, this causes a validation error. If you repeat your read request after a short time, the response should return the latest data. So retry logic is recommended to handle these possible issues. We also recommend that customers call <code>DescribeEndpointConfig</code> before calling <code>CreateEndpoint</code> to minimize the potential impact of a DynamoDB eventually consistent read.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -6572,7 +6573,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
+        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
         /// <p>The KmsKeyId can be any of the following formats: </p>
         /// <ul>
         /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
@@ -6589,7 +6590,7 @@ pub mod fluent_builders {
             self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
+        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
         /// <p>The KmsKeyId can be any of the following formats: </p>
         /// <ul>
         /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
@@ -7321,7 +7322,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateImage`.
     ///
-    /// <p>Creates a custom SageMaker image. A SageMaker image is a set of image versions. Each image version represents a container image stored in Amazon Container Registry (ECR). For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring your own SageMaker image</a>.</p>
+    /// <p>Creates a custom SageMaker image. A SageMaker image is a set of image versions. Each image version represents a container image stored in Amazon Elastic Container Registry (ECR). For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring your own SageMaker image</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImage {
         handle: std::sync::Arc<super::Handle>,
@@ -7421,7 +7422,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateImageVersion`.
     ///
-    /// <p>Creates a version of the SageMaker image specified by <code>ImageName</code>. The version represents the Amazon Container Registry (ECR) container image specified by <code>BaseImage</code>.</p>
+    /// <p>Creates a version of the SageMaker image specified by <code>ImageName</code>. The version represents the Amazon Elastic Container Registry (ECR) container image specified by <code>BaseImage</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImageVersion {
         handle: std::sync::Arc<super::Handle>,
@@ -7461,7 +7462,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Container Registry (ECR) URI in the following format:</p>
+        /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Elastic Container Registry (ECR) URI in the following format:</p>
         /// <p> <code>
         /// <acct-id>
         /// .dkr.ecr.
@@ -7474,7 +7475,7 @@ pub mod fluent_builders {
             self.inner = self.inner.base_image(input.into());
             self
         }
-        /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Container Registry (ECR) URI in the following format:</p>
+        /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Elastic Container Registry (ECR) URI in the following format:</p>
         /// <p> <code>
         /// <acct-id>
         /// .dkr.ecr.
@@ -7623,6 +7624,19 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::RecommendationJobStoppingConditions>,
         ) -> Self {
             self.inner = self.inner.set_stopping_conditions(input);
+            self
+        }
+        /// <p>Provides information about the output artifacts and the KMS key to use for Amazon S3 server-side encryption.</p>
+        pub fn output_config(mut self, input: crate::model::RecommendationJobOutputConfig) -> Self {
+            self.inner = self.inner.output_config(input);
+            self
+        }
+        /// <p>Provides information about the output artifacts and the KMS key to use for Amazon S3 server-side encryption.</p>
+        pub fn set_output_config(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationJobOutputConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_output_config(input);
             self
         }
         /// Appends an item to `Tags`.
@@ -7910,13 +7924,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateModel`.
     ///
-    /// <p>Creates a model in Amazon SageMaker. In the request, you name the model and describe a primary container. For the primary container, you specify the Docker image that contains inference code, artifacts (from prior training), and a custom environment map that the inference code uses when you deploy the model for predictions.</p>
-    /// <p>Use this API to create a model if you want to use Amazon SageMaker hosting services or run a batch transform job.</p>
-    /// <p>To host your model, you create an endpoint configuration with the <code>CreateEndpointConfig</code> API, and then create an endpoint with the <code>CreateEndpoint</code> API. Amazon SageMaker then deploys all of the containers that you defined for the model in the hosting environment. </p>
-    /// <p>For an example that calls this method when deploying a model to Amazon SageMaker hosting services, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for Python (Boto 3)).</a> </p>
-    /// <p>To run a batch transform using your model, you start a job with the <code>CreateTransformJob</code> API. Amazon SageMaker uses your model and your dataset to get inferences which are then saved to a specified S3 location.</p>
-    /// <p>In the <code>CreateModel</code> request, you must define a container with the <code>PrimaryContainer</code> parameter.</p>
-    /// <p>In the request, you also provide an IAM role that Amazon SageMaker can assume to access model artifacts and docker image for deployment on ML compute hosting instances or for batch transform jobs. In addition, you also use the IAM role to manage permissions the inference code needs. For example, if the inference code access any other Amazon Web Services resources, you grant necessary permissions via this role.</p>
+    /// <p>Creates a model in SageMaker. In the request, you name the model and describe a primary container. For the primary container, you specify the Docker image that contains inference code, artifacts (from prior training), and a custom environment map that the inference code uses when you deploy the model for predictions.</p>
+    /// <p>Use this API to create a model if you want to use SageMaker hosting services or run a batch transform job.</p>
+    /// <p>To host your model, you create an endpoint configuration with the <code>CreateEndpointConfig</code> API, and then create an endpoint with the <code>CreateEndpoint</code> API. SageMaker then deploys all of the containers that you defined for the model in the hosting environment. </p>
+    /// <p>For an example that calls this method when deploying a model to SageMaker hosting services, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for Python (Boto 3)).</a> </p>
+    /// <p>To run a batch transform using your model, you start a job with the <code>CreateTransformJob</code> API. SageMaker uses your model and your dataset to get inferences which are then saved to a specified S3 location.</p>
+    /// <p>In the request, you also provide an IAM role that SageMaker can assume to access model artifacts and docker image for deployment on ML compute hosting instances or for batch transform jobs. In addition, you also use the IAM role to manage permissions the inference code needs. For example, if the inference code access any other Amazon Web Services resources, you grant necessary permissions via this role.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateModel {
         handle: std::sync::Arc<super::Handle>,
@@ -8012,15 +8025,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_inference_execution_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>
-        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
+        /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
         /// </note>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.execution_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>
-        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
+        /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
         /// </note>
         pub fn set_execution_role_arn(
             mut self,
@@ -8449,7 +8462,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateModelPackage`.
     ///
-    /// <p>Creates a model package that you can use to create Amazon SageMaker models or list on Amazon Web Services Marketplace, or a versioned model that is part of a model group. Buyers can subscribe to model packages listed on Amazon Web Services Marketplace to create models in Amazon SageMaker.</p>
+    /// <p>Creates a model package that you can use to create SageMaker models or list on Amazon Web Services Marketplace, or a versioned model that is part of a model group. Buyers can subscribe to model packages listed on Amazon Web Services Marketplace to create models in SageMaker.</p>
     /// <p>To create a model package by specifying a Docker container that contains your inference code and the Amazon S3 location of your model artifacts, provide values for <code>InferenceSpecification</code>. To create a model from an algorithm resource that you created or subscribed to in Amazon Web Services Marketplace, provide a value for <code>SourceAlgorithmSpecification</code>.</p> <note>
     /// <p>There are two types of model packages:</p>
     /// <ul>
@@ -8565,7 +8578,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_inference_specification(input);
             self
         }
-        /// <p>Specifies configurations for one or more transform jobs that Amazon SageMaker runs to test the model package.</p>
+        /// <p>Specifies configurations for one or more transform jobs that SageMaker runs to test the model package.</p>
         pub fn validation_specification(
             mut self,
             input: crate::model::ModelPackageValidationSpecification,
@@ -8573,7 +8586,7 @@ pub mod fluent_builders {
             self.inner = self.inner.validation_specification(input);
             self
         }
-        /// <p>Specifies configurations for one or more transform jobs that Amazon SageMaker runs to test the model package.</p>
+        /// <p>Specifies configurations for one or more transform jobs that SageMaker runs to test the model package.</p>
         pub fn set_validation_specification(
             mut self,
             input: std::option::Option<crate::model::ModelPackageValidationSpecification>,
@@ -9140,17 +9153,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateNotebookInstance`.
     ///
-    /// <p>Creates an Amazon SageMaker notebook instance. A notebook instance is a machine learning (ML) compute instance running on a Jupyter notebook. </p>
-    /// <p>In a <code>CreateNotebookInstance</code> request, specify the type of ML compute instance that you want to run. Amazon SageMaker launches the instance, installs common libraries that you can use to explore datasets for model training, and attaches an ML storage volume to the notebook instance. </p>
-    /// <p>Amazon SageMaker also provides a set of example notebooks. Each notebook demonstrates how to use Amazon SageMaker with a specific algorithm or with a machine learning framework. </p>
-    /// <p>After receiving the request, Amazon SageMaker does the following:</p>
+    /// <p>Creates an SageMaker notebook instance. A notebook instance is a machine learning (ML) compute instance running on a Jupyter notebook. </p>
+    /// <p>In a <code>CreateNotebookInstance</code> request, specify the type of ML compute instance that you want to run. SageMaker launches the instance, installs common libraries that you can use to explore datasets for model training, and attaches an ML storage volume to the notebook instance. </p>
+    /// <p>SageMaker also provides a set of example notebooks. Each notebook demonstrates how to use SageMaker with a specific algorithm or with a machine learning framework. </p>
+    /// <p>After receiving the request, SageMaker does the following:</p>
     /// <ol>
-    /// <li> <p>Creates a network interface in the Amazon SageMaker VPC.</p> </li>
-    /// <li> <p>(Option) If you specified <code>SubnetId</code>, Amazon SageMaker creates a network interface in your own VPC, which is inferred from the subnet ID that you provide in the input. When creating this network interface, Amazon SageMaker attaches the security group that you specified in the request to the network interface that it creates in your VPC.</p> </li>
-    /// <li> <p>Launches an EC2 instance of the type specified in the request in the Amazon SageMaker VPC. If you specified <code>SubnetId</code> of your VPC, Amazon SageMaker specifies both network interfaces when launching this instance. This enables inbound traffic from your own VPC to the notebook instance, assuming that the security groups allow it.</p> </li>
+    /// <li> <p>Creates a network interface in the SageMaker VPC.</p> </li>
+    /// <li> <p>(Option) If you specified <code>SubnetId</code>, SageMaker creates a network interface in your own VPC, which is inferred from the subnet ID that you provide in the input. When creating this network interface, SageMaker attaches the security group that you specified in the request to the network interface that it creates in your VPC.</p> </li>
+    /// <li> <p>Launches an EC2 instance of the type specified in the request in the SageMaker VPC. If you specified <code>SubnetId</code> of your VPC, SageMaker specifies both network interfaces when launching this instance. This enables inbound traffic from your own VPC to the notebook instance, assuming that the security groups allow it.</p> </li>
     /// </ol>
-    /// <p>After creating the notebook instance, Amazon SageMaker returns its Amazon Resource Name (ARN). You can't change the name of a notebook instance after you create it.</p>
-    /// <p>After Amazon SageMaker creates the notebook instance, you can connect to the Jupyter server and work in Jupyter notebooks. For example, you can write code to explore a dataset that you can use for model training, train a model, host models by creating Amazon SageMaker endpoints, and validate hosted models. </p>
+    /// <p>After creating the notebook instance, SageMaker returns its Amazon Resource Name (ARN). You can't change the name of a notebook instance after you create it.</p>
+    /// <p>After SageMaker creates the notebook instance, you can connect to the Jupyter server and work in Jupyter notebooks. For example, you can write code to explore a dataset that you can use for model training, train a model, host models by creating SageMaker endpoints, and validate hosted models. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It Works</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNotebookInstance {
@@ -9244,26 +9257,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_security_group_ids(input);
             self
         }
-        /// <p> When you send any requests to Amazon Web Services resources from the notebook instance, Amazon SageMaker assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can perform these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>
-        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+        /// <p> When you send any requests to Amazon Web Services resources from the notebook instance, SageMaker assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so SageMaker can perform these tasks. The policy must allow the SageMaker service principal (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
+        /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
         /// </note>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p> When you send any requests to Amazon Web Services resources from the notebook instance, Amazon SageMaker assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can perform these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>
-        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+        /// <p> When you send any requests to Amazon Web Services resources from the notebook instance, SageMaker assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so SageMaker can perform these tasks. The policy must allow the SageMaker service principal (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
+        /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
         /// </note>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
@@ -9298,13 +9311,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lifecycle_config_name(input);
             self
         }
-        /// <p>Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.</p>
+        /// <p>Sets whether SageMaker provides internet access to the notebook instance. If you set this to <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to connect to SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.</p>
         pub fn direct_internet_access(mut self, input: crate::model::DirectInternetAccess) -> Self {
             self.inner = self.inner.direct_internet_access(input);
             self
         }
-        /// <p>Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.</p>
+        /// <p>Sets whether SageMaker provides internet access to the notebook instance. If you set this to <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to connect to SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.</p>
         pub fn set_direct_internet_access(
             mut self,
@@ -9345,12 +9358,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accelerator_types(input);
             self
         }
-        /// <p>A Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+        /// <p>A Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
         pub fn default_code_repository(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.default_code_repository(input.into());
             self
         }
-        /// <p>A Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+        /// <p>A Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
         pub fn set_default_code_repository(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9362,7 +9375,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_additional_code_repositories`](Self::set_additional_code_repositories).
         ///
-        /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+        /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
         pub fn additional_code_repositories(
             mut self,
             input: impl Into<std::string::String>,
@@ -9370,7 +9383,7 @@ pub mod fluent_builders {
             self.inner = self.inner.additional_code_repositories(input.into());
             self
         }
-        /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+        /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
         pub fn set_additional_code_repositories(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9775,7 +9788,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePresignedNotebookInstanceUrl`.
     ///
-    /// <p>Returns a URL that you can use to connect to the Jupyter server from a notebook instance. In the Amazon SageMaker console, when you choose <code>Open</code> next to a notebook instance, Amazon SageMaker opens a new tab showing the Jupyter server home page from the notebook instance. The console uses this API to get the URL and show the page.</p>
+    /// <p>Returns a URL that you can use to connect to the Jupyter server from a notebook instance. In the SageMaker console, when you choose <code>Open</code> next to a notebook instance, SageMaker opens a new tab showing the Jupyter server home page from the notebook instance. The console uses this API to get the URL and show the page.</p>
     /// <p> The IAM role or user used to call this API defines the permissions to access the notebook instance. Once the presigned URL is created, no additional permission is required to access this URL. IAM authorization policies for this API are also enforced for every HTTP request and WebSocket frame that attempts to connect to the notebook instance.</p>
     /// <p>You can restrict access to this API and to the URL that it returns to a list of IP addresses that you specify. Use the <code>NotIpAddress</code> condition operator and the <code>aws:SourceIP</code> condition context key to specify the list of IP addresses that you want to have access to the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html#nbi-ip-filter">Limit Access to a Notebook Instance by IP Address</a>.</p> <note>
     /// <p>The URL that you get from a call to <code>CreatePresignedNotebookInstanceUrl</code> is valid only for 5 minutes. If you try to use the URL after the 5-minute limit expires, you are directed to the Amazon Web Services console sign-in page.</p>
@@ -10274,22 +10287,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTrainingJob`.
     ///
-    /// <p>Starts a model training job. After training completes, Amazon SageMaker saves the resulting model artifacts to an Amazon S3 location that you specify. </p>
-    /// <p>If you choose to host your model using Amazon SageMaker hosting services, you can use the resulting model artifacts as part of the model. You can also use the artifacts in a machine learning service other than Amazon SageMaker, provided that you know how to use them for inference. </p>
+    /// <p>Starts a model training job. After training completes, SageMaker saves the resulting model artifacts to an Amazon S3 location that you specify. </p>
+    /// <p>If you choose to host your model using SageMaker hosting services, you can use the resulting model artifacts as part of the model. You can also use the artifacts in a machine learning service other than SageMaker, provided that you know how to use them for inference. </p>
     /// <p>In the request body, you provide the following: </p>
     /// <ul>
     /// <li> <p> <code>AlgorithmSpecification</code> - Identifies the training algorithm to use. </p> </li>
-    /// <li> <p> <code>HyperParameters</code> - Specify these algorithm-specific parameters to enable the estimation of model parameters during training. Hyperparameters can be tuned to optimize this learning process. For a list of hyperparameters for each training algorithm provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p> </li>
+    /// <li> <p> <code>HyperParameters</code> - Specify these algorithm-specific parameters to enable the estimation of model parameters during training. Hyperparameters can be tuned to optimize this learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p> </li>
     /// <li> <p> <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3, EFS, or FSx location where it is stored.</p> </li>
-    /// <li> <p> <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want Amazon SageMaker to save the results of model training. </p> </li>
+    /// <li> <p> <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want SageMaker to save the results of model training. </p> </li>
     /// <li> <p> <code>ResourceConfig</code> - Identifies the resources, ML compute instances, and ML storage volumes to deploy for model training. In distributed training, you specify more than one instance. </p> </li>
     /// <li> <p> <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine learning models by up to 80% by using Amazon EC2 Spot instances. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed Spot Training</a>. </p> </li>
-    /// <li> <p> <code>RoleArn</code> - The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during model training. You must grant this role the necessary permissions so that Amazon SageMaker can successfully complete model training. </p> </li>
+    /// <li> <p> <code>RoleArn</code> - The Amazon Resource Name (ARN) that SageMaker assumes to perform tasks on your behalf during model training. You must grant this role the necessary permissions so that SageMaker can successfully complete model training. </p> </li>
     /// <li> <p> <code>StoppingCondition</code> - To help cap training costs, use <code>MaxRuntimeInSeconds</code> to set a time limit for training. Use <code>MaxWaitTimeInSeconds</code> to specify how long a managed spot training job has to complete. </p> </li>
     /// <li> <p> <code>Environment</code> - The environment variables to set in the Docker container.</p> </li>
     /// <li> <p> <code>RetryStrategy</code> - The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p> </li>
     /// </ul>
-    /// <p> For more information about Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It Works</a>. </p>
+    /// <p> For more information about SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It Works</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTrainingJob {
         handle: std::sync::Arc<super::Handle>,
@@ -10346,7 +10359,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_hyper_parameters`](Self::set_hyper_parameters).
         ///
-        /// <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
+        /// <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
         /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p>
         pub fn hyper_parameters(
             mut self,
@@ -10356,7 +10369,7 @@ pub mod fluent_builders {
             self.inner = self.inner.hyper_parameters(k.into(), v.into());
             self
         }
-        /// <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
+        /// <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
         /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p>
         pub fn set_hyper_parameters(
             mut self,
@@ -10367,7 +10380,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hyper_parameters(input);
             self
         }
-        /// <p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
+        /// <p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
         pub fn algorithm_specification(
             mut self,
             input: crate::model::AlgorithmSpecification,
@@ -10375,7 +10388,7 @@ pub mod fluent_builders {
             self.inner = self.inner.algorithm_specification(input);
             self
         }
-        /// <p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
+        /// <p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
         pub fn set_algorithm_specification(
             mut self,
             input: std::option::Option<crate::model::AlgorithmSpecification>,
@@ -10383,17 +10396,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_algorithm_specification(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf. </p>
-        /// <p>During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket, download a Docker image that contains training code, write model artifacts to an S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these tasks to an IAM role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>
-        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that SageMaker can assume to perform tasks on your behalf. </p>
+        /// <p>During model training, SageMaker needs your permission to read input data from an S3 bucket, download a Docker image that contains training code, write model artifacts to an S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these tasks to an IAM role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
+        /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
         /// </note>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf. </p>
-        /// <p>During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket, download a Docker image that contains training code, write model artifacts to an S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these tasks to an IAM role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>
-        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that SageMaker can assume to perform tasks on your behalf. </p>
+        /// <p>During model training, SageMaker needs your permission to read input data from an S3 bucket, download a Docker image that contains training code, write model artifacts to an S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these tasks to an IAM role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
+        /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
         /// </note>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
@@ -10405,14 +10418,14 @@ pub mod fluent_builders {
         ///
         /// <p>An array of <code>Channel</code> objects. Each channel is a named input source. <code>InputDataConfig</code> describes the input data and its location. </p>
         /// <p>Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of input data, <code>training_data</code> and <code>validation_data</code>. The configuration for each channel provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format. </p>
-        /// <p>Depending on the input mode that the algorithm supports, Amazon SageMaker either copies input data files from an S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you specify an EFS location, input data files will be made available as input streams. They do not need to be downloaded.</p>
+        /// <p>Depending on the input mode that the algorithm supports, SageMaker either copies input data files from an S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you specify an EFS location, input data files are available as input streams. They do not need to be downloaded.</p>
         pub fn input_data_config(mut self, input: crate::model::Channel) -> Self {
             self.inner = self.inner.input_data_config(input);
             self
         }
         /// <p>An array of <code>Channel</code> objects. Each channel is a named input source. <code>InputDataConfig</code> describes the input data and its location. </p>
         /// <p>Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of input data, <code>training_data</code> and <code>validation_data</code>. The configuration for each channel provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format. </p>
-        /// <p>Depending on the input mode that the algorithm supports, Amazon SageMaker either copies input data files from an S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you specify an EFS location, input data files will be made available as input streams. They do not need to be downloaded.</p>
+        /// <p>Depending on the input mode that the algorithm supports, SageMaker either copies input data files from an S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you specify an EFS location, input data files are available as input streams. They do not need to be downloaded.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Channel>>,
@@ -10420,12 +10433,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_data_config(input);
             self
         }
-        /// <p>Specifies the path to the S3 location where you want to store model artifacts. Amazon SageMaker creates subfolders for the artifacts. </p>
+        /// <p>Specifies the path to the S3 location where you want to store model artifacts. SageMaker creates subfolders for the artifacts. </p>
         pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
             self.inner = self.inner.output_data_config(input);
             self
         }
-        /// <p>Specifies the path to the S3 location where you want to store model artifacts. Amazon SageMaker creates subfolders for the artifacts. </p>
+        /// <p>Specifies the path to the S3 location where you want to store model artifacts. SageMaker creates subfolders for the artifacts. </p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -10434,13 +10447,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resources, including the ML compute instances and ML storage volumes, to use for model training. </p>
-        /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use ML storage volumes for scratch space. If you want Amazon SageMaker to use the ML storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
+        /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use ML storage volumes for scratch space. If you want SageMaker to use the ML storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
         pub fn resource_config(mut self, input: crate::model::ResourceConfig) -> Self {
             self.inner = self.inner.resource_config(input);
             self
         }
         /// <p>The resources, including the ML compute instances and ML storage volumes, to use for model training. </p>
-        /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use ML storage volumes for scratch space. If you want Amazon SageMaker to use the ML storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
+        /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use ML storage volumes for scratch space. If you want SageMaker to use the ML storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
         pub fn set_resource_config(
             mut self,
             input: std::option::Option<crate::model::ResourceConfig>,
@@ -10461,14 +10474,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_config(input);
             self
         }
-        /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>
-        /// <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
+        /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+        /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
         pub fn stopping_condition(mut self, input: crate::model::StoppingCondition) -> Self {
             self.inner = self.inner.stopping_condition(input);
             self
         }
-        /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>
-        /// <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
+        /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+        /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
         pub fn set_stopping_condition(
             mut self,
             input: std::option::Option<crate::model::StoppingCondition>,
@@ -10493,12 +10506,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If you enable network isolation for training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
+        /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If you enable network isolation for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
         pub fn enable_network_isolation(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_network_isolation(input);
             self
         }
-        /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If you enable network isolation for training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
+        /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If you enable network isolation for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
         pub fn set_enable_network_isolation(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_network_isolation(input);
             self
@@ -10787,12 +10800,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum allowed size of the payload, in MB. A <i>payload</i> is the data portion of a record (without metadata). The value in <code>MaxPayloadInMB</code> must be greater than, or equal to, the size of a single record. To estimate the size of a record in MB, divide the size of your dataset by the number of records. To ensure that the records fit within the maximum payload size, we recommend using a slightly larger value. The default value is <code>6</code> MB. </p>
+        /// <p>The value of <code>MaxPayloadInMB</code> cannot be greater than 100 MB. If you specify the <code>MaxConcurrentTransforms</code> parameter, the value of <code>(MaxConcurrentTransforms * MaxPayloadInMB)</code> also cannot exceed 100 MB.</p>
         /// <p>For cases where the payload might be arbitrarily large and is transmitted using HTTP chunked encoding, set the value to <code>0</code>. This feature works only in supported algorithms. Currently, Amazon SageMaker built-in algorithms do not support HTTP chunked encoding.</p>
         pub fn max_payload_in_mb(mut self, input: i32) -> Self {
             self.inner = self.inner.max_payload_in_mb(input);
             self
         }
         /// <p>The maximum allowed size of the payload, in MB. A <i>payload</i> is the data portion of a record (without metadata). The value in <code>MaxPayloadInMB</code> must be greater than, or equal to, the size of a single record. To estimate the size of a record in MB, divide the size of your dataset by the number of records. To ensure that the records fit within the maximum payload size, we recommend using a slightly larger value. The default value is <code>6</code> MB. </p>
+        /// <p>The value of <code>MaxPayloadInMB</code> cannot be greater than 100 MB. If you specify the <code>MaxConcurrentTransforms</code> parameter, the value of <code>(MaxConcurrentTransforms * MaxPayloadInMB)</code> also cannot exceed 100 MB.</p>
         /// <p>For cases where the payload might be arbitrarily large and is transmitted using HTTP chunked encoding, set the value to <code>0</code>. This feature works only in supported algorithms. Currently, Amazon SageMaker built-in algorithms do not support HTTP chunked encoding.</p>
         pub fn set_max_payload_in_mb(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_payload_in_mb(input);
@@ -12324,8 +12339,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEndpoint`.
     ///
-    /// <p>Deletes an endpoint. Amazon SageMaker frees up all of the resources that were deployed when the endpoint was created. </p>
-    /// <p>Amazon SageMaker retires any custom KMS key grants associated with the endpoint, meaning you don't need to use the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> API call.</p>
+    /// <p>Deletes an endpoint. SageMaker frees up all of the resources that were deployed when the endpoint was created. </p>
+    /// <p>SageMaker retires any custom KMS key grants associated with the endpoint, meaning you don't need to use the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> API call.</p>
+    /// <p>When you delete your endpoint, SageMaker asynchronously deletes associated endpoint resources such as KMS key grants. You might still see these resources in your account for a few minutes after deleting your endpoint. Do not delete or revoke the permissions for your <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html#sagemaker-CreateModel-request-ExecutionRoleArn">ExecutionRoleArn</a> </code>, otherwise SageMaker cannot delete these resources.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEndpoint {
         handle: std::sync::Arc<super::Handle>,
@@ -12780,7 +12796,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteModel`.
     ///
-    /// <p>Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that was created in Amazon SageMaker when you called the <code>CreateModel</code> API. It does not delete model artifacts, inference code, or the IAM role that you specified when creating the model. </p>
+    /// <p>Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that was created in SageMaker when you called the <code>CreateModel</code> API. It does not delete model artifacts, inference code, or the IAM role that you specified when creating the model. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteModel {
         handle: std::sync::Arc<super::Handle>,
@@ -12948,7 +12964,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteModelPackage`.
     ///
     /// <p>Deletes a model package.</p>
-    /// <p>A model package is used to create Amazon SageMaker models or list on Amazon Web Services Marketplace. Buyers can subscribe to model packages listed on Amazon Web Services Marketplace to create models in Amazon SageMaker.</p>
+    /// <p>A model package is used to create SageMaker models or list on Amazon Web Services Marketplace. Buyers can subscribe to model packages listed on Amazon Web Services Marketplace to create models in SageMaker.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteModelPackage {
         handle: std::sync::Arc<super::Handle>,
@@ -13230,8 +13246,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteNotebookInstance`.
     ///
-    /// <p> Deletes an Amazon SageMaker notebook instance. Before you can delete a notebook instance, you must call the <code>StopNotebookInstance</code> API. </p> <important>
-    /// <p>When you delete a notebook instance, you lose all of your data. Amazon SageMaker removes the ML compute instance, and deletes the ML storage volume and the network interface associated with the notebook instance. </p>
+    /// <p> Deletes an SageMaker notebook instance. Before you can delete a notebook instance, you must call the <code>StopNotebookInstance</code> API. </p> <important>
+    /// <p>When you delete a notebook instance, you lose all of your data. SageMaker removes the ML compute instance, and deletes the ML storage volume and the network interface associated with the notebook instance. </p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNotebookInstance {
@@ -13272,12 +13288,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the Amazon SageMaker notebook instance to delete.</p>
+        /// <p>The name of the SageMaker notebook instance to delete.</p>
         pub fn notebook_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.notebook_instance_name(input.into());
             self
         }
-        /// <p>The name of the Amazon SageMaker notebook instance to delete.</p>
+        /// <p>The name of the SageMaker notebook instance to delete.</p>
         pub fn set_notebook_instance_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13534,7 +13550,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteTags`.
     ///
-    /// <p>Deletes the specified tags from an Amazon SageMaker resource.</p>
+    /// <p>Deletes the specified tags from an SageMaker resource.</p>
     /// <p>To list a resource's tags, use the <code>ListTags</code> API. </p> <note>
     /// <p>When you call this API to delete tags from a hyperparameter tuning job, the deleted tags are not removed from training jobs that the hyperparameter tuning job launched before you called this API.</p>
     /// </note> <note>
@@ -15749,12 +15765,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the model group to describe.</p>
+        /// <p>The name of gthe model group to describe.</p>
         pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.model_package_group_name(input.into());
             self
         }
-        /// <p>The name of the model group to describe.</p>
+        /// <p>The name of gthe model group to describe.</p>
         pub fn set_model_package_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23087,7 +23103,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListNotebookInstances`.
     ///
-    /// <p>Returns a list of the Amazon SageMaker notebook instances in the requester's account in an Amazon Web Services Region. </p>
+    /// <p>Returns a list of the SageMaker notebook instances in the requester's account in an Amazon Web Services Region. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNotebookInstances {
         handle: std::sync::Arc<super::Handle>,
@@ -24330,7 +24346,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTags`.
     ///
-    /// <p>Returns the tags for the specified Amazon SageMaker resource.</p>
+    /// <p>Returns the tags for the specified SageMaker resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags {
         handle: std::sync::Arc<super::Handle>,
@@ -24386,12 +24402,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p> If the response to the previous <code>ListTags</code> request is truncated, Amazon SageMaker returns this token. To retrieve the next set of tags, use it in the subsequent request. </p>
+        /// <p> If the response to the previous <code>ListTags</code> request is truncated, SageMaker returns this token. To retrieve the next set of tags, use it in the subsequent request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> If the response to the previous <code>ListTags</code> request is truncated, Amazon SageMaker returns this token. To retrieve the next set of tags, use it in the subsequent request. </p>
+        /// <p> If the response to the previous <code>ListTags</code> request is truncated, SageMaker returns this token. To retrieve the next set of tags, use it in the subsequent request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -25664,12 +25680,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_arns(input);
             self
         }
-        /// <p>Associations between lineage entities are directed. This parameter determines the direction from the StartArn(s) the query will look.</p>
+        /// <p>Associations between lineage entities have a direction. This parameter determines the direction from the StartArn(s) that the query traverses.</p>
         pub fn direction(mut self, input: crate::model::Direction) -> Self {
             self.inner = self.inner.direction(input);
             self
         }
-        /// <p>Associations between lineage entities are directed. This parameter determines the direction from the StartArn(s) the query will look.</p>
+        /// <p>Associations between lineage entities have a direction. This parameter determines the direction from the StartArn(s) that the query traverses.</p>
         pub fn set_direction(
             mut self,
             input: std::option::Option<crate::model::Direction>,
@@ -25677,12 +25693,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_direction(input);
             self
         }
-        /// <p> Setting this value to <code>True</code> will retrieve not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
+        /// <p> Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
         pub fn include_edges(mut self, input: bool) -> Self {
             self.inner = self.inner.include_edges(input);
             self
         }
-        /// <p> Setting this value to <code>True</code> will retrieve not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
+        /// <p> Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
         pub fn set_include_edges(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_edges(input);
             self
@@ -25714,12 +25730,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
+        /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that are traversed. Depth is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
         pub fn max_depth(mut self, input: i32) -> Self {
             self.inner = self.inner.max_depth(input);
             self
         }
-        /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
+        /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that are traversed. Depth is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
         pub fn set_max_depth(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_depth(input);
             self
@@ -26361,7 +26377,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartNotebookInstance`.
     ///
-    /// <p>Launches an ML compute instance with the latest version of the libraries and attaches your ML storage volume. After configuring the notebook instance, Amazon SageMaker sets the notebook instance status to <code>InService</code>. A notebook instance's status must be <code>InService</code> before you can connect to your Jupyter notebook. </p>
+    /// <p>Launches an ML compute instance with the latest version of the libraries and attaches your ML storage volume. After configuring the notebook instance, SageMaker sets the notebook instance status to <code>InService</code>. A notebook instance's status must be <code>InService</code> before you can connect to your Jupyter notebook. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartNotebookInstance {
         handle: std::sync::Arc<super::Handle>,
@@ -26946,7 +26962,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopNotebookInstance`.
     ///
-    /// <p>Terminates the ML compute instance. Before terminating the instance, Amazon SageMaker disconnects the ML storage volume from it. Amazon SageMaker preserves the ML storage volume. Amazon SageMaker stops charging you for the ML compute instance when you call <code>StopNotebookInstance</code>.</p>
+    /// <p>Terminates the ML compute instance. Before terminating the instance, SageMaker disconnects the ML storage volume from it. SageMaker preserves the ML storage volume. SageMaker stops charging you for the ML compute instance when you call <code>StopNotebookInstance</code>.</p>
     /// <p>To access data on the ML storage volume for a notebook instance that has been terminated, call the <code>StartNotebookInstance</code> API. <code>StartNotebookInstance</code> launches another ML compute instance, configures it, and attaches the preserved ML storage volume so you can continue your work. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopNotebookInstance {
@@ -27134,8 +27150,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopTrainingJob`.
     ///
-    /// <p>Stops a training job. To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms might use this 120-second window to save the model artifacts, so the results of the training is not lost. </p>
-    /// <p>When it receives a <code>StopTrainingJob</code> request, Amazon SageMaker changes the status of the job to <code>Stopping</code>. After Amazon SageMaker stops the job, it sets the status to <code>Stopped</code>.</p>
+    /// <p>Stops a training job. To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms might use this 120-second window to save the model artifacts, so the results of the training is not lost. </p>
+    /// <p>When it receives a <code>StopTrainingJob</code> request, SageMaker changes the status of the job to <code>Stopping</code>. After SageMaker stops the job, it sets the status to <code>Stopped</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopTrainingJob {
         handle: std::sync::Arc<super::Handle>,
@@ -27973,7 +27989,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEndpoint`.
     ///
     /// <p>Deploys the new <code>EndpointConfig</code> specified in the request, switches to using newly created endpoint, and then deletes resources provisioned for the endpoint using the previous <code>EndpointConfig</code> (there is no availability loss). </p>
-    /// <p>When Amazon SageMaker receives the request, it sets the endpoint status to <code>Updating</code>. After updating the endpoint, it sets the status to <code>InService</code>. To check the status of an endpoint, use the <code>DescribeEndpoint</code> API. </p> <note>
+    /// <p>When SageMaker receives the request, it sets the endpoint status to <code>Updating</code>. After updating the endpoint, it sets the status to <code>InService</code>. To check the status of an endpoint, use the <code>DescribeEndpoint</code> API. </p> <note>
     /// <p>You must not delete an <code>EndpointConfig</code> in use by an endpoint that is live or while the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being performed on the endpoint. To update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
     /// <p>If you delete the <code>EndpointConfig</code> of an endpoint that is active or being created or updated you may lose visibility into the instance type the endpoint is using. The endpoint must be deleted in order to stop incurring charges.</p>
     /// </note>
@@ -28101,7 +28117,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateEndpointWeightsAndCapacities`.
     ///
-    /// <p>Updates variant weight of one or more variants associated with an existing endpoint, or capacity of one variant associated with an existing endpoint. When it receives the request, Amazon SageMaker sets the endpoint status to <code>Updating</code>. After updating the endpoint, it sets the status to <code>InService</code>. To check the status of an endpoint, use the <code>DescribeEndpoint</code> API. </p>
+    /// <p>Updates variant weight of one or more variants associated with an existing endpoint, or capacity of one variant associated with an existing endpoint. When it receives the request, SageMaker sets the endpoint status to <code>Updating</code>. After updating the endpoint, it sets the status to <code>InService</code>. To check the status of an endpoint, use the <code>DescribeEndpoint</code> API. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEndpointWeightsAndCapacities {
         handle: std::sync::Arc<super::Handle>,
@@ -28143,12 +28159,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an existing Amazon SageMaker endpoint.</p>
+        /// <p>The name of an existing SageMaker endpoint.</p>
         pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.endpoint_name(input.into());
             self
         }
-        /// <p>The name of an existing Amazon SageMaker endpoint.</p>
+        /// <p>The name of an existing SageMaker endpoint.</p>
         pub fn set_endpoint_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28644,15 +28660,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_type(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>
-        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
+        /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
         /// </note>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>
-        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
+        /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
         /// </note>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
@@ -28684,22 +28700,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_disassociate_lifecycle_config(input);
             self
         }
-        /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB. ML storage volumes are encrypted, so Amazon SageMaker can't determine the amount of available free space on the volume. Because of this, you can increase the volume size when you update a notebook instance, but you can't decrease the volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook instance with the desired size.</p>
+        /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB. ML storage volumes are encrypted, so SageMaker can't determine the amount of available free space on the volume. Because of this, you can increase the volume size when you update a notebook instance, but you can't decrease the volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook instance with the desired size.</p>
         pub fn volume_size_in_gb(mut self, input: i32) -> Self {
             self.inner = self.inner.volume_size_in_gb(input);
             self
         }
-        /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB. ML storage volumes are encrypted, so Amazon SageMaker can't determine the amount of available free space on the volume. Because of this, you can increase the volume size when you update a notebook instance, but you can't decrease the volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook instance with the desired size.</p>
+        /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB. ML storage volumes are encrypted, so SageMaker can't determine the amount of available free space on the volume. Because of this, you can increase the volume size when you update a notebook instance, but you can't decrease the volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook instance with the desired size.</p>
         pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_volume_size_in_gb(input);
             self
         }
-        /// <p>The Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+        /// <p>The Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
         pub fn default_code_repository(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.default_code_repository(input.into());
             self
         }
-        /// <p>The Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+        /// <p>The Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
         pub fn set_default_code_repository(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28711,7 +28727,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_additional_code_repositories`](Self::set_additional_code_repositories).
         ///
-        /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+        /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
         pub fn additional_code_repositories(
             mut self,
             input: impl Into<std::string::String>,
@@ -28719,7 +28735,7 @@ pub mod fluent_builders {
             self.inner = self.inner.additional_code_repositories(input.into());
             self
         }
-        /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+        /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
         pub fn set_additional_code_repositories(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

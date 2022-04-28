@@ -2600,7 +2600,9 @@ impl ComponentTypeSummary {
     }
 }
 
-/// <p>An object that filters items in a list of component types.</p>
+/// <p>An object that filters items in a list of component types.</p> <note>
+/// <p>Only one object is accepted as a valid input.</p>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum ListComponentTypesFilter {
@@ -2765,7 +2767,20 @@ pub struct PropertyValue {
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that specifies a value for a time series property.</p>
     pub value: std::option::Option<crate::model::DataValue>,
-    /// Timestamp represented in ISO 8601 format
+    /// <p>ISO8601 DateTime of a value for a time series property.</p>
+    /// <p>The time for when the property value was recorded in ISO 8601 format: <i>YYYY-MM-DDThh:mm:ss[.SSSSSSSSS][Z/±HH:mm]</i>.</p>
+    /// <ul>
+    /// <li> <p> <i>[YYYY]</i>: year</p> </li>
+    /// <li> <p> <i>[MM]</i>: month</p> </li>
+    /// <li> <p> <i>[DD]</i>: day</p> </li>
+    /// <li> <p> <i>[hh]</i>: hour</p> </li>
+    /// <li> <p> <i>[mm]</i>: minute</p> </li>
+    /// <li> <p> <i>[ss]</i>: seconds</p> </li>
+    /// <li> <p> <i>[.SSSSSSSSS]</i>: additional precision, where precedence is maintained. For example: [.573123] is equal to 573123000 nanoseconds.</p> </li>
+    /// <li> <p> <i>Z</i>: default timezone UTC</p> </li>
+    /// <li> <p> <i>± HH:mm</i>: time zone offset in Hours and Minutes.</p> </li>
+    /// </ul>
+    /// <p> <i>Required sub-fields</i>: YYYY-MM-DDThh:mm:ss and [Z/±HH:mm]</p>
     pub time: std::option::Option<std::string::String>,
 }
 impl PropertyValue {
@@ -2777,7 +2792,20 @@ impl PropertyValue {
     pub fn value(&self) -> std::option::Option<&crate::model::DataValue> {
         self.value.as_ref()
     }
-    /// Timestamp represented in ISO 8601 format
+    /// <p>ISO8601 DateTime of a value for a time series property.</p>
+    /// <p>The time for when the property value was recorded in ISO 8601 format: <i>YYYY-MM-DDThh:mm:ss[.SSSSSSSSS][Z/±HH:mm]</i>.</p>
+    /// <ul>
+    /// <li> <p> <i>[YYYY]</i>: year</p> </li>
+    /// <li> <p> <i>[MM]</i>: month</p> </li>
+    /// <li> <p> <i>[DD]</i>: day</p> </li>
+    /// <li> <p> <i>[hh]</i>: hour</p> </li>
+    /// <li> <p> <i>[mm]</i>: minute</p> </li>
+    /// <li> <p> <i>[ss]</i>: seconds</p> </li>
+    /// <li> <p> <i>[.SSSSSSSSS]</i>: additional precision, where precedence is maintained. For example: [.573123] is equal to 573123000 nanoseconds.</p> </li>
+    /// <li> <p> <i>Z</i>: default timezone UTC</p> </li>
+    /// <li> <p> <i>± HH:mm</i>: time zone offset in Hours and Minutes.</p> </li>
+    /// </ul>
+    /// <p> <i>Required sub-fields</i>: YYYY-MM-DDThh:mm:ss and [Z/±HH:mm]</p>
     pub fn time(&self) -> std::option::Option<&str> {
         self.time.as_deref()
     }
@@ -2825,12 +2853,38 @@ pub mod property_value {
             self.value = input;
             self
         }
-        /// Timestamp represented in ISO 8601 format
+        /// <p>ISO8601 DateTime of a value for a time series property.</p>
+        /// <p>The time for when the property value was recorded in ISO 8601 format: <i>YYYY-MM-DDThh:mm:ss[.SSSSSSSSS][Z/±HH:mm]</i>.</p>
+        /// <ul>
+        /// <li> <p> <i>[YYYY]</i>: year</p> </li>
+        /// <li> <p> <i>[MM]</i>: month</p> </li>
+        /// <li> <p> <i>[DD]</i>: day</p> </li>
+        /// <li> <p> <i>[hh]</i>: hour</p> </li>
+        /// <li> <p> <i>[mm]</i>: minute</p> </li>
+        /// <li> <p> <i>[ss]</i>: seconds</p> </li>
+        /// <li> <p> <i>[.SSSSSSSSS]</i>: additional precision, where precedence is maintained. For example: [.573123] is equal to 573123000 nanoseconds.</p> </li>
+        /// <li> <p> <i>Z</i>: default timezone UTC</p> </li>
+        /// <li> <p> <i>± HH:mm</i>: time zone offset in Hours and Minutes.</p> </li>
+        /// </ul>
+        /// <p> <i>Required sub-fields</i>: YYYY-MM-DDThh:mm:ss and [Z/±HH:mm]</p>
         pub fn time(mut self, input: impl Into<std::string::String>) -> Self {
             self.time = Some(input.into());
             self
         }
-        /// Timestamp represented in ISO 8601 format
+        /// <p>ISO8601 DateTime of a value for a time series property.</p>
+        /// <p>The time for when the property value was recorded in ISO 8601 format: <i>YYYY-MM-DDThh:mm:ss[.SSSSSSSSS][Z/±HH:mm]</i>.</p>
+        /// <ul>
+        /// <li> <p> <i>[YYYY]</i>: year</p> </li>
+        /// <li> <p> <i>[MM]</i>: month</p> </li>
+        /// <li> <p> <i>[DD]</i>: day</p> </li>
+        /// <li> <p> <i>[hh]</i>: hour</p> </li>
+        /// <li> <p> <i>[mm]</i>: minute</p> </li>
+        /// <li> <p> <i>[ss]</i>: seconds</p> </li>
+        /// <li> <p> <i>[.SSSSSSSSS]</i>: additional precision, where precedence is maintained. For example: [.573123] is equal to 573123000 nanoseconds.</p> </li>
+        /// <li> <p> <i>Z</i>: default timezone UTC</p> </li>
+        /// <li> <p> <i>± HH:mm</i>: time zone offset in Hours and Minutes.</p> </li>
+        /// </ul>
+        /// <p> <i>Required sub-fields</i>: YYYY-MM-DDThh:mm:ss and [Z/±HH:mm]</p>
         pub fn set_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.time = input;
             self
@@ -4247,7 +4301,7 @@ impl BatchPutPropertyError {
     }
 }
 
-/// <p>An object that specifies information about time series property values.</p>
+/// <p>An object that specifies information about time series property values. This object is used and consumed by the <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_BatchPutPropertyValues.html">BatchPutPropertyValues</a> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyValueEntry {

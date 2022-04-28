@@ -133,9 +133,9 @@ pub enum ArrayValue {
     ArrayValues(std::vec::Vec<crate::model::ArrayValue>),
     /// <p>An array of Boolean values.</p>
     BooleanValues(std::vec::Vec<bool>),
-    /// <p>An array of integers.</p>
+    /// <p>An array of floating-point numbers.</p>
     DoubleValues(std::vec::Vec<f64>),
-    /// <p>An array of floating point numbers.</p>
+    /// <p>An array of integers.</p>
     LongValues(std::vec::Vec<i64>),
     /// <p>An array of strings.</p>
     StringValues(std::vec::Vec<std::string::String>),
@@ -526,6 +526,61 @@ impl ColumnMetadata {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RecordsFormatType {
+    #[allow(missing_docs)] // documentation missing in model
+    Json,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RecordsFormatType {
+    fn from(s: &str) -> Self {
+        match s {
+            "JSON" => RecordsFormatType::Json,
+            "NONE" => RecordsFormatType::None,
+            other => RecordsFormatType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RecordsFormatType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RecordsFormatType::from(s))
+    }
+}
+impl RecordsFormatType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RecordsFormatType::Json => "JSON",
+            RecordsFormatType::None => "NONE",
+            RecordsFormatType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["JSON", "NONE"]
+    }
+}
+impl AsRef<str> for RecordsFormatType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Options that control how the result set is returned.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -534,6 +589,8 @@ pub struct ResultSetOptions {
     /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to String, especially when working with currency values.</p>
     /// </important>
     pub decimal_return_type: std::option::Option<crate::model::DecimalReturnType>,
+    /// <p>A value that indicates how a field of <code>LONG</code> type is represented. Allowed values are <code>LONG</code> and <code>STRING</code>. The default is <code>LONG</code>. Specify <code>STRING</code> if the length or precision of numeric values might cause truncation or rounding errors. </p>
+    pub long_return_type: std::option::Option<crate::model::LongReturnType>,
 }
 impl ResultSetOptions {
     /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <important>
@@ -542,11 +599,16 @@ impl ResultSetOptions {
     pub fn decimal_return_type(&self) -> std::option::Option<&crate::model::DecimalReturnType> {
         self.decimal_return_type.as_ref()
     }
+    /// <p>A value that indicates how a field of <code>LONG</code> type is represented. Allowed values are <code>LONG</code> and <code>STRING</code>. The default is <code>LONG</code>. Specify <code>STRING</code> if the length or precision of numeric values might cause truncation or rounding errors. </p>
+    pub fn long_return_type(&self) -> std::option::Option<&crate::model::LongReturnType> {
+        self.long_return_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ResultSetOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResultSetOptions");
         formatter.field("decimal_return_type", &self.decimal_return_type);
+        formatter.field("long_return_type", &self.long_return_type);
         formatter.finish()
     }
 }
@@ -557,6 +619,7 @@ pub mod result_set_options {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) decimal_return_type: std::option::Option<crate::model::DecimalReturnType>,
+        pub(crate) long_return_type: std::option::Option<crate::model::LongReturnType>,
     }
     impl Builder {
         /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <important>
@@ -576,10 +639,24 @@ pub mod result_set_options {
             self.decimal_return_type = input;
             self
         }
+        /// <p>A value that indicates how a field of <code>LONG</code> type is represented. Allowed values are <code>LONG</code> and <code>STRING</code>. The default is <code>LONG</code>. Specify <code>STRING</code> if the length or precision of numeric values might cause truncation or rounding errors. </p>
+        pub fn long_return_type(mut self, input: crate::model::LongReturnType) -> Self {
+            self.long_return_type = Some(input);
+            self
+        }
+        /// <p>A value that indicates how a field of <code>LONG</code> type is represented. Allowed values are <code>LONG</code> and <code>STRING</code>. The default is <code>LONG</code>. Specify <code>STRING</code> if the length or precision of numeric values might cause truncation or rounding errors. </p>
+        pub fn set_long_return_type(
+            mut self,
+            input: std::option::Option<crate::model::LongReturnType>,
+        ) -> Self {
+            self.long_return_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResultSetOptions`](crate::model::ResultSetOptions)
         pub fn build(self) -> crate::model::ResultSetOptions {
             crate::model::ResultSetOptions {
                 decimal_return_type: self.decimal_return_type,
+                long_return_type: self.long_return_type,
             }
         }
     }
@@ -588,6 +665,61 @@ impl ResultSetOptions {
     /// Creates a new builder-style object to manufacture [`ResultSetOptions`](crate::model::ResultSetOptions)
     pub fn builder() -> crate::model::result_set_options::Builder {
         crate::model::result_set_options::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LongReturnType {
+    #[allow(missing_docs)] // documentation missing in model
+    Long,
+    #[allow(missing_docs)] // documentation missing in model
+    String,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LongReturnType {
+    fn from(s: &str) -> Self {
+        match s {
+            "LONG" => LongReturnType::Long,
+            "STRING" => LongReturnType::String,
+            other => LongReturnType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LongReturnType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LongReturnType::from(s))
+    }
+}
+impl LongReturnType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LongReturnType::Long => "LONG",
+            LongReturnType::String => "STRING",
+            LongReturnType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["LONG", "STRING"]
+    }
+}
+impl AsRef<str> for LongReturnType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -842,7 +974,7 @@ impl AsRef<str> for TypeHint {
 }
 
 /// <p>The result of a SQL statement.</p> <important>
-/// <p>This data type is deprecated.</p>
+/// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
 /// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -919,7 +1051,9 @@ impl SqlStatementResult {
     }
 }
 
-/// <p>The result set returned by a SQL statement.</p>
+/// <p>The result set returned by a SQL statement.</p> <important>
+/// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
+/// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResultFrame {
@@ -1004,7 +1138,9 @@ impl ResultFrame {
     }
 }
 
-/// <p>A record returned by a call.</p>
+/// <p>A record returned by a call.</p> <important>
+/// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
+/// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Record {
@@ -1068,7 +1204,7 @@ impl Record {
 }
 
 /// <p>Contains the value of a column.</p> <important>
-/// <p>This data type is deprecated.</p>
+/// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
 /// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1242,7 +1378,9 @@ impl Value {
     }
 }
 
-/// <p>A structure value returned by a call.</p>
+/// <p>A structure value returned by a call.</p> <important>
+/// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
+/// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StructValue {

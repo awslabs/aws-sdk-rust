@@ -201,6 +201,40 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateLexBot {
     }
 }
 
+/// Operation shape for `AssociatePhoneNumberContactFlow`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`associate_phone_number_contact_flow`](crate::client::Client::associate_phone_number_contact_flow).
+///
+/// See [`crate::client::fluent_builders::AssociatePhoneNumberContactFlow`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct AssociatePhoneNumberContactFlow {
+    _private: (),
+}
+impl AssociatePhoneNumberContactFlow {
+    /// Creates a new builder-style object to manufacture [`AssociatePhoneNumberContactFlowInput`](crate::input::AssociatePhoneNumberContactFlowInput)
+    pub fn builder() -> crate::input::associate_phone_number_contact_flow_input::Builder {
+        crate::input::associate_phone_number_contact_flow_input::Builder::default()
+    }
+    /// Creates a new `AssociatePhoneNumberContactFlow` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for AssociatePhoneNumberContactFlow {
+    type Output = std::result::Result<
+        crate::output::AssociatePhoneNumberContactFlowOutput,
+        crate::error::AssociatePhoneNumberContactFlowError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_associate_phone_number_contact_flow_error(response)
+        } else {
+            crate::operation_deser::parse_associate_phone_number_contact_flow_response(response)
+        }
+    }
+}
+
 /// Operation shape for `AssociateQueueQuickConnects`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -299,6 +333,40 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateSecurityKey {
             crate::operation_deser::parse_associate_security_key_error(response)
         } else {
             crate::operation_deser::parse_associate_security_key_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ClaimPhoneNumber`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`claim_phone_number`](crate::client::Client::claim_phone_number).
+///
+/// See [`crate::client::fluent_builders::ClaimPhoneNumber`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ClaimPhoneNumber {
+    _private: (),
+}
+impl ClaimPhoneNumber {
+    /// Creates a new builder-style object to manufacture [`ClaimPhoneNumberInput`](crate::input::ClaimPhoneNumberInput)
+    pub fn builder() -> crate::input::claim_phone_number_input::Builder {
+        crate::input::claim_phone_number_input::Builder::default()
+    }
+    /// Creates a new `ClaimPhoneNumber` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ClaimPhoneNumber {
+    type Output = std::result::Result<
+        crate::output::ClaimPhoneNumberOutput,
+        crate::error::ClaimPhoneNumberError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_claim_phone_number_error(response)
+        } else {
+            crate::operation_deser::parse_claim_phone_number_response(response)
         }
     }
 }
@@ -1411,6 +1479,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInstanceStorageC
     }
 }
 
+/// Operation shape for `DescribePhoneNumber`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_phone_number`](crate::client::Client::describe_phone_number).
+///
+/// See [`crate::client::fluent_builders::DescribePhoneNumber`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribePhoneNumber {
+    _private: (),
+}
+impl DescribePhoneNumber {
+    /// Creates a new builder-style object to manufacture [`DescribePhoneNumberInput`](crate::input::DescribePhoneNumberInput)
+    pub fn builder() -> crate::input::describe_phone_number_input::Builder {
+        crate::input::describe_phone_number_input::Builder::default()
+    }
+    /// Creates a new `DescribePhoneNumber` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribePhoneNumber {
+    type Output = std::result::Result<
+        crate::output::DescribePhoneNumberOutput,
+        crate::error::DescribePhoneNumberError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_phone_number_error(response)
+        } else {
+            crate::operation_deser::parse_describe_phone_number_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeQueue`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1845,6 +1947,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateLexBot {
             crate::operation_deser::parse_disassociate_lex_bot_error(response)
         } else {
             crate::operation_deser::parse_disassociate_lex_bot_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DisassociatePhoneNumberContactFlow`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`disassociate_phone_number_contact_flow`](crate::client::Client::disassociate_phone_number_contact_flow).
+///
+/// See [`crate::client::fluent_builders::DisassociatePhoneNumberContactFlow`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DisassociatePhoneNumberContactFlow {
+    _private: (),
+}
+impl DisassociatePhoneNumberContactFlow {
+    /// Creates a new builder-style object to manufacture [`DisassociatePhoneNumberContactFlowInput`](crate::input::DisassociatePhoneNumberContactFlowInput)
+    pub fn builder() -> crate::input::disassociate_phone_number_contact_flow_input::Builder {
+        crate::input::disassociate_phone_number_contact_flow_input::Builder::default()
+    }
+    /// Creates a new `DisassociatePhoneNumberContactFlow` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DisassociatePhoneNumberContactFlow {
+    type Output = std::result::Result<
+        crate::output::DisassociatePhoneNumberContactFlowOutput,
+        crate::error::DisassociatePhoneNumberContactFlowError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_disassociate_phone_number_contact_flow_error(response)
+        } else {
+            crate::operation_deser::parse_disassociate_phone_number_contact_flow_response(response)
         }
     }
 }
@@ -2588,6 +2724,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPhoneNumbers {
     }
 }
 
+/// Operation shape for `ListPhoneNumbersV2`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_phone_numbers_v2`](crate::client::Client::list_phone_numbers_v2).
+///
+/// See [`crate::client::fluent_builders::ListPhoneNumbersV2`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListPhoneNumbersV2 {
+    _private: (),
+}
+impl ListPhoneNumbersV2 {
+    /// Creates a new builder-style object to manufacture [`ListPhoneNumbersV2Input`](crate::input::ListPhoneNumbersV2Input)
+    pub fn builder() -> crate::input::list_phone_numbers_v2_input::Builder {
+        crate::input::list_phone_numbers_v2_input::Builder::default()
+    }
+    /// Creates a new `ListPhoneNumbersV2` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListPhoneNumbersV2 {
+    type Output = std::result::Result<
+        crate::output::ListPhoneNumbersV2Output,
+        crate::error::ListPhoneNumbersV2Error,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_phone_numbers_v2_error(response)
+        } else {
+            crate::operation_deser::parse_list_phone_numbers_v2_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListPrompts`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -3021,6 +3191,72 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUsers {
     }
 }
 
+/// Operation shape for `PutUserStatus`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`put_user_status`](crate::client::Client::put_user_status).
+///
+/// See [`crate::client::fluent_builders::PutUserStatus`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutUserStatus {
+    _private: (),
+}
+impl PutUserStatus {
+    /// Creates a new builder-style object to manufacture [`PutUserStatusInput`](crate::input::PutUserStatusInput)
+    pub fn builder() -> crate::input::put_user_status_input::Builder {
+        crate::input::put_user_status_input::Builder::default()
+    }
+    /// Creates a new `PutUserStatus` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PutUserStatus {
+    type Output =
+        std::result::Result<crate::output::PutUserStatusOutput, crate::error::PutUserStatusError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_user_status_error(response)
+        } else {
+            crate::operation_deser::parse_put_user_status_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ReleasePhoneNumber`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`release_phone_number`](crate::client::Client::release_phone_number).
+///
+/// See [`crate::client::fluent_builders::ReleasePhoneNumber`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ReleasePhoneNumber {
+    _private: (),
+}
+impl ReleasePhoneNumber {
+    /// Creates a new builder-style object to manufacture [`ReleasePhoneNumberInput`](crate::input::ReleasePhoneNumberInput)
+    pub fn builder() -> crate::input::release_phone_number_input::Builder {
+        crate::input::release_phone_number_input::Builder::default()
+    }
+    /// Creates a new `ReleasePhoneNumber` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ReleasePhoneNumber {
+    type Output = std::result::Result<
+        crate::output::ReleasePhoneNumberOutput,
+        crate::error::ReleasePhoneNumberError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_release_phone_number_error(response)
+        } else {
+            crate::operation_deser::parse_release_phone_number_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ResumeContactRecording`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -3051,6 +3287,72 @@ impl aws_smithy_http::response::ParseStrictResponse for ResumeContactRecording {
             crate::operation_deser::parse_resume_contact_recording_error(response)
         } else {
             crate::operation_deser::parse_resume_contact_recording_response(response)
+        }
+    }
+}
+
+/// Operation shape for `SearchAvailablePhoneNumbers`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`search_available_phone_numbers`](crate::client::Client::search_available_phone_numbers).
+///
+/// See [`crate::client::fluent_builders::SearchAvailablePhoneNumbers`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct SearchAvailablePhoneNumbers {
+    _private: (),
+}
+impl SearchAvailablePhoneNumbers {
+    /// Creates a new builder-style object to manufacture [`SearchAvailablePhoneNumbersInput`](crate::input::SearchAvailablePhoneNumbersInput)
+    pub fn builder() -> crate::input::search_available_phone_numbers_input::Builder {
+        crate::input::search_available_phone_numbers_input::Builder::default()
+    }
+    /// Creates a new `SearchAvailablePhoneNumbers` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for SearchAvailablePhoneNumbers {
+    type Output = std::result::Result<
+        crate::output::SearchAvailablePhoneNumbersOutput,
+        crate::error::SearchAvailablePhoneNumbersError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_search_available_phone_numbers_error(response)
+        } else {
+            crate::operation_deser::parse_search_available_phone_numbers_response(response)
+        }
+    }
+}
+
+/// Operation shape for `SearchUsers`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`search_users`](crate::client::Client::search_users).
+///
+/// See [`crate::client::fluent_builders::SearchUsers`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct SearchUsers {
+    _private: (),
+}
+impl SearchUsers {
+    /// Creates a new builder-style object to manufacture [`SearchUsersInput`](crate::input::SearchUsersInput)
+    pub fn builder() -> crate::input::search_users_input::Builder {
+        crate::input::search_users_input::Builder::default()
+    }
+    /// Creates a new `SearchUsers` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for SearchUsers {
+    type Output =
+        std::result::Result<crate::output::SearchUsersOutput, crate::error::SearchUsersError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_search_users_error(response)
+        } else {
+            crate::operation_deser::parse_search_users_response(response)
         }
     }
 }
@@ -3859,6 +4161,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateInstanceStorageCon
             crate::operation_deser::parse_update_instance_storage_config_error(response)
         } else {
             crate::operation_deser::parse_update_instance_storage_config_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdatePhoneNumber`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_phone_number`](crate::client::Client::update_phone_number).
+///
+/// See [`crate::client::fluent_builders::UpdatePhoneNumber`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdatePhoneNumber {
+    _private: (),
+}
+impl UpdatePhoneNumber {
+    /// Creates a new builder-style object to manufacture [`UpdatePhoneNumberInput`](crate::input::UpdatePhoneNumberInput)
+    pub fn builder() -> crate::input::update_phone_number_input::Builder {
+        crate::input::update_phone_number_input::Builder::default()
+    }
+    /// Creates a new `UpdatePhoneNumber` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdatePhoneNumber {
+    type Output = std::result::Result<
+        crate::output::UpdatePhoneNumberOutput,
+        crate::error::UpdatePhoneNumberError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_phone_number_error(response)
+        } else {
+            crate::operation_deser::parse_update_phone_number_response(response)
         }
     }
 }

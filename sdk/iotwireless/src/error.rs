@@ -1933,6 +1933,177 @@ impl std::error::Error for CreateMulticastGroupError {
     }
 }
 
+/// Error type for the `CreateNetworkAnalyzerConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateNetworkAnalyzerConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: CreateNetworkAnalyzerConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateNetworkAnalyzerConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateNetworkAnalyzerConfigurationErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Adding, updating, or deleting the resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateNetworkAnalyzerConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateNetworkAnalyzerConfigurationErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateNetworkAnalyzerConfigurationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateNetworkAnalyzerConfigurationErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateNetworkAnalyzerConfigurationErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateNetworkAnalyzerConfigurationErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateNetworkAnalyzerConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateNetworkAnalyzerConfigurationError {
+    fn code(&self) -> Option<&str> {
+        CreateNetworkAnalyzerConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateNetworkAnalyzerConfigurationError {
+    /// Creates a new `CreateNetworkAnalyzerConfigurationError`.
+    pub fn new(
+        kind: CreateNetworkAnalyzerConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateNetworkAnalyzerConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateNetworkAnalyzerConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateNetworkAnalyzerConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateNetworkAnalyzerConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateNetworkAnalyzerConfigurationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateNetworkAnalyzerConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateNetworkAnalyzerConfigurationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateNetworkAnalyzerConfigurationErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateNetworkAnalyzerConfigurationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateNetworkAnalyzerConfigurationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateNetworkAnalyzerConfigurationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateNetworkAnalyzerConfigurationErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateNetworkAnalyzerConfigurationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateNetworkAnalyzerConfigurationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for CreateNetworkAnalyzerConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateNetworkAnalyzerConfigurationErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            CreateNetworkAnalyzerConfigurationErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateNetworkAnalyzerConfigurationErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            CreateNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            CreateNetworkAnalyzerConfigurationErrorKind::ThrottlingException(_inner) => {
+                Some(_inner)
+            }
+            CreateNetworkAnalyzerConfigurationErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            CreateNetworkAnalyzerConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateServiceProfile` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3246,6 +3417,177 @@ impl std::error::Error for DeleteMulticastGroupError {
             DeleteMulticastGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteMulticastGroupErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteMulticastGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteNetworkAnalyzerConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteNetworkAnalyzerConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: DeleteNetworkAnalyzerConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteNetworkAnalyzerConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteNetworkAnalyzerConfigurationErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Adding, updating, or deleting the resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteNetworkAnalyzerConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteNetworkAnalyzerConfigurationErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteNetworkAnalyzerConfigurationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteNetworkAnalyzerConfigurationErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteNetworkAnalyzerConfigurationErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteNetworkAnalyzerConfigurationErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteNetworkAnalyzerConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteNetworkAnalyzerConfigurationError {
+    fn code(&self) -> Option<&str> {
+        DeleteNetworkAnalyzerConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteNetworkAnalyzerConfigurationError {
+    /// Creates a new `DeleteNetworkAnalyzerConfigurationError`.
+    pub fn new(
+        kind: DeleteNetworkAnalyzerConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteNetworkAnalyzerConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteNetworkAnalyzerConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteNetworkAnalyzerConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteNetworkAnalyzerConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteNetworkAnalyzerConfigurationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteNetworkAnalyzerConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteNetworkAnalyzerConfigurationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteNetworkAnalyzerConfigurationErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteNetworkAnalyzerConfigurationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteNetworkAnalyzerConfigurationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteNetworkAnalyzerConfigurationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteNetworkAnalyzerConfigurationErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteNetworkAnalyzerConfigurationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteNetworkAnalyzerConfigurationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteNetworkAnalyzerConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteNetworkAnalyzerConfigurationErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            DeleteNetworkAnalyzerConfigurationErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteNetworkAnalyzerConfigurationErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            DeleteNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DeleteNetworkAnalyzerConfigurationErrorKind::ThrottlingException(_inner) => {
+                Some(_inner)
+            }
+            DeleteNetworkAnalyzerConfigurationErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            DeleteNetworkAnalyzerConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5538,6 +5880,138 @@ impl std::error::Error for GetDeviceProfileError {
             GetDeviceProfileErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetDeviceProfileErrorKind::ValidationException(_inner) => Some(_inner),
             GetDeviceProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetEventConfigurationByResourceTypes` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetEventConfigurationByResourceTypesError {
+    /// Kind of error that occurred.
+    pub kind: GetEventConfigurationByResourceTypesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetEventConfigurationByResourceTypes` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetEventConfigurationByResourceTypesErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetEventConfigurationByResourceTypesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetEventConfigurationByResourceTypesErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetEventConfigurationByResourceTypesErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetEventConfigurationByResourceTypesErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetEventConfigurationByResourceTypesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetEventConfigurationByResourceTypesError {
+    fn code(&self) -> Option<&str> {
+        GetEventConfigurationByResourceTypesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetEventConfigurationByResourceTypesError {
+    /// Creates a new `GetEventConfigurationByResourceTypesError`.
+    pub fn new(
+        kind: GetEventConfigurationByResourceTypesErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetEventConfigurationByResourceTypesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetEventConfigurationByResourceTypesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetEventConfigurationByResourceTypesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetEventConfigurationByResourceTypesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetEventConfigurationByResourceTypesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventConfigurationByResourceTypesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetEventConfigurationByResourceTypesErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventConfigurationByResourceTypesErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetEventConfigurationByResourceTypesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventConfigurationByResourceTypesErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for GetEventConfigurationByResourceTypesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetEventConfigurationByResourceTypesErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            GetEventConfigurationByResourceTypesErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            GetEventConfigurationByResourceTypesErrorKind::ThrottlingException(_inner) => {
+                Some(_inner)
+            }
+            GetEventConfigurationByResourceTypesErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
         }
     }
 }
@@ -8308,6 +8782,132 @@ impl std::error::Error for ListDeviceProfilesError {
     }
 }
 
+/// Error type for the `ListEventConfigurations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListEventConfigurationsError {
+    /// Kind of error that occurred.
+    pub kind: ListEventConfigurationsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListEventConfigurations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListEventConfigurationsErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListEventConfigurationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListEventConfigurationsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListEventConfigurationsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListEventConfigurationsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListEventConfigurationsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListEventConfigurationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListEventConfigurationsError {
+    fn code(&self) -> Option<&str> {
+        ListEventConfigurationsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListEventConfigurationsError {
+    /// Creates a new `ListEventConfigurationsError`.
+    pub fn new(kind: ListEventConfigurationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListEventConfigurationsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListEventConfigurationsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListEventConfigurationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListEventConfigurationsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListEventConfigurationsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEventConfigurationsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListEventConfigurationsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEventConfigurationsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListEventConfigurationsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEventConfigurationsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListEventConfigurationsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEventConfigurationsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListEventConfigurationsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListEventConfigurationsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListEventConfigurationsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListEventConfigurationsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListEventConfigurationsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListEventConfigurationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListFuotaTasks` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8698,6 +9298,147 @@ impl std::error::Error for ListMulticastGroupsByFuotaTaskError {
             ListMulticastGroupsByFuotaTaskErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListMulticastGroupsByFuotaTaskErrorKind::ValidationException(_inner) => Some(_inner),
             ListMulticastGroupsByFuotaTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListNetworkAnalyzerConfigurations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListNetworkAnalyzerConfigurationsError {
+    /// Kind of error that occurred.
+    pub kind: ListNetworkAnalyzerConfigurationsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListNetworkAnalyzerConfigurations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListNetworkAnalyzerConfigurationsErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListNetworkAnalyzerConfigurationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListNetworkAnalyzerConfigurationsErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListNetworkAnalyzerConfigurationsErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListNetworkAnalyzerConfigurationsErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListNetworkAnalyzerConfigurationsErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListNetworkAnalyzerConfigurationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListNetworkAnalyzerConfigurationsError {
+    fn code(&self) -> Option<&str> {
+        ListNetworkAnalyzerConfigurationsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListNetworkAnalyzerConfigurationsError {
+    /// Creates a new `ListNetworkAnalyzerConfigurationsError`.
+    pub fn new(
+        kind: ListNetworkAnalyzerConfigurationsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListNetworkAnalyzerConfigurationsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListNetworkAnalyzerConfigurationsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListNetworkAnalyzerConfigurationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListNetworkAnalyzerConfigurationsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListNetworkAnalyzerConfigurationsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListNetworkAnalyzerConfigurationsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListNetworkAnalyzerConfigurationsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListNetworkAnalyzerConfigurationsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListNetworkAnalyzerConfigurationsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListNetworkAnalyzerConfigurationsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListNetworkAnalyzerConfigurationsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListNetworkAnalyzerConfigurationsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListNetworkAnalyzerConfigurationsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListNetworkAnalyzerConfigurationsErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            ListNetworkAnalyzerConfigurationsErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            ListNetworkAnalyzerConfigurationsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListNetworkAnalyzerConfigurationsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListNetworkAnalyzerConfigurationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -11460,6 +12201,153 @@ impl std::error::Error for UpdateDestinationError {
             UpdateDestinationErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateDestinationErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateDestinationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateEventConfigurationByResourceTypes` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateEventConfigurationByResourceTypesError {
+    /// Kind of error that occurred.
+    pub kind: UpdateEventConfigurationByResourceTypesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateEventConfigurationByResourceTypes` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateEventConfigurationByResourceTypesErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateEventConfigurationByResourceTypesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateEventConfigurationByResourceTypesErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateEventConfigurationByResourceTypesErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateEventConfigurationByResourceTypesErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateEventConfigurationByResourceTypesErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateEventConfigurationByResourceTypesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateEventConfigurationByResourceTypesError {
+    fn code(&self) -> Option<&str> {
+        UpdateEventConfigurationByResourceTypesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateEventConfigurationByResourceTypesError {
+    /// Creates a new `UpdateEventConfigurationByResourceTypesError`.
+    pub fn new(
+        kind: UpdateEventConfigurationByResourceTypesErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateEventConfigurationByResourceTypesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateEventConfigurationByResourceTypesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateEventConfigurationByResourceTypesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateEventConfigurationByResourceTypesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateEventConfigurationByResourceTypesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventConfigurationByResourceTypesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEventConfigurationByResourceTypesErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventConfigurationByResourceTypesErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEventConfigurationByResourceTypesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventConfigurationByResourceTypesErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEventConfigurationByResourceTypesErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventConfigurationByResourceTypesErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateEventConfigurationByResourceTypesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateEventConfigurationByResourceTypesErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            UpdateEventConfigurationByResourceTypesErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            UpdateEventConfigurationByResourceTypesErrorKind::ThrottlingException(_inner) => {
+                Some(_inner)
+            }
+            UpdateEventConfigurationByResourceTypesErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            UpdateEventConfigurationByResourceTypesErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
         }
     }
 }

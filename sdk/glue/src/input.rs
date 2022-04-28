@@ -1263,6 +1263,155 @@ impl BatchGetCrawlersInput {
     }
 }
 
+/// See [`BatchGetCustomEntityTypesInput`](crate::input::BatchGetCustomEntityTypesInput)
+pub mod batch_get_custom_entity_types_input {
+    /// A builder for [`BatchGetCustomEntityTypesInput`](crate::input::BatchGetCustomEntityTypesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `names`.
+        ///
+        /// To override the contents of this collection use [`set_names`](Self::set_names).
+        ///
+        /// <p>A list of names of the custom patterns that you want to retrieve.</p>
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.names.unwrap_or_default();
+            v.push(input.into());
+            self.names = Some(v);
+            self
+        }
+        /// <p>A list of names of the custom patterns that you want to retrieve.</p>
+        pub fn set_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.names = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetCustomEntityTypesInput`](crate::input::BatchGetCustomEntityTypesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::BatchGetCustomEntityTypesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::BatchGetCustomEntityTypesInput { names: self.names })
+        }
+    }
+}
+#[doc(hidden)]
+pub type BatchGetCustomEntityTypesInputOperationOutputAlias =
+    crate::operation::BatchGetCustomEntityTypes;
+#[doc(hidden)]
+pub type BatchGetCustomEntityTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl BatchGetCustomEntityTypesInput {
+    /// Consumes the builder and constructs an Operation<[`BatchGetCustomEntityTypes`](crate::operation::BatchGetCustomEntityTypes)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::BatchGetCustomEntityTypes,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::BatchGetCustomEntityTypesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::BatchGetCustomEntityTypesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.BatchGetCustomEntityTypes",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_custom_entity_types(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchGetCustomEntityTypes::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "BatchGetCustomEntityTypes",
+            "glue",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`BatchGetCustomEntityTypesInput`](crate::input::BatchGetCustomEntityTypesInput)
+    pub fn builder() -> crate::input::batch_get_custom_entity_types_input::Builder {
+        crate::input::batch_get_custom_entity_types_input::Builder::default()
+    }
+}
+
 /// See [`BatchGetDevEndpointsInput`](crate::input::BatchGetDevEndpointsInput)
 pub mod batch_get_dev_endpoints_input {
     /// A builder for [`BatchGetDevEndpointsInput`](crate::input::BatchGetDevEndpointsInput)
@@ -3647,7 +3796,7 @@ pub mod create_crawler_input {
             self.lineage_configuration = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
         pub fn lake_formation_configuration(
             mut self,
             input: crate::model::LakeFormationConfiguration,
@@ -3655,7 +3804,7 @@ pub mod create_crawler_input {
             self.lake_formation_configuration = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
         pub fn set_lake_formation_configuration(
             mut self,
             input: std::option::Option<crate::model::LakeFormationConfiguration>,
@@ -3851,6 +4000,185 @@ impl CreateCrawlerInput {
     /// Creates a new builder-style object to manufacture [`CreateCrawlerInput`](crate::input::CreateCrawlerInput)
     pub fn builder() -> crate::input::create_crawler_input::Builder {
         crate::input::create_crawler_input::Builder::default()
+    }
+}
+
+/// See [`CreateCustomEntityTypeInput`](crate::input::CreateCustomEntityTypeInput)
+pub mod create_custom_entity_type_input {
+    /// A builder for [`CreateCustomEntityTypeInput`](crate::input::CreateCustomEntityTypeInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) regex_string: std::option::Option<std::string::String>,
+        pub(crate) context_words: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+        pub fn regex_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.regex_string = Some(input.into());
+            self
+        }
+        /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+        pub fn set_regex_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.regex_string = input;
+            self
+        }
+        /// Appends an item to `context_words`.
+        ///
+        /// To override the contents of this collection use [`set_context_words`](Self::set_context_words).
+        ///
+        /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
+        /// <p>If no context words are passed only a regular expression is checked.</p>
+        pub fn context_words(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.context_words.unwrap_or_default();
+            v.push(input.into());
+            self.context_words = Some(v);
+            self
+        }
+        /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
+        /// <p>If no context words are passed only a regular expression is checked.</p>
+        pub fn set_context_words(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.context_words = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateCustomEntityTypeInput`](crate::input::CreateCustomEntityTypeInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateCustomEntityTypeInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateCustomEntityTypeInput {
+                name: self.name,
+                regex_string: self.regex_string,
+                context_words: self.context_words,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateCustomEntityTypeInputOperationOutputAlias = crate::operation::CreateCustomEntityType;
+#[doc(hidden)]
+pub type CreateCustomEntityTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateCustomEntityTypeInput {
+    /// Consumes the builder and constructs an Operation<[`CreateCustomEntityType`](crate::operation::CreateCustomEntityType)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateCustomEntityType,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateCustomEntityTypeInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateCustomEntityTypeInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.CreateCustomEntityType",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_custom_entity_type(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateCustomEntityType::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateCustomEntityType",
+            "glue",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateCustomEntityTypeInput`](crate::input::CreateCustomEntityTypeInput)
+    pub fn builder() -> crate::input::create_custom_entity_type_input::Builder {
+        crate::input::create_custom_entity_type_input::Builder::default()
     }
 }
 
@@ -8636,6 +8964,148 @@ impl DeleteCrawlerInput {
     /// Creates a new builder-style object to manufacture [`DeleteCrawlerInput`](crate::input::DeleteCrawlerInput)
     pub fn builder() -> crate::input::delete_crawler_input::Builder {
         crate::input::delete_crawler_input::Builder::default()
+    }
+}
+
+/// See [`DeleteCustomEntityTypeInput`](crate::input::DeleteCustomEntityTypeInput)
+pub mod delete_custom_entity_type_input {
+    /// A builder for [`DeleteCustomEntityTypeInput`](crate::input::DeleteCustomEntityTypeInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the custom pattern that you want to delete.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the custom pattern that you want to delete.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteCustomEntityTypeInput`](crate::input::DeleteCustomEntityTypeInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteCustomEntityTypeInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteCustomEntityTypeInput { name: self.name })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteCustomEntityTypeInputOperationOutputAlias = crate::operation::DeleteCustomEntityType;
+#[doc(hidden)]
+pub type DeleteCustomEntityTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteCustomEntityTypeInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteCustomEntityType`](crate::operation::DeleteCustomEntityType)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteCustomEntityType,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteCustomEntityTypeInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteCustomEntityTypeInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.DeleteCustomEntityType",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_custom_entity_type(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteCustomEntityType::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteCustomEntityType",
+            "glue",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteCustomEntityTypeInput`](crate::input::DeleteCustomEntityTypeInput)
+    pub fn builder() -> crate::input::delete_custom_entity_type_input::Builder {
+        crate::input::delete_custom_entity_type_input::Builder::default()
     }
 }
 
@@ -13475,6 +13945,148 @@ impl GetCrawlersInput {
     /// Creates a new builder-style object to manufacture [`GetCrawlersInput`](crate::input::GetCrawlersInput)
     pub fn builder() -> crate::input::get_crawlers_input::Builder {
         crate::input::get_crawlers_input::Builder::default()
+    }
+}
+
+/// See [`GetCustomEntityTypeInput`](crate::input::GetCustomEntityTypeInput)
+pub mod get_custom_entity_type_input {
+    /// A builder for [`GetCustomEntityTypeInput`](crate::input::GetCustomEntityTypeInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the custom pattern that you want to retrieve.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the custom pattern that you want to retrieve.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetCustomEntityTypeInput`](crate::input::GetCustomEntityTypeInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetCustomEntityTypeInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetCustomEntityTypeInput { name: self.name })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetCustomEntityTypeInputOperationOutputAlias = crate::operation::GetCustomEntityType;
+#[doc(hidden)]
+pub type GetCustomEntityTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetCustomEntityTypeInput {
+    /// Consumes the builder and constructs an Operation<[`GetCustomEntityType`](crate::operation::GetCustomEntityType)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetCustomEntityType,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetCustomEntityTypeInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetCustomEntityTypeInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.GetCustomEntityType",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_custom_entity_type(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetCustomEntityType::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetCustomEntityType",
+            "glue",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetCustomEntityTypeInput`](crate::input::GetCustomEntityTypeInput)
+    pub fn builder() -> crate::input::get_custom_entity_type_input::Builder {
+        crate::input::get_custom_entity_type_input::Builder::default()
     }
 }
 
@@ -22249,6 +22861,162 @@ impl ListCrawlersInput {
     }
 }
 
+/// See [`ListCustomEntityTypesInput`](crate::input::ListCustomEntityTypesInput)
+pub mod list_custom_entity_types_input {
+    /// A builder for [`ListCustomEntityTypesInput`](crate::input::ListCustomEntityTypesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>A paginated token to offset the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A paginated token to offset the results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCustomEntityTypesInput`](crate::input::ListCustomEntityTypesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListCustomEntityTypesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListCustomEntityTypesInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListCustomEntityTypesInputOperationOutputAlias = crate::operation::ListCustomEntityTypes;
+#[doc(hidden)]
+pub type ListCustomEntityTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListCustomEntityTypesInput {
+    /// Consumes the builder and constructs an Operation<[`ListCustomEntityTypes`](crate::operation::ListCustomEntityTypes)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListCustomEntityTypes,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListCustomEntityTypesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListCustomEntityTypesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.ListCustomEntityTypes",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_custom_entity_types(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListCustomEntityTypes::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListCustomEntityTypes",
+            "glue",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListCustomEntityTypesInput`](crate::input::ListCustomEntityTypesInput)
+    pub fn builder() -> crate::input::list_custom_entity_types_input::Builder {
+        crate::input::list_custom_entity_types_input::Builder::default()
+    }
+}
+
 /// See [`ListDevEndpointsInput`](crate::input::ListDevEndpointsInput)
 pub mod list_dev_endpoints_input {
     /// A builder for [`ListDevEndpointsInput`](crate::input::ListDevEndpointsInput)
@@ -29970,7 +30738,7 @@ pub mod update_crawler_input {
             self.lineage_configuration = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
         pub fn lake_formation_configuration(
             mut self,
             input: crate::model::LakeFormationConfiguration,
@@ -29978,7 +30746,7 @@ pub mod update_crawler_input {
             self.lake_formation_configuration = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
         pub fn set_lake_formation_configuration(
             mut self,
             input: std::option::Option<crate::model::LakeFormationConfiguration>,
@@ -33111,7 +33879,7 @@ pub struct UpdateCrawlerInput {
     pub recrawl_policy: std::option::Option<crate::model::RecrawlPolicy>,
     /// <p>Specifies data lineage configuration settings for the crawler.</p>
     pub lineage_configuration: std::option::Option<crate::model::LineageConfiguration>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
     pub lake_formation_configuration: std::option::Option<crate::model::LakeFormationConfiguration>,
     /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
     pub configuration: std::option::Option<std::string::String>,
@@ -33165,7 +33933,7 @@ impl UpdateCrawlerInput {
     ) -> std::option::Option<&crate::model::LineageConfiguration> {
         self.lineage_configuration.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
     pub fn lake_formation_configuration(
         &self,
     ) -> std::option::Option<&crate::model::LakeFormationConfiguration> {
@@ -34826,6 +35594,34 @@ impl std::fmt::Debug for ListDevEndpointsInput {
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
         formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListCustomEntityTypesInput {
+    /// <p>A paginated token to offset the results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListCustomEntityTypesInput {
+    /// <p>A paginated token to offset the results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListCustomEntityTypesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCustomEntityTypesInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
         formatter.finish()
     }
 }
@@ -36845,6 +37641,27 @@ impl std::fmt::Debug for GetDatabaseInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetCustomEntityTypeInput {
+    /// <p>The name of the custom pattern that you want to retrieve.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl GetCustomEntityTypeInput {
+    /// <p>The name of the custom pattern that you want to retrieve.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for GetCustomEntityTypeInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetCustomEntityTypeInput");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCrawlersInput {
     /// <p>The number of crawlers to return on each call.</p>
     pub max_results: std::option::Option<i32>,
@@ -37755,6 +38572,27 @@ impl std::fmt::Debug for DeleteDatabaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDatabaseInput");
         formatter.field("catalog_id", &self.catalog_id);
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteCustomEntityTypeInput {
+    /// <p>The name of the custom pattern that you want to delete.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl DeleteCustomEntityTypeInput {
+    /// <p>The name of the custom pattern that you want to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteCustomEntityTypeInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteCustomEntityTypeInput");
         formatter.field("name", &self.name);
         formatter.finish()
     }
@@ -39131,6 +39969,43 @@ impl std::fmt::Debug for CreateDatabaseInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateCustomEntityTypeInput {
+    /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+    pub regex_string: std::option::Option<std::string::String>,
+    /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
+    /// <p>If no context words are passed only a regular expression is checked.</p>
+    pub context_words: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CreateCustomEntityTypeInput {
+    /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+    pub fn regex_string(&self) -> std::option::Option<&str> {
+        self.regex_string.as_deref()
+    }
+    /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
+    /// <p>If no context words are passed only a regular expression is checked.</p>
+    pub fn context_words(&self) -> std::option::Option<&[std::string::String]> {
+        self.context_words.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateCustomEntityTypeInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateCustomEntityTypeInput");
+        formatter.field("name", &self.name);
+        formatter.field("regex_string", &self.regex_string);
+        formatter.field("context_words", &self.context_words);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCrawlerInput {
     /// <p>Name of the new crawler.</p>
     pub name: std::option::Option<std::string::String>,
@@ -39154,7 +40029,7 @@ pub struct CreateCrawlerInput {
     pub recrawl_policy: std::option::Option<crate::model::RecrawlPolicy>,
     /// <p>Specifies data lineage configuration settings for the crawler.</p>
     pub lineage_configuration: std::option::Option<crate::model::LineageConfiguration>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
     pub lake_formation_configuration: std::option::Option<crate::model::LakeFormationConfiguration>,
     /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
     pub configuration: std::option::Option<std::string::String>,
@@ -39211,7 +40086,7 @@ impl CreateCrawlerInput {
     ) -> std::option::Option<&crate::model::LineageConfiguration> {
         self.lineage_configuration.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
     pub fn lake_formation_configuration(
         &self,
     ) -> std::option::Option<&crate::model::LakeFormationConfiguration> {
@@ -39684,6 +40559,27 @@ impl std::fmt::Debug for BatchGetDevEndpointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetDevEndpointsInput");
         formatter.field("dev_endpoint_names", &self.dev_endpoint_names);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetCustomEntityTypesInput {
+    /// <p>A list of names of the custom patterns that you want to retrieve.</p>
+    pub names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetCustomEntityTypesInput {
+    /// <p>A list of names of the custom patterns that you want to retrieve.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchGetCustomEntityTypesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetCustomEntityTypesInput");
+        formatter.field("names", &self.names);
         formatter.finish()
     }
 }

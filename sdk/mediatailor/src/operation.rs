@@ -67,6 +67,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChannel {
     }
 }
 
+/// Operation shape for `CreateLiveSource`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_live_source`](crate::client::Client::create_live_source).
+///
+/// See [`crate::client::fluent_builders::CreateLiveSource`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateLiveSource {
+    _private: (),
+}
+impl CreateLiveSource {
+    /// Creates a new builder-style object to manufacture [`CreateLiveSourceInput`](crate::input::CreateLiveSourceInput)
+    pub fn builder() -> crate::input::create_live_source_input::Builder {
+        crate::input::create_live_source_input::Builder::default()
+    }
+    /// Creates a new `CreateLiveSource` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateLiveSource {
+    type Output = std::result::Result<
+        crate::output::CreateLiveSourceOutput,
+        crate::error::CreateLiveSourceError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_live_source_error(response)
+        } else {
+            crate::operation_deser::parse_create_live_source_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreatePrefetchSchedule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -263,6 +297,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChannelPolicy {
             crate::operation_deser::parse_delete_channel_policy_error(response)
         } else {
             crate::operation_deser::parse_delete_channel_policy_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteLiveSource`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_live_source`](crate::client::Client::delete_live_source).
+///
+/// See [`crate::client::fluent_builders::DeleteLiveSource`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteLiveSource {
+    _private: (),
+}
+impl DeleteLiveSource {
+    /// Creates a new builder-style object to manufacture [`DeleteLiveSourceInput`](crate::input::DeleteLiveSourceInput)
+    pub fn builder() -> crate::input::delete_live_source_input::Builder {
+        crate::input::delete_live_source_input::Builder::default()
+    }
+    /// Creates a new `DeleteLiveSource` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteLiveSource {
+    type Output = std::result::Result<
+        crate::output::DeleteLiveSourceOutput,
+        crate::error::DeleteLiveSourceError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_live_source_error(response)
+        } else {
+            crate::operation_deser::parse_delete_live_source_response(response)
         }
     }
 }
@@ -465,6 +533,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChannel {
             crate::operation_deser::parse_describe_channel_error(response)
         } else {
             crate::operation_deser::parse_describe_channel_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeLiveSource`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_live_source`](crate::client::Client::describe_live_source).
+///
+/// See [`crate::client::fluent_builders::DescribeLiveSource`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeLiveSource {
+    _private: (),
+}
+impl DescribeLiveSource {
+    /// Creates a new builder-style object to manufacture [`DescribeLiveSourceInput`](crate::input::DescribeLiveSourceInput)
+    pub fn builder() -> crate::input::describe_live_source_input::Builder {
+        crate::input::describe_live_source_input::Builder::default()
+    }
+    /// Creates a new `DescribeLiveSource` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeLiveSource {
+    type Output = std::result::Result<
+        crate::output::DescribeLiveSourceOutput,
+        crate::error::DescribeLiveSourceError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_live_source_error(response)
+        } else {
+            crate::operation_deser::parse_describe_live_source_response(response)
         }
     }
 }
@@ -767,6 +869,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannels {
             crate::operation_deser::parse_list_channels_error(response)
         } else {
             crate::operation_deser::parse_list_channels_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListLiveSources`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_live_sources`](crate::client::Client::list_live_sources).
+///
+/// See [`crate::client::fluent_builders::ListLiveSources`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListLiveSources {
+    _private: (),
+}
+impl ListLiveSources {
+    /// Creates a new builder-style object to manufacture [`ListLiveSourcesInput`](crate::input::ListLiveSourcesInput)
+    pub fn builder() -> crate::input::list_live_sources_input::Builder {
+        crate::input::list_live_sources_input::Builder::default()
+    }
+    /// Creates a new `ListLiveSources` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListLiveSources {
+    type Output = std::result::Result<
+        crate::output::ListLiveSourcesOutput,
+        crate::error::ListLiveSourcesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_live_sources_error(response)
+        } else {
+            crate::operation_deser::parse_list_live_sources_response(response)
         }
     }
 }
@@ -1163,6 +1299,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateChannel {
             crate::operation_deser::parse_update_channel_error(response)
         } else {
             crate::operation_deser::parse_update_channel_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateLiveSource`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_live_source`](crate::client::Client::update_live_source).
+///
+/// See [`crate::client::fluent_builders::UpdateLiveSource`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateLiveSource {
+    _private: (),
+}
+impl UpdateLiveSource {
+    /// Creates a new builder-style object to manufacture [`UpdateLiveSourceInput`](crate::input::UpdateLiveSourceInput)
+    pub fn builder() -> crate::input::update_live_source_input::Builder {
+        crate::input::update_live_source_input::Builder::default()
+    }
+    /// Creates a new `UpdateLiveSource` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateLiveSource {
+    type Output = std::result::Result<
+        crate::output::UpdateLiveSourceOutput,
+        crate::error::UpdateLiveSourceError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_live_source_error(response)
+        } else {
+            crate::operation_deser::parse_update_live_source_response(response)
         }
     }
 }

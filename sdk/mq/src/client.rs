@@ -201,6 +201,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`broker_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBroker::broker_id) / [`set_broker_id(Option<String>)`](crate::client::fluent_builders::DescribeBroker::set_broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
     /// - On success, responds with [`DescribeBrokerOutput`](crate::output::DescribeBrokerOutput) with field(s):
+    ///   - [`actions_required(Option<Vec<ActionRequired>>)`](crate::output::DescribeBrokerOutput::actions_required): <p>A list of actions required for a broker.</p>
     ///   - [`authentication_strategy(Option<AuthenticationStrategy>)`](crate::output::DescribeBrokerOutput::authentication_strategy): <p>The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     ///   - [`auto_minor_version_upgrade(bool)`](crate::output::DescribeBrokerOutput::auto_minor_version_upgrade): <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
     ///   - [`broker_arn(Option<String>)`](crate::output::DescribeBrokerOutput::broker_arn): <p>The broker's Amazon Resource Name (ARN).</p>

@@ -159,6 +159,84 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::BatchGetAssetPropertyAggregatesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::BatchGetAssetPropertyAggregatesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::BatchGetAssetPropertyAggregatesErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
+                crate::error::BatchGetAssetPropertyAggregatesErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::BatchGetAssetPropertyAggregatesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::BatchGetAssetPropertyAggregatesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::BatchGetAssetPropertyAggregatesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchGetAssetPropertyValueError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::BatchGetAssetPropertyValueError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::BatchGetAssetPropertyValueErrorKind::InternalFailureException(
+                    inner,
+                ) => Error::InternalFailureException(inner),
+                crate::error::BatchGetAssetPropertyValueErrorKind::InvalidRequestException(
+                    inner,
+                ) => Error::InvalidRequestException(inner),
+                crate::error::BatchGetAssetPropertyValueErrorKind::ServiceUnavailableException(
+                    inner,
+                ) => Error::ServiceUnavailableException(inner),
+                crate::error::BatchGetAssetPropertyValueErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::BatchGetAssetPropertyValueErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::BatchGetAssetPropertyValueHistoryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::BatchGetAssetPropertyValueHistoryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::BatchGetAssetPropertyValueHistoryErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
+                crate::error::BatchGetAssetPropertyValueHistoryErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::BatchGetAssetPropertyValueHistoryErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::BatchGetAssetPropertyValueHistoryErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::BatchGetAssetPropertyValueHistoryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchPutAssetPropertyValueError, R>>
     for Error
 where

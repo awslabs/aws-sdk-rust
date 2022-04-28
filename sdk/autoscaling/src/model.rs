@@ -3003,10 +3003,13 @@ impl AsRef<str> for ScalingActivityStatusCode {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RefreshPreferences {
-    /// <p>The amount of capacity in the Auto Scaling group that must remain healthy during an instance refresh to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
+    /// <p>The amount of capacity in the Auto Scaling group that must pass your group's health checks to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
     /// <p>Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a time. In contrast, setting it to 0 percent has the effect of replacing all instances at the same time. </p>
     pub min_healthy_percentage: std::option::Option<i32>,
-    /// <p>The number of seconds until a newly launched instance is configured and ready to use. During this time, Amazon EC2 Auto Scaling does not immediately move on to the next replacement. The default is to use the value for the health check grace period defined for the group.</p>
+    /// <p> <i>Not needed if the default instance warmup is defined for the group.</i> </p>
+    /// <p>The duration of the instance warmup, in seconds.</p> <note>
+    /// <p>The default is to use the value for the default instance warmup defined for the group. If default instance warmup is null, then <code>InstanceWarmup</code> falls back to the value of the health check grace period.</p>
+    /// </note>
     pub instance_warmup: std::option::Option<i32>,
     /// <p>Threshold values for each checkpoint in ascending order. Each number must be unique. To replace all instances in the Auto Scaling group, the last number in the array must be <code>100</code>.</p>
     /// <p>For usage examples, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-adding-checkpoints-instance-refresh.html">Adding checkpoints to an instance refresh</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -3017,12 +3020,15 @@ pub struct RefreshPreferences {
     pub skip_matching: std::option::Option<bool>,
 }
 impl RefreshPreferences {
-    /// <p>The amount of capacity in the Auto Scaling group that must remain healthy during an instance refresh to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
+    /// <p>The amount of capacity in the Auto Scaling group that must pass your group's health checks to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
     /// <p>Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a time. In contrast, setting it to 0 percent has the effect of replacing all instances at the same time. </p>
     pub fn min_healthy_percentage(&self) -> std::option::Option<i32> {
         self.min_healthy_percentage
     }
-    /// <p>The number of seconds until a newly launched instance is configured and ready to use. During this time, Amazon EC2 Auto Scaling does not immediately move on to the next replacement. The default is to use the value for the health check grace period defined for the group.</p>
+    /// <p> <i>Not needed if the default instance warmup is defined for the group.</i> </p>
+    /// <p>The duration of the instance warmup, in seconds.</p> <note>
+    /// <p>The default is to use the value for the default instance warmup defined for the group. If default instance warmup is null, then <code>InstanceWarmup</code> falls back to the value of the health check grace period.</p>
+    /// </note>
     pub fn instance_warmup(&self) -> std::option::Option<i32> {
         self.instance_warmup
     }
@@ -3064,24 +3070,30 @@ pub mod refresh_preferences {
         pub(crate) skip_matching: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The amount of capacity in the Auto Scaling group that must remain healthy during an instance refresh to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
+        /// <p>The amount of capacity in the Auto Scaling group that must pass your group's health checks to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
         /// <p>Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a time. In contrast, setting it to 0 percent has the effect of replacing all instances at the same time. </p>
         pub fn min_healthy_percentage(mut self, input: i32) -> Self {
             self.min_healthy_percentage = Some(input);
             self
         }
-        /// <p>The amount of capacity in the Auto Scaling group that must remain healthy during an instance refresh to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
+        /// <p>The amount of capacity in the Auto Scaling group that must pass your group's health checks to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
         /// <p>Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a time. In contrast, setting it to 0 percent has the effect of replacing all instances at the same time. </p>
         pub fn set_min_healthy_percentage(mut self, input: std::option::Option<i32>) -> Self {
             self.min_healthy_percentage = input;
             self
         }
-        /// <p>The number of seconds until a newly launched instance is configured and ready to use. During this time, Amazon EC2 Auto Scaling does not immediately move on to the next replacement. The default is to use the value for the health check grace period defined for the group.</p>
+        /// <p> <i>Not needed if the default instance warmup is defined for the group.</i> </p>
+        /// <p>The duration of the instance warmup, in seconds.</p> <note>
+        /// <p>The default is to use the value for the default instance warmup defined for the group. If default instance warmup is null, then <code>InstanceWarmup</code> falls back to the value of the health check grace period.</p>
+        /// </note>
         pub fn instance_warmup(mut self, input: i32) -> Self {
             self.instance_warmup = Some(input);
             self
         }
-        /// <p>The number of seconds until a newly launched instance is configured and ready to use. During this time, Amazon EC2 Auto Scaling does not immediately move on to the next replacement. The default is to use the value for the health check grace period defined for the group.</p>
+        /// <p> <i>Not needed if the default instance warmup is defined for the group.</i> </p>
+        /// <p>The duration of the instance warmup, in seconds.</p> <note>
+        /// <p>The default is to use the value for the default instance warmup defined for the group. If default instance warmup is null, then <code>InstanceWarmup</code> falls back to the value of the health check grace period.</p>
+        /// </note>
         pub fn set_instance_warmup(mut self, input: std::option::Option<i32>) -> Self {
             self.instance_warmup = input;
             self
@@ -5716,9 +5728,9 @@ pub struct PredefinedMetricSpecification {
     /// <p>The metric type. The following predefined metrics are available:</p>
     /// <ul>
     /// <li> <p> <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p> </li>
-    /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received (per instance per minute) for the Auto Scaling group.</p> </li>
-    /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out (per instance per minute) for the Auto Scaling group.</p> </li>
-    /// <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count (per target per minute) for your Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p> </li>
     /// </ul>
     pub predefined_metric_type: std::option::Option<crate::model::MetricType>,
     /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine the average request count served by your Auto Scaling group. You can't specify a resource label unless the target group is attached to the Auto Scaling group.</p>
@@ -5746,9 +5758,9 @@ impl PredefinedMetricSpecification {
     /// <p>The metric type. The following predefined metrics are available:</p>
     /// <ul>
     /// <li> <p> <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p> </li>
-    /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received (per instance per minute) for the Auto Scaling group.</p> </li>
-    /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out (per instance per minute) for the Auto Scaling group.</p> </li>
-    /// <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count (per target per minute) for your Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p> </li>
     /// </ul>
     pub fn predefined_metric_type(&self) -> std::option::Option<&crate::model::MetricType> {
         self.predefined_metric_type.as_ref()
@@ -5797,9 +5809,9 @@ pub mod predefined_metric_specification {
         /// <p>The metric type. The following predefined metrics are available:</p>
         /// <ul>
         /// <li> <p> <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p> </li>
-        /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received (per instance per minute) for the Auto Scaling group.</p> </li>
-        /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out (per instance per minute) for the Auto Scaling group.</p> </li>
-        /// <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count (per target per minute) for your Auto Scaling group.</p> </li>
+        /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p> </li>
+        /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
+        /// <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p> </li>
         /// </ul>
         pub fn predefined_metric_type(mut self, input: crate::model::MetricType) -> Self {
             self.predefined_metric_type = Some(input);
@@ -5808,9 +5820,9 @@ pub mod predefined_metric_specification {
         /// <p>The metric type. The following predefined metrics are available:</p>
         /// <ul>
         /// <li> <p> <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p> </li>
-        /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received (per instance per minute) for the Auto Scaling group.</p> </li>
-        /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out (per instance per minute) for the Auto Scaling group.</p> </li>
-        /// <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count (per target per minute) for your Auto Scaling group.</p> </li>
+        /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p> </li>
+        /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
+        /// <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p> </li>
         /// </ul>
         pub fn set_predefined_metric_type(
             mut self,
@@ -8491,7 +8503,7 @@ pub struct LifecycleHook {
     pub notification_metadata: std::option::Option<std::string::String>,
     /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the <code>DefaultResult</code> parameter.</p>
     pub heartbeat_timeout: std::option::Option<i32>,
-    /// <p>The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The maximum is 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever is smaller.</p>
+    /// <p>The maximum time, in seconds, that an instance can remain in a wait state. The maximum is 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever is smaller.</p>
     pub global_timeout: std::option::Option<i32>,
     /// <p>Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected failure occurs. The possible values are <code>CONTINUE</code> and <code>ABANDON</code>.</p>
     pub default_result: std::option::Option<std::string::String>,
@@ -8529,7 +8541,7 @@ impl LifecycleHook {
     pub fn heartbeat_timeout(&self) -> std::option::Option<i32> {
         self.heartbeat_timeout
     }
-    /// <p>The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The maximum is 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever is smaller.</p>
+    /// <p>The maximum time, in seconds, that an instance can remain in a wait state. The maximum is 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever is smaller.</p>
     pub fn global_timeout(&self) -> std::option::Option<i32> {
         self.global_timeout
     }
@@ -8663,12 +8675,12 @@ pub mod lifecycle_hook {
             self.heartbeat_timeout = input;
             self
         }
-        /// <p>The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The maximum is 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever is smaller.</p>
+        /// <p>The maximum time, in seconds, that an instance can remain in a wait state. The maximum is 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever is smaller.</p>
         pub fn global_timeout(mut self, input: i32) -> Self {
             self.global_timeout = Some(input);
             self
         }
-        /// <p>The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The maximum is 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever is smaller.</p>
+        /// <p>The maximum time, in seconds, that an instance can remain in a wait state. The maximum is 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever is smaller.</p>
         pub fn set_global_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.global_timeout = input;
             self
@@ -8724,10 +8736,11 @@ pub struct LaunchConfiguration {
     pub key_name: std::option::Option<std::string::String>,
     /// <p>A list that contains the security groups to assign to the instances in the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
+    /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.</p>
     pub classic_link_vpc_id: std::option::Option<std::string::String>,
+    /// <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
     /// <p>The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub classic_link_vpc_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The user data to make available to the launched EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.</p>
     pub user_data: std::option::Option<std::string::String>,
@@ -8781,12 +8794,13 @@ impl LaunchConfiguration {
     pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.security_groups.as_deref()
     }
-    /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
+    /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.</p>
     pub fn classic_link_vpc_id(&self) -> std::option::Option<&str> {
         self.classic_link_vpc_id.as_deref()
     }
+    /// <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
     /// <p>The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn classic_link_vpc_security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.classic_link_vpc_security_groups.as_deref()
     }
@@ -8977,12 +8991,14 @@ pub mod launch_configuration {
             self.security_groups = input;
             self
         }
-        /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
+        /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.</p>
         pub fn classic_link_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.classic_link_vpc_id = Some(input.into());
             self
         }
-        /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
+        /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.</p>
         pub fn set_classic_link_vpc_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8994,8 +9010,8 @@ pub mod launch_configuration {
         ///
         /// To override the contents of this collection use [`set_classic_link_vpc_security_groups`](Self::set_classic_link_vpc_security_groups).
         ///
+        /// <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
         /// <p>The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn classic_link_vpc_security_groups(
             mut self,
             input: impl Into<std::string::String>,
@@ -9005,8 +9021,8 @@ pub mod launch_configuration {
             self.classic_link_vpc_security_groups = Some(v);
             self
         }
+        /// <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
         /// <p>The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_classic_link_vpc_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10792,7 +10808,7 @@ pub struct AutoScalingGroup {
     pub target_group_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance unhealthy if it fails either the EC2 status checks or the load balancer health checks.</p>
     pub health_check_type: std::option::Option<std::string::String>,
-    /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check.</p>
+    /// <p>The duration of the health check grace period, in seconds.</p>
     pub health_check_grace_period: std::option::Option<i32>,
     /// <p>The EC2 instances associated with the group.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
@@ -10827,10 +10843,10 @@ pub struct AutoScalingGroup {
     pub warm_pool_size: std::option::Option<i32>,
     /// <p>Reserved.</p>
     pub context: std::option::Option<std::string::String>,
-    /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates into number of instances.</p>
-    /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> </p>
+    /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only.</p>
     pub desired_capacity_type: std::option::Option<std::string::String>,
+    /// <p>The duration of the default instance warmup, in seconds.</p>
+    pub default_instance_warmup: std::option::Option<i32>,
 }
 impl AutoScalingGroup {
     /// <p>The name of the Auto Scaling group.</p>
@@ -10893,7 +10909,7 @@ impl AutoScalingGroup {
     pub fn health_check_type(&self) -> std::option::Option<&str> {
         self.health_check_type.as_deref()
     }
-    /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check.</p>
+    /// <p>The duration of the health check grace period, in seconds.</p>
     pub fn health_check_grace_period(&self) -> std::option::Option<i32> {
         self.health_check_grace_period
     }
@@ -10964,11 +10980,13 @@ impl AutoScalingGroup {
     pub fn context(&self) -> std::option::Option<&str> {
         self.context.as_deref()
     }
-    /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates into number of instances.</p>
-    /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> </p>
+    /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only.</p>
     pub fn desired_capacity_type(&self) -> std::option::Option<&str> {
         self.desired_capacity_type.as_deref()
+    }
+    /// <p>The duration of the default instance warmup, in seconds.</p>
+    pub fn default_instance_warmup(&self) -> std::option::Option<i32> {
+        self.default_instance_warmup
     }
 }
 impl std::fmt::Debug for AutoScalingGroup {
@@ -11009,6 +11027,7 @@ impl std::fmt::Debug for AutoScalingGroup {
         formatter.field("warm_pool_size", &self.warm_pool_size);
         formatter.field("context", &self.context);
         formatter.field("desired_capacity_type", &self.desired_capacity_type);
+        formatter.field("default_instance_warmup", &self.default_instance_warmup);
         formatter.finish()
     }
 }
@@ -11052,6 +11071,7 @@ pub mod auto_scaling_group {
         pub(crate) warm_pool_size: std::option::Option<i32>,
         pub(crate) context: std::option::Option<std::string::String>,
         pub(crate) desired_capacity_type: std::option::Option<std::string::String>,
+        pub(crate) default_instance_warmup: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The name of the Auto Scaling group.</p>
@@ -11239,12 +11259,12 @@ pub mod auto_scaling_group {
             self.health_check_type = input;
             self
         }
-        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check.</p>
+        /// <p>The duration of the health check grace period, in seconds.</p>
         pub fn health_check_grace_period(mut self, input: i32) -> Self {
             self.health_check_grace_period = Some(input);
             self
         }
-        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check.</p>
+        /// <p>The duration of the health check grace period, in seconds.</p>
         pub fn set_health_check_grace_period(mut self, input: std::option::Option<i32>) -> Self {
             self.health_check_grace_period = input;
             self
@@ -11477,21 +11497,27 @@ pub mod auto_scaling_group {
             self.context = input;
             self
         }
-        /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        /// <p>By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates into number of instances.</p>
-        /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> </p>
+        /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only.</p>
         pub fn desired_capacity_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.desired_capacity_type = Some(input.into());
             self
         }
-        /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        /// <p>By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates into number of instances.</p>
-        /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> </p>
+        /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only.</p>
         pub fn set_desired_capacity_type(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.desired_capacity_type = input;
+            self
+        }
+        /// <p>The duration of the default instance warmup, in seconds.</p>
+        pub fn default_instance_warmup(mut self, input: i32) -> Self {
+            self.default_instance_warmup = Some(input);
+            self
+        }
+        /// <p>The duration of the default instance warmup, in seconds.</p>
+        pub fn set_default_instance_warmup(mut self, input: std::option::Option<i32>) -> Self {
+            self.default_instance_warmup = input;
             self
         }
         /// Consumes the builder and constructs a [`AutoScalingGroup`](crate::model::AutoScalingGroup)
@@ -11529,6 +11555,7 @@ pub mod auto_scaling_group {
                 warm_pool_size: self.warm_pool_size,
                 context: self.context,
                 desired_capacity_type: self.desired_capacity_type,
+                default_instance_warmup: self.default_instance_warmup,
             }
         }
     }

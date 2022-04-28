@@ -15,7 +15,7 @@ pub enum Error {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Amazon Connect Wisdom throws this exception if you have too many tags in your tag set.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by a service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -247,6 +247,9 @@ where
                 }
                 crate::error::DeleteKnowledgeBaseErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DeleteKnowledgeBaseErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
                 }
                 crate::error::DeleteKnowledgeBaseErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)

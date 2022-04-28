@@ -172,6 +172,7 @@ pub mod create_channel_input {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) tier: std::option::Option<crate::model::Tier>,
     }
     impl Builder {
         /// <p>The identifier for the channel you are working on.</p>
@@ -258,6 +259,16 @@ pub mod create_channel_input {
             self.tags = input;
             self
         }
+        /// <p>The tier of the channel.</p>
+        pub fn tier(mut self, input: crate::model::Tier) -> Self {
+            self.tier = Some(input);
+            self
+        }
+        /// <p>The tier of the channel.</p>
+        pub fn set_tier(mut self, input: std::option::Option<crate::model::Tier>) -> Self {
+            self.tier = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateChannelInput`](crate::input::CreateChannelInput)
         pub fn build(
             self,
@@ -271,6 +282,7 @@ pub mod create_channel_input {
                 outputs: self.outputs,
                 playback_mode: self.playback_mode,
                 tags: self.tags,
+                tier: self.tier,
             })
         }
     }
@@ -395,6 +407,249 @@ impl CreateChannelInput {
     }
 }
 
+/// See [`CreateLiveSourceInput`](crate::input::CreateLiveSourceInput)
+pub mod create_live_source_input {
+    /// A builder for [`CreateLiveSourceInput`](crate::input::CreateLiveSourceInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) http_package_configurations:
+            std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        pub(crate) live_source_name: std::option::Option<std::string::String>,
+        pub(crate) source_location_name: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// Appends an item to `http_package_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
+        ///
+        /// <p>A list of HTTP package configuration parameters for this live source.</p>
+        pub fn http_package_configurations(
+            mut self,
+            input: crate::model::HttpPackageConfiguration,
+        ) -> Self {
+            let mut v = self.http_package_configurations.unwrap_or_default();
+            v.push(input);
+            self.http_package_configurations = Some(v);
+            self
+        }
+        /// <p>A list of HTTP package configuration parameters for this live source.</p>
+        pub fn set_http_package_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        ) -> Self {
+            self.http_package_configurations = input;
+            self
+        }
+        /// <p>The identifier for the live source you are working on.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.live_source_name = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the live source you are working on.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.live_source_name = input;
+            self
+        }
+        /// <p>The identifier for the source location you are working on.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_location_name = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the source location you are working on.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_location_name = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to assign to the live source.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags to assign to the live source.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateLiveSourceInput`](crate::input::CreateLiveSourceInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateLiveSourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateLiveSourceInput {
+                http_package_configurations: self.http_package_configurations,
+                live_source_name: self.live_source_name,
+                source_location_name: self.source_location_name,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateLiveSourceInputOperationOutputAlias = crate::operation::CreateLiveSource;
+#[doc(hidden)]
+pub type CreateLiveSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateLiveSourceInput {
+    /// Consumes the builder and constructs an Operation<[`CreateLiveSource`](crate::operation::CreateLiveSource)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateLiveSource,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateLiveSourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_2 = &_input.source_location_name;
+                let input_2 = input_2.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "source_location_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let source_location_name = aws_smithy_http::label::fmt_string(input_2, false);
+                if source_location_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "source_location_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                let input_3 = &_input.live_source_name;
+                let input_3 = input_3.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "live_source_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let live_source_name = aws_smithy_http::label::fmt_string(input_3, false);
+                if live_source_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "live_source_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/sourceLocation/{SourceLocationName}/liveSource/{LiveSourceName}",
+                    SourceLocationName = source_location_name,
+                    LiveSourceName = live_source_name
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateLiveSourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_live_source(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateLiveSource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateLiveSource",
+            "mediatailor",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateLiveSourceInput`](crate::input::CreateLiveSourceInput)
+    pub fn builder() -> crate::input::create_live_source_input::Builder {
+        crate::input::create_live_source_input::Builder::default()
+    }
+}
+
 /// See [`CreatePrefetchScheduleInput`](crate::input::CreatePrefetchScheduleInput)
 pub mod create_prefetch_schedule_input {
     /// A builder for [`CreatePrefetchScheduleInput`](crate::input::CreatePrefetchScheduleInput)
@@ -511,29 +766,29 @@ impl CreatePrefetchScheduleInput {
                 _input: &crate::input::CreatePrefetchScheduleInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_2 = &_input.playback_configuration_name;
-                let input_2 = input_2.as_ref().ok_or(
+                let input_4 = &_input.playback_configuration_name;
+                let input_4 = input_4.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "playback_configuration_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
                 let playback_configuration_name =
-                    aws_smithy_http::label::fmt_string(input_2, false);
+                    aws_smithy_http::label::fmt_string(input_4, false);
                 if playback_configuration_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "playback_configuration_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_3 = &_input.name;
-                let input_3 = input_3.as_ref().ok_or(
+                let input_5 = &_input.name;
+                let input_5 = input_5.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let name = aws_smithy_http::label::fmt_string(input_3, false);
+                let name = aws_smithy_http::label::fmt_string(input_5, false);
                 if name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
@@ -637,6 +892,7 @@ pub mod create_program_input {
     pub struct Builder {
         pub(crate) ad_breaks: std::option::Option<std::vec::Vec<crate::model::AdBreak>>,
         pub(crate) channel_name: std::option::Option<std::string::String>,
+        pub(crate) live_source_name: std::option::Option<std::string::String>,
         pub(crate) program_name: std::option::Option<std::string::String>,
         pub(crate) schedule_configuration: std::option::Option<crate::model::ScheduleConfiguration>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
@@ -670,6 +926,19 @@ pub mod create_program_input {
         /// <p>The identifier for the channel you are working on.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
+            self
+        }
+        /// <p>The name of the LiveSource for this Program.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.live_source_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the LiveSource for this Program.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.live_source_name = input;
             self
         }
         /// <p>The identifier for the program you are working on.</p>
@@ -734,6 +1003,7 @@ pub mod create_program_input {
             Ok(crate::input::CreateProgramInput {
                 ad_breaks: self.ad_breaks,
                 channel_name: self.channel_name,
+                live_source_name: self.live_source_name,
                 program_name: self.program_name,
                 schedule_configuration: self.schedule_configuration,
                 source_location_name: self.source_location_name,
@@ -766,28 +1036,28 @@ impl CreateProgramInput {
                 _input: &crate::input::CreateProgramInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_4 = &_input.channel_name;
-                let input_4 = input_4.as_ref().ok_or(
+                let input_6 = &_input.channel_name;
+                let input_6 = input_6.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_4, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_6, false);
                 if channel_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_5 = &_input.program_name;
-                let input_5 = input_5.as_ref().ok_or(
+                let input_7 = &_input.program_name;
+                let input_7 = input_7.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "program_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let program_name = aws_smithy_http::label::fmt_string(input_5, false);
+                let program_name = aws_smithy_http::label::fmt_string(input_7, false);
                 if program_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "program_name",
@@ -945,6 +1215,7 @@ pub mod create_source_location_input {
         ///
         /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
         ///
+        /// <p>A list of the segment delivery configurations associated with this resource.</p>
         pub fn segment_delivery_configurations(
             mut self,
             input: crate::model::SegmentDeliveryConfiguration,
@@ -954,7 +1225,7 @@ pub mod create_source_location_input {
             self.segment_delivery_configurations = Some(v);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A list of the segment delivery configurations associated with this resource.</p>
         pub fn set_segment_delivery_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
@@ -1042,14 +1313,14 @@ impl CreateSourceLocationInput {
                 _input: &crate::input::CreateSourceLocationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_6 = &_input.source_location_name;
-                let input_6 = input_6.as_ref().ok_or(
+                let input_8 = &_input.source_location_name;
+                let input_8 = input_8.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_6, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_8, false);
                 if source_location_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
@@ -1163,7 +1434,7 @@ pub mod create_vod_source_input {
         ///
         /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
         ///
-        /// <p>An array of HTTP package configuration parameters for this VOD source.</p>
+        /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
         pub fn http_package_configurations(
             mut self,
             input: crate::model::HttpPackageConfiguration,
@@ -1173,7 +1444,7 @@ pub mod create_vod_source_input {
             self.http_package_configurations = Some(v);
             self
         }
-        /// <p>An array of HTTP package configuration parameters for this VOD source.</p>
+        /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
         pub fn set_http_package_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
@@ -1272,28 +1543,28 @@ impl CreateVodSourceInput {
                 _input: &crate::input::CreateVodSourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_7 = &_input.source_location_name;
-                let input_7 = input_7.as_ref().ok_or(
+                let input_9 = &_input.source_location_name;
+                let input_9 = input_9.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_7, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_9, false);
                 if source_location_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_8 = &_input.vod_source_name;
-                let input_8 = input_8.as_ref().ok_or(
+                let input_10 = &_input.vod_source_name;
+                let input_10 = input_10.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "vod_source_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let vod_source_name = aws_smithy_http::label::fmt_string(input_8, false);
+                let vod_source_name = aws_smithy_http::label::fmt_string(input_10, false);
                 if vod_source_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "vod_source_name",
@@ -1443,14 +1714,14 @@ impl DeleteChannelInput {
                 _input: &crate::input::DeleteChannelInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_9 = &_input.channel_name;
-                let input_9 = input_9.as_ref().ok_or(
+                let input_11 = &_input.channel_name;
+                let input_11 = input_11.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_9, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_11, false);
                 if channel_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
@@ -1581,14 +1852,14 @@ impl DeleteChannelPolicyInput {
                 _input: &crate::input::DeleteChannelPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_10 = &_input.channel_name;
-                let input_10 = input_10.as_ref().ok_or(
+                let input_12 = &_input.channel_name;
+                let input_12 = input_12.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_10, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_12, false);
                 if channel_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
@@ -1667,6 +1938,181 @@ impl DeleteChannelPolicyInput {
     }
 }
 
+/// See [`DeleteLiveSourceInput`](crate::input::DeleteLiveSourceInput)
+pub mod delete_live_source_input {
+    /// A builder for [`DeleteLiveSourceInput`](crate::input::DeleteLiveSourceInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) live_source_name: std::option::Option<std::string::String>,
+        pub(crate) source_location_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier for the live source you are working on.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.live_source_name = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the live source you are working on.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.live_source_name = input;
+            self
+        }
+        /// <p>The identifier for the source location you are working on.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_location_name = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the source location you are working on.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_location_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteLiveSourceInput`](crate::input::DeleteLiveSourceInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteLiveSourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteLiveSourceInput {
+                live_source_name: self.live_source_name,
+                source_location_name: self.source_location_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteLiveSourceInputOperationOutputAlias = crate::operation::DeleteLiveSource;
+#[doc(hidden)]
+pub type DeleteLiveSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteLiveSourceInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteLiveSource`](crate::operation::DeleteLiveSource)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteLiveSource,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteLiveSourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_13 = &_input.source_location_name;
+                let input_13 = input_13.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "source_location_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let source_location_name = aws_smithy_http::label::fmt_string(input_13, false);
+                if source_location_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "source_location_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                let input_14 = &_input.live_source_name;
+                let input_14 = input_14.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "live_source_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let live_source_name = aws_smithy_http::label::fmt_string(input_14, false);
+                if live_source_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "live_source_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/sourceLocation/{SourceLocationName}/liveSource/{LiveSourceName}",
+                    SourceLocationName = source_location_name,
+                    LiveSourceName = live_source_name
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteLiveSourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteLiveSource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteLiveSource",
+            "mediatailor",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteLiveSourceInput`](crate::input::DeleteLiveSourceInput)
+    pub fn builder() -> crate::input::delete_live_source_input::Builder {
+        crate::input::delete_live_source_input::Builder::default()
+    }
+}
+
 /// See [`DeletePlaybackConfigurationInput`](crate::input::DeletePlaybackConfigurationInput)
 pub mod delete_playback_configuration_input {
     /// A builder for [`DeletePlaybackConfigurationInput`](crate::input::DeletePlaybackConfigurationInput)
@@ -1722,14 +2168,14 @@ impl DeletePlaybackConfigurationInput {
                 _input: &crate::input::DeletePlaybackConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_11 = &_input.name;
-                let input_11 = input_11.as_ref().ok_or(
+                let input_15 = &_input.name;
+                let input_15 = input_15.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let name = aws_smithy_http::label::fmt_string(input_11, false);
+                let name = aws_smithy_http::label::fmt_string(input_15, false);
                 if name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
@@ -1878,29 +2324,29 @@ impl DeletePrefetchScheduleInput {
                 _input: &crate::input::DeletePrefetchScheduleInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_12 = &_input.playback_configuration_name;
-                let input_12 = input_12.as_ref().ok_or(
+                let input_16 = &_input.playback_configuration_name;
+                let input_16 = input_16.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "playback_configuration_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
                 let playback_configuration_name =
-                    aws_smithy_http::label::fmt_string(input_12, false);
+                    aws_smithy_http::label::fmt_string(input_16, false);
                 if playback_configuration_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "playback_configuration_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_13 = &_input.name;
-                let input_13 = input_13.as_ref().ok_or(
+                let input_17 = &_input.name;
+                let input_17 = input_17.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let name = aws_smithy_http::label::fmt_string(input_13, false);
+                let name = aws_smithy_http::label::fmt_string(input_17, false);
                 if name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
@@ -2048,28 +2494,28 @@ impl DeleteProgramInput {
                 _input: &crate::input::DeleteProgramInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_14 = &_input.channel_name;
-                let input_14 = input_14.as_ref().ok_or(
+                let input_18 = &_input.channel_name;
+                let input_18 = input_18.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_14, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_18, false);
                 if channel_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_15 = &_input.program_name;
-                let input_15 = input_15.as_ref().ok_or(
+                let input_19 = &_input.program_name;
+                let input_19 = input_19.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "program_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let program_name = aws_smithy_http::label::fmt_string(input_15, false);
+                let program_name = aws_smithy_http::label::fmt_string(input_19, false);
                 if program_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "program_name",
@@ -2208,14 +2654,14 @@ impl DeleteSourceLocationInput {
                 _input: &crate::input::DeleteSourceLocationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_16 = &_input.source_location_name;
-                let input_16 = input_16.as_ref().ok_or(
+                let input_20 = &_input.source_location_name;
+                let input_20 = input_20.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_16, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_20, false);
                 if source_location_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
@@ -2368,28 +2814,28 @@ impl DeleteVodSourceInput {
                 _input: &crate::input::DeleteVodSourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_17 = &_input.source_location_name;
-                let input_17 = input_17.as_ref().ok_or(
+                let input_21 = &_input.source_location_name;
+                let input_21 = input_21.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_17, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_21, false);
                 if source_location_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_18 = &_input.vod_source_name;
-                let input_18 = input_18.as_ref().ok_or(
+                let input_22 = &_input.vod_source_name;
+                let input_22 = input_22.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "vod_source_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let vod_source_name = aws_smithy_http::label::fmt_string(input_18, false);
+                let vod_source_name = aws_smithy_http::label::fmt_string(input_22, false);
                 if vod_source_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "vod_source_name",
@@ -2525,14 +2971,14 @@ impl DescribeChannelInput {
                 _input: &crate::input::DescribeChannelInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_19 = &_input.channel_name;
-                let input_19 = input_19.as_ref().ok_or(
+                let input_23 = &_input.channel_name;
+                let input_23 = input_23.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_19, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_23, false);
                 if channel_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
@@ -2607,6 +3053,181 @@ impl DescribeChannelInput {
     }
 }
 
+/// See [`DescribeLiveSourceInput`](crate::input::DescribeLiveSourceInput)
+pub mod describe_live_source_input {
+    /// A builder for [`DescribeLiveSourceInput`](crate::input::DescribeLiveSourceInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) live_source_name: std::option::Option<std::string::String>,
+        pub(crate) source_location_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier for the live source you are working on.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.live_source_name = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the live source you are working on.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.live_source_name = input;
+            self
+        }
+        /// <p>The identifier for the source location you are working on.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_location_name = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the source location you are working on.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_location_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeLiveSourceInput`](crate::input::DescribeLiveSourceInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeLiveSourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeLiveSourceInput {
+                live_source_name: self.live_source_name,
+                source_location_name: self.source_location_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeLiveSourceInputOperationOutputAlias = crate::operation::DescribeLiveSource;
+#[doc(hidden)]
+pub type DescribeLiveSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeLiveSourceInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeLiveSource`](crate::operation::DescribeLiveSource)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeLiveSource,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeLiveSourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_24 = &_input.source_location_name;
+                let input_24 = input_24.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "source_location_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let source_location_name = aws_smithy_http::label::fmt_string(input_24, false);
+                if source_location_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "source_location_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                let input_25 = &_input.live_source_name;
+                let input_25 = input_25.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "live_source_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let live_source_name = aws_smithy_http::label::fmt_string(input_25, false);
+                if live_source_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "live_source_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/sourceLocation/{SourceLocationName}/liveSource/{LiveSourceName}",
+                    SourceLocationName = source_location_name,
+                    LiveSourceName = live_source_name
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeLiveSourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeLiveSource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeLiveSource",
+            "mediatailor",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeLiveSourceInput`](crate::input::DescribeLiveSourceInput)
+    pub fn builder() -> crate::input::describe_live_source_input::Builder {
+        crate::input::describe_live_source_input::Builder::default()
+    }
+}
+
 /// See [`DescribeProgramInput`](crate::input::DescribeProgramInput)
 pub mod describe_program_input {
     /// A builder for [`DescribeProgramInput`](crate::input::DescribeProgramInput)
@@ -2675,28 +3296,28 @@ impl DescribeProgramInput {
                 _input: &crate::input::DescribeProgramInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_20 = &_input.channel_name;
-                let input_20 = input_20.as_ref().ok_or(
+                let input_26 = &_input.channel_name;
+                let input_26 = input_26.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_20, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_26, false);
                 if channel_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_21 = &_input.program_name;
-                let input_21 = input_21.as_ref().ok_or(
+                let input_27 = &_input.program_name;
+                let input_27 = input_27.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "program_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let program_name = aws_smithy_http::label::fmt_string(input_21, false);
+                let program_name = aws_smithy_http::label::fmt_string(input_27, false);
                 if program_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "program_name",
@@ -2835,14 +3456,14 @@ impl DescribeSourceLocationInput {
                 _input: &crate::input::DescribeSourceLocationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_22 = &_input.source_location_name;
-                let input_22 = input_22.as_ref().ok_or(
+                let input_28 = &_input.source_location_name;
+                let input_28 = input_28.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_22, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_28, false);
                 if source_location_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
@@ -2995,28 +3616,28 @@ impl DescribeVodSourceInput {
                 _input: &crate::input::DescribeVodSourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_23 = &_input.source_location_name;
-                let input_23 = input_23.as_ref().ok_or(
+                let input_29 = &_input.source_location_name;
+                let input_29 = input_29.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_23, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_29, false);
                 if source_location_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_24 = &_input.vod_source_name;
-                let input_24 = input_24.as_ref().ok_or(
+                let input_30 = &_input.vod_source_name;
+                let input_30 = input_30.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "vod_source_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let vod_source_name = aws_smithy_http::label::fmt_string(input_24, false);
+                let vod_source_name = aws_smithy_http::label::fmt_string(input_30, false);
                 if vod_source_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "vod_source_name",
@@ -3152,14 +3773,14 @@ impl GetChannelPolicyInput {
                 _input: &crate::input::GetChannelPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_25 = &_input.channel_name;
-                let input_25 = input_25.as_ref().ok_or(
+                let input_31 = &_input.channel_name;
+                let input_31 = input_31.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_25, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_31, false);
                 if channel_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
@@ -3333,14 +3954,14 @@ impl GetChannelScheduleInput {
                 _input: &crate::input::GetChannelScheduleInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_26 = &_input.channel_name;
-                let input_26 = input_26.as_ref().ok_or(
+                let input_32 = &_input.channel_name;
+                let input_32 = input_32.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_26, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_32, false);
                 if channel_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
@@ -3360,10 +3981,10 @@ impl GetChannelScheduleInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_27) = &_input.duration_minutes {
+                if let Some(inner_33) = &_input.duration_minutes {
                     query.push_kv(
                         "durationMinutes",
-                        &aws_smithy_http::query::fmt_string(&inner_27),
+                        &aws_smithy_http::query::fmt_string(&inner_33),
                     );
                 }
                 if _input.max_results != 0 {
@@ -3372,8 +3993,8 @@ impl GetChannelScheduleInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_28) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_28));
+                if let Some(inner_34) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
                 }
                 Ok(())
             }
@@ -3497,14 +4118,14 @@ impl GetPlaybackConfigurationInput {
                 _input: &crate::input::GetPlaybackConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_29 = &_input.name;
-                let input_29 = input_29.as_ref().ok_or(
+                let input_35 = &_input.name;
+                let input_35 = input_35.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let name = aws_smithy_http::label::fmt_string(input_29, false);
+                let name = aws_smithy_http::label::fmt_string(input_35, false);
                 if name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
@@ -3653,29 +4274,29 @@ impl GetPrefetchScheduleInput {
                 _input: &crate::input::GetPrefetchScheduleInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_30 = &_input.playback_configuration_name;
-                let input_30 = input_30.as_ref().ok_or(
+                let input_36 = &_input.playback_configuration_name;
+                let input_36 = input_36.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "playback_configuration_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
                 let playback_configuration_name =
-                    aws_smithy_http::label::fmt_string(input_30, false);
+                    aws_smithy_http::label::fmt_string(input_36, false);
                 if playback_configuration_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "playback_configuration_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_31 = &_input.name;
-                let input_31 = input_31.as_ref().ok_or(
+                let input_37 = &_input.name;
+                let input_37 = input_37.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let name = aws_smithy_http::label::fmt_string(input_31, false);
+                let name = aws_smithy_http::label::fmt_string(input_37, false);
                 if name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
@@ -3849,13 +4470,13 @@ impl ListAlertsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_32) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_32));
+                if let Some(inner_38) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_38));
                 }
-                if let Some(inner_33) = &_input.resource_arn {
+                if let Some(inner_39) = &_input.resource_arn {
                     query.push_kv(
                         "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_33),
+                        &aws_smithy_http::query::fmt_string(&inner_39),
                     );
                 }
                 Ok(())
@@ -4007,8 +4628,8 @@ impl ListChannelsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_34) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
+                if let Some(inner_40) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
                 }
                 Ok(())
             }
@@ -4074,6 +4695,192 @@ impl ListChannelsInput {
     /// Creates a new builder-style object to manufacture [`ListChannelsInput`](crate::input::ListChannelsInput)
     pub fn builder() -> crate::input::list_channels_input::Builder {
         crate::input::list_channels_input::Builder::default()
+    }
+}
+
+/// See [`ListLiveSourcesInput`](crate::input::ListLiveSourcesInput)
+pub mod list_live_sources_input {
+    /// A builder for [`ListLiveSourcesInput`](crate::input::ListLiveSourcesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) source_location_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The identifier for the source location you are working on.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_location_name = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the source location you are working on.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_location_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListLiveSourcesInput`](crate::input::ListLiveSourcesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListLiveSourcesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListLiveSourcesInput {
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+                source_location_name: self.source_location_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListLiveSourcesInputOperationOutputAlias = crate::operation::ListLiveSources;
+#[doc(hidden)]
+pub type ListLiveSourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListLiveSourcesInput {
+    /// Consumes the builder and constructs an Operation<[`ListLiveSources`](crate::operation::ListLiveSources)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListLiveSources,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListLiveSourcesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_41 = &_input.source_location_name;
+                let input_41 = input_41.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "source_location_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let source_location_name = aws_smithy_http::label::fmt_string(input_41, false);
+                if source_location_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "source_location_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/sourceLocation/{SourceLocationName}/liveSources",
+                    SourceLocationName = source_location_name
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListLiveSourcesInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if _input.max_results != 0 {
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    );
+                }
+                if let Some(inner_42) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_42));
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListLiveSourcesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListLiveSources::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListLiveSources",
+            "mediatailor",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListLiveSourcesInput`](crate::input::ListLiveSourcesInput)
+    pub fn builder() -> crate::input::list_live_sources_input::Builder {
+        crate::input::list_live_sources_input::Builder::default()
     }
 }
 
@@ -4160,8 +4967,8 @@ impl ListPlaybackConfigurationsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_35) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_35));
+                if let Some(inner_43) = &_input.next_token {
+                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_43));
                 }
                 Ok(())
             }
@@ -4334,15 +5141,15 @@ impl ListPrefetchSchedulesInput {
                 _input: &crate::input::ListPrefetchSchedulesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_36 = &_input.playback_configuration_name;
-                let input_36 = input_36.as_ref().ok_or(
+                let input_44 = &_input.playback_configuration_name;
+                let input_44 = input_44.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "playback_configuration_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
                 let playback_configuration_name =
-                    aws_smithy_http::label::fmt_string(input_36, false);
+                    aws_smithy_http::label::fmt_string(input_44, false);
                 if playback_configuration_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "playback_configuration_name",
@@ -4519,8 +5326,8 @@ impl ListSourceLocationsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_37) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                if let Some(inner_45) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_45));
                 }
                 Ok(())
             }
@@ -4645,14 +5452,14 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_38 = &_input.resource_arn;
-                let input_38 = input_38.as_ref().ok_or(
+                let input_46 = &_input.resource_arn;
+                let input_46 = input_46.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_38, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_46, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -4810,14 +5617,14 @@ impl ListVodSourcesInput {
                 _input: &crate::input::ListVodSourcesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_39 = &_input.source_location_name;
-                let input_39 = input_39.as_ref().ok_or(
+                let input_47 = &_input.source_location_name;
+                let input_47 = input_47.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_39, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_47, false);
                 if source_location_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
@@ -4843,8 +5650,8 @@ impl ListVodSourcesInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_40) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
+                if let Some(inner_48) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_48));
                 }
                 Ok(())
             }
@@ -4981,14 +5788,14 @@ impl PutChannelPolicyInput {
                 _input: &crate::input::PutChannelPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_41 = &_input.channel_name;
-                let input_41 = input_41.as_ref().ok_or(
+                let input_49 = &_input.channel_name;
+                let input_49 = input_49.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_41, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_49, false);
                 if channel_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
@@ -5510,14 +6317,14 @@ impl StartChannelInput {
                 _input: &crate::input::StartChannelInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_42 = &_input.channel_name;
-                let input_42 = input_42.as_ref().ok_or(
+                let input_50 = &_input.channel_name;
+                let input_50 = input_50.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_42, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_50, false);
                 if channel_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
@@ -5652,14 +6459,14 @@ impl StopChannelInput {
                 _input: &crate::input::StopChannelInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_43 = &_input.channel_name;
-                let input_43 = input_43.as_ref().ok_or(
+                let input_51 = &_input.channel_name;
+                let input_51 = input_51.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_43, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_51, false);
                 if channel_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
@@ -5823,14 +6630,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_44 = &_input.resource_arn;
-                let input_44 = input_44.as_ref().ok_or(
+                let input_52 = &_input.resource_arn;
+                let input_52 = input_52.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_44, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_52, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -5996,14 +6803,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_45 = &_input.resource_arn;
-                let input_45 = input_45.as_ref().ok_or(
+                let input_53 = &_input.resource_arn;
+                let input_53 = input_53.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_45, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_53, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -6019,9 +6826,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_46) = &_input.tag_keys {
-                    for inner_47 in inner_46 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_47));
+                if let Some(inner_54) = &_input.tag_keys {
+                    for inner_55 in inner_54 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_55));
                     }
                 }
                 Ok(())
@@ -6183,14 +6990,14 @@ impl UpdateChannelInput {
                 _input: &crate::input::UpdateChannelInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_48 = &_input.channel_name;
-                let input_48 = input_48.as_ref().ok_or(
+                let input_56 = &_input.channel_name;
+                let input_56 = input_56.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_48, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_56, false);
                 if channel_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
@@ -6279,6 +7086,220 @@ impl UpdateChannelInput {
     }
 }
 
+/// See [`UpdateLiveSourceInput`](crate::input::UpdateLiveSourceInput)
+pub mod update_live_source_input {
+    /// A builder for [`UpdateLiveSourceInput`](crate::input::UpdateLiveSourceInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) http_package_configurations:
+            std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        pub(crate) live_source_name: std::option::Option<std::string::String>,
+        pub(crate) source_location_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `http_package_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
+        ///
+        /// <p>A list of HTTP package configurations for the live source on this account.</p>
+        pub fn http_package_configurations(
+            mut self,
+            input: crate::model::HttpPackageConfiguration,
+        ) -> Self {
+            let mut v = self.http_package_configurations.unwrap_or_default();
+            v.push(input);
+            self.http_package_configurations = Some(v);
+            self
+        }
+        /// <p>A list of HTTP package configurations for the live source on this account.</p>
+        pub fn set_http_package_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        ) -> Self {
+            self.http_package_configurations = input;
+            self
+        }
+        /// <p>The identifier for the live source you are working on.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.live_source_name = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the live source you are working on.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.live_source_name = input;
+            self
+        }
+        /// <p>The identifier for the source location you are working on.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_location_name = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the source location you are working on.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_location_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateLiveSourceInput`](crate::input::UpdateLiveSourceInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateLiveSourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateLiveSourceInput {
+                http_package_configurations: self.http_package_configurations,
+                live_source_name: self.live_source_name,
+                source_location_name: self.source_location_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateLiveSourceInputOperationOutputAlias = crate::operation::UpdateLiveSource;
+#[doc(hidden)]
+pub type UpdateLiveSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateLiveSourceInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateLiveSource`](crate::operation::UpdateLiveSource)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateLiveSource,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateLiveSourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_57 = &_input.source_location_name;
+                let input_57 = input_57.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "source_location_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let source_location_name = aws_smithy_http::label::fmt_string(input_57, false);
+                if source_location_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "source_location_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                let input_58 = &_input.live_source_name;
+                let input_58 = input_58.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "live_source_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let live_source_name = aws_smithy_http::label::fmt_string(input_58, false);
+                if live_source_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "live_source_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/sourceLocation/{SourceLocationName}/liveSource/{LiveSourceName}",
+                    SourceLocationName = source_location_name,
+                    LiveSourceName = live_source_name
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateLiveSourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_live_source(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateLiveSource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateLiveSource",
+            "mediatailor",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateLiveSourceInput`](crate::input::UpdateLiveSourceInput)
+    pub fn builder() -> crate::input::update_live_source_input::Builder {
+        crate::input::update_live_source_input::Builder::default()
+    }
+}
+
 /// See [`UpdateSourceLocationInput`](crate::input::UpdateSourceLocationInput)
 pub mod update_source_location_input {
     /// A builder for [`UpdateSourceLocationInput`](crate::input::UpdateSourceLocationInput)
@@ -6340,6 +7361,7 @@ pub mod update_source_location_input {
         ///
         /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
         ///
+        /// <p>A list of the segment delivery configurations associated with this resource.</p>
         pub fn segment_delivery_configurations(
             mut self,
             input: crate::model::SegmentDeliveryConfiguration,
@@ -6349,7 +7371,7 @@ pub mod update_source_location_input {
             self.segment_delivery_configurations = Some(v);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A list of the segment delivery configurations associated with this resource.</p>
         pub fn set_segment_delivery_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
@@ -6411,14 +7433,14 @@ impl UpdateSourceLocationInput {
                 _input: &crate::input::UpdateSourceLocationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_49 = &_input.source_location_name;
-                let input_49 = input_49.as_ref().ok_or(
+                let input_59 = &_input.source_location_name;
+                let input_59 = input_59.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_49, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_59, false);
                 if source_location_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
@@ -6529,7 +7551,7 @@ pub mod update_vod_source_input {
         ///
         /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
         ///
-        /// <p>An array of HTTP package configurations for the VOD source on this account.</p>
+        /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
         pub fn http_package_configurations(
             mut self,
             input: crate::model::HttpPackageConfiguration,
@@ -6539,7 +7561,7 @@ pub mod update_vod_source_input {
             self.http_package_configurations = Some(v);
             self
         }
-        /// <p>An array of HTTP package configurations for the VOD source on this account.</p>
+        /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
         pub fn set_http_package_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
@@ -6612,28 +7634,28 @@ impl UpdateVodSourceInput {
                 _input: &crate::input::UpdateVodSourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_50 = &_input.source_location_name;
-                let input_50 = input_50.as_ref().ok_or(
+                let input_60 = &_input.source_location_name;
+                let input_60 = input_60.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_50, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_60, false);
                 if source_location_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_51 = &_input.vod_source_name;
-                let input_51 = input_51.as_ref().ok_or(
+                let input_61 = &_input.vod_source_name;
+                let input_61 = input_61.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "vod_source_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let vod_source_name = aws_smithy_http::label::fmt_string(input_51, false);
+                let vod_source_name = aws_smithy_http::label::fmt_string(input_61, false);
                 if vod_source_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "vod_source_name",
@@ -6731,7 +7753,7 @@ impl UpdateVodSourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVodSourceInput {
-    /// <p>An array of HTTP package configurations for the VOD source on this account.</p>
+    /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
     /// <p>The identifier for the source location you are working on.</p>
@@ -6740,7 +7762,7 @@ pub struct UpdateVodSourceInput {
     pub vod_source_name: std::option::Option<std::string::String>,
 }
 impl UpdateVodSourceInput {
-    /// <p>An array of HTTP package configurations for the VOD source on this account.</p>
+    /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
     pub fn http_package_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
@@ -6779,7 +7801,7 @@ pub struct UpdateSourceLocationInput {
         std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
     /// <p>The HTTP configuration for the source location.</p>
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of the segment delivery configurations associated with this resource.</p>
     pub segment_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
     /// <p>The identifier for the source location you are working on.</p>
@@ -6800,7 +7822,7 @@ impl UpdateSourceLocationInput {
     pub fn http_configuration(&self) -> std::option::Option<&crate::model::HttpConfiguration> {
         self.http_configuration.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of the segment delivery configurations associated with this resource.</p>
     pub fn segment_delivery_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::SegmentDeliveryConfiguration]> {
@@ -6824,6 +7846,47 @@ impl std::fmt::Debug for UpdateSourceLocationInput {
             "segment_delivery_configurations",
             &self.segment_delivery_configurations,
         );
+        formatter.field("source_location_name", &self.source_location_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateLiveSourceInput {
+    /// <p>A list of HTTP package configurations for the live source on this account.</p>
+    pub http_package_configurations:
+        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+    /// <p>The identifier for the live source you are working on.</p>
+    pub live_source_name: std::option::Option<std::string::String>,
+    /// <p>The identifier for the source location you are working on.</p>
+    pub source_location_name: std::option::Option<std::string::String>,
+}
+impl UpdateLiveSourceInput {
+    /// <p>A list of HTTP package configurations for the live source on this account.</p>
+    pub fn http_package_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
+        self.http_package_configurations.as_deref()
+    }
+    /// <p>The identifier for the live source you are working on.</p>
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
+        self.live_source_name.as_deref()
+    }
+    /// <p>The identifier for the source location you are working on.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateLiveSourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateLiveSourceInput");
+        formatter.field(
+            "http_package_configurations",
+            &self.http_package_configurations,
+        );
+        formatter.field("live_source_name", &self.live_source_name);
         formatter.field("source_location_name", &self.source_location_name);
         formatter.finish()
     }
@@ -7300,6 +8363,41 @@ impl std::fmt::Debug for ListPlaybackConfigurationsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListLiveSourcesInput {
+    /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+    pub max_results: i32,
+    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The identifier for the source location you are working on.</p>
+    pub source_location_name: std::option::Option<std::string::String>,
+}
+impl ListLiveSourcesInput {
+    /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The identifier for the source location you are working on.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+}
+impl std::fmt::Debug for ListLiveSourcesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListLiveSourcesInput");
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("source_location_name", &self.source_location_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsInput {
     /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
     pub max_results: i32,
@@ -7555,6 +8653,34 @@ impl std::fmt::Debug for DescribeProgramInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLiveSourceInput {
+    /// <p>The identifier for the live source you are working on.</p>
+    pub live_source_name: std::option::Option<std::string::String>,
+    /// <p>The identifier for the source location you are working on.</p>
+    pub source_location_name: std::option::Option<std::string::String>,
+}
+impl DescribeLiveSourceInput {
+    /// <p>The identifier for the live source you are working on.</p>
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
+        self.live_source_name.as_deref()
+    }
+    /// <p>The identifier for the source location you are working on.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeLiveSourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeLiveSourceInput");
+        formatter.field("live_source_name", &self.live_source_name);
+        formatter.field("source_location_name", &self.source_location_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
     pub channel_name: std::option::Option<std::string::String>,
@@ -7705,6 +8831,34 @@ impl std::fmt::Debug for DeletePlaybackConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteLiveSourceInput {
+    /// <p>The identifier for the live source you are working on.</p>
+    pub live_source_name: std::option::Option<std::string::String>,
+    /// <p>The identifier for the source location you are working on.</p>
+    pub source_location_name: std::option::Option<std::string::String>,
+}
+impl DeleteLiveSourceInput {
+    /// <p>The identifier for the live source you are working on.</p>
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
+        self.live_source_name.as_deref()
+    }
+    /// <p>The identifier for the source location you are working on.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteLiveSourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteLiveSourceInput");
+        formatter.field("live_source_name", &self.live_source_name);
+        formatter.field("source_location_name", &self.source_location_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelPolicyInput {
     /// <p>The identifier for the channel you are working on.</p>
     pub channel_name: std::option::Option<std::string::String>,
@@ -7748,7 +8902,7 @@ impl std::fmt::Debug for DeleteChannelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVodSourceInput {
-    /// <p>An array of HTTP package configuration parameters for this VOD source.</p>
+    /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
     /// <p>The identifier for the source location you are working on.</p>
@@ -7760,7 +8914,7 @@ pub struct CreateVodSourceInput {
     pub vod_source_name: std::option::Option<std::string::String>,
 }
 impl CreateVodSourceInput {
-    /// <p>An array of HTTP package configuration parameters for this VOD source.</p>
+    /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
     pub fn http_package_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
@@ -7807,7 +8961,7 @@ pub struct CreateSourceLocationInput {
         std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
     /// <p>The source's HTTP package configurations.</p>
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of the segment delivery configurations associated with this resource.</p>
     pub segment_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
     /// <p>The identifier for the source location you are working on.</p>
@@ -7831,7 +8985,7 @@ impl CreateSourceLocationInput {
     pub fn http_configuration(&self) -> std::option::Option<&crate::model::HttpConfiguration> {
         self.http_configuration.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of the segment delivery configurations associated with this resource.</p>
     pub fn segment_delivery_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::SegmentDeliveryConfiguration]> {
@@ -7876,6 +9030,8 @@ pub struct CreateProgramInput {
     pub ad_breaks: std::option::Option<std::vec::Vec<crate::model::AdBreak>>,
     /// <p>The identifier for the channel you are working on.</p>
     pub channel_name: std::option::Option<std::string::String>,
+    /// <p>The name of the LiveSource for this Program.</p>
+    pub live_source_name: std::option::Option<std::string::String>,
     /// <p>The identifier for the program you are working on.</p>
     pub program_name: std::option::Option<std::string::String>,
     /// <p>The schedule configuration settings.</p>
@@ -7893,6 +9049,10 @@ impl CreateProgramInput {
     /// <p>The identifier for the channel you are working on.</p>
     pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
+    }
+    /// <p>The name of the LiveSource for this Program.</p>
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
+        self.live_source_name.as_deref()
     }
     /// <p>The identifier for the program you are working on.</p>
     pub fn program_name(&self) -> std::option::Option<&str> {
@@ -7918,6 +9078,7 @@ impl std::fmt::Debug for CreateProgramInput {
         let mut formatter = f.debug_struct("CreateProgramInput");
         formatter.field("ad_breaks", &self.ad_breaks);
         formatter.field("channel_name", &self.channel_name);
+        formatter.field("live_source_name", &self.live_source_name);
         formatter.field("program_name", &self.program_name);
         formatter.field("schedule_configuration", &self.schedule_configuration);
         formatter.field("source_location_name", &self.source_location_name);
@@ -7981,6 +9142,58 @@ impl std::fmt::Debug for CreatePrefetchScheduleInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLiveSourceInput {
+    /// <p>A list of HTTP package configuration parameters for this live source.</p>
+    pub http_package_configurations:
+        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+    /// <p>The identifier for the live source you are working on.</p>
+    pub live_source_name: std::option::Option<std::string::String>,
+    /// <p>The identifier for the source location you are working on.</p>
+    pub source_location_name: std::option::Option<std::string::String>,
+    /// <p>The tags to assign to the live source.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateLiveSourceInput {
+    /// <p>A list of HTTP package configuration parameters for this live source.</p>
+    pub fn http_package_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
+        self.http_package_configurations.as_deref()
+    }
+    /// <p>The identifier for the live source you are working on.</p>
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
+        self.live_source_name.as_deref()
+    }
+    /// <p>The identifier for the source location you are working on.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags to assign to the live source.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateLiveSourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateLiveSourceInput");
+        formatter.field(
+            "http_package_configurations",
+            &self.http_package_configurations,
+        );
+        formatter.field("live_source_name", &self.live_source_name);
+        formatter.field("source_location_name", &self.source_location_name);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
     pub channel_name: std::option::Option<std::string::String>,
@@ -7995,6 +9208,8 @@ pub struct CreateChannelInput {
     /// <p>The tags to assign to the channel.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The tier of the channel.</p>
+    pub tier: std::option::Option<crate::model::Tier>,
 }
 impl CreateChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
@@ -8022,6 +9237,10 @@ impl CreateChannelInput {
     {
         self.tags.as_ref()
     }
+    /// <p>The tier of the channel.</p>
+    pub fn tier(&self) -> std::option::Option<&crate::model::Tier> {
+        self.tier.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8031,6 +9250,7 @@ impl std::fmt::Debug for CreateChannelInput {
         formatter.field("outputs", &self.outputs);
         formatter.field("playback_mode", &self.playback_mode);
         formatter.field("tags", &self.tags);
+        formatter.field("tier", &self.tier);
         formatter.finish()
     }
 }

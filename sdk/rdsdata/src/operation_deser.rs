@@ -15,6 +15,23 @@ pub fn parse_batch_execute_statement_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => crate::error::BatchExecuteStatementError {
+            meta: generic,
+            kind: crate::error::BatchExecuteStatementErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchExecuteStatementError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "BadRequestException" => crate::error::BatchExecuteStatementError {
             meta: generic,
             kind: crate::error::BatchExecuteStatementErrorKind::BadRequestException({
@@ -139,6 +156,23 @@ pub fn parse_begin_transaction_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => crate::error::BeginTransactionError {
+            meta: generic,
+            kind: crate::error::BeginTransactionErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BeginTransactionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "BadRequestException" => crate::error::BeginTransactionError {
             meta: generic,
             kind: crate::error::BeginTransactionErrorKind::BadRequestException({
@@ -261,6 +295,23 @@ pub fn parse_commit_transaction_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => crate::error::CommitTransactionError {
+            meta: generic,
+            kind: crate::error::CommitTransactionErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CommitTransactionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "BadRequestException" => crate::error::CommitTransactionError {
             meta: generic,
             kind: crate::error::CommitTransactionErrorKind::BadRequestException({
@@ -399,6 +450,23 @@ pub fn parse_execute_sql_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => crate::error::ExecuteSqlError {
+            meta: generic,
+            kind: crate::error::ExecuteSqlErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExecuteSqlError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "BadRequestException" => crate::error::ExecuteSqlError {
             meta: generic,
             kind: crate::error::ExecuteSqlErrorKind::BadRequestException({
@@ -503,6 +571,23 @@ pub fn parse_execute_statement_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => crate::error::ExecuteStatementError {
+            meta: generic,
+            kind: crate::error::ExecuteStatementErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExecuteStatementError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "BadRequestException" => crate::error::ExecuteStatementError {
             meta: generic,
             kind: crate::error::ExecuteStatementErrorKind::BadRequestException({
@@ -627,6 +712,23 @@ pub fn parse_rollback_transaction_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => crate::error::RollbackTransactionError {
+            meta: generic,
+            kind: crate::error::RollbackTransactionErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RollbackTransactionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "BadRequestException" => crate::error::RollbackTransactionError {
             meta: generic,
             kind: crate::error::RollbackTransactionErrorKind::BadRequestException({

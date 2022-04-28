@@ -2172,6 +2172,10 @@ pub struct DescribeOrganizationConfigurationOutput {
     pub auto_enable: bool,
     /// <p>Whether the maximum number of allowed member accounts are already associated with the Security Hub administrator account.</p>
     pub member_account_limit_reached: bool,
+    /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
+    /// <p>The default value of this parameter is equal to <code>DEFAULT</code>.</p>
+    /// <p>If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member accounts.</p>
+    pub auto_enable_standards: std::option::Option<crate::model::AutoEnableStandards>,
 }
 impl DescribeOrganizationConfigurationOutput {
     /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
@@ -2183,6 +2187,12 @@ impl DescribeOrganizationConfigurationOutput {
     pub fn member_account_limit_reached(&self) -> bool {
         self.member_account_limit_reached
     }
+    /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
+    /// <p>The default value of this parameter is equal to <code>DEFAULT</code>.</p>
+    /// <p>If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member accounts.</p>
+    pub fn auto_enable_standards(&self) -> std::option::Option<&crate::model::AutoEnableStandards> {
+        self.auto_enable_standards.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeOrganizationConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2192,6 +2202,7 @@ impl std::fmt::Debug for DescribeOrganizationConfigurationOutput {
             "member_account_limit_reached",
             &self.member_account_limit_reached,
         );
+        formatter.field("auto_enable_standards", &self.auto_enable_standards);
         formatter.finish()
     }
 }
@@ -2203,6 +2214,7 @@ pub mod describe_organization_configuration_output {
     pub struct Builder {
         pub(crate) auto_enable: std::option::Option<bool>,
         pub(crate) member_account_limit_reached: std::option::Option<bool>,
+        pub(crate) auto_enable_standards: std::option::Option<crate::model::AutoEnableStandards>,
     }
     impl Builder {
         /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
@@ -2230,11 +2242,29 @@ pub mod describe_organization_configuration_output {
             self.member_account_limit_reached = input;
             self
         }
+        /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
+        /// <p>The default value of this parameter is equal to <code>DEFAULT</code>.</p>
+        /// <p>If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member accounts.</p>
+        pub fn auto_enable_standards(mut self, input: crate::model::AutoEnableStandards) -> Self {
+            self.auto_enable_standards = Some(input);
+            self
+        }
+        /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
+        /// <p>The default value of this parameter is equal to <code>DEFAULT</code>.</p>
+        /// <p>If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member accounts.</p>
+        pub fn set_auto_enable_standards(
+            mut self,
+            input: std::option::Option<crate::model::AutoEnableStandards>,
+        ) -> Self {
+            self.auto_enable_standards = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput)
         pub fn build(self) -> crate::output::DescribeOrganizationConfigurationOutput {
             crate::output::DescribeOrganizationConfigurationOutput {
                 auto_enable: self.auto_enable.unwrap_or_default(),
                 member_account_limit_reached: self.member_account_limit_reached.unwrap_or_default(),
+                auto_enable_standards: self.auto_enable_standards,
             }
         }
     }

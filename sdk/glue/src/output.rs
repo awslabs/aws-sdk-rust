@@ -3424,6 +3424,89 @@ impl ListDevEndpointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListCustomEntityTypesOutput {
+    /// <p>A list of <code>CustomEntityType</code> objects representing custom patterns.</p>
+    pub custom_entity_types: std::option::Option<std::vec::Vec<crate::model::CustomEntityType>>,
+    /// <p>A pagination token, if more results are available.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCustomEntityTypesOutput {
+    /// <p>A list of <code>CustomEntityType</code> objects representing custom patterns.</p>
+    pub fn custom_entity_types(&self) -> std::option::Option<&[crate::model::CustomEntityType]> {
+        self.custom_entity_types.as_deref()
+    }
+    /// <p>A pagination token, if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListCustomEntityTypesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCustomEntityTypesOutput");
+        formatter.field("custom_entity_types", &self.custom_entity_types);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListCustomEntityTypesOutput`](crate::output::ListCustomEntityTypesOutput)
+pub mod list_custom_entity_types_output {
+    /// A builder for [`ListCustomEntityTypesOutput`](crate::output::ListCustomEntityTypesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) custom_entity_types:
+            std::option::Option<std::vec::Vec<crate::model::CustomEntityType>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `custom_entity_types`.
+        ///
+        /// To override the contents of this collection use [`set_custom_entity_types`](Self::set_custom_entity_types).
+        ///
+        /// <p>A list of <code>CustomEntityType</code> objects representing custom patterns.</p>
+        pub fn custom_entity_types(mut self, input: crate::model::CustomEntityType) -> Self {
+            let mut v = self.custom_entity_types.unwrap_or_default();
+            v.push(input);
+            self.custom_entity_types = Some(v);
+            self
+        }
+        /// <p>A list of <code>CustomEntityType</code> objects representing custom patterns.</p>
+        pub fn set_custom_entity_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CustomEntityType>>,
+        ) -> Self {
+            self.custom_entity_types = input;
+            self
+        }
+        /// <p>A pagination token, if more results are available.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A pagination token, if more results are available.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCustomEntityTypesOutput`](crate::output::ListCustomEntityTypesOutput)
+        pub fn build(self) -> crate::output::ListCustomEntityTypesOutput {
+            crate::output::ListCustomEntityTypesOutput {
+                custom_entity_types: self.custom_entity_types,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListCustomEntityTypesOutput {
+    /// Creates a new builder-style object to manufacture [`ListCustomEntityTypesOutput`](crate::output::ListCustomEntityTypesOutput)
+    pub fn builder() -> crate::output::list_custom_entity_types_output::Builder {
+        crate::output::list_custom_entity_types_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCrawlersOutput {
     /// <p>The names of all crawlers in the account, or the crawlers with the specified tags.</p>
     pub crawler_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8131,6 +8214,107 @@ impl GetDatabaseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetCustomEntityTypeOutput {
+    /// <p>The name of the custom pattern that you retrieved.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+    pub regex_string: std::option::Option<std::string::String>,
+    /// <p>A list of context words if specified when you created the custom pattern. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
+    pub context_words: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetCustomEntityTypeOutput {
+    /// <p>The name of the custom pattern that you retrieved.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+    pub fn regex_string(&self) -> std::option::Option<&str> {
+        self.regex_string.as_deref()
+    }
+    /// <p>A list of context words if specified when you created the custom pattern. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
+    pub fn context_words(&self) -> std::option::Option<&[std::string::String]> {
+        self.context_words.as_deref()
+    }
+}
+impl std::fmt::Debug for GetCustomEntityTypeOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetCustomEntityTypeOutput");
+        formatter.field("name", &self.name);
+        formatter.field("regex_string", &self.regex_string);
+        formatter.field("context_words", &self.context_words);
+        formatter.finish()
+    }
+}
+/// See [`GetCustomEntityTypeOutput`](crate::output::GetCustomEntityTypeOutput)
+pub mod get_custom_entity_type_output {
+    /// A builder for [`GetCustomEntityTypeOutput`](crate::output::GetCustomEntityTypeOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) regex_string: std::option::Option<std::string::String>,
+        pub(crate) context_words: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The name of the custom pattern that you retrieved.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the custom pattern that you retrieved.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+        pub fn regex_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.regex_string = Some(input.into());
+            self
+        }
+        /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+        pub fn set_regex_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.regex_string = input;
+            self
+        }
+        /// Appends an item to `context_words`.
+        ///
+        /// To override the contents of this collection use [`set_context_words`](Self::set_context_words).
+        ///
+        /// <p>A list of context words if specified when you created the custom pattern. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
+        pub fn context_words(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.context_words.unwrap_or_default();
+            v.push(input.into());
+            self.context_words = Some(v);
+            self
+        }
+        /// <p>A list of context words if specified when you created the custom pattern. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
+        pub fn set_context_words(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.context_words = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetCustomEntityTypeOutput`](crate::output::GetCustomEntityTypeOutput)
+        pub fn build(self) -> crate::output::GetCustomEntityTypeOutput {
+            crate::output::GetCustomEntityTypeOutput {
+                name: self.name,
+                regex_string: self.regex_string,
+                context_words: self.context_words,
+            }
+        }
+    }
+}
+impl GetCustomEntityTypeOutput {
+    /// Creates a new builder-style object to manufacture [`GetCustomEntityTypeOutput`](crate::output::GetCustomEntityTypeOutput)
+    pub fn builder() -> crate::output::get_custom_entity_type_output::Builder {
+        crate::output::get_custom_entity_type_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCrawlersOutput {
     /// <p>A list of crawler metadata.</p>
     pub crawlers: std::option::Option<std::vec::Vec<crate::model::Crawler>>,
@@ -9856,6 +10040,58 @@ impl DeleteDatabaseOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDatabaseOutput`](crate::output::DeleteDatabaseOutput)
     pub fn builder() -> crate::output::delete_database_output::Builder {
         crate::output::delete_database_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteCustomEntityTypeOutput {
+    /// <p>The name of the custom pattern you deleted.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl DeleteCustomEntityTypeOutput {
+    /// <p>The name of the custom pattern you deleted.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteCustomEntityTypeOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteCustomEntityTypeOutput");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`DeleteCustomEntityTypeOutput`](crate::output::DeleteCustomEntityTypeOutput)
+pub mod delete_custom_entity_type_output {
+    /// A builder for [`DeleteCustomEntityTypeOutput`](crate::output::DeleteCustomEntityTypeOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the custom pattern you deleted.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the custom pattern you deleted.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteCustomEntityTypeOutput`](crate::output::DeleteCustomEntityTypeOutput)
+        pub fn build(self) -> crate::output::DeleteCustomEntityTypeOutput {
+            crate::output::DeleteCustomEntityTypeOutput { name: self.name }
+        }
+    }
+}
+impl DeleteCustomEntityTypeOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCustomEntityTypeOutput`](crate::output::DeleteCustomEntityTypeOutput)
+    pub fn builder() -> crate::output::delete_custom_entity_type_output::Builder {
+        crate::output::delete_custom_entity_type_output::Builder::default()
     }
 }
 
@@ -11590,6 +11826,58 @@ impl CreateDatabaseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateCustomEntityTypeOutput {
+    /// <p>The name of the custom pattern you created.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl CreateCustomEntityTypeOutput {
+    /// <p>The name of the custom pattern you created.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateCustomEntityTypeOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateCustomEntityTypeOutput");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`CreateCustomEntityTypeOutput`](crate::output::CreateCustomEntityTypeOutput)
+pub mod create_custom_entity_type_output {
+    /// A builder for [`CreateCustomEntityTypeOutput`](crate::output::CreateCustomEntityTypeOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the custom pattern you created.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the custom pattern you created.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateCustomEntityTypeOutput`](crate::output::CreateCustomEntityTypeOutput)
+        pub fn build(self) -> crate::output::CreateCustomEntityTypeOutput {
+            crate::output::CreateCustomEntityTypeOutput { name: self.name }
+        }
+    }
+}
+impl CreateCustomEntityTypeOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCustomEntityTypeOutput`](crate::output::CreateCustomEntityTypeOutput)
+    pub fn builder() -> crate::output::create_custom_entity_type_output::Builder {
+        crate::output::create_custom_entity_type_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCrawlerOutput {}
 impl std::fmt::Debug for CreateCrawlerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12546,6 +12834,105 @@ impl BatchGetDevEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDevEndpointsOutput`](crate::output::BatchGetDevEndpointsOutput)
     pub fn builder() -> crate::output::batch_get_dev_endpoints_output::Builder {
         crate::output::batch_get_dev_endpoints_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetCustomEntityTypesOutput {
+    /// <p>A list of <code>CustomEntityType</code> objects representing the custom patterns that have been created.</p>
+    pub custom_entity_types: std::option::Option<std::vec::Vec<crate::model::CustomEntityType>>,
+    /// <p>A list of the names of custom patterns that were not found.</p>
+    pub custom_entity_types_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetCustomEntityTypesOutput {
+    /// <p>A list of <code>CustomEntityType</code> objects representing the custom patterns that have been created.</p>
+    pub fn custom_entity_types(&self) -> std::option::Option<&[crate::model::CustomEntityType]> {
+        self.custom_entity_types.as_deref()
+    }
+    /// <p>A list of the names of custom patterns that were not found.</p>
+    pub fn custom_entity_types_not_found(&self) -> std::option::Option<&[std::string::String]> {
+        self.custom_entity_types_not_found.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchGetCustomEntityTypesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetCustomEntityTypesOutput");
+        formatter.field("custom_entity_types", &self.custom_entity_types);
+        formatter.field(
+            "custom_entity_types_not_found",
+            &self.custom_entity_types_not_found,
+        );
+        formatter.finish()
+    }
+}
+/// See [`BatchGetCustomEntityTypesOutput`](crate::output::BatchGetCustomEntityTypesOutput)
+pub mod batch_get_custom_entity_types_output {
+    /// A builder for [`BatchGetCustomEntityTypesOutput`](crate::output::BatchGetCustomEntityTypesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) custom_entity_types:
+            std::option::Option<std::vec::Vec<crate::model::CustomEntityType>>,
+        pub(crate) custom_entity_types_not_found:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `custom_entity_types`.
+        ///
+        /// To override the contents of this collection use [`set_custom_entity_types`](Self::set_custom_entity_types).
+        ///
+        /// <p>A list of <code>CustomEntityType</code> objects representing the custom patterns that have been created.</p>
+        pub fn custom_entity_types(mut self, input: crate::model::CustomEntityType) -> Self {
+            let mut v = self.custom_entity_types.unwrap_or_default();
+            v.push(input);
+            self.custom_entity_types = Some(v);
+            self
+        }
+        /// <p>A list of <code>CustomEntityType</code> objects representing the custom patterns that have been created.</p>
+        pub fn set_custom_entity_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CustomEntityType>>,
+        ) -> Self {
+            self.custom_entity_types = input;
+            self
+        }
+        /// Appends an item to `custom_entity_types_not_found`.
+        ///
+        /// To override the contents of this collection use [`set_custom_entity_types_not_found`](Self::set_custom_entity_types_not_found).
+        ///
+        /// <p>A list of the names of custom patterns that were not found.</p>
+        pub fn custom_entity_types_not_found(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.custom_entity_types_not_found.unwrap_or_default();
+            v.push(input.into());
+            self.custom_entity_types_not_found = Some(v);
+            self
+        }
+        /// <p>A list of the names of custom patterns that were not found.</p>
+        pub fn set_custom_entity_types_not_found(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.custom_entity_types_not_found = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetCustomEntityTypesOutput`](crate::output::BatchGetCustomEntityTypesOutput)
+        pub fn build(self) -> crate::output::BatchGetCustomEntityTypesOutput {
+            crate::output::BatchGetCustomEntityTypesOutput {
+                custom_entity_types: self.custom_entity_types,
+                custom_entity_types_not_found: self.custom_entity_types_not_found,
+            }
+        }
+    }
+}
+impl BatchGetCustomEntityTypesOutput {
+    /// Creates a new builder-style object to manufacture [`BatchGetCustomEntityTypesOutput`](crate::output::BatchGetCustomEntityTypesOutput)
+    pub fn builder() -> crate::output::batch_get_custom_entity_types_output::Builder {
+        crate::output::batch_get_custom_entity_types_output::Builder::default()
     }
 }
 

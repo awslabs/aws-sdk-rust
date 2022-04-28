@@ -154,26 +154,26 @@ impl InferenceS3OutputConfiguration {
     }
 }
 
-/// <p>Specifies configuration information for the input data for the inference, including S3 location of input data.. </p>
+/// <p>Specifies configuration information for the input data for the inference, including Amazon S3 location of input data.. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InferenceInputConfiguration {
-    /// <p> Specifies configuration information for the input data for the inference, including S3 location of input data.. </p>
+    /// <p> Specifies configuration information for the input data for the inference, including Amazon S3 location of input data.</p>
     pub s3_input_configuration: std::option::Option<crate::model::InferenceS3InputConfiguration>,
-    /// <p>Indicates the difference between your time zone and Greenwich Mean Time (GMT). </p>
+    /// <p>Indicates the difference between your time zone and Coordinated Universal Time (UTC).</p>
     pub input_time_zone_offset: std::option::Option<std::string::String>,
     /// <p>Specifies configuration information for the input data for the inference, including timestamp format and delimiter. </p>
     pub inference_input_name_configuration:
         std::option::Option<crate::model::InferenceInputNameConfiguration>,
 }
 impl InferenceInputConfiguration {
-    /// <p> Specifies configuration information for the input data for the inference, including S3 location of input data.. </p>
+    /// <p> Specifies configuration information for the input data for the inference, including Amazon S3 location of input data.</p>
     pub fn s3_input_configuration(
         &self,
     ) -> std::option::Option<&crate::model::InferenceS3InputConfiguration> {
         self.s3_input_configuration.as_ref()
     }
-    /// <p>Indicates the difference between your time zone and Greenwich Mean Time (GMT). </p>
+    /// <p>Indicates the difference between your time zone and Coordinated Universal Time (UTC).</p>
     pub fn input_time_zone_offset(&self) -> std::option::Option<&str> {
         self.input_time_zone_offset.as_deref()
     }
@@ -209,7 +209,7 @@ pub mod inference_input_configuration {
             std::option::Option<crate::model::InferenceInputNameConfiguration>,
     }
     impl Builder {
-        /// <p> Specifies configuration information for the input data for the inference, including S3 location of input data.. </p>
+        /// <p> Specifies configuration information for the input data for the inference, including Amazon S3 location of input data.</p>
         pub fn s3_input_configuration(
             mut self,
             input: crate::model::InferenceS3InputConfiguration,
@@ -217,7 +217,7 @@ pub mod inference_input_configuration {
             self.s3_input_configuration = Some(input);
             self
         }
-        /// <p> Specifies configuration information for the input data for the inference, including S3 location of input data.. </p>
+        /// <p> Specifies configuration information for the input data for the inference, including Amazon S3 location of input data.</p>
         pub fn set_s3_input_configuration(
             mut self,
             input: std::option::Option<crate::model::InferenceS3InputConfiguration>,
@@ -225,12 +225,12 @@ pub mod inference_input_configuration {
             self.s3_input_configuration = input;
             self
         }
-        /// <p>Indicates the difference between your time zone and Greenwich Mean Time (GMT). </p>
+        /// <p>Indicates the difference between your time zone and Coordinated Universal Time (UTC).</p>
         pub fn input_time_zone_offset(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_time_zone_offset = Some(input.into());
             self
         }
-        /// <p>Indicates the difference between your time zone and Greenwich Mean Time (GMT). </p>
+        /// <p>Indicates the difference between your time zone and Coordinated Universal Time (UTC).</p>
         pub fn set_input_time_zone_offset(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -762,6 +762,8 @@ pub struct IngestionS3InputConfiguration {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The prefix for the S3 location being used for the input data for the data ingestion. </p>
     pub prefix: std::option::Option<std::string::String>,
+    /// <p> Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/* </p>
+    pub key_pattern: std::option::Option<std::string::String>,
 }
 impl IngestionS3InputConfiguration {
     /// <p>The name of the S3 bucket used for the input data for the data ingestion. </p>
@@ -772,12 +774,17 @@ impl IngestionS3InputConfiguration {
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
+    /// <p> Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/* </p>
+    pub fn key_pattern(&self) -> std::option::Option<&str> {
+        self.key_pattern.as_deref()
+    }
 }
 impl std::fmt::Debug for IngestionS3InputConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IngestionS3InputConfiguration");
         formatter.field("bucket", &self.bucket);
         formatter.field("prefix", &self.prefix);
+        formatter.field("key_pattern", &self.key_pattern);
         formatter.finish()
     }
 }
@@ -789,6 +796,7 @@ pub mod ingestion_s3_input_configuration {
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) prefix: std::option::Option<std::string::String>,
+        pub(crate) key_pattern: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the S3 bucket used for the input data for the data ingestion. </p>
@@ -811,11 +819,22 @@ pub mod ingestion_s3_input_configuration {
             self.prefix = input;
             self
         }
+        /// <p> Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/* </p>
+        pub fn key_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_pattern = Some(input.into());
+            self
+        }
+        /// <p> Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/* </p>
+        pub fn set_key_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_pattern = input;
+            self
+        }
         /// Consumes the builder and constructs a [`IngestionS3InputConfiguration`](crate::model::IngestionS3InputConfiguration)
         pub fn build(self) -> crate::model::IngestionS3InputConfiguration {
             crate::model::IngestionS3InputConfiguration {
                 bucket: self.bucket,
                 prefix: self.prefix,
+                key_pattern: self.key_pattern,
             }
         }
     }
@@ -824,6 +843,827 @@ impl IngestionS3InputConfiguration {
     /// Creates a new builder-style object to manufacture [`IngestionS3InputConfiguration`](crate::model::IngestionS3InputConfiguration)
     pub fn builder() -> crate::model::ingestion_s3_input_configuration::Builder {
         crate::model::ingestion_s3_input_configuration::Builder::default()
+    }
+}
+
+/// <p> Summary of ingestion statistics like whether data exists, number of missing values, number of invalid values and so on related to the particular sensor. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SensorStatisticsSummary {
+    /// <p> Name of the component to which the particular sensor belongs for which the statistics belong to. </p>
+    pub component_name: std::option::Option<std::string::String>,
+    /// <p> Name of the sensor that the statistics belong to. </p>
+    pub sensor_name: std::option::Option<std::string::String>,
+    /// <p> Parameter that indicates whether data exists for the sensor that the statistics belong to. </p>
+    pub data_exists: bool,
+    /// <p> Parameter that describes the total number of, and percentage of, values that are missing for the sensor that the statistics belong to. </p>
+    pub missing_values: std::option::Option<crate::model::CountPercent>,
+    /// <p> Parameter that describes the total number of, and percentage of, values that are invalid for the sensor that the statistics belong to. </p>
+    pub invalid_values: std::option::Option<crate::model::CountPercent>,
+    /// <p> Parameter that describes the total number of invalid date entries associated with the sensor that the statistics belong to. </p>
+    pub invalid_date_entries: std::option::Option<crate::model::CountPercent>,
+    /// <p> Parameter that describes the total number of duplicate timestamp records associated with the sensor that the statistics belong to. </p>
+    pub duplicate_timestamps: std::option::Option<crate::model::CountPercent>,
+    /// <p> Parameter that describes potential risk about whether data associated with the sensor is categorical. </p>
+    pub categorical_values: std::option::Option<crate::model::CategoricalValues>,
+    /// <p> Parameter that describes potential risk about whether data associated with the sensor has more than one operating mode. </p>
+    pub multiple_operating_modes: std::option::Option<crate::model::MultipleOperatingModes>,
+    /// <p> Parameter that describes potential risk about whether data associated with the sensor contains one or more large gaps between consecutive timestamps. </p>
+    pub large_timestamp_gaps: std::option::Option<crate::model::LargeTimestampGaps>,
+    /// <p> Parameter that describes potential risk about whether data associated with the sensor is mostly monotonic. </p>
+    pub monotonic_values: std::option::Option<crate::model::MonotonicValues>,
+    /// <p> Indicates the time reference to indicate the beginning of valid data associated with the sensor that the statistics belong to. </p>
+    pub data_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> Indicates the time reference to indicate the end of valid data associated with the sensor that the statistics belong to. </p>
+    pub data_end_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl SensorStatisticsSummary {
+    /// <p> Name of the component to which the particular sensor belongs for which the statistics belong to. </p>
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+    /// <p> Name of the sensor that the statistics belong to. </p>
+    pub fn sensor_name(&self) -> std::option::Option<&str> {
+        self.sensor_name.as_deref()
+    }
+    /// <p> Parameter that indicates whether data exists for the sensor that the statistics belong to. </p>
+    pub fn data_exists(&self) -> bool {
+        self.data_exists
+    }
+    /// <p> Parameter that describes the total number of, and percentage of, values that are missing for the sensor that the statistics belong to. </p>
+    pub fn missing_values(&self) -> std::option::Option<&crate::model::CountPercent> {
+        self.missing_values.as_ref()
+    }
+    /// <p> Parameter that describes the total number of, and percentage of, values that are invalid for the sensor that the statistics belong to. </p>
+    pub fn invalid_values(&self) -> std::option::Option<&crate::model::CountPercent> {
+        self.invalid_values.as_ref()
+    }
+    /// <p> Parameter that describes the total number of invalid date entries associated with the sensor that the statistics belong to. </p>
+    pub fn invalid_date_entries(&self) -> std::option::Option<&crate::model::CountPercent> {
+        self.invalid_date_entries.as_ref()
+    }
+    /// <p> Parameter that describes the total number of duplicate timestamp records associated with the sensor that the statistics belong to. </p>
+    pub fn duplicate_timestamps(&self) -> std::option::Option<&crate::model::CountPercent> {
+        self.duplicate_timestamps.as_ref()
+    }
+    /// <p> Parameter that describes potential risk about whether data associated with the sensor is categorical. </p>
+    pub fn categorical_values(&self) -> std::option::Option<&crate::model::CategoricalValues> {
+        self.categorical_values.as_ref()
+    }
+    /// <p> Parameter that describes potential risk about whether data associated with the sensor has more than one operating mode. </p>
+    pub fn multiple_operating_modes(
+        &self,
+    ) -> std::option::Option<&crate::model::MultipleOperatingModes> {
+        self.multiple_operating_modes.as_ref()
+    }
+    /// <p> Parameter that describes potential risk about whether data associated with the sensor contains one or more large gaps between consecutive timestamps. </p>
+    pub fn large_timestamp_gaps(&self) -> std::option::Option<&crate::model::LargeTimestampGaps> {
+        self.large_timestamp_gaps.as_ref()
+    }
+    /// <p> Parameter that describes potential risk about whether data associated with the sensor is mostly monotonic. </p>
+    pub fn monotonic_values(&self) -> std::option::Option<&crate::model::MonotonicValues> {
+        self.monotonic_values.as_ref()
+    }
+    /// <p> Indicates the time reference to indicate the beginning of valid data associated with the sensor that the statistics belong to. </p>
+    pub fn data_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.data_start_time.as_ref()
+    }
+    /// <p> Indicates the time reference to indicate the end of valid data associated with the sensor that the statistics belong to. </p>
+    pub fn data_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.data_end_time.as_ref()
+    }
+}
+impl std::fmt::Debug for SensorStatisticsSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SensorStatisticsSummary");
+        formatter.field("component_name", &self.component_name);
+        formatter.field("sensor_name", &self.sensor_name);
+        formatter.field("data_exists", &self.data_exists);
+        formatter.field("missing_values", &self.missing_values);
+        formatter.field("invalid_values", &self.invalid_values);
+        formatter.field("invalid_date_entries", &self.invalid_date_entries);
+        formatter.field("duplicate_timestamps", &self.duplicate_timestamps);
+        formatter.field("categorical_values", &self.categorical_values);
+        formatter.field("multiple_operating_modes", &self.multiple_operating_modes);
+        formatter.field("large_timestamp_gaps", &self.large_timestamp_gaps);
+        formatter.field("monotonic_values", &self.monotonic_values);
+        formatter.field("data_start_time", &self.data_start_time);
+        formatter.field("data_end_time", &self.data_end_time);
+        formatter.finish()
+    }
+}
+/// See [`SensorStatisticsSummary`](crate::model::SensorStatisticsSummary)
+pub mod sensor_statistics_summary {
+    /// A builder for [`SensorStatisticsSummary`](crate::model::SensorStatisticsSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) component_name: std::option::Option<std::string::String>,
+        pub(crate) sensor_name: std::option::Option<std::string::String>,
+        pub(crate) data_exists: std::option::Option<bool>,
+        pub(crate) missing_values: std::option::Option<crate::model::CountPercent>,
+        pub(crate) invalid_values: std::option::Option<crate::model::CountPercent>,
+        pub(crate) invalid_date_entries: std::option::Option<crate::model::CountPercent>,
+        pub(crate) duplicate_timestamps: std::option::Option<crate::model::CountPercent>,
+        pub(crate) categorical_values: std::option::Option<crate::model::CategoricalValues>,
+        pub(crate) multiple_operating_modes:
+            std::option::Option<crate::model::MultipleOperatingModes>,
+        pub(crate) large_timestamp_gaps: std::option::Option<crate::model::LargeTimestampGaps>,
+        pub(crate) monotonic_values: std::option::Option<crate::model::MonotonicValues>,
+        pub(crate) data_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) data_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p> Name of the component to which the particular sensor belongs for which the statistics belong to. </p>
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.component_name = Some(input.into());
+            self
+        }
+        /// <p> Name of the component to which the particular sensor belongs for which the statistics belong to. </p>
+        pub fn set_component_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.component_name = input;
+            self
+        }
+        /// <p> Name of the sensor that the statistics belong to. </p>
+        pub fn sensor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sensor_name = Some(input.into());
+            self
+        }
+        /// <p> Name of the sensor that the statistics belong to. </p>
+        pub fn set_sensor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sensor_name = input;
+            self
+        }
+        /// <p> Parameter that indicates whether data exists for the sensor that the statistics belong to. </p>
+        pub fn data_exists(mut self, input: bool) -> Self {
+            self.data_exists = Some(input);
+            self
+        }
+        /// <p> Parameter that indicates whether data exists for the sensor that the statistics belong to. </p>
+        pub fn set_data_exists(mut self, input: std::option::Option<bool>) -> Self {
+            self.data_exists = input;
+            self
+        }
+        /// <p> Parameter that describes the total number of, and percentage of, values that are missing for the sensor that the statistics belong to. </p>
+        pub fn missing_values(mut self, input: crate::model::CountPercent) -> Self {
+            self.missing_values = Some(input);
+            self
+        }
+        /// <p> Parameter that describes the total number of, and percentage of, values that are missing for the sensor that the statistics belong to. </p>
+        pub fn set_missing_values(
+            mut self,
+            input: std::option::Option<crate::model::CountPercent>,
+        ) -> Self {
+            self.missing_values = input;
+            self
+        }
+        /// <p> Parameter that describes the total number of, and percentage of, values that are invalid for the sensor that the statistics belong to. </p>
+        pub fn invalid_values(mut self, input: crate::model::CountPercent) -> Self {
+            self.invalid_values = Some(input);
+            self
+        }
+        /// <p> Parameter that describes the total number of, and percentage of, values that are invalid for the sensor that the statistics belong to. </p>
+        pub fn set_invalid_values(
+            mut self,
+            input: std::option::Option<crate::model::CountPercent>,
+        ) -> Self {
+            self.invalid_values = input;
+            self
+        }
+        /// <p> Parameter that describes the total number of invalid date entries associated with the sensor that the statistics belong to. </p>
+        pub fn invalid_date_entries(mut self, input: crate::model::CountPercent) -> Self {
+            self.invalid_date_entries = Some(input);
+            self
+        }
+        /// <p> Parameter that describes the total number of invalid date entries associated with the sensor that the statistics belong to. </p>
+        pub fn set_invalid_date_entries(
+            mut self,
+            input: std::option::Option<crate::model::CountPercent>,
+        ) -> Self {
+            self.invalid_date_entries = input;
+            self
+        }
+        /// <p> Parameter that describes the total number of duplicate timestamp records associated with the sensor that the statistics belong to. </p>
+        pub fn duplicate_timestamps(mut self, input: crate::model::CountPercent) -> Self {
+            self.duplicate_timestamps = Some(input);
+            self
+        }
+        /// <p> Parameter that describes the total number of duplicate timestamp records associated with the sensor that the statistics belong to. </p>
+        pub fn set_duplicate_timestamps(
+            mut self,
+            input: std::option::Option<crate::model::CountPercent>,
+        ) -> Self {
+            self.duplicate_timestamps = input;
+            self
+        }
+        /// <p> Parameter that describes potential risk about whether data associated with the sensor is categorical. </p>
+        pub fn categorical_values(mut self, input: crate::model::CategoricalValues) -> Self {
+            self.categorical_values = Some(input);
+            self
+        }
+        /// <p> Parameter that describes potential risk about whether data associated with the sensor is categorical. </p>
+        pub fn set_categorical_values(
+            mut self,
+            input: std::option::Option<crate::model::CategoricalValues>,
+        ) -> Self {
+            self.categorical_values = input;
+            self
+        }
+        /// <p> Parameter that describes potential risk about whether data associated with the sensor has more than one operating mode. </p>
+        pub fn multiple_operating_modes(
+            mut self,
+            input: crate::model::MultipleOperatingModes,
+        ) -> Self {
+            self.multiple_operating_modes = Some(input);
+            self
+        }
+        /// <p> Parameter that describes potential risk about whether data associated with the sensor has more than one operating mode. </p>
+        pub fn set_multiple_operating_modes(
+            mut self,
+            input: std::option::Option<crate::model::MultipleOperatingModes>,
+        ) -> Self {
+            self.multiple_operating_modes = input;
+            self
+        }
+        /// <p> Parameter that describes potential risk about whether data associated with the sensor contains one or more large gaps between consecutive timestamps. </p>
+        pub fn large_timestamp_gaps(mut self, input: crate::model::LargeTimestampGaps) -> Self {
+            self.large_timestamp_gaps = Some(input);
+            self
+        }
+        /// <p> Parameter that describes potential risk about whether data associated with the sensor contains one or more large gaps between consecutive timestamps. </p>
+        pub fn set_large_timestamp_gaps(
+            mut self,
+            input: std::option::Option<crate::model::LargeTimestampGaps>,
+        ) -> Self {
+            self.large_timestamp_gaps = input;
+            self
+        }
+        /// <p> Parameter that describes potential risk about whether data associated with the sensor is mostly monotonic. </p>
+        pub fn monotonic_values(mut self, input: crate::model::MonotonicValues) -> Self {
+            self.monotonic_values = Some(input);
+            self
+        }
+        /// <p> Parameter that describes potential risk about whether data associated with the sensor is mostly monotonic. </p>
+        pub fn set_monotonic_values(
+            mut self,
+            input: std::option::Option<crate::model::MonotonicValues>,
+        ) -> Self {
+            self.monotonic_values = input;
+            self
+        }
+        /// <p> Indicates the time reference to indicate the beginning of valid data associated with the sensor that the statistics belong to. </p>
+        pub fn data_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.data_start_time = Some(input);
+            self
+        }
+        /// <p> Indicates the time reference to indicate the beginning of valid data associated with the sensor that the statistics belong to. </p>
+        pub fn set_data_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.data_start_time = input;
+            self
+        }
+        /// <p> Indicates the time reference to indicate the end of valid data associated with the sensor that the statistics belong to. </p>
+        pub fn data_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.data_end_time = Some(input);
+            self
+        }
+        /// <p> Indicates the time reference to indicate the end of valid data associated with the sensor that the statistics belong to. </p>
+        pub fn set_data_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.data_end_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SensorStatisticsSummary`](crate::model::SensorStatisticsSummary)
+        pub fn build(self) -> crate::model::SensorStatisticsSummary {
+            crate::model::SensorStatisticsSummary {
+                component_name: self.component_name,
+                sensor_name: self.sensor_name,
+                data_exists: self.data_exists.unwrap_or_default(),
+                missing_values: self.missing_values,
+                invalid_values: self.invalid_values,
+                invalid_date_entries: self.invalid_date_entries,
+                duplicate_timestamps: self.duplicate_timestamps,
+                categorical_values: self.categorical_values,
+                multiple_operating_modes: self.multiple_operating_modes,
+                large_timestamp_gaps: self.large_timestamp_gaps,
+                monotonic_values: self.monotonic_values,
+                data_start_time: self.data_start_time,
+                data_end_time: self.data_end_time,
+            }
+        }
+    }
+}
+impl SensorStatisticsSummary {
+    /// Creates a new builder-style object to manufacture [`SensorStatisticsSummary`](crate::model::SensorStatisticsSummary)
+    pub fn builder() -> crate::model::sensor_statistics_summary::Builder {
+        crate::model::sensor_statistics_summary::Builder::default()
+    }
+}
+
+/// <p> Entity that comprises information on monotonic values in the data. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MonotonicValues {
+    /// <p> Indicates whether there is a potential data issue related to having monotonic values. </p>
+    pub status: std::option::Option<crate::model::StatisticalIssueStatus>,
+    /// <p> Indicates the monotonicity of values. Can be INCREASING, DECREASING, or STATIC. </p>
+    pub monotonicity: std::option::Option<crate::model::Monotonicity>,
+}
+impl MonotonicValues {
+    /// <p> Indicates whether there is a potential data issue related to having monotonic values. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatisticalIssueStatus> {
+        self.status.as_ref()
+    }
+    /// <p> Indicates the monotonicity of values. Can be INCREASING, DECREASING, or STATIC. </p>
+    pub fn monotonicity(&self) -> std::option::Option<&crate::model::Monotonicity> {
+        self.monotonicity.as_ref()
+    }
+}
+impl std::fmt::Debug for MonotonicValues {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MonotonicValues");
+        formatter.field("status", &self.status);
+        formatter.field("monotonicity", &self.monotonicity);
+        formatter.finish()
+    }
+}
+/// See [`MonotonicValues`](crate::model::MonotonicValues)
+pub mod monotonic_values {
+    /// A builder for [`MonotonicValues`](crate::model::MonotonicValues)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::StatisticalIssueStatus>,
+        pub(crate) monotonicity: std::option::Option<crate::model::Monotonicity>,
+    }
+    impl Builder {
+        /// <p> Indicates whether there is a potential data issue related to having monotonic values. </p>
+        pub fn status(mut self, input: crate::model::StatisticalIssueStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p> Indicates whether there is a potential data issue related to having monotonic values. </p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::StatisticalIssueStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p> Indicates the monotonicity of values. Can be INCREASING, DECREASING, or STATIC. </p>
+        pub fn monotonicity(mut self, input: crate::model::Monotonicity) -> Self {
+            self.monotonicity = Some(input);
+            self
+        }
+        /// <p> Indicates the monotonicity of values. Can be INCREASING, DECREASING, or STATIC. </p>
+        pub fn set_monotonicity(
+            mut self,
+            input: std::option::Option<crate::model::Monotonicity>,
+        ) -> Self {
+            self.monotonicity = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MonotonicValues`](crate::model::MonotonicValues)
+        pub fn build(self) -> crate::model::MonotonicValues {
+            crate::model::MonotonicValues {
+                status: self.status,
+                monotonicity: self.monotonicity,
+            }
+        }
+    }
+}
+impl MonotonicValues {
+    /// Creates a new builder-style object to manufacture [`MonotonicValues`](crate::model::MonotonicValues)
+    pub fn builder() -> crate::model::monotonic_values::Builder {
+        crate::model::monotonic_values::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Monotonicity {
+    #[allow(missing_docs)] // documentation missing in model
+    Decreasing,
+    #[allow(missing_docs)] // documentation missing in model
+    Increasing,
+    #[allow(missing_docs)] // documentation missing in model
+    Static,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Monotonicity {
+    fn from(s: &str) -> Self {
+        match s {
+            "DECREASING" => Monotonicity::Decreasing,
+            "INCREASING" => Monotonicity::Increasing,
+            "STATIC" => Monotonicity::Static,
+            other => Monotonicity::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Monotonicity {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Monotonicity::from(s))
+    }
+}
+impl Monotonicity {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Monotonicity::Decreasing => "DECREASING",
+            Monotonicity::Increasing => "INCREASING",
+            Monotonicity::Static => "STATIC",
+            Monotonicity::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DECREASING", "INCREASING", "STATIC"]
+    }
+}
+impl AsRef<str> for Monotonicity {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum StatisticalIssueStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    NoIssueDetected,
+    #[allow(missing_docs)] // documentation missing in model
+    PotentialIssueDetected,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for StatisticalIssueStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "NO_ISSUE_DETECTED" => StatisticalIssueStatus::NoIssueDetected,
+            "POTENTIAL_ISSUE_DETECTED" => StatisticalIssueStatus::PotentialIssueDetected,
+            other => StatisticalIssueStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for StatisticalIssueStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(StatisticalIssueStatus::from(s))
+    }
+}
+impl StatisticalIssueStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            StatisticalIssueStatus::NoIssueDetected => "NO_ISSUE_DETECTED",
+            StatisticalIssueStatus::PotentialIssueDetected => "POTENTIAL_ISSUE_DETECTED",
+            StatisticalIssueStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["NO_ISSUE_DETECTED", "POTENTIAL_ISSUE_DETECTED"]
+    }
+}
+impl AsRef<str> for StatisticalIssueStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p> Entity that comprises information on large gaps between consecutive timestamps in data. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LargeTimestampGaps {
+    /// <p> Indicates whether there is a potential data issue related to large gaps in timestamps. </p>
+    pub status: std::option::Option<crate::model::StatisticalIssueStatus>,
+    /// <p> Indicates the number of large timestamp gaps, if there are any. </p>
+    pub number_of_large_timestamp_gaps: std::option::Option<i32>,
+    /// <p> Indicates the size of the largest timestamp gap, in days. </p>
+    pub max_timestamp_gap_in_days: std::option::Option<i32>,
+}
+impl LargeTimestampGaps {
+    /// <p> Indicates whether there is a potential data issue related to large gaps in timestamps. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatisticalIssueStatus> {
+        self.status.as_ref()
+    }
+    /// <p> Indicates the number of large timestamp gaps, if there are any. </p>
+    pub fn number_of_large_timestamp_gaps(&self) -> std::option::Option<i32> {
+        self.number_of_large_timestamp_gaps
+    }
+    /// <p> Indicates the size of the largest timestamp gap, in days. </p>
+    pub fn max_timestamp_gap_in_days(&self) -> std::option::Option<i32> {
+        self.max_timestamp_gap_in_days
+    }
+}
+impl std::fmt::Debug for LargeTimestampGaps {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LargeTimestampGaps");
+        formatter.field("status", &self.status);
+        formatter.field(
+            "number_of_large_timestamp_gaps",
+            &self.number_of_large_timestamp_gaps,
+        );
+        formatter.field("max_timestamp_gap_in_days", &self.max_timestamp_gap_in_days);
+        formatter.finish()
+    }
+}
+/// See [`LargeTimestampGaps`](crate::model::LargeTimestampGaps)
+pub mod large_timestamp_gaps {
+    /// A builder for [`LargeTimestampGaps`](crate::model::LargeTimestampGaps)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::StatisticalIssueStatus>,
+        pub(crate) number_of_large_timestamp_gaps: std::option::Option<i32>,
+        pub(crate) max_timestamp_gap_in_days: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p> Indicates whether there is a potential data issue related to large gaps in timestamps. </p>
+        pub fn status(mut self, input: crate::model::StatisticalIssueStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p> Indicates whether there is a potential data issue related to large gaps in timestamps. </p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::StatisticalIssueStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p> Indicates the number of large timestamp gaps, if there are any. </p>
+        pub fn number_of_large_timestamp_gaps(mut self, input: i32) -> Self {
+            self.number_of_large_timestamp_gaps = Some(input);
+            self
+        }
+        /// <p> Indicates the number of large timestamp gaps, if there are any. </p>
+        pub fn set_number_of_large_timestamp_gaps(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.number_of_large_timestamp_gaps = input;
+            self
+        }
+        /// <p> Indicates the size of the largest timestamp gap, in days. </p>
+        pub fn max_timestamp_gap_in_days(mut self, input: i32) -> Self {
+            self.max_timestamp_gap_in_days = Some(input);
+            self
+        }
+        /// <p> Indicates the size of the largest timestamp gap, in days. </p>
+        pub fn set_max_timestamp_gap_in_days(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_timestamp_gap_in_days = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LargeTimestampGaps`](crate::model::LargeTimestampGaps)
+        pub fn build(self) -> crate::model::LargeTimestampGaps {
+            crate::model::LargeTimestampGaps {
+                status: self.status,
+                number_of_large_timestamp_gaps: self.number_of_large_timestamp_gaps,
+                max_timestamp_gap_in_days: self.max_timestamp_gap_in_days,
+            }
+        }
+    }
+}
+impl LargeTimestampGaps {
+    /// Creates a new builder-style object to manufacture [`LargeTimestampGaps`](crate::model::LargeTimestampGaps)
+    pub fn builder() -> crate::model::large_timestamp_gaps::Builder {
+        crate::model::large_timestamp_gaps::Builder::default()
+    }
+}
+
+/// <p> Entity that comprises information on operating modes in data. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MultipleOperatingModes {
+    /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
+    pub status: std::option::Option<crate::model::StatisticalIssueStatus>,
+}
+impl MultipleOperatingModes {
+    /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatisticalIssueStatus> {
+        self.status.as_ref()
+    }
+}
+impl std::fmt::Debug for MultipleOperatingModes {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MultipleOperatingModes");
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`MultipleOperatingModes`](crate::model::MultipleOperatingModes)
+pub mod multiple_operating_modes {
+    /// A builder for [`MultipleOperatingModes`](crate::model::MultipleOperatingModes)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::StatisticalIssueStatus>,
+    }
+    impl Builder {
+        /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
+        pub fn status(mut self, input: crate::model::StatisticalIssueStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::StatisticalIssueStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MultipleOperatingModes`](crate::model::MultipleOperatingModes)
+        pub fn build(self) -> crate::model::MultipleOperatingModes {
+            crate::model::MultipleOperatingModes {
+                status: self.status,
+            }
+        }
+    }
+}
+impl MultipleOperatingModes {
+    /// Creates a new builder-style object to manufacture [`MultipleOperatingModes`](crate::model::MultipleOperatingModes)
+    pub fn builder() -> crate::model::multiple_operating_modes::Builder {
+        crate::model::multiple_operating_modes::Builder::default()
+    }
+}
+
+/// <p> Entity that comprises information on categorical values in data. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CategoricalValues {
+    /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
+    pub status: std::option::Option<crate::model::StatisticalIssueStatus>,
+    /// <p> Indicates the number of categories in the data. </p>
+    pub number_of_category: std::option::Option<i32>,
+}
+impl CategoricalValues {
+    /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatisticalIssueStatus> {
+        self.status.as_ref()
+    }
+    /// <p> Indicates the number of categories in the data. </p>
+    pub fn number_of_category(&self) -> std::option::Option<i32> {
+        self.number_of_category
+    }
+}
+impl std::fmt::Debug for CategoricalValues {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CategoricalValues");
+        formatter.field("status", &self.status);
+        formatter.field("number_of_category", &self.number_of_category);
+        formatter.finish()
+    }
+}
+/// See [`CategoricalValues`](crate::model::CategoricalValues)
+pub mod categorical_values {
+    /// A builder for [`CategoricalValues`](crate::model::CategoricalValues)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::StatisticalIssueStatus>,
+        pub(crate) number_of_category: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
+        pub fn status(mut self, input: crate::model::StatisticalIssueStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::StatisticalIssueStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p> Indicates the number of categories in the data. </p>
+        pub fn number_of_category(mut self, input: i32) -> Self {
+            self.number_of_category = Some(input);
+            self
+        }
+        /// <p> Indicates the number of categories in the data. </p>
+        pub fn set_number_of_category(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_category = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CategoricalValues`](crate::model::CategoricalValues)
+        pub fn build(self) -> crate::model::CategoricalValues {
+            crate::model::CategoricalValues {
+                status: self.status,
+                number_of_category: self.number_of_category,
+            }
+        }
+    }
+}
+impl CategoricalValues {
+    /// Creates a new builder-style object to manufacture [`CategoricalValues`](crate::model::CategoricalValues)
+    pub fn builder() -> crate::model::categorical_values::Builder {
+        crate::model::categorical_values::Builder::default()
+    }
+}
+
+/// <p> Entity that comprises information of count and percentage. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CountPercent {
+    /// <p> Indicates the count of occurences of the given statistic. </p>
+    pub count: std::option::Option<i32>,
+    /// <p> Indicates the percentage of occurances of the given statistic. </p>
+    pub percentage: f32,
+}
+impl CountPercent {
+    /// <p> Indicates the count of occurences of the given statistic. </p>
+    pub fn count(&self) -> std::option::Option<i32> {
+        self.count
+    }
+    /// <p> Indicates the percentage of occurances of the given statistic. </p>
+    pub fn percentage(&self) -> f32 {
+        self.percentage
+    }
+}
+impl std::fmt::Debug for CountPercent {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CountPercent");
+        formatter.field("count", &self.count);
+        formatter.field("percentage", &self.percentage);
+        formatter.finish()
+    }
+}
+/// See [`CountPercent`](crate::model::CountPercent)
+pub mod count_percent {
+    /// A builder for [`CountPercent`](crate::model::CountPercent)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) count: std::option::Option<i32>,
+        pub(crate) percentage: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p> Indicates the count of occurences of the given statistic. </p>
+        pub fn count(mut self, input: i32) -> Self {
+            self.count = Some(input);
+            self
+        }
+        /// <p> Indicates the count of occurences of the given statistic. </p>
+        pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.count = input;
+            self
+        }
+        /// <p> Indicates the percentage of occurances of the given statistic. </p>
+        pub fn percentage(mut self, input: f32) -> Self {
+            self.percentage = Some(input);
+            self
+        }
+        /// <p> Indicates the percentage of occurances of the given statistic. </p>
+        pub fn set_percentage(mut self, input: std::option::Option<f32>) -> Self {
+            self.percentage = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CountPercent`](crate::model::CountPercent)
+        pub fn build(self) -> crate::model::CountPercent {
+            crate::model::CountPercent {
+                count: self.count,
+                percentage: self.percentage.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl CountPercent {
+    /// Creates a new builder-style object to manufacture [`CountPercent`](crate::model::CountPercent)
+    pub fn builder() -> crate::model::count_percent::Builder {
+        crate::model::count_percent::Builder::default()
     }
 }
 
@@ -1241,7 +2081,7 @@ pub struct InferenceExecutionSummary {
     pub data_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
     pub data_input_configuration: std::option::Option<crate::model::InferenceInputConfiguration>,
-    /// <p> Specifies configuration information for the output results from for the inference execution, including the output S3 location. </p>
+    /// <p> Specifies configuration information for the output results from for the inference execution, including the output Amazon S3 location. </p>
     pub data_output_configuration: std::option::Option<crate::model::InferenceOutputConfiguration>,
     /// <p> </p>
     pub customer_result_object: std::option::Option<crate::model::S3Object>,
@@ -1285,7 +2125,7 @@ impl InferenceExecutionSummary {
     ) -> std::option::Option<&crate::model::InferenceInputConfiguration> {
         self.data_input_configuration.as_ref()
     }
-    /// <p> Specifies configuration information for the output results from for the inference execution, including the output S3 location. </p>
+    /// <p> Specifies configuration information for the output results from for the inference execution, including the output Amazon S3 location. </p>
     pub fn data_output_configuration(
         &self,
     ) -> std::option::Option<&crate::model::InferenceOutputConfiguration> {
@@ -1445,7 +2285,7 @@ pub mod inference_execution_summary {
             self.data_input_configuration = input;
             self
         }
-        /// <p> Specifies configuration information for the output results from for the inference execution, including the output S3 location. </p>
+        /// <p> Specifies configuration information for the output results from for the inference execution, including the output Amazon S3 location. </p>
         pub fn data_output_configuration(
             mut self,
             input: crate::model::InferenceOutputConfiguration,
@@ -1453,7 +2293,7 @@ pub mod inference_execution_summary {
             self.data_output_configuration = Some(input);
             self
         }
-        /// <p> Specifies configuration information for the output results from for the inference execution, including the output S3 location. </p>
+        /// <p> Specifies configuration information for the output results from for the inference execution, including the output Amazon S3 location. </p>
         pub fn set_data_output_configuration(
             mut self,
             input: std::option::Option<crate::model::InferenceOutputConfiguration>,
@@ -1844,7 +2684,7 @@ pub struct DataIngestionJobSummary {
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset used in the data ingestion job. </p>
     pub dataset_arn: std::option::Option<std::string::String>,
-    /// <p> Specifies information for the input data for the data inference job, including data S3 location parameters. </p>
+    /// <p> Specifies information for the input data for the data inference job, including data Amazon S3 location parameters. </p>
     pub ingestion_input_configuration:
         std::option::Option<crate::model::IngestionInputConfiguration>,
     /// <p>Indicates the status of the data ingestion job. </p>
@@ -1863,7 +2703,7 @@ impl DataIngestionJobSummary {
     pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
-    /// <p> Specifies information for the input data for the data inference job, including data S3 location parameters. </p>
+    /// <p> Specifies information for the input data for the data inference job, including data Amazon S3 location parameters. </p>
     pub fn ingestion_input_configuration(
         &self,
     ) -> std::option::Option<&crate::model::IngestionInputConfiguration> {
@@ -1932,7 +2772,7 @@ pub mod data_ingestion_job_summary {
             self.dataset_arn = input;
             self
         }
-        /// <p> Specifies information for the input data for the data inference job, including data S3 location parameters. </p>
+        /// <p> Specifies information for the input data for the data inference job, including data Amazon S3 location parameters. </p>
         pub fn ingestion_input_configuration(
             mut self,
             input: crate::model::IngestionInputConfiguration,
@@ -1940,7 +2780,7 @@ pub mod data_ingestion_job_summary {
             self.ingestion_input_configuration = Some(input);
             self
         }
-        /// <p> Specifies information for the input data for the data inference job, including data S3 location parameters. </p>
+        /// <p> Specifies information for the input data for the data inference job, including data Amazon S3 location parameters. </p>
         pub fn set_ingestion_input_configuration(
             mut self,
             input: std::option::Option<crate::model::IngestionInputConfiguration>,
@@ -2269,6 +3109,746 @@ impl LabelsS3InputConfiguration {
     /// Creates a new builder-style object to manufacture [`LabelsS3InputConfiguration`](crate::model::LabelsS3InputConfiguration)
     pub fn builder() -> crate::model::labels_s3_input_configuration::Builder {
         crate::model::labels_s3_input_configuration::Builder::default()
+    }
+}
+
+/// <p>Gives statistics about how many files have been ingested, and which files have not been ingested, for a particular ingestion job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IngestedFilesSummary {
+    /// <p>Indicates the total number of files that were submitted for ingestion.</p>
+    pub total_number_of_files: std::option::Option<i32>,
+    /// <p>Indicates the number of files that were successfully ingested.</p>
+    pub ingested_number_of_files: std::option::Option<i32>,
+    /// <p>Indicates the number of files that were discarded. A file could be discarded because its format is invalid (for example, a jpg or pdf) or not readable.</p>
+    pub discarded_files: std::option::Option<std::vec::Vec<crate::model::S3Object>>,
+}
+impl IngestedFilesSummary {
+    /// <p>Indicates the total number of files that were submitted for ingestion.</p>
+    pub fn total_number_of_files(&self) -> std::option::Option<i32> {
+        self.total_number_of_files
+    }
+    /// <p>Indicates the number of files that were successfully ingested.</p>
+    pub fn ingested_number_of_files(&self) -> std::option::Option<i32> {
+        self.ingested_number_of_files
+    }
+    /// <p>Indicates the number of files that were discarded. A file could be discarded because its format is invalid (for example, a jpg or pdf) or not readable.</p>
+    pub fn discarded_files(&self) -> std::option::Option<&[crate::model::S3Object]> {
+        self.discarded_files.as_deref()
+    }
+}
+impl std::fmt::Debug for IngestedFilesSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IngestedFilesSummary");
+        formatter.field("total_number_of_files", &self.total_number_of_files);
+        formatter.field("ingested_number_of_files", &self.ingested_number_of_files);
+        formatter.field("discarded_files", &self.discarded_files);
+        formatter.finish()
+    }
+}
+/// See [`IngestedFilesSummary`](crate::model::IngestedFilesSummary)
+pub mod ingested_files_summary {
+    /// A builder for [`IngestedFilesSummary`](crate::model::IngestedFilesSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) total_number_of_files: std::option::Option<i32>,
+        pub(crate) ingested_number_of_files: std::option::Option<i32>,
+        pub(crate) discarded_files: std::option::Option<std::vec::Vec<crate::model::S3Object>>,
+    }
+    impl Builder {
+        /// <p>Indicates the total number of files that were submitted for ingestion.</p>
+        pub fn total_number_of_files(mut self, input: i32) -> Self {
+            self.total_number_of_files = Some(input);
+            self
+        }
+        /// <p>Indicates the total number of files that were submitted for ingestion.</p>
+        pub fn set_total_number_of_files(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_number_of_files = input;
+            self
+        }
+        /// <p>Indicates the number of files that were successfully ingested.</p>
+        pub fn ingested_number_of_files(mut self, input: i32) -> Self {
+            self.ingested_number_of_files = Some(input);
+            self
+        }
+        /// <p>Indicates the number of files that were successfully ingested.</p>
+        pub fn set_ingested_number_of_files(mut self, input: std::option::Option<i32>) -> Self {
+            self.ingested_number_of_files = input;
+            self
+        }
+        /// Appends an item to `discarded_files`.
+        ///
+        /// To override the contents of this collection use [`set_discarded_files`](Self::set_discarded_files).
+        ///
+        /// <p>Indicates the number of files that were discarded. A file could be discarded because its format is invalid (for example, a jpg or pdf) or not readable.</p>
+        pub fn discarded_files(mut self, input: crate::model::S3Object) -> Self {
+            let mut v = self.discarded_files.unwrap_or_default();
+            v.push(input);
+            self.discarded_files = Some(v);
+            self
+        }
+        /// <p>Indicates the number of files that were discarded. A file could be discarded because its format is invalid (for example, a jpg or pdf) or not readable.</p>
+        pub fn set_discarded_files(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::S3Object>>,
+        ) -> Self {
+            self.discarded_files = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IngestedFilesSummary`](crate::model::IngestedFilesSummary)
+        pub fn build(self) -> crate::model::IngestedFilesSummary {
+            crate::model::IngestedFilesSummary {
+                total_number_of_files: self.total_number_of_files,
+                ingested_number_of_files: self.ingested_number_of_files,
+                discarded_files: self.discarded_files,
+            }
+        }
+    }
+}
+impl IngestedFilesSummary {
+    /// Creates a new builder-style object to manufacture [`IngestedFilesSummary`](crate::model::IngestedFilesSummary)
+    pub fn builder() -> crate::model::ingested_files_summary::Builder {
+        crate::model::ingested_files_summary::Builder::default()
+    }
+}
+
+/// <p> DataQualitySummary gives aggregated statistics over all the sensors about a completed ingestion job. It primarily gives more information about statistics over different incorrect data like MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, DuplicateTimeStamps. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataQualitySummary {
+    /// <p> Parameter that gives information about insufficient data for sensors in the dataset. This includes information about those sensors that have complete data missing and those with a short date range. </p>
+    pub insufficient_sensor_data: std::option::Option<crate::model::InsufficientSensorData>,
+    /// <p> Parameter that gives information about data that is missing over all the sensors in the input data. </p>
+    pub missing_sensor_data: std::option::Option<crate::model::MissingSensorData>,
+    /// <p> Parameter that gives information about data that is invalid over all the sensors in the input data. </p>
+    pub invalid_sensor_data: std::option::Option<crate::model::InvalidSensorData>,
+    /// <p> Parameter that gives information about unsupported timestamps in the input data. </p>
+    pub unsupported_timestamps: std::option::Option<crate::model::UnsupportedTimestamps>,
+    /// <p> Parameter that gives information about duplicate timestamps in the input data. </p>
+    pub duplicate_timestamps: std::option::Option<crate::model::DuplicateTimestamps>,
+}
+impl DataQualitySummary {
+    /// <p> Parameter that gives information about insufficient data for sensors in the dataset. This includes information about those sensors that have complete data missing and those with a short date range. </p>
+    pub fn insufficient_sensor_data(
+        &self,
+    ) -> std::option::Option<&crate::model::InsufficientSensorData> {
+        self.insufficient_sensor_data.as_ref()
+    }
+    /// <p> Parameter that gives information about data that is missing over all the sensors in the input data. </p>
+    pub fn missing_sensor_data(&self) -> std::option::Option<&crate::model::MissingSensorData> {
+        self.missing_sensor_data.as_ref()
+    }
+    /// <p> Parameter that gives information about data that is invalid over all the sensors in the input data. </p>
+    pub fn invalid_sensor_data(&self) -> std::option::Option<&crate::model::InvalidSensorData> {
+        self.invalid_sensor_data.as_ref()
+    }
+    /// <p> Parameter that gives information about unsupported timestamps in the input data. </p>
+    pub fn unsupported_timestamps(
+        &self,
+    ) -> std::option::Option<&crate::model::UnsupportedTimestamps> {
+        self.unsupported_timestamps.as_ref()
+    }
+    /// <p> Parameter that gives information about duplicate timestamps in the input data. </p>
+    pub fn duplicate_timestamps(&self) -> std::option::Option<&crate::model::DuplicateTimestamps> {
+        self.duplicate_timestamps.as_ref()
+    }
+}
+impl std::fmt::Debug for DataQualitySummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataQualitySummary");
+        formatter.field("insufficient_sensor_data", &self.insufficient_sensor_data);
+        formatter.field("missing_sensor_data", &self.missing_sensor_data);
+        formatter.field("invalid_sensor_data", &self.invalid_sensor_data);
+        formatter.field("unsupported_timestamps", &self.unsupported_timestamps);
+        formatter.field("duplicate_timestamps", &self.duplicate_timestamps);
+        formatter.finish()
+    }
+}
+/// See [`DataQualitySummary`](crate::model::DataQualitySummary)
+pub mod data_quality_summary {
+    /// A builder for [`DataQualitySummary`](crate::model::DataQualitySummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) insufficient_sensor_data:
+            std::option::Option<crate::model::InsufficientSensorData>,
+        pub(crate) missing_sensor_data: std::option::Option<crate::model::MissingSensorData>,
+        pub(crate) invalid_sensor_data: std::option::Option<crate::model::InvalidSensorData>,
+        pub(crate) unsupported_timestamps: std::option::Option<crate::model::UnsupportedTimestamps>,
+        pub(crate) duplicate_timestamps: std::option::Option<crate::model::DuplicateTimestamps>,
+    }
+    impl Builder {
+        /// <p> Parameter that gives information about insufficient data for sensors in the dataset. This includes information about those sensors that have complete data missing and those with a short date range. </p>
+        pub fn insufficient_sensor_data(
+            mut self,
+            input: crate::model::InsufficientSensorData,
+        ) -> Self {
+            self.insufficient_sensor_data = Some(input);
+            self
+        }
+        /// <p> Parameter that gives information about insufficient data for sensors in the dataset. This includes information about those sensors that have complete data missing and those with a short date range. </p>
+        pub fn set_insufficient_sensor_data(
+            mut self,
+            input: std::option::Option<crate::model::InsufficientSensorData>,
+        ) -> Self {
+            self.insufficient_sensor_data = input;
+            self
+        }
+        /// <p> Parameter that gives information about data that is missing over all the sensors in the input data. </p>
+        pub fn missing_sensor_data(mut self, input: crate::model::MissingSensorData) -> Self {
+            self.missing_sensor_data = Some(input);
+            self
+        }
+        /// <p> Parameter that gives information about data that is missing over all the sensors in the input data. </p>
+        pub fn set_missing_sensor_data(
+            mut self,
+            input: std::option::Option<crate::model::MissingSensorData>,
+        ) -> Self {
+            self.missing_sensor_data = input;
+            self
+        }
+        /// <p> Parameter that gives information about data that is invalid over all the sensors in the input data. </p>
+        pub fn invalid_sensor_data(mut self, input: crate::model::InvalidSensorData) -> Self {
+            self.invalid_sensor_data = Some(input);
+            self
+        }
+        /// <p> Parameter that gives information about data that is invalid over all the sensors in the input data. </p>
+        pub fn set_invalid_sensor_data(
+            mut self,
+            input: std::option::Option<crate::model::InvalidSensorData>,
+        ) -> Self {
+            self.invalid_sensor_data = input;
+            self
+        }
+        /// <p> Parameter that gives information about unsupported timestamps in the input data. </p>
+        pub fn unsupported_timestamps(
+            mut self,
+            input: crate::model::UnsupportedTimestamps,
+        ) -> Self {
+            self.unsupported_timestamps = Some(input);
+            self
+        }
+        /// <p> Parameter that gives information about unsupported timestamps in the input data. </p>
+        pub fn set_unsupported_timestamps(
+            mut self,
+            input: std::option::Option<crate::model::UnsupportedTimestamps>,
+        ) -> Self {
+            self.unsupported_timestamps = input;
+            self
+        }
+        /// <p> Parameter that gives information about duplicate timestamps in the input data. </p>
+        pub fn duplicate_timestamps(mut self, input: crate::model::DuplicateTimestamps) -> Self {
+            self.duplicate_timestamps = Some(input);
+            self
+        }
+        /// <p> Parameter that gives information about duplicate timestamps in the input data. </p>
+        pub fn set_duplicate_timestamps(
+            mut self,
+            input: std::option::Option<crate::model::DuplicateTimestamps>,
+        ) -> Self {
+            self.duplicate_timestamps = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataQualitySummary`](crate::model::DataQualitySummary)
+        pub fn build(self) -> crate::model::DataQualitySummary {
+            crate::model::DataQualitySummary {
+                insufficient_sensor_data: self.insufficient_sensor_data,
+                missing_sensor_data: self.missing_sensor_data,
+                invalid_sensor_data: self.invalid_sensor_data,
+                unsupported_timestamps: self.unsupported_timestamps,
+                duplicate_timestamps: self.duplicate_timestamps,
+            }
+        }
+    }
+}
+impl DataQualitySummary {
+    /// Creates a new builder-style object to manufacture [`DataQualitySummary`](crate::model::DataQualitySummary)
+    pub fn builder() -> crate::model::data_quality_summary::Builder {
+        crate::model::data_quality_summary::Builder::default()
+    }
+}
+
+/// <p> Entity that comprises information abount duplicate timestamps in the dataset. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DuplicateTimestamps {
+    /// <p> Indicates the total number of duplicate timestamps. </p>
+    pub total_number_of_duplicate_timestamps: std::option::Option<i32>,
+}
+impl DuplicateTimestamps {
+    /// <p> Indicates the total number of duplicate timestamps. </p>
+    pub fn total_number_of_duplicate_timestamps(&self) -> std::option::Option<i32> {
+        self.total_number_of_duplicate_timestamps
+    }
+}
+impl std::fmt::Debug for DuplicateTimestamps {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DuplicateTimestamps");
+        formatter.field(
+            "total_number_of_duplicate_timestamps",
+            &self.total_number_of_duplicate_timestamps,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DuplicateTimestamps`](crate::model::DuplicateTimestamps)
+pub mod duplicate_timestamps {
+    /// A builder for [`DuplicateTimestamps`](crate::model::DuplicateTimestamps)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) total_number_of_duplicate_timestamps: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p> Indicates the total number of duplicate timestamps. </p>
+        pub fn total_number_of_duplicate_timestamps(mut self, input: i32) -> Self {
+            self.total_number_of_duplicate_timestamps = Some(input);
+            self
+        }
+        /// <p> Indicates the total number of duplicate timestamps. </p>
+        pub fn set_total_number_of_duplicate_timestamps(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.total_number_of_duplicate_timestamps = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DuplicateTimestamps`](crate::model::DuplicateTimestamps)
+        pub fn build(self) -> crate::model::DuplicateTimestamps {
+            crate::model::DuplicateTimestamps {
+                total_number_of_duplicate_timestamps: self.total_number_of_duplicate_timestamps,
+            }
+        }
+    }
+}
+impl DuplicateTimestamps {
+    /// Creates a new builder-style object to manufacture [`DuplicateTimestamps`](crate::model::DuplicateTimestamps)
+    pub fn builder() -> crate::model::duplicate_timestamps::Builder {
+        crate::model::duplicate_timestamps::Builder::default()
+    }
+}
+
+/// <p> Entity that comprises information abount unsupported timestamps in the dataset. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnsupportedTimestamps {
+    /// <p> Indicates the total number of unsupported timestamps across the ingested data. </p>
+    pub total_number_of_unsupported_timestamps: std::option::Option<i32>,
+}
+impl UnsupportedTimestamps {
+    /// <p> Indicates the total number of unsupported timestamps across the ingested data. </p>
+    pub fn total_number_of_unsupported_timestamps(&self) -> std::option::Option<i32> {
+        self.total_number_of_unsupported_timestamps
+    }
+}
+impl std::fmt::Debug for UnsupportedTimestamps {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UnsupportedTimestamps");
+        formatter.field(
+            "total_number_of_unsupported_timestamps",
+            &self.total_number_of_unsupported_timestamps,
+        );
+        formatter.finish()
+    }
+}
+/// See [`UnsupportedTimestamps`](crate::model::UnsupportedTimestamps)
+pub mod unsupported_timestamps {
+    /// A builder for [`UnsupportedTimestamps`](crate::model::UnsupportedTimestamps)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) total_number_of_unsupported_timestamps: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p> Indicates the total number of unsupported timestamps across the ingested data. </p>
+        pub fn total_number_of_unsupported_timestamps(mut self, input: i32) -> Self {
+            self.total_number_of_unsupported_timestamps = Some(input);
+            self
+        }
+        /// <p> Indicates the total number of unsupported timestamps across the ingested data. </p>
+        pub fn set_total_number_of_unsupported_timestamps(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.total_number_of_unsupported_timestamps = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UnsupportedTimestamps`](crate::model::UnsupportedTimestamps)
+        pub fn build(self) -> crate::model::UnsupportedTimestamps {
+            crate::model::UnsupportedTimestamps {
+                total_number_of_unsupported_timestamps: self.total_number_of_unsupported_timestamps,
+            }
+        }
+    }
+}
+impl UnsupportedTimestamps {
+    /// Creates a new builder-style object to manufacture [`UnsupportedTimestamps`](crate::model::UnsupportedTimestamps)
+    pub fn builder() -> crate::model::unsupported_timestamps::Builder {
+        crate::model::unsupported_timestamps::Builder::default()
+    }
+}
+
+/// <p> Entity that comprises aggregated information on sensors having insufficient data. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidSensorData {
+    /// <p> Indicates the number of sensors that have at least some invalid values. </p>
+    pub affected_sensor_count: std::option::Option<i32>,
+    /// <p> Indicates the total number of invalid values across all the sensors. </p>
+    pub total_number_of_invalid_values: std::option::Option<i32>,
+}
+impl InvalidSensorData {
+    /// <p> Indicates the number of sensors that have at least some invalid values. </p>
+    pub fn affected_sensor_count(&self) -> std::option::Option<i32> {
+        self.affected_sensor_count
+    }
+    /// <p> Indicates the total number of invalid values across all the sensors. </p>
+    pub fn total_number_of_invalid_values(&self) -> std::option::Option<i32> {
+        self.total_number_of_invalid_values
+    }
+}
+impl std::fmt::Debug for InvalidSensorData {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidSensorData");
+        formatter.field("affected_sensor_count", &self.affected_sensor_count);
+        formatter.field(
+            "total_number_of_invalid_values",
+            &self.total_number_of_invalid_values,
+        );
+        formatter.finish()
+    }
+}
+/// See [`InvalidSensorData`](crate::model::InvalidSensorData)
+pub mod invalid_sensor_data {
+    /// A builder for [`InvalidSensorData`](crate::model::InvalidSensorData)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) affected_sensor_count: std::option::Option<i32>,
+        pub(crate) total_number_of_invalid_values: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p> Indicates the number of sensors that have at least some invalid values. </p>
+        pub fn affected_sensor_count(mut self, input: i32) -> Self {
+            self.affected_sensor_count = Some(input);
+            self
+        }
+        /// <p> Indicates the number of sensors that have at least some invalid values. </p>
+        pub fn set_affected_sensor_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.affected_sensor_count = input;
+            self
+        }
+        /// <p> Indicates the total number of invalid values across all the sensors. </p>
+        pub fn total_number_of_invalid_values(mut self, input: i32) -> Self {
+            self.total_number_of_invalid_values = Some(input);
+            self
+        }
+        /// <p> Indicates the total number of invalid values across all the sensors. </p>
+        pub fn set_total_number_of_invalid_values(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.total_number_of_invalid_values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidSensorData`](crate::model::InvalidSensorData)
+        pub fn build(self) -> crate::model::InvalidSensorData {
+            crate::model::InvalidSensorData {
+                affected_sensor_count: self.affected_sensor_count,
+                total_number_of_invalid_values: self.total_number_of_invalid_values,
+            }
+        }
+    }
+}
+impl InvalidSensorData {
+    /// Creates a new builder-style object to manufacture [`InvalidSensorData`](crate::model::InvalidSensorData)
+    pub fn builder() -> crate::model::invalid_sensor_data::Builder {
+        crate::model::invalid_sensor_data::Builder::default()
+    }
+}
+
+/// <p> Entity that comprises aggregated information on sensors having missing data. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MissingSensorData {
+    /// <p> Indicates the number of sensors that have atleast some data missing. </p>
+    pub affected_sensor_count: std::option::Option<i32>,
+    /// <p> Indicates the total number of missing values across all the sensors. </p>
+    pub total_number_of_missing_values: std::option::Option<i32>,
+}
+impl MissingSensorData {
+    /// <p> Indicates the number of sensors that have atleast some data missing. </p>
+    pub fn affected_sensor_count(&self) -> std::option::Option<i32> {
+        self.affected_sensor_count
+    }
+    /// <p> Indicates the total number of missing values across all the sensors. </p>
+    pub fn total_number_of_missing_values(&self) -> std::option::Option<i32> {
+        self.total_number_of_missing_values
+    }
+}
+impl std::fmt::Debug for MissingSensorData {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MissingSensorData");
+        formatter.field("affected_sensor_count", &self.affected_sensor_count);
+        formatter.field(
+            "total_number_of_missing_values",
+            &self.total_number_of_missing_values,
+        );
+        formatter.finish()
+    }
+}
+/// See [`MissingSensorData`](crate::model::MissingSensorData)
+pub mod missing_sensor_data {
+    /// A builder for [`MissingSensorData`](crate::model::MissingSensorData)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) affected_sensor_count: std::option::Option<i32>,
+        pub(crate) total_number_of_missing_values: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p> Indicates the number of sensors that have atleast some data missing. </p>
+        pub fn affected_sensor_count(mut self, input: i32) -> Self {
+            self.affected_sensor_count = Some(input);
+            self
+        }
+        /// <p> Indicates the number of sensors that have atleast some data missing. </p>
+        pub fn set_affected_sensor_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.affected_sensor_count = input;
+            self
+        }
+        /// <p> Indicates the total number of missing values across all the sensors. </p>
+        pub fn total_number_of_missing_values(mut self, input: i32) -> Self {
+            self.total_number_of_missing_values = Some(input);
+            self
+        }
+        /// <p> Indicates the total number of missing values across all the sensors. </p>
+        pub fn set_total_number_of_missing_values(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.total_number_of_missing_values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MissingSensorData`](crate::model::MissingSensorData)
+        pub fn build(self) -> crate::model::MissingSensorData {
+            crate::model::MissingSensorData {
+                affected_sensor_count: self.affected_sensor_count,
+                total_number_of_missing_values: self.total_number_of_missing_values,
+            }
+        }
+    }
+}
+impl MissingSensorData {
+    /// Creates a new builder-style object to manufacture [`MissingSensorData`](crate::model::MissingSensorData)
+    pub fn builder() -> crate::model::missing_sensor_data::Builder {
+        crate::model::missing_sensor_data::Builder::default()
+    }
+}
+
+/// <p> Entity that comprises aggregated information on sensors having insufficient data. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InsufficientSensorData {
+    /// <p> Parameter that describes the total number of sensors that have data completely missing for it. </p>
+    pub missing_complete_sensor_data: std::option::Option<crate::model::MissingCompleteSensorData>,
+    /// <p> Parameter that describes the total number of sensors that have a short date range of less than 90 days of data overall. </p>
+    pub sensors_with_short_date_range: std::option::Option<crate::model::SensorsWithShortDateRange>,
+}
+impl InsufficientSensorData {
+    /// <p> Parameter that describes the total number of sensors that have data completely missing for it. </p>
+    pub fn missing_complete_sensor_data(
+        &self,
+    ) -> std::option::Option<&crate::model::MissingCompleteSensorData> {
+        self.missing_complete_sensor_data.as_ref()
+    }
+    /// <p> Parameter that describes the total number of sensors that have a short date range of less than 90 days of data overall. </p>
+    pub fn sensors_with_short_date_range(
+        &self,
+    ) -> std::option::Option<&crate::model::SensorsWithShortDateRange> {
+        self.sensors_with_short_date_range.as_ref()
+    }
+}
+impl std::fmt::Debug for InsufficientSensorData {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InsufficientSensorData");
+        formatter.field(
+            "missing_complete_sensor_data",
+            &self.missing_complete_sensor_data,
+        );
+        formatter.field(
+            "sensors_with_short_date_range",
+            &self.sensors_with_short_date_range,
+        );
+        formatter.finish()
+    }
+}
+/// See [`InsufficientSensorData`](crate::model::InsufficientSensorData)
+pub mod insufficient_sensor_data {
+    /// A builder for [`InsufficientSensorData`](crate::model::InsufficientSensorData)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) missing_complete_sensor_data:
+            std::option::Option<crate::model::MissingCompleteSensorData>,
+        pub(crate) sensors_with_short_date_range:
+            std::option::Option<crate::model::SensorsWithShortDateRange>,
+    }
+    impl Builder {
+        /// <p> Parameter that describes the total number of sensors that have data completely missing for it. </p>
+        pub fn missing_complete_sensor_data(
+            mut self,
+            input: crate::model::MissingCompleteSensorData,
+        ) -> Self {
+            self.missing_complete_sensor_data = Some(input);
+            self
+        }
+        /// <p> Parameter that describes the total number of sensors that have data completely missing for it. </p>
+        pub fn set_missing_complete_sensor_data(
+            mut self,
+            input: std::option::Option<crate::model::MissingCompleteSensorData>,
+        ) -> Self {
+            self.missing_complete_sensor_data = input;
+            self
+        }
+        /// <p> Parameter that describes the total number of sensors that have a short date range of less than 90 days of data overall. </p>
+        pub fn sensors_with_short_date_range(
+            mut self,
+            input: crate::model::SensorsWithShortDateRange,
+        ) -> Self {
+            self.sensors_with_short_date_range = Some(input);
+            self
+        }
+        /// <p> Parameter that describes the total number of sensors that have a short date range of less than 90 days of data overall. </p>
+        pub fn set_sensors_with_short_date_range(
+            mut self,
+            input: std::option::Option<crate::model::SensorsWithShortDateRange>,
+        ) -> Self {
+            self.sensors_with_short_date_range = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InsufficientSensorData`](crate::model::InsufficientSensorData)
+        pub fn build(self) -> crate::model::InsufficientSensorData {
+            crate::model::InsufficientSensorData {
+                missing_complete_sensor_data: self.missing_complete_sensor_data,
+                sensors_with_short_date_range: self.sensors_with_short_date_range,
+            }
+        }
+    }
+}
+impl InsufficientSensorData {
+    /// Creates a new builder-style object to manufacture [`InsufficientSensorData`](crate::model::InsufficientSensorData)
+    pub fn builder() -> crate::model::insufficient_sensor_data::Builder {
+        crate::model::insufficient_sensor_data::Builder::default()
+    }
+}
+
+/// <p> Entity that comprises information on sensors that have shorter date range. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SensorsWithShortDateRange {
+    /// <p> Indicates the number of sensors that have less than 90 days of data. </p>
+    pub affected_sensor_count: std::option::Option<i32>,
+}
+impl SensorsWithShortDateRange {
+    /// <p> Indicates the number of sensors that have less than 90 days of data. </p>
+    pub fn affected_sensor_count(&self) -> std::option::Option<i32> {
+        self.affected_sensor_count
+    }
+}
+impl std::fmt::Debug for SensorsWithShortDateRange {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SensorsWithShortDateRange");
+        formatter.field("affected_sensor_count", &self.affected_sensor_count);
+        formatter.finish()
+    }
+}
+/// See [`SensorsWithShortDateRange`](crate::model::SensorsWithShortDateRange)
+pub mod sensors_with_short_date_range {
+    /// A builder for [`SensorsWithShortDateRange`](crate::model::SensorsWithShortDateRange)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) affected_sensor_count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p> Indicates the number of sensors that have less than 90 days of data. </p>
+        pub fn affected_sensor_count(mut self, input: i32) -> Self {
+            self.affected_sensor_count = Some(input);
+            self
+        }
+        /// <p> Indicates the number of sensors that have less than 90 days of data. </p>
+        pub fn set_affected_sensor_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.affected_sensor_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SensorsWithShortDateRange`](crate::model::SensorsWithShortDateRange)
+        pub fn build(self) -> crate::model::SensorsWithShortDateRange {
+            crate::model::SensorsWithShortDateRange {
+                affected_sensor_count: self.affected_sensor_count,
+            }
+        }
+    }
+}
+impl SensorsWithShortDateRange {
+    /// Creates a new builder-style object to manufacture [`SensorsWithShortDateRange`](crate::model::SensorsWithShortDateRange)
+    pub fn builder() -> crate::model::sensors_with_short_date_range::Builder {
+        crate::model::sensors_with_short_date_range::Builder::default()
+    }
+}
+
+/// <p> Entity that comprises information on sensors that have sensor data completely missing. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MissingCompleteSensorData {
+    /// <p> Indicates the number of sensors that have data missing completely. </p>
+    pub affected_sensor_count: std::option::Option<i32>,
+}
+impl MissingCompleteSensorData {
+    /// <p> Indicates the number of sensors that have data missing completely. </p>
+    pub fn affected_sensor_count(&self) -> std::option::Option<i32> {
+        self.affected_sensor_count
+    }
+}
+impl std::fmt::Debug for MissingCompleteSensorData {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MissingCompleteSensorData");
+        formatter.field("affected_sensor_count", &self.affected_sensor_count);
+        formatter.finish()
+    }
+}
+/// See [`MissingCompleteSensorData`](crate::model::MissingCompleteSensorData)
+pub mod missing_complete_sensor_data {
+    /// A builder for [`MissingCompleteSensorData`](crate::model::MissingCompleteSensorData)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) affected_sensor_count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p> Indicates the number of sensors that have data missing completely. </p>
+        pub fn affected_sensor_count(mut self, input: i32) -> Self {
+            self.affected_sensor_count = Some(input);
+            self
+        }
+        /// <p> Indicates the number of sensors that have data missing completely. </p>
+        pub fn set_affected_sensor_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.affected_sensor_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MissingCompleteSensorData`](crate::model::MissingCompleteSensorData)
+        pub fn build(self) -> crate::model::MissingCompleteSensorData {
+            crate::model::MissingCompleteSensorData {
+                affected_sensor_count: self.affected_sensor_count,
+            }
+        }
+    }
+}
+impl MissingCompleteSensorData {
+    /// Creates a new builder-style object to manufacture [`MissingCompleteSensorData`](crate::model::MissingCompleteSensorData)
+    pub fn builder() -> crate::model::missing_complete_sensor_data::Builder {
+        crate::model::missing_complete_sensor_data::Builder::default()
     }
 }
 

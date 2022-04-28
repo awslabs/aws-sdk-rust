@@ -60,23 +60,26 @@ impl RollbackTransactionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteStatementOutput {
-    /// <p>The records returned by the SQL statement.</p>
+    /// <p>The records returned by the SQL statement. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
     pub records: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::Field>>>,
-    /// <p>Metadata for the columns included in the results.</p>
+    /// <p>Metadata for the columns included in the results. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
     pub column_metadata: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
     /// <p>The number of records updated by the request.</p>
     pub number_of_records_updated: i64,
-    /// <p>Values for fields generated during the request.</p> <note>
+    /// <p>Values for fields generated during a DML request.</p> <note>
     /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>
     /// </note>
     pub generated_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
+    /// <p>A string value that represents the result set of a <code>SELECT</code> statement in JSON format. This value is only present when the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
+    /// <p>The size limit for this field is currently 10 MB. If the JSON-formatted string representing the result set requires more than 10 MB, the call returns an error.</p>
+    pub formatted_records: std::option::Option<std::string::String>,
 }
 impl ExecuteStatementOutput {
-    /// <p>The records returned by the SQL statement.</p>
+    /// <p>The records returned by the SQL statement. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
     pub fn records(&self) -> std::option::Option<&[std::vec::Vec<crate::model::Field>]> {
         self.records.as_deref()
     }
-    /// <p>Metadata for the columns included in the results.</p>
+    /// <p>Metadata for the columns included in the results. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
     pub fn column_metadata(&self) -> std::option::Option<&[crate::model::ColumnMetadata]> {
         self.column_metadata.as_deref()
     }
@@ -84,11 +87,16 @@ impl ExecuteStatementOutput {
     pub fn number_of_records_updated(&self) -> i64 {
         self.number_of_records_updated
     }
-    /// <p>Values for fields generated during the request.</p> <note>
+    /// <p>Values for fields generated during a DML request.</p> <note>
     /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>
     /// </note>
     pub fn generated_fields(&self) -> std::option::Option<&[crate::model::Field]> {
         self.generated_fields.as_deref()
+    }
+    /// <p>A string value that represents the result set of a <code>SELECT</code> statement in JSON format. This value is only present when the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
+    /// <p>The size limit for this field is currently 10 MB. If the JSON-formatted string representing the result set requires more than 10 MB, the call returns an error.</p>
+    pub fn formatted_records(&self) -> std::option::Option<&str> {
+        self.formatted_records.as_deref()
     }
 }
 impl std::fmt::Debug for ExecuteStatementOutput {
@@ -98,6 +106,7 @@ impl std::fmt::Debug for ExecuteStatementOutput {
         formatter.field("column_metadata", &self.column_metadata);
         formatter.field("number_of_records_updated", &self.number_of_records_updated);
         formatter.field("generated_fields", &self.generated_fields);
+        formatter.field("formatted_records", &self.formatted_records);
         formatter.finish()
     }
 }
@@ -112,20 +121,21 @@ pub mod execute_statement_output {
             std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
         pub(crate) number_of_records_updated: std::option::Option<i64>,
         pub(crate) generated_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
+        pub(crate) formatted_records: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// Appends an item to `records`.
         ///
         /// To override the contents of this collection use [`set_records`](Self::set_records).
         ///
-        /// <p>The records returned by the SQL statement.</p>
+        /// <p>The records returned by the SQL statement. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
         pub fn records(mut self, input: std::vec::Vec<crate::model::Field>) -> Self {
             let mut v = self.records.unwrap_or_default();
             v.push(input);
             self.records = Some(v);
             self
         }
-        /// <p>The records returned by the SQL statement.</p>
+        /// <p>The records returned by the SQL statement. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
         pub fn set_records(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::Field>>>,
@@ -137,14 +147,14 @@ pub mod execute_statement_output {
         ///
         /// To override the contents of this collection use [`set_column_metadata`](Self::set_column_metadata).
         ///
-        /// <p>Metadata for the columns included in the results.</p>
+        /// <p>Metadata for the columns included in the results. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
         pub fn column_metadata(mut self, input: crate::model::ColumnMetadata) -> Self {
             let mut v = self.column_metadata.unwrap_or_default();
             v.push(input);
             self.column_metadata = Some(v);
             self
         }
-        /// <p>Metadata for the columns included in the results.</p>
+        /// <p>Metadata for the columns included in the results. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
         pub fn set_column_metadata(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
@@ -166,7 +176,7 @@ pub mod execute_statement_output {
         ///
         /// To override the contents of this collection use [`set_generated_fields`](Self::set_generated_fields).
         ///
-        /// <p>Values for fields generated during the request.</p> <note>
+        /// <p>Values for fields generated during a DML request.</p> <note>
         /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>
         /// </note>
         pub fn generated_fields(mut self, input: crate::model::Field) -> Self {
@@ -175,7 +185,7 @@ pub mod execute_statement_output {
             self.generated_fields = Some(v);
             self
         }
-        /// <p>Values for fields generated during the request.</p> <note>
+        /// <p>Values for fields generated during a DML request.</p> <note>
         /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>
         /// </note>
         pub fn set_generated_fields(
@@ -185,6 +195,21 @@ pub mod execute_statement_output {
             self.generated_fields = input;
             self
         }
+        /// <p>A string value that represents the result set of a <code>SELECT</code> statement in JSON format. This value is only present when the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
+        /// <p>The size limit for this field is currently 10 MB. If the JSON-formatted string representing the result set requires more than 10 MB, the call returns an error.</p>
+        pub fn formatted_records(mut self, input: impl Into<std::string::String>) -> Self {
+            self.formatted_records = Some(input.into());
+            self
+        }
+        /// <p>A string value that represents the result set of a <code>SELECT</code> statement in JSON format. This value is only present when the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
+        /// <p>The size limit for this field is currently 10 MB. If the JSON-formatted string representing the result set requires more than 10 MB, the call returns an error.</p>
+        pub fn set_formatted_records(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.formatted_records = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput)
         pub fn build(self) -> crate::output::ExecuteStatementOutput {
             crate::output::ExecuteStatementOutput {
@@ -192,6 +217,7 @@ pub mod execute_statement_output {
                 column_metadata: self.column_metadata,
                 number_of_records_updated: self.number_of_records_updated.unwrap_or_default(),
                 generated_fields: self.generated_fields,
+                formatted_records: self.formatted_records,
             }
         }
     }

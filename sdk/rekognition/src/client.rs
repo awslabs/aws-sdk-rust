@@ -116,7 +116,7 @@ impl Client {
     /// - On success, responds with [`CreateCollectionOutput`](crate::output::CreateCollectionOutput) with field(s):
     ///   - [`status_code(Option<i32>)`](crate::output::CreateCollectionOutput::status_code): <p>HTTP status code indicating the result of the operation.</p>
     ///   - [`collection_arn(Option<String>)`](crate::output::CreateCollectionOutput::collection_arn): <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources. </p>
-    ///   - [`face_model_version(Option<String>)`](crate::output::CreateCollectionOutput::face_model_version): <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
+    ///   - [`face_model_version(Option<String>)`](crate::output::CreateCollectionOutput::face_model_version): <p>Version number of the face detection model associated with the collection you are creating.</p>
     /// - On failure, responds with [`SdkError<CreateCollectionError>`](crate::error::CreateCollectionError)
     pub fn create_collection(&self) -> fluent_builders::CreateCollection {
         fluent_builders::CreateCollection::new(self.handle.clone())
@@ -162,14 +162,18 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateStreamProcessor`](crate::client::fluent_builders::CreateStreamProcessor) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`input(StreamProcessorInput)`](crate::client::fluent_builders::CreateStreamProcessor::input) / [`set_input(Option<StreamProcessorInput>)`](crate::client::fluent_builders::CreateStreamProcessor::set_input): <p>Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter name is <code>StreamProcessorInput</code>.</p>
-    ///   - [`output(StreamProcessorOutput)`](crate::client::fluent_builders::CreateStreamProcessor::output) / [`set_output(Option<StreamProcessorOutput>)`](crate::client::fluent_builders::CreateStreamProcessor::set_output): <p>Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateStreamProcessor::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateStreamProcessor::set_name): <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. </p>
-    ///   - [`settings(StreamProcessorSettings)`](crate::client::fluent_builders::CreateStreamProcessor::settings) / [`set_settings(Option<StreamProcessorSettings>)`](crate::client::fluent_builders::CreateStreamProcessor::set_settings): <p>Face recognition input parameters to be used by the stream processor. Includes the collection to use for face recognition and the face attributes to detect.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStreamProcessor::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateStreamProcessor::set_role_arn): <p>ARN of the IAM role that allows access to the stream processor.</p>
+    ///   - [`input(StreamProcessorInput)`](crate::client::fluent_builders::CreateStreamProcessor::input) / [`set_input(Option<StreamProcessorInput>)`](crate::client::fluent_builders::CreateStreamProcessor::set_input): <p>Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter name is <code>StreamProcessorInput</code>. This is required for both face search and label detection stream processors.</p>
+    ///   - [`output(StreamProcessorOutput)`](crate::client::fluent_builders::CreateStreamProcessor::output) / [`set_output(Option<StreamProcessorOutput>)`](crate::client::fluent_builders::CreateStreamProcessor::set_output): <p>Kinesis data stream stream or Amazon S3 bucket location to which Amazon Rekognition Video puts the analysis results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>. This must be a <code>S3Destination</code> of an Amazon S3 bucket that you own for a label detection stream processor or a Kinesis data stream ARN for a face search stream processor.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateStreamProcessor::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateStreamProcessor::set_name): <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. This is required for both face search and label detection stream processors. </p>
+    ///   - [`settings(StreamProcessorSettings)`](crate::client::fluent_builders::CreateStreamProcessor::settings) / [`set_settings(Option<StreamProcessorSettings>)`](crate::client::fluent_builders::CreateStreamProcessor::set_settings): <p>Input parameters used in a streaming video analyzed by a stream processor. You can use <code>FaceSearch</code> to recognize faces in a streaming video, or you can use <code>ConnectedHome</code> to detect labels.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStreamProcessor::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateStreamProcessor::set_role_arn): <p>The Amazon Resource Number (ARN) of the IAM role that allows access to the stream processor. The IAM role provides Rekognition read permissions for a Kinesis stream. It also provides write permissions to an Amazon S3 bucket and Amazon Simple Notification Service topic for a label detection stream processor. This is required for both face search and label detection stream processors.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStreamProcessor::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStreamProcessor::set_tags): <p> A set of tags (key-value pairs) that you want to attach to the stream processor. </p>
+    ///   - [`notification_channel(StreamProcessorNotificationChannel)`](crate::client::fluent_builders::CreateStreamProcessor::notification_channel) / [`set_notification_channel(Option<StreamProcessorNotificationChannel>)`](crate::client::fluent_builders::CreateStreamProcessor::set_notification_channel): <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the object detection results and completion status of a video analysis operation.</p>  <p>Amazon Rekognition publishes a notification the first time an object of interest or a person is detected in the video stream. For example, if Amazon Rekognition detects a person at second 2, a pet at second 4, and a person again at second 5, Amazon Rekognition sends 2 object class detected notifications, one for a person at second 2 and one for a pet at second 4.</p>  <p>Amazon Rekognition also publishes an an end-of-session notification with a summary when the stream processing session is complete.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamProcessor::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateStreamProcessor::set_kms_key_id): <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and hero images. Your source images are unaffected. </p>  <p> </p>
+    ///   - [`regions_of_interest(Vec<RegionOfInterest>)`](crate::client::fluent_builders::CreateStreamProcessor::regions_of_interest) / [`set_regions_of_interest(Option<Vec<RegionOfInterest>>)`](crate::client::fluent_builders::CreateStreamProcessor::set_regions_of_interest): <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. </p>
+    ///   - [`data_sharing_preference(StreamProcessorDataSharingPreference)`](crate::client::fluent_builders::CreateStreamProcessor::data_sharing_preference) / [`set_data_sharing_preference(Option<StreamProcessorDataSharingPreference>)`](crate::client::fluent_builders::CreateStreamProcessor::set_data_sharing_preference): <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
     /// - On success, responds with [`CreateStreamProcessorOutput`](crate::output::CreateStreamProcessorOutput) with field(s):
-    ///   - [`stream_processor_arn(Option<String>)`](crate::output::CreateStreamProcessorOutput::stream_processor_arn): <p>ARN for the newly create stream processor.</p>
+    ///   - [`stream_processor_arn(Option<String>)`](crate::output::CreateStreamProcessorOutput::stream_processor_arn): <p>Amazon Resource Number for the newly created stream processor.</p>
     /// - On failure, responds with [`SdkError<CreateStreamProcessorError>`](crate::error::CreateStreamProcessorError)
     pub fn create_stream_processor(&self) -> fluent_builders::CreateStreamProcessor {
         fluent_builders::CreateStreamProcessor::new(self.handle.clone())
@@ -241,7 +245,7 @@ impl Client {
     ///   - [`collection_id(impl Into<String>)`](crate::client::fluent_builders::DescribeCollection::collection_id) / [`set_collection_id(Option<String>)`](crate::client::fluent_builders::DescribeCollection::set_collection_id): <p>The ID of the collection to describe.</p>
     /// - On success, responds with [`DescribeCollectionOutput`](crate::output::DescribeCollectionOutput) with field(s):
     ///   - [`face_count(Option<i64>)`](crate::output::DescribeCollectionOutput::face_count): <p>The number of faces that are indexed into the collection. To index faces into a collection, use <code>IndexFaces</code>.</p>
-    ///   - [`face_model_version(Option<String>)`](crate::output::DescribeCollectionOutput::face_model_version): <p>The version of the face model that's used by the collection for face detection.</p>  <p>For more information, see Model Versioning in the Amazon Rekognition Developer Guide.</p>
+    ///   - [`face_model_version(Option<String>)`](crate::output::DescribeCollectionOutput::face_model_version): <p>The version of the face model that's used by the collection for face detection.</p>  <p>For more information, see Model versioning in the Amazon Rekognition Developer Guide.</p>
     ///   - [`collection_arn(Option<String>)`](crate::output::DescribeCollectionOutput::collection_arn): <p>The Amazon Resource Name (ARN) of the collection.</p>
     ///   - [`creation_timestamp(Option<DateTime>)`](crate::output::DescribeCollectionOutput::creation_timestamp): <p>The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
     /// - On failure, responds with [`SdkError<DescribeCollectionError>`](crate::error::DescribeCollectionError)
@@ -301,7 +305,11 @@ impl Client {
     ///   - [`input(Option<StreamProcessorInput>)`](crate::output::DescribeStreamProcessorOutput::input): <p>Kinesis video stream that provides the source streaming video.</p>
     ///   - [`output(Option<StreamProcessorOutput>)`](crate::output::DescribeStreamProcessorOutput::output): <p>Kinesis data stream to which Amazon Rekognition Video puts the analysis results.</p>
     ///   - [`role_arn(Option<String>)`](crate::output::DescribeStreamProcessorOutput::role_arn): <p>ARN of the IAM role that allows access to the stream processor.</p>
-    ///   - [`settings(Option<StreamProcessorSettings>)`](crate::output::DescribeStreamProcessorOutput::settings): <p>Face recognition input parameters that are being used by the stream processor. Includes the collection to use for face recognition and the face attributes to detect.</p>
+    ///   - [`settings(Option<StreamProcessorSettings>)`](crate::output::DescribeStreamProcessorOutput::settings): <p>Input parameters used in a streaming video analyzed by a stream processor. You can use <code>FaceSearch</code> to recognize faces in a streaming video, or you can use <code>ConnectedHome</code> to detect labels.</p>
+    ///   - [`notification_channel(Option<StreamProcessorNotificationChannel>)`](crate::output::DescribeStreamProcessorOutput::notification_channel): <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the object detection results and completion status of a video analysis operation.</p>  <p>Amazon Rekognition publishes a notification the first time an object of interest or a person is detected in the video stream. For example, if Amazon Rekognition detects a person at second 2, a pet at second 4, and a person again at second 5, Amazon Rekognition sends 2 object class detected notifications, one for a person at second 2 and one for a pet at second 4.</p>  <p>Amazon Rekognition also publishes an an end-of-session notification with a summary when the stream processing session is complete.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::output::DescribeStreamProcessorOutput::kms_key_id): <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors. </p>
+    ///   - [`regions_of_interest(Option<Vec<RegionOfInterest>>)`](crate::output::DescribeStreamProcessorOutput::regions_of_interest): <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors. </p>
+    ///   - [`data_sharing_preference(Option<StreamProcessorDataSharingPreference>)`](crate::output::DescribeStreamProcessorOutput::data_sharing_preference): <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
     /// - On failure, responds with [`SdkError<DescribeStreamProcessorError>`](crate::error::DescribeStreamProcessorError)
     pub fn describe_stream_processor(&self) -> fluent_builders::DescribeStreamProcessor {
         fluent_builders::DescribeStreamProcessor::new(self.handle.clone())
@@ -310,7 +318,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`project_version_arn(impl Into<String>)`](crate::client::fluent_builders::DetectCustomLabels::project_version_arn) / [`set_project_version_arn(Option<String>)`](crate::client::fluent_builders::DetectCustomLabels::set_project_version_arn): <p>The ARN of the model version that you want to use.</p>
-    ///   - [`image(Image)`](crate::client::fluent_builders::DetectCustomLabels::image) / [`set_image(Option<Image>)`](crate::client::fluent_builders::DetectCustomLabels::set_image): <p>Provides the input image either as bytes or an S3 object.</p>  <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. </p>  <p>For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.</p>  <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.</p>  <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>  <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p>  <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide. </p>
+    ///   - [`image(Image)`](crate::client::fluent_builders::DetectCustomLabels::image) / [`set_image(Option<Image>)`](crate::client::fluent_builders::DetectCustomLabels::set_image): <p>Provides the input image either as bytes or an S3 object.</p>  <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. </p>  <p>For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.</p>  <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.</p>  <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>  <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p>  <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::DetectCustomLabels::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DetectCustomLabels::set_max_results): <p>Maximum number of results you want the service to return in the response. The service returns the specified number of highest confidence labels ranked from highest confidence to lowest.</p>
     ///   - [`min_confidence(f32)`](crate::client::fluent_builders::DetectCustomLabels::min_confidence) / [`set_min_confidence(Option<f32>)`](crate::client::fluent_builders::DetectCustomLabels::set_min_confidence): <p>Specifies the minimum confidence level for the labels to return. <code>DetectCustomLabels</code> doesn't return any labels with a confidence value that's lower than this specified value. If you specify a value of 0, <code>DetectCustomLabels</code> returns all labels, regardless of the assumed threshold applied to each label. If you don't specify a value for <code>MinConfidence</code>, <code>DetectCustomLabels</code> returns labels based on the assumed threshold of each label.</p>
     /// - On success, responds with [`DetectCustomLabelsOutput`](crate::output::DetectCustomLabelsOutput) with field(s):
@@ -564,7 +572,7 @@ impl Client {
     /// - On success, responds with [`IndexFacesOutput`](crate::output::IndexFacesOutput) with field(s):
     ///   - [`face_records(Option<Vec<FaceRecord>>)`](crate::output::IndexFacesOutput::face_records): <p>An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide. </p>
     ///   - [`orientation_correction(Option<OrientationCorrection>)`](crate::output::IndexFacesOutput::orientation_correction): <p>If your collection is associated with a face detection model that's later than version 3.0, the value of <code>OrientationCorrection</code> is always null and no orientation information is returned.</p>  <p>If your collection is associated with a face detection model that's version 3.0 or earlier, the following applies:</p>  <ul>   <li> <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction - the bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata. The value of <code>OrientationCorrection</code> is null.</p> </li>   <li> <p>If the image doesn't contain orientation information in its Exif metadata, Amazon Rekognition returns an estimated orientation (ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270). Amazon Rekognition doesn’t perform image correction for images. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p> </li>  </ul>  <p>Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the face detection model by calling <code>DescribeCollection</code>. </p>
-    ///   - [`face_model_version(Option<String>)`](crate::output::IndexFacesOutput::face_model_version): <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
+    ///   - [`face_model_version(Option<String>)`](crate::output::IndexFacesOutput::face_model_version): <p>The version number of the face detection model that's associated with the input collection (<code>CollectionId</code>).</p>
     ///   - [`unindexed_faces(Option<Vec<UnindexedFace>>)`](crate::output::IndexFacesOutput::unindexed_faces): <p>An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you specify the <code>QualityFilter</code> request parameter.</p>
     /// - On failure, responds with [`SdkError<IndexFacesError>`](crate::error::IndexFacesError)
     pub fn index_faces(&self) -> fluent_builders::IndexFaces {
@@ -579,7 +587,7 @@ impl Client {
     /// - On success, responds with [`ListCollectionsOutput`](crate::output::ListCollectionsOutput) with field(s):
     ///   - [`collection_ids(Option<Vec<String>>)`](crate::output::ListCollectionsOutput::collection_ids): <p>An array of collection IDs.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListCollectionsOutput::next_token): <p>If the result is truncated, the response provides a <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.</p>
-    ///   - [`face_model_versions(Option<Vec<String>>)`](crate::output::ListCollectionsOutput::face_model_versions): <p>Latest face models being used with the corresponding collections in the array. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used by the collection in <code>CollectionId[2]</code>.</p>
+    ///   - [`face_model_versions(Option<Vec<String>>)`](crate::output::ListCollectionsOutput::face_model_versions): <p>Version numbers of the face detection models associated with the collections in the array <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used by the collection in <code>CollectionId[2]</code>.</p>
     /// - On failure, responds with [`SdkError<ListCollectionsError>`](crate::error::ListCollectionsError)
     pub fn list_collections(&self) -> fluent_builders::ListCollections {
         fluent_builders::ListCollections::new(self.handle.clone())
@@ -626,7 +634,7 @@ impl Client {
     /// - On success, responds with [`ListFacesOutput`](crate::output::ListFacesOutput) with field(s):
     ///   - [`faces(Option<Vec<Face>>)`](crate::output::ListFacesOutput::faces): <p>An array of <code>Face</code> objects. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListFacesOutput::next_token): <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
-    ///   - [`face_model_version(Option<String>)`](crate::output::ListFacesOutput::face_model_version): <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
+    ///   - [`face_model_version(Option<String>)`](crate::output::ListFacesOutput::face_model_version): <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
     /// - On failure, responds with [`SdkError<ListFacesError>`](crate::error::ListFacesError)
     pub fn list_faces(&self) -> fluent_builders::ListFaces {
         fluent_builders::ListFaces::new(self.handle.clone())
@@ -676,7 +684,7 @@ impl Client {
     /// - On success, responds with [`SearchFacesOutput`](crate::output::SearchFacesOutput) with field(s):
     ///   - [`searched_face_id(Option<String>)`](crate::output::SearchFacesOutput::searched_face_id): <p>ID of the face that was searched for matches in a collection.</p>
     ///   - [`face_matches(Option<Vec<FaceMatch>>)`](crate::output::SearchFacesOutput::face_matches): <p>An array of faces that matched the input face, along with the confidence in the match.</p>
-    ///   - [`face_model_version(Option<String>)`](crate::output::SearchFacesOutput::face_model_version): <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
+    ///   - [`face_model_version(Option<String>)`](crate::output::SearchFacesOutput::face_model_version): <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
     /// - On failure, responds with [`SdkError<SearchFacesError>`](crate::error::SearchFacesError)
     pub fn search_faces(&self) -> fluent_builders::SearchFaces {
         fluent_builders::SearchFaces::new(self.handle.clone())
@@ -693,7 +701,7 @@ impl Client {
     ///   - [`searched_face_bounding_box(Option<BoundingBox>)`](crate::output::SearchFacesByImageOutput::searched_face_bounding_box): <p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>
     ///   - [`searched_face_confidence(Option<f32>)`](crate::output::SearchFacesByImageOutput::searched_face_confidence): <p>The level of confidence that the <code>searchedFaceBoundingBox</code>, contains a face.</p>
     ///   - [`face_matches(Option<Vec<FaceMatch>>)`](crate::output::SearchFacesByImageOutput::face_matches): <p>An array of faces that match the input face, along with the confidence in the match.</p>
-    ///   - [`face_model_version(Option<String>)`](crate::output::SearchFacesByImageOutput::face_model_version): <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
+    ///   - [`face_model_version(Option<String>)`](crate::output::SearchFacesByImageOutput::face_model_version): <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
     /// - On failure, responds with [`SdkError<SearchFacesByImageError>`](crate::error::SearchFacesByImageError)
     pub fn search_faces_by_image(&self) -> fluent_builders::SearchFacesByImage {
         fluent_builders::SearchFacesByImage::new(self.handle.clone())
@@ -811,8 +819,10 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartStreamProcessor::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartStreamProcessor::set_name): <p>The name of the stream processor to start processing.</p>
-    /// - On success, responds with [`StartStreamProcessorOutput`](crate::output::StartStreamProcessorOutput)
-
+    ///   - [`start_selector(StreamProcessingStartSelector)`](crate::client::fluent_builders::StartStreamProcessor::start_selector) / [`set_start_selector(Option<StreamProcessingStartSelector>)`](crate::client::fluent_builders::StartStreamProcessor::set_start_selector): <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>  <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
+    ///   - [`stop_selector(StreamProcessingStopSelector)`](crate::client::fluent_builders::StartStreamProcessor::stop_selector) / [`set_stop_selector(Option<StreamProcessingStopSelector>)`](crate::client::fluent_builders::StartStreamProcessor::set_stop_selector): <p> Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video. </p>  <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
+    /// - On success, responds with [`StartStreamProcessorOutput`](crate::output::StartStreamProcessorOutput) with field(s):
+    ///   - [`session_id(Option<String>)`](crate::output::StartStreamProcessorOutput::session_id): <p> A unique identifier for the stream processing session. </p>
     /// - On failure, responds with [`SdkError<StartStreamProcessorError>`](crate::error::StartStreamProcessorError)
     pub fn start_stream_processor(&self) -> fluent_builders::StartStreamProcessor {
         fluent_builders::StartStreamProcessor::new(self.handle.clone())
@@ -822,7 +832,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`video(Video)`](crate::client::fluent_builders::StartTextDetection::video) / [`set_video(Option<Video>)`](crate::client::fluent_builders::StartTextDetection::set_video): <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartTextDetection::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartTextDetection::set_client_request_token): <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentaly started more than once.</p>
-    ///   - [`notification_channel(NotificationChannel)`](crate::client::fluent_builders::StartTextDetection::notification_channel) / [`set_notification_channel(Option<NotificationChannel>)`](crate::client::fluent_builders::StartTextDetection::set_notification_channel): <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <code>api-video</code>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
+    ///   - [`notification_channel(NotificationChannel)`](crate::client::fluent_builders::StartTextDetection::notification_channel) / [`set_notification_channel(Option<NotificationChannel>)`](crate::client::fluent_builders::StartTextDetection::set_notification_channel): <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html">Calling Amazon Rekognition Video operations</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
     ///   - [`job_tag(impl Into<String>)`](crate::client::fluent_builders::StartTextDetection::job_tag) / [`set_job_tag(Option<String>)`](crate::client::fluent_builders::StartTextDetection::set_job_tag): <p>An identifier returned in the completion status published by your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     ///   - [`filters(StartTextDetectionFilters)`](crate::client::fluent_builders::StartTextDetection::filters) / [`set_filters(Option<StartTextDetectionFilters>)`](crate::client::fluent_builders::StartTextDetection::set_filters): <p>Optional parameters that let you set criteria the text must meet to be included in your response.</p>
     /// - On success, responds with [`StartTextDetectionOutput`](crate::output::StartTextDetectionOutput) with field(s):
@@ -883,6 +893,20 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateDatasetEntriesError>`](crate::error::UpdateDatasetEntriesError)
     pub fn update_dataset_entries(&self) -> fluent_builders::UpdateDatasetEntries {
         fluent_builders::UpdateDatasetEntries::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateStreamProcessor`](crate::client::fluent_builders::UpdateStreamProcessor) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateStreamProcessor::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateStreamProcessor::set_name): <p> Name of the stream processor that you want to update. </p>
+    ///   - [`settings_for_update(StreamProcessorSettingsForUpdate)`](crate::client::fluent_builders::UpdateStreamProcessor::settings_for_update) / [`set_settings_for_update(Option<StreamProcessorSettingsForUpdate>)`](crate::client::fluent_builders::UpdateStreamProcessor::set_settings_for_update): <p> The stream processor settings that you want to update. Label detection settings can be updated to detect different labels with a different minimum confidence. </p>
+    ///   - [`regions_of_interest_for_update(Vec<RegionOfInterest>)`](crate::client::fluent_builders::UpdateStreamProcessor::regions_of_interest_for_update) / [`set_regions_of_interest_for_update(Option<Vec<RegionOfInterest>>)`](crate::client::fluent_builders::UpdateStreamProcessor::set_regions_of_interest_for_update): <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors. </p>
+    ///   - [`data_sharing_preference_for_update(StreamProcessorDataSharingPreference)`](crate::client::fluent_builders::UpdateStreamProcessor::data_sharing_preference_for_update) / [`set_data_sharing_preference_for_update(Option<StreamProcessorDataSharingPreference>)`](crate::client::fluent_builders::UpdateStreamProcessor::set_data_sharing_preference_for_update): <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
+    ///   - [`parameters_to_delete(Vec<StreamProcessorParameterToDelete>)`](crate::client::fluent_builders::UpdateStreamProcessor::parameters_to_delete) / [`set_parameters_to_delete(Option<Vec<StreamProcessorParameterToDelete>>)`](crate::client::fluent_builders::UpdateStreamProcessor::set_parameters_to_delete): <p> A list of parameters you want to delete from the stream processor. </p>
+    /// - On success, responds with [`UpdateStreamProcessorOutput`](crate::output::UpdateStreamProcessorOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateStreamProcessorError>`](crate::error::UpdateStreamProcessorError)
+    pub fn update_stream_processor(&self) -> fluent_builders::UpdateStreamProcessor {
+        fluent_builders::UpdateStreamProcessor::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
@@ -1386,10 +1410,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateStreamProcessor`.
     ///
-    /// <p>Creates an Amazon Rekognition stream processor that you can use to detect and recognize faces in a streaming video.</p>
-    /// <p>Amazon Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams. Amazon Rekognition Video sends analysis results to Amazon Kinesis Data Streams.</p>
-    /// <p>You provide as input a Kinesis video stream (<code>Input</code>) and a Kinesis data stream (<code>Output</code>) stream. You also specify the face recognition criteria in <code>Settings</code>. For example, the collection containing faces that you want to recognize. Use <code>Name</code> to assign an identifier for the stream processor. You use <code>Name</code> to manage the stream processor. For example, you can start processing the source video by calling <code>StartStreamProcessor</code> with the <code>Name</code> field. </p>
-    /// <p>After you have finished analyzing a streaming video, use <code>StopStreamProcessor</code> to stop processing. You can delete the stream processor by calling <code>DeleteStreamProcessor</code>.</p>
+    /// <p>Creates an Amazon Rekognition stream processor that you can use to detect and recognize faces or to detect labels in a streaming video.</p>
+    /// <p>Amazon Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams. There are two different settings for stream processors in Amazon Rekognition: detecting faces and detecting labels.</p>
+    /// <ul>
+    /// <li> <p>If you are creating a stream processor for detecting faces, you provide as input a Kinesis video stream (<code>Input</code>) and a Kinesis data stream (<code>Output</code>) stream. You also specify the face recognition criteria in <code>Settings</code>. For example, the collection containing faces that you want to recognize. After you have finished analyzing a streaming video, use <code>StopStreamProcessor</code> to stop processing.</p> </li>
+    /// <li> <p>If you are creating a stream processor to detect labels, you provide as input a Kinesis video stream (<code>Input</code>), Amazon S3 bucket information (<code>Output</code>), and an Amazon SNS topic ARN (<code>NotificationChannel</code>). You can also provide a KMS key ID to encrypt the data sent to your Amazon S3 bucket. You specify what you want to detect in <code>ConnectedHomeSettings</code>, such as people, packages and people, or pets, people, and packages. You can also specify where in the frame you want Amazon Rekognition to monitor with <code>RegionsOfInterest</code>. When you run the <code>StartStreamProcessor</code> operation on a label detection stream processor, you input start and stop information to determine the length of the processing time.</p> </li>
+    /// </ul>
+    /// <p> Use <code>Name</code> to assign an identifier for the stream processor. You use <code>Name</code> to manage the stream processor. For example, you can start processing the source video by calling <code>StartStreamProcessor</code> with the <code>Name</code> field. </p>
     /// <p>This operation requires permissions to perform the <code>rekognition:CreateStreamProcessor</code> action. If you want to tag your stream processor, you also require permission to perform the <code>rekognition:TagResource</code> operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStreamProcessor {
@@ -1430,12 +1457,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter name is <code>StreamProcessorInput</code>.</p>
+        /// <p>Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter name is <code>StreamProcessorInput</code>. This is required for both face search and label detection stream processors.</p>
         pub fn input(mut self, input: crate::model::StreamProcessorInput) -> Self {
             self.inner = self.inner.input(input);
             self
         }
-        /// <p>Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter name is <code>StreamProcessorInput</code>.</p>
+        /// <p>Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter name is <code>StreamProcessorInput</code>. This is required for both face search and label detection stream processors.</p>
         pub fn set_input(
             mut self,
             input: std::option::Option<crate::model::StreamProcessorInput>,
@@ -1443,12 +1470,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input(input);
             self
         }
-        /// <p>Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.</p>
+        /// <p>Kinesis data stream stream or Amazon S3 bucket location to which Amazon Rekognition Video puts the analysis results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>. This must be a <code>S3Destination</code> of an Amazon S3 bucket that you own for a label detection stream processor or a Kinesis data stream ARN for a face search stream processor.</p>
         pub fn output(mut self, input: crate::model::StreamProcessorOutput) -> Self {
             self.inner = self.inner.output(input);
             self
         }
-        /// <p>Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.</p>
+        /// <p>Kinesis data stream stream or Amazon S3 bucket location to which Amazon Rekognition Video puts the analysis results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>. This must be a <code>S3Destination</code> of an Amazon S3 bucket that you own for a label detection stream processor or a Kinesis data stream ARN for a face search stream processor.</p>
         pub fn set_output(
             mut self,
             input: std::option::Option<crate::model::StreamProcessorOutput>,
@@ -1456,22 +1483,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output(input);
             self
         }
-        /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. </p>
+        /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. This is required for both face search and label detection stream processors. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. </p>
+        /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. This is required for both face search and label detection stream processors. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Face recognition input parameters to be used by the stream processor. Includes the collection to use for face recognition and the face attributes to detect.</p>
+        /// <p>Input parameters used in a streaming video analyzed by a stream processor. You can use <code>FaceSearch</code> to recognize faces in a streaming video, or you can use <code>ConnectedHome</code> to detect labels.</p>
         pub fn settings(mut self, input: crate::model::StreamProcessorSettings) -> Self {
             self.inner = self.inner.settings(input);
             self
         }
-        /// <p>Face recognition input parameters to be used by the stream processor. Includes the collection to use for face recognition and the face attributes to detect.</p>
+        /// <p>Input parameters used in a streaming video analyzed by a stream processor. You can use <code>FaceSearch</code> to recognize faces in a streaming video, or you can use <code>ConnectedHome</code> to detect labels.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<crate::model::StreamProcessorSettings>,
@@ -1479,12 +1506,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_settings(input);
             self
         }
-        /// <p>ARN of the IAM role that allows access to the stream processor.</p>
+        /// <p>The Amazon Resource Number (ARN) of the IAM role that allows access to the stream processor. The IAM role provides Rekognition read permissions for a Kinesis stream. It also provides write permissions to an Amazon S3 bucket and Amazon Simple Notification Service topic for a label detection stream processor. This is required for both face search and label detection stream processors.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>ARN of the IAM role that allows access to the stream processor.</p>
+        /// <p>The Amazon Resource Number (ARN) of the IAM role that allows access to the stream processor. The IAM role provides Rekognition read permissions for a Kinesis stream. It also provides write permissions to an Amazon S3 bucket and Amazon Simple Notification Service topic for a label detection stream processor. This is required for both face search and label detection stream processors.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -1512,10 +1539,75 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the object detection results and completion status of a video analysis operation.</p>
+        /// <p>Amazon Rekognition publishes a notification the first time an object of interest or a person is detected in the video stream. For example, if Amazon Rekognition detects a person at second 2, a pet at second 4, and a person again at second 5, Amazon Rekognition sends 2 object class detected notifications, one for a person at second 2 and one for a pet at second 4.</p>
+        /// <p>Amazon Rekognition also publishes an an end-of-session notification with a summary when the stream processing session is complete.</p>
+        pub fn notification_channel(
+            mut self,
+            input: crate::model::StreamProcessorNotificationChannel,
+        ) -> Self {
+            self.inner = self.inner.notification_channel(input);
+            self
+        }
+        /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the object detection results and completion status of a video analysis operation.</p>
+        /// <p>Amazon Rekognition publishes a notification the first time an object of interest or a person is detected in the video stream. For example, if Amazon Rekognition detects a person at second 2, a pet at second 4, and a person again at second 5, Amazon Rekognition sends 2 object class detected notifications, one for a person at second 2 and one for a pet at second 4.</p>
+        /// <p>Amazon Rekognition also publishes an an end-of-session notification with a summary when the stream processing session is complete.</p>
+        pub fn set_notification_channel(
+            mut self,
+            input: std::option::Option<crate::model::StreamProcessorNotificationChannel>,
+        ) -> Self {
+            self.inner = self.inner.set_notification_channel(input);
+            self
+        }
+        /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and hero images. Your source images are unaffected. </p>
+        /// <p> </p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
+            self
+        }
+        /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and hero images. Your source images are unaffected. </p>
+        /// <p> </p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
+            self
+        }
+        /// Appends an item to `RegionsOfInterest`.
+        ///
+        /// To override the contents of this collection use [`set_regions_of_interest`](Self::set_regions_of_interest).
+        ///
+        /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. </p>
+        pub fn regions_of_interest(mut self, input: crate::model::RegionOfInterest) -> Self {
+            self.inner = self.inner.regions_of_interest(input);
+            self
+        }
+        /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. </p>
+        pub fn set_regions_of_interest(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RegionOfInterest>>,
+        ) -> Self {
+            self.inner = self.inner.set_regions_of_interest(input);
+            self
+        }
+        /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
+        pub fn data_sharing_preference(
+            mut self,
+            input: crate::model::StreamProcessorDataSharingPreference,
+        ) -> Self {
+            self.inner = self.inner.data_sharing_preference(input);
+            self
+        }
+        /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
+        pub fn set_data_sharing_preference(
+            mut self,
+            input: std::option::Option<crate::model::StreamProcessorDataSharingPreference>,
+        ) -> Self {
+            self.inner = self.inner.set_data_sharing_preference(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DeleteCollection`.
     ///
-    /// <p>Deletes the specified collection. Note that this operation removes all faces in the collection. For an example, see <code>delete-collection-procedure</code>.</p>
+    /// <p>Deletes the specified collection. Note that this operation removes all faces in the collection. For an example, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/delete-collection-procedure.html">Deleting a collection</a>.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:DeleteCollection</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCollection {
@@ -2282,7 +2374,7 @@ pub mod fluent_builders {
         /// <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.</p>
         /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
         /// <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p>
-        /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide. </p>
+        /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
         pub fn image(mut self, input: crate::model::Image) -> Self {
             self.inner = self.inner.image(input);
             self
@@ -2293,7 +2385,7 @@ pub mod fluent_builders {
         /// <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.</p>
         /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
         /// <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p>
-        /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide. </p>
+        /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
         pub fn set_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.inner = self.inner.set_image(input);
             self
@@ -2402,7 +2494,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetectLabels`.
     ///
     /// <p>Detects instances of real-world entities within an image (JPEG or PNG) provided as input. This includes objects like flower, tree, and table; events like wedding, graduation, and birthday party; and concepts like landscape, evening, and nature. </p>
-    /// <p>For an example, see Analyzing Images Stored in an Amazon S3 Bucket in the Amazon Rekognition Developer Guide.</p> <note>
+    /// <p>For an example, see Analyzing images stored in an Amazon S3 bucket in the Amazon Rekognition Developer Guide.</p> <note>
     /// <p> <code>DetectLabels</code> does not support the detection of activities. However, activity detection is supported for label detection in videos. For more information, see StartLabelDetection in the Amazon Rekognition Developer Guide.</p>
     /// </note>
     /// <p>You pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. The image must be either a PNG or JPEG formatted file. </p>
@@ -2673,7 +2765,7 @@ pub mod fluent_builders {
     /// <p>A line is a string of equally spaced words. A line isn't necessarily a complete sentence. For example, a driver's license number is detected as a line. A line ends when there is no aligned text after it. Also, a line ends when there is a large gap between words, relative to the length of the words. This means, depending on the gap between words, Amazon Rekognition may detect multiple lines in text aligned in the same direction. Periods don't represent the end of a line. If a sentence spans multiple lines, the <code>DetectText</code> operation returns multiple lines.</p>
     /// <p>To determine whether a <code>TextDetection</code> element is a line of text or a word, use the <code>TextDetection</code> object <code>Type</code> field. </p>
     /// <p>To be detected, text must be within +/- 90 degrees orientation of the horizontal axis.</p>
-    /// <p>For more information, see DetectText in the Amazon Rekognition Developer Guide.</p>
+    /// <p>For more information, see Detecting text in the Amazon Rekognition Developer Guide.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectText {
         handle: std::sync::Arc<super::Handle>,
@@ -2805,7 +2897,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCelebrityInfo`.
     ///
     /// <p>Gets the name and additional information about a celebrity based on their Amazon Rekognition ID. The additional information is returned as an array of URLs. If there is no additional information about the celebrity, this list is empty.</p>
-    /// <p>For more information, see Recognizing Celebrities in an Image in the Amazon Rekognition Developer Guide.</p>
+    /// <p>For more information, see Getting information about a celebrity in the Amazon Rekognition Developer Guide.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:GetCelebrityInfo</code> action. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCelebrityInfo {
@@ -2967,7 +3059,7 @@ pub mod fluent_builders {
     /// <p> <code>GetContentModeration</code> returns detected inappropriate, unwanted, or offensive content moderation labels, and the time they are detected, in an array, <code>ModerationLabels</code>, of <code>ContentModerationDetection</code> objects. </p>
     /// <p>By default, the moderated labels are returned sorted by time, in milliseconds from the start of the video. You can also sort them by moderated label by specifying <code>NAME</code> for the <code>SortBy</code> input parameter. </p>
     /// <p>Since video analysis can return a large number of results, use the <code>MaxResults</code> parameter to limit the number of labels returned in a single call to <code>GetContentModeration</code>. If there are more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set of results. To get the next page of results, call <code>GetContentModeration</code> and populate the <code>NextToken</code> request parameter with the value of <code>NextToken</code> returned from the previous call to <code>GetContentModeration</code>.</p>
-    /// <p>For more information, see Content moderation in the Amazon Rekognition Developer Guide.</p>
+    /// <p>For more information, see moderating content in the Amazon Rekognition Developer Guide.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContentModeration {
         handle: std::sync::Arc<super::Handle>,
@@ -3441,7 +3533,7 @@ pub mod fluent_builders {
     /// <p> <code>GetSegmentDetection</code> returns detected segments in an array (<code>Segments</code>) of <code>SegmentDetection</code> objects. <code>Segments</code> is sorted by the segment types specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Each element of the array includes the detected segment, the precentage confidence in the acuracy of the detected segment, the type of the segment, and the frame in which the segment was detected.</p>
     /// <p>Use <code>SelectedSegmentTypes</code> to find out the type of segment detection requested in the call to <code>StartSegmentDetection</code>.</p>
     /// <p>Use the <code>MaxResults</code> parameter to limit the number of segment detections returned. If there are more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set of results. To get the next page of results, call <code>GetSegmentDetection</code> and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to <code>GetSegmentDetection</code>.</p>
-    /// <p>For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition Developer Guide.</p>
+    /// <p>For more information, see Detecting video segments in stored video in the Amazon Rekognition Developer Guide.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSegmentDetection {
         handle: std::sync::Arc<super::Handle>,
@@ -3605,7 +3697,7 @@ pub mod fluent_builders {
     ///
     /// <p>Detects faces in the input image and adds them to the specified collection. </p>
     /// <p>Amazon Rekognition doesn't save the actual faces that are detected. Instead, the underlying detection algorithm first detects the faces in the input image. For each face, the algorithm extracts facial features into a feature vector, and stores it in the backend database. Amazon Rekognition uses feature vectors when it performs face match and search operations using the <code>SearchFaces</code> and <code>SearchFacesByImage</code> operations.</p>
-    /// <p>For more information, see Adding Faces to a Collection in the Amazon Rekognition Developer Guide.</p>
+    /// <p>For more information, see Adding faces to a collection in the Amazon Rekognition Developer Guide.</p>
     /// <p>To get the number of faces in a collection, call <code>DescribeCollection</code>. </p>
     /// <p>If you're using version 1.0 of the face detection model, <code>IndexFaces</code> indexes the 15 largest faces in the input image. Later versions of the face detection model index the 100 largest faces in the input image. </p>
     /// <p>If you're using version 4 or later of the face model, image orientation information is not returned in the <code>OrientationCorrection</code> field. </p>
@@ -3632,7 +3724,7 @@ pub mod fluent_builders {
     /// <li> <p>A face ID, <code>FaceId</code>, assigned by the service for each face that's detected and stored.</p> </li>
     /// <li> <p>An image ID, <code>ImageId</code>, assigned by the service for the input image.</p> </li>
     /// </ul>
-    /// <p>If you request all facial attributes (by using the <code>detectionAttributes</code> parameter), Amazon Rekognition returns detailed facial attributes, such as facial landmarks (for example, location of eye and mouth) and other facial attributes. If you provide the same image, specify the same collection, use the same external ID, and use the same model version in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face metadata.</p>
+    /// <p>If you request all facial attributes (by using the <code>detectionAttributes</code> parameter), Amazon Rekognition returns detailed facial attributes, such as facial landmarks (for example, location of eye and mouth) and other facial attributes. If you provide the same image, specify the same collection, and use the same external ID in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face metadata.</p>
     /// <p></p>
     /// <p>The input image is passed either as base64-encoded image bytes, or as a reference to an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes isn't supported. The image must be formatted as a PNG or JPEG file. </p>
     /// <p>This operation requires permissions to perform the <code>rekognition:IndexFaces</code> action.</p>
@@ -3767,7 +3859,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCollections`.
     ///
     /// <p>Returns list of collection IDs in your account. If the result is truncated, the response also provides a <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.</p>
-    /// <p>For an example, see Listing Collections in the Amazon Rekognition Developer Guide.</p>
+    /// <p>For an example, see Listing collections in the Amazon Rekognition Developer Guide.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:ListCollections</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCollections {
@@ -4255,12 +4347,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RecognizeCelebrities`.
     ///
-    /// <p>Returns an array of celebrities recognized in the input image. For more information, see Recognizing Celebrities in the Amazon Rekognition Developer Guide. </p>
+    /// <p>Returns an array of celebrities recognized in the input image. For more information, see Recognizing celebrities in the Amazon Rekognition Developer Guide. </p>
     /// <p> <code>RecognizeCelebrities</code> returns the 64 largest faces in the image. It lists the recognized celebrities in the <code>CelebrityFaces</code> array and any unrecognized faces in the <code>UnrecognizedFaces</code> array. <code>RecognizeCelebrities</code> doesn't return celebrities whose faces aren't among the largest 64 faces in the image.</p>
     /// <p>For each celebrity recognized, <code>RecognizeCelebrities</code> returns a <code>Celebrity</code> object. The <code>Celebrity</code> object contains the celebrity name, ID, URL links to additional information, match confidence, and a <code>ComparedFace</code> object that you can use to locate the celebrity's face on the image.</p>
     /// <p>Amazon Rekognition doesn't retain information about which images a celebrity has been recognized in. Your application must store this information and use the <code>Celebrity</code> ID property as a unique identifier for the celebrity. If you don't store the celebrity name or additional information URLs returned by <code>RecognizeCelebrities</code>, you will need the ID to identify the celebrity in a call to the <code>GetCelebrityInfo</code> operation.</p>
     /// <p>You pass the input image either as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. The image must be either a PNG or JPEG formatted file. </p>
-    /// <p>For an example, see Recognizing Celebrities in an Image in the Amazon Rekognition Developer Guide.</p>
+    /// <p>For an example, see Recognizing celebrities in an image in the Amazon Rekognition Developer Guide.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:RecognizeCelebrities</code> operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RecognizeCelebrities {
@@ -4320,7 +4412,7 @@ pub mod fluent_builders {
     /// <p>You can also search faces without indexing faces by using the <code>SearchFacesByImage</code> operation.</p>
     /// </note>
     /// <p> The operation response returns an array of faces that match, ordered by similarity score with the highest similarity first. More specifically, it is an array of metadata for each face match that is found. Along with the metadata, the response also includes a <code>confidence</code> value for each face match, indicating the confidence that the specific face matches the input face. </p>
-    /// <p>For an example, see Searching for a Face Using Its Face ID in the Amazon Rekognition Developer Guide.</p>
+    /// <p>For an example, see Searching for a face using its face ID in the Amazon Rekognition Developer Guide.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:SearchFaces</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchFaces {
@@ -4523,7 +4615,7 @@ pub mod fluent_builders {
     ///
     /// <p>Starts asynchronous recognition of celebrities in a stored video.</p>
     /// <p>Amazon Rekognition Video can detect celebrities in a video must be stored in an Amazon S3 bucket. Use <code>Video</code> to specify the bucket name and the filename of the video. <code>StartCelebrityRecognition</code> returns a job identifier (<code>JobId</code>) which you use to get the results of the analysis. When celebrity recognition analysis is finished, Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>. To get the results of the celebrity recognition analysis, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetCelebrityRecognition</code> and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartCelebrityRecognition</code>. </p>
-    /// <p>For more information, see Recognizing Celebrities in the Amazon Rekognition Developer Guide.</p>
+    /// <p>For more information, see Recognizing celebrities in the Amazon Rekognition Developer Guide.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartCelebrityRecognition {
         handle: std::sync::Arc<super::Handle>,
@@ -4615,7 +4707,7 @@ pub mod fluent_builders {
     /// <p> Starts asynchronous detection of inappropriate, unwanted, or offensive content in a stored video. For a list of moderation labels in Amazon Rekognition, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html#moderation-api">Using the image and video moderation APIs</a>.</p>
     /// <p>Amazon Rekognition Video can moderate content in a video stored in an Amazon S3 bucket. Use <code>Video</code> to specify the bucket name and the filename of the video. <code>StartContentModeration</code> returns a job identifier (<code>JobId</code>) which you use to get the results of the analysis. When content analysis is finished, Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.</p>
     /// <p>To get the results of the content analysis, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetContentModeration</code> and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartContentModeration</code>. </p>
-    /// <p>For more information, see Content moderation in the Amazon Rekognition Developer Guide.</p>
+    /// <p>For more information, see Moderating content in the Amazon Rekognition Developer Guide.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartContentModeration {
         handle: std::sync::Arc<super::Handle>,
@@ -4716,7 +4808,7 @@ pub mod fluent_builders {
     ///
     /// <p>Starts asynchronous detection of faces in a stored video.</p>
     /// <p>Amazon Rekognition Video can detect faces in a video stored in an Amazon S3 bucket. Use <code>Video</code> to specify the bucket name and the filename of the video. <code>StartFaceDetection</code> returns a job identifier (<code>JobId</code>) that you use to get the results of the operation. When face detection is finished, Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>. To get the results of the face detection operation, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetFaceDetection</code> and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartFaceDetection</code>.</p>
-    /// <p>For more information, see Detecting Faces in a Stored Video in the Amazon Rekognition Developer Guide.</p>
+    /// <p>For more information, see Detecting faces in a stored video in the Amazon Rekognition Developer Guide.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartFaceDetection {
         handle: std::sync::Arc<super::Handle>,
@@ -4823,7 +4915,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartFaceSearch`.
     ///
     /// <p>Starts the asynchronous search for faces in a collection that match the faces of persons detected in a stored video.</p>
-    /// <p>The video must be stored in an Amazon S3 bucket. Use <code>Video</code> to specify the bucket name and the filename of the video. <code>StartFaceSearch</code> returns a job identifier (<code>JobId</code>) which you use to get the search results once the search has completed. When searching is finished, Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>. To get the search results, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetFaceSearch</code> and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartFaceSearch</code>. For more information, see <code>procedure-person-search-videos</code>.</p>
+    /// <p>The video must be stored in an Amazon S3 bucket. Use <code>Video</code> to specify the bucket name and the filename of the video. <code>StartFaceSearch</code> returns a job identifier (<code>JobId</code>) which you use to get the search results once the search has completed. When searching is finished, Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>. To get the search results, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetFaceSearch</code> and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartFaceSearch</code>. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/procedure-person-search-videos.html">Searching stored videos for faces</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartFaceSearch {
         handle: std::sync::Arc<super::Handle>,
@@ -5205,7 +5297,7 @@ pub mod fluent_builders {
     /// <p>Amazon Rekognition Video can detect segments in a video stored in an Amazon S3 bucket. Use <code>Video</code> to specify the bucket name and the filename of the video. <code>StartSegmentDetection</code> returns a job identifier (<code>JobId</code>) which you use to get the results of the operation. When segment detection is finished, Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.</p>
     /// <p>You can use the <code>Filters</code> (<code>StartSegmentDetectionFilters</code>) input parameter to specify the minimum detection confidence returned in the response. Within <code>Filters</code>, use <code>ShotFilter</code> (<code>StartShotDetectionFilter</code>) to filter detected shots. Use <code>TechnicalCueFilter</code> (<code>StartTechnicalCueDetectionFilter</code>) to filter technical cues. </p>
     /// <p>To get the results of the segment detection operation, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. if so, call <code>GetSegmentDetection</code> and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartSegmentDetection</code>. </p>
-    /// <p>For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition Developer Guide.</p>
+    /// <p>For more information, see Detecting video segments in stored video in the Amazon Rekognition Developer Guide.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSegmentDetection {
         handle: std::sync::Arc<super::Handle>,
@@ -5325,6 +5417,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartStreamProcessor`.
     ///
     /// <p>Starts processing a stream processor. You create a stream processor by calling <code>CreateStreamProcessor</code>. To tell <code>StartStreamProcessor</code> which stream processor to start, use the value of the <code>Name</code> field specified in the call to <code>CreateStreamProcessor</code>.</p>
+    /// <p>If you are using a label detection stream processor to detect labels, you need to provide a <code>Start selector</code> and a <code>Stop selector</code> to determine the length of the stream processing time.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartStreamProcessor {
         handle: std::sync::Arc<super::Handle>,
@@ -5372,6 +5465,39 @@ pub mod fluent_builders {
         /// <p>The name of the stream processor to start processing.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
+        /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
+        pub fn start_selector(
+            mut self,
+            input: crate::model::StreamProcessingStartSelector,
+        ) -> Self {
+            self.inner = self.inner.start_selector(input);
+            self
+        }
+        /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
+        /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
+        pub fn set_start_selector(
+            mut self,
+            input: std::option::Option<crate::model::StreamProcessingStartSelector>,
+        ) -> Self {
+            self.inner = self.inner.set_start_selector(input);
+            self
+        }
+        /// <p> Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video. </p>
+        /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
+        pub fn stop_selector(mut self, input: crate::model::StreamProcessingStopSelector) -> Self {
+            self.inner = self.inner.stop_selector(input);
+            self
+        }
+        /// <p> Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video. </p>
+        /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
+        pub fn set_stop_selector(
+            mut self,
+            input: std::option::Option<crate::model::StreamProcessingStopSelector>,
+        ) -> Self {
+            self.inner = self.inner.set_stop_selector(input);
             self
         }
     }
@@ -5442,12 +5568,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <code>api-video</code>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
+        /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html">Calling Amazon Rekognition Video operations</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
         pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
             self.inner = self.inner.notification_channel(input);
             self
         }
-        /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <code>api-video</code>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
+        /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html">Calling Amazon Rekognition Video operations</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
         pub fn set_notification_channel(
             mut self,
             input: std::option::Option<crate::model::NotificationChannel>,
@@ -5807,6 +5933,133 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::DatasetChanges>,
         ) -> Self {
             self.inner = self.inner.set_changes(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateStreamProcessor`.
+    ///
+    /// <p> Allows you to update a stream processor. You can change some settings and regions of interest and delete certain parameters. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateStreamProcessor {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_stream_processor_input::Builder,
+    }
+    impl UpdateStreamProcessor {
+        /// Creates a new `UpdateStreamProcessor`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateStreamProcessorOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateStreamProcessorError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> Name of the stream processor that you want to update. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p> Name of the stream processor that you want to update. </p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p> The stream processor settings that you want to update. Label detection settings can be updated to detect different labels with a different minimum confidence. </p>
+        pub fn settings_for_update(
+            mut self,
+            input: crate::model::StreamProcessorSettingsForUpdate,
+        ) -> Self {
+            self.inner = self.inner.settings_for_update(input);
+            self
+        }
+        /// <p> The stream processor settings that you want to update. Label detection settings can be updated to detect different labels with a different minimum confidence. </p>
+        pub fn set_settings_for_update(
+            mut self,
+            input: std::option::Option<crate::model::StreamProcessorSettingsForUpdate>,
+        ) -> Self {
+            self.inner = self.inner.set_settings_for_update(input);
+            self
+        }
+        /// Appends an item to `RegionsOfInterestForUpdate`.
+        ///
+        /// To override the contents of this collection use [`set_regions_of_interest_for_update`](Self::set_regions_of_interest_for_update).
+        ///
+        /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors. </p>
+        pub fn regions_of_interest_for_update(
+            mut self,
+            input: crate::model::RegionOfInterest,
+        ) -> Self {
+            self.inner = self.inner.regions_of_interest_for_update(input);
+            self
+        }
+        /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors. </p>
+        pub fn set_regions_of_interest_for_update(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RegionOfInterest>>,
+        ) -> Self {
+            self.inner = self.inner.set_regions_of_interest_for_update(input);
+            self
+        }
+        /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
+        pub fn data_sharing_preference_for_update(
+            mut self,
+            input: crate::model::StreamProcessorDataSharingPreference,
+        ) -> Self {
+            self.inner = self.inner.data_sharing_preference_for_update(input);
+            self
+        }
+        /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
+        pub fn set_data_sharing_preference_for_update(
+            mut self,
+            input: std::option::Option<crate::model::StreamProcessorDataSharingPreference>,
+        ) -> Self {
+            self.inner = self.inner.set_data_sharing_preference_for_update(input);
+            self
+        }
+        /// Appends an item to `ParametersToDelete`.
+        ///
+        /// To override the contents of this collection use [`set_parameters_to_delete`](Self::set_parameters_to_delete).
+        ///
+        /// <p> A list of parameters you want to delete from the stream processor. </p>
+        pub fn parameters_to_delete(
+            mut self,
+            input: crate::model::StreamProcessorParameterToDelete,
+        ) -> Self {
+            self.inner = self.inner.parameters_to_delete(input);
+            self
+        }
+        /// <p> A list of parameters you want to delete from the stream processor. </p>
+        pub fn set_parameters_to_delete(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::StreamProcessorParameterToDelete>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_parameters_to_delete(input);
             self
         }
     }

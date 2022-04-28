@@ -22,6 +22,14 @@ impl ListFirewallPoliciesPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `firewall_policies`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListFirewallPoliciesPaginatorItems {
+        crate::paginator::ListFirewallPoliciesPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -107,6 +115,14 @@ impl ListFirewallsPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `firewalls`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListFirewallsPaginatorItems {
+        crate::paginator::ListFirewallsPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -196,6 +212,14 @@ impl ListRuleGroupsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `rule_groups`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListRuleGroupsPaginatorItems {
+        crate::paginator::ListRuleGroupsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -283,6 +307,14 @@ impl ListTagsForResourcePaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `tags`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListTagsForResourcePaginatorItems {
+        crate::paginator::ListTagsForResourcePaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -343,6 +375,110 @@ impl ListTagsForResourcePaginator {
                     }
                 }
             })
+        })
+    }
+}
+
+/// Flattened paginator for `ListFirewallPoliciesPaginator`
+///
+/// This is created with [`.items()`](ListFirewallPoliciesPaginator::items)
+pub struct ListFirewallPoliciesPaginatorItems(ListFirewallPoliciesPaginator);
+
+impl ListFirewallPoliciesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::FirewallPolicyMetadata,
+            aws_smithy_http::result::SdkError<crate::error::ListFirewallPoliciesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_firewall_policies_output_firewall_policies(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListFirewallsPaginator`
+///
+/// This is created with [`.items()`](ListFirewallsPaginator::items)
+pub struct ListFirewallsPaginatorItems(ListFirewallsPaginator);
+
+impl ListFirewallsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::FirewallMetadata,
+            aws_smithy_http::result::SdkError<crate::error::ListFirewallsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_firewalls_output_firewalls(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListRuleGroupsPaginator`
+///
+/// This is created with [`.items()`](ListRuleGroupsPaginator::items)
+pub struct ListRuleGroupsPaginatorItems(ListRuleGroupsPaginator);
+
+impl ListRuleGroupsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::RuleGroupMetadata,
+            aws_smithy_http::result::SdkError<crate::error::ListRuleGroupsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_rule_groups_output_rule_groups(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListTagsForResourcePaginator`
+///
+/// This is created with [`.items()`](ListTagsForResourcePaginator::items)
+pub struct ListTagsForResourcePaginatorItems(ListTagsForResourcePaginator);
+
+impl ListTagsForResourcePaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::Tag,
+            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_tags_for_resource_output_tags(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

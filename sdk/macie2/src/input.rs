@@ -4285,14 +4285,14 @@ pub mod get_findings_input {
         ///
         /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
         ///
-        /// <p>An array of strings that lists the unique identifiers for the findings to retrieve.</p>
+        /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
         pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.finding_ids.unwrap_or_default();
             v.push(input.into());
             self.finding_ids = Some(v);
             self
         }
-        /// <p>An array of strings that lists the unique identifiers for the findings to retrieve.</p>
+        /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
         pub fn set_finding_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7988,14 +7988,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
+        /// <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
+        /// <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9204,7 +9204,7 @@ impl std::fmt::Debug for UpdateClassificationJobInput {
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
+    /// <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -9212,7 +9212,7 @@ impl UntagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
+    /// <p>One or more tags (keys) to remove from the resource. In an HTTP request to remove multiple tags, append the tagKeys parameter and argument for each tag to remove, and separate them with an ampersand (&amp;).</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -9898,13 +9898,13 @@ impl std::fmt::Debug for GetFindingsFilterInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsInput {
-    /// <p>An array of strings that lists the unique identifiers for the findings to retrieve.</p>
+    /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
     pub finding_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The criteria for sorting the results of the request.</p>
     pub sort_criteria: std::option::Option<crate::model::SortCriteria>,
 }
 impl GetFindingsInput {
-    /// <p>An array of strings that lists the unique identifiers for the findings to retrieve.</p>
+    /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
     pub fn finding_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.finding_ids.as_deref()
     }

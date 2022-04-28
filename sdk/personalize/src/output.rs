@@ -203,6 +203,120 @@ impl StopSolutionVersionCreationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopRecommenderOutput {
+    /// <p>The Amazon Resource Name (ARN) of the recommender you stopped.</p>
+    pub recommender_arn: std::option::Option<std::string::String>,
+}
+impl StopRecommenderOutput {
+    /// <p>The Amazon Resource Name (ARN) of the recommender you stopped.</p>
+    pub fn recommender_arn(&self) -> std::option::Option<&str> {
+        self.recommender_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for StopRecommenderOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopRecommenderOutput");
+        formatter.field("recommender_arn", &self.recommender_arn);
+        formatter.finish()
+    }
+}
+/// See [`StopRecommenderOutput`](crate::output::StopRecommenderOutput)
+pub mod stop_recommender_output {
+    /// A builder for [`StopRecommenderOutput`](crate::output::StopRecommenderOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) recommender_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the recommender you stopped.</p>
+        pub fn recommender_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recommender_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the recommender you stopped.</p>
+        pub fn set_recommender_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.recommender_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopRecommenderOutput`](crate::output::StopRecommenderOutput)
+        pub fn build(self) -> crate::output::StopRecommenderOutput {
+            crate::output::StopRecommenderOutput {
+                recommender_arn: self.recommender_arn,
+            }
+        }
+    }
+}
+impl StopRecommenderOutput {
+    /// Creates a new builder-style object to manufacture [`StopRecommenderOutput`](crate::output::StopRecommenderOutput)
+    pub fn builder() -> crate::output::stop_recommender_output::Builder {
+        crate::output::stop_recommender_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartRecommenderOutput {
+    /// <p>The Amazon Resource Name (ARN) of the recommender you started.</p>
+    pub recommender_arn: std::option::Option<std::string::String>,
+}
+impl StartRecommenderOutput {
+    /// <p>The Amazon Resource Name (ARN) of the recommender you started.</p>
+    pub fn recommender_arn(&self) -> std::option::Option<&str> {
+        self.recommender_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for StartRecommenderOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartRecommenderOutput");
+        formatter.field("recommender_arn", &self.recommender_arn);
+        formatter.finish()
+    }
+}
+/// See [`StartRecommenderOutput`](crate::output::StartRecommenderOutput)
+pub mod start_recommender_output {
+    /// A builder for [`StartRecommenderOutput`](crate::output::StartRecommenderOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) recommender_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the recommender you started.</p>
+        pub fn recommender_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recommender_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the recommender you started.</p>
+        pub fn set_recommender_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.recommender_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartRecommenderOutput`](crate::output::StartRecommenderOutput)
+        pub fn build(self) -> crate::output::StartRecommenderOutput {
+            crate::output::StartRecommenderOutput {
+                recommender_arn: self.recommender_arn,
+            }
+        }
+    }
+}
+impl StartRecommenderOutput {
+    /// Creates a new builder-style object to manufacture [`StartRecommenderOutput`](crate::output::StartRecommenderOutput)
+    pub fn builder() -> crate::output::start_recommender_output::Builder {
+        crate::output::start_recommender_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The resource's tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,

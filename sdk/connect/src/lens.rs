@@ -169,6 +169,16 @@ pub(crate) fn reflens_structure_crate_output_list_phone_numbers_output_next_toke
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_phone_numbers_v2_output_next_token(
+    input: &crate::output::ListPhoneNumbersV2Output,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_prompts_output_next_token(
     input: &crate::output::ListPromptsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -281,6 +291,26 @@ pub(crate) fn reflens_structure_crate_output_list_user_hierarchy_groups_output_n
 
 pub(crate) fn reflens_structure_crate_output_list_users_output_next_token(
     input: &crate::output::ListUsersOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_search_available_phone_numbers_output_next_token(
+    input: &crate::output::SearchAvailablePhoneNumbersOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_search_users_output_next_token(
+    input: &crate::output::SearchUsersOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -449,6 +479,16 @@ pub(crate) fn lens_structure_crate_output_list_phone_numbers_output_phone_number
     Some(input)
 }
 
+pub(crate) fn lens_structure_crate_output_list_phone_numbers_v2_output_list_phone_numbers_summary_list(
+    input: crate::output::ListPhoneNumbersV2Output,
+) -> std::option::Option<std::vec::Vec<crate::model::ListPhoneNumbersSummary>> {
+    let input = match input.list_phone_numbers_summary_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_list_prompts_output_prompt_summary_list(
     input: crate::output::ListPromptsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::PromptSummary>> {
@@ -563,6 +603,26 @@ pub(crate) fn lens_structure_crate_output_list_users_output_user_summary_list(
     input: crate::output::ListUsersOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::UserSummary>> {
     let input = match input.user_summary_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_search_available_phone_numbers_output_available_numbers_list(
+    input: crate::output::SearchAvailablePhoneNumbersOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::AvailableNumberSummary>> {
+    let input = match input.available_numbers_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_search_users_output_users(
+    input: crate::output::SearchUsersOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::UserSearchSummary>> {
+    let input = match input.users {
         None => return None,
         Some(t) => t,
     };

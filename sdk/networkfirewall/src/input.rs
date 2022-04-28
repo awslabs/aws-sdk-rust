@@ -408,6 +408,8 @@ pub mod create_firewall_input {
         pub(crate) firewall_policy_change_protection: std::option::Option<bool>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) encryption_configuration:
+            std::option::Option<crate::model::EncryptionConfiguration>,
     }
     impl Builder {
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -529,6 +531,22 @@ pub mod create_firewall_input {
             self.tags = input;
             self
         }
+        /// <p>A complex type that contains settings for encryption of your firewall resources.</p>
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
+            self.encryption_configuration = Some(input);
+            self
+        }
+        /// <p>A complex type that contains settings for encryption of your firewall resources.</p>
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.encryption_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateFirewallInput`](crate::input::CreateFirewallInput)
         pub fn build(
             self,
@@ -548,6 +566,7 @@ pub mod create_firewall_input {
                     .unwrap_or_default(),
                 description: self.description,
                 tags: self.tags,
+                encryption_configuration: self.encryption_configuration,
             })
         }
     }
@@ -673,6 +692,8 @@ pub mod create_firewall_policy_input {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) dry_run: std::option::Option<bool>,
+        pub(crate) encryption_configuration:
+            std::option::Option<crate::model::EncryptionConfiguration>,
     }
     impl Builder {
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
@@ -744,6 +765,22 @@ pub mod create_firewall_policy_input {
             self.dry_run = input;
             self
         }
+        /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
+            self.encryption_configuration = Some(input);
+            self
+        }
+        /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.encryption_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateFirewallPolicyInput`](crate::input::CreateFirewallPolicyInput)
         pub fn build(
             self,
@@ -757,6 +794,7 @@ pub mod create_firewall_policy_input {
                 description: self.description,
                 tags: self.tags,
                 dry_run: self.dry_run.unwrap_or_default(),
+                encryption_configuration: self.encryption_configuration,
             })
         }
     }
@@ -887,6 +925,9 @@ pub mod create_rule_group_input {
         pub(crate) capacity: std::option::Option<i32>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) dry_run: std::option::Option<bool>,
+        pub(crate) encryption_configuration:
+            std::option::Option<crate::model::EncryptionConfiguration>,
+        pub(crate) source_metadata: std::option::Option<crate::model::SourceMetadata>,
     }
     impl Builder {
         /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
@@ -1026,6 +1067,35 @@ pub mod create_rule_group_input {
             self.dry_run = input;
             self
         }
+        /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
+            self.encryption_configuration = Some(input);
+            self
+        }
+        /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.encryption_configuration = input;
+            self
+        }
+        /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
+        pub fn source_metadata(mut self, input: crate::model::SourceMetadata) -> Self {
+            self.source_metadata = Some(input);
+            self
+        }
+        /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
+        pub fn set_source_metadata(
+            mut self,
+            input: std::option::Option<crate::model::SourceMetadata>,
+        ) -> Self {
+            self.source_metadata = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateRuleGroupInput`](crate::input::CreateRuleGroupInput)
         pub fn build(
             self,
@@ -1042,6 +1112,8 @@ pub mod create_rule_group_input {
                 capacity: self.capacity,
                 tags: self.tags,
                 dry_run: self.dry_run.unwrap_or_default(),
+                encryption_configuration: self.encryption_configuration,
+                source_metadata: self.source_metadata,
             })
         }
     }
@@ -3341,6 +3413,8 @@ pub mod list_rule_groups_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) scope: std::option::Option<crate::model::ResourceManagedStatus>,
+        pub(crate) managed_type: std::option::Option<crate::model::ResourceManagedType>,
+        pub(crate) r#type: std::option::Option<crate::model::RuleGroupType>,
     }
     impl Builder {
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
@@ -3376,6 +3450,29 @@ pub mod list_rule_groups_input {
             self.scope = input;
             self
         }
+        /// <p>Indicates the general category of the Amazon Web Services managed rule group.</p>
+        pub fn managed_type(mut self, input: crate::model::ResourceManagedType) -> Self {
+            self.managed_type = Some(input);
+            self
+        }
+        /// <p>Indicates the general category of the Amazon Web Services managed rule group.</p>
+        pub fn set_managed_type(
+            mut self,
+            input: std::option::Option<crate::model::ResourceManagedType>,
+        ) -> Self {
+            self.managed_type = input;
+            self
+        }
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
+        pub fn r#type(mut self, input: crate::model::RuleGroupType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RuleGroupType>) -> Self {
+            self.r#type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListRuleGroupsInput`](crate::input::ListRuleGroupsInput)
         pub fn build(
             self,
@@ -3387,6 +3484,8 @@ pub mod list_rule_groups_input {
                 next_token: self.next_token,
                 max_results: self.max_results,
                 scope: self.scope,
+                managed_type: self.managed_type,
+                r#type: self.r#type,
             })
         }
     }
@@ -3689,7 +3788,7 @@ pub mod put_resource_policy_input {
             self.resource_arn = input;
             self
         }
-        /// <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
+        /// <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
         /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
         /// <ul>
         /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li>
@@ -3708,7 +3807,7 @@ pub mod put_resource_policy_input {
             self.policy = Some(input.into());
             self
         }
-        /// <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
+        /// <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
         /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
         /// <ul>
         /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li>
@@ -4559,6 +4658,199 @@ impl UpdateFirewallDescriptionInput {
     }
 }
 
+/// See [`UpdateFirewallEncryptionConfigurationInput`](crate::input::UpdateFirewallEncryptionConfigurationInput)
+pub mod update_firewall_encryption_configuration_input {
+    /// A builder for [`UpdateFirewallEncryptionConfigurationInput`](crate::input::UpdateFirewallEncryptionConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) update_token: std::option::Option<std::string::String>,
+        pub(crate) firewall_arn: std::option::Option<std::string::String>,
+        pub(crate) firewall_name: std::option::Option<std::string::String>,
+        pub(crate) encryption_configuration:
+            std::option::Option<crate::model::EncryptionConfiguration>,
+    }
+    impl Builder {
+        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+        /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+        pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.update_token = Some(input.into());
+            self
+        }
+        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+        /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+        pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.update_token = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+        pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.firewall_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+        pub fn set_firewall_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.firewall_arn = input;
+            self
+        }
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+        pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.firewall_name = Some(input.into());
+            self
+        }
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+        pub fn set_firewall_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_name = input;
+            self
+        }
+        /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
+            self.encryption_configuration = Some(input);
+            self
+        }
+        /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.encryption_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateFirewallEncryptionConfigurationInput`](crate::input::UpdateFirewallEncryptionConfigurationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateFirewallEncryptionConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateFirewallEncryptionConfigurationInput {
+                update_token: self.update_token,
+                firewall_arn: self.firewall_arn,
+                firewall_name: self.firewall_name,
+                encryption_configuration: self.encryption_configuration,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateFirewallEncryptionConfigurationInputOperationOutputAlias =
+    crate::operation::UpdateFirewallEncryptionConfiguration;
+#[doc(hidden)]
+pub type UpdateFirewallEncryptionConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateFirewallEncryptionConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateFirewallEncryptionConfiguration`](crate::operation::UpdateFirewallEncryptionConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateFirewallEncryptionConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateFirewallEncryptionConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateFirewallEncryptionConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.UpdateFirewallEncryptionConfiguration",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_firewall_encryption_configuration(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFirewallEncryptionConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateFirewallEncryptionConfiguration",
+            "networkfirewall",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateFirewallEncryptionConfigurationInput`](crate::input::UpdateFirewallEncryptionConfigurationInput)
+    pub fn builder() -> crate::input::update_firewall_encryption_configuration_input::Builder {
+        crate::input::update_firewall_encryption_configuration_input::Builder::default()
+    }
+}
+
 /// See [`UpdateFirewallPolicyInput`](crate::input::UpdateFirewallPolicyInput)
 pub mod update_firewall_policy_input {
     /// A builder for [`UpdateFirewallPolicyInput`](crate::input::UpdateFirewallPolicyInput)
@@ -4571,6 +4863,8 @@ pub mod update_firewall_policy_input {
         pub(crate) firewall_policy: std::option::Option<crate::model::FirewallPolicy>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) dry_run: std::option::Option<bool>,
+        pub(crate) encryption_configuration:
+            std::option::Option<crate::model::EncryptionConfiguration>,
     }
     impl Builder {
         /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
@@ -4652,6 +4946,22 @@ pub mod update_firewall_policy_input {
             self.dry_run = input;
             self
         }
+        /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
+            self.encryption_configuration = Some(input);
+            self
+        }
+        /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.encryption_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateFirewallPolicyInput`](crate::input::UpdateFirewallPolicyInput)
         pub fn build(
             self,
@@ -4666,6 +4976,7 @@ pub mod update_firewall_policy_input {
                 firewall_policy: self.firewall_policy,
                 description: self.description,
                 dry_run: self.dry_run.unwrap_or_default(),
+                encryption_configuration: self.encryption_configuration,
             })
         }
     }
@@ -5170,6 +5481,9 @@ pub mod update_rule_group_input {
         pub(crate) r#type: std::option::Option<crate::model::RuleGroupType>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) dry_run: std::option::Option<bool>,
+        pub(crate) encryption_configuration:
+            std::option::Option<crate::model::EncryptionConfiguration>,
+        pub(crate) source_metadata: std::option::Option<crate::model::SourceMetadata>,
     }
     impl Builder {
         /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
@@ -5285,6 +5599,35 @@ pub mod update_rule_group_input {
             self.dry_run = input;
             self
         }
+        /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
+            self.encryption_configuration = Some(input);
+            self
+        }
+        /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.encryption_configuration = input;
+            self
+        }
+        /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
+        pub fn source_metadata(mut self, input: crate::model::SourceMetadata) -> Self {
+            self.source_metadata = Some(input);
+            self
+        }
+        /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
+        pub fn set_source_metadata(
+            mut self,
+            input: std::option::Option<crate::model::SourceMetadata>,
+        ) -> Self {
+            self.source_metadata = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateRuleGroupInput`](crate::input::UpdateRuleGroupInput)
         pub fn build(
             self,
@@ -5301,6 +5644,8 @@ pub mod update_rule_group_input {
                 r#type: self.r#type,
                 description: self.description,
                 dry_run: self.dry_run.unwrap_or_default(),
+                encryption_configuration: self.encryption_configuration,
+                source_metadata: self.source_metadata,
             })
         }
     }
@@ -5687,6 +6032,10 @@ pub struct UpdateRuleGroupInput {
     /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub dry_run: bool,
+    /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
+    pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+    /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
+    pub source_metadata: std::option::Option<crate::model::SourceMetadata>,
 }
 impl UpdateRuleGroupInput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
@@ -5733,6 +6082,16 @@ impl UpdateRuleGroupInput {
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }
+    /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
+    /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
+    pub fn source_metadata(&self) -> std::option::Option<&crate::model::SourceMetadata> {
+        self.source_metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5745,6 +6104,8 @@ impl std::fmt::Debug for UpdateRuleGroupInput {
         formatter.field("r#type", &self.r#type);
         formatter.field("description", &self.description);
         formatter.field("dry_run", &self.dry_run);
+        formatter.field("encryption_configuration", &self.encryption_configuration);
+        formatter.field("source_metadata", &self.source_metadata);
         formatter.finish()
     }
 }
@@ -5864,6 +6225,8 @@ pub struct UpdateFirewallPolicyInput {
     /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub dry_run: bool,
+    /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
+    pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
 }
 impl UpdateFirewallPolicyInput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
@@ -5895,6 +6258,12 @@ impl UpdateFirewallPolicyInput {
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }
+    /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateFirewallPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5905,6 +6274,55 @@ impl std::fmt::Debug for UpdateFirewallPolicyInput {
         formatter.field("firewall_policy", &self.firewall_policy);
         formatter.field("description", &self.description);
         formatter.field("dry_run", &self.dry_run);
+        formatter.field("encryption_configuration", &self.encryption_configuration);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFirewallEncryptionConfigurationInput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub update_token: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    pub firewall_arn: std::option::Option<std::string::String>,
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    pub firewall_name: std::option::Option<std::string::String>,
+    /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+}
+impl UpdateFirewallEncryptionConfigurationInput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateFirewallEncryptionConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateFirewallEncryptionConfigurationInput");
+        formatter.field("update_token", &self.update_token);
+        formatter.field("firewall_arn", &self.firewall_arn);
+        formatter.field("firewall_name", &self.firewall_name);
+        formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.finish()
     }
 }
@@ -6071,7 +6489,7 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct PutResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rule groups and firewall policies with.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
+    /// <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
     /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
     /// <ul>
     /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li>
@@ -6093,7 +6511,7 @@ impl PutResourcePolicyInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
+    /// <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
     /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
     /// <ul>
     /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li>
@@ -6166,6 +6584,10 @@ pub struct ListRuleGroupsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code> returns all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available managed rule groups.</p>
     pub scope: std::option::Option<crate::model::ResourceManagedStatus>,
+    /// <p>Indicates the general category of the Amazon Web Services managed rule group.</p>
+    pub managed_type: std::option::Option<crate::model::ResourceManagedType>,
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
+    pub r#type: std::option::Option<crate::model::RuleGroupType>,
 }
 impl ListRuleGroupsInput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
@@ -6180,6 +6602,14 @@ impl ListRuleGroupsInput {
     pub fn scope(&self) -> std::option::Option<&crate::model::ResourceManagedStatus> {
         self.scope.as_ref()
     }
+    /// <p>Indicates the general category of the Amazon Web Services managed rule group.</p>
+    pub fn managed_type(&self) -> std::option::Option<&crate::model::ResourceManagedType> {
+        self.managed_type.as_ref()
+    }
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RuleGroupType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for ListRuleGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6187,6 +6617,8 @@ impl std::fmt::Debug for ListRuleGroupsInput {
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
         formatter.field("scope", &self.scope);
+        formatter.field("managed_type", &self.managed_type);
+        formatter.field("r#type", &self.r#type);
         formatter.finish()
     }
 }
@@ -6676,6 +7108,10 @@ pub struct CreateRuleGroupInput {
     /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub dry_run: bool,
+    /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
+    pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+    /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
+    pub source_metadata: std::option::Option<crate::model::SourceMetadata>,
 }
 impl CreateRuleGroupInput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
@@ -6731,6 +7167,16 @@ impl CreateRuleGroupInput {
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }
+    /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
+    /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
+    pub fn source_metadata(&self) -> std::option::Option<&crate::model::SourceMetadata> {
+        self.source_metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6743,6 +7189,8 @@ impl std::fmt::Debug for CreateRuleGroupInput {
         formatter.field("capacity", &self.capacity);
         formatter.field("tags", &self.tags);
         formatter.field("dry_run", &self.dry_run);
+        formatter.field("encryption_configuration", &self.encryption_configuration);
+        formatter.field("source_metadata", &self.source_metadata);
         formatter.finish()
     }
 }
@@ -6763,6 +7211,8 @@ pub struct CreateFirewallPolicyInput {
     /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub dry_run: bool,
+    /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
+    pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
 }
 impl CreateFirewallPolicyInput {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
@@ -6787,6 +7237,12 @@ impl CreateFirewallPolicyInput {
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }
+    /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFirewallPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6796,6 +7252,7 @@ impl std::fmt::Debug for CreateFirewallPolicyInput {
         formatter.field("description", &self.description);
         formatter.field("tags", &self.tags);
         formatter.field("dry_run", &self.dry_run);
+        formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.finish()
     }
 }
@@ -6823,6 +7280,8 @@ pub struct CreateFirewallInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The key:value pairs to associate with the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>A complex type that contains settings for encryption of your firewall resources.</p>
+    pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
 }
 impl CreateFirewallInput {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -6862,6 +7321,12 @@ impl CreateFirewallInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>A complex type that contains settings for encryption of your firewall resources.</p>
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFirewallInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6878,6 +7343,7 @@ impl std::fmt::Debug for CreateFirewallInput {
         );
         formatter.field("description", &self.description);
         formatter.field("tags", &self.tags);
+        formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.finish()
     }
 }

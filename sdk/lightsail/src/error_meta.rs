@@ -8,7 +8,7 @@ pub enum Error {
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -3390,6 +3390,27 @@ where
                 crate::error::GetLoadBalancerTlsCertificatesErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::GetLoadBalancerTlsCertificatesErrorKind::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
                 crate::error::GetLoadBalancerTlsCertificatesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLoadBalancerTlsPoliciesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetLoadBalancerTlsPoliciesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetLoadBalancerTlsPoliciesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::GetLoadBalancerTlsPoliciesErrorKind::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+                crate::error::GetLoadBalancerTlsPoliciesErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+                crate::error::GetLoadBalancerTlsPoliciesErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+                crate::error::GetLoadBalancerTlsPoliciesErrorKind::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+                crate::error::GetLoadBalancerTlsPoliciesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
         }

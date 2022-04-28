@@ -179,6 +179,17 @@ impl Client {
     pub fn batch_get_crawlers(&self) -> fluent_builders::BatchGetCrawlers {
         fluent_builders::BatchGetCrawlers::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`BatchGetCustomEntityTypes`](crate::client::fluent_builders::BatchGetCustomEntityTypes) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`names(Vec<String>)`](crate::client::fluent_builders::BatchGetCustomEntityTypes::names) / [`set_names(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetCustomEntityTypes::set_names): <p>A list of names of the custom patterns that you want to retrieve.</p>
+    /// - On success, responds with [`BatchGetCustomEntityTypesOutput`](crate::output::BatchGetCustomEntityTypesOutput) with field(s):
+    ///   - [`custom_entity_types(Option<Vec<CustomEntityType>>)`](crate::output::BatchGetCustomEntityTypesOutput::custom_entity_types): <p>A list of <code>CustomEntityType</code> objects representing the custom patterns that have been created.</p>
+    ///   - [`custom_entity_types_not_found(Option<Vec<String>>)`](crate::output::BatchGetCustomEntityTypesOutput::custom_entity_types_not_found): <p>A list of the names of custom patterns that were not found.</p>
+    /// - On failure, responds with [`SdkError<BatchGetCustomEntityTypesError>`](crate::error::BatchGetCustomEntityTypesError)
+    pub fn batch_get_custom_entity_types(&self) -> fluent_builders::BatchGetCustomEntityTypes {
+        fluent_builders::BatchGetCustomEntityTypes::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`BatchGetDevEndpoints`](crate::client::fluent_builders::BatchGetDevEndpoints) operation.
     ///
     /// - The fluent builder is configurable:
@@ -352,7 +363,7 @@ impl Client {
     ///   - [`schema_change_policy(SchemaChangePolicy)`](crate::client::fluent_builders::CreateCrawler::schema_change_policy) / [`set_schema_change_policy(Option<SchemaChangePolicy>)`](crate::client::fluent_builders::CreateCrawler::set_schema_change_policy): <p>The policy for the crawler's update and deletion behavior.</p>
     ///   - [`recrawl_policy(RecrawlPolicy)`](crate::client::fluent_builders::CreateCrawler::recrawl_policy) / [`set_recrawl_policy(Option<RecrawlPolicy>)`](crate::client::fluent_builders::CreateCrawler::set_recrawl_policy): <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
     ///   - [`lineage_configuration(LineageConfiguration)`](crate::client::fluent_builders::CreateCrawler::lineage_configuration) / [`set_lineage_configuration(Option<LineageConfiguration>)`](crate::client::fluent_builders::CreateCrawler::set_lineage_configuration): <p>Specifies data lineage configuration settings for the crawler.</p>
-    ///   - [`lake_formation_configuration(LakeFormationConfiguration)`](crate::client::fluent_builders::CreateCrawler::lake_formation_configuration) / [`set_lake_formation_configuration(Option<LakeFormationConfiguration>)`](crate::client::fluent_builders::CreateCrawler::set_lake_formation_configuration): (undocumented)
+    ///   - [`lake_formation_configuration(LakeFormationConfiguration)`](crate::client::fluent_builders::CreateCrawler::lake_formation_configuration) / [`set_lake_formation_configuration(Option<LakeFormationConfiguration>)`](crate::client::fluent_builders::CreateCrawler::set_lake_formation_configuration): <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
     ///   - [`configuration(impl Into<String>)`](crate::client::fluent_builders::CreateCrawler::configuration) / [`set_configuration(Option<String>)`](crate::client::fluent_builders::CreateCrawler::set_configuration): <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
     ///   - [`crawler_security_configuration(impl Into<String>)`](crate::client::fluent_builders::CreateCrawler::crawler_security_configuration) / [`set_crawler_security_configuration(Option<String>)`](crate::client::fluent_builders::CreateCrawler::set_crawler_security_configuration): <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateCrawler::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateCrawler::set_tags): <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
@@ -361,6 +372,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<CreateCrawlerError>`](crate::error::CreateCrawlerError)
     pub fn create_crawler(&self) -> fluent_builders::CreateCrawler {
         fluent_builders::CreateCrawler::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateCustomEntityType`](crate::client::fluent_builders::CreateCustomEntityType) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateCustomEntityType::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateCustomEntityType::set_name): <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
+    ///   - [`regex_string(impl Into<String>)`](crate::client::fluent_builders::CreateCustomEntityType::regex_string) / [`set_regex_string(Option<String>)`](crate::client::fluent_builders::CreateCustomEntityType::set_regex_string): <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+    ///   - [`context_words(Vec<String>)`](crate::client::fluent_builders::CreateCustomEntityType::context_words) / [`set_context_words(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCustomEntityType::set_context_words): <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>  <p>If no context words are passed only a regular expression is checked.</p>
+    /// - On success, responds with [`CreateCustomEntityTypeOutput`](crate::output::CreateCustomEntityTypeOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateCustomEntityTypeOutput::name): <p>The name of the custom pattern you created.</p>
+    /// - On failure, responds with [`SdkError<CreateCustomEntityTypeError>`](crate::error::CreateCustomEntityTypeError)
+    pub fn create_custom_entity_type(&self) -> fluent_builders::CreateCustomEntityType {
+        fluent_builders::CreateCustomEntityType::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CreateDatabase`](crate::client::fluent_builders::CreateDatabase) operation.
     ///
@@ -714,6 +737,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteCrawlerError>`](crate::error::DeleteCrawlerError)
     pub fn delete_crawler(&self) -> fluent_builders::DeleteCrawler {
         fluent_builders::DeleteCrawler::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteCustomEntityType`](crate::client::fluent_builders::DeleteCustomEntityType) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteCustomEntityType::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteCustomEntityType::set_name): <p>The name of the custom pattern that you want to delete.</p>
+    /// - On success, responds with [`DeleteCustomEntityTypeOutput`](crate::output::DeleteCustomEntityTypeOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DeleteCustomEntityTypeOutput::name): <p>The name of the custom pattern you deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteCustomEntityTypeError>`](crate::error::DeleteCustomEntityTypeError)
+    pub fn delete_custom_entity_type(&self) -> fluent_builders::DeleteCustomEntityType {
+        fluent_builders::DeleteCustomEntityType::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteDatabase`](crate::client::fluent_builders::DeleteDatabase) operation.
     ///
@@ -1072,6 +1105,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetCrawlersError>`](crate::error::GetCrawlersError)
     pub fn get_crawlers(&self) -> fluent_builders::GetCrawlers {
         fluent_builders::GetCrawlers::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetCustomEntityType`](crate::client::fluent_builders::GetCustomEntityType) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetCustomEntityType::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetCustomEntityType::set_name): <p>The name of the custom pattern that you want to retrieve.</p>
+    /// - On success, responds with [`GetCustomEntityTypeOutput`](crate::output::GetCustomEntityTypeOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::GetCustomEntityTypeOutput::name): <p>The name of the custom pattern that you retrieved.</p>
+    ///   - [`regex_string(Option<String>)`](crate::output::GetCustomEntityTypeOutput::regex_string): <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+    ///   - [`context_words(Option<Vec<String>>)`](crate::output::GetCustomEntityTypeOutput::context_words): <p>A list of context words if specified when you created the custom pattern. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
+    /// - On failure, responds with [`SdkError<GetCustomEntityTypeError>`](crate::error::GetCustomEntityTypeError)
+    pub fn get_custom_entity_type(&self) -> fluent_builders::GetCustomEntityType {
+        fluent_builders::GetCustomEntityType::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetDatabase`](crate::client::fluent_builders::GetDatabase) operation.
     ///
@@ -1784,6 +1829,19 @@ impl Client {
     pub fn list_crawlers(&self) -> fluent_builders::ListCrawlers {
         fluent_builders::ListCrawlers::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListCustomEntityTypes`](crate::client::fluent_builders::ListCustomEntityTypes) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCustomEntityTypes::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCustomEntityTypes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCustomEntityTypes::set_next_token): <p>A paginated token to offset the results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCustomEntityTypes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCustomEntityTypes::set_max_results): <p>The maximum number of results to return.</p>
+    /// - On success, responds with [`ListCustomEntityTypesOutput`](crate::output::ListCustomEntityTypesOutput) with field(s):
+    ///   - [`custom_entity_types(Option<Vec<CustomEntityType>>)`](crate::output::ListCustomEntityTypesOutput::custom_entity_types): <p>A list of <code>CustomEntityType</code> objects representing custom patterns.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCustomEntityTypesOutput::next_token): <p>A pagination token, if more results are available.</p>
+    /// - On failure, responds with [`SdkError<ListCustomEntityTypesError>`](crate::error::ListCustomEntityTypesError)
+    pub fn list_custom_entity_types(&self) -> fluent_builders::ListCustomEntityTypes {
+        fluent_builders::ListCustomEntityTypes::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListDevEndpoints`](crate::client::fluent_builders::ListDevEndpoints) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDevEndpoints::into_paginator).
     ///
@@ -2363,7 +2421,7 @@ impl Client {
     ///   - [`schema_change_policy(SchemaChangePolicy)`](crate::client::fluent_builders::UpdateCrawler::schema_change_policy) / [`set_schema_change_policy(Option<SchemaChangePolicy>)`](crate::client::fluent_builders::UpdateCrawler::set_schema_change_policy): <p>The policy for the crawler's update and deletion behavior.</p>
     ///   - [`recrawl_policy(RecrawlPolicy)`](crate::client::fluent_builders::UpdateCrawler::recrawl_policy) / [`set_recrawl_policy(Option<RecrawlPolicy>)`](crate::client::fluent_builders::UpdateCrawler::set_recrawl_policy): <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
     ///   - [`lineage_configuration(LineageConfiguration)`](crate::client::fluent_builders::UpdateCrawler::lineage_configuration) / [`set_lineage_configuration(Option<LineageConfiguration>)`](crate::client::fluent_builders::UpdateCrawler::set_lineage_configuration): <p>Specifies data lineage configuration settings for the crawler.</p>
-    ///   - [`lake_formation_configuration(LakeFormationConfiguration)`](crate::client::fluent_builders::UpdateCrawler::lake_formation_configuration) / [`set_lake_formation_configuration(Option<LakeFormationConfiguration>)`](crate::client::fluent_builders::UpdateCrawler::set_lake_formation_configuration): (undocumented)
+    ///   - [`lake_formation_configuration(LakeFormationConfiguration)`](crate::client::fluent_builders::UpdateCrawler::lake_formation_configuration) / [`set_lake_formation_configuration(Option<LakeFormationConfiguration>)`](crate::client::fluent_builders::UpdateCrawler::set_lake_formation_configuration): <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
     ///   - [`configuration(impl Into<String>)`](crate::client::fluent_builders::UpdateCrawler::configuration) / [`set_configuration(Option<String>)`](crate::client::fluent_builders::UpdateCrawler::set_configuration): <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
     ///   - [`crawler_security_configuration(impl Into<String>)`](crate::client::fluent_builders::UpdateCrawler::crawler_security_configuration) / [`set_crawler_security_configuration(Option<String>)`](crate::client::fluent_builders::UpdateCrawler::set_crawler_security_configuration): <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
     /// - On success, responds with [`UpdateCrawlerOutput`](crate::output::UpdateCrawlerOutput)
@@ -3130,6 +3188,66 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_crawler_names(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `BatchGetCustomEntityTypes`.
+    ///
+    /// <p>Retrieves the details for the custom patterns specified by a list of names.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct BatchGetCustomEntityTypes {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::batch_get_custom_entity_types_input::Builder,
+    }
+    impl BatchGetCustomEntityTypes {
+        /// Creates a new `BatchGetCustomEntityTypes`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchGetCustomEntityTypesOutput,
+            aws_smithy_http::result::SdkError<crate::error::BatchGetCustomEntityTypesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `Names`.
+        ///
+        /// To override the contents of this collection use [`set_names`](Self::set_names).
+        ///
+        /// <p>A list of names of the custom patterns that you want to retrieve.</p>
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
+            self
+        }
+        /// <p>A list of names of the custom patterns that you want to retrieve.</p>
+        pub fn set_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_names(input);
             self
         }
     }
@@ -4306,7 +4424,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lineage_configuration(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
         pub fn lake_formation_configuration(
             mut self,
             input: crate::model::LakeFormationConfiguration,
@@ -4314,7 +4432,7 @@ pub mod fluent_builders {
             self.inner = self.inner.lake_formation_configuration(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
         pub fn set_lake_formation_configuration(
             mut self,
             input: std::option::Option<crate::model::LakeFormationConfiguration>,
@@ -4372,6 +4490,89 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateCustomEntityType`.
+    ///
+    /// <p>Creates a custom pattern that is used to detect sensitive data across the columns and rows of your structured data.</p>
+    /// <p>Each custom pattern you create specifies a regular expression and an optional list of context words. If no context words are passed only a regular expression is checked.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateCustomEntityType {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_custom_entity_type_input::Builder,
+    }
+    impl CreateCustomEntityType {
+        /// Creates a new `CreateCustomEntityType`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateCustomEntityTypeOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateCustomEntityTypeError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+        pub fn regex_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.regex_string(input.into());
+            self
+        }
+        /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+        pub fn set_regex_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_regex_string(input);
+            self
+        }
+        /// Appends an item to `ContextWords`.
+        ///
+        /// To override the contents of this collection use [`set_context_words`](Self::set_context_words).
+        ///
+        /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
+        /// <p>If no context words are passed only a regular expression is checked.</p>
+        pub fn context_words(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.context_words(input.into());
+            self
+        }
+        /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
+        /// <p>If no context words are passed only a regular expression is checked.</p>
+        pub fn set_context_words(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_context_words(input);
             self
         }
     }
@@ -7025,6 +7226,59 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteCustomEntityType`.
+    ///
+    /// <p>Deletes a custom pattern by specifying its name.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteCustomEntityType {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_custom_entity_type_input::Builder,
+    }
+    impl DeleteCustomEntityType {
+        /// Creates a new `DeleteCustomEntityType`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteCustomEntityTypeOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteCustomEntityTypeError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the custom pattern that you want to delete.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the custom pattern that you want to delete.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteDatabase`.
     ///
     /// <p>Removes a specified database from a Data Catalog.</p> <note>
@@ -9144,6 +9398,59 @@ pub mod fluent_builders {
         /// <p>A continuation token, if this is a continuation request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetCustomEntityType`.
+    ///
+    /// <p>Retrieves the details of a custom pattern by specifying its name.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetCustomEntityType {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_custom_entity_type_input::Builder,
+    }
+    impl GetCustomEntityType {
+        /// Creates a new `GetCustomEntityType`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetCustomEntityTypeOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetCustomEntityTypeError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the custom pattern that you want to retrieve.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the custom pattern that you want to retrieve.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -13368,6 +13675,75 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListCustomEntityTypes`.
+    ///
+    /// <p>Lists all the custom patterns that have been created.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListCustomEntityTypes {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_custom_entity_types_input::Builder,
+    }
+    impl ListCustomEntityTypes {
+        /// Creates a new `ListCustomEntityTypes`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListCustomEntityTypesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListCustomEntityTypesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCustomEntityTypesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListCustomEntityTypesPaginator {
+            crate::paginator::ListCustomEntityTypesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A paginated token to offset the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A paginated token to offset the results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListDevEndpoints`.
     ///
     /// <p>Retrieves the names of all <code>DevEndpoint</code> resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names.</p>
@@ -17122,7 +17498,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lineage_configuration(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
         pub fn lake_formation_configuration(
             mut self,
             input: crate::model::LakeFormationConfiguration,
@@ -17130,7 +17506,7 @@ pub mod fluent_builders {
             self.inner = self.inner.lake_formation_configuration(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
         pub fn set_lake_formation_configuration(
             mut self,
             input: std::option::Option<crate::model::LakeFormationConfiguration>,

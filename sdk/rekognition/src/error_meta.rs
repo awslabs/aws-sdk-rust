@@ -9,7 +9,7 @@ pub enum Error {
     HumanLoopQuotaExceededException(crate::error::HumanLoopQuotaExceededException),
     /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
-    /// <p>The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+    /// <p>The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ImageTooLargeException(crate::error::ImageTooLargeException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -34,7 +34,7 @@ pub enum Error {
     /// <p>The requested resource isn't ready. For example, this exception occurs when you call <code>DetectCustomLabels</code> with a model version that isn't deployed. </p>
     ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// <p></p>
-    /// <p>The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+    /// <p>The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1716,6 +1716,28 @@ where
                 crate::error::UpdateDatasetEntriesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateDatasetEntriesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdateDatasetEntriesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateStreamProcessorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateStreamProcessorError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateStreamProcessorErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::UpdateStreamProcessorErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::UpdateStreamProcessorErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::UpdateStreamProcessorErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+                crate::error::UpdateStreamProcessorErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateStreamProcessorErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::UpdateStreamProcessorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
         }

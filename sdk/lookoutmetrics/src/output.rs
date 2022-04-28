@@ -1140,6 +1140,72 @@ impl GetAnomalyGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DetectMetricSetConfigOutput {
+    /// <p>The inferred dataset configuration for the datasource.</p>
+    pub detected_metric_set_config: std::option::Option<crate::model::DetectedMetricSetConfig>,
+}
+impl DetectMetricSetConfigOutput {
+    /// <p>The inferred dataset configuration for the datasource.</p>
+    pub fn detected_metric_set_config(
+        &self,
+    ) -> std::option::Option<&crate::model::DetectedMetricSetConfig> {
+        self.detected_metric_set_config.as_ref()
+    }
+}
+impl std::fmt::Debug for DetectMetricSetConfigOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DetectMetricSetConfigOutput");
+        formatter.field(
+            "detected_metric_set_config",
+            &self.detected_metric_set_config,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput)
+pub mod detect_metric_set_config_output {
+    /// A builder for [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) detected_metric_set_config:
+            std::option::Option<crate::model::DetectedMetricSetConfig>,
+    }
+    impl Builder {
+        /// <p>The inferred dataset configuration for the datasource.</p>
+        pub fn detected_metric_set_config(
+            mut self,
+            input: crate::model::DetectedMetricSetConfig,
+        ) -> Self {
+            self.detected_metric_set_config = Some(input);
+            self
+        }
+        /// <p>The inferred dataset configuration for the datasource.</p>
+        pub fn set_detected_metric_set_config(
+            mut self,
+            input: std::option::Option<crate::model::DetectedMetricSetConfig>,
+        ) -> Self {
+            self.detected_metric_set_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput)
+        pub fn build(self) -> crate::output::DetectMetricSetConfigOutput {
+            crate::output::DetectMetricSetConfigOutput {
+                detected_metric_set_config: self.detected_metric_set_config,
+            }
+        }
+    }
+}
+impl DetectMetricSetConfigOutput {
+    /// Creates a new builder-style object to manufacture [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput)
+    pub fn builder() -> crate::output::detect_metric_set_config_output::Builder {
+        crate::output::detect_metric_set_config_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMetricSetOutput {
     /// <p>The ARN of the dataset.</p>
     pub metric_set_arn: std::option::Option<std::string::String>,

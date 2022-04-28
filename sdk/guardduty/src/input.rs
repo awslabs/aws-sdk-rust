@@ -676,6 +676,7 @@ pub mod create_filter_input {
         /// <li> <p>service.action.awsApiCallAction.api</p> </li>
         /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
         /// <li> <p>service.action.awsApiCallAction.errorCode</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.userAgent</p> </li>
         /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
         /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
         /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
@@ -740,6 +741,7 @@ pub mod create_filter_input {
         /// <li> <p>service.action.awsApiCallAction.api</p> </li>
         /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
         /// <li> <p>service.action.awsApiCallAction.errorCode</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.userAgent</p> </li>
         /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
         /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
         /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
@@ -12611,6 +12613,7 @@ pub struct CreateFilterInput {
     /// <li> <p>service.action.awsApiCallAction.api</p> </li>
     /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
     /// <li> <p>service.action.awsApiCallAction.errorCode</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.userAgent</p> </li>
     /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
     /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
     /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
@@ -12699,6 +12702,7 @@ impl CreateFilterInput {
     /// <li> <p>service.action.awsApiCallAction.api</p> </li>
     /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
     /// <li> <p>service.action.awsApiCallAction.errorCode</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.userAgent</p> </li>
     /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
     /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
     /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>

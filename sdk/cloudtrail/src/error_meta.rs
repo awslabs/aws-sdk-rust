@@ -14,7 +14,7 @@ pub enum Error {
     CloudWatchLogsDeliveryUnavailableException(
         crate::error::CloudWatchLogsDeliveryUnavailableException,
     ),
-    /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this exception occurs, wait a few minutes, and then try the operation again.</p>
+    /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
     EventDataStoreArnInvalidException(crate::error::EventDataStoreArnInvalidException),
@@ -28,13 +28,13 @@ pub enum Error {
     EventDataStoreTerminationProtectedException(
         crate::error::EventDataStoreTerminationProtectedException,
     ),
-    /// <p>The event data store against which you ran your query is inactive.</p>
+    /// <p>The event data store is inactive.</p>
     InactiveEventDataStoreException(crate::error::InactiveEventDataStoreException),
     /// <p>The specified query cannot be canceled because it is in the <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code> state.</p>
     InactiveQueryException(crate::error::InactiveQueryException),
     /// <p>If you run <code>GetInsightSelectors</code> on a trail that does not have Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code>.</p>
     InsightNotEnabledException(crate::error::InsightNotEnabledException),
-    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
     ),
@@ -50,7 +50,7 @@ pub enum Error {
     ),
     /// <p>This exception is thrown when the provided role is not valid.</p>
     InvalidCloudWatchLogsRoleArnException(crate::error::InvalidCloudWatchLogsRoleArnException),
-    /// <p>A date range for the query was specified that is not valid. For more information about writing a query, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create or edit a query</a> in the <i>CloudTrail User Guide</i>.</p>
+    /// <p>A date range for the query was specified that is not valid. Be sure that the start time is chronologically before the end time. For more information about writing a query, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create or edit a query</a> in the <i>CloudTrail User Guide</i>.</p>
     InvalidDateRangeException(crate::error::InvalidDateRangeException),
     /// <p>Occurs if an event category that is not valid is specified as a value of <code>EventCategory</code>.</p>
     InvalidEventCategoryException(crate::error::InvalidEventCategoryException),
@@ -116,11 +116,11 @@ pub enum Error {
     MaxConcurrentQueriesException(crate::error::MaxConcurrentQueriesException),
     /// <p>This exception is thrown when the maximum number of trails is reached.</p>
     MaximumNumberOfTrailsExceededException(crate::error::MaximumNumberOfTrailsExceededException),
-    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail or event data store.</p>
     OrganizationNotInAllFeaturesModeException(
         crate::error::OrganizationNotInAllFeaturesModeException,
     ),

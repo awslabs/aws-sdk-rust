@@ -10,13 +10,13 @@ pub mod cancel_rotate_secret_input {
     }
     impl Builder {
         /// <p>The ARN or name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
         /// <p>The ARN or name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -490,13 +490,13 @@ pub mod delete_resource_policy_input {
     }
     impl Builder {
         /// <p>The ARN or name of the secret to delete the attached resource-based policy for.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
         /// <p>The ARN or name of the secret to delete the attached resource-based policy for.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -638,13 +638,13 @@ pub mod delete_secret_input {
     }
     impl Builder {
         /// <p>The ARN or name of the secret to delete.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
         /// <p>The ARN or name of the secret to delete.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -813,13 +813,13 @@ pub mod describe_secret_input {
     }
     impl Builder {
         /// <p>The ARN or name of the secret. </p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
         /// <p>The ARN or name of the secret. </p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -1186,13 +1186,13 @@ pub mod get_resource_policy_input {
     }
     impl Builder {
         /// <p>The ARN or name of the secret to retrieve the attached resource-based policy for.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
         /// <p>The ARN or name of the secret to retrieve the attached resource-based policy for.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -1332,13 +1332,13 @@ pub mod get_secret_value_input {
     }
     impl Builder {
         /// <p>The ARN or name of the secret to retrieve.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
         /// <p>The ARN or name of the secret to retrieve.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -1700,13 +1700,13 @@ pub mod list_secret_version_ids_input {
     }
     impl Builder {
         /// <p>The ARN or name of the secret whose versions you want to list.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
         /// <p>The ARN or name of the secret whose versions you want to list.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -1883,13 +1883,13 @@ pub mod put_resource_policy_input {
     }
     impl Builder {
         /// <p>The ARN or name of the secret to attach the resource-based policy.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
         /// <p>The ARN or name of the secret to attach the resource-based policy.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -2056,14 +2056,14 @@ pub mod put_secret_value_input {
     }
     impl Builder {
         /// <p>The ARN or name of the secret to add a new version to.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         /// <p>If the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
         /// <p>The ARN or name of the secret to add a new version to.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         /// <p>If the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
@@ -2645,13 +2645,13 @@ pub mod restore_secret_input {
     }
     impl Builder {
         /// <p>The ARN or name of the secret to restore.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
         /// <p>The ARN or name of the secret to restore.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -2793,13 +2793,13 @@ pub mod rotate_secret_input {
     }
     impl Builder {
         /// <p>The ARN or name of the secret to rotate.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
         /// <p>The ARN or name of the secret to rotate.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -3147,13 +3147,13 @@ pub mod tag_resource_input {
     }
     impl Builder {
         /// <p>The identifier for the secret to attach tags to. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
         /// <p>The identifier for the secret to attach tags to. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -3314,13 +3314,13 @@ pub mod untag_resource_input {
     }
     impl Builder {
         /// <p>The ARN or name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
         /// <p>The ARN or name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -3487,13 +3487,13 @@ pub mod update_secret_input {
     }
     impl Builder {
         /// <p>The ARN or name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
         /// <p>The ARN or name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -3717,13 +3717,13 @@ pub mod update_secret_version_stage_input {
     }
     impl Builder {
         /// <p>The ARN or the name of the secret with the version and staging labelsto modify.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
         /// <p>The ARN or the name of the secret with the version and staging labelsto modify.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -4090,7 +4090,7 @@ impl std::fmt::Debug for ValidateResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecretVersionStageInput {
     /// <p>The ARN or the name of the secret with the version and staging labelsto modify.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub secret_id: std::option::Option<std::string::String>,
     /// <p>The staging label to add to this version.</p>
     pub version_stage: std::option::Option<std::string::String>,
@@ -4102,7 +4102,7 @@ pub struct UpdateSecretVersionStageInput {
 }
 impl UpdateSecretVersionStageInput {
     /// <p>The ARN or the name of the secret with the version and staging labelsto modify.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -4136,7 +4136,7 @@ impl std::fmt::Debug for UpdateSecretVersionStageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecretInput {
     /// <p>The ARN or name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub secret_id: std::option::Option<std::string::String>,
     /// <p>If you include <code>SecretString</code> or <code>SecretBinary</code>, then Secrets Manager creates a new version for the secret, and this parameter specifies the unique identifier for the new version.</p> <note>
     /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version and include the value in the request.</p>
@@ -4159,7 +4159,7 @@ pub struct UpdateSecretInput {
 }
 impl UpdateSecretInput {
     /// <p>The ARN or name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -4210,7 +4210,7 @@ impl std::fmt::Debug for UpdateSecretInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN or name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub secret_id: std::option::Option<std::string::String>,
     /// <p>A list of tag key names to remove from the secret. You don't specify the value. Both the key and its associated value are removed.</p>
     /// <p>This parameter requires a JSON text string argument.</p>
@@ -4219,7 +4219,7 @@ pub struct UntagResourceInput {
 }
 impl UntagResourceInput {
     /// <p>The ARN or name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -4244,7 +4244,7 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The identifier for the secret to attach tags to. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub secret_id: std::option::Option<std::string::String>,
     /// <p>The tags to attach to the secret as a JSON text string argument. Each element in the list consists of a <code>Key</code> and a <code>Value</code>.</p>
     /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
@@ -4252,7 +4252,7 @@ pub struct TagResourceInput {
 }
 impl TagResourceInput {
     /// <p>The identifier for the secret to attach tags to. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -4297,7 +4297,7 @@ impl std::fmt::Debug for StopReplicationToReplicaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RotateSecretInput {
     /// <p>The ARN or name of the secret to rotate.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub secret_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the new version of the secret that helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during rotation. This value becomes the <code>VersionId</code> of the new version.</p>
     /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request for this parameter. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request.</p>
@@ -4314,7 +4314,7 @@ pub struct RotateSecretInput {
 }
 impl RotateSecretInput {
     /// <p>The ARN or name of the secret to rotate.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -4356,12 +4356,12 @@ impl std::fmt::Debug for RotateSecretInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreSecretInput {
     /// <p>The ARN or name of the secret to restore.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub secret_id: std::option::Option<std::string::String>,
 }
 impl RestoreSecretInput {
     /// <p>The ARN or name of the secret to restore.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -4445,7 +4445,7 @@ impl std::fmt::Debug for RemoveRegionsFromReplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSecretValueInput {
     /// <p>The ARN or name of the secret to add a new version to.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     /// <p>If the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
     pub secret_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the new version of the secret. </p> <note>
@@ -4474,7 +4474,7 @@ pub struct PutSecretValueInput {
 }
 impl PutSecretValueInput {
     /// <p>The ARN or name of the secret to add a new version to.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     /// <p>If the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
@@ -4528,7 +4528,7 @@ impl std::fmt::Debug for PutSecretValueInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyInput {
     /// <p>The ARN or name of the secret to attach the resource-based policy.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub secret_id: std::option::Option<std::string::String>,
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
     pub resource_policy: std::option::Option<std::string::String>,
@@ -4537,7 +4537,7 @@ pub struct PutResourcePolicyInput {
 }
 impl PutResourcePolicyInput {
     /// <p>The ARN or name of the secret to attach the resource-based policy.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -4565,7 +4565,7 @@ impl std::fmt::Debug for PutResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecretVersionIdsInput {
     /// <p>The ARN or name of the secret whose versions you want to list.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub secret_id: std::option::Option<std::string::String>,
     /// <p>The number of results to include in the response.</p>
     /// <p>If there are more results available, in the response, Secrets Manager includes <code>NextToken</code>. To get the next results, call <code>ListSecretVersionIds</code> again with the value from <code>NextToken</code>. </p>
@@ -4577,7 +4577,7 @@ pub struct ListSecretVersionIdsInput {
 }
 impl ListSecretVersionIdsInput {
     /// <p>The ARN or name of the secret whose versions you want to list.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -4655,7 +4655,7 @@ impl std::fmt::Debug for ListSecretsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSecretValueInput {
     /// <p>The ARN or name of the secret to retrieve.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub secret_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the version of the secret to retrieve. If you include both this parameter and <code>VersionStage</code>, the two parameters must refer to the same secret version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, then Secrets Manager returns the <code>AWSCURRENT</code> version.</p>
     /// <p>This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value with 32 hexadecimal digits.</p>
@@ -4666,7 +4666,7 @@ pub struct GetSecretValueInput {
 }
 impl GetSecretValueInput {
     /// <p>The ARN or name of the secret to retrieve.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -4696,12 +4696,12 @@ impl std::fmt::Debug for GetSecretValueInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePolicyInput {
     /// <p>The ARN or name of the secret to retrieve the attached resource-based policy for.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub secret_id: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyInput {
     /// <p>The ARN or name of the secret to retrieve the attached resource-based policy for.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -4792,12 +4792,12 @@ impl std::fmt::Debug for GetRandomPasswordInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSecretInput {
     /// <p>The ARN or name of the secret. </p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub secret_id: std::option::Option<std::string::String>,
 }
 impl DescribeSecretInput {
     /// <p>The ARN or name of the secret. </p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -4815,7 +4815,7 @@ impl std::fmt::Debug for DescribeSecretInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSecretInput {
     /// <p>The ARN or name of the secret to delete.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub secret_id: std::option::Option<std::string::String>,
     /// <p>The number of days from 7 to 30 that Secrets Manager waits before permanently deleting the secret. You can't use both this parameter and <code>ForceDeleteWithoutRecovery</code> in the same call. If you don't use either, then Secrets Manager defaults to a 30 day recovery window.</p>
     pub recovery_window_in_days: std::option::Option<i64>,
@@ -4827,7 +4827,7 @@ pub struct DeleteSecretInput {
 }
 impl DeleteSecretInput {
     /// <p>The ARN or name of the secret to delete.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -4861,12 +4861,12 @@ impl std::fmt::Debug for DeleteSecretInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The ARN or name of the secret to delete the attached resource-based policy for.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub secret_id: std::option::Option<std::string::String>,
 }
 impl DeleteResourcePolicyInput {
     /// <p>The ARN or name of the secret to delete the attached resource-based policy for.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -5026,12 +5026,12 @@ impl std::fmt::Debug for CreateSecretInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelRotateSecretInput {
     /// <p>The ARN or name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub secret_id: std::option::Option<std::string::String>,
 }
 impl CancelRotateSecretInput {
     /// <p>The ARN or name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }

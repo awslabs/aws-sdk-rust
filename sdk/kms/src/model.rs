@@ -10,6 +10,74 @@
     std::fmt::Debug,
     std::hash::Hash,
 )]
+pub enum MacAlgorithmSpec {
+    #[allow(missing_docs)] // documentation missing in model
+    HmacSha224,
+    #[allow(missing_docs)] // documentation missing in model
+    HmacSha256,
+    #[allow(missing_docs)] // documentation missing in model
+    HmacSha384,
+    #[allow(missing_docs)] // documentation missing in model
+    HmacSha512,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MacAlgorithmSpec {
+    fn from(s: &str) -> Self {
+        match s {
+            "HMAC_SHA_224" => MacAlgorithmSpec::HmacSha224,
+            "HMAC_SHA_256" => MacAlgorithmSpec::HmacSha256,
+            "HMAC_SHA_384" => MacAlgorithmSpec::HmacSha384,
+            "HMAC_SHA_512" => MacAlgorithmSpec::HmacSha512,
+            other => MacAlgorithmSpec::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MacAlgorithmSpec {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MacAlgorithmSpec::from(s))
+    }
+}
+impl MacAlgorithmSpec {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MacAlgorithmSpec::HmacSha224 => "HMAC_SHA_224",
+            MacAlgorithmSpec::HmacSha256 => "HMAC_SHA_256",
+            MacAlgorithmSpec::HmacSha384 => "HMAC_SHA_384",
+            MacAlgorithmSpec::HmacSha512 => "HMAC_SHA_512",
+            MacAlgorithmSpec::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "HMAC_SHA_224",
+            "HMAC_SHA_256",
+            "HMAC_SHA_384",
+            "HMAC_SHA_512",
+        ]
+    }
+}
+impl AsRef<str> for MacAlgorithmSpec {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum SigningAlgorithmSpec {
     #[allow(missing_docs)] // documentation missing in model
     EcdsaSha256,
@@ -329,7 +397,7 @@ pub struct KeyMetadata {
     /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key.</p>
     pub key_usage: std::option::Option<crate::model::KeyUsageType>,
     /// <p>The current status of the KMS key.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub key_state: std::option::Option<crate::model::KeyState>,
     /// <p>The date and time after which KMS deletes this KMS key. This value is present only when the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.</p>
     /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
@@ -359,7 +427,7 @@ pub struct KeyMetadata {
     /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is <code>SIGN_VERIFY</code>.</p>
     pub signing_algorithms: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
     /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
-    /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub multi_region: std::option::Option<bool>,
     /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
     /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p>
@@ -372,6 +440,9 @@ pub struct KeyMetadata {
     /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p>
     /// <p>When a single-Region KMS key or a multi-Region replica key is scheduled for deletion, its deletion date is displayed in the <code>DeletionDate</code> field. However, when the primary key in a multi-Region key is scheduled for deletion, its waiting period doesn't begin until all of its replica keys are deleted. This value displays that waiting period. When the last replica key in the multi-Region key is deleted, the <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code> field.</p>
     pub pending_deletion_window_in_days: std::option::Option<i32>,
+    /// <p>The message authentication code (MAC) algorithm that the HMAC KMS key supports.</p>
+    /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
+    pub mac_algorithms: std::option::Option<std::vec::Vec<crate::model::MacAlgorithmSpec>>,
 }
 impl KeyMetadata {
     /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
@@ -403,7 +474,7 @@ impl KeyMetadata {
         self.key_usage.as_ref()
     }
     /// <p>The current status of the KMS key.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn key_state(&self) -> std::option::Option<&crate::model::KeyState> {
         self.key_state.as_ref()
     }
@@ -460,7 +531,7 @@ impl KeyMetadata {
         self.signing_algorithms.as_deref()
     }
     /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
-    /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn multi_region(&self) -> std::option::Option<bool> {
         self.multi_region
     }
@@ -480,6 +551,11 @@ impl KeyMetadata {
     /// <p>When a single-Region KMS key or a multi-Region replica key is scheduled for deletion, its deletion date is displayed in the <code>DeletionDate</code> field. However, when the primary key in a multi-Region key is scheduled for deletion, its waiting period doesn't begin until all of its replica keys are deleted. This value displays that waiting period. When the last replica key in the multi-Region key is deleted, the <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code> field.</p>
     pub fn pending_deletion_window_in_days(&self) -> std::option::Option<i32> {
         self.pending_deletion_window_in_days
+    }
+    /// <p>The message authentication code (MAC) algorithm that the HMAC KMS key supports.</p>
+    /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
+    pub fn mac_algorithms(&self) -> std::option::Option<&[crate::model::MacAlgorithmSpec]> {
+        self.mac_algorithms.as_deref()
     }
 }
 impl std::fmt::Debug for KeyMetadata {
@@ -513,6 +589,7 @@ impl std::fmt::Debug for KeyMetadata {
             "pending_deletion_window_in_days",
             &self.pending_deletion_window_in_days,
         );
+        formatter.field("mac_algorithms", &self.mac_algorithms);
         formatter.finish()
     }
 }
@@ -548,6 +625,8 @@ pub mod key_metadata {
         pub(crate) multi_region_configuration:
             std::option::Option<crate::model::MultiRegionConfiguration>,
         pub(crate) pending_deletion_window_in_days: std::option::Option<i32>,
+        pub(crate) mac_algorithms:
+            std::option::Option<std::vec::Vec<crate::model::MacAlgorithmSpec>>,
     }
     impl Builder {
         /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
@@ -630,13 +709,13 @@ pub mod key_metadata {
             self
         }
         /// <p>The current status of the KMS key.</p>
-        /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn key_state(mut self, input: crate::model::KeyState) -> Self {
             self.key_state = Some(input);
             self
         }
         /// <p>The current status of the KMS key.</p>
-        /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_key_state(mut self, input: std::option::Option<crate::model::KeyState>) -> Self {
             self.key_state = input;
             self
@@ -805,13 +884,13 @@ pub mod key_metadata {
             self
         }
         /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
-        /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn multi_region(mut self, input: bool) -> Self {
             self.multi_region = Some(input);
             self
         }
         /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
-        /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_multi_region(mut self, input: std::option::Option<bool>) -> Self {
             self.multi_region = input;
             self
@@ -859,6 +938,27 @@ pub mod key_metadata {
             self.pending_deletion_window_in_days = input;
             self
         }
+        /// Appends an item to `mac_algorithms`.
+        ///
+        /// To override the contents of this collection use [`set_mac_algorithms`](Self::set_mac_algorithms).
+        ///
+        /// <p>The message authentication code (MAC) algorithm that the HMAC KMS key supports.</p>
+        /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
+        pub fn mac_algorithms(mut self, input: crate::model::MacAlgorithmSpec) -> Self {
+            let mut v = self.mac_algorithms.unwrap_or_default();
+            v.push(input);
+            self.mac_algorithms = Some(v);
+            self
+        }
+        /// <p>The message authentication code (MAC) algorithm that the HMAC KMS key supports.</p>
+        /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
+        pub fn set_mac_algorithms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MacAlgorithmSpec>>,
+        ) -> Self {
+            self.mac_algorithms = input;
+            self
+        }
         /// Consumes the builder and constructs a [`KeyMetadata`](crate::model::KeyMetadata)
         pub fn build(self) -> crate::model::KeyMetadata {
             crate::model::KeyMetadata {
@@ -884,6 +984,7 @@ pub mod key_metadata {
                 multi_region: self.multi_region,
                 multi_region_configuration: self.multi_region_configuration,
                 pending_deletion_window_in_days: self.pending_deletion_window_in_days,
+                mac_algorithms: self.mac_algorithms,
             }
         }
     }
@@ -1215,6 +1316,14 @@ pub enum KeySpec {
     #[allow(missing_docs)] // documentation missing in model
     EccSecgP256K1,
     #[allow(missing_docs)] // documentation missing in model
+    Hmac224,
+    #[allow(missing_docs)] // documentation missing in model
+    Hmac256,
+    #[allow(missing_docs)] // documentation missing in model
+    Hmac384,
+    #[allow(missing_docs)] // documentation missing in model
+    Hmac512,
+    #[allow(missing_docs)] // documentation missing in model
     Rsa2048,
     #[allow(missing_docs)] // documentation missing in model
     Rsa3072,
@@ -1232,6 +1341,10 @@ impl std::convert::From<&str> for KeySpec {
             "ECC_NIST_P384" => KeySpec::EccNistP384,
             "ECC_NIST_P521" => KeySpec::EccNistP521,
             "ECC_SECG_P256K1" => KeySpec::EccSecgP256K1,
+            "HMAC_224" => KeySpec::Hmac224,
+            "HMAC_256" => KeySpec::Hmac256,
+            "HMAC_384" => KeySpec::Hmac384,
+            "HMAC_512" => KeySpec::Hmac512,
             "RSA_2048" => KeySpec::Rsa2048,
             "RSA_3072" => KeySpec::Rsa3072,
             "RSA_4096" => KeySpec::Rsa4096,
@@ -1255,6 +1368,10 @@ impl KeySpec {
             KeySpec::EccNistP384 => "ECC_NIST_P384",
             KeySpec::EccNistP521 => "ECC_NIST_P521",
             KeySpec::EccSecgP256K1 => "ECC_SECG_P256K1",
+            KeySpec::Hmac224 => "HMAC_224",
+            KeySpec::Hmac256 => "HMAC_256",
+            KeySpec::Hmac384 => "HMAC_384",
+            KeySpec::Hmac512 => "HMAC_512",
             KeySpec::Rsa2048 => "RSA_2048",
             KeySpec::Rsa3072 => "RSA_3072",
             KeySpec::Rsa4096 => "RSA_4096",
@@ -1269,6 +1386,10 @@ impl KeySpec {
             "ECC_NIST_P384",
             "ECC_NIST_P521",
             "ECC_SECG_P256K1",
+            "HMAC_224",
+            "HMAC_256",
+            "HMAC_384",
+            "HMAC_512",
             "RSA_2048",
             "RSA_3072",
             "RSA_4096",
@@ -1303,6 +1424,14 @@ pub enum CustomerMasterKeySpec {
     #[allow(missing_docs)] // documentation missing in model
     EccSecgP256K1,
     #[allow(missing_docs)] // documentation missing in model
+    Hmac224,
+    #[allow(missing_docs)] // documentation missing in model
+    Hmac256,
+    #[allow(missing_docs)] // documentation missing in model
+    Hmac384,
+    #[allow(missing_docs)] // documentation missing in model
+    Hmac512,
+    #[allow(missing_docs)] // documentation missing in model
     Rsa2048,
     #[allow(missing_docs)] // documentation missing in model
     Rsa3072,
@@ -1320,6 +1449,10 @@ impl std::convert::From<&str> for CustomerMasterKeySpec {
             "ECC_NIST_P384" => CustomerMasterKeySpec::EccNistP384,
             "ECC_NIST_P521" => CustomerMasterKeySpec::EccNistP521,
             "ECC_SECG_P256K1" => CustomerMasterKeySpec::EccSecgP256K1,
+            "HMAC_224" => CustomerMasterKeySpec::Hmac224,
+            "HMAC_256" => CustomerMasterKeySpec::Hmac256,
+            "HMAC_384" => CustomerMasterKeySpec::Hmac384,
+            "HMAC_512" => CustomerMasterKeySpec::Hmac512,
             "RSA_2048" => CustomerMasterKeySpec::Rsa2048,
             "RSA_3072" => CustomerMasterKeySpec::Rsa3072,
             "RSA_4096" => CustomerMasterKeySpec::Rsa4096,
@@ -1343,6 +1476,10 @@ impl CustomerMasterKeySpec {
             CustomerMasterKeySpec::EccNistP384 => "ECC_NIST_P384",
             CustomerMasterKeySpec::EccNistP521 => "ECC_NIST_P521",
             CustomerMasterKeySpec::EccSecgP256K1 => "ECC_SECG_P256K1",
+            CustomerMasterKeySpec::Hmac224 => "HMAC_224",
+            CustomerMasterKeySpec::Hmac256 => "HMAC_256",
+            CustomerMasterKeySpec::Hmac384 => "HMAC_384",
+            CustomerMasterKeySpec::Hmac512 => "HMAC_512",
             CustomerMasterKeySpec::Rsa2048 => "RSA_2048",
             CustomerMasterKeySpec::Rsa3072 => "RSA_3072",
             CustomerMasterKeySpec::Rsa4096 => "RSA_4096",
@@ -1357,6 +1494,10 @@ impl CustomerMasterKeySpec {
             "ECC_NIST_P384",
             "ECC_NIST_P521",
             "ECC_SECG_P256K1",
+            "HMAC_224",
+            "HMAC_256",
+            "HMAC_384",
+            "HMAC_512",
             "RSA_2048",
             "RSA_3072",
             "RSA_4096",
@@ -1554,6 +1695,8 @@ pub enum KeyUsageType {
     #[allow(missing_docs)] // documentation missing in model
     EncryptDecrypt,
     #[allow(missing_docs)] // documentation missing in model
+    GenerateVerifyMac,
+    #[allow(missing_docs)] // documentation missing in model
     SignVerify,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1562,6 +1705,7 @@ impl std::convert::From<&str> for KeyUsageType {
     fn from(s: &str) -> Self {
         match s {
             "ENCRYPT_DECRYPT" => KeyUsageType::EncryptDecrypt,
+            "GENERATE_VERIFY_MAC" => KeyUsageType::GenerateVerifyMac,
             "SIGN_VERIFY" => KeyUsageType::SignVerify,
             other => KeyUsageType::Unknown(other.to_owned()),
         }
@@ -1579,13 +1723,14 @@ impl KeyUsageType {
     pub fn as_str(&self) -> &str {
         match self {
             KeyUsageType::EncryptDecrypt => "ENCRYPT_DECRYPT",
+            KeyUsageType::GenerateVerifyMac => "GENERATE_VERIFY_MAC",
             KeyUsageType::SignVerify => "SIGN_VERIFY",
             KeyUsageType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["ENCRYPT_DECRYPT", "SIGN_VERIFY"]
+        &["ENCRYPT_DECRYPT", "GENERATE_VERIFY_MAC", "SIGN_VERIFY"]
     }
 }
 impl AsRef<str> for KeyUsageType {
@@ -1829,7 +1974,7 @@ impl GrantListEntry {
 }
 
 /// <p>Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. </p>
-/// <p>KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric KMS key</a>. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric KMS keys and management operations, such as <code>DescribeKey</code> or <code>RetireGrant</code>.</p> <important>
+/// <p>KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric encryption KMS key</a>. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with HMAC KMS keys or asymmetric KMS keys, and management operations, such as <code>DescribeKey</code> or <code>RetireGrant</code>.</p> <important>
 /// <p>In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption context of the encryption operation. Only the order of the pairs can vary.</p>
 /// <p>However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive.</p>
 /// <p>To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
@@ -1977,6 +2122,8 @@ pub enum GrantOperation {
     #[allow(missing_docs)] // documentation missing in model
     GenerateDataKeyWithoutPlaintext,
     #[allow(missing_docs)] // documentation missing in model
+    GenerateMac,
+    #[allow(missing_docs)] // documentation missing in model
     GetPublicKey,
     #[allow(missing_docs)] // documentation missing in model
     ReEncryptFrom,
@@ -1988,6 +2135,8 @@ pub enum GrantOperation {
     Sign,
     #[allow(missing_docs)] // documentation missing in model
     Verify,
+    #[allow(missing_docs)] // documentation missing in model
+    VerifyMac,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -2004,12 +2153,14 @@ impl std::convert::From<&str> for GrantOperation {
                 GrantOperation::GenerateDataKeyPairWithoutPlaintext
             }
             "GenerateDataKeyWithoutPlaintext" => GrantOperation::GenerateDataKeyWithoutPlaintext,
+            "GenerateMac" => GrantOperation::GenerateMac,
             "GetPublicKey" => GrantOperation::GetPublicKey,
             "ReEncryptFrom" => GrantOperation::ReEncryptFrom,
             "ReEncryptTo" => GrantOperation::ReEncryptTo,
             "RetireGrant" => GrantOperation::RetireGrant,
             "Sign" => GrantOperation::Sign,
             "Verify" => GrantOperation::Verify,
+            "VerifyMac" => GrantOperation::VerifyMac,
             other => GrantOperation::Unknown(other.to_owned()),
         }
     }
@@ -2035,12 +2186,14 @@ impl GrantOperation {
                 "GenerateDataKeyPairWithoutPlaintext"
             }
             GrantOperation::GenerateDataKeyWithoutPlaintext => "GenerateDataKeyWithoutPlaintext",
+            GrantOperation::GenerateMac => "GenerateMac",
             GrantOperation::GetPublicKey => "GetPublicKey",
             GrantOperation::ReEncryptFrom => "ReEncryptFrom",
             GrantOperation::ReEncryptTo => "ReEncryptTo",
             GrantOperation::RetireGrant => "RetireGrant",
             GrantOperation::Sign => "Sign",
             GrantOperation::Verify => "Verify",
+            GrantOperation::VerifyMac => "VerifyMac",
             GrantOperation::Unknown(s) => s.as_ref(),
         }
     }
@@ -2055,12 +2208,14 @@ impl GrantOperation {
             "GenerateDataKeyPair",
             "GenerateDataKeyPairWithoutPlaintext",
             "GenerateDataKeyWithoutPlaintext",
+            "GenerateMac",
             "GetPublicKey",
             "ReEncryptFrom",
             "ReEncryptTo",
             "RetireGrant",
             "Sign",
             "Verify",
+            "VerifyMac",
         ]
     }
 }

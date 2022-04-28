@@ -3,7 +3,70 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-This is the Amazon Rekognition API reference.
+This is the API Reference for [Amazon Rekognition Image](https://docs.aws.amazon.com/rekognition/latest/dg/images.html), [Amazon Rekognition Custom Labels](https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/what-is.html), [Amazon Rekognition Stored Video](https://docs.aws.amazon.com/rekognition/latest/dg/video.html), [Amazon Rekognition Streaming Video](https://docs.aws.amazon.com/rekognition/latest/dg/streaming-video.html). It provides descriptions of actions, data types, common parameters, and common errors.
+
+__Amazon Rekognition Image__
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+
+__Amazon Rekognition Custom Labels__
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+
+__Amazon Rekognition Video Stored Video__
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+
+__Amazon Rekognition Video Streaming Video__
+  -
+  -
+  -
+  -
+  -
+  -
 
 ## Getting Started
 
@@ -16,8 +79,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.10.1"
-aws-sdk-rekognition = "0.10.1"
+aws-config = "0.11.0"
+aws-sdk-rekognition = "0.11.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

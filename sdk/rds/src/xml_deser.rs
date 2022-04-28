@@ -1942,129 +1942,6 @@ pub fn deser_operation_crate_operation_copy_option_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_crate_error_custom_availability_zone_already_exists_fault_xml_err(
-    inp: &[u8],
-    mut builder: crate::error::custom_availability_zone_already_exists_fault::Builder,
-) -> Result<
-    crate::error::custom_availability_zone_already_exists_fault::Builder,
-    aws_smithy_xml::decode::XmlError,
-> {
-    if inp.is_empty() {
-        return Ok(builder);
-    }
-    use std::convert::TryFrom;
-    let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
-    #[allow(unused_mut)]
-    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
-    while let Some(mut tag) = error_decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("message") /* message com.amazonaws.rds#CustomAvailabilityZoneAlreadyExistsFault$message */ =>  {
-                let var_64 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_message(var_64);
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(builder)
-}
-
-#[allow(unused_mut)]
-pub fn deser_structure_crate_error_custom_availability_zone_quota_exceeded_fault_xml_err(
-    inp: &[u8],
-    mut builder: crate::error::custom_availability_zone_quota_exceeded_fault::Builder,
-) -> Result<
-    crate::error::custom_availability_zone_quota_exceeded_fault::Builder,
-    aws_smithy_xml::decode::XmlError,
-> {
-    if inp.is_empty() {
-        return Ok(builder);
-    }
-    use std::convert::TryFrom;
-    let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
-    #[allow(unused_mut)]
-    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
-    while let Some(mut tag) = error_decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("message") /* message com.amazonaws.rds#CustomAvailabilityZoneQuotaExceededFault$message */ =>  {
-                let var_65 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_message(var_65);
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(builder)
-}
-
-#[allow(unused_mut)]
-pub fn deser_operation_crate_operation_create_custom_availability_zone(
-    inp: &[u8],
-    mut builder: crate::output::create_custom_availability_zone_output::Builder,
-) -> Result<
-    crate::output::create_custom_availability_zone_output::Builder,
-    aws_smithy_xml::decode::XmlError,
-> {
-    use std::convert::TryFrom;
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
-
-    #[allow(unused_mut)]
-    let mut decoder = doc.root_element()?;
-    let start_el = decoder.start_el();
-    if !(start_el.matches("CreateCustomAvailabilityZoneResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected CreateCustomAvailabilityZoneResponse got {:?}",
-            start_el
-        )));
-    }
-    if let Some(mut result_tag) = decoder.next_tag() {
-        let start_el = result_tag.start_el();
-        if !(start_el.matches("CreateCustomAvailabilityZoneResult")) {
-            return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-                "invalid result, expected CreateCustomAvailabilityZoneResult got {:?}",
-                start_el
-            )));
-        }
-        while let Some(mut tag) = result_tag.next_tag() {
-            match tag.start_el() {
-            s if s.matches("CustomAvailabilityZone") /* CustomAvailabilityZone com.amazonaws.rds.synthetic#CreateCustomAvailabilityZoneOutput$CustomAvailabilityZone */ =>  {
-                let var_66 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_custom_availability_zone(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_custom_availability_zone(var_66);
-            }
-            ,
-            _ => {}
-        }
-        }
-    } else {
-        return Err(aws_smithy_xml::decode::XmlError::custom(
-            "expected CreateCustomAvailabilityZoneResult tag",
-        ));
-    };
-    Ok(builder)
-}
-
-#[allow(unused_mut)]
 pub fn deser_structure_crate_error_custom_db_engine_version_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::custom_db_engine_version_already_exists_fault::Builder,
@@ -2082,7 +1959,7 @@ pub fn deser_structure_crate_error_custom_db_engine_version_already_exists_fault
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#CustomDBEngineVersionAlreadyExistsFault$message */ =>  {
-                let var_67 =
+                let var_64 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2091,7 +1968,7 @@ pub fn deser_structure_crate_error_custom_db_engine_version_already_exists_fault
                         ?
                     )
                 ;
-                builder = builder.set_message(var_67);
+                builder = builder.set_message(var_64);
             }
             ,
             _ => {}
@@ -2118,7 +1995,7 @@ pub fn deser_structure_crate_error_custom_db_engine_version_quota_exceeded_fault
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#CustomDBEngineVersionQuotaExceededFault$message */ =>  {
-                let var_68 =
+                let var_65 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2127,7 +2004,7 @@ pub fn deser_structure_crate_error_custom_db_engine_version_quota_exceeded_fault
                         ?
                     )
                 ;
-                builder = builder.set_message(var_68);
+                builder = builder.set_message(var_65);
             }
             ,
             _ => {}
@@ -2167,6 +2044,45 @@ pub fn deser_operation_crate_operation_create_custom_db_engine_version(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Engine") /* Engine com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$Engine */ =>  {
+                let var_66 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_engine(var_66);
+            }
+            ,
+            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$EngineVersion */ =>  {
+                let var_67 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_engine_version(var_67);
+            }
+            ,
+            s if s.matches("DBParameterGroupFamily") /* DBParameterGroupFamily com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$DBParameterGroupFamily */ =>  {
+                let var_68 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_parameter_group_family(var_68);
+            }
+            ,
+            s if s.matches("DBEngineDescription") /* DBEngineDescription com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$DBEngineDescription */ =>  {
                 let var_69 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -2176,10 +2092,10 @@ pub fn deser_operation_crate_operation_create_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_69);
+                builder = builder.set_db_engine_description(var_69);
             }
             ,
-            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$EngineVersion */ =>  {
+            s if s.matches("DBEngineVersionDescription") /* DBEngineVersionDescription com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$DBEngineVersionDescription */ =>  {
                 let var_70 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -2189,110 +2105,71 @@ pub fn deser_operation_crate_operation_create_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_engine_version(var_70);
-            }
-            ,
-            s if s.matches("DBParameterGroupFamily") /* DBParameterGroupFamily com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$DBParameterGroupFamily */ =>  {
-                let var_71 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_db_parameter_group_family(var_71);
-            }
-            ,
-            s if s.matches("DBEngineDescription") /* DBEngineDescription com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$DBEngineDescription */ =>  {
-                let var_72 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_db_engine_description(var_72);
-            }
-            ,
-            s if s.matches("DBEngineVersionDescription") /* DBEngineVersionDescription com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$DBEngineVersionDescription */ =>  {
-                let var_73 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_db_engine_version_description(var_73);
+                builder = builder.set_db_engine_version_description(var_70);
             }
             ,
             s if s.matches("DefaultCharacterSet") /* DefaultCharacterSet com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$DefaultCharacterSet */ =>  {
-                let var_74 =
+                let var_71 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_character_set(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_default_character_set(var_74);
+                builder = builder.set_default_character_set(var_71);
             }
             ,
             s if s.matches("SupportedCharacterSets") /* SupportedCharacterSets com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportedCharacterSets */ =>  {
-                let var_75 =
+                let var_72 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_supported_character_sets_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_character_sets(var_75);
+                builder = builder.set_supported_character_sets(var_72);
             }
             ,
             s if s.matches("SupportedNcharCharacterSets") /* SupportedNcharCharacterSets com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportedNcharCharacterSets */ =>  {
-                let var_76 =
+                let var_73 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_supported_character_sets_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_nchar_character_sets(var_76);
+                builder = builder.set_supported_nchar_character_sets(var_73);
             }
             ,
             s if s.matches("ValidUpgradeTarget") /* ValidUpgradeTarget com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$ValidUpgradeTarget */ =>  {
-                let var_77 =
+                let var_74 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_valid_upgrade_target_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_valid_upgrade_target(var_77);
+                builder = builder.set_valid_upgrade_target(var_74);
             }
             ,
             s if s.matches("SupportedTimezones") /* SupportedTimezones com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportedTimezones */ =>  {
-                let var_78 =
+                let var_75 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_supported_timezones_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_timezones(var_78);
+                builder = builder.set_supported_timezones(var_75);
             }
             ,
             s if s.matches("ExportableLogTypes") /* ExportableLogTypes com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$ExportableLogTypes */ =>  {
-                let var_79 =
+                let var_76 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_log_type_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_exportable_log_types(var_79);
+                builder = builder.set_exportable_log_types(var_76);
             }
             ,
             s if s.matches("SupportsLogExportsToCloudwatchLogs") /* SupportsLogExportsToCloudwatchLogs com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportsLogExportsToCloudwatchLogs */ =>  {
-                let var_80 =
+                let var_77 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -2303,11 +2180,11 @@ pub fn deser_operation_crate_operation_create_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_log_exports_to_cloudwatch_logs(var_80);
+                builder = builder.set_supports_log_exports_to_cloudwatch_logs(var_77);
             }
             ,
             s if s.matches("SupportsReadReplica") /* SupportsReadReplica com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportsReadReplica */ =>  {
-                let var_81 =
+                let var_78 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -2318,30 +2195,73 @@ pub fn deser_operation_crate_operation_create_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_read_replica(var_81);
+                builder = builder.set_supports_read_replica(var_78);
             }
             ,
             s if s.matches("SupportedEngineModes") /* SupportedEngineModes com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportedEngineModes */ =>  {
-                let var_82 =
+                let var_79 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_engine_mode_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_engine_modes(var_82);
+                builder = builder.set_supported_engine_modes(var_79);
             }
             ,
             s if s.matches("SupportedFeatureNames") /* SupportedFeatureNames com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportedFeatureNames */ =>  {
-                let var_83 =
+                let var_80 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_feature_name_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_feature_names(var_83);
+                builder = builder.set_supported_feature_names(var_80);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$Status */ =>  {
+                let var_81 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_status(var_81);
+            }
+            ,
+            s if s.matches("SupportsParallelQuery") /* SupportsParallelQuery com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportsParallelQuery */ =>  {
+                let var_82 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supports_parallel_query(var_82);
+            }
+            ,
+            s if s.matches("SupportsGlobalDatabases") /* SupportsGlobalDatabases com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportsGlobalDatabases */ =>  {
+                let var_83 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supports_global_databases(var_83);
+            }
+            ,
+            s if s.matches("MajorEngineVersion") /* MajorEngineVersion com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$MajorEngineVersion */ =>  {
                 let var_84 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -2351,40 +2271,36 @@ pub fn deser_operation_crate_operation_create_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_84);
+                builder = builder.set_major_engine_version(var_84);
             }
             ,
-            s if s.matches("SupportsParallelQuery") /* SupportsParallelQuery com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportsParallelQuery */ =>  {
+            s if s.matches("DatabaseInstallationFilesS3BucketName") /* DatabaseInstallationFilesS3BucketName com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$DatabaseInstallationFilesS3BucketName */ =>  {
                 let var_85 =
                     Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                        }
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_supports_parallel_query(var_85);
+                builder = builder.set_database_installation_files_s3_bucket_name(var_85);
             }
             ,
-            s if s.matches("SupportsGlobalDatabases") /* SupportsGlobalDatabases com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportsGlobalDatabases */ =>  {
+            s if s.matches("DatabaseInstallationFilesS3Prefix") /* DatabaseInstallationFilesS3Prefix com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$DatabaseInstallationFilesS3Prefix */ =>  {
                 let var_86 =
                     Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                        }
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_supports_global_databases(var_86);
+                builder = builder.set_database_installation_files_s3_prefix(var_86);
             }
             ,
-            s if s.matches("MajorEngineVersion") /* MajorEngineVersion com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$MajorEngineVersion */ =>  {
+            s if s.matches("DBEngineVersionArn") /* DBEngineVersionArn com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$DBEngineVersionArn */ =>  {
                 let var_87 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -2394,10 +2310,10 @@ pub fn deser_operation_crate_operation_create_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_major_engine_version(var_87);
+                builder = builder.set_db_engine_version_arn(var_87);
             }
             ,
-            s if s.matches("DatabaseInstallationFilesS3BucketName") /* DatabaseInstallationFilesS3BucketName com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$DatabaseInstallationFilesS3BucketName */ =>  {
+            s if s.matches("KMSKeyId") /* KMSKeyId com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$KMSKeyId */ =>  {
                 let var_88 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -2407,50 +2323,11 @@ pub fn deser_operation_crate_operation_create_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_database_installation_files_s3_bucket_name(var_88);
-            }
-            ,
-            s if s.matches("DatabaseInstallationFilesS3Prefix") /* DatabaseInstallationFilesS3Prefix com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$DatabaseInstallationFilesS3Prefix */ =>  {
-                let var_89 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_database_installation_files_s3_prefix(var_89);
-            }
-            ,
-            s if s.matches("DBEngineVersionArn") /* DBEngineVersionArn com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$DBEngineVersionArn */ =>  {
-                let var_90 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_db_engine_version_arn(var_90);
-            }
-            ,
-            s if s.matches("KMSKeyId") /* KMSKeyId com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$KMSKeyId */ =>  {
-                let var_91 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_kms_key_id(var_91);
+                builder = builder.set_kms_key_id(var_88);
             }
             ,
             s if s.matches("CreateTime") /* CreateTime com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$CreateTime */ =>  {
-                let var_92 =
+                let var_89 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2460,21 +2337,21 @@ pub fn deser_operation_crate_operation_create_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_create_time(var_92);
+                builder = builder.set_create_time(var_89);
             }
             ,
             s if s.matches("TagList") /* TagList com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$TagList */ =>  {
-                let var_93 =
+                let var_90 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tag_list(var_93);
+                builder = builder.set_tag_list(var_90);
             }
             ,
             s if s.matches("SupportsBabelfish") /* SupportsBabelfish com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportsBabelfish */ =>  {
-                let var_94 =
+                let var_91 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -2485,7 +2362,7 @@ pub fn deser_operation_crate_operation_create_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_babelfish(var_94);
+                builder = builder.set_supports_babelfish(var_91);
             }
             ,
             _ => {}
@@ -2515,7 +2392,7 @@ pub fn deser_structure_crate_error_db_cluster_already_exists_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBClusterAlreadyExistsFault$message */ =>  {
-                let var_95 =
+                let var_92 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2524,7 +2401,7 @@ pub fn deser_structure_crate_error_db_cluster_already_exists_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_95);
+                builder = builder.set_message(var_92);
             }
             ,
             _ => {}
@@ -2551,7 +2428,7 @@ pub fn deser_structure_crate_error_db_cluster_parameter_group_not_found_fault_xm
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBClusterParameterGroupNotFoundFault$message */ =>  {
-                let var_96 =
+                let var_93 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2560,7 +2437,7 @@ pub fn deser_structure_crate_error_db_cluster_parameter_group_not_found_fault_xm
                         ?
                     )
                 ;
-                builder = builder.set_message(var_96);
+                builder = builder.set_message(var_93);
             }
             ,
             _ => {}
@@ -2585,7 +2462,7 @@ pub fn deser_structure_crate_error_db_cluster_quota_exceeded_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBClusterQuotaExceededFault$message */ =>  {
-                let var_97 =
+                let var_94 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2594,7 +2471,7 @@ pub fn deser_structure_crate_error_db_cluster_quota_exceeded_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_97);
+                builder = builder.set_message(var_94);
             }
             ,
             _ => {}
@@ -2621,7 +2498,7 @@ pub fn deser_structure_crate_error_db_subnet_group_does_not_cover_enough_a_zs_xm
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBSubnetGroupDoesNotCoverEnoughAZs$message */ =>  {
-                let var_98 =
+                let var_95 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2630,7 +2507,7 @@ pub fn deser_structure_crate_error_db_subnet_group_does_not_cover_enough_a_zs_xm
                         ?
                     )
                 ;
-                builder = builder.set_message(var_98);
+                builder = builder.set_message(var_95);
             }
             ,
             _ => {}
@@ -2655,7 +2532,7 @@ pub fn deser_structure_crate_error_db_subnet_group_not_found_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBSubnetGroupNotFoundFault$message */ =>  {
-                let var_99 =
+                let var_96 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2664,7 +2541,7 @@ pub fn deser_structure_crate_error_db_subnet_group_not_found_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_99);
+                builder = builder.set_message(var_96);
             }
             ,
             _ => {}
@@ -2688,7 +2565,7 @@ pub fn deser_structure_crate_error_domain_not_found_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DomainNotFoundFault$message */ =>  {
-                let var_100 =
+                let var_97 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2697,7 +2574,7 @@ pub fn deser_structure_crate_error_domain_not_found_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_100);
+                builder = builder.set_message(var_97);
             }
             ,
             _ => {}
@@ -2722,7 +2599,7 @@ pub fn deser_structure_crate_error_global_cluster_not_found_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#GlobalClusterNotFoundFault$message */ =>  {
-                let var_101 =
+                let var_98 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2731,7 +2608,7 @@ pub fn deser_structure_crate_error_global_cluster_not_found_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_101);
+                builder = builder.set_message(var_98);
             }
             ,
             _ => {}
@@ -2758,7 +2635,7 @@ pub fn deser_structure_crate_error_insufficient_storage_cluster_capacity_fault_x
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InsufficientStorageClusterCapacityFault$message */ =>  {
-                let var_102 =
+                let var_99 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2767,7 +2644,7 @@ pub fn deser_structure_crate_error_insufficient_storage_cluster_capacity_fault_x
                         ?
                     )
                 ;
-                builder = builder.set_message(var_102);
+                builder = builder.set_message(var_99);
             }
             ,
             _ => {}
@@ -2794,7 +2671,7 @@ pub fn deser_structure_crate_error_invalid_db_subnet_group_state_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InvalidDBSubnetGroupStateFault$message */ =>  {
-                let var_103 =
+                let var_100 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2803,7 +2680,7 @@ pub fn deser_structure_crate_error_invalid_db_subnet_group_state_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_103);
+                builder = builder.set_message(var_100);
             }
             ,
             _ => {}
@@ -2830,7 +2707,7 @@ pub fn deser_structure_crate_error_invalid_global_cluster_state_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InvalidGlobalClusterStateFault$message */ =>  {
-                let var_104 =
+                let var_101 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2839,7 +2716,7 @@ pub fn deser_structure_crate_error_invalid_global_cluster_state_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_104);
+                builder = builder.set_message(var_101);
             }
             ,
             _ => {}
@@ -2863,7 +2740,7 @@ pub fn deser_structure_crate_error_invalid_subnet_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InvalidSubnet$message */ =>  {
-                let var_105 =
+                let var_102 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2872,7 +2749,7 @@ pub fn deser_structure_crate_error_invalid_subnet_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_105);
+                builder = builder.set_message(var_102);
             }
             ,
             _ => {}
@@ -2897,7 +2774,7 @@ pub fn deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InvalidVPCNetworkStateFault$message */ =>  {
-                let var_106 =
+                let var_103 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2906,7 +2783,7 @@ pub fn deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_106);
+                builder = builder.set_message(var_103);
             }
             ,
             _ => {}
@@ -2930,7 +2807,7 @@ pub fn deser_structure_crate_error_storage_quota_exceeded_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#StorageQuotaExceededFault$message */ =>  {
-                let var_107 =
+                let var_104 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2939,7 +2816,7 @@ pub fn deser_structure_crate_error_storage_quota_exceeded_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_107);
+                builder = builder.set_message(var_104);
             }
             ,
             _ => {}
@@ -2976,13 +2853,13 @@ pub fn deser_operation_crate_operation_create_db_cluster(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBCluster") /* DBCluster com.amazonaws.rds.synthetic#CreateDBClusterOutput$DBCluster */ =>  {
-                let var_108 =
+                let var_105 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster(var_108);
+                builder = builder.set_db_cluster(var_105);
             }
             ,
             _ => {}
@@ -3014,7 +2891,7 @@ pub fn deser_structure_crate_error_db_cluster_endpoint_already_exists_fault_xml_
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBClusterEndpointAlreadyExistsFault$message */ =>  {
-                let var_109 =
+                let var_106 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3023,7 +2900,7 @@ pub fn deser_structure_crate_error_db_cluster_endpoint_already_exists_fault_xml_
                         ?
                     )
                 ;
-                builder = builder.set_message(var_109);
+                builder = builder.set_message(var_106);
             }
             ,
             _ => {}
@@ -3050,7 +2927,7 @@ pub fn deser_structure_crate_error_db_cluster_endpoint_quota_exceeded_fault_xml_
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBClusterEndpointQuotaExceededFault$message */ =>  {
-                let var_110 =
+                let var_107 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3059,7 +2936,7 @@ pub fn deser_structure_crate_error_db_cluster_endpoint_quota_exceeded_fault_xml_
                         ?
                     )
                 ;
-                builder = builder.set_message(var_110);
+                builder = builder.set_message(var_107);
             }
             ,
             _ => {}
@@ -3099,6 +2976,45 @@ pub fn deser_operation_crate_operation_create_db_cluster_endpoint(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBClusterEndpointIdentifier") /* DBClusterEndpointIdentifier com.amazonaws.rds.synthetic#CreateDBClusterEndpointOutput$DBClusterEndpointIdentifier */ =>  {
+                let var_108 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_cluster_endpoint_identifier(var_108);
+            }
+            ,
+            s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.rds.synthetic#CreateDBClusterEndpointOutput$DBClusterIdentifier */ =>  {
+                let var_109 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_cluster_identifier(var_109);
+            }
+            ,
+            s if s.matches("DBClusterEndpointResourceIdentifier") /* DBClusterEndpointResourceIdentifier com.amazonaws.rds.synthetic#CreateDBClusterEndpointOutput$DBClusterEndpointResourceIdentifier */ =>  {
+                let var_110 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_cluster_endpoint_resource_identifier(var_110);
+            }
+            ,
+            s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds.synthetic#CreateDBClusterEndpointOutput$Endpoint */ =>  {
                 let var_111 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3108,10 +3024,10 @@ pub fn deser_operation_crate_operation_create_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_endpoint_identifier(var_111);
+                builder = builder.set_endpoint(var_111);
             }
             ,
-            s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.rds.synthetic#CreateDBClusterEndpointOutput$DBClusterIdentifier */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#CreateDBClusterEndpointOutput$Status */ =>  {
                 let var_112 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3121,10 +3037,10 @@ pub fn deser_operation_crate_operation_create_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_identifier(var_112);
+                builder = builder.set_status(var_112);
             }
             ,
-            s if s.matches("DBClusterEndpointResourceIdentifier") /* DBClusterEndpointResourceIdentifier com.amazonaws.rds.synthetic#CreateDBClusterEndpointOutput$DBClusterEndpointResourceIdentifier */ =>  {
+            s if s.matches("EndpointType") /* EndpointType com.amazonaws.rds.synthetic#CreateDBClusterEndpointOutput$EndpointType */ =>  {
                 let var_113 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3134,10 +3050,10 @@ pub fn deser_operation_crate_operation_create_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_endpoint_resource_identifier(var_113);
+                builder = builder.set_endpoint_type(var_113);
             }
             ,
-            s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds.synthetic#CreateDBClusterEndpointOutput$Endpoint */ =>  {
+            s if s.matches("CustomEndpointType") /* CustomEndpointType com.amazonaws.rds.synthetic#CreateDBClusterEndpointOutput$CustomEndpointType */ =>  {
                 let var_114 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3147,36 +3063,30 @@ pub fn deser_operation_crate_operation_create_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_endpoint(var_114);
+                builder = builder.set_custom_endpoint_type(var_114);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#CreateDBClusterEndpointOutput$Status */ =>  {
+            s if s.matches("StaticMembers") /* StaticMembers com.amazonaws.rds.synthetic#CreateDBClusterEndpointOutput$StaticMembers */ =>  {
                 let var_115 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                        crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_status(var_115);
+                builder = builder.set_static_members(var_115);
             }
             ,
-            s if s.matches("EndpointType") /* EndpointType com.amazonaws.rds.synthetic#CreateDBClusterEndpointOutput$EndpointType */ =>  {
+            s if s.matches("ExcludedMembers") /* ExcludedMembers com.amazonaws.rds.synthetic#CreateDBClusterEndpointOutput$ExcludedMembers */ =>  {
                 let var_116 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                        crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_endpoint_type(var_116);
+                builder = builder.set_excluded_members(var_116);
             }
             ,
-            s if s.matches("CustomEndpointType") /* CustomEndpointType com.amazonaws.rds.synthetic#CreateDBClusterEndpointOutput$CustomEndpointType */ =>  {
+            s if s.matches("DBClusterEndpointArn") /* DBClusterEndpointArn com.amazonaws.rds.synthetic#CreateDBClusterEndpointOutput$DBClusterEndpointArn */ =>  {
                 let var_117 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3186,40 +3096,7 @@ pub fn deser_operation_crate_operation_create_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_custom_endpoint_type(var_117);
-            }
-            ,
-            s if s.matches("StaticMembers") /* StaticMembers com.amazonaws.rds.synthetic#CreateDBClusterEndpointOutput$StaticMembers */ =>  {
-                let var_118 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_static_members(var_118);
-            }
-            ,
-            s if s.matches("ExcludedMembers") /* ExcludedMembers com.amazonaws.rds.synthetic#CreateDBClusterEndpointOutput$ExcludedMembers */ =>  {
-                let var_119 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_excluded_members(var_119);
-            }
-            ,
-            s if s.matches("DBClusterEndpointArn") /* DBClusterEndpointArn com.amazonaws.rds.synthetic#CreateDBClusterEndpointOutput$DBClusterEndpointArn */ =>  {
-                let var_120 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_db_cluster_endpoint_arn(var_120);
+                builder = builder.set_db_cluster_endpoint_arn(var_117);
             }
             ,
             _ => {}
@@ -3264,13 +3141,13 @@ pub fn deser_operation_crate_operation_create_db_cluster_parameter_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBClusterParameterGroup") /* DBClusterParameterGroup com.amazonaws.rds.synthetic#CreateDBClusterParameterGroupOutput$DBClusterParameterGroup */ =>  {
-                let var_121 =
+                let var_118 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_cluster_parameter_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_parameter_group(var_121);
+                builder = builder.set_db_cluster_parameter_group(var_118);
             }
             ,
             _ => {}
@@ -3315,13 +3192,13 @@ pub fn deser_operation_crate_operation_create_db_cluster_snapshot(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBClusterSnapshot") /* DBClusterSnapshot com.amazonaws.rds.synthetic#CreateDBClusterSnapshotOutput$DBClusterSnapshot */ =>  {
-                let var_122 =
+                let var_119 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_cluster_snapshot(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_snapshot(var_122);
+                builder = builder.set_db_cluster_snapshot(var_119);
             }
             ,
             _ => {}
@@ -3351,7 +3228,7 @@ pub fn deser_structure_crate_error_authorization_not_found_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#AuthorizationNotFoundFault$message */ =>  {
-                let var_123 =
+                let var_120 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3360,7 +3237,7 @@ pub fn deser_structure_crate_error_authorization_not_found_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_123);
+                builder = builder.set_message(var_120);
             }
             ,
             _ => {}
@@ -3385,7 +3262,7 @@ pub fn deser_structure_crate_error_backup_policy_not_found_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#BackupPolicyNotFoundFault$message */ =>  {
-                let var_124 =
+                let var_121 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3394,7 +3271,7 @@ pub fn deser_structure_crate_error_backup_policy_not_found_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_124);
+                builder = builder.set_message(var_121);
             }
             ,
             _ => {}
@@ -3419,7 +3296,7 @@ pub fn deser_structure_crate_error_db_instance_already_exists_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBInstanceAlreadyExistsFault$message */ =>  {
-                let var_125 =
+                let var_122 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3428,7 +3305,7 @@ pub fn deser_structure_crate_error_db_instance_already_exists_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_125);
+                builder = builder.set_message(var_122);
             }
             ,
             _ => {}
@@ -3453,7 +3330,7 @@ pub fn deser_structure_crate_error_instance_quota_exceeded_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InstanceQuotaExceededFault$message */ =>  {
-                let var_126 =
+                let var_123 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3462,7 +3339,7 @@ pub fn deser_structure_crate_error_instance_quota_exceeded_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_126);
+                builder = builder.set_message(var_123);
             }
             ,
             _ => {}
@@ -3489,7 +3366,7 @@ pub fn deser_structure_crate_error_insufficient_db_instance_capacity_fault_xml_e
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InsufficientDBInstanceCapacityFault$message */ =>  {
-                let var_127 =
+                let var_124 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3498,7 +3375,7 @@ pub fn deser_structure_crate_error_insufficient_db_instance_capacity_fault_xml_e
                         ?
                     )
                 ;
-                builder = builder.set_message(var_127);
+                builder = builder.set_message(var_124);
             }
             ,
             _ => {}
@@ -3525,7 +3402,7 @@ pub fn deser_structure_crate_error_provisioned_iops_not_available_in_az_fault_xm
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#ProvisionedIopsNotAvailableInAZFault$message */ =>  {
-                let var_128 =
+                let var_125 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3534,7 +3411,7 @@ pub fn deser_structure_crate_error_provisioned_iops_not_available_in_az_fault_xm
                         ?
                     )
                 ;
-                builder = builder.set_message(var_128);
+                builder = builder.set_message(var_125);
             }
             ,
             _ => {}
@@ -3559,7 +3436,7 @@ pub fn deser_structure_crate_error_storage_type_not_supported_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#StorageTypeNotSupportedFault$message */ =>  {
-                let var_129 =
+                let var_126 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3568,7 +3445,7 @@ pub fn deser_structure_crate_error_storage_type_not_supported_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_129);
+                builder = builder.set_message(var_126);
             }
             ,
             _ => {}
@@ -3605,13 +3482,13 @@ pub fn deser_operation_crate_operation_create_db_instance(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBInstance") /* DBInstance com.amazonaws.rds.synthetic#CreateDBInstanceOutput$DBInstance */ =>  {
-                let var_130 =
+                let var_127 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_instance(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_instance(var_130);
+                builder = builder.set_db_instance(var_127);
             }
             ,
             _ => {}
@@ -3643,7 +3520,7 @@ pub fn deser_structure_crate_error_db_subnet_group_not_allowed_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBSubnetGroupNotAllowedFault$message */ =>  {
-                let var_131 =
+                let var_128 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3652,7 +3529,7 @@ pub fn deser_structure_crate_error_db_subnet_group_not_allowed_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_131);
+                builder = builder.set_message(var_128);
             }
             ,
             _ => {}
@@ -3677,7 +3554,7 @@ pub fn deser_structure_crate_error_invalid_db_subnet_group_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InvalidDBSubnetGroupFault$message */ =>  {
-                let var_132 =
+                let var_129 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3686,7 +3563,7 @@ pub fn deser_structure_crate_error_invalid_db_subnet_group_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_132);
+                builder = builder.set_message(var_129);
             }
             ,
             _ => {}
@@ -3726,13 +3603,13 @@ pub fn deser_operation_crate_operation_create_db_instance_read_replica(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBInstance") /* DBInstance com.amazonaws.rds.synthetic#CreateDBInstanceReadReplicaOutput$DBInstance */ =>  {
-                let var_133 =
+                let var_130 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_instance(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_instance(var_133);
+                builder = builder.set_db_instance(var_130);
             }
             ,
             _ => {}
@@ -3777,13 +3654,13 @@ pub fn deser_operation_crate_operation_create_db_parameter_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBParameterGroup") /* DBParameterGroup com.amazonaws.rds.synthetic#CreateDBParameterGroupOutput$DBParameterGroup */ =>  {
-                let var_134 =
+                let var_131 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_parameter_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_parameter_group(var_134);
+                builder = builder.set_db_parameter_group(var_131);
             }
             ,
             _ => {}
@@ -3813,7 +3690,7 @@ pub fn deser_structure_crate_error_db_proxy_already_exists_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBProxyAlreadyExistsFault$message */ =>  {
-                let var_135 =
+                let var_132 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3822,7 +3699,7 @@ pub fn deser_structure_crate_error_db_proxy_already_exists_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_135);
+                builder = builder.set_message(var_132);
             }
             ,
             _ => {}
@@ -3847,7 +3724,7 @@ pub fn deser_structure_crate_error_db_proxy_quota_exceeded_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBProxyQuotaExceededFault$message */ =>  {
-                let var_136 =
+                let var_133 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3856,7 +3733,7 @@ pub fn deser_structure_crate_error_db_proxy_quota_exceeded_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_136);
+                builder = builder.set_message(var_133);
             }
             ,
             _ => {}
@@ -3893,13 +3770,13 @@ pub fn deser_operation_crate_operation_create_db_proxy(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBProxy") /* DBProxy com.amazonaws.rds.synthetic#CreateDBProxyOutput$DBProxy */ =>  {
-                let var_137 =
+                let var_134 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_proxy(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_proxy(var_137);
+                builder = builder.set_db_proxy(var_134);
             }
             ,
             _ => {}
@@ -3931,7 +3808,7 @@ pub fn deser_structure_crate_error_db_proxy_endpoint_already_exists_fault_xml_er
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBProxyEndpointAlreadyExistsFault$message */ =>  {
-                let var_138 =
+                let var_135 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3940,7 +3817,7 @@ pub fn deser_structure_crate_error_db_proxy_endpoint_already_exists_fault_xml_er
                         ?
                     )
                 ;
-                builder = builder.set_message(var_138);
+                builder = builder.set_message(var_135);
             }
             ,
             _ => {}
@@ -3967,7 +3844,7 @@ pub fn deser_structure_crate_error_db_proxy_endpoint_quota_exceeded_fault_xml_er
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBProxyEndpointQuotaExceededFault$message */ =>  {
-                let var_139 =
+                let var_136 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3976,7 +3853,7 @@ pub fn deser_structure_crate_error_db_proxy_endpoint_quota_exceeded_fault_xml_er
                         ?
                     )
                 ;
-                builder = builder.set_message(var_139);
+                builder = builder.set_message(var_136);
             }
             ,
             _ => {}
@@ -4000,7 +3877,7 @@ pub fn deser_structure_crate_error_invalid_db_proxy_state_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InvalidDBProxyStateFault$message */ =>  {
-                let var_140 =
+                let var_137 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4009,7 +3886,7 @@ pub fn deser_structure_crate_error_invalid_db_proxy_state_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_140);
+                builder = builder.set_message(var_137);
             }
             ,
             _ => {}
@@ -4047,13 +3924,13 @@ pub fn deser_operation_crate_operation_create_db_proxy_endpoint(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBProxyEndpoint") /* DBProxyEndpoint com.amazonaws.rds.synthetic#CreateDBProxyEndpointOutput$DBProxyEndpoint */ =>  {
-                let var_141 =
+                let var_138 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_proxy_endpoint(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_proxy_endpoint(var_141);
+                builder = builder.set_db_proxy_endpoint(var_138);
             }
             ,
             _ => {}
@@ -4085,7 +3962,7 @@ pub fn deser_structure_crate_error_db_security_group_already_exists_fault_xml_er
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBSecurityGroupAlreadyExistsFault$message */ =>  {
-                let var_142 =
+                let var_139 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4094,7 +3971,7 @@ pub fn deser_structure_crate_error_db_security_group_already_exists_fault_xml_er
                         ?
                     )
                 ;
-                builder = builder.set_message(var_142);
+                builder = builder.set_message(var_139);
             }
             ,
             _ => {}
@@ -4121,7 +3998,7 @@ pub fn deser_structure_crate_error_db_security_group_not_supported_fault_xml_err
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBSecurityGroupNotSupportedFault$message */ =>  {
-                let var_143 =
+                let var_140 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4130,7 +4007,7 @@ pub fn deser_structure_crate_error_db_security_group_not_supported_fault_xml_err
                         ?
                     )
                 ;
-                builder = builder.set_message(var_143);
+                builder = builder.set_message(var_140);
             }
             ,
             _ => {}
@@ -4157,7 +4034,7 @@ pub fn deser_structure_crate_error_db_security_group_quota_exceeded_fault_xml_er
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBSecurityGroupQuotaExceededFault$message */ =>  {
-                let var_144 =
+                let var_141 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4166,7 +4043,7 @@ pub fn deser_structure_crate_error_db_security_group_quota_exceeded_fault_xml_er
                         ?
                     )
                 ;
-                builder = builder.set_message(var_144);
+                builder = builder.set_message(var_141);
             }
             ,
             _ => {}
@@ -4204,13 +4081,13 @@ pub fn deser_operation_crate_operation_create_db_security_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBSecurityGroup") /* DBSecurityGroup com.amazonaws.rds.synthetic#CreateDBSecurityGroupOutput$DBSecurityGroup */ =>  {
-                let var_145 =
+                let var_142 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_security_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_security_group(var_145);
+                builder = builder.set_db_security_group(var_142);
             }
             ,
             _ => {}
@@ -4252,13 +4129,13 @@ pub fn deser_operation_crate_operation_create_db_snapshot(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBSnapshot") /* DBSnapshot com.amazonaws.rds.synthetic#CreateDBSnapshotOutput$DBSnapshot */ =>  {
-                let var_146 =
+                let var_143 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_snapshot(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_snapshot(var_146);
+                builder = builder.set_db_snapshot(var_143);
             }
             ,
             _ => {}
@@ -4290,7 +4167,7 @@ pub fn deser_structure_crate_error_db_subnet_group_already_exists_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBSubnetGroupAlreadyExistsFault$message */ =>  {
-                let var_147 =
+                let var_144 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4299,7 +4176,7 @@ pub fn deser_structure_crate_error_db_subnet_group_already_exists_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_147);
+                builder = builder.set_message(var_144);
             }
             ,
             _ => {}
@@ -4326,7 +4203,7 @@ pub fn deser_structure_crate_error_db_subnet_group_quota_exceeded_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBSubnetGroupQuotaExceededFault$message */ =>  {
-                let var_148 =
+                let var_145 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4335,7 +4212,7 @@ pub fn deser_structure_crate_error_db_subnet_group_quota_exceeded_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_148);
+                builder = builder.set_message(var_145);
             }
             ,
             _ => {}
@@ -4360,7 +4237,7 @@ pub fn deser_structure_crate_error_db_subnet_quota_exceeded_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBSubnetQuotaExceededFault$message */ =>  {
-                let var_149 =
+                let var_146 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4369,7 +4246,7 @@ pub fn deser_structure_crate_error_db_subnet_quota_exceeded_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_149);
+                builder = builder.set_message(var_146);
             }
             ,
             _ => {}
@@ -4407,13 +4284,13 @@ pub fn deser_operation_crate_operation_create_db_subnet_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBSubnetGroup") /* DBSubnetGroup com.amazonaws.rds.synthetic#CreateDBSubnetGroupOutput$DBSubnetGroup */ =>  {
-                let var_150 =
+                let var_147 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_subnet_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_subnet_group(var_150);
+                builder = builder.set_db_subnet_group(var_147);
             }
             ,
             _ => {}
@@ -4445,7 +4322,7 @@ pub fn deser_structure_crate_error_event_subscription_quota_exceeded_fault_xml_e
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#EventSubscriptionQuotaExceededFault$message */ =>  {
-                let var_151 =
+                let var_148 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4454,7 +4331,7 @@ pub fn deser_structure_crate_error_event_subscription_quota_exceeded_fault_xml_e
                         ?
                     )
                 ;
-                builder = builder.set_message(var_151);
+                builder = builder.set_message(var_148);
             }
             ,
             _ => {}
@@ -4478,7 +4355,7 @@ pub fn deser_structure_crate_error_sns_invalid_topic_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#SNSInvalidTopicFault$message */ =>  {
-                let var_152 =
+                let var_149 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4487,7 +4364,7 @@ pub fn deser_structure_crate_error_sns_invalid_topic_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_152);
+                builder = builder.set_message(var_149);
             }
             ,
             _ => {}
@@ -4511,7 +4388,7 @@ pub fn deser_structure_crate_error_sns_no_authorization_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#SNSNoAuthorizationFault$message */ =>  {
-                let var_153 =
+                let var_150 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4520,7 +4397,7 @@ pub fn deser_structure_crate_error_sns_no_authorization_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_153);
+                builder = builder.set_message(var_150);
             }
             ,
             _ => {}
@@ -4545,7 +4422,7 @@ pub fn deser_structure_crate_error_sns_topic_arn_not_found_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#SNSTopicArnNotFoundFault$message */ =>  {
-                let var_154 =
+                let var_151 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4554,7 +4431,7 @@ pub fn deser_structure_crate_error_sns_topic_arn_not_found_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_154);
+                builder = builder.set_message(var_151);
             }
             ,
             _ => {}
@@ -4579,7 +4456,7 @@ pub fn deser_structure_crate_error_subscription_already_exist_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#SubscriptionAlreadyExistFault$message */ =>  {
-                let var_155 =
+                let var_152 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4588,7 +4465,7 @@ pub fn deser_structure_crate_error_subscription_already_exist_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_155);
+                builder = builder.set_message(var_152);
             }
             ,
             _ => {}
@@ -4615,7 +4492,7 @@ pub fn deser_structure_crate_error_subscription_category_not_found_fault_xml_err
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#SubscriptionCategoryNotFoundFault$message */ =>  {
-                let var_156 =
+                let var_153 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4624,7 +4501,7 @@ pub fn deser_structure_crate_error_subscription_category_not_found_fault_xml_err
                         ?
                     )
                 ;
-                builder = builder.set_message(var_156);
+                builder = builder.set_message(var_153);
             }
             ,
             _ => {}
@@ -4664,13 +4541,13 @@ pub fn deser_operation_crate_operation_create_event_subscription(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("EventSubscription") /* EventSubscription com.amazonaws.rds.synthetic#CreateEventSubscriptionOutput$EventSubscription */ =>  {
-                let var_157 =
+                let var_154 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_event_subscription(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_event_subscription(var_157);
+                builder = builder.set_event_subscription(var_154);
             }
             ,
             _ => {}
@@ -4702,7 +4579,7 @@ pub fn deser_structure_crate_error_global_cluster_already_exists_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#GlobalClusterAlreadyExistsFault$message */ =>  {
-                let var_158 =
+                let var_155 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4711,7 +4588,7 @@ pub fn deser_structure_crate_error_global_cluster_already_exists_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_158);
+                builder = builder.set_message(var_155);
             }
             ,
             _ => {}
@@ -4738,7 +4615,7 @@ pub fn deser_structure_crate_error_global_cluster_quota_exceeded_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#GlobalClusterQuotaExceededFault$message */ =>  {
-                let var_159 =
+                let var_156 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4747,7 +4624,7 @@ pub fn deser_structure_crate_error_global_cluster_quota_exceeded_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_159);
+                builder = builder.set_message(var_156);
             }
             ,
             _ => {}
@@ -4785,13 +4662,13 @@ pub fn deser_operation_crate_operation_create_global_cluster(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("GlobalCluster") /* GlobalCluster com.amazonaws.rds.synthetic#CreateGlobalClusterOutput$GlobalCluster */ =>  {
-                let var_160 =
+                let var_157 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_global_cluster(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_global_cluster(var_160);
+                builder = builder.set_global_cluster(var_157);
             }
             ,
             _ => {}
@@ -4833,13 +4710,13 @@ pub fn deser_operation_crate_operation_create_option_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("OptionGroup") /* OptionGroup com.amazonaws.rds.synthetic#CreateOptionGroupOutput$OptionGroup */ =>  {
-                let var_161 =
+                let var_158 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_option_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_option_group(var_161);
+                builder = builder.set_option_group(var_158);
             }
             ,
             _ => {}
@@ -4848,57 +4725,6 @@ pub fn deser_operation_crate_operation_create_option_group(
     } else {
         return Err(aws_smithy_xml::decode::XmlError::custom(
             "expected CreateOptionGroupResult tag",
-        ));
-    };
-    Ok(builder)
-}
-
-#[allow(unused_mut)]
-pub fn deser_operation_crate_operation_delete_custom_availability_zone(
-    inp: &[u8],
-    mut builder: crate::output::delete_custom_availability_zone_output::Builder,
-) -> Result<
-    crate::output::delete_custom_availability_zone_output::Builder,
-    aws_smithy_xml::decode::XmlError,
-> {
-    use std::convert::TryFrom;
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
-
-    #[allow(unused_mut)]
-    let mut decoder = doc.root_element()?;
-    let start_el = decoder.start_el();
-    if !(start_el.matches("DeleteCustomAvailabilityZoneResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected DeleteCustomAvailabilityZoneResponse got {:?}",
-            start_el
-        )));
-    }
-    if let Some(mut result_tag) = decoder.next_tag() {
-        let start_el = result_tag.start_el();
-        if !(start_el.matches("DeleteCustomAvailabilityZoneResult")) {
-            return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-                "invalid result, expected DeleteCustomAvailabilityZoneResult got {:?}",
-                start_el
-            )));
-        }
-        while let Some(mut tag) = result_tag.next_tag() {
-            match tag.start_el() {
-            s if s.matches("CustomAvailabilityZone") /* CustomAvailabilityZone com.amazonaws.rds.synthetic#DeleteCustomAvailabilityZoneOutput$CustomAvailabilityZone */ =>  {
-                let var_162 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_custom_availability_zone(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_custom_availability_zone(var_162);
-            }
-            ,
-            _ => {}
-        }
-        }
-    } else {
-        return Err(aws_smithy_xml::decode::XmlError::custom(
-            "expected DeleteCustomAvailabilityZoneResult tag",
         ));
     };
     Ok(builder)
@@ -4922,7 +4748,7 @@ pub fn deser_structure_crate_error_custom_db_engine_version_not_found_fault_xml_
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#CustomDBEngineVersionNotFoundFault$message */ =>  {
-                let var_163 =
+                let var_159 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4931,7 +4757,7 @@ pub fn deser_structure_crate_error_custom_db_engine_version_not_found_fault_xml_
                         ?
                     )
                 ;
-                builder = builder.set_message(var_163);
+                builder = builder.set_message(var_159);
             }
             ,
             _ => {}
@@ -4958,7 +4784,7 @@ pub fn deser_structure_crate_error_invalid_custom_db_engine_version_state_fault_
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InvalidCustomDBEngineVersionStateFault$message */ =>  {
-                let var_164 =
+                let var_160 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4967,7 +4793,7 @@ pub fn deser_structure_crate_error_invalid_custom_db_engine_version_state_fault_
                         ?
                     )
                 ;
-                builder = builder.set_message(var_164);
+                builder = builder.set_message(var_160);
             }
             ,
             _ => {}
@@ -5007,6 +4833,58 @@ pub fn deser_operation_crate_operation_delete_custom_db_engine_version(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Engine") /* Engine com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$Engine */ =>  {
+                let var_161 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_engine(var_161);
+            }
+            ,
+            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$EngineVersion */ =>  {
+                let var_162 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_engine_version(var_162);
+            }
+            ,
+            s if s.matches("DBParameterGroupFamily") /* DBParameterGroupFamily com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DBParameterGroupFamily */ =>  {
+                let var_163 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_parameter_group_family(var_163);
+            }
+            ,
+            s if s.matches("DBEngineDescription") /* DBEngineDescription com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DBEngineDescription */ =>  {
+                let var_164 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_engine_description(var_164);
+            }
+            ,
+            s if s.matches("DBEngineVersionDescription") /* DBEngineVersionDescription com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DBEngineVersionDescription */ =>  {
                 let var_165 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -5016,123 +4894,71 @@ pub fn deser_operation_crate_operation_delete_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_165);
-            }
-            ,
-            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$EngineVersion */ =>  {
-                let var_166 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_engine_version(var_166);
-            }
-            ,
-            s if s.matches("DBParameterGroupFamily") /* DBParameterGroupFamily com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DBParameterGroupFamily */ =>  {
-                let var_167 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_db_parameter_group_family(var_167);
-            }
-            ,
-            s if s.matches("DBEngineDescription") /* DBEngineDescription com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DBEngineDescription */ =>  {
-                let var_168 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_db_engine_description(var_168);
-            }
-            ,
-            s if s.matches("DBEngineVersionDescription") /* DBEngineVersionDescription com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DBEngineVersionDescription */ =>  {
-                let var_169 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_db_engine_version_description(var_169);
+                builder = builder.set_db_engine_version_description(var_165);
             }
             ,
             s if s.matches("DefaultCharacterSet") /* DefaultCharacterSet com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DefaultCharacterSet */ =>  {
-                let var_170 =
+                let var_166 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_character_set(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_default_character_set(var_170);
+                builder = builder.set_default_character_set(var_166);
             }
             ,
             s if s.matches("SupportedCharacterSets") /* SupportedCharacterSets com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportedCharacterSets */ =>  {
-                let var_171 =
+                let var_167 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_supported_character_sets_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_character_sets(var_171);
+                builder = builder.set_supported_character_sets(var_167);
             }
             ,
             s if s.matches("SupportedNcharCharacterSets") /* SupportedNcharCharacterSets com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportedNcharCharacterSets */ =>  {
-                let var_172 =
+                let var_168 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_supported_character_sets_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_nchar_character_sets(var_172);
+                builder = builder.set_supported_nchar_character_sets(var_168);
             }
             ,
             s if s.matches("ValidUpgradeTarget") /* ValidUpgradeTarget com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$ValidUpgradeTarget */ =>  {
-                let var_173 =
+                let var_169 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_valid_upgrade_target_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_valid_upgrade_target(var_173);
+                builder = builder.set_valid_upgrade_target(var_169);
             }
             ,
             s if s.matches("SupportedTimezones") /* SupportedTimezones com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportedTimezones */ =>  {
-                let var_174 =
+                let var_170 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_supported_timezones_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_timezones(var_174);
+                builder = builder.set_supported_timezones(var_170);
             }
             ,
             s if s.matches("ExportableLogTypes") /* ExportableLogTypes com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$ExportableLogTypes */ =>  {
-                let var_175 =
+                let var_171 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_log_type_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_exportable_log_types(var_175);
+                builder = builder.set_exportable_log_types(var_171);
             }
             ,
             s if s.matches("SupportsLogExportsToCloudwatchLogs") /* SupportsLogExportsToCloudwatchLogs com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportsLogExportsToCloudwatchLogs */ =>  {
-                let var_176 =
+                let var_172 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5143,10 +4969,58 @@ pub fn deser_operation_crate_operation_delete_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_log_exports_to_cloudwatch_logs(var_176);
+                builder = builder.set_supports_log_exports_to_cloudwatch_logs(var_172);
             }
             ,
             s if s.matches("SupportsReadReplica") /* SupportsReadReplica com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportsReadReplica */ =>  {
+                let var_173 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supports_read_replica(var_173);
+            }
+            ,
+            s if s.matches("SupportedEngineModes") /* SupportedEngineModes com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportedEngineModes */ =>  {
+                let var_174 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_rds_engine_mode_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_supported_engine_modes(var_174);
+            }
+            ,
+            s if s.matches("SupportedFeatureNames") /* SupportedFeatureNames com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportedFeatureNames */ =>  {
+                let var_175 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_rds_feature_name_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_supported_feature_names(var_175);
+            }
+            ,
+            s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$Status */ =>  {
+                let var_176 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_status(var_176);
+            }
+            ,
+            s if s.matches("SupportsParallelQuery") /* SupportsParallelQuery com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportsParallelQuery */ =>  {
                 let var_177 =
                     Some(
                          {
@@ -5158,30 +5032,38 @@ pub fn deser_operation_crate_operation_delete_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_read_replica(var_177);
+                builder = builder.set_supports_parallel_query(var_177);
             }
             ,
-            s if s.matches("SupportedEngineModes") /* SupportedEngineModes com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportedEngineModes */ =>  {
+            s if s.matches("SupportsGlobalDatabases") /* SupportsGlobalDatabases com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportsGlobalDatabases */ =>  {
                 let var_178 =
                     Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_engine_mode_list(&mut tag)
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
                         ?
                     )
                 ;
-                builder = builder.set_supported_engine_modes(var_178);
+                builder = builder.set_supports_global_databases(var_178);
             }
             ,
-            s if s.matches("SupportedFeatureNames") /* SupportedFeatureNames com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportedFeatureNames */ =>  {
+            s if s.matches("MajorEngineVersion") /* MajorEngineVersion com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$MajorEngineVersion */ =>  {
                 let var_179 =
                     Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_feature_name_list(&mut tag)
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_supported_feature_names(var_179);
+                builder = builder.set_major_engine_version(var_179);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$Status */ =>  {
+            s if s.matches("DatabaseInstallationFilesS3BucketName") /* DatabaseInstallationFilesS3BucketName com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DatabaseInstallationFilesS3BucketName */ =>  {
                 let var_180 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -5191,40 +5073,36 @@ pub fn deser_operation_crate_operation_delete_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_180);
+                builder = builder.set_database_installation_files_s3_bucket_name(var_180);
             }
             ,
-            s if s.matches("SupportsParallelQuery") /* SupportsParallelQuery com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportsParallelQuery */ =>  {
+            s if s.matches("DatabaseInstallationFilesS3Prefix") /* DatabaseInstallationFilesS3Prefix com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DatabaseInstallationFilesS3Prefix */ =>  {
                 let var_181 =
                     Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                        }
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_supports_parallel_query(var_181);
+                builder = builder.set_database_installation_files_s3_prefix(var_181);
             }
             ,
-            s if s.matches("SupportsGlobalDatabases") /* SupportsGlobalDatabases com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportsGlobalDatabases */ =>  {
+            s if s.matches("DBEngineVersionArn") /* DBEngineVersionArn com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DBEngineVersionArn */ =>  {
                 let var_182 =
                     Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                        }
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_supports_global_databases(var_182);
+                builder = builder.set_db_engine_version_arn(var_182);
             }
             ,
-            s if s.matches("MajorEngineVersion") /* MajorEngineVersion com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$MajorEngineVersion */ =>  {
+            s if s.matches("KMSKeyId") /* KMSKeyId com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$KMSKeyId */ =>  {
                 let var_183 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -5234,63 +5112,11 @@ pub fn deser_operation_crate_operation_delete_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_major_engine_version(var_183);
-            }
-            ,
-            s if s.matches("DatabaseInstallationFilesS3BucketName") /* DatabaseInstallationFilesS3BucketName com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DatabaseInstallationFilesS3BucketName */ =>  {
-                let var_184 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_database_installation_files_s3_bucket_name(var_184);
-            }
-            ,
-            s if s.matches("DatabaseInstallationFilesS3Prefix") /* DatabaseInstallationFilesS3Prefix com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DatabaseInstallationFilesS3Prefix */ =>  {
-                let var_185 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_database_installation_files_s3_prefix(var_185);
-            }
-            ,
-            s if s.matches("DBEngineVersionArn") /* DBEngineVersionArn com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DBEngineVersionArn */ =>  {
-                let var_186 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_db_engine_version_arn(var_186);
-            }
-            ,
-            s if s.matches("KMSKeyId") /* KMSKeyId com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$KMSKeyId */ =>  {
-                let var_187 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_kms_key_id(var_187);
+                builder = builder.set_kms_key_id(var_183);
             }
             ,
             s if s.matches("CreateTime") /* CreateTime com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$CreateTime */ =>  {
-                let var_188 =
+                let var_184 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5300,21 +5126,21 @@ pub fn deser_operation_crate_operation_delete_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_create_time(var_188);
+                builder = builder.set_create_time(var_184);
             }
             ,
             s if s.matches("TagList") /* TagList com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$TagList */ =>  {
-                let var_189 =
+                let var_185 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tag_list(var_189);
+                builder = builder.set_tag_list(var_185);
             }
             ,
             s if s.matches("SupportsBabelfish") /* SupportsBabelfish com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportsBabelfish */ =>  {
-                let var_190 =
+                let var_186 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -5325,7 +5151,7 @@ pub fn deser_operation_crate_operation_delete_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_babelfish(var_190);
+                builder = builder.set_supports_babelfish(var_186);
             }
             ,
             _ => {}
@@ -5367,13 +5193,13 @@ pub fn deser_operation_crate_operation_delete_db_cluster(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBCluster") /* DBCluster com.amazonaws.rds.synthetic#DeleteDBClusterOutput$DBCluster */ =>  {
-                let var_191 =
+                let var_187 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster(var_191);
+                builder = builder.set_db_cluster(var_187);
             }
             ,
             _ => {}
@@ -5405,7 +5231,7 @@ pub fn deser_structure_crate_error_db_cluster_endpoint_not_found_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBClusterEndpointNotFoundFault$message */ =>  {
-                let var_192 =
+                let var_188 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5414,7 +5240,7 @@ pub fn deser_structure_crate_error_db_cluster_endpoint_not_found_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_192);
+                builder = builder.set_message(var_188);
             }
             ,
             _ => {}
@@ -5441,7 +5267,7 @@ pub fn deser_structure_crate_error_invalid_db_cluster_endpoint_state_fault_xml_e
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InvalidDBClusterEndpointStateFault$message */ =>  {
-                let var_193 =
+                let var_189 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5450,7 +5276,7 @@ pub fn deser_structure_crate_error_invalid_db_cluster_endpoint_state_fault_xml_e
                         ?
                     )
                 ;
-                builder = builder.set_message(var_193);
+                builder = builder.set_message(var_189);
             }
             ,
             _ => {}
@@ -5490,6 +5316,58 @@ pub fn deser_operation_crate_operation_delete_db_cluster_endpoint(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBClusterEndpointIdentifier") /* DBClusterEndpointIdentifier com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$DBClusterEndpointIdentifier */ =>  {
+                let var_190 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_cluster_endpoint_identifier(var_190);
+            }
+            ,
+            s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$DBClusterIdentifier */ =>  {
+                let var_191 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_cluster_identifier(var_191);
+            }
+            ,
+            s if s.matches("DBClusterEndpointResourceIdentifier") /* DBClusterEndpointResourceIdentifier com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$DBClusterEndpointResourceIdentifier */ =>  {
+                let var_192 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_cluster_endpoint_resource_identifier(var_192);
+            }
+            ,
+            s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$Endpoint */ =>  {
+                let var_193 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_endpoint(var_193);
+            }
+            ,
+            s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$Status */ =>  {
                 let var_194 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -5499,10 +5377,10 @@ pub fn deser_operation_crate_operation_delete_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_endpoint_identifier(var_194);
+                builder = builder.set_status(var_194);
             }
             ,
-            s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$DBClusterIdentifier */ =>  {
+            s if s.matches("EndpointType") /* EndpointType com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$EndpointType */ =>  {
                 let var_195 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -5512,10 +5390,10 @@ pub fn deser_operation_crate_operation_delete_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_identifier(var_195);
+                builder = builder.set_endpoint_type(var_195);
             }
             ,
-            s if s.matches("DBClusterEndpointResourceIdentifier") /* DBClusterEndpointResourceIdentifier com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$DBClusterEndpointResourceIdentifier */ =>  {
+            s if s.matches("CustomEndpointType") /* CustomEndpointType com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$CustomEndpointType */ =>  {
                 let var_196 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -5525,36 +5403,30 @@ pub fn deser_operation_crate_operation_delete_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_endpoint_resource_identifier(var_196);
+                builder = builder.set_custom_endpoint_type(var_196);
             }
             ,
-            s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$Endpoint */ =>  {
+            s if s.matches("StaticMembers") /* StaticMembers com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$StaticMembers */ =>  {
                 let var_197 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                        crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_endpoint(var_197);
+                builder = builder.set_static_members(var_197);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$Status */ =>  {
+            s if s.matches("ExcludedMembers") /* ExcludedMembers com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$ExcludedMembers */ =>  {
                 let var_198 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                        crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_status(var_198);
+                builder = builder.set_excluded_members(var_198);
             }
             ,
-            s if s.matches("EndpointType") /* EndpointType com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$EndpointType */ =>  {
+            s if s.matches("DBClusterEndpointArn") /* DBClusterEndpointArn com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$DBClusterEndpointArn */ =>  {
                 let var_199 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -5564,53 +5436,7 @@ pub fn deser_operation_crate_operation_delete_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_endpoint_type(var_199);
-            }
-            ,
-            s if s.matches("CustomEndpointType") /* CustomEndpointType com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$CustomEndpointType */ =>  {
-                let var_200 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_custom_endpoint_type(var_200);
-            }
-            ,
-            s if s.matches("StaticMembers") /* StaticMembers com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$StaticMembers */ =>  {
-                let var_201 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_static_members(var_201);
-            }
-            ,
-            s if s.matches("ExcludedMembers") /* ExcludedMembers com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$ExcludedMembers */ =>  {
-                let var_202 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_excluded_members(var_202);
-            }
-            ,
-            s if s.matches("DBClusterEndpointArn") /* DBClusterEndpointArn com.amazonaws.rds.synthetic#DeleteDBClusterEndpointOutput$DBClusterEndpointArn */ =>  {
-                let var_203 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_db_cluster_endpoint_arn(var_203);
+                builder = builder.set_db_cluster_endpoint_arn(var_199);
             }
             ,
             _ => {}
@@ -5642,7 +5468,7 @@ pub fn deser_structure_crate_error_invalid_db_parameter_group_state_fault_xml_er
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InvalidDBParameterGroupStateFault$message */ =>  {
-                let var_204 =
+                let var_200 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5651,7 +5477,7 @@ pub fn deser_structure_crate_error_invalid_db_parameter_group_state_fault_xml_er
                         ?
                     )
                 ;
-                builder = builder.set_message(var_204);
+                builder = builder.set_message(var_200);
             }
             ,
             _ => {}
@@ -5691,13 +5517,13 @@ pub fn deser_operation_crate_operation_delete_db_cluster_snapshot(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBClusterSnapshot") /* DBClusterSnapshot com.amazonaws.rds.synthetic#DeleteDBClusterSnapshotOutput$DBClusterSnapshot */ =>  {
-                let var_205 =
+                let var_201 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_cluster_snapshot(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_snapshot(var_205);
+                builder = builder.set_db_cluster_snapshot(var_201);
             }
             ,
             _ => {}
@@ -5729,7 +5555,7 @@ pub fn deser_structure_crate_error_db_instance_automated_backup_quota_exceeded_f
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBInstanceAutomatedBackupQuotaExceededFault$message */ =>  {
-                let var_206 =
+                let var_202 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5738,7 +5564,7 @@ pub fn deser_structure_crate_error_db_instance_automated_backup_quota_exceeded_f
                         ?
                     )
                 ;
-                builder = builder.set_message(var_206);
+                builder = builder.set_message(var_202);
             }
             ,
             _ => {}
@@ -5775,13 +5601,13 @@ pub fn deser_operation_crate_operation_delete_db_instance(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBInstance") /* DBInstance com.amazonaws.rds.synthetic#DeleteDBInstanceOutput$DBInstance */ =>  {
-                let var_207 =
+                let var_203 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_instance(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_instance(var_207);
+                builder = builder.set_db_instance(var_203);
             }
             ,
             _ => {}
@@ -5813,7 +5639,7 @@ pub fn deser_structure_crate_error_db_instance_automated_backup_not_found_fault_
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBInstanceAutomatedBackupNotFoundFault$message */ =>  {
-                let var_208 =
+                let var_204 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5822,7 +5648,7 @@ pub fn deser_structure_crate_error_db_instance_automated_backup_not_found_fault_
                         ?
                     )
                 ;
-                builder = builder.set_message(var_208);
+                builder = builder.set_message(var_204);
             }
             ,
             _ => {}
@@ -5849,7 +5675,7 @@ pub fn deser_structure_crate_error_invalid_db_instance_automated_backup_state_fa
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InvalidDBInstanceAutomatedBackupStateFault$message */ =>  {
-                let var_209 =
+                let var_205 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5858,7 +5684,7 @@ pub fn deser_structure_crate_error_invalid_db_instance_automated_backup_state_fa
                         ?
                     )
                 ;
-                builder = builder.set_message(var_209);
+                builder = builder.set_message(var_205);
             }
             ,
             _ => {}
@@ -5898,13 +5724,13 @@ pub fn deser_operation_crate_operation_delete_db_instance_automated_backup(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBInstanceAutomatedBackup") /* DBInstanceAutomatedBackup com.amazonaws.rds.synthetic#DeleteDBInstanceAutomatedBackupOutput$DBInstanceAutomatedBackup */ =>  {
-                let var_210 =
+                let var_206 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_instance_automated_backup(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_automated_backup(var_210);
+                builder = builder.set_db_instance_automated_backup(var_206);
             }
             ,
             _ => {}
@@ -5946,13 +5772,13 @@ pub fn deser_operation_crate_operation_delete_db_proxy(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBProxy") /* DBProxy com.amazonaws.rds.synthetic#DeleteDBProxyOutput$DBProxy */ =>  {
-                let var_211 =
+                let var_207 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_proxy(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_proxy(var_211);
+                builder = builder.set_db_proxy(var_207);
             }
             ,
             _ => {}
@@ -5984,7 +5810,7 @@ pub fn deser_structure_crate_error_db_proxy_endpoint_not_found_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBProxyEndpointNotFoundFault$message */ =>  {
-                let var_212 =
+                let var_208 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5993,7 +5819,7 @@ pub fn deser_structure_crate_error_db_proxy_endpoint_not_found_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_212);
+                builder = builder.set_message(var_208);
             }
             ,
             _ => {}
@@ -6020,7 +5846,7 @@ pub fn deser_structure_crate_error_invalid_db_proxy_endpoint_state_fault_xml_err
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InvalidDBProxyEndpointStateFault$message */ =>  {
-                let var_213 =
+                let var_209 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6029,7 +5855,7 @@ pub fn deser_structure_crate_error_invalid_db_proxy_endpoint_state_fault_xml_err
                         ?
                     )
                 ;
-                builder = builder.set_message(var_213);
+                builder = builder.set_message(var_209);
             }
             ,
             _ => {}
@@ -6067,13 +5893,13 @@ pub fn deser_operation_crate_operation_delete_db_proxy_endpoint(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBProxyEndpoint") /* DBProxyEndpoint com.amazonaws.rds.synthetic#DeleteDBProxyEndpointOutput$DBProxyEndpoint */ =>  {
-                let var_214 =
+                let var_210 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_proxy_endpoint(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_proxy_endpoint(var_214);
+                builder = builder.set_db_proxy_endpoint(var_210);
             }
             ,
             _ => {}
@@ -6115,13 +5941,13 @@ pub fn deser_operation_crate_operation_delete_db_snapshot(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBSnapshot") /* DBSnapshot com.amazonaws.rds.synthetic#DeleteDBSnapshotOutput$DBSnapshot */ =>  {
-                let var_215 =
+                let var_211 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_snapshot(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_snapshot(var_215);
+                builder = builder.set_db_snapshot(var_211);
             }
             ,
             _ => {}
@@ -6151,7 +5977,7 @@ pub fn deser_structure_crate_error_invalid_db_subnet_state_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InvalidDBSubnetStateFault$message */ =>  {
-                let var_216 =
+                let var_212 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6160,7 +5986,7 @@ pub fn deser_structure_crate_error_invalid_db_subnet_state_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_216);
+                builder = builder.set_message(var_212);
             }
             ,
             _ => {}
@@ -6187,7 +6013,7 @@ pub fn deser_structure_crate_error_invalid_event_subscription_state_fault_xml_er
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InvalidEventSubscriptionStateFault$message */ =>  {
-                let var_217 =
+                let var_213 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6196,7 +6022,7 @@ pub fn deser_structure_crate_error_invalid_event_subscription_state_fault_xml_er
                         ?
                     )
                 ;
-                builder = builder.set_message(var_217);
+                builder = builder.set_message(var_213);
             }
             ,
             _ => {}
@@ -6236,13 +6062,13 @@ pub fn deser_operation_crate_operation_delete_event_subscription(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("EventSubscription") /* EventSubscription com.amazonaws.rds.synthetic#DeleteEventSubscriptionOutput$EventSubscription */ =>  {
-                let var_218 =
+                let var_214 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_event_subscription(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_event_subscription(var_218);
+                builder = builder.set_event_subscription(var_214);
             }
             ,
             _ => {}
@@ -6285,13 +6111,13 @@ pub fn deser_operation_crate_operation_delete_global_cluster(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("GlobalCluster") /* GlobalCluster com.amazonaws.rds.synthetic#DeleteGlobalClusterOutput$GlobalCluster */ =>  {
-                let var_219 =
+                let var_215 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_global_cluster(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_global_cluster(var_219);
+                builder = builder.set_global_cluster(var_215);
             }
             ,
             _ => {}
@@ -6300,184 +6126,6 @@ pub fn deser_operation_crate_operation_delete_global_cluster(
     } else {
         return Err(aws_smithy_xml::decode::XmlError::custom(
             "expected DeleteGlobalClusterResult tag",
-        ));
-    };
-    Ok(builder)
-}
-
-#[allow(unused_mut)]
-pub fn deser_structure_crate_error_installation_media_not_found_fault_xml_err(
-    inp: &[u8],
-    mut builder: crate::error::installation_media_not_found_fault::Builder,
-) -> Result<
-    crate::error::installation_media_not_found_fault::Builder,
-    aws_smithy_xml::decode::XmlError,
-> {
-    if inp.is_empty() {
-        return Ok(builder);
-    }
-    use std::convert::TryFrom;
-    let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
-    #[allow(unused_mut)]
-    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
-    while let Some(mut tag) = error_decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("message") /* message com.amazonaws.rds#InstallationMediaNotFoundFault$message */ =>  {
-                let var_220 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_message(var_220);
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(builder)
-}
-
-#[allow(unused_mut)]
-pub fn deser_operation_crate_operation_delete_installation_media(
-    inp: &[u8],
-    mut builder: crate::output::delete_installation_media_output::Builder,
-) -> Result<
-    crate::output::delete_installation_media_output::Builder,
-    aws_smithy_xml::decode::XmlError,
-> {
-    use std::convert::TryFrom;
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
-
-    #[allow(unused_mut)]
-    let mut decoder = doc.root_element()?;
-    let start_el = decoder.start_el();
-    if !(start_el.matches("DeleteInstallationMediaResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected DeleteInstallationMediaResponse got {:?}",
-            start_el
-        )));
-    }
-    if let Some(mut result_tag) = decoder.next_tag() {
-        let start_el = result_tag.start_el();
-        if !(start_el.matches("DeleteInstallationMediaResult")) {
-            return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-                "invalid result, expected DeleteInstallationMediaResult got {:?}",
-                start_el
-            )));
-        }
-        while let Some(mut tag) = result_tag.next_tag() {
-            match tag.start_el() {
-            s if s.matches("InstallationMediaId") /* InstallationMediaId com.amazonaws.rds.synthetic#DeleteInstallationMediaOutput$InstallationMediaId */ =>  {
-                let var_221 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_installation_media_id(var_221);
-            }
-            ,
-            s if s.matches("CustomAvailabilityZoneId") /* CustomAvailabilityZoneId com.amazonaws.rds.synthetic#DeleteInstallationMediaOutput$CustomAvailabilityZoneId */ =>  {
-                let var_222 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_custom_availability_zone_id(var_222);
-            }
-            ,
-            s if s.matches("Engine") /* Engine com.amazonaws.rds.synthetic#DeleteInstallationMediaOutput$Engine */ =>  {
-                let var_223 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_engine(var_223);
-            }
-            ,
-            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds.synthetic#DeleteInstallationMediaOutput$EngineVersion */ =>  {
-                let var_224 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_engine_version(var_224);
-            }
-            ,
-            s if s.matches("EngineInstallationMediaPath") /* EngineInstallationMediaPath com.amazonaws.rds.synthetic#DeleteInstallationMediaOutput$EngineInstallationMediaPath */ =>  {
-                let var_225 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_engine_installation_media_path(var_225);
-            }
-            ,
-            s if s.matches("OSInstallationMediaPath") /* OSInstallationMediaPath com.amazonaws.rds.synthetic#DeleteInstallationMediaOutput$OSInstallationMediaPath */ =>  {
-                let var_226 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_os_installation_media_path(var_226);
-            }
-            ,
-            s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#DeleteInstallationMediaOutput$Status */ =>  {
-                let var_227 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_status(var_227);
-            }
-            ,
-            s if s.matches("FailureCause") /* FailureCause com.amazonaws.rds.synthetic#DeleteInstallationMediaOutput$FailureCause */ =>  {
-                let var_228 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_installation_media_failure_cause(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_failure_cause(var_228);
-            }
-            ,
-            _ => {}
-        }
-        }
-    } else {
-        return Err(aws_smithy_xml::decode::XmlError::custom(
-            "expected DeleteInstallationMediaResult tag",
         ));
     };
     Ok(builder)
@@ -6499,7 +6147,7 @@ pub fn deser_structure_crate_error_invalid_option_group_state_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InvalidOptionGroupStateFault$message */ =>  {
-                let var_229 =
+                let var_216 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6508,7 +6156,7 @@ pub fn deser_structure_crate_error_invalid_option_group_state_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_229);
+                builder = builder.set_message(var_216);
             }
             ,
             _ => {}
@@ -6533,7 +6181,7 @@ pub fn deser_structure_crate_error_db_proxy_target_not_found_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBProxyTargetNotFoundFault$message */ =>  {
-                let var_230 =
+                let var_217 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6542,7 +6190,7 @@ pub fn deser_structure_crate_error_db_proxy_target_not_found_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_230);
+                builder = builder.set_message(var_217);
             }
             ,
             _ => {}
@@ -6582,13 +6230,13 @@ pub fn deser_operation_crate_operation_describe_account_attributes(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("AccountQuotas") /* AccountQuotas com.amazonaws.rds.synthetic#DescribeAccountAttributesOutput$AccountQuotas */ =>  {
-                let var_231 =
+                let var_218 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_account_quota_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_account_quotas(var_231);
+                builder = builder.set_account_quotas(var_218);
             }
             ,
             _ => {}
@@ -6617,7 +6265,7 @@ pub fn deser_structure_crate_error_certificate_not_found_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#CertificateNotFoundFault$message */ =>  {
-                let var_232 =
+                let var_219 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6626,7 +6274,7 @@ pub fn deser_structure_crate_error_certificate_not_found_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_232);
+                builder = builder.set_message(var_219);
             }
             ,
             _ => {}
@@ -6664,17 +6312,17 @@ pub fn deser_operation_crate_operation_describe_certificates(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Certificates") /* Certificates com.amazonaws.rds.synthetic#DescribeCertificatesOutput$Certificates */ =>  {
-                let var_233 =
+                let var_220 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_certificate_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_certificates(var_233);
+                builder = builder.set_certificates(var_220);
             }
             ,
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeCertificatesOutput$Marker */ =>  {
-                let var_234 =
+                let var_221 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6683,7 +6331,7 @@ pub fn deser_operation_crate_operation_describe_certificates(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_234);
+                builder = builder.set_marker(var_221);
             }
             ,
             _ => {}
@@ -6692,70 +6340,6 @@ pub fn deser_operation_crate_operation_describe_certificates(
     } else {
         return Err(aws_smithy_xml::decode::XmlError::custom(
             "expected DescribeCertificatesResult tag",
-        ));
-    };
-    Ok(builder)
-}
-
-#[allow(unused_mut)]
-pub fn deser_operation_crate_operation_describe_custom_availability_zones(
-    inp: &[u8],
-    mut builder: crate::output::describe_custom_availability_zones_output::Builder,
-) -> Result<
-    crate::output::describe_custom_availability_zones_output::Builder,
-    aws_smithy_xml::decode::XmlError,
-> {
-    use std::convert::TryFrom;
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
-
-    #[allow(unused_mut)]
-    let mut decoder = doc.root_element()?;
-    let start_el = decoder.start_el();
-    if !(start_el.matches("DescribeCustomAvailabilityZonesResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected DescribeCustomAvailabilityZonesResponse got {:?}",
-            start_el
-        )));
-    }
-    if let Some(mut result_tag) = decoder.next_tag() {
-        let start_el = result_tag.start_el();
-        if !(start_el.matches("DescribeCustomAvailabilityZonesResult")) {
-            return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-                "invalid result, expected DescribeCustomAvailabilityZonesResult got {:?}",
-                start_el
-            )));
-        }
-        while let Some(mut tag) = result_tag.next_tag() {
-            match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeCustomAvailabilityZonesOutput$Marker */ =>  {
-                let var_235 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_marker(var_235);
-            }
-            ,
-            s if s.matches("CustomAvailabilityZones") /* CustomAvailabilityZones com.amazonaws.rds.synthetic#DescribeCustomAvailabilityZonesOutput$CustomAvailabilityZones */ =>  {
-                let var_236 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_custom_availability_zone_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_custom_availability_zones(var_236);
-            }
-            ,
-            _ => {}
-        }
-        }
-    } else {
-        return Err(aws_smithy_xml::decode::XmlError::custom(
-            "expected DescribeCustomAvailabilityZonesResult tag",
         ));
     };
     Ok(builder)
@@ -6779,7 +6363,7 @@ pub fn deser_structure_crate_error_db_cluster_backtrack_not_found_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBClusterBacktrackNotFoundFault$message */ =>  {
-                let var_237 =
+                let var_222 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6788,7 +6372,7 @@ pub fn deser_structure_crate_error_db_cluster_backtrack_not_found_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_237);
+                builder = builder.set_message(var_222);
             }
             ,
             _ => {}
@@ -6828,7 +6412,7 @@ pub fn deser_operation_crate_operation_describe_db_cluster_backtracks(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeDBClusterBacktracksOutput$Marker */ =>  {
-                let var_238 =
+                let var_223 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6837,17 +6421,17 @@ pub fn deser_operation_crate_operation_describe_db_cluster_backtracks(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_238);
+                builder = builder.set_marker(var_223);
             }
             ,
             s if s.matches("DBClusterBacktracks") /* DBClusterBacktracks com.amazonaws.rds.synthetic#DescribeDBClusterBacktracksOutput$DBClusterBacktracks */ =>  {
-                let var_239 =
+                let var_224 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_db_cluster_backtrack_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_backtracks(var_239);
+                builder = builder.set_db_cluster_backtracks(var_224);
             }
             ,
             _ => {}
@@ -6892,7 +6476,7 @@ pub fn deser_operation_crate_operation_describe_db_cluster_endpoints(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeDBClusterEndpointsOutput$Marker */ =>  {
-                let var_240 =
+                let var_225 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6901,17 +6485,17 @@ pub fn deser_operation_crate_operation_describe_db_cluster_endpoints(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_240);
+                builder = builder.set_marker(var_225);
             }
             ,
             s if s.matches("DBClusterEndpoints") /* DBClusterEndpoints com.amazonaws.rds.synthetic#DescribeDBClusterEndpointsOutput$DBClusterEndpoints */ =>  {
-                let var_241 =
+                let var_226 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_db_cluster_endpoint_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_endpoints(var_241);
+                builder = builder.set_db_cluster_endpoints(var_226);
             }
             ,
             _ => {}
@@ -6956,7 +6540,7 @@ pub fn deser_operation_crate_operation_describe_db_cluster_parameter_groups(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeDBClusterParameterGroupsOutput$Marker */ =>  {
-                let var_242 =
+                let var_227 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6965,17 +6549,17 @@ pub fn deser_operation_crate_operation_describe_db_cluster_parameter_groups(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_242);
+                builder = builder.set_marker(var_227);
             }
             ,
             s if s.matches("DBClusterParameterGroups") /* DBClusterParameterGroups com.amazonaws.rds.synthetic#DescribeDBClusterParameterGroupsOutput$DBClusterParameterGroups */ =>  {
-                let var_243 =
+                let var_228 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_db_cluster_parameter_group_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_parameter_groups(var_243);
+                builder = builder.set_db_cluster_parameter_groups(var_228);
             }
             ,
             _ => {}
@@ -7020,17 +6604,17 @@ pub fn deser_operation_crate_operation_describe_db_cluster_parameters(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Parameters") /* Parameters com.amazonaws.rds.synthetic#DescribeDBClusterParametersOutput$Parameters */ =>  {
-                let var_244 =
+                let var_229 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_parameters_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_parameters(var_244);
+                builder = builder.set_parameters(var_229);
             }
             ,
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeDBClusterParametersOutput$Marker */ =>  {
-                let var_245 =
+                let var_230 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7039,7 +6623,7 @@ pub fn deser_operation_crate_operation_describe_db_cluster_parameters(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_245);
+                builder = builder.set_marker(var_230);
             }
             ,
             _ => {}
@@ -7081,7 +6665,7 @@ pub fn deser_operation_crate_operation_describe_db_clusters(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeDBClustersOutput$Marker */ =>  {
-                let var_246 =
+                let var_231 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7090,17 +6674,17 @@ pub fn deser_operation_crate_operation_describe_db_clusters(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_246);
+                builder = builder.set_marker(var_231);
             }
             ,
             s if s.matches("DBClusters") /* DBClusters com.amazonaws.rds.synthetic#DescribeDBClustersOutput$DBClusters */ =>  {
-                let var_247 =
+                let var_232 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_db_cluster_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_clusters(var_247);
+                builder = builder.set_db_clusters(var_232);
             }
             ,
             _ => {}
@@ -7145,13 +6729,13 @@ pub fn deser_operation_crate_operation_describe_db_cluster_snapshot_attributes(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBClusterSnapshotAttributesResult") /* DBClusterSnapshotAttributesResult com.amazonaws.rds.synthetic#DescribeDBClusterSnapshotAttributesOutput$DBClusterSnapshotAttributesResult */ =>  {
-                let var_248 =
+                let var_233 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_cluster_snapshot_attributes_result(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_snapshot_attributes_result(var_248);
+                builder = builder.set_db_cluster_snapshot_attributes_result(var_233);
             }
             ,
             _ => {}
@@ -7196,7 +6780,7 @@ pub fn deser_operation_crate_operation_describe_db_cluster_snapshots(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeDBClusterSnapshotsOutput$Marker */ =>  {
-                let var_249 =
+                let var_234 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7205,17 +6789,17 @@ pub fn deser_operation_crate_operation_describe_db_cluster_snapshots(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_249);
+                builder = builder.set_marker(var_234);
             }
             ,
             s if s.matches("DBClusterSnapshots") /* DBClusterSnapshots com.amazonaws.rds.synthetic#DescribeDBClusterSnapshotsOutput$DBClusterSnapshots */ =>  {
-                let var_250 =
+                let var_235 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_db_cluster_snapshot_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_snapshots(var_250);
+                builder = builder.set_db_cluster_snapshots(var_235);
             }
             ,
             _ => {}
@@ -7260,7 +6844,7 @@ pub fn deser_operation_crate_operation_describe_db_engine_versions(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeDBEngineVersionsOutput$Marker */ =>  {
-                let var_251 =
+                let var_236 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7269,17 +6853,17 @@ pub fn deser_operation_crate_operation_describe_db_engine_versions(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_251);
+                builder = builder.set_marker(var_236);
             }
             ,
             s if s.matches("DBEngineVersions") /* DBEngineVersions com.amazonaws.rds.synthetic#DescribeDBEngineVersionsOutput$DBEngineVersions */ =>  {
-                let var_252 =
+                let var_237 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_db_engine_version_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_engine_versions(var_252);
+                builder = builder.set_db_engine_versions(var_237);
             }
             ,
             _ => {}
@@ -7324,7 +6908,7 @@ pub fn deser_operation_crate_operation_describe_db_instance_automated_backups(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeDBInstanceAutomatedBackupsOutput$Marker */ =>  {
-                let var_253 =
+                let var_238 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7333,17 +6917,17 @@ pub fn deser_operation_crate_operation_describe_db_instance_automated_backups(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_253);
+                builder = builder.set_marker(var_238);
             }
             ,
             s if s.matches("DBInstanceAutomatedBackups") /* DBInstanceAutomatedBackups com.amazonaws.rds.synthetic#DescribeDBInstanceAutomatedBackupsOutput$DBInstanceAutomatedBackups */ =>  {
-                let var_254 =
+                let var_239 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_db_instance_automated_backup_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_automated_backups(var_254);
+                builder = builder.set_db_instance_automated_backups(var_239);
             }
             ,
             _ => {}
@@ -7386,7 +6970,7 @@ pub fn deser_operation_crate_operation_describe_db_instances(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeDBInstancesOutput$Marker */ =>  {
-                let var_255 =
+                let var_240 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7395,17 +6979,17 @@ pub fn deser_operation_crate_operation_describe_db_instances(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_255);
+                builder = builder.set_marker(var_240);
             }
             ,
             s if s.matches("DBInstances") /* DBInstances com.amazonaws.rds.synthetic#DescribeDBInstancesOutput$DBInstances */ =>  {
-                let var_256 =
+                let var_241 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_db_instance_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_instances(var_256);
+                builder = builder.set_db_instances(var_241);
             }
             ,
             _ => {}
@@ -7448,17 +7032,17 @@ pub fn deser_operation_crate_operation_describe_db_log_files(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DescribeDBLogFiles") /* DescribeDBLogFiles com.amazonaws.rds.synthetic#DescribeDBLogFilesOutput$DescribeDBLogFiles */ =>  {
-                let var_257 =
+                let var_242 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_describe_db_log_files_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_describe_db_log_files(var_257);
+                builder = builder.set_describe_db_log_files(var_242);
             }
             ,
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeDBLogFilesOutput$Marker */ =>  {
-                let var_258 =
+                let var_243 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7467,7 +7051,7 @@ pub fn deser_operation_crate_operation_describe_db_log_files(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_258);
+                builder = builder.set_marker(var_243);
             }
             ,
             _ => {}
@@ -7512,7 +7096,7 @@ pub fn deser_operation_crate_operation_describe_db_parameter_groups(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeDBParameterGroupsOutput$Marker */ =>  {
-                let var_259 =
+                let var_244 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7521,17 +7105,17 @@ pub fn deser_operation_crate_operation_describe_db_parameter_groups(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_259);
+                builder = builder.set_marker(var_244);
             }
             ,
             s if s.matches("DBParameterGroups") /* DBParameterGroups com.amazonaws.rds.synthetic#DescribeDBParameterGroupsOutput$DBParameterGroups */ =>  {
-                let var_260 =
+                let var_245 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_db_parameter_group_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_parameter_groups(var_260);
+                builder = builder.set_db_parameter_groups(var_245);
             }
             ,
             _ => {}
@@ -7574,17 +7158,17 @@ pub fn deser_operation_crate_operation_describe_db_parameters(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Parameters") /* Parameters com.amazonaws.rds.synthetic#DescribeDBParametersOutput$Parameters */ =>  {
-                let var_261 =
+                let var_246 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_parameters_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_parameters(var_261);
+                builder = builder.set_parameters(var_246);
             }
             ,
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeDBParametersOutput$Marker */ =>  {
-                let var_262 =
+                let var_247 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7593,7 +7177,7 @@ pub fn deser_operation_crate_operation_describe_db_parameters(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_262);
+                builder = builder.set_marker(var_247);
             }
             ,
             _ => {}
@@ -7635,17 +7219,17 @@ pub fn deser_operation_crate_operation_describe_db_proxies(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBProxies") /* DBProxies com.amazonaws.rds.synthetic#DescribeDBProxiesOutput$DBProxies */ =>  {
-                let var_263 =
+                let var_248 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_db_proxy_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_proxies(var_263);
+                builder = builder.set_db_proxies(var_248);
             }
             ,
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeDBProxiesOutput$Marker */ =>  {
-                let var_264 =
+                let var_249 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7654,7 +7238,7 @@ pub fn deser_operation_crate_operation_describe_db_proxies(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_264);
+                builder = builder.set_marker(var_249);
             }
             ,
             _ => {}
@@ -7699,17 +7283,17 @@ pub fn deser_operation_crate_operation_describe_db_proxy_endpoints(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBProxyEndpoints") /* DBProxyEndpoints com.amazonaws.rds.synthetic#DescribeDBProxyEndpointsOutput$DBProxyEndpoints */ =>  {
-                let var_265 =
+                let var_250 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_db_proxy_endpoint_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_proxy_endpoints(var_265);
+                builder = builder.set_db_proxy_endpoints(var_250);
             }
             ,
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeDBProxyEndpointsOutput$Marker */ =>  {
-                let var_266 =
+                let var_251 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7718,7 +7302,7 @@ pub fn deser_operation_crate_operation_describe_db_proxy_endpoints(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_266);
+                builder = builder.set_marker(var_251);
             }
             ,
             _ => {}
@@ -7763,17 +7347,17 @@ pub fn deser_operation_crate_operation_describe_db_proxy_target_groups(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("TargetGroups") /* TargetGroups com.amazonaws.rds.synthetic#DescribeDBProxyTargetGroupsOutput$TargetGroups */ =>  {
-                let var_267 =
+                let var_252 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_target_group_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_target_groups(var_267);
+                builder = builder.set_target_groups(var_252);
             }
             ,
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeDBProxyTargetGroupsOutput$Marker */ =>  {
-                let var_268 =
+                let var_253 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7782,7 +7366,7 @@ pub fn deser_operation_crate_operation_describe_db_proxy_target_groups(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_268);
+                builder = builder.set_marker(var_253);
             }
             ,
             _ => {}
@@ -7827,17 +7411,17 @@ pub fn deser_operation_crate_operation_describe_db_proxy_targets(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Targets") /* Targets com.amazonaws.rds.synthetic#DescribeDBProxyTargetsOutput$Targets */ =>  {
-                let var_269 =
+                let var_254 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_target_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_targets(var_269);
+                builder = builder.set_targets(var_254);
             }
             ,
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeDBProxyTargetsOutput$Marker */ =>  {
-                let var_270 =
+                let var_255 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7846,7 +7430,7 @@ pub fn deser_operation_crate_operation_describe_db_proxy_targets(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_270);
+                builder = builder.set_marker(var_255);
             }
             ,
             _ => {}
@@ -7891,7 +7475,7 @@ pub fn deser_operation_crate_operation_describe_db_security_groups(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeDBSecurityGroupsOutput$Marker */ =>  {
-                let var_271 =
+                let var_256 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7900,17 +7484,17 @@ pub fn deser_operation_crate_operation_describe_db_security_groups(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_271);
+                builder = builder.set_marker(var_256);
             }
             ,
             s if s.matches("DBSecurityGroups") /* DBSecurityGroups com.amazonaws.rds.synthetic#DescribeDBSecurityGroupsOutput$DBSecurityGroups */ =>  {
-                let var_272 =
+                let var_257 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_db_security_groups(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_security_groups(var_272);
+                builder = builder.set_db_security_groups(var_257);
             }
             ,
             _ => {}
@@ -7955,13 +7539,13 @@ pub fn deser_operation_crate_operation_describe_db_snapshot_attributes(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBSnapshotAttributesResult") /* DBSnapshotAttributesResult com.amazonaws.rds.synthetic#DescribeDBSnapshotAttributesOutput$DBSnapshotAttributesResult */ =>  {
-                let var_273 =
+                let var_258 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_snapshot_attributes_result(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_snapshot_attributes_result(var_273);
+                builder = builder.set_db_snapshot_attributes_result(var_258);
             }
             ,
             _ => {}
@@ -8004,7 +7588,7 @@ pub fn deser_operation_crate_operation_describe_db_snapshots(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeDBSnapshotsOutput$Marker */ =>  {
-                let var_274 =
+                let var_259 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8013,17 +7597,17 @@ pub fn deser_operation_crate_operation_describe_db_snapshots(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_274);
+                builder = builder.set_marker(var_259);
             }
             ,
             s if s.matches("DBSnapshots") /* DBSnapshots com.amazonaws.rds.synthetic#DescribeDBSnapshotsOutput$DBSnapshots */ =>  {
-                let var_275 =
+                let var_260 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_db_snapshot_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_snapshots(var_275);
+                builder = builder.set_db_snapshots(var_260);
             }
             ,
             _ => {}
@@ -8068,7 +7652,7 @@ pub fn deser_operation_crate_operation_describe_db_subnet_groups(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeDBSubnetGroupsOutput$Marker */ =>  {
-                let var_276 =
+                let var_261 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8077,17 +7661,17 @@ pub fn deser_operation_crate_operation_describe_db_subnet_groups(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_276);
+                builder = builder.set_marker(var_261);
             }
             ,
             s if s.matches("DBSubnetGroups") /* DBSubnetGroups com.amazonaws.rds.synthetic#DescribeDBSubnetGroupsOutput$DBSubnetGroups */ =>  {
-                let var_277 =
+                let var_262 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_db_subnet_groups(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_subnet_groups(var_277);
+                builder = builder.set_db_subnet_groups(var_262);
             }
             ,
             _ => {}
@@ -8132,13 +7716,13 @@ pub fn deser_operation_crate_operation_describe_engine_default_cluster_parameter
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("EngineDefaults") /* EngineDefaults com.amazonaws.rds.synthetic#DescribeEngineDefaultClusterParametersOutput$EngineDefaults */ =>  {
-                let var_278 =
+                let var_263 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_engine_defaults(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_engine_defaults(var_278);
+                builder = builder.set_engine_defaults(var_263);
             }
             ,
             _ => {}
@@ -8183,13 +7767,13 @@ pub fn deser_operation_crate_operation_describe_engine_default_parameters(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("EngineDefaults") /* EngineDefaults com.amazonaws.rds.synthetic#DescribeEngineDefaultParametersOutput$EngineDefaults */ =>  {
-                let var_279 =
+                let var_264 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_engine_defaults(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_engine_defaults(var_279);
+                builder = builder.set_engine_defaults(var_264);
             }
             ,
             _ => {}
@@ -8234,13 +7818,13 @@ pub fn deser_operation_crate_operation_describe_event_categories(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("EventCategoriesMapList") /* EventCategoriesMapList com.amazonaws.rds.synthetic#DescribeEventCategoriesOutput$EventCategoriesMapList */ =>  {
-                let var_280 =
+                let var_265 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_event_categories_map_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_event_categories_map_list(var_280);
+                builder = builder.set_event_categories_map_list(var_265);
             }
             ,
             _ => {}
@@ -8282,7 +7866,7 @@ pub fn deser_operation_crate_operation_describe_events(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeEventsOutput$Marker */ =>  {
-                let var_281 =
+                let var_266 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8291,17 +7875,17 @@ pub fn deser_operation_crate_operation_describe_events(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_281);
+                builder = builder.set_marker(var_266);
             }
             ,
             s if s.matches("Events") /* Events com.amazonaws.rds.synthetic#DescribeEventsOutput$Events */ =>  {
-                let var_282 =
+                let var_267 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_event_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_events(var_282);
+                builder = builder.set_events(var_267);
             }
             ,
             _ => {}
@@ -8346,7 +7930,7 @@ pub fn deser_operation_crate_operation_describe_event_subscriptions(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeEventSubscriptionsOutput$Marker */ =>  {
-                let var_283 =
+                let var_268 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8355,17 +7939,17 @@ pub fn deser_operation_crate_operation_describe_event_subscriptions(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_283);
+                builder = builder.set_marker(var_268);
             }
             ,
             s if s.matches("EventSubscriptionsList") /* EventSubscriptionsList com.amazonaws.rds.synthetic#DescribeEventSubscriptionsOutput$EventSubscriptionsList */ =>  {
-                let var_284 =
+                let var_269 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_event_subscriptions_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_event_subscriptions_list(var_284);
+                builder = builder.set_event_subscriptions_list(var_269);
             }
             ,
             _ => {}
@@ -8408,7 +7992,7 @@ pub fn deser_operation_crate_operation_describe_export_tasks(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeExportTasksOutput$Marker */ =>  {
-                let var_285 =
+                let var_270 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8417,17 +8001,17 @@ pub fn deser_operation_crate_operation_describe_export_tasks(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_285);
+                builder = builder.set_marker(var_270);
             }
             ,
             s if s.matches("ExportTasks") /* ExportTasks com.amazonaws.rds.synthetic#DescribeExportTasksOutput$ExportTasks */ =>  {
-                let var_286 =
+                let var_271 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_export_tasks_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_export_tasks(var_286);
+                builder = builder.set_export_tasks(var_271);
             }
             ,
             _ => {}
@@ -8470,7 +8054,7 @@ pub fn deser_operation_crate_operation_describe_global_clusters(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeGlobalClustersOutput$Marker */ =>  {
-                let var_287 =
+                let var_272 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8479,17 +8063,17 @@ pub fn deser_operation_crate_operation_describe_global_clusters(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_287);
+                builder = builder.set_marker(var_272);
             }
             ,
             s if s.matches("GlobalClusters") /* GlobalClusters com.amazonaws.rds.synthetic#DescribeGlobalClustersOutput$GlobalClusters */ =>  {
-                let var_288 =
+                let var_273 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_global_cluster_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_global_clusters(var_288);
+                builder = builder.set_global_clusters(var_273);
             }
             ,
             _ => {}
@@ -8498,70 +8082,6 @@ pub fn deser_operation_crate_operation_describe_global_clusters(
     } else {
         return Err(aws_smithy_xml::decode::XmlError::custom(
             "expected DescribeGlobalClustersResult tag",
-        ));
-    };
-    Ok(builder)
-}
-
-#[allow(unused_mut)]
-pub fn deser_operation_crate_operation_describe_installation_media(
-    inp: &[u8],
-    mut builder: crate::output::describe_installation_media_output::Builder,
-) -> Result<
-    crate::output::describe_installation_media_output::Builder,
-    aws_smithy_xml::decode::XmlError,
-> {
-    use std::convert::TryFrom;
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
-
-    #[allow(unused_mut)]
-    let mut decoder = doc.root_element()?;
-    let start_el = decoder.start_el();
-    if !(start_el.matches("DescribeInstallationMediaResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected DescribeInstallationMediaResponse got {:?}",
-            start_el
-        )));
-    }
-    if let Some(mut result_tag) = decoder.next_tag() {
-        let start_el = result_tag.start_el();
-        if !(start_el.matches("DescribeInstallationMediaResult")) {
-            return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-                "invalid result, expected DescribeInstallationMediaResult got {:?}",
-                start_el
-            )));
-        }
-        while let Some(mut tag) = result_tag.next_tag() {
-            match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeInstallationMediaOutput$Marker */ =>  {
-                let var_289 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_marker(var_289);
-            }
-            ,
-            s if s.matches("InstallationMedia") /* InstallationMedia com.amazonaws.rds.synthetic#DescribeInstallationMediaOutput$InstallationMedia */ =>  {
-                let var_290 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_installation_media_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_installation_media(var_290);
-            }
-            ,
-            _ => {}
-        }
-        }
-    } else {
-        return Err(aws_smithy_xml::decode::XmlError::custom(
-            "expected DescribeInstallationMediaResult tag",
         ));
     };
     Ok(builder)
@@ -8598,17 +8118,17 @@ pub fn deser_operation_crate_operation_describe_option_group_options(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("OptionGroupOptions") /* OptionGroupOptions com.amazonaws.rds.synthetic#DescribeOptionGroupOptionsOutput$OptionGroupOptions */ =>  {
-                let var_291 =
+                let var_274 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_option_group_options_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_option_group_options(var_291);
+                builder = builder.set_option_group_options(var_274);
             }
             ,
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeOptionGroupOptionsOutput$Marker */ =>  {
-                let var_292 =
+                let var_275 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8617,7 +8137,7 @@ pub fn deser_operation_crate_operation_describe_option_group_options(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_292);
+                builder = builder.set_marker(var_275);
             }
             ,
             _ => {}
@@ -8660,17 +8180,17 @@ pub fn deser_operation_crate_operation_describe_option_groups(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("OptionGroupsList") /* OptionGroupsList com.amazonaws.rds.synthetic#DescribeOptionGroupsOutput$OptionGroupsList */ =>  {
-                let var_293 =
+                let var_276 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_option_groups_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_option_groups_list(var_293);
+                builder = builder.set_option_groups_list(var_276);
             }
             ,
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeOptionGroupsOutput$Marker */ =>  {
-                let var_294 =
+                let var_277 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8679,7 +8199,7 @@ pub fn deser_operation_crate_operation_describe_option_groups(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_294);
+                builder = builder.set_marker(var_277);
             }
             ,
             _ => {}
@@ -8724,17 +8244,17 @@ pub fn deser_operation_crate_operation_describe_orderable_db_instance_options(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("OrderableDBInstanceOptions") /* OrderableDBInstanceOptions com.amazonaws.rds.synthetic#DescribeOrderableDBInstanceOptionsOutput$OrderableDBInstanceOptions */ =>  {
-                let var_295 =
+                let var_278 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_orderable_db_instance_options_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_orderable_db_instance_options(var_295);
+                builder = builder.set_orderable_db_instance_options(var_278);
             }
             ,
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeOrderableDBInstanceOptionsOutput$Marker */ =>  {
-                let var_296 =
+                let var_279 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8743,7 +8263,7 @@ pub fn deser_operation_crate_operation_describe_orderable_db_instance_options(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_296);
+                builder = builder.set_marker(var_279);
             }
             ,
             _ => {}
@@ -8788,17 +8308,17 @@ pub fn deser_operation_crate_operation_describe_pending_maintenance_actions(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("PendingMaintenanceActions") /* PendingMaintenanceActions com.amazonaws.rds.synthetic#DescribePendingMaintenanceActionsOutput$PendingMaintenanceActions */ =>  {
-                let var_297 =
+                let var_280 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_pending_maintenance_actions(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_pending_maintenance_actions(var_297);
+                builder = builder.set_pending_maintenance_actions(var_280);
             }
             ,
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribePendingMaintenanceActionsOutput$Marker */ =>  {
-                let var_298 =
+                let var_281 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8807,7 +8327,7 @@ pub fn deser_operation_crate_operation_describe_pending_maintenance_actions(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_298);
+                builder = builder.set_marker(var_281);
             }
             ,
             _ => {}
@@ -8839,7 +8359,7 @@ pub fn deser_structure_crate_error_reserved_db_instance_not_found_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#ReservedDBInstanceNotFoundFault$message */ =>  {
-                let var_299 =
+                let var_282 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8848,7 +8368,7 @@ pub fn deser_structure_crate_error_reserved_db_instance_not_found_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_299);
+                builder = builder.set_message(var_282);
             }
             ,
             _ => {}
@@ -8888,7 +8408,7 @@ pub fn deser_operation_crate_operation_describe_reserved_db_instances(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeReservedDBInstancesOutput$Marker */ =>  {
-                let var_300 =
+                let var_283 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8897,17 +8417,17 @@ pub fn deser_operation_crate_operation_describe_reserved_db_instances(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_300);
+                builder = builder.set_marker(var_283);
             }
             ,
             s if s.matches("ReservedDBInstances") /* ReservedDBInstances com.amazonaws.rds.synthetic#DescribeReservedDBInstancesOutput$ReservedDBInstances */ =>  {
-                let var_301 =
+                let var_284 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_reserved_db_instance_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_reserved_db_instances(var_301);
+                builder = builder.set_reserved_db_instances(var_284);
             }
             ,
             _ => {}
@@ -8939,7 +8459,7 @@ pub fn deser_structure_crate_error_reserved_db_instances_offering_not_found_faul
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#ReservedDBInstancesOfferingNotFoundFault$message */ =>  {
-                let var_302 =
+                let var_285 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8948,7 +8468,7 @@ pub fn deser_structure_crate_error_reserved_db_instances_offering_not_found_faul
                         ?
                     )
                 ;
-                builder = builder.set_message(var_302);
+                builder = builder.set_message(var_285);
             }
             ,
             _ => {}
@@ -8988,7 +8508,7 @@ pub fn deser_operation_crate_operation_describe_reserved_db_instances_offerings(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeReservedDBInstancesOfferingsOutput$Marker */ =>  {
-                let var_303 =
+                let var_286 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8997,17 +8517,17 @@ pub fn deser_operation_crate_operation_describe_reserved_db_instances_offerings(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_303);
+                builder = builder.set_marker(var_286);
             }
             ,
             s if s.matches("ReservedDBInstancesOfferings") /* ReservedDBInstancesOfferings com.amazonaws.rds.synthetic#DescribeReservedDBInstancesOfferingsOutput$ReservedDBInstancesOfferings */ =>  {
-                let var_304 =
+                let var_287 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_reserved_db_instances_offering_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_reserved_db_instances_offerings(var_304);
+                builder = builder.set_reserved_db_instances_offerings(var_287);
             }
             ,
             _ => {}
@@ -9050,7 +8570,7 @@ pub fn deser_operation_crate_operation_describe_source_regions(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeSourceRegionsOutput$Marker */ =>  {
-                let var_305 =
+                let var_288 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9059,17 +8579,17 @@ pub fn deser_operation_crate_operation_describe_source_regions(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_305);
+                builder = builder.set_marker(var_288);
             }
             ,
             s if s.matches("SourceRegions") /* SourceRegions com.amazonaws.rds.synthetic#DescribeSourceRegionsOutput$SourceRegions */ =>  {
-                let var_306 =
+                let var_289 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_source_region_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_source_regions(var_306);
+                builder = builder.set_source_regions(var_289);
             }
             ,
             _ => {}
@@ -9114,13 +8634,13 @@ pub fn deser_operation_crate_operation_describe_valid_db_instance_modifications(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("ValidDBInstanceModificationsMessage") /* ValidDBInstanceModificationsMessage com.amazonaws.rds.synthetic#DescribeValidDBInstanceModificationsOutput$ValidDBInstanceModificationsMessage */ =>  {
-                let var_307 =
+                let var_290 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_valid_db_instance_modifications_message(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_valid_db_instance_modifications_message(var_307);
+                builder = builder.set_valid_db_instance_modifications_message(var_290);
             }
             ,
             _ => {}
@@ -9149,7 +8669,7 @@ pub fn deser_structure_crate_error_db_log_file_not_found_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBLogFileNotFoundFault$message */ =>  {
-                let var_308 =
+                let var_291 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9158,7 +8678,7 @@ pub fn deser_structure_crate_error_db_log_file_not_found_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_308);
+                builder = builder.set_message(var_291);
             }
             ,
             _ => {}
@@ -9198,7 +8718,7 @@ pub fn deser_operation_crate_operation_download_db_log_file_portion(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("LogFileData") /* LogFileData com.amazonaws.rds.synthetic#DownloadDBLogFilePortionOutput$LogFileData */ =>  {
-                let var_309 =
+                let var_292 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9207,11 +8727,11 @@ pub fn deser_operation_crate_operation_download_db_log_file_portion(
                         ?
                     )
                 ;
-                builder = builder.set_log_file_data(var_309);
+                builder = builder.set_log_file_data(var_292);
             }
             ,
             s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DownloadDBLogFilePortionOutput$Marker */ =>  {
-                let var_310 =
+                let var_293 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9220,11 +8740,11 @@ pub fn deser_operation_crate_operation_download_db_log_file_portion(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_310);
+                builder = builder.set_marker(var_293);
             }
             ,
             s if s.matches("AdditionalDataPending") /* AdditionalDataPending com.amazonaws.rds.synthetic#DownloadDBLogFilePortionOutput$AdditionalDataPending */ =>  {
-                let var_311 =
+                let var_294 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -9235,7 +8755,7 @@ pub fn deser_operation_crate_operation_download_db_log_file_portion(
                         ?
                     )
                 ;
-                builder = builder.set_additional_data_pending(var_311);
+                builder = builder.set_additional_data_pending(var_294);
             }
             ,
             _ => {}
@@ -9277,13 +8797,13 @@ pub fn deser_operation_crate_operation_failover_db_cluster(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBCluster") /* DBCluster com.amazonaws.rds.synthetic#FailoverDBClusterOutput$DBCluster */ =>  {
-                let var_312 =
+                let var_295 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster(var_312);
+                builder = builder.set_db_cluster(var_295);
             }
             ,
             _ => {}
@@ -9326,13 +8846,13 @@ pub fn deser_operation_crate_operation_failover_global_cluster(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("GlobalCluster") /* GlobalCluster com.amazonaws.rds.synthetic#FailoverGlobalClusterOutput$GlobalCluster */ =>  {
-                let var_313 =
+                let var_296 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_global_cluster(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_global_cluster(var_313);
+                builder = builder.set_global_cluster(var_296);
             }
             ,
             _ => {}
@@ -9341,184 +8861,6 @@ pub fn deser_operation_crate_operation_failover_global_cluster(
     } else {
         return Err(aws_smithy_xml::decode::XmlError::custom(
             "expected FailoverGlobalClusterResult tag",
-        ));
-    };
-    Ok(builder)
-}
-
-#[allow(unused_mut)]
-pub fn deser_structure_crate_error_installation_media_already_exists_fault_xml_err(
-    inp: &[u8],
-    mut builder: crate::error::installation_media_already_exists_fault::Builder,
-) -> Result<
-    crate::error::installation_media_already_exists_fault::Builder,
-    aws_smithy_xml::decode::XmlError,
-> {
-    if inp.is_empty() {
-        return Ok(builder);
-    }
-    use std::convert::TryFrom;
-    let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
-    #[allow(unused_mut)]
-    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
-    while let Some(mut tag) = error_decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("message") /* message com.amazonaws.rds#InstallationMediaAlreadyExistsFault$message */ =>  {
-                let var_314 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_message(var_314);
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(builder)
-}
-
-#[allow(unused_mut)]
-pub fn deser_operation_crate_operation_import_installation_media(
-    inp: &[u8],
-    mut builder: crate::output::import_installation_media_output::Builder,
-) -> Result<
-    crate::output::import_installation_media_output::Builder,
-    aws_smithy_xml::decode::XmlError,
-> {
-    use std::convert::TryFrom;
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
-
-    #[allow(unused_mut)]
-    let mut decoder = doc.root_element()?;
-    let start_el = decoder.start_el();
-    if !(start_el.matches("ImportInstallationMediaResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ImportInstallationMediaResponse got {:?}",
-            start_el
-        )));
-    }
-    if let Some(mut result_tag) = decoder.next_tag() {
-        let start_el = result_tag.start_el();
-        if !(start_el.matches("ImportInstallationMediaResult")) {
-            return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-                "invalid result, expected ImportInstallationMediaResult got {:?}",
-                start_el
-            )));
-        }
-        while let Some(mut tag) = result_tag.next_tag() {
-            match tag.start_el() {
-            s if s.matches("InstallationMediaId") /* InstallationMediaId com.amazonaws.rds.synthetic#ImportInstallationMediaOutput$InstallationMediaId */ =>  {
-                let var_315 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_installation_media_id(var_315);
-            }
-            ,
-            s if s.matches("CustomAvailabilityZoneId") /* CustomAvailabilityZoneId com.amazonaws.rds.synthetic#ImportInstallationMediaOutput$CustomAvailabilityZoneId */ =>  {
-                let var_316 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_custom_availability_zone_id(var_316);
-            }
-            ,
-            s if s.matches("Engine") /* Engine com.amazonaws.rds.synthetic#ImportInstallationMediaOutput$Engine */ =>  {
-                let var_317 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_engine(var_317);
-            }
-            ,
-            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds.synthetic#ImportInstallationMediaOutput$EngineVersion */ =>  {
-                let var_318 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_engine_version(var_318);
-            }
-            ,
-            s if s.matches("EngineInstallationMediaPath") /* EngineInstallationMediaPath com.amazonaws.rds.synthetic#ImportInstallationMediaOutput$EngineInstallationMediaPath */ =>  {
-                let var_319 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_engine_installation_media_path(var_319);
-            }
-            ,
-            s if s.matches("OSInstallationMediaPath") /* OSInstallationMediaPath com.amazonaws.rds.synthetic#ImportInstallationMediaOutput$OSInstallationMediaPath */ =>  {
-                let var_320 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_os_installation_media_path(var_320);
-            }
-            ,
-            s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#ImportInstallationMediaOutput$Status */ =>  {
-                let var_321 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_status(var_321);
-            }
-            ,
-            s if s.matches("FailureCause") /* FailureCause com.amazonaws.rds.synthetic#ImportInstallationMediaOutput$FailureCause */ =>  {
-                let var_322 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_installation_media_failure_cause(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_failure_cause(var_322);
-            }
-            ,
-            _ => {}
-        }
-        }
-    } else {
-        return Err(aws_smithy_xml::decode::XmlError::custom(
-            "expected ImportInstallationMediaResult tag",
         ));
     };
     Ok(builder)
@@ -9553,13 +8895,13 @@ pub fn deser_operation_crate_operation_list_tags_for_resource(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("TagList") /* TagList com.amazonaws.rds.synthetic#ListTagsForResourceOutput$TagList */ =>  {
-                let var_323 =
+                let var_297 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tag_list(var_323);
+                builder = builder.set_tag_list(var_297);
             }
             ,
             _ => {}
@@ -9601,13 +8943,13 @@ pub fn deser_operation_crate_operation_modify_certificates(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Certificate") /* Certificate com.amazonaws.rds.synthetic#ModifyCertificatesOutput$Certificate */ =>  {
-                let var_324 =
+                let var_298 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_certificate(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_certificate(var_324);
+                builder = builder.set_certificate(var_298);
             }
             ,
             _ => {}
@@ -9639,7 +8981,7 @@ pub fn deser_structure_crate_error_invalid_db_cluster_capacity_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InvalidDBClusterCapacityFault$message */ =>  {
-                let var_325 =
+                let var_299 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9648,7 +8990,7 @@ pub fn deser_structure_crate_error_invalid_db_cluster_capacity_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_325);
+                builder = builder.set_message(var_299);
             }
             ,
             _ => {}
@@ -9688,7 +9030,7 @@ pub fn deser_operation_crate_operation_modify_current_db_cluster_capacity(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.rds.synthetic#ModifyCurrentDBClusterCapacityOutput$DBClusterIdentifier */ =>  {
-                let var_326 =
+                let var_300 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9697,11 +9039,11 @@ pub fn deser_operation_crate_operation_modify_current_db_cluster_capacity(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_identifier(var_326);
+                builder = builder.set_db_cluster_identifier(var_300);
             }
             ,
             s if s.matches("PendingCapacity") /* PendingCapacity com.amazonaws.rds.synthetic#ModifyCurrentDBClusterCapacityOutput$PendingCapacity */ =>  {
-                let var_327 =
+                let var_301 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -9712,11 +9054,11 @@ pub fn deser_operation_crate_operation_modify_current_db_cluster_capacity(
                         ?
                     )
                 ;
-                builder = builder.set_pending_capacity(var_327);
+                builder = builder.set_pending_capacity(var_301);
             }
             ,
             s if s.matches("CurrentCapacity") /* CurrentCapacity com.amazonaws.rds.synthetic#ModifyCurrentDBClusterCapacityOutput$CurrentCapacity */ =>  {
-                let var_328 =
+                let var_302 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -9727,11 +9069,11 @@ pub fn deser_operation_crate_operation_modify_current_db_cluster_capacity(
                         ?
                     )
                 ;
-                builder = builder.set_current_capacity(var_328);
+                builder = builder.set_current_capacity(var_302);
             }
             ,
             s if s.matches("SecondsBeforeTimeout") /* SecondsBeforeTimeout com.amazonaws.rds.synthetic#ModifyCurrentDBClusterCapacityOutput$SecondsBeforeTimeout */ =>  {
-                let var_329 =
+                let var_303 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -9742,11 +9084,11 @@ pub fn deser_operation_crate_operation_modify_current_db_cluster_capacity(
                         ?
                     )
                 ;
-                builder = builder.set_seconds_before_timeout(var_329);
+                builder = builder.set_seconds_before_timeout(var_303);
             }
             ,
             s if s.matches("TimeoutAction") /* TimeoutAction com.amazonaws.rds.synthetic#ModifyCurrentDBClusterCapacityOutput$TimeoutAction */ =>  {
-                let var_330 =
+                let var_304 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9755,7 +9097,7 @@ pub fn deser_operation_crate_operation_modify_current_db_cluster_capacity(
                         ?
                     )
                 ;
-                builder = builder.set_timeout_action(var_330);
+                builder = builder.set_timeout_action(var_304);
             }
             ,
             _ => {}
@@ -9800,7 +9142,7 @@ pub fn deser_operation_crate_operation_modify_custom_db_engine_version(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Engine") /* Engine com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$Engine */ =>  {
-                let var_331 =
+                let var_305 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9809,11 +9151,11 @@ pub fn deser_operation_crate_operation_modify_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_331);
+                builder = builder.set_engine(var_305);
             }
             ,
             s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$EngineVersion */ =>  {
-                let var_332 =
+                let var_306 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9822,11 +9164,11 @@ pub fn deser_operation_crate_operation_modify_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_engine_version(var_332);
+                builder = builder.set_engine_version(var_306);
             }
             ,
             s if s.matches("DBParameterGroupFamily") /* DBParameterGroupFamily com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$DBParameterGroupFamily */ =>  {
-                let var_333 =
+                let var_307 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9835,11 +9177,11 @@ pub fn deser_operation_crate_operation_modify_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_db_parameter_group_family(var_333);
+                builder = builder.set_db_parameter_group_family(var_307);
             }
             ,
             s if s.matches("DBEngineDescription") /* DBEngineDescription com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$DBEngineDescription */ =>  {
-                let var_334 =
+                let var_308 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9848,11 +9190,11 @@ pub fn deser_operation_crate_operation_modify_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_db_engine_description(var_334);
+                builder = builder.set_db_engine_description(var_308);
             }
             ,
             s if s.matches("DBEngineVersionDescription") /* DBEngineVersionDescription com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$DBEngineVersionDescription */ =>  {
-                let var_335 =
+                let var_309 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9861,71 +9203,71 @@ pub fn deser_operation_crate_operation_modify_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_db_engine_version_description(var_335);
+                builder = builder.set_db_engine_version_description(var_309);
             }
             ,
             s if s.matches("DefaultCharacterSet") /* DefaultCharacterSet com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$DefaultCharacterSet */ =>  {
-                let var_336 =
+                let var_310 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_character_set(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_default_character_set(var_336);
+                builder = builder.set_default_character_set(var_310);
             }
             ,
             s if s.matches("SupportedCharacterSets") /* SupportedCharacterSets com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$SupportedCharacterSets */ =>  {
-                let var_337 =
+                let var_311 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_supported_character_sets_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_character_sets(var_337);
+                builder = builder.set_supported_character_sets(var_311);
             }
             ,
             s if s.matches("SupportedNcharCharacterSets") /* SupportedNcharCharacterSets com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$SupportedNcharCharacterSets */ =>  {
-                let var_338 =
+                let var_312 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_supported_character_sets_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_nchar_character_sets(var_338);
+                builder = builder.set_supported_nchar_character_sets(var_312);
             }
             ,
             s if s.matches("ValidUpgradeTarget") /* ValidUpgradeTarget com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$ValidUpgradeTarget */ =>  {
-                let var_339 =
+                let var_313 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_valid_upgrade_target_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_valid_upgrade_target(var_339);
+                builder = builder.set_valid_upgrade_target(var_313);
             }
             ,
             s if s.matches("SupportedTimezones") /* SupportedTimezones com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$SupportedTimezones */ =>  {
-                let var_340 =
+                let var_314 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_supported_timezones_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_timezones(var_340);
+                builder = builder.set_supported_timezones(var_314);
             }
             ,
             s if s.matches("ExportableLogTypes") /* ExportableLogTypes com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$ExportableLogTypes */ =>  {
-                let var_341 =
+                let var_315 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_log_type_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_exportable_log_types(var_341);
+                builder = builder.set_exportable_log_types(var_315);
             }
             ,
             s if s.matches("SupportsLogExportsToCloudwatchLogs") /* SupportsLogExportsToCloudwatchLogs com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$SupportsLogExportsToCloudwatchLogs */ =>  {
-                let var_342 =
+                let var_316 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -9936,11 +9278,11 @@ pub fn deser_operation_crate_operation_modify_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_log_exports_to_cloudwatch_logs(var_342);
+                builder = builder.set_supports_log_exports_to_cloudwatch_logs(var_316);
             }
             ,
             s if s.matches("SupportsReadReplica") /* SupportsReadReplica com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$SupportsReadReplica */ =>  {
-                let var_343 =
+                let var_317 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -9951,31 +9293,31 @@ pub fn deser_operation_crate_operation_modify_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_read_replica(var_343);
+                builder = builder.set_supports_read_replica(var_317);
             }
             ,
             s if s.matches("SupportedEngineModes") /* SupportedEngineModes com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$SupportedEngineModes */ =>  {
-                let var_344 =
+                let var_318 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_engine_mode_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_engine_modes(var_344);
+                builder = builder.set_supported_engine_modes(var_318);
             }
             ,
             s if s.matches("SupportedFeatureNames") /* SupportedFeatureNames com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$SupportedFeatureNames */ =>  {
-                let var_345 =
+                let var_319 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_feature_name_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_feature_names(var_345);
+                builder = builder.set_supported_feature_names(var_319);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$Status */ =>  {
-                let var_346 =
+                let var_320 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9984,11 +9326,11 @@ pub fn deser_operation_crate_operation_modify_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_346);
+                builder = builder.set_status(var_320);
             }
             ,
             s if s.matches("SupportsParallelQuery") /* SupportsParallelQuery com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$SupportsParallelQuery */ =>  {
-                let var_347 =
+                let var_321 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -9999,11 +9341,11 @@ pub fn deser_operation_crate_operation_modify_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_parallel_query(var_347);
+                builder = builder.set_supports_parallel_query(var_321);
             }
             ,
             s if s.matches("SupportsGlobalDatabases") /* SupportsGlobalDatabases com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$SupportsGlobalDatabases */ =>  {
-                let var_348 =
+                let var_322 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -10014,11 +9356,11 @@ pub fn deser_operation_crate_operation_modify_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_global_databases(var_348);
+                builder = builder.set_supports_global_databases(var_322);
             }
             ,
             s if s.matches("MajorEngineVersion") /* MajorEngineVersion com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$MajorEngineVersion */ =>  {
-                let var_349 =
+                let var_323 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10027,11 +9369,11 @@ pub fn deser_operation_crate_operation_modify_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_major_engine_version(var_349);
+                builder = builder.set_major_engine_version(var_323);
             }
             ,
             s if s.matches("DatabaseInstallationFilesS3BucketName") /* DatabaseInstallationFilesS3BucketName com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$DatabaseInstallationFilesS3BucketName */ =>  {
-                let var_350 =
+                let var_324 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10040,11 +9382,11 @@ pub fn deser_operation_crate_operation_modify_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_database_installation_files_s3_bucket_name(var_350);
+                builder = builder.set_database_installation_files_s3_bucket_name(var_324);
             }
             ,
             s if s.matches("DatabaseInstallationFilesS3Prefix") /* DatabaseInstallationFilesS3Prefix com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$DatabaseInstallationFilesS3Prefix */ =>  {
-                let var_351 =
+                let var_325 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10053,11 +9395,11 @@ pub fn deser_operation_crate_operation_modify_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_database_installation_files_s3_prefix(var_351);
+                builder = builder.set_database_installation_files_s3_prefix(var_325);
             }
             ,
             s if s.matches("DBEngineVersionArn") /* DBEngineVersionArn com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$DBEngineVersionArn */ =>  {
-                let var_352 =
+                let var_326 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10066,11 +9408,11 @@ pub fn deser_operation_crate_operation_modify_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_db_engine_version_arn(var_352);
+                builder = builder.set_db_engine_version_arn(var_326);
             }
             ,
             s if s.matches("KMSKeyId") /* KMSKeyId com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$KMSKeyId */ =>  {
-                let var_353 =
+                let var_327 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10079,11 +9421,11 @@ pub fn deser_operation_crate_operation_modify_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_kms_key_id(var_353);
+                builder = builder.set_kms_key_id(var_327);
             }
             ,
             s if s.matches("CreateTime") /* CreateTime com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$CreateTime */ =>  {
-                let var_354 =
+                let var_328 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10093,21 +9435,21 @@ pub fn deser_operation_crate_operation_modify_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_create_time(var_354);
+                builder = builder.set_create_time(var_328);
             }
             ,
             s if s.matches("TagList") /* TagList com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$TagList */ =>  {
-                let var_355 =
+                let var_329 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tag_list(var_355);
+                builder = builder.set_tag_list(var_329);
             }
             ,
             s if s.matches("SupportsBabelfish") /* SupportsBabelfish com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$SupportsBabelfish */ =>  {
-                let var_356 =
+                let var_330 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -10118,7 +9460,7 @@ pub fn deser_operation_crate_operation_modify_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_babelfish(var_356);
+                builder = builder.set_supports_babelfish(var_330);
             }
             ,
             _ => {}
@@ -10160,13 +9502,13 @@ pub fn deser_operation_crate_operation_modify_db_cluster(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBCluster") /* DBCluster com.amazonaws.rds.synthetic#ModifyDBClusterOutput$DBCluster */ =>  {
-                let var_357 =
+                let var_331 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster(var_357);
+                builder = builder.set_db_cluster(var_331);
             }
             ,
             _ => {}
@@ -10211,7 +9553,7 @@ pub fn deser_operation_crate_operation_modify_db_cluster_endpoint(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBClusterEndpointIdentifier") /* DBClusterEndpointIdentifier com.amazonaws.rds.synthetic#ModifyDBClusterEndpointOutput$DBClusterEndpointIdentifier */ =>  {
-                let var_358 =
+                let var_332 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10220,11 +9562,11 @@ pub fn deser_operation_crate_operation_modify_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_endpoint_identifier(var_358);
+                builder = builder.set_db_cluster_endpoint_identifier(var_332);
             }
             ,
             s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.rds.synthetic#ModifyDBClusterEndpointOutput$DBClusterIdentifier */ =>  {
-                let var_359 =
+                let var_333 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10233,11 +9575,11 @@ pub fn deser_operation_crate_operation_modify_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_identifier(var_359);
+                builder = builder.set_db_cluster_identifier(var_333);
             }
             ,
             s if s.matches("DBClusterEndpointResourceIdentifier") /* DBClusterEndpointResourceIdentifier com.amazonaws.rds.synthetic#ModifyDBClusterEndpointOutput$DBClusterEndpointResourceIdentifier */ =>  {
-                let var_360 =
+                let var_334 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10246,11 +9588,11 @@ pub fn deser_operation_crate_operation_modify_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_endpoint_resource_identifier(var_360);
+                builder = builder.set_db_cluster_endpoint_resource_identifier(var_334);
             }
             ,
             s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds.synthetic#ModifyDBClusterEndpointOutput$Endpoint */ =>  {
-                let var_361 =
+                let var_335 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10259,11 +9601,11 @@ pub fn deser_operation_crate_operation_modify_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_endpoint(var_361);
+                builder = builder.set_endpoint(var_335);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#ModifyDBClusterEndpointOutput$Status */ =>  {
-                let var_362 =
+                let var_336 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10272,11 +9614,11 @@ pub fn deser_operation_crate_operation_modify_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_362);
+                builder = builder.set_status(var_336);
             }
             ,
             s if s.matches("EndpointType") /* EndpointType com.amazonaws.rds.synthetic#ModifyDBClusterEndpointOutput$EndpointType */ =>  {
-                let var_363 =
+                let var_337 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10285,11 +9627,11 @@ pub fn deser_operation_crate_operation_modify_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_endpoint_type(var_363);
+                builder = builder.set_endpoint_type(var_337);
             }
             ,
             s if s.matches("CustomEndpointType") /* CustomEndpointType com.amazonaws.rds.synthetic#ModifyDBClusterEndpointOutput$CustomEndpointType */ =>  {
-                let var_364 =
+                let var_338 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10298,31 +9640,31 @@ pub fn deser_operation_crate_operation_modify_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_custom_endpoint_type(var_364);
+                builder = builder.set_custom_endpoint_type(var_338);
             }
             ,
             s if s.matches("StaticMembers") /* StaticMembers com.amazonaws.rds.synthetic#ModifyDBClusterEndpointOutput$StaticMembers */ =>  {
-                let var_365 =
+                let var_339 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_static_members(var_365);
+                builder = builder.set_static_members(var_339);
             }
             ,
             s if s.matches("ExcludedMembers") /* ExcludedMembers com.amazonaws.rds.synthetic#ModifyDBClusterEndpointOutput$ExcludedMembers */ =>  {
-                let var_366 =
+                let var_340 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_excluded_members(var_366);
+                builder = builder.set_excluded_members(var_340);
             }
             ,
             s if s.matches("DBClusterEndpointArn") /* DBClusterEndpointArn com.amazonaws.rds.synthetic#ModifyDBClusterEndpointOutput$DBClusterEndpointArn */ =>  {
-                let var_367 =
+                let var_341 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10331,7 +9673,7 @@ pub fn deser_operation_crate_operation_modify_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_endpoint_arn(var_367);
+                builder = builder.set_db_cluster_endpoint_arn(var_341);
             }
             ,
             _ => {}
@@ -10376,7 +9718,7 @@ pub fn deser_operation_crate_operation_modify_db_cluster_parameter_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBClusterParameterGroupName") /* DBClusterParameterGroupName com.amazonaws.rds.synthetic#ModifyDBClusterParameterGroupOutput$DBClusterParameterGroupName */ =>  {
-                let var_368 =
+                let var_342 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10385,7 +9727,7 @@ pub fn deser_operation_crate_operation_modify_db_cluster_parameter_group(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_parameter_group_name(var_368);
+                builder = builder.set_db_cluster_parameter_group_name(var_342);
             }
             ,
             _ => {}
@@ -10417,7 +9759,7 @@ pub fn deser_structure_crate_error_shared_snapshot_quota_exceeded_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#SharedSnapshotQuotaExceededFault$message */ =>  {
-                let var_369 =
+                let var_343 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10426,7 +9768,7 @@ pub fn deser_structure_crate_error_shared_snapshot_quota_exceeded_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_369);
+                builder = builder.set_message(var_343);
             }
             ,
             _ => {}
@@ -10466,13 +9808,13 @@ pub fn deser_operation_crate_operation_modify_db_cluster_snapshot_attribute(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBClusterSnapshotAttributesResult") /* DBClusterSnapshotAttributesResult com.amazonaws.rds.synthetic#ModifyDBClusterSnapshotAttributeOutput$DBClusterSnapshotAttributesResult */ =>  {
-                let var_370 =
+                let var_344 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_cluster_snapshot_attributes_result(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_snapshot_attributes_result(var_370);
+                builder = builder.set_db_cluster_snapshot_attributes_result(var_344);
             }
             ,
             _ => {}
@@ -10504,7 +9846,7 @@ pub fn deser_structure_crate_error_db_upgrade_dependency_failure_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBUpgradeDependencyFailureFault$message */ =>  {
-                let var_371 =
+                let var_345 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10513,7 +9855,7 @@ pub fn deser_structure_crate_error_db_upgrade_dependency_failure_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_371);
+                builder = builder.set_message(var_345);
             }
             ,
             _ => {}
@@ -10550,13 +9892,13 @@ pub fn deser_operation_crate_operation_modify_db_instance(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBInstance") /* DBInstance com.amazonaws.rds.synthetic#ModifyDBInstanceOutput$DBInstance */ =>  {
-                let var_372 =
+                let var_346 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_instance(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_instance(var_372);
+                builder = builder.set_db_instance(var_346);
             }
             ,
             _ => {}
@@ -10601,7 +9943,7 @@ pub fn deser_operation_crate_operation_modify_db_parameter_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBParameterGroupName") /* DBParameterGroupName com.amazonaws.rds.synthetic#ModifyDBParameterGroupOutput$DBParameterGroupName */ =>  {
-                let var_373 =
+                let var_347 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10610,7 +9952,7 @@ pub fn deser_operation_crate_operation_modify_db_parameter_group(
                         ?
                     )
                 ;
-                builder = builder.set_db_parameter_group_name(var_373);
+                builder = builder.set_db_parameter_group_name(var_347);
             }
             ,
             _ => {}
@@ -10652,13 +9994,13 @@ pub fn deser_operation_crate_operation_modify_db_proxy(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBProxy") /* DBProxy com.amazonaws.rds.synthetic#ModifyDBProxyOutput$DBProxy */ =>  {
-                let var_374 =
+                let var_348 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_proxy(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_proxy(var_374);
+                builder = builder.set_db_proxy(var_348);
             }
             ,
             _ => {}
@@ -10701,13 +10043,13 @@ pub fn deser_operation_crate_operation_modify_db_proxy_endpoint(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBProxyEndpoint") /* DBProxyEndpoint com.amazonaws.rds.synthetic#ModifyDBProxyEndpointOutput$DBProxyEndpoint */ =>  {
-                let var_375 =
+                let var_349 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_proxy_endpoint(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_proxy_endpoint(var_375);
+                builder = builder.set_db_proxy_endpoint(var_349);
             }
             ,
             _ => {}
@@ -10752,13 +10094,13 @@ pub fn deser_operation_crate_operation_modify_db_proxy_target_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBProxyTargetGroup") /* DBProxyTargetGroup com.amazonaws.rds.synthetic#ModifyDBProxyTargetGroupOutput$DBProxyTargetGroup */ =>  {
-                let var_376 =
+                let var_350 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_proxy_target_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_proxy_target_group(var_376);
+                builder = builder.set_db_proxy_target_group(var_350);
             }
             ,
             _ => {}
@@ -10800,13 +10142,13 @@ pub fn deser_operation_crate_operation_modify_db_snapshot(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBSnapshot") /* DBSnapshot com.amazonaws.rds.synthetic#ModifyDBSnapshotOutput$DBSnapshot */ =>  {
-                let var_377 =
+                let var_351 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_snapshot(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_snapshot(var_377);
+                builder = builder.set_db_snapshot(var_351);
             }
             ,
             _ => {}
@@ -10851,13 +10193,13 @@ pub fn deser_operation_crate_operation_modify_db_snapshot_attribute(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBSnapshotAttributesResult") /* DBSnapshotAttributesResult com.amazonaws.rds.synthetic#ModifyDBSnapshotAttributeOutput$DBSnapshotAttributesResult */ =>  {
-                let var_378 =
+                let var_352 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_snapshot_attributes_result(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_snapshot_attributes_result(var_378);
+                builder = builder.set_db_snapshot_attributes_result(var_352);
             }
             ,
             _ => {}
@@ -10886,7 +10228,7 @@ pub fn deser_structure_crate_error_subnet_already_in_use_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#SubnetAlreadyInUse$message */ =>  {
-                let var_379 =
+                let var_353 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10895,7 +10237,7 @@ pub fn deser_structure_crate_error_subnet_already_in_use_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_379);
+                builder = builder.set_message(var_353);
             }
             ,
             _ => {}
@@ -10933,13 +10275,13 @@ pub fn deser_operation_crate_operation_modify_db_subnet_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBSubnetGroup") /* DBSubnetGroup com.amazonaws.rds.synthetic#ModifyDBSubnetGroupOutput$DBSubnetGroup */ =>  {
-                let var_380 =
+                let var_354 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_subnet_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_subnet_group(var_380);
+                builder = builder.set_db_subnet_group(var_354);
             }
             ,
             _ => {}
@@ -10984,13 +10326,13 @@ pub fn deser_operation_crate_operation_modify_event_subscription(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("EventSubscription") /* EventSubscription com.amazonaws.rds.synthetic#ModifyEventSubscriptionOutput$EventSubscription */ =>  {
-                let var_381 =
+                let var_355 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_event_subscription(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_event_subscription(var_381);
+                builder = builder.set_event_subscription(var_355);
             }
             ,
             _ => {}
@@ -11033,13 +10375,13 @@ pub fn deser_operation_crate_operation_modify_global_cluster(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("GlobalCluster") /* GlobalCluster com.amazonaws.rds.synthetic#ModifyGlobalClusterOutput$GlobalCluster */ =>  {
-                let var_382 =
+                let var_356 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_global_cluster(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_global_cluster(var_382);
+                builder = builder.set_global_cluster(var_356);
             }
             ,
             _ => {}
@@ -11081,13 +10423,13 @@ pub fn deser_operation_crate_operation_modify_option_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("OptionGroup") /* OptionGroup com.amazonaws.rds.synthetic#ModifyOptionGroupOutput$OptionGroup */ =>  {
-                let var_383 =
+                let var_357 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_option_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_option_group(var_383);
+                builder = builder.set_option_group(var_357);
             }
             ,
             _ => {}
@@ -11129,13 +10471,13 @@ pub fn deser_operation_crate_operation_promote_read_replica(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBInstance") /* DBInstance com.amazonaws.rds.synthetic#PromoteReadReplicaOutput$DBInstance */ =>  {
-                let var_384 =
+                let var_358 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_instance(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_instance(var_384);
+                builder = builder.set_db_instance(var_358);
             }
             ,
             _ => {}
@@ -11180,13 +10522,13 @@ pub fn deser_operation_crate_operation_promote_read_replica_db_cluster(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBCluster") /* DBCluster com.amazonaws.rds.synthetic#PromoteReadReplicaDBClusterOutput$DBCluster */ =>  {
-                let var_385 =
+                let var_359 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster(var_385);
+                builder = builder.set_db_cluster(var_359);
             }
             ,
             _ => {}
@@ -11218,7 +10560,7 @@ pub fn deser_structure_crate_error_reserved_db_instance_already_exists_fault_xml
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#ReservedDBInstanceAlreadyExistsFault$message */ =>  {
-                let var_386 =
+                let var_360 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11227,7 +10569,7 @@ pub fn deser_structure_crate_error_reserved_db_instance_already_exists_fault_xml
                         ?
                     )
                 ;
-                builder = builder.set_message(var_386);
+                builder = builder.set_message(var_360);
             }
             ,
             _ => {}
@@ -11254,7 +10596,7 @@ pub fn deser_structure_crate_error_reserved_db_instance_quota_exceeded_fault_xml
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#ReservedDBInstanceQuotaExceededFault$message */ =>  {
-                let var_387 =
+                let var_361 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11263,7 +10605,7 @@ pub fn deser_structure_crate_error_reserved_db_instance_quota_exceeded_fault_xml
                         ?
                     )
                 ;
-                builder = builder.set_message(var_387);
+                builder = builder.set_message(var_361);
             }
             ,
             _ => {}
@@ -11303,13 +10645,13 @@ pub fn deser_operation_crate_operation_purchase_reserved_db_instances_offering(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("ReservedDBInstance") /* ReservedDBInstance com.amazonaws.rds.synthetic#PurchaseReservedDBInstancesOfferingOutput$ReservedDBInstance */ =>  {
-                let var_388 =
+                let var_362 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_reserved_db_instance(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_reserved_db_instance(var_388);
+                builder = builder.set_reserved_db_instance(var_362);
             }
             ,
             _ => {}
@@ -11351,13 +10693,13 @@ pub fn deser_operation_crate_operation_reboot_db_cluster(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBCluster") /* DBCluster com.amazonaws.rds.synthetic#RebootDBClusterOutput$DBCluster */ =>  {
-                let var_389 =
+                let var_363 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster(var_389);
+                builder = builder.set_db_cluster(var_363);
             }
             ,
             _ => {}
@@ -11399,13 +10741,13 @@ pub fn deser_operation_crate_operation_reboot_db_instance(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBInstance") /* DBInstance com.amazonaws.rds.synthetic#RebootDBInstanceOutput$DBInstance */ =>  {
-                let var_390 =
+                let var_364 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_instance(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_instance(var_390);
+                builder = builder.set_db_instance(var_364);
             }
             ,
             _ => {}
@@ -11437,7 +10779,7 @@ pub fn deser_structure_crate_error_db_proxy_target_already_registered_fault_xml_
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBProxyTargetAlreadyRegisteredFault$message */ =>  {
-                let var_391 =
+                let var_365 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11446,7 +10788,7 @@ pub fn deser_structure_crate_error_db_proxy_target_already_registered_fault_xml_
                         ?
                     )
                 ;
-                builder = builder.set_message(var_391);
+                builder = builder.set_message(var_365);
             }
             ,
             _ => {}
@@ -11473,7 +10815,7 @@ pub fn deser_structure_crate_error_insufficient_available_i_ps_in_subnet_fault_x
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InsufficientAvailableIPsInSubnetFault$message */ =>  {
-                let var_392 =
+                let var_366 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11482,7 +10824,7 @@ pub fn deser_structure_crate_error_insufficient_available_i_ps_in_subnet_fault_x
                         ?
                     )
                 ;
-                builder = builder.set_message(var_392);
+                builder = builder.set_message(var_366);
             }
             ,
             _ => {}
@@ -11522,13 +10864,13 @@ pub fn deser_operation_crate_operation_register_db_proxy_targets(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBProxyTargets") /* DBProxyTargets com.amazonaws.rds.synthetic#RegisterDBProxyTargetsOutput$DBProxyTargets */ =>  {
-                let var_393 =
+                let var_367 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_target_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_proxy_targets(var_393);
+                builder = builder.set_db_proxy_targets(var_367);
             }
             ,
             _ => {}
@@ -11573,13 +10915,13 @@ pub fn deser_operation_crate_operation_remove_from_global_cluster(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("GlobalCluster") /* GlobalCluster com.amazonaws.rds.synthetic#RemoveFromGlobalClusterOutput$GlobalCluster */ =>  {
-                let var_394 =
+                let var_368 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_global_cluster(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_global_cluster(var_394);
+                builder = builder.set_global_cluster(var_368);
             }
             ,
             _ => {}
@@ -11609,7 +10951,7 @@ pub fn deser_structure_crate_error_db_cluster_role_not_found_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBClusterRoleNotFoundFault$message */ =>  {
-                let var_395 =
+                let var_369 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11618,7 +10960,7 @@ pub fn deser_structure_crate_error_db_cluster_role_not_found_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_395);
+                builder = builder.set_message(var_369);
             }
             ,
             _ => {}
@@ -11643,7 +10985,7 @@ pub fn deser_structure_crate_error_db_instance_role_not_found_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#DBInstanceRoleNotFoundFault$message */ =>  {
-                let var_396 =
+                let var_370 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11652,7 +10994,7 @@ pub fn deser_structure_crate_error_db_instance_role_not_found_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_396);
+                builder = builder.set_message(var_370);
             }
             ,
             _ => {}
@@ -11692,13 +11034,13 @@ pub fn deser_operation_crate_operation_remove_source_identifier_from_subscriptio
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("EventSubscription") /* EventSubscription com.amazonaws.rds.synthetic#RemoveSourceIdentifierFromSubscriptionOutput$EventSubscription */ =>  {
-                let var_397 =
+                let var_371 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_event_subscription(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_event_subscription(var_397);
+                builder = builder.set_event_subscription(var_371);
             }
             ,
             _ => {}
@@ -11743,7 +11085,7 @@ pub fn deser_operation_crate_operation_reset_db_cluster_parameter_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBClusterParameterGroupName") /* DBClusterParameterGroupName com.amazonaws.rds.synthetic#ResetDBClusterParameterGroupOutput$DBClusterParameterGroupName */ =>  {
-                let var_398 =
+                let var_372 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11752,7 +11094,7 @@ pub fn deser_operation_crate_operation_reset_db_cluster_parameter_group(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_parameter_group_name(var_398);
+                builder = builder.set_db_cluster_parameter_group_name(var_372);
             }
             ,
             _ => {}
@@ -11795,7 +11137,7 @@ pub fn deser_operation_crate_operation_reset_db_parameter_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBParameterGroupName") /* DBParameterGroupName com.amazonaws.rds.synthetic#ResetDBParameterGroupOutput$DBParameterGroupName */ =>  {
-                let var_399 =
+                let var_373 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11804,7 +11146,7 @@ pub fn deser_operation_crate_operation_reset_db_parameter_group(
                         ?
                     )
                 ;
-                builder = builder.set_db_parameter_group_name(var_399);
+                builder = builder.set_db_parameter_group_name(var_373);
             }
             ,
             _ => {}
@@ -11833,7 +11175,7 @@ pub fn deser_structure_crate_error_invalid_s3_bucket_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InvalidS3BucketFault$message */ =>  {
-                let var_400 =
+                let var_374 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11842,7 +11184,7 @@ pub fn deser_structure_crate_error_invalid_s3_bucket_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_400);
+                builder = builder.set_message(var_374);
             }
             ,
             _ => {}
@@ -11882,13 +11224,13 @@ pub fn deser_operation_crate_operation_restore_db_cluster_from_s3(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBCluster") /* DBCluster com.amazonaws.rds.synthetic#RestoreDBClusterFromS3Output$DBCluster */ =>  {
-                let var_401 =
+                let var_375 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster(var_401);
+                builder = builder.set_db_cluster(var_375);
             }
             ,
             _ => {}
@@ -11920,7 +11262,7 @@ pub fn deser_structure_crate_error_insufficient_db_cluster_capacity_fault_xml_er
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InsufficientDBClusterCapacityFault$message */ =>  {
-                let var_402 =
+                let var_376 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11929,7 +11271,7 @@ pub fn deser_structure_crate_error_insufficient_db_cluster_capacity_fault_xml_er
                         ?
                     )
                 ;
-                builder = builder.set_message(var_402);
+                builder = builder.set_message(var_376);
             }
             ,
             _ => {}
@@ -11953,7 +11295,7 @@ pub fn deser_structure_crate_error_invalid_restore_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InvalidRestoreFault$message */ =>  {
-                let var_403 =
+                let var_377 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11962,7 +11304,7 @@ pub fn deser_structure_crate_error_invalid_restore_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_403);
+                builder = builder.set_message(var_377);
             }
             ,
             _ => {}
@@ -12002,13 +11344,13 @@ pub fn deser_operation_crate_operation_restore_db_cluster_from_snapshot(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBCluster") /* DBCluster com.amazonaws.rds.synthetic#RestoreDBClusterFromSnapshotOutput$DBCluster */ =>  {
-                let var_404 =
+                let var_378 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster(var_404);
+                builder = builder.set_db_cluster(var_378);
             }
             ,
             _ => {}
@@ -12053,13 +11395,13 @@ pub fn deser_operation_crate_operation_restore_db_cluster_to_point_in_time(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBCluster") /* DBCluster com.amazonaws.rds.synthetic#RestoreDBClusterToPointInTimeOutput$DBCluster */ =>  {
-                let var_405 =
+                let var_379 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster(var_405);
+                builder = builder.set_db_cluster(var_379);
             }
             ,
             _ => {}
@@ -12104,13 +11446,13 @@ pub fn deser_operation_crate_operation_restore_db_instance_from_db_snapshot(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBInstance") /* DBInstance com.amazonaws.rds.synthetic#RestoreDBInstanceFromDBSnapshotOutput$DBInstance */ =>  {
-                let var_406 =
+                let var_380 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_instance(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_instance(var_406);
+                builder = builder.set_db_instance(var_380);
             }
             ,
             _ => {}
@@ -12155,13 +11497,13 @@ pub fn deser_operation_crate_operation_restore_db_instance_from_s3(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBInstance") /* DBInstance com.amazonaws.rds.synthetic#RestoreDBInstanceFromS3Output$DBInstance */ =>  {
-                let var_407 =
+                let var_381 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_instance(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_instance(var_407);
+                builder = builder.set_db_instance(var_381);
             }
             ,
             _ => {}
@@ -12193,7 +11535,7 @@ pub fn deser_structure_crate_error_point_in_time_restore_not_enabled_fault_xml_e
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#PointInTimeRestoreNotEnabledFault$message */ =>  {
-                let var_408 =
+                let var_382 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12202,7 +11544,7 @@ pub fn deser_structure_crate_error_point_in_time_restore_not_enabled_fault_xml_e
                         ?
                     )
                 ;
-                builder = builder.set_message(var_408);
+                builder = builder.set_message(var_382);
             }
             ,
             _ => {}
@@ -12242,13 +11584,13 @@ pub fn deser_operation_crate_operation_restore_db_instance_to_point_in_time(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBInstance") /* DBInstance com.amazonaws.rds.synthetic#RestoreDBInstanceToPointInTimeOutput$DBInstance */ =>  {
-                let var_409 =
+                let var_383 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_instance(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_instance(var_409);
+                builder = builder.set_db_instance(var_383);
             }
             ,
             _ => {}
@@ -12293,13 +11635,13 @@ pub fn deser_operation_crate_operation_revoke_db_security_group_ingress(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBSecurityGroup") /* DBSecurityGroup com.amazonaws.rds.synthetic#RevokeDBSecurityGroupIngressOutput$DBSecurityGroup */ =>  {
-                let var_410 =
+                let var_384 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_security_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_security_group(var_410);
+                builder = builder.set_db_security_group(var_384);
             }
             ,
             _ => {}
@@ -12342,7 +11684,7 @@ pub fn deser_operation_crate_operation_start_activity_stream(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.rds.synthetic#StartActivityStreamOutput$KmsKeyId */ =>  {
-                let var_411 =
+                let var_385 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12351,11 +11693,11 @@ pub fn deser_operation_crate_operation_start_activity_stream(
                         ?
                     )
                 ;
-                builder = builder.set_kms_key_id(var_411);
+                builder = builder.set_kms_key_id(var_385);
             }
             ,
             s if s.matches("KinesisStreamName") /* KinesisStreamName com.amazonaws.rds.synthetic#StartActivityStreamOutput$KinesisStreamName */ =>  {
-                let var_412 =
+                let var_386 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12364,11 +11706,11 @@ pub fn deser_operation_crate_operation_start_activity_stream(
                         ?
                     )
                 ;
-                builder = builder.set_kinesis_stream_name(var_412);
+                builder = builder.set_kinesis_stream_name(var_386);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#StartActivityStreamOutput$Status */ =>  {
-                let var_413 =
+                let var_387 =
                     Some(
                         Result::<crate::model::ActivityStreamStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::ActivityStreamStatus::from(
@@ -12378,11 +11720,11 @@ pub fn deser_operation_crate_operation_start_activity_stream(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_413);
+                builder = builder.set_status(var_387);
             }
             ,
             s if s.matches("Mode") /* Mode com.amazonaws.rds.synthetic#StartActivityStreamOutput$Mode */ =>  {
-                let var_414 =
+                let var_388 =
                     Some(
                         Result::<crate::model::ActivityStreamMode, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::ActivityStreamMode::from(
@@ -12392,11 +11734,11 @@ pub fn deser_operation_crate_operation_start_activity_stream(
                         ?
                     )
                 ;
-                builder = builder.set_mode(var_414);
+                builder = builder.set_mode(var_388);
             }
             ,
             s if s.matches("ApplyImmediately") /* ApplyImmediately com.amazonaws.rds.synthetic#StartActivityStreamOutput$ApplyImmediately */ =>  {
-                let var_415 =
+                let var_389 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12407,11 +11749,11 @@ pub fn deser_operation_crate_operation_start_activity_stream(
                         ?
                     )
                 ;
-                builder = builder.set_apply_immediately(var_415);
+                builder = builder.set_apply_immediately(var_389);
             }
             ,
             s if s.matches("EngineNativeAuditFieldsIncluded") /* EngineNativeAuditFieldsIncluded com.amazonaws.rds.synthetic#StartActivityStreamOutput$EngineNativeAuditFieldsIncluded */ =>  {
-                let var_416 =
+                let var_390 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12422,7 +11764,7 @@ pub fn deser_operation_crate_operation_start_activity_stream(
                         ?
                     )
                 ;
-                builder = builder.set_engine_native_audit_fields_included(var_416);
+                builder = builder.set_engine_native_audit_fields_included(var_390);
             }
             ,
             _ => {}
@@ -12464,13 +11806,13 @@ pub fn deser_operation_crate_operation_start_db_cluster(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBCluster") /* DBCluster com.amazonaws.rds.synthetic#StartDBClusterOutput$DBCluster */ =>  {
-                let var_417 =
+                let var_391 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster(var_417);
+                builder = builder.set_db_cluster(var_391);
             }
             ,
             _ => {}
@@ -12512,13 +11854,13 @@ pub fn deser_operation_crate_operation_start_db_instance(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBInstance") /* DBInstance com.amazonaws.rds.synthetic#StartDBInstanceOutput$DBInstance */ =>  {
-                let var_418 =
+                let var_392 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_instance(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_instance(var_418);
+                builder = builder.set_db_instance(var_392);
             }
             ,
             _ => {}
@@ -12560,13 +11902,13 @@ pub fn deser_operation_crate_operation_start_db_instance_automated_backups_repli
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBInstanceAutomatedBackup") /* DBInstanceAutomatedBackup com.amazonaws.rds.synthetic#StartDBInstanceAutomatedBackupsReplicationOutput$DBInstanceAutomatedBackup */ =>  {
-                let var_419 =
+                let var_393 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_instance_automated_backup(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_automated_backup(var_419);
+                builder = builder.set_db_instance_automated_backup(var_393);
             }
             ,
             _ => {}
@@ -12596,7 +11938,7 @@ pub fn deser_structure_crate_error_export_task_already_exists_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#ExportTaskAlreadyExistsFault$message */ =>  {
-                let var_420 =
+                let var_394 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12605,7 +11947,7 @@ pub fn deser_structure_crate_error_export_task_already_exists_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_420);
+                builder = builder.set_message(var_394);
             }
             ,
             _ => {}
@@ -12632,7 +11974,7 @@ pub fn deser_structure_crate_error_iam_role_missing_permissions_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#IamRoleMissingPermissionsFault$message */ =>  {
-                let var_421 =
+                let var_395 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12641,7 +11983,7 @@ pub fn deser_structure_crate_error_iam_role_missing_permissions_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_421);
+                builder = builder.set_message(var_395);
             }
             ,
             _ => {}
@@ -12665,7 +12007,7 @@ pub fn deser_structure_crate_error_iam_role_not_found_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#IamRoleNotFoundFault$message */ =>  {
-                let var_422 =
+                let var_396 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12674,7 +12016,7 @@ pub fn deser_structure_crate_error_iam_role_not_found_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_422);
+                builder = builder.set_message(var_396);
             }
             ,
             _ => {}
@@ -12698,7 +12040,7 @@ pub fn deser_structure_crate_error_invalid_export_only_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InvalidExportOnlyFault$message */ =>  {
-                let var_423 =
+                let var_397 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12707,7 +12049,7 @@ pub fn deser_structure_crate_error_invalid_export_only_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_423);
+                builder = builder.set_message(var_397);
             }
             ,
             _ => {}
@@ -12734,7 +12076,7 @@ pub fn deser_structure_crate_error_invalid_export_source_state_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.rds#InvalidExportSourceStateFault$message */ =>  {
-                let var_424 =
+                let var_398 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12743,7 +12085,7 @@ pub fn deser_structure_crate_error_invalid_export_source_state_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_424);
+                builder = builder.set_message(var_398);
             }
             ,
             _ => {}
@@ -12780,7 +12122,7 @@ pub fn deser_operation_crate_operation_start_export_task(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("ExportTaskIdentifier") /* ExportTaskIdentifier com.amazonaws.rds.synthetic#StartExportTaskOutput$ExportTaskIdentifier */ =>  {
-                let var_425 =
+                let var_399 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12789,11 +12131,11 @@ pub fn deser_operation_crate_operation_start_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_export_task_identifier(var_425);
+                builder = builder.set_export_task_identifier(var_399);
             }
             ,
             s if s.matches("SourceArn") /* SourceArn com.amazonaws.rds.synthetic#StartExportTaskOutput$SourceArn */ =>  {
-                let var_426 =
+                let var_400 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12802,21 +12144,21 @@ pub fn deser_operation_crate_operation_start_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_source_arn(var_426);
+                builder = builder.set_source_arn(var_400);
             }
             ,
             s if s.matches("ExportOnly") /* ExportOnly com.amazonaws.rds.synthetic#StartExportTaskOutput$ExportOnly */ =>  {
-                let var_427 =
+                let var_401 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_export_only(var_427);
+                builder = builder.set_export_only(var_401);
             }
             ,
             s if s.matches("SnapshotTime") /* SnapshotTime com.amazonaws.rds.synthetic#StartExportTaskOutput$SnapshotTime */ =>  {
-                let var_428 =
+                let var_402 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12826,11 +12168,11 @@ pub fn deser_operation_crate_operation_start_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_snapshot_time(var_428);
+                builder = builder.set_snapshot_time(var_402);
             }
             ,
             s if s.matches("TaskStartTime") /* TaskStartTime com.amazonaws.rds.synthetic#StartExportTaskOutput$TaskStartTime */ =>  {
-                let var_429 =
+                let var_403 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12840,11 +12182,11 @@ pub fn deser_operation_crate_operation_start_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_task_start_time(var_429);
+                builder = builder.set_task_start_time(var_403);
             }
             ,
             s if s.matches("TaskEndTime") /* TaskEndTime com.amazonaws.rds.synthetic#StartExportTaskOutput$TaskEndTime */ =>  {
-                let var_430 =
+                let var_404 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12854,11 +12196,11 @@ pub fn deser_operation_crate_operation_start_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_task_end_time(var_430);
+                builder = builder.set_task_end_time(var_404);
             }
             ,
             s if s.matches("S3Bucket") /* S3Bucket com.amazonaws.rds.synthetic#StartExportTaskOutput$S3Bucket */ =>  {
-                let var_431 =
+                let var_405 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12867,11 +12209,11 @@ pub fn deser_operation_crate_operation_start_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_s3_bucket(var_431);
+                builder = builder.set_s3_bucket(var_405);
             }
             ,
             s if s.matches("S3Prefix") /* S3Prefix com.amazonaws.rds.synthetic#StartExportTaskOutput$S3Prefix */ =>  {
-                let var_432 =
+                let var_406 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12880,11 +12222,11 @@ pub fn deser_operation_crate_operation_start_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_s3_prefix(var_432);
+                builder = builder.set_s3_prefix(var_406);
             }
             ,
             s if s.matches("IamRoleArn") /* IamRoleArn com.amazonaws.rds.synthetic#StartExportTaskOutput$IamRoleArn */ =>  {
-                let var_433 =
+                let var_407 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12893,11 +12235,11 @@ pub fn deser_operation_crate_operation_start_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_iam_role_arn(var_433);
+                builder = builder.set_iam_role_arn(var_407);
             }
             ,
             s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.rds.synthetic#StartExportTaskOutput$KmsKeyId */ =>  {
-                let var_434 =
+                let var_408 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12906,11 +12248,11 @@ pub fn deser_operation_crate_operation_start_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_kms_key_id(var_434);
+                builder = builder.set_kms_key_id(var_408);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#StartExportTaskOutput$Status */ =>  {
-                let var_435 =
+                let var_409 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12919,11 +12261,11 @@ pub fn deser_operation_crate_operation_start_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_435);
+                builder = builder.set_status(var_409);
             }
             ,
             s if s.matches("PercentProgress") /* PercentProgress com.amazonaws.rds.synthetic#StartExportTaskOutput$PercentProgress */ =>  {
-                let var_436 =
+                let var_410 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12934,11 +12276,11 @@ pub fn deser_operation_crate_operation_start_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_percent_progress(var_436);
+                builder = builder.set_percent_progress(var_410);
             }
             ,
             s if s.matches("TotalExtractedDataInGB") /* TotalExtractedDataInGB com.amazonaws.rds.synthetic#StartExportTaskOutput$TotalExtractedDataInGB */ =>  {
-                let var_437 =
+                let var_411 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -12949,11 +12291,11 @@ pub fn deser_operation_crate_operation_start_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_total_extracted_data_in_gb(var_437);
+                builder = builder.set_total_extracted_data_in_gb(var_411);
             }
             ,
             s if s.matches("FailureCause") /* FailureCause com.amazonaws.rds.synthetic#StartExportTaskOutput$FailureCause */ =>  {
-                let var_438 =
+                let var_412 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12962,11 +12304,11 @@ pub fn deser_operation_crate_operation_start_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_failure_cause(var_438);
+                builder = builder.set_failure_cause(var_412);
             }
             ,
             s if s.matches("WarningMessage") /* WarningMessage com.amazonaws.rds.synthetic#StartExportTaskOutput$WarningMessage */ =>  {
-                let var_439 =
+                let var_413 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12975,7 +12317,7 @@ pub fn deser_operation_crate_operation_start_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_warning_message(var_439);
+                builder = builder.set_warning_message(var_413);
             }
             ,
             _ => {}
@@ -13017,7 +12359,7 @@ pub fn deser_operation_crate_operation_stop_activity_stream(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.rds.synthetic#StopActivityStreamOutput$KmsKeyId */ =>  {
-                let var_440 =
+                let var_414 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13026,11 +12368,11 @@ pub fn deser_operation_crate_operation_stop_activity_stream(
                         ?
                     )
                 ;
-                builder = builder.set_kms_key_id(var_440);
+                builder = builder.set_kms_key_id(var_414);
             }
             ,
             s if s.matches("KinesisStreamName") /* KinesisStreamName com.amazonaws.rds.synthetic#StopActivityStreamOutput$KinesisStreamName */ =>  {
-                let var_441 =
+                let var_415 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13039,11 +12381,11 @@ pub fn deser_operation_crate_operation_stop_activity_stream(
                         ?
                     )
                 ;
-                builder = builder.set_kinesis_stream_name(var_441);
+                builder = builder.set_kinesis_stream_name(var_415);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#StopActivityStreamOutput$Status */ =>  {
-                let var_442 =
+                let var_416 =
                     Some(
                         Result::<crate::model::ActivityStreamStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::ActivityStreamStatus::from(
@@ -13053,7 +12395,7 @@ pub fn deser_operation_crate_operation_stop_activity_stream(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_442);
+                builder = builder.set_status(var_416);
             }
             ,
             _ => {}
@@ -13095,13 +12437,13 @@ pub fn deser_operation_crate_operation_stop_db_cluster(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBCluster") /* DBCluster com.amazonaws.rds.synthetic#StopDBClusterOutput$DBCluster */ =>  {
-                let var_443 =
+                let var_417 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster(var_443);
+                builder = builder.set_db_cluster(var_417);
             }
             ,
             _ => {}
@@ -13143,13 +12485,13 @@ pub fn deser_operation_crate_operation_stop_db_instance(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBInstance") /* DBInstance com.amazonaws.rds.synthetic#StopDBInstanceOutput$DBInstance */ =>  {
-                let var_444 =
+                let var_418 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_instance(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_instance(var_444);
+                builder = builder.set_db_instance(var_418);
             }
             ,
             _ => {}
@@ -13194,13 +12536,13 @@ pub fn deser_operation_crate_operation_stop_db_instance_automated_backups_replic
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DBInstanceAutomatedBackup") /* DBInstanceAutomatedBackup com.amazonaws.rds.synthetic#StopDBInstanceAutomatedBackupsReplicationOutput$DBInstanceAutomatedBackup */ =>  {
-                let var_445 =
+                let var_419 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_db_instance_automated_backup(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_automated_backup(var_445);
+                builder = builder.set_db_instance_automated_backup(var_419);
             }
             ,
             _ => {}
@@ -13222,7 +12564,7 @@ pub fn deser_structure_crate_model_event_subscription(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CustomerAwsId") /* CustomerAwsId com.amazonaws.rds#EventSubscription$CustomerAwsId */ =>  {
-                let var_446 =
+                let var_420 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13231,11 +12573,11 @@ pub fn deser_structure_crate_model_event_subscription(
                         ?
                     )
                 ;
-                builder = builder.set_customer_aws_id(var_446);
+                builder = builder.set_customer_aws_id(var_420);
             }
             ,
             s if s.matches("CustSubscriptionId") /* CustSubscriptionId com.amazonaws.rds#EventSubscription$CustSubscriptionId */ =>  {
-                let var_447 =
+                let var_421 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13244,11 +12586,11 @@ pub fn deser_structure_crate_model_event_subscription(
                         ?
                     )
                 ;
-                builder = builder.set_cust_subscription_id(var_447);
+                builder = builder.set_cust_subscription_id(var_421);
             }
             ,
             s if s.matches("SnsTopicArn") /* SnsTopicArn com.amazonaws.rds#EventSubscription$SnsTopicArn */ =>  {
-                let var_448 =
+                let var_422 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13257,11 +12599,11 @@ pub fn deser_structure_crate_model_event_subscription(
                         ?
                     )
                 ;
-                builder = builder.set_sns_topic_arn(var_448);
+                builder = builder.set_sns_topic_arn(var_422);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#EventSubscription$Status */ =>  {
-                let var_449 =
+                let var_423 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13270,11 +12612,11 @@ pub fn deser_structure_crate_model_event_subscription(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_449);
+                builder = builder.set_status(var_423);
             }
             ,
             s if s.matches("SubscriptionCreationTime") /* SubscriptionCreationTime com.amazonaws.rds#EventSubscription$SubscriptionCreationTime */ =>  {
-                let var_450 =
+                let var_424 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13283,11 +12625,11 @@ pub fn deser_structure_crate_model_event_subscription(
                         ?
                     )
                 ;
-                builder = builder.set_subscription_creation_time(var_450);
+                builder = builder.set_subscription_creation_time(var_424);
             }
             ,
             s if s.matches("SourceType") /* SourceType com.amazonaws.rds#EventSubscription$SourceType */ =>  {
-                let var_451 =
+                let var_425 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13296,31 +12638,31 @@ pub fn deser_structure_crate_model_event_subscription(
                         ?
                     )
                 ;
-                builder = builder.set_source_type(var_451);
+                builder = builder.set_source_type(var_425);
             }
             ,
             s if s.matches("SourceIdsList") /* SourceIdsList com.amazonaws.rds#EventSubscription$SourceIdsList */ =>  {
-                let var_452 =
+                let var_426 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_source_ids_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_source_ids_list(var_452);
+                builder = builder.set_source_ids_list(var_426);
             }
             ,
             s if s.matches("EventCategoriesList") /* EventCategoriesList com.amazonaws.rds#EventSubscription$EventCategoriesList */ =>  {
-                let var_453 =
+                let var_427 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_event_categories_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_event_categories_list(var_453);
+                builder = builder.set_event_categories_list(var_427);
             }
             ,
             s if s.matches("Enabled") /* Enabled com.amazonaws.rds#EventSubscription$Enabled */ =>  {
-                let var_454 =
+                let var_428 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -13331,11 +12673,11 @@ pub fn deser_structure_crate_model_event_subscription(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_454);
+                builder = builder.set_enabled(var_428);
             }
             ,
             s if s.matches("EventSubscriptionArn") /* EventSubscriptionArn com.amazonaws.rds#EventSubscription$EventSubscriptionArn */ =>  {
-                let var_455 =
+                let var_429 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13344,7 +12686,7 @@ pub fn deser_structure_crate_model_event_subscription(
                         ?
                     )
                 ;
-                builder = builder.set_event_subscription_arn(var_455);
+                builder = builder.set_event_subscription_arn(var_429);
             }
             ,
             _ => {}
@@ -13361,7 +12703,7 @@ pub fn deser_structure_crate_model_resource_pending_maintenance_actions(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ResourceIdentifier") /* ResourceIdentifier com.amazonaws.rds#ResourcePendingMaintenanceActions$ResourceIdentifier */ =>  {
-                let var_456 =
+                let var_430 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13370,17 +12712,17 @@ pub fn deser_structure_crate_model_resource_pending_maintenance_actions(
                         ?
                     )
                 ;
-                builder = builder.set_resource_identifier(var_456);
+                builder = builder.set_resource_identifier(var_430);
             }
             ,
             s if s.matches("PendingMaintenanceActionDetails") /* PendingMaintenanceActionDetails com.amazonaws.rds#ResourcePendingMaintenanceActions$PendingMaintenanceActionDetails */ =>  {
-                let var_457 =
+                let var_431 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_pending_maintenance_action_details(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_pending_maintenance_action_details(var_457);
+                builder = builder.set_pending_maintenance_action_details(var_431);
             }
             ,
             _ => {}
@@ -13397,7 +12739,7 @@ pub fn deser_structure_crate_model_db_security_group(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("OwnerId") /* OwnerId com.amazonaws.rds#DBSecurityGroup$OwnerId */ =>  {
-                let var_458 =
+                let var_432 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13406,11 +12748,11 @@ pub fn deser_structure_crate_model_db_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_owner_id(var_458);
+                builder = builder.set_owner_id(var_432);
             }
             ,
             s if s.matches("DBSecurityGroupName") /* DBSecurityGroupName com.amazonaws.rds#DBSecurityGroup$DBSecurityGroupName */ =>  {
-                let var_459 =
+                let var_433 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13419,11 +12761,11 @@ pub fn deser_structure_crate_model_db_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_db_security_group_name(var_459);
+                builder = builder.set_db_security_group_name(var_433);
             }
             ,
             s if s.matches("DBSecurityGroupDescription") /* DBSecurityGroupDescription com.amazonaws.rds#DBSecurityGroup$DBSecurityGroupDescription */ =>  {
-                let var_460 =
+                let var_434 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13432,11 +12774,11 @@ pub fn deser_structure_crate_model_db_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_db_security_group_description(var_460);
+                builder = builder.set_db_security_group_description(var_434);
             }
             ,
             s if s.matches("VpcId") /* VpcId com.amazonaws.rds#DBSecurityGroup$VpcId */ =>  {
-                let var_461 =
+                let var_435 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13445,31 +12787,31 @@ pub fn deser_structure_crate_model_db_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_vpc_id(var_461);
+                builder = builder.set_vpc_id(var_435);
             }
             ,
             s if s.matches("EC2SecurityGroups") /* EC2SecurityGroups com.amazonaws.rds#DBSecurityGroup$EC2SecurityGroups */ =>  {
-                let var_462 =
+                let var_436 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_ec2_security_group_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_ec2_security_groups(var_462);
+                builder = builder.set_ec2_security_groups(var_436);
             }
             ,
             s if s.matches("IPRanges") /* IPRanges com.amazonaws.rds#DBSecurityGroup$IPRanges */ =>  {
-                let var_463 =
+                let var_437 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_ip_range_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_ip_ranges(var_463);
+                builder = builder.set_ip_ranges(var_437);
             }
             ,
             s if s.matches("DBSecurityGroupArn") /* DBSecurityGroupArn com.amazonaws.rds#DBSecurityGroup$DBSecurityGroupArn */ =>  {
-                let var_464 =
+                let var_438 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13478,7 +12820,7 @@ pub fn deser_structure_crate_model_db_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_db_security_group_arn(var_464);
+                builder = builder.set_db_security_group_arn(var_438);
             }
             ,
             _ => {}
@@ -13517,7 +12859,7 @@ pub fn deser_structure_crate_model_db_cluster_parameter_group(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBClusterParameterGroupName") /* DBClusterParameterGroupName com.amazonaws.rds#DBClusterParameterGroup$DBClusterParameterGroupName */ =>  {
-                let var_465 =
+                let var_439 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13526,11 +12868,11 @@ pub fn deser_structure_crate_model_db_cluster_parameter_group(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_parameter_group_name(var_465);
+                builder = builder.set_db_cluster_parameter_group_name(var_439);
             }
             ,
             s if s.matches("DBParameterGroupFamily") /* DBParameterGroupFamily com.amazonaws.rds#DBClusterParameterGroup$DBParameterGroupFamily */ =>  {
-                let var_466 =
+                let var_440 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13539,11 +12881,11 @@ pub fn deser_structure_crate_model_db_cluster_parameter_group(
                         ?
                     )
                 ;
-                builder = builder.set_db_parameter_group_family(var_466);
+                builder = builder.set_db_parameter_group_family(var_440);
             }
             ,
             s if s.matches("Description") /* Description com.amazonaws.rds#DBClusterParameterGroup$Description */ =>  {
-                let var_467 =
+                let var_441 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13552,11 +12894,11 @@ pub fn deser_structure_crate_model_db_cluster_parameter_group(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_467);
+                builder = builder.set_description(var_441);
             }
             ,
             s if s.matches("DBClusterParameterGroupArn") /* DBClusterParameterGroupArn com.amazonaws.rds#DBClusterParameterGroup$DBClusterParameterGroupArn */ =>  {
-                let var_468 =
+                let var_442 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13565,7 +12907,7 @@ pub fn deser_structure_crate_model_db_cluster_parameter_group(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_parameter_group_arn(var_468);
+                builder = builder.set_db_cluster_parameter_group_arn(var_442);
             }
             ,
             _ => {}
@@ -13582,17 +12924,17 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.rds#DBClusterSnapshot$AvailabilityZones */ =>  {
-                let var_469 =
+                let var_443 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_availability_zones(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_availability_zones(var_469);
+                builder = builder.set_availability_zones(var_443);
             }
             ,
             s if s.matches("DBClusterSnapshotIdentifier") /* DBClusterSnapshotIdentifier com.amazonaws.rds#DBClusterSnapshot$DBClusterSnapshotIdentifier */ =>  {
-                let var_470 =
+                let var_444 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13601,11 +12943,11 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_snapshot_identifier(var_470);
+                builder = builder.set_db_cluster_snapshot_identifier(var_444);
             }
             ,
             s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.rds#DBClusterSnapshot$DBClusterIdentifier */ =>  {
-                let var_471 =
+                let var_445 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13614,11 +12956,11 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_identifier(var_471);
+                builder = builder.set_db_cluster_identifier(var_445);
             }
             ,
             s if s.matches("SnapshotCreateTime") /* SnapshotCreateTime com.amazonaws.rds#DBClusterSnapshot$SnapshotCreateTime */ =>  {
-                let var_472 =
+                let var_446 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13628,11 +12970,11 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_snapshot_create_time(var_472);
+                builder = builder.set_snapshot_create_time(var_446);
             }
             ,
             s if s.matches("Engine") /* Engine com.amazonaws.rds#DBClusterSnapshot$Engine */ =>  {
-                let var_473 =
+                let var_447 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13641,11 +12983,11 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_473);
+                builder = builder.set_engine(var_447);
             }
             ,
             s if s.matches("EngineMode") /* EngineMode com.amazonaws.rds#DBClusterSnapshot$EngineMode */ =>  {
-                let var_474 =
+                let var_448 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13654,11 +12996,11 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_engine_mode(var_474);
+                builder = builder.set_engine_mode(var_448);
             }
             ,
             s if s.matches("AllocatedStorage") /* AllocatedStorage com.amazonaws.rds#DBClusterSnapshot$AllocatedStorage */ =>  {
-                let var_475 =
+                let var_449 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -13669,11 +13011,11 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_allocated_storage(var_475);
+                builder = builder.set_allocated_storage(var_449);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#DBClusterSnapshot$Status */ =>  {
-                let var_476 =
+                let var_450 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13682,11 +13024,11 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_476);
+                builder = builder.set_status(var_450);
             }
             ,
             s if s.matches("Port") /* Port com.amazonaws.rds#DBClusterSnapshot$Port */ =>  {
-                let var_477 =
+                let var_451 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -13697,11 +13039,11 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_port(var_477);
+                builder = builder.set_port(var_451);
             }
             ,
             s if s.matches("VpcId") /* VpcId com.amazonaws.rds#DBClusterSnapshot$VpcId */ =>  {
-                let var_478 =
+                let var_452 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13710,11 +13052,11 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_vpc_id(var_478);
+                builder = builder.set_vpc_id(var_452);
             }
             ,
             s if s.matches("ClusterCreateTime") /* ClusterCreateTime com.amazonaws.rds#DBClusterSnapshot$ClusterCreateTime */ =>  {
-                let var_479 =
+                let var_453 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13724,11 +13066,11 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_cluster_create_time(var_479);
+                builder = builder.set_cluster_create_time(var_453);
             }
             ,
             s if s.matches("MasterUsername") /* MasterUsername com.amazonaws.rds#DBClusterSnapshot$MasterUsername */ =>  {
-                let var_480 =
+                let var_454 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13737,11 +13079,11 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_master_username(var_480);
+                builder = builder.set_master_username(var_454);
             }
             ,
             s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds#DBClusterSnapshot$EngineVersion */ =>  {
-                let var_481 =
+                let var_455 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13750,11 +13092,11 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_engine_version(var_481);
+                builder = builder.set_engine_version(var_455);
             }
             ,
             s if s.matches("LicenseModel") /* LicenseModel com.amazonaws.rds#DBClusterSnapshot$LicenseModel */ =>  {
-                let var_482 =
+                let var_456 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13763,11 +13105,11 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_license_model(var_482);
+                builder = builder.set_license_model(var_456);
             }
             ,
             s if s.matches("SnapshotType") /* SnapshotType com.amazonaws.rds#DBClusterSnapshot$SnapshotType */ =>  {
-                let var_483 =
+                let var_457 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13776,11 +13118,11 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_snapshot_type(var_483);
+                builder = builder.set_snapshot_type(var_457);
             }
             ,
             s if s.matches("PercentProgress") /* PercentProgress com.amazonaws.rds#DBClusterSnapshot$PercentProgress */ =>  {
-                let var_484 =
+                let var_458 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -13791,11 +13133,11 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_percent_progress(var_484);
+                builder = builder.set_percent_progress(var_458);
             }
             ,
             s if s.matches("StorageEncrypted") /* StorageEncrypted com.amazonaws.rds#DBClusterSnapshot$StorageEncrypted */ =>  {
-                let var_485 =
+                let var_459 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -13806,11 +13148,11 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_storage_encrypted(var_485);
+                builder = builder.set_storage_encrypted(var_459);
             }
             ,
             s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.rds#DBClusterSnapshot$KmsKeyId */ =>  {
-                let var_486 =
+                let var_460 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13819,11 +13161,11 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_kms_key_id(var_486);
+                builder = builder.set_kms_key_id(var_460);
             }
             ,
             s if s.matches("DBClusterSnapshotArn") /* DBClusterSnapshotArn com.amazonaws.rds#DBClusterSnapshot$DBClusterSnapshotArn */ =>  {
-                let var_487 =
+                let var_461 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13832,11 +13174,11 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_snapshot_arn(var_487);
+                builder = builder.set_db_cluster_snapshot_arn(var_461);
             }
             ,
             s if s.matches("SourceDBClusterSnapshotArn") /* SourceDBClusterSnapshotArn com.amazonaws.rds#DBClusterSnapshot$SourceDBClusterSnapshotArn */ =>  {
-                let var_488 =
+                let var_462 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13845,11 +13187,11 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_source_db_cluster_snapshot_arn(var_488);
+                builder = builder.set_source_db_cluster_snapshot_arn(var_462);
             }
             ,
             s if s.matches("IAMDatabaseAuthenticationEnabled") /* IAMDatabaseAuthenticationEnabled com.amazonaws.rds#DBClusterSnapshot$IAMDatabaseAuthenticationEnabled */ =>  {
-                let var_489 =
+                let var_463 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -13860,17 +13202,17 @@ pub fn deser_structure_crate_model_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_iam_database_authentication_enabled(var_489);
+                builder = builder.set_iam_database_authentication_enabled(var_463);
             }
             ,
             s if s.matches("TagList") /* TagList com.amazonaws.rds#DBClusterSnapshot$TagList */ =>  {
-                let var_490 =
+                let var_464 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tag_list(var_490);
+                builder = builder.set_tag_list(var_464);
             }
             ,
             _ => {}
@@ -13887,7 +13229,7 @@ pub fn deser_structure_crate_model_db_parameter_group(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBParameterGroupName") /* DBParameterGroupName com.amazonaws.rds#DBParameterGroup$DBParameterGroupName */ =>  {
-                let var_491 =
+                let var_465 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13896,11 +13238,11 @@ pub fn deser_structure_crate_model_db_parameter_group(
                         ?
                     )
                 ;
-                builder = builder.set_db_parameter_group_name(var_491);
+                builder = builder.set_db_parameter_group_name(var_465);
             }
             ,
             s if s.matches("DBParameterGroupFamily") /* DBParameterGroupFamily com.amazonaws.rds#DBParameterGroup$DBParameterGroupFamily */ =>  {
-                let var_492 =
+                let var_466 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13909,11 +13251,11 @@ pub fn deser_structure_crate_model_db_parameter_group(
                         ?
                     )
                 ;
-                builder = builder.set_db_parameter_group_family(var_492);
+                builder = builder.set_db_parameter_group_family(var_466);
             }
             ,
             s if s.matches("Description") /* Description com.amazonaws.rds#DBParameterGroup$Description */ =>  {
-                let var_493 =
+                let var_467 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13922,11 +13264,11 @@ pub fn deser_structure_crate_model_db_parameter_group(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_493);
+                builder = builder.set_description(var_467);
             }
             ,
             s if s.matches("DBParameterGroupArn") /* DBParameterGroupArn com.amazonaws.rds#DBParameterGroup$DBParameterGroupArn */ =>  {
-                let var_494 =
+                let var_468 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13935,7 +13277,7 @@ pub fn deser_structure_crate_model_db_parameter_group(
                         ?
                     )
                 ;
-                builder = builder.set_db_parameter_group_arn(var_494);
+                builder = builder.set_db_parameter_group_arn(var_468);
             }
             ,
             _ => {}
@@ -13952,7 +13294,7 @@ pub fn deser_structure_crate_model_db_snapshot(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBSnapshotIdentifier") /* DBSnapshotIdentifier com.amazonaws.rds#DBSnapshot$DBSnapshotIdentifier */ =>  {
-                let var_495 =
+                let var_469 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13961,11 +13303,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_db_snapshot_identifier(var_495);
+                builder = builder.set_db_snapshot_identifier(var_469);
             }
             ,
             s if s.matches("DBInstanceIdentifier") /* DBInstanceIdentifier com.amazonaws.rds#DBSnapshot$DBInstanceIdentifier */ =>  {
-                let var_496 =
+                let var_470 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13974,11 +13316,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_identifier(var_496);
+                builder = builder.set_db_instance_identifier(var_470);
             }
             ,
             s if s.matches("SnapshotCreateTime") /* SnapshotCreateTime com.amazonaws.rds#DBSnapshot$SnapshotCreateTime */ =>  {
-                let var_497 =
+                let var_471 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -13988,11 +13330,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_snapshot_create_time(var_497);
+                builder = builder.set_snapshot_create_time(var_471);
             }
             ,
             s if s.matches("Engine") /* Engine com.amazonaws.rds#DBSnapshot$Engine */ =>  {
-                let var_498 =
+                let var_472 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14001,11 +13343,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_498);
+                builder = builder.set_engine(var_472);
             }
             ,
             s if s.matches("AllocatedStorage") /* AllocatedStorage com.amazonaws.rds#DBSnapshot$AllocatedStorage */ =>  {
-                let var_499 =
+                let var_473 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -14016,11 +13358,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_allocated_storage(var_499);
+                builder = builder.set_allocated_storage(var_473);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#DBSnapshot$Status */ =>  {
-                let var_500 =
+                let var_474 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14029,11 +13371,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_500);
+                builder = builder.set_status(var_474);
             }
             ,
             s if s.matches("Port") /* Port com.amazonaws.rds#DBSnapshot$Port */ =>  {
-                let var_501 =
+                let var_475 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -14044,11 +13386,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_port(var_501);
+                builder = builder.set_port(var_475);
             }
             ,
             s if s.matches("AvailabilityZone") /* AvailabilityZone com.amazonaws.rds#DBSnapshot$AvailabilityZone */ =>  {
-                let var_502 =
+                let var_476 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14057,11 +13399,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_availability_zone(var_502);
+                builder = builder.set_availability_zone(var_476);
             }
             ,
             s if s.matches("VpcId") /* VpcId com.amazonaws.rds#DBSnapshot$VpcId */ =>  {
-                let var_503 =
+                let var_477 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14070,11 +13412,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_vpc_id(var_503);
+                builder = builder.set_vpc_id(var_477);
             }
             ,
             s if s.matches("InstanceCreateTime") /* InstanceCreateTime com.amazonaws.rds#DBSnapshot$InstanceCreateTime */ =>  {
-                let var_504 =
+                let var_478 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14084,11 +13426,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_instance_create_time(var_504);
+                builder = builder.set_instance_create_time(var_478);
             }
             ,
             s if s.matches("MasterUsername") /* MasterUsername com.amazonaws.rds#DBSnapshot$MasterUsername */ =>  {
-                let var_505 =
+                let var_479 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14097,11 +13439,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_master_username(var_505);
+                builder = builder.set_master_username(var_479);
             }
             ,
             s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds#DBSnapshot$EngineVersion */ =>  {
-                let var_506 =
+                let var_480 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14110,11 +13452,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_engine_version(var_506);
+                builder = builder.set_engine_version(var_480);
             }
             ,
             s if s.matches("LicenseModel") /* LicenseModel com.amazonaws.rds#DBSnapshot$LicenseModel */ =>  {
-                let var_507 =
+                let var_481 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14123,11 +13465,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_license_model(var_507);
+                builder = builder.set_license_model(var_481);
             }
             ,
             s if s.matches("SnapshotType") /* SnapshotType com.amazonaws.rds#DBSnapshot$SnapshotType */ =>  {
-                let var_508 =
+                let var_482 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14136,11 +13478,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_snapshot_type(var_508);
+                builder = builder.set_snapshot_type(var_482);
             }
             ,
             s if s.matches("Iops") /* Iops com.amazonaws.rds#DBSnapshot$Iops */ =>  {
-                let var_509 =
+                let var_483 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -14151,11 +13493,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_iops(var_509);
+                builder = builder.set_iops(var_483);
             }
             ,
             s if s.matches("OptionGroupName") /* OptionGroupName com.amazonaws.rds#DBSnapshot$OptionGroupName */ =>  {
-                let var_510 =
+                let var_484 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14164,11 +13506,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_option_group_name(var_510);
+                builder = builder.set_option_group_name(var_484);
             }
             ,
             s if s.matches("PercentProgress") /* PercentProgress com.amazonaws.rds#DBSnapshot$PercentProgress */ =>  {
-                let var_511 =
+                let var_485 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -14179,11 +13521,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_percent_progress(var_511);
+                builder = builder.set_percent_progress(var_485);
             }
             ,
             s if s.matches("SourceRegion") /* SourceRegion com.amazonaws.rds#DBSnapshot$SourceRegion */ =>  {
-                let var_512 =
+                let var_486 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14192,11 +13534,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_source_region(var_512);
+                builder = builder.set_source_region(var_486);
             }
             ,
             s if s.matches("SourceDBSnapshotIdentifier") /* SourceDBSnapshotIdentifier com.amazonaws.rds#DBSnapshot$SourceDBSnapshotIdentifier */ =>  {
-                let var_513 =
+                let var_487 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14205,11 +13547,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_source_db_snapshot_identifier(var_513);
+                builder = builder.set_source_db_snapshot_identifier(var_487);
             }
             ,
             s if s.matches("StorageType") /* StorageType com.amazonaws.rds#DBSnapshot$StorageType */ =>  {
-                let var_514 =
+                let var_488 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14218,11 +13560,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_storage_type(var_514);
+                builder = builder.set_storage_type(var_488);
             }
             ,
             s if s.matches("TdeCredentialArn") /* TdeCredentialArn com.amazonaws.rds#DBSnapshot$TdeCredentialArn */ =>  {
-                let var_515 =
+                let var_489 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14231,11 +13573,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_tde_credential_arn(var_515);
+                builder = builder.set_tde_credential_arn(var_489);
             }
             ,
             s if s.matches("Encrypted") /* Encrypted com.amazonaws.rds#DBSnapshot$Encrypted */ =>  {
-                let var_516 =
+                let var_490 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -14246,11 +13588,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_encrypted(var_516);
+                builder = builder.set_encrypted(var_490);
             }
             ,
             s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.rds#DBSnapshot$KmsKeyId */ =>  {
-                let var_517 =
+                let var_491 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14259,11 +13601,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_kms_key_id(var_517);
+                builder = builder.set_kms_key_id(var_491);
             }
             ,
             s if s.matches("DBSnapshotArn") /* DBSnapshotArn com.amazonaws.rds#DBSnapshot$DBSnapshotArn */ =>  {
-                let var_518 =
+                let var_492 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14272,11 +13614,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_db_snapshot_arn(var_518);
+                builder = builder.set_db_snapshot_arn(var_492);
             }
             ,
             s if s.matches("Timezone") /* Timezone com.amazonaws.rds#DBSnapshot$Timezone */ =>  {
-                let var_519 =
+                let var_493 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14285,11 +13627,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_timezone(var_519);
+                builder = builder.set_timezone(var_493);
             }
             ,
             s if s.matches("IAMDatabaseAuthenticationEnabled") /* IAMDatabaseAuthenticationEnabled com.amazonaws.rds#DBSnapshot$IAMDatabaseAuthenticationEnabled */ =>  {
-                let var_520 =
+                let var_494 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -14300,21 +13642,21 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_iam_database_authentication_enabled(var_520);
+                builder = builder.set_iam_database_authentication_enabled(var_494);
             }
             ,
             s if s.matches("ProcessorFeatures") /* ProcessorFeatures com.amazonaws.rds#DBSnapshot$ProcessorFeatures */ =>  {
-                let var_521 =
+                let var_495 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_processor_feature_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_processor_features(var_521);
+                builder = builder.set_processor_features(var_495);
             }
             ,
             s if s.matches("DbiResourceId") /* DbiResourceId com.amazonaws.rds#DBSnapshot$DbiResourceId */ =>  {
-                let var_522 =
+                let var_496 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14323,21 +13665,21 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_dbi_resource_id(var_522);
+                builder = builder.set_dbi_resource_id(var_496);
             }
             ,
             s if s.matches("TagList") /* TagList com.amazonaws.rds#DBSnapshot$TagList */ =>  {
-                let var_523 =
+                let var_497 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tag_list(var_523);
+                builder = builder.set_tag_list(var_497);
             }
             ,
             s if s.matches("OriginalSnapshotCreateTime") /* OriginalSnapshotCreateTime com.amazonaws.rds#DBSnapshot$OriginalSnapshotCreateTime */ =>  {
-                let var_524 =
+                let var_498 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14347,11 +13689,11 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_original_snapshot_create_time(var_524);
+                builder = builder.set_original_snapshot_create_time(var_498);
             }
             ,
             s if s.matches("SnapshotTarget") /* SnapshotTarget com.amazonaws.rds#DBSnapshot$SnapshotTarget */ =>  {
-                let var_525 =
+                let var_499 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14360,7 +13702,7 @@ pub fn deser_structure_crate_model_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_snapshot_target(var_525);
+                builder = builder.set_snapshot_target(var_499);
             }
             ,
             _ => {}
@@ -14377,7 +13719,7 @@ pub fn deser_structure_crate_model_option_group(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("OptionGroupName") /* OptionGroupName com.amazonaws.rds#OptionGroup$OptionGroupName */ =>  {
-                let var_526 =
+                let var_500 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14386,11 +13728,11 @@ pub fn deser_structure_crate_model_option_group(
                         ?
                     )
                 ;
-                builder = builder.set_option_group_name(var_526);
+                builder = builder.set_option_group_name(var_500);
             }
             ,
             s if s.matches("OptionGroupDescription") /* OptionGroupDescription com.amazonaws.rds#OptionGroup$OptionGroupDescription */ =>  {
-                let var_527 =
+                let var_501 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14399,11 +13741,11 @@ pub fn deser_structure_crate_model_option_group(
                         ?
                     )
                 ;
-                builder = builder.set_option_group_description(var_527);
+                builder = builder.set_option_group_description(var_501);
             }
             ,
             s if s.matches("EngineName") /* EngineName com.amazonaws.rds#OptionGroup$EngineName */ =>  {
-                let var_528 =
+                let var_502 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14412,11 +13754,11 @@ pub fn deser_structure_crate_model_option_group(
                         ?
                     )
                 ;
-                builder = builder.set_engine_name(var_528);
+                builder = builder.set_engine_name(var_502);
             }
             ,
             s if s.matches("MajorEngineVersion") /* MajorEngineVersion com.amazonaws.rds#OptionGroup$MajorEngineVersion */ =>  {
-                let var_529 =
+                let var_503 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14425,21 +13767,21 @@ pub fn deser_structure_crate_model_option_group(
                         ?
                     )
                 ;
-                builder = builder.set_major_engine_version(var_529);
+                builder = builder.set_major_engine_version(var_503);
             }
             ,
             s if s.matches("Options") /* Options com.amazonaws.rds#OptionGroup$Options */ =>  {
-                let var_530 =
+                let var_504 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_options_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_options(var_530);
+                builder = builder.set_options(var_504);
             }
             ,
             s if s.matches("AllowsVpcAndNonVpcInstanceMemberships") /* AllowsVpcAndNonVpcInstanceMemberships com.amazonaws.rds#OptionGroup$AllowsVpcAndNonVpcInstanceMemberships */ =>  {
-                let var_531 =
+                let var_505 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -14450,11 +13792,11 @@ pub fn deser_structure_crate_model_option_group(
                         ?
                     )
                 ;
-                builder = builder.set_allows_vpc_and_non_vpc_instance_memberships(var_531);
+                builder = builder.set_allows_vpc_and_non_vpc_instance_memberships(var_505);
             }
             ,
             s if s.matches("VpcId") /* VpcId com.amazonaws.rds#OptionGroup$VpcId */ =>  {
-                let var_532 =
+                let var_506 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14463,11 +13805,11 @@ pub fn deser_structure_crate_model_option_group(
                         ?
                     )
                 ;
-                builder = builder.set_vpc_id(var_532);
+                builder = builder.set_vpc_id(var_506);
             }
             ,
             s if s.matches("OptionGroupArn") /* OptionGroupArn com.amazonaws.rds#OptionGroup$OptionGroupArn */ =>  {
-                let var_533 =
+                let var_507 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14476,69 +13818,7 @@ pub fn deser_structure_crate_model_option_group(
                         ?
                     )
                 ;
-                builder = builder.set_option_group_arn(var_533);
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(builder.build())
-}
-
-pub fn deser_structure_crate_model_custom_availability_zone(
-    decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::CustomAvailabilityZone, aws_smithy_xml::decode::XmlError> {
-    #[allow(unused_mut)]
-    let mut builder = crate::model::CustomAvailabilityZone::builder();
-    while let Some(mut tag) = decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("CustomAvailabilityZoneId") /* CustomAvailabilityZoneId com.amazonaws.rds#CustomAvailabilityZone$CustomAvailabilityZoneId */ =>  {
-                let var_534 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_custom_availability_zone_id(var_534);
-            }
-            ,
-            s if s.matches("CustomAvailabilityZoneName") /* CustomAvailabilityZoneName com.amazonaws.rds#CustomAvailabilityZone$CustomAvailabilityZoneName */ =>  {
-                let var_535 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_custom_availability_zone_name(var_535);
-            }
-            ,
-            s if s.matches("CustomAvailabilityZoneStatus") /* CustomAvailabilityZoneStatus com.amazonaws.rds#CustomAvailabilityZone$CustomAvailabilityZoneStatus */ =>  {
-                let var_536 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_custom_availability_zone_status(var_536);
-            }
-            ,
-            s if s.matches("VpnDetails") /* VpnDetails com.amazonaws.rds#CustomAvailabilityZone$VpnDetails */ =>  {
-                let var_537 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_vpn_details(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_vpn_details(var_537);
+                builder = builder.set_option_group_arn(var_507);
             }
             ,
             _ => {}
@@ -14555,7 +13835,7 @@ pub fn deser_structure_crate_model_character_set(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CharacterSetName") /* CharacterSetName com.amazonaws.rds#CharacterSet$CharacterSetName */ =>  {
-                let var_538 =
+                let var_508 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14564,11 +13844,11 @@ pub fn deser_structure_crate_model_character_set(
                         ?
                     )
                 ;
-                builder = builder.set_character_set_name(var_538);
+                builder = builder.set_character_set_name(var_508);
             }
             ,
             s if s.matches("CharacterSetDescription") /* CharacterSetDescription com.amazonaws.rds#CharacterSet$CharacterSetDescription */ =>  {
-                let var_539 =
+                let var_509 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14577,7 +13857,7 @@ pub fn deser_structure_crate_model_character_set(
                         ?
                     )
                 ;
-                builder = builder.set_character_set_description(var_539);
+                builder = builder.set_character_set_description(var_509);
             }
             ,
             _ => {}
@@ -14736,7 +14016,7 @@ pub fn deser_structure_crate_model_db_cluster(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AllocatedStorage") /* AllocatedStorage com.amazonaws.rds#DBCluster$AllocatedStorage */ =>  {
-                let var_540 =
+                let var_510 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -14747,21 +14027,21 @@ pub fn deser_structure_crate_model_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_allocated_storage(var_540);
+                builder = builder.set_allocated_storage(var_510);
             }
             ,
             s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.rds#DBCluster$AvailabilityZones */ =>  {
-                let var_541 =
+                let var_511 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_availability_zones(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_availability_zones(var_541);
+                builder = builder.set_availability_zones(var_511);
             }
             ,
             s if s.matches("BackupRetentionPeriod") /* BackupRetentionPeriod com.amazonaws.rds#DBCluster$BackupRetentionPeriod */ =>  {
-                let var_542 =
+                let var_512 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -14772,11 +14052,11 @@ pub fn deser_structure_crate_model_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_backup_retention_period(var_542);
+                builder = builder.set_backup_retention_period(var_512);
             }
             ,
             s if s.matches("CharacterSetName") /* CharacterSetName com.amazonaws.rds#DBCluster$CharacterSetName */ =>  {
-                let var_543 =
+                let var_513 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14785,11 +14065,11 @@ pub fn deser_structure_crate_model_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_character_set_name(var_543);
+                builder = builder.set_character_set_name(var_513);
             }
             ,
             s if s.matches("DatabaseName") /* DatabaseName com.amazonaws.rds#DBCluster$DatabaseName */ =>  {
-                let var_544 =
+                let var_514 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -14798,10 +14078,393 @@ pub fn deser_structure_crate_model_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_database_name(var_544);
+                builder = builder.set_database_name(var_514);
             }
             ,
             s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.rds#DBCluster$DBClusterIdentifier */ =>  {
+                let var_515 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_cluster_identifier(var_515);
+            }
+            ,
+            s if s.matches("DBClusterParameterGroup") /* DBClusterParameterGroup com.amazonaws.rds#DBCluster$DBClusterParameterGroup */ =>  {
+                let var_516 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_cluster_parameter_group(var_516);
+            }
+            ,
+            s if s.matches("DBSubnetGroup") /* DBSubnetGroup com.amazonaws.rds#DBCluster$DBSubnetGroup */ =>  {
+                let var_517 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_subnet_group(var_517);
+            }
+            ,
+            s if s.matches("Status") /* Status com.amazonaws.rds#DBCluster$Status */ =>  {
+                let var_518 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_status(var_518);
+            }
+            ,
+            s if s.matches("AutomaticRestartTime") /* AutomaticRestartTime com.amazonaws.rds#DBCluster$AutomaticRestartTime */ =>  {
+                let var_519 =
+                    Some(
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_automatic_restart_time(var_519);
+            }
+            ,
+            s if s.matches("PercentProgress") /* PercentProgress com.amazonaws.rds#DBCluster$PercentProgress */ =>  {
+                let var_520 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_percent_progress(var_520);
+            }
+            ,
+            s if s.matches("EarliestRestorableTime") /* EarliestRestorableTime com.amazonaws.rds#DBCluster$EarliestRestorableTime */ =>  {
+                let var_521 =
+                    Some(
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_earliest_restorable_time(var_521);
+            }
+            ,
+            s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds#DBCluster$Endpoint */ =>  {
+                let var_522 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_endpoint(var_522);
+            }
+            ,
+            s if s.matches("ReaderEndpoint") /* ReaderEndpoint com.amazonaws.rds#DBCluster$ReaderEndpoint */ =>  {
+                let var_523 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_reader_endpoint(var_523);
+            }
+            ,
+            s if s.matches("CustomEndpoints") /* CustomEndpoints com.amazonaws.rds#DBCluster$CustomEndpoints */ =>  {
+                let var_524 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_custom_endpoints(var_524);
+            }
+            ,
+            s if s.matches("MultiAZ") /* MultiAZ com.amazonaws.rds#DBCluster$MultiAZ */ =>  {
+                let var_525 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_multi_az(var_525);
+            }
+            ,
+            s if s.matches("Engine") /* Engine com.amazonaws.rds#DBCluster$Engine */ =>  {
+                let var_526 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_engine(var_526);
+            }
+            ,
+            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds#DBCluster$EngineVersion */ =>  {
+                let var_527 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_engine_version(var_527);
+            }
+            ,
+            s if s.matches("LatestRestorableTime") /* LatestRestorableTime com.amazonaws.rds#DBCluster$LatestRestorableTime */ =>  {
+                let var_528 =
+                    Some(
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_latest_restorable_time(var_528);
+            }
+            ,
+            s if s.matches("Port") /* Port com.amazonaws.rds#DBCluster$Port */ =>  {
+                let var_529 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_port(var_529);
+            }
+            ,
+            s if s.matches("MasterUsername") /* MasterUsername com.amazonaws.rds#DBCluster$MasterUsername */ =>  {
+                let var_530 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_master_username(var_530);
+            }
+            ,
+            s if s.matches("DBClusterOptionGroupMemberships") /* DBClusterOptionGroupMemberships com.amazonaws.rds#DBCluster$DBClusterOptionGroupMemberships */ =>  {
+                let var_531 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_rds_db_cluster_option_group_memberships(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_db_cluster_option_group_memberships(var_531);
+            }
+            ,
+            s if s.matches("PreferredBackupWindow") /* PreferredBackupWindow com.amazonaws.rds#DBCluster$PreferredBackupWindow */ =>  {
+                let var_532 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_preferred_backup_window(var_532);
+            }
+            ,
+            s if s.matches("PreferredMaintenanceWindow") /* PreferredMaintenanceWindow com.amazonaws.rds#DBCluster$PreferredMaintenanceWindow */ =>  {
+                let var_533 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_preferred_maintenance_window(var_533);
+            }
+            ,
+            s if s.matches("ReplicationSourceIdentifier") /* ReplicationSourceIdentifier com.amazonaws.rds#DBCluster$ReplicationSourceIdentifier */ =>  {
+                let var_534 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_replication_source_identifier(var_534);
+            }
+            ,
+            s if s.matches("ReadReplicaIdentifiers") /* ReadReplicaIdentifiers com.amazonaws.rds#DBCluster$ReadReplicaIdentifiers */ =>  {
+                let var_535 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_rds_read_replica_identifier_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_read_replica_identifiers(var_535);
+            }
+            ,
+            s if s.matches("DBClusterMembers") /* DBClusterMembers com.amazonaws.rds#DBCluster$DBClusterMembers */ =>  {
+                let var_536 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_rds_db_cluster_member_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_db_cluster_members(var_536);
+            }
+            ,
+            s if s.matches("VpcSecurityGroups") /* VpcSecurityGroups com.amazonaws.rds#DBCluster$VpcSecurityGroups */ =>  {
+                let var_537 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_rds_vpc_security_group_membership_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_vpc_security_groups(var_537);
+            }
+            ,
+            s if s.matches("HostedZoneId") /* HostedZoneId com.amazonaws.rds#DBCluster$HostedZoneId */ =>  {
+                let var_538 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_hosted_zone_id(var_538);
+            }
+            ,
+            s if s.matches("StorageEncrypted") /* StorageEncrypted com.amazonaws.rds#DBCluster$StorageEncrypted */ =>  {
+                let var_539 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_encrypted(var_539);
+            }
+            ,
+            s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.rds#DBCluster$KmsKeyId */ =>  {
+                let var_540 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_kms_key_id(var_540);
+            }
+            ,
+            s if s.matches("DbClusterResourceId") /* DbClusterResourceId com.amazonaws.rds#DBCluster$DbClusterResourceId */ =>  {
+                let var_541 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_cluster_resource_id(var_541);
+            }
+            ,
+            s if s.matches("DBClusterArn") /* DBClusterArn com.amazonaws.rds#DBCluster$DBClusterArn */ =>  {
+                let var_542 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_cluster_arn(var_542);
+            }
+            ,
+            s if s.matches("AssociatedRoles") /* AssociatedRoles com.amazonaws.rds#DBCluster$AssociatedRoles */ =>  {
+                let var_543 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_rds_db_cluster_roles(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_associated_roles(var_543);
+            }
+            ,
+            s if s.matches("IAMDatabaseAuthenticationEnabled") /* IAMDatabaseAuthenticationEnabled com.amazonaws.rds#DBCluster$IAMDatabaseAuthenticationEnabled */ =>  {
+                let var_544 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_iam_database_authentication_enabled(var_544);
+            }
+            ,
+            s if s.matches("CloneGroupId") /* CloneGroupId com.amazonaws.rds#DBCluster$CloneGroupId */ =>  {
                 let var_545 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -14811,90 +14474,93 @@ pub fn deser_structure_crate_model_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_identifier(var_545);
+                builder = builder.set_clone_group_id(var_545);
             }
             ,
-            s if s.matches("DBClusterParameterGroup") /* DBClusterParameterGroup com.amazonaws.rds#DBCluster$DBClusterParameterGroup */ =>  {
+            s if s.matches("ClusterCreateTime") /* ClusterCreateTime com.amazonaws.rds#DBCluster$ClusterCreateTime */ =>  {
                 let var_546 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_parameter_group(var_546);
+                builder = builder.set_cluster_create_time(var_546);
             }
             ,
-            s if s.matches("DBSubnetGroup") /* DBSubnetGroup com.amazonaws.rds#DBCluster$DBSubnetGroup */ =>  {
+            s if s.matches("EarliestBacktrackTime") /* EarliestBacktrackTime com.amazonaws.rds#DBCluster$EarliestBacktrackTime */ =>  {
                 let var_547 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                        aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
                         ?
                     )
                 ;
-                builder = builder.set_db_subnet_group(var_547);
+                builder = builder.set_earliest_backtrack_time(var_547);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.rds#DBCluster$Status */ =>  {
+            s if s.matches("BacktrackWindow") /* BacktrackWindow com.amazonaws.rds#DBCluster$BacktrackWindow */ =>  {
                 let var_548 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                         {
+                            <i64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.rds#LongOptional`)"))
+                        }
                         ?
                     )
                 ;
-                builder = builder.set_status(var_548);
+                builder = builder.set_backtrack_window(var_548);
             }
             ,
-            s if s.matches("AutomaticRestartTime") /* AutomaticRestartTime com.amazonaws.rds#DBCluster$AutomaticRestartTime */ =>  {
+            s if s.matches("BacktrackConsumedChangeRecords") /* BacktrackConsumedChangeRecords com.amazonaws.rds#DBCluster$BacktrackConsumedChangeRecords */ =>  {
                 let var_549 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
-                        )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
+                         {
+                            <i64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.rds#LongOptional`)"))
+                        }
                         ?
                     )
                 ;
-                builder = builder.set_automatic_restart_time(var_549);
+                builder = builder.set_backtrack_consumed_change_records(var_549);
             }
             ,
-            s if s.matches("PercentProgress") /* PercentProgress com.amazonaws.rds#DBCluster$PercentProgress */ =>  {
+            s if s.matches("EnabledCloudwatchLogsExports") /* EnabledCloudwatchLogsExports com.amazonaws.rds#DBCluster$EnabledCloudwatchLogsExports */ =>  {
                 let var_550 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                        crate::xml_deser::deser_list_com_amazonaws_rds_log_type_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_percent_progress(var_550);
+                builder = builder.set_enabled_cloudwatch_logs_exports(var_550);
             }
             ,
-            s if s.matches("EarliestRestorableTime") /* EarliestRestorableTime com.amazonaws.rds#DBCluster$EarliestRestorableTime */ =>  {
+            s if s.matches("Capacity") /* Capacity com.amazonaws.rds#DBCluster$Capacity */ =>  {
                 let var_551 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
-                        )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
                         ?
                     )
                 ;
-                builder = builder.set_earliest_restorable_time(var_551);
+                builder = builder.set_capacity(var_551);
             }
             ,
-            s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds#DBCluster$Endpoint */ =>  {
+            s if s.matches("EngineMode") /* EngineMode com.amazonaws.rds#DBCluster$EngineMode */ =>  {
                 let var_552 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -14904,33 +14570,35 @@ pub fn deser_structure_crate_model_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_endpoint(var_552);
+                builder = builder.set_engine_mode(var_552);
             }
             ,
-            s if s.matches("ReaderEndpoint") /* ReaderEndpoint com.amazonaws.rds#DBCluster$ReaderEndpoint */ =>  {
+            s if s.matches("ScalingConfigurationInfo") /* ScalingConfigurationInfo com.amazonaws.rds#DBCluster$ScalingConfigurationInfo */ =>  {
                 let var_553 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                        crate::xml_deser::deser_structure_crate_model_scaling_configuration_info(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_reader_endpoint(var_553);
+                builder = builder.set_scaling_configuration_info(var_553);
             }
             ,
-            s if s.matches("CustomEndpoints") /* CustomEndpoints com.amazonaws.rds#DBCluster$CustomEndpoints */ =>  {
+            s if s.matches("DeletionProtection") /* DeletionProtection com.amazonaws.rds#DBCluster$DeletionProtection */ =>  {
                 let var_554 =
                     Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
                         ?
                     )
                 ;
-                builder = builder.set_custom_endpoints(var_554);
+                builder = builder.set_deletion_protection(var_554);
             }
             ,
-            s if s.matches("MultiAZ") /* MultiAZ com.amazonaws.rds#DBCluster$MultiAZ */ =>  {
+            s if s.matches("HttpEndpointEnabled") /* HttpEndpointEnabled com.amazonaws.rds#DBCluster$HttpEndpointEnabled */ =>  {
                 let var_555 =
                     Some(
                          {
@@ -14942,25 +14610,40 @@ pub fn deser_structure_crate_model_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_multi_az(var_555);
+                builder = builder.set_http_endpoint_enabled(var_555);
             }
             ,
-            s if s.matches("Engine") /* Engine com.amazonaws.rds#DBCluster$Engine */ =>  {
+            s if s.matches("ActivityStreamMode") /* ActivityStreamMode com.amazonaws.rds#DBCluster$ActivityStreamMode */ =>  {
                 let var_556 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
+                        Result::<crate::model::ActivityStreamMode, aws_smithy_xml::decode::XmlError>::Ok(
+                            crate::model::ActivityStreamMode::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
                         )
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_556);
+                builder = builder.set_activity_stream_mode(var_556);
             }
             ,
-            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds#DBCluster$EngineVersion */ =>  {
+            s if s.matches("ActivityStreamStatus") /* ActivityStreamStatus com.amazonaws.rds#DBCluster$ActivityStreamStatus */ =>  {
                 let var_557 =
                     Some(
+                        Result::<crate::model::ActivityStreamStatus, aws_smithy_xml::decode::XmlError>::Ok(
+                            crate::model::ActivityStreamStatus::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_activity_stream_status(var_557);
+            }
+            ,
+            s if s.matches("ActivityStreamKmsKeyId") /* ActivityStreamKmsKeyId com.amazonaws.rds#DBCluster$ActivityStreamKmsKeyId */ =>  {
+                let var_558 =
+                    Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
@@ -14968,25 +14651,139 @@ pub fn deser_structure_crate_model_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_engine_version(var_557);
+                builder = builder.set_activity_stream_kms_key_id(var_558);
             }
             ,
-            s if s.matches("LatestRestorableTime") /* LatestRestorableTime com.amazonaws.rds#DBCluster$LatestRestorableTime */ =>  {
-                let var_558 =
+            s if s.matches("ActivityStreamKinesisStreamName") /* ActivityStreamKinesisStreamName com.amazonaws.rds#DBCluster$ActivityStreamKinesisStreamName */ =>  {
+                let var_559 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
+                            .into()
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
                         ?
                     )
                 ;
-                builder = builder.set_latest_restorable_time(var_558);
+                builder = builder.set_activity_stream_kinesis_stream_name(var_559);
             }
             ,
-            s if s.matches("Port") /* Port com.amazonaws.rds#DBCluster$Port */ =>  {
-                let var_559 =
+            s if s.matches("CopyTagsToSnapshot") /* CopyTagsToSnapshot com.amazonaws.rds#DBCluster$CopyTagsToSnapshot */ =>  {
+                let var_560 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_copy_tags_to_snapshot(var_560);
+            }
+            ,
+            s if s.matches("CrossAccountClone") /* CrossAccountClone com.amazonaws.rds#DBCluster$CrossAccountClone */ =>  {
+                let var_561 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_cross_account_clone(var_561);
+            }
+            ,
+            s if s.matches("DomainMemberships") /* DomainMemberships com.amazonaws.rds#DBCluster$DomainMemberships */ =>  {
+                let var_562 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_rds_domain_membership_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_domain_memberships(var_562);
+            }
+            ,
+            s if s.matches("TagList") /* TagList com.amazonaws.rds#DBCluster$TagList */ =>  {
+                let var_563 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_rds_tag_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tag_list(var_563);
+            }
+            ,
+            s if s.matches("GlobalWriteForwardingStatus") /* GlobalWriteForwardingStatus com.amazonaws.rds#DBCluster$GlobalWriteForwardingStatus */ =>  {
+                let var_564 =
+                    Some(
+                        Result::<crate::model::WriteForwardingStatus, aws_smithy_xml::decode::XmlError>::Ok(
+                            crate::model::WriteForwardingStatus::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_global_write_forwarding_status(var_564);
+            }
+            ,
+            s if s.matches("GlobalWriteForwardingRequested") /* GlobalWriteForwardingRequested com.amazonaws.rds#DBCluster$GlobalWriteForwardingRequested */ =>  {
+                let var_565 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_global_write_forwarding_requested(var_565);
+            }
+            ,
+            s if s.matches("PendingModifiedValues") /* PendingModifiedValues com.amazonaws.rds#DBCluster$PendingModifiedValues */ =>  {
+                let var_566 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_cluster_pending_modified_values(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_pending_modified_values(var_566);
+            }
+            ,
+            s if s.matches("DBClusterInstanceClass") /* DBClusterInstanceClass com.amazonaws.rds#DBCluster$DBClusterInstanceClass */ =>  {
+                let var_567 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_cluster_instance_class(var_567);
+            }
+            ,
+            s if s.matches("StorageType") /* StorageType com.amazonaws.rds#DBCluster$StorageType */ =>  {
+                let var_568 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_type(var_568);
+            }
+            ,
+            s if s.matches("Iops") /* Iops com.amazonaws.rds#DBCluster$Iops */ =>  {
+                let var_569 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -14997,116 +14794,26 @@ pub fn deser_structure_crate_model_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_port(var_559);
+                builder = builder.set_iops(var_569);
             }
             ,
-            s if s.matches("MasterUsername") /* MasterUsername com.amazonaws.rds#DBCluster$MasterUsername */ =>  {
-                let var_560 =
+            s if s.matches("PubliclyAccessible") /* PubliclyAccessible com.amazonaws.rds#DBCluster$PubliclyAccessible */ =>  {
+                let var_570 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
                         ?
                     )
                 ;
-                builder = builder.set_master_username(var_560);
+                builder = builder.set_publicly_accessible(var_570);
             }
             ,
-            s if s.matches("DBClusterOptionGroupMemberships") /* DBClusterOptionGroupMemberships com.amazonaws.rds#DBCluster$DBClusterOptionGroupMemberships */ =>  {
-                let var_561 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_db_cluster_option_group_memberships(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_db_cluster_option_group_memberships(var_561);
-            }
-            ,
-            s if s.matches("PreferredBackupWindow") /* PreferredBackupWindow com.amazonaws.rds#DBCluster$PreferredBackupWindow */ =>  {
-                let var_562 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_preferred_backup_window(var_562);
-            }
-            ,
-            s if s.matches("PreferredMaintenanceWindow") /* PreferredMaintenanceWindow com.amazonaws.rds#DBCluster$PreferredMaintenanceWindow */ =>  {
-                let var_563 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_preferred_maintenance_window(var_563);
-            }
-            ,
-            s if s.matches("ReplicationSourceIdentifier") /* ReplicationSourceIdentifier com.amazonaws.rds#DBCluster$ReplicationSourceIdentifier */ =>  {
-                let var_564 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_replication_source_identifier(var_564);
-            }
-            ,
-            s if s.matches("ReadReplicaIdentifiers") /* ReadReplicaIdentifiers com.amazonaws.rds#DBCluster$ReadReplicaIdentifiers */ =>  {
-                let var_565 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_read_replica_identifier_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_read_replica_identifiers(var_565);
-            }
-            ,
-            s if s.matches("DBClusterMembers") /* DBClusterMembers com.amazonaws.rds#DBCluster$DBClusterMembers */ =>  {
-                let var_566 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_db_cluster_member_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_db_cluster_members(var_566);
-            }
-            ,
-            s if s.matches("VpcSecurityGroups") /* VpcSecurityGroups com.amazonaws.rds#DBCluster$VpcSecurityGroups */ =>  {
-                let var_567 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_vpc_security_group_membership_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_vpc_security_groups(var_567);
-            }
-            ,
-            s if s.matches("HostedZoneId") /* HostedZoneId com.amazonaws.rds#DBCluster$HostedZoneId */ =>  {
-                let var_568 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_hosted_zone_id(var_568);
-            }
-            ,
-            s if s.matches("StorageEncrypted") /* StorageEncrypted com.amazonaws.rds#DBCluster$StorageEncrypted */ =>  {
-                let var_569 =
+            s if s.matches("AutoMinorVersionUpgrade") /* AutoMinorVersionUpgrade com.amazonaws.rds#DBCluster$AutoMinorVersionUpgrade */ =>  {
+                let var_571 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -15117,38 +14824,27 @@ pub fn deser_structure_crate_model_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_storage_encrypted(var_569);
+                builder = builder.set_auto_minor_version_upgrade(var_571);
             }
             ,
-            s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.rds#DBCluster$KmsKeyId */ =>  {
-                let var_570 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_kms_key_id(var_570);
-            }
-            ,
-            s if s.matches("DbClusterResourceId") /* DbClusterResourceId com.amazonaws.rds#DBCluster$DbClusterResourceId */ =>  {
-                let var_571 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_db_cluster_resource_id(var_571);
-            }
-            ,
-            s if s.matches("DBClusterArn") /* DBClusterArn com.amazonaws.rds#DBCluster$DBClusterArn */ =>  {
+            s if s.matches("MonitoringInterval") /* MonitoringInterval com.amazonaws.rds#DBCluster$MonitoringInterval */ =>  {
                 let var_572 =
                     Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_monitoring_interval(var_572);
+            }
+            ,
+            s if s.matches("MonitoringRoleArn") /* MonitoringRoleArn com.amazonaws.rds#DBCluster$MonitoringRoleArn */ =>  {
+                let var_573 =
+                    Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
@@ -15156,20 +14852,10 @@ pub fn deser_structure_crate_model_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_arn(var_572);
+                builder = builder.set_monitoring_role_arn(var_573);
             }
             ,
-            s if s.matches("AssociatedRoles") /* AssociatedRoles com.amazonaws.rds#DBCluster$AssociatedRoles */ =>  {
-                let var_573 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_db_cluster_roles(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_associated_roles(var_573);
-            }
-            ,
-            s if s.matches("IAMDatabaseAuthenticationEnabled") /* IAMDatabaseAuthenticationEnabled com.amazonaws.rds#DBCluster$IAMDatabaseAuthenticationEnabled */ =>  {
+            s if s.matches("PerformanceInsightsEnabled") /* PerformanceInsightsEnabled com.amazonaws.rds#DBCluster$PerformanceInsightsEnabled */ =>  {
                 let var_574 =
                     Some(
                          {
@@ -15181,10 +14867,10 @@ pub fn deser_structure_crate_model_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_iam_database_authentication_enabled(var_574);
+                builder = builder.set_performance_insights_enabled(var_574);
             }
             ,
-            s if s.matches("CloneGroupId") /* CloneGroupId com.amazonaws.rds#DBCluster$CloneGroupId */ =>  {
+            s if s.matches("PerformanceInsightsKMSKeyId") /* PerformanceInsightsKMSKeyId com.amazonaws.rds#DBCluster$PerformanceInsightsKMSKeyId */ =>  {
                 let var_575 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -15194,417 +14880,11 @@ pub fn deser_structure_crate_model_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_clone_group_id(var_575);
-            }
-            ,
-            s if s.matches("ClusterCreateTime") /* ClusterCreateTime com.amazonaws.rds#DBCluster$ClusterCreateTime */ =>  {
-                let var_576 =
-                    Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
-                        )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_cluster_create_time(var_576);
-            }
-            ,
-            s if s.matches("EarliestBacktrackTime") /* EarliestBacktrackTime com.amazonaws.rds#DBCluster$EarliestBacktrackTime */ =>  {
-                let var_577 =
-                    Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
-                        )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_earliest_backtrack_time(var_577);
-            }
-            ,
-            s if s.matches("BacktrackWindow") /* BacktrackWindow com.amazonaws.rds#DBCluster$BacktrackWindow */ =>  {
-                let var_578 =
-                    Some(
-                         {
-                            <i64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.rds#LongOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_backtrack_window(var_578);
-            }
-            ,
-            s if s.matches("BacktrackConsumedChangeRecords") /* BacktrackConsumedChangeRecords com.amazonaws.rds#DBCluster$BacktrackConsumedChangeRecords */ =>  {
-                let var_579 =
-                    Some(
-                         {
-                            <i64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.rds#LongOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_backtrack_consumed_change_records(var_579);
-            }
-            ,
-            s if s.matches("EnabledCloudwatchLogsExports") /* EnabledCloudwatchLogsExports com.amazonaws.rds#DBCluster$EnabledCloudwatchLogsExports */ =>  {
-                let var_580 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_log_type_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_enabled_cloudwatch_logs_exports(var_580);
-            }
-            ,
-            s if s.matches("Capacity") /* Capacity com.amazonaws.rds#DBCluster$Capacity */ =>  {
-                let var_581 =
-                    Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_capacity(var_581);
-            }
-            ,
-            s if s.matches("EngineMode") /* EngineMode com.amazonaws.rds#DBCluster$EngineMode */ =>  {
-                let var_582 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_engine_mode(var_582);
-            }
-            ,
-            s if s.matches("ScalingConfigurationInfo") /* ScalingConfigurationInfo com.amazonaws.rds#DBCluster$ScalingConfigurationInfo */ =>  {
-                let var_583 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_scaling_configuration_info(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_scaling_configuration_info(var_583);
-            }
-            ,
-            s if s.matches("DeletionProtection") /* DeletionProtection com.amazonaws.rds#DBCluster$DeletionProtection */ =>  {
-                let var_584 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_deletion_protection(var_584);
-            }
-            ,
-            s if s.matches("HttpEndpointEnabled") /* HttpEndpointEnabled com.amazonaws.rds#DBCluster$HttpEndpointEnabled */ =>  {
-                let var_585 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_http_endpoint_enabled(var_585);
-            }
-            ,
-            s if s.matches("ActivityStreamMode") /* ActivityStreamMode com.amazonaws.rds#DBCluster$ActivityStreamMode */ =>  {
-                let var_586 =
-                    Some(
-                        Result::<crate::model::ActivityStreamMode, aws_smithy_xml::decode::XmlError>::Ok(
-                            crate::model::ActivityStreamMode::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_activity_stream_mode(var_586);
-            }
-            ,
-            s if s.matches("ActivityStreamStatus") /* ActivityStreamStatus com.amazonaws.rds#DBCluster$ActivityStreamStatus */ =>  {
-                let var_587 =
-                    Some(
-                        Result::<crate::model::ActivityStreamStatus, aws_smithy_xml::decode::XmlError>::Ok(
-                            crate::model::ActivityStreamStatus::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_activity_stream_status(var_587);
-            }
-            ,
-            s if s.matches("ActivityStreamKmsKeyId") /* ActivityStreamKmsKeyId com.amazonaws.rds#DBCluster$ActivityStreamKmsKeyId */ =>  {
-                let var_588 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_activity_stream_kms_key_id(var_588);
-            }
-            ,
-            s if s.matches("ActivityStreamKinesisStreamName") /* ActivityStreamKinesisStreamName com.amazonaws.rds#DBCluster$ActivityStreamKinesisStreamName */ =>  {
-                let var_589 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_activity_stream_kinesis_stream_name(var_589);
-            }
-            ,
-            s if s.matches("CopyTagsToSnapshot") /* CopyTagsToSnapshot com.amazonaws.rds#DBCluster$CopyTagsToSnapshot */ =>  {
-                let var_590 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_copy_tags_to_snapshot(var_590);
-            }
-            ,
-            s if s.matches("CrossAccountClone") /* CrossAccountClone com.amazonaws.rds#DBCluster$CrossAccountClone */ =>  {
-                let var_591 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_cross_account_clone(var_591);
-            }
-            ,
-            s if s.matches("DomainMemberships") /* DomainMemberships com.amazonaws.rds#DBCluster$DomainMemberships */ =>  {
-                let var_592 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_domain_membership_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_domain_memberships(var_592);
-            }
-            ,
-            s if s.matches("TagList") /* TagList com.amazonaws.rds#DBCluster$TagList */ =>  {
-                let var_593 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_tag_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_tag_list(var_593);
-            }
-            ,
-            s if s.matches("GlobalWriteForwardingStatus") /* GlobalWriteForwardingStatus com.amazonaws.rds#DBCluster$GlobalWriteForwardingStatus */ =>  {
-                let var_594 =
-                    Some(
-                        Result::<crate::model::WriteForwardingStatus, aws_smithy_xml::decode::XmlError>::Ok(
-                            crate::model::WriteForwardingStatus::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_global_write_forwarding_status(var_594);
-            }
-            ,
-            s if s.matches("GlobalWriteForwardingRequested") /* GlobalWriteForwardingRequested com.amazonaws.rds#DBCluster$GlobalWriteForwardingRequested */ =>  {
-                let var_595 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_global_write_forwarding_requested(var_595);
-            }
-            ,
-            s if s.matches("PendingModifiedValues") /* PendingModifiedValues com.amazonaws.rds#DBCluster$PendingModifiedValues */ =>  {
-                let var_596 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_cluster_pending_modified_values(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_pending_modified_values(var_596);
-            }
-            ,
-            s if s.matches("DBClusterInstanceClass") /* DBClusterInstanceClass com.amazonaws.rds#DBCluster$DBClusterInstanceClass */ =>  {
-                let var_597 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_db_cluster_instance_class(var_597);
-            }
-            ,
-            s if s.matches("StorageType") /* StorageType com.amazonaws.rds#DBCluster$StorageType */ =>  {
-                let var_598 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_storage_type(var_598);
-            }
-            ,
-            s if s.matches("Iops") /* Iops com.amazonaws.rds#DBCluster$Iops */ =>  {
-                let var_599 =
-                    Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_iops(var_599);
-            }
-            ,
-            s if s.matches("PubliclyAccessible") /* PubliclyAccessible com.amazonaws.rds#DBCluster$PubliclyAccessible */ =>  {
-                let var_600 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_publicly_accessible(var_600);
-            }
-            ,
-            s if s.matches("AutoMinorVersionUpgrade") /* AutoMinorVersionUpgrade com.amazonaws.rds#DBCluster$AutoMinorVersionUpgrade */ =>  {
-                let var_601 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_auto_minor_version_upgrade(var_601);
-            }
-            ,
-            s if s.matches("MonitoringInterval") /* MonitoringInterval com.amazonaws.rds#DBCluster$MonitoringInterval */ =>  {
-                let var_602 =
-                    Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_monitoring_interval(var_602);
-            }
-            ,
-            s if s.matches("MonitoringRoleArn") /* MonitoringRoleArn com.amazonaws.rds#DBCluster$MonitoringRoleArn */ =>  {
-                let var_603 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_monitoring_role_arn(var_603);
-            }
-            ,
-            s if s.matches("PerformanceInsightsEnabled") /* PerformanceInsightsEnabled com.amazonaws.rds#DBCluster$PerformanceInsightsEnabled */ =>  {
-                let var_604 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_performance_insights_enabled(var_604);
-            }
-            ,
-            s if s.matches("PerformanceInsightsKMSKeyId") /* PerformanceInsightsKMSKeyId com.amazonaws.rds#DBCluster$PerformanceInsightsKMSKeyId */ =>  {
-                let var_605 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_performance_insights_kms_key_id(var_605);
+                builder = builder.set_performance_insights_kms_key_id(var_575);
             }
             ,
             s if s.matches("PerformanceInsightsRetentionPeriod") /* PerformanceInsightsRetentionPeriod com.amazonaws.rds#DBCluster$PerformanceInsightsRetentionPeriod */ =>  {
-                let var_606 =
+                let var_576 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -15615,7 +14895,17 @@ pub fn deser_structure_crate_model_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_performance_insights_retention_period(var_606);
+                builder = builder.set_performance_insights_retention_period(var_576);
+            }
+            ,
+            s if s.matches("ServerlessV2ScalingConfiguration") /* ServerlessV2ScalingConfiguration com.amazonaws.rds#DBCluster$ServerlessV2ScalingConfiguration */ =>  {
+                let var_577 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_serverless_v2_scaling_configuration_info(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_serverless_v2_scaling_configuration(var_577);
             }
             ,
             _ => {}
@@ -15632,7 +14922,7 @@ pub fn deser_structure_crate_model_db_instance(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBInstanceIdentifier") /* DBInstanceIdentifier com.amazonaws.rds#DBInstance$DBInstanceIdentifier */ =>  {
-                let var_607 =
+                let var_578 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -15641,11 +14931,11 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_identifier(var_607);
+                builder = builder.set_db_instance_identifier(var_578);
             }
             ,
             s if s.matches("DBInstanceClass") /* DBInstanceClass com.amazonaws.rds#DBInstance$DBInstanceClass */ =>  {
-                let var_608 =
+                let var_579 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -15654,11 +14944,11 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_class(var_608);
+                builder = builder.set_db_instance_class(var_579);
             }
             ,
             s if s.matches("Engine") /* Engine com.amazonaws.rds#DBInstance$Engine */ =>  {
-                let var_609 =
+                let var_580 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -15667,11 +14957,11 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_609);
+                builder = builder.set_engine(var_580);
             }
             ,
             s if s.matches("DBInstanceStatus") /* DBInstanceStatus com.amazonaws.rds#DBInstance$DBInstanceStatus */ =>  {
-                let var_610 =
+                let var_581 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -15680,11 +14970,11 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_status(var_610);
+                builder = builder.set_db_instance_status(var_581);
             }
             ,
             s if s.matches("AutomaticRestartTime") /* AutomaticRestartTime com.amazonaws.rds#DBInstance$AutomaticRestartTime */ =>  {
-                let var_611 =
+                let var_582 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -15694,11 +14984,11 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_automatic_restart_time(var_611);
+                builder = builder.set_automatic_restart_time(var_582);
             }
             ,
             s if s.matches("MasterUsername") /* MasterUsername com.amazonaws.rds#DBInstance$MasterUsername */ =>  {
-                let var_612 =
+                let var_583 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -15707,10 +14997,372 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_master_username(var_612);
+                builder = builder.set_master_username(var_583);
             }
             ,
             s if s.matches("DBName") /* DBName com.amazonaws.rds#DBInstance$DBName */ =>  {
+                let var_584 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_name(var_584);
+            }
+            ,
+            s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds#DBInstance$Endpoint */ =>  {
+                let var_585 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_endpoint(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_endpoint(var_585);
+            }
+            ,
+            s if s.matches("AllocatedStorage") /* AllocatedStorage com.amazonaws.rds#DBInstance$AllocatedStorage */ =>  {
+                let var_586 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_allocated_storage(var_586);
+            }
+            ,
+            s if s.matches("InstanceCreateTime") /* InstanceCreateTime com.amazonaws.rds#DBInstance$InstanceCreateTime */ =>  {
+                let var_587 =
+                    Some(
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_instance_create_time(var_587);
+            }
+            ,
+            s if s.matches("PreferredBackupWindow") /* PreferredBackupWindow com.amazonaws.rds#DBInstance$PreferredBackupWindow */ =>  {
+                let var_588 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_preferred_backup_window(var_588);
+            }
+            ,
+            s if s.matches("BackupRetentionPeriod") /* BackupRetentionPeriod com.amazonaws.rds#DBInstance$BackupRetentionPeriod */ =>  {
+                let var_589 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_backup_retention_period(var_589);
+            }
+            ,
+            s if s.matches("DBSecurityGroups") /* DBSecurityGroups com.amazonaws.rds#DBInstance$DBSecurityGroups */ =>  {
+                let var_590 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_rds_db_security_group_membership_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_db_security_groups(var_590);
+            }
+            ,
+            s if s.matches("VpcSecurityGroups") /* VpcSecurityGroups com.amazonaws.rds#DBInstance$VpcSecurityGroups */ =>  {
+                let var_591 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_rds_vpc_security_group_membership_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_vpc_security_groups(var_591);
+            }
+            ,
+            s if s.matches("DBParameterGroups") /* DBParameterGroups com.amazonaws.rds#DBInstance$DBParameterGroups */ =>  {
+                let var_592 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_rds_db_parameter_group_status_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_db_parameter_groups(var_592);
+            }
+            ,
+            s if s.matches("AvailabilityZone") /* AvailabilityZone com.amazonaws.rds#DBInstance$AvailabilityZone */ =>  {
+                let var_593 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone(var_593);
+            }
+            ,
+            s if s.matches("DBSubnetGroup") /* DBSubnetGroup com.amazonaws.rds#DBInstance$DBSubnetGroup */ =>  {
+                let var_594 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_db_subnet_group(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_db_subnet_group(var_594);
+            }
+            ,
+            s if s.matches("PreferredMaintenanceWindow") /* PreferredMaintenanceWindow com.amazonaws.rds#DBInstance$PreferredMaintenanceWindow */ =>  {
+                let var_595 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_preferred_maintenance_window(var_595);
+            }
+            ,
+            s if s.matches("PendingModifiedValues") /* PendingModifiedValues com.amazonaws.rds#DBInstance$PendingModifiedValues */ =>  {
+                let var_596 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_pending_modified_values(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_pending_modified_values(var_596);
+            }
+            ,
+            s if s.matches("LatestRestorableTime") /* LatestRestorableTime com.amazonaws.rds#DBInstance$LatestRestorableTime */ =>  {
+                let var_597 =
+                    Some(
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_latest_restorable_time(var_597);
+            }
+            ,
+            s if s.matches("MultiAZ") /* MultiAZ com.amazonaws.rds#DBInstance$MultiAZ */ =>  {
+                let var_598 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_multi_az(var_598);
+            }
+            ,
+            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds#DBInstance$EngineVersion */ =>  {
+                let var_599 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_engine_version(var_599);
+            }
+            ,
+            s if s.matches("AutoMinorVersionUpgrade") /* AutoMinorVersionUpgrade com.amazonaws.rds#DBInstance$AutoMinorVersionUpgrade */ =>  {
+                let var_600 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_auto_minor_version_upgrade(var_600);
+            }
+            ,
+            s if s.matches("ReadReplicaSourceDBInstanceIdentifier") /* ReadReplicaSourceDBInstanceIdentifier com.amazonaws.rds#DBInstance$ReadReplicaSourceDBInstanceIdentifier */ =>  {
+                let var_601 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_read_replica_source_db_instance_identifier(var_601);
+            }
+            ,
+            s if s.matches("ReadReplicaDBInstanceIdentifiers") /* ReadReplicaDBInstanceIdentifiers com.amazonaws.rds#DBInstance$ReadReplicaDBInstanceIdentifiers */ =>  {
+                let var_602 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_rds_read_replica_db_instance_identifier_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_read_replica_db_instance_identifiers(var_602);
+            }
+            ,
+            s if s.matches("ReadReplicaDBClusterIdentifiers") /* ReadReplicaDBClusterIdentifiers com.amazonaws.rds#DBInstance$ReadReplicaDBClusterIdentifiers */ =>  {
+                let var_603 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_rds_read_replica_db_cluster_identifier_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_read_replica_db_cluster_identifiers(var_603);
+            }
+            ,
+            s if s.matches("ReplicaMode") /* ReplicaMode com.amazonaws.rds#DBInstance$ReplicaMode */ =>  {
+                let var_604 =
+                    Some(
+                        Result::<crate::model::ReplicaMode, aws_smithy_xml::decode::XmlError>::Ok(
+                            crate::model::ReplicaMode::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_replica_mode(var_604);
+            }
+            ,
+            s if s.matches("LicenseModel") /* LicenseModel com.amazonaws.rds#DBInstance$LicenseModel */ =>  {
+                let var_605 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_license_model(var_605);
+            }
+            ,
+            s if s.matches("Iops") /* Iops com.amazonaws.rds#DBInstance$Iops */ =>  {
+                let var_606 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_iops(var_606);
+            }
+            ,
+            s if s.matches("OptionGroupMemberships") /* OptionGroupMemberships com.amazonaws.rds#DBInstance$OptionGroupMemberships */ =>  {
+                let var_607 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_rds_option_group_membership_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_option_group_memberships(var_607);
+            }
+            ,
+            s if s.matches("CharacterSetName") /* CharacterSetName com.amazonaws.rds#DBInstance$CharacterSetName */ =>  {
+                let var_608 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_character_set_name(var_608);
+            }
+            ,
+            s if s.matches("NcharCharacterSetName") /* NcharCharacterSetName com.amazonaws.rds#DBInstance$NcharCharacterSetName */ =>  {
+                let var_609 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_nchar_character_set_name(var_609);
+            }
+            ,
+            s if s.matches("SecondaryAvailabilityZone") /* SecondaryAvailabilityZone com.amazonaws.rds#DBInstance$SecondaryAvailabilityZone */ =>  {
+                let var_610 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_secondary_availability_zone(var_610);
+            }
+            ,
+            s if s.matches("PubliclyAccessible") /* PubliclyAccessible com.amazonaws.rds#DBInstance$PubliclyAccessible */ =>  {
+                let var_611 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_publicly_accessible(var_611);
+            }
+            ,
+            s if s.matches("StatusInfos") /* StatusInfos com.amazonaws.rds#DBInstance$StatusInfos */ =>  {
+                let var_612 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_rds_db_instance_status_info_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_status_infos(var_612);
+            }
+            ,
+            s if s.matches("StorageType") /* StorageType com.amazonaws.rds#DBInstance$StorageType */ =>  {
                 let var_613 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -15720,20 +15372,23 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_db_name(var_613);
+                builder = builder.set_storage_type(var_613);
             }
             ,
-            s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds#DBInstance$Endpoint */ =>  {
+            s if s.matches("TdeCredentialArn") /* TdeCredentialArn com.amazonaws.rds#DBInstance$TdeCredentialArn */ =>  {
                 let var_614 =
                     Some(
-                        crate::xml_deser::deser_structure_crate_model_endpoint(&mut tag)
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_endpoint(var_614);
+                builder = builder.set_tde_credential_arn(var_614);
             }
             ,
-            s if s.matches("AllocatedStorage") /* AllocatedStorage com.amazonaws.rds#DBInstance$AllocatedStorage */ =>  {
+            s if s.matches("DbInstancePort") /* DbInstancePort com.amazonaws.rds#DBInstance$DbInstancePort */ =>  {
                 let var_615 =
                     Some(
                          {
@@ -15745,143 +15400,24 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_allocated_storage(var_615);
+                builder = builder.set_db_instance_port(var_615);
             }
             ,
-            s if s.matches("InstanceCreateTime") /* InstanceCreateTime com.amazonaws.rds#DBInstance$InstanceCreateTime */ =>  {
+            s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.rds#DBInstance$DBClusterIdentifier */ =>  {
                 let var_616 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
+                            .into()
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
                         ?
                     )
                 ;
-                builder = builder.set_instance_create_time(var_616);
+                builder = builder.set_db_cluster_identifier(var_616);
             }
             ,
-            s if s.matches("PreferredBackupWindow") /* PreferredBackupWindow com.amazonaws.rds#DBInstance$PreferredBackupWindow */ =>  {
+            s if s.matches("StorageEncrypted") /* StorageEncrypted com.amazonaws.rds#DBInstance$StorageEncrypted */ =>  {
                 let var_617 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_preferred_backup_window(var_617);
-            }
-            ,
-            s if s.matches("BackupRetentionPeriod") /* BackupRetentionPeriod com.amazonaws.rds#DBInstance$BackupRetentionPeriod */ =>  {
-                let var_618 =
-                    Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_backup_retention_period(var_618);
-            }
-            ,
-            s if s.matches("DBSecurityGroups") /* DBSecurityGroups com.amazonaws.rds#DBInstance$DBSecurityGroups */ =>  {
-                let var_619 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_db_security_group_membership_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_db_security_groups(var_619);
-            }
-            ,
-            s if s.matches("VpcSecurityGroups") /* VpcSecurityGroups com.amazonaws.rds#DBInstance$VpcSecurityGroups */ =>  {
-                let var_620 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_vpc_security_group_membership_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_vpc_security_groups(var_620);
-            }
-            ,
-            s if s.matches("DBParameterGroups") /* DBParameterGroups com.amazonaws.rds#DBInstance$DBParameterGroups */ =>  {
-                let var_621 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_db_parameter_group_status_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_db_parameter_groups(var_621);
-            }
-            ,
-            s if s.matches("AvailabilityZone") /* AvailabilityZone com.amazonaws.rds#DBInstance$AvailabilityZone */ =>  {
-                let var_622 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_availability_zone(var_622);
-            }
-            ,
-            s if s.matches("DBSubnetGroup") /* DBSubnetGroup com.amazonaws.rds#DBInstance$DBSubnetGroup */ =>  {
-                let var_623 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_db_subnet_group(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_db_subnet_group(var_623);
-            }
-            ,
-            s if s.matches("PreferredMaintenanceWindow") /* PreferredMaintenanceWindow com.amazonaws.rds#DBInstance$PreferredMaintenanceWindow */ =>  {
-                let var_624 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_preferred_maintenance_window(var_624);
-            }
-            ,
-            s if s.matches("PendingModifiedValues") /* PendingModifiedValues com.amazonaws.rds#DBInstance$PendingModifiedValues */ =>  {
-                let var_625 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_pending_modified_values(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_pending_modified_values(var_625);
-            }
-            ,
-            s if s.matches("LatestRestorableTime") /* LatestRestorableTime com.amazonaws.rds#DBInstance$LatestRestorableTime */ =>  {
-                let var_626 =
-                    Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
-                        )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_latest_restorable_time(var_626);
-            }
-            ,
-            s if s.matches("MultiAZ") /* MultiAZ com.amazonaws.rds#DBInstance$MultiAZ */ =>  {
-                let var_627 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -15892,10 +15428,143 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_multi_az(var_627);
+                builder = builder.set_storage_encrypted(var_617);
             }
             ,
-            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds#DBInstance$EngineVersion */ =>  {
+            s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.rds#DBInstance$KmsKeyId */ =>  {
+                let var_618 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_kms_key_id(var_618);
+            }
+            ,
+            s if s.matches("DbiResourceId") /* DbiResourceId com.amazonaws.rds#DBInstance$DbiResourceId */ =>  {
+                let var_619 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_dbi_resource_id(var_619);
+            }
+            ,
+            s if s.matches("CACertificateIdentifier") /* CACertificateIdentifier com.amazonaws.rds#DBInstance$CACertificateIdentifier */ =>  {
+                let var_620 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_ca_certificate_identifier(var_620);
+            }
+            ,
+            s if s.matches("DomainMemberships") /* DomainMemberships com.amazonaws.rds#DBInstance$DomainMemberships */ =>  {
+                let var_621 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_rds_domain_membership_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_domain_memberships(var_621);
+            }
+            ,
+            s if s.matches("CopyTagsToSnapshot") /* CopyTagsToSnapshot com.amazonaws.rds#DBInstance$CopyTagsToSnapshot */ =>  {
+                let var_622 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_copy_tags_to_snapshot(var_622);
+            }
+            ,
+            s if s.matches("MonitoringInterval") /* MonitoringInterval com.amazonaws.rds#DBInstance$MonitoringInterval */ =>  {
+                let var_623 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_monitoring_interval(var_623);
+            }
+            ,
+            s if s.matches("EnhancedMonitoringResourceArn") /* EnhancedMonitoringResourceArn com.amazonaws.rds#DBInstance$EnhancedMonitoringResourceArn */ =>  {
+                let var_624 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_enhanced_monitoring_resource_arn(var_624);
+            }
+            ,
+            s if s.matches("MonitoringRoleArn") /* MonitoringRoleArn com.amazonaws.rds#DBInstance$MonitoringRoleArn */ =>  {
+                let var_625 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_monitoring_role_arn(var_625);
+            }
+            ,
+            s if s.matches("PromotionTier") /* PromotionTier com.amazonaws.rds#DBInstance$PromotionTier */ =>  {
+                let var_626 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_promotion_tier(var_626);
+            }
+            ,
+            s if s.matches("DBInstanceArn") /* DBInstanceArn com.amazonaws.rds#DBInstance$DBInstanceArn */ =>  {
+                let var_627 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_instance_arn(var_627);
+            }
+            ,
+            s if s.matches("Timezone") /* Timezone com.amazonaws.rds#DBInstance$Timezone */ =>  {
                 let var_628 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -15905,10 +15574,10 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_engine_version(var_628);
+                builder = builder.set_timezone(var_628);
             }
             ,
-            s if s.matches("AutoMinorVersionUpgrade") /* AutoMinorVersionUpgrade com.amazonaws.rds#DBInstance$AutoMinorVersionUpgrade */ =>  {
+            s if s.matches("IAMDatabaseAuthenticationEnabled") /* IAMDatabaseAuthenticationEnabled com.amazonaws.rds#DBInstance$IAMDatabaseAuthenticationEnabled */ =>  {
                 let var_629 =
                     Some(
                          {
@@ -15920,58 +15589,26 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_auto_minor_version_upgrade(var_629);
+                builder = builder.set_iam_database_authentication_enabled(var_629);
             }
             ,
-            s if s.matches("ReadReplicaSourceDBInstanceIdentifier") /* ReadReplicaSourceDBInstanceIdentifier com.amazonaws.rds#DBInstance$ReadReplicaSourceDBInstanceIdentifier */ =>  {
+            s if s.matches("PerformanceInsightsEnabled") /* PerformanceInsightsEnabled com.amazonaws.rds#DBInstance$PerformanceInsightsEnabled */ =>  {
                 let var_630 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_read_replica_source_db_instance_identifier(var_630);
-            }
-            ,
-            s if s.matches("ReadReplicaDBInstanceIdentifiers") /* ReadReplicaDBInstanceIdentifiers com.amazonaws.rds#DBInstance$ReadReplicaDBInstanceIdentifiers */ =>  {
-                let var_631 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_read_replica_db_instance_identifier_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_read_replica_db_instance_identifiers(var_631);
-            }
-            ,
-            s if s.matches("ReadReplicaDBClusterIdentifiers") /* ReadReplicaDBClusterIdentifiers com.amazonaws.rds#DBInstance$ReadReplicaDBClusterIdentifiers */ =>  {
-                let var_632 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_read_replica_db_cluster_identifier_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_read_replica_db_cluster_identifiers(var_632);
-            }
-            ,
-            s if s.matches("ReplicaMode") /* ReplicaMode com.amazonaws.rds#DBInstance$ReplicaMode */ =>  {
-                let var_633 =
-                    Some(
-                        Result::<crate::model::ReplicaMode, aws_smithy_xml::decode::XmlError>::Ok(
-                            crate::model::ReplicaMode::from(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                        )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
                         ?
                     )
                 ;
-                builder = builder.set_replica_mode(var_633);
+                builder = builder.set_performance_insights_enabled(var_630);
             }
             ,
-            s if s.matches("LicenseModel") /* LicenseModel com.amazonaws.rds#DBInstance$LicenseModel */ =>  {
-                let var_634 =
+            s if s.matches("PerformanceInsightsKMSKeyId") /* PerformanceInsightsKMSKeyId com.amazonaws.rds#DBInstance$PerformanceInsightsKMSKeyId */ =>  {
+                let var_631 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -15980,11 +15617,11 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_license_model(var_634);
+                builder = builder.set_performance_insights_kms_key_id(var_631);
             }
             ,
-            s if s.matches("Iops") /* Iops com.amazonaws.rds#DBInstance$Iops */ =>  {
-                let var_635 =
+            s if s.matches("PerformanceInsightsRetentionPeriod") /* PerformanceInsightsRetentionPeriod com.amazonaws.rds#DBInstance$PerformanceInsightsRetentionPeriod */ =>  {
+                let var_632 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -15995,60 +15632,31 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_iops(var_635);
+                builder = builder.set_performance_insights_retention_period(var_632);
             }
             ,
-            s if s.matches("OptionGroupMemberships") /* OptionGroupMemberships com.amazonaws.rds#DBInstance$OptionGroupMemberships */ =>  {
-                let var_636 =
+            s if s.matches("EnabledCloudwatchLogsExports") /* EnabledCloudwatchLogsExports com.amazonaws.rds#DBInstance$EnabledCloudwatchLogsExports */ =>  {
+                let var_633 =
                     Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_option_group_membership_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_rds_log_type_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_option_group_memberships(var_636);
+                builder = builder.set_enabled_cloudwatch_logs_exports(var_633);
             }
             ,
-            s if s.matches("CharacterSetName") /* CharacterSetName com.amazonaws.rds#DBInstance$CharacterSetName */ =>  {
-                let var_637 =
+            s if s.matches("ProcessorFeatures") /* ProcessorFeatures com.amazonaws.rds#DBInstance$ProcessorFeatures */ =>  {
+                let var_634 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                        crate::xml_deser::deser_list_com_amazonaws_rds_processor_feature_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_character_set_name(var_637);
+                builder = builder.set_processor_features(var_634);
             }
             ,
-            s if s.matches("NcharCharacterSetName") /* NcharCharacterSetName com.amazonaws.rds#DBInstance$NcharCharacterSetName */ =>  {
-                let var_638 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_nchar_character_set_name(var_638);
-            }
-            ,
-            s if s.matches("SecondaryAvailabilityZone") /* SecondaryAvailabilityZone com.amazonaws.rds#DBInstance$SecondaryAvailabilityZone */ =>  {
-                let var_639 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_secondary_availability_zone(var_639);
-            }
-            ,
-            s if s.matches("PubliclyAccessible") /* PubliclyAccessible com.amazonaws.rds#DBInstance$PubliclyAccessible */ =>  {
-                let var_640 =
+            s if s.matches("DeletionProtection") /* DeletionProtection com.amazonaws.rds#DBInstance$DeletionProtection */ =>  {
+                let var_635 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -16059,20 +15667,80 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_publicly_accessible(var_640);
+                builder = builder.set_deletion_protection(var_635);
             }
             ,
-            s if s.matches("StatusInfos") /* StatusInfos com.amazonaws.rds#DBInstance$StatusInfos */ =>  {
-                let var_641 =
+            s if s.matches("AssociatedRoles") /* AssociatedRoles com.amazonaws.rds#DBInstance$AssociatedRoles */ =>  {
+                let var_636 =
                     Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_db_instance_status_info_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_rds_db_instance_roles(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_status_infos(var_641);
+                builder = builder.set_associated_roles(var_636);
             }
             ,
-            s if s.matches("StorageType") /* StorageType com.amazonaws.rds#DBInstance$StorageType */ =>  {
+            s if s.matches("ListenerEndpoint") /* ListenerEndpoint com.amazonaws.rds#DBInstance$ListenerEndpoint */ =>  {
+                let var_637 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_endpoint(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_listener_endpoint(var_637);
+            }
+            ,
+            s if s.matches("MaxAllocatedStorage") /* MaxAllocatedStorage com.amazonaws.rds#DBInstance$MaxAllocatedStorage */ =>  {
+                let var_638 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max_allocated_storage(var_638);
+            }
+            ,
+            s if s.matches("TagList") /* TagList com.amazonaws.rds#DBInstance$TagList */ =>  {
+                let var_639 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_rds_tag_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tag_list(var_639);
+            }
+            ,
+            s if s.matches("DBInstanceAutomatedBackupsReplications") /* DBInstanceAutomatedBackupsReplications com.amazonaws.rds#DBInstance$DBInstanceAutomatedBackupsReplications */ =>  {
+                let var_640 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_rds_db_instance_automated_backups_replication_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_db_instance_automated_backups_replications(var_640);
+            }
+            ,
+            s if s.matches("CustomerOwnedIpEnabled") /* CustomerOwnedIpEnabled com.amazonaws.rds#DBInstance$CustomerOwnedIpEnabled */ =>  {
+                let var_641 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_customer_owned_ip_enabled(var_641);
+            }
+            ,
+            s if s.matches("AwsBackupRecoveryPointArn") /* AwsBackupRecoveryPointArn com.amazonaws.rds#DBInstance$AwsBackupRecoveryPointArn */ =>  {
                 let var_642 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -16082,389 +15750,11 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_storage_type(var_642);
-            }
-            ,
-            s if s.matches("TdeCredentialArn") /* TdeCredentialArn com.amazonaws.rds#DBInstance$TdeCredentialArn */ =>  {
-                let var_643 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_tde_credential_arn(var_643);
-            }
-            ,
-            s if s.matches("DbInstancePort") /* DbInstancePort com.amazonaws.rds#DBInstance$DbInstancePort */ =>  {
-                let var_644 =
-                    Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_db_instance_port(var_644);
-            }
-            ,
-            s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.rds#DBInstance$DBClusterIdentifier */ =>  {
-                let var_645 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_db_cluster_identifier(var_645);
-            }
-            ,
-            s if s.matches("StorageEncrypted") /* StorageEncrypted com.amazonaws.rds#DBInstance$StorageEncrypted */ =>  {
-                let var_646 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_storage_encrypted(var_646);
-            }
-            ,
-            s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.rds#DBInstance$KmsKeyId */ =>  {
-                let var_647 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_kms_key_id(var_647);
-            }
-            ,
-            s if s.matches("DbiResourceId") /* DbiResourceId com.amazonaws.rds#DBInstance$DbiResourceId */ =>  {
-                let var_648 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_dbi_resource_id(var_648);
-            }
-            ,
-            s if s.matches("CACertificateIdentifier") /* CACertificateIdentifier com.amazonaws.rds#DBInstance$CACertificateIdentifier */ =>  {
-                let var_649 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_ca_certificate_identifier(var_649);
-            }
-            ,
-            s if s.matches("DomainMemberships") /* DomainMemberships com.amazonaws.rds#DBInstance$DomainMemberships */ =>  {
-                let var_650 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_domain_membership_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_domain_memberships(var_650);
-            }
-            ,
-            s if s.matches("CopyTagsToSnapshot") /* CopyTagsToSnapshot com.amazonaws.rds#DBInstance$CopyTagsToSnapshot */ =>  {
-                let var_651 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_copy_tags_to_snapshot(var_651);
-            }
-            ,
-            s if s.matches("MonitoringInterval") /* MonitoringInterval com.amazonaws.rds#DBInstance$MonitoringInterval */ =>  {
-                let var_652 =
-                    Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_monitoring_interval(var_652);
-            }
-            ,
-            s if s.matches("EnhancedMonitoringResourceArn") /* EnhancedMonitoringResourceArn com.amazonaws.rds#DBInstance$EnhancedMonitoringResourceArn */ =>  {
-                let var_653 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_enhanced_monitoring_resource_arn(var_653);
-            }
-            ,
-            s if s.matches("MonitoringRoleArn") /* MonitoringRoleArn com.amazonaws.rds#DBInstance$MonitoringRoleArn */ =>  {
-                let var_654 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_monitoring_role_arn(var_654);
-            }
-            ,
-            s if s.matches("PromotionTier") /* PromotionTier com.amazonaws.rds#DBInstance$PromotionTier */ =>  {
-                let var_655 =
-                    Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_promotion_tier(var_655);
-            }
-            ,
-            s if s.matches("DBInstanceArn") /* DBInstanceArn com.amazonaws.rds#DBInstance$DBInstanceArn */ =>  {
-                let var_656 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_db_instance_arn(var_656);
-            }
-            ,
-            s if s.matches("Timezone") /* Timezone com.amazonaws.rds#DBInstance$Timezone */ =>  {
-                let var_657 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_timezone(var_657);
-            }
-            ,
-            s if s.matches("IAMDatabaseAuthenticationEnabled") /* IAMDatabaseAuthenticationEnabled com.amazonaws.rds#DBInstance$IAMDatabaseAuthenticationEnabled */ =>  {
-                let var_658 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_iam_database_authentication_enabled(var_658);
-            }
-            ,
-            s if s.matches("PerformanceInsightsEnabled") /* PerformanceInsightsEnabled com.amazonaws.rds#DBInstance$PerformanceInsightsEnabled */ =>  {
-                let var_659 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_performance_insights_enabled(var_659);
-            }
-            ,
-            s if s.matches("PerformanceInsightsKMSKeyId") /* PerformanceInsightsKMSKeyId com.amazonaws.rds#DBInstance$PerformanceInsightsKMSKeyId */ =>  {
-                let var_660 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_performance_insights_kms_key_id(var_660);
-            }
-            ,
-            s if s.matches("PerformanceInsightsRetentionPeriod") /* PerformanceInsightsRetentionPeriod com.amazonaws.rds#DBInstance$PerformanceInsightsRetentionPeriod */ =>  {
-                let var_661 =
-                    Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_performance_insights_retention_period(var_661);
-            }
-            ,
-            s if s.matches("EnabledCloudwatchLogsExports") /* EnabledCloudwatchLogsExports com.amazonaws.rds#DBInstance$EnabledCloudwatchLogsExports */ =>  {
-                let var_662 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_log_type_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_enabled_cloudwatch_logs_exports(var_662);
-            }
-            ,
-            s if s.matches("ProcessorFeatures") /* ProcessorFeatures com.amazonaws.rds#DBInstance$ProcessorFeatures */ =>  {
-                let var_663 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_processor_feature_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_processor_features(var_663);
-            }
-            ,
-            s if s.matches("DeletionProtection") /* DeletionProtection com.amazonaws.rds#DBInstance$DeletionProtection */ =>  {
-                let var_664 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_deletion_protection(var_664);
-            }
-            ,
-            s if s.matches("AssociatedRoles") /* AssociatedRoles com.amazonaws.rds#DBInstance$AssociatedRoles */ =>  {
-                let var_665 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_db_instance_roles(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_associated_roles(var_665);
-            }
-            ,
-            s if s.matches("ListenerEndpoint") /* ListenerEndpoint com.amazonaws.rds#DBInstance$ListenerEndpoint */ =>  {
-                let var_666 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_endpoint(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_listener_endpoint(var_666);
-            }
-            ,
-            s if s.matches("MaxAllocatedStorage") /* MaxAllocatedStorage com.amazonaws.rds#DBInstance$MaxAllocatedStorage */ =>  {
-                let var_667 =
-                    Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_max_allocated_storage(var_667);
-            }
-            ,
-            s if s.matches("TagList") /* TagList com.amazonaws.rds#DBInstance$TagList */ =>  {
-                let var_668 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_tag_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_tag_list(var_668);
-            }
-            ,
-            s if s.matches("DBInstanceAutomatedBackupsReplications") /* DBInstanceAutomatedBackupsReplications com.amazonaws.rds#DBInstance$DBInstanceAutomatedBackupsReplications */ =>  {
-                let var_669 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_rds_db_instance_automated_backups_replication_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_db_instance_automated_backups_replications(var_669);
-            }
-            ,
-            s if s.matches("CustomerOwnedIpEnabled") /* CustomerOwnedIpEnabled com.amazonaws.rds#DBInstance$CustomerOwnedIpEnabled */ =>  {
-                let var_670 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_customer_owned_ip_enabled(var_670);
-            }
-            ,
-            s if s.matches("AwsBackupRecoveryPointArn") /* AwsBackupRecoveryPointArn com.amazonaws.rds#DBInstance$AwsBackupRecoveryPointArn */ =>  {
-                let var_671 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_aws_backup_recovery_point_arn(var_671);
+                builder = builder.set_aws_backup_recovery_point_arn(var_642);
             }
             ,
             s if s.matches("ActivityStreamStatus") /* ActivityStreamStatus com.amazonaws.rds#DBInstance$ActivityStreamStatus */ =>  {
-                let var_672 =
+                let var_643 =
                     Some(
                         Result::<crate::model::ActivityStreamStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::ActivityStreamStatus::from(
@@ -16474,11 +15764,11 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_activity_stream_status(var_672);
+                builder = builder.set_activity_stream_status(var_643);
             }
             ,
             s if s.matches("ActivityStreamKmsKeyId") /* ActivityStreamKmsKeyId com.amazonaws.rds#DBInstance$ActivityStreamKmsKeyId */ =>  {
-                let var_673 =
+                let var_644 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16487,11 +15777,11 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_activity_stream_kms_key_id(var_673);
+                builder = builder.set_activity_stream_kms_key_id(var_644);
             }
             ,
             s if s.matches("ActivityStreamKinesisStreamName") /* ActivityStreamKinesisStreamName com.amazonaws.rds#DBInstance$ActivityStreamKinesisStreamName */ =>  {
-                let var_674 =
+                let var_645 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16500,11 +15790,11 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_activity_stream_kinesis_stream_name(var_674);
+                builder = builder.set_activity_stream_kinesis_stream_name(var_645);
             }
             ,
             s if s.matches("ActivityStreamMode") /* ActivityStreamMode com.amazonaws.rds#DBInstance$ActivityStreamMode */ =>  {
-                let var_675 =
+                let var_646 =
                     Some(
                         Result::<crate::model::ActivityStreamMode, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::ActivityStreamMode::from(
@@ -16514,11 +15804,11 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_activity_stream_mode(var_675);
+                builder = builder.set_activity_stream_mode(var_646);
             }
             ,
             s if s.matches("ActivityStreamEngineNativeAuditFieldsIncluded") /* ActivityStreamEngineNativeAuditFieldsIncluded com.amazonaws.rds#DBInstance$ActivityStreamEngineNativeAuditFieldsIncluded */ =>  {
-                let var_676 =
+                let var_647 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -16529,11 +15819,11 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_activity_stream_engine_native_audit_fields_included(var_676);
+                builder = builder.set_activity_stream_engine_native_audit_fields_included(var_647);
             }
             ,
             s if s.matches("AutomationMode") /* AutomationMode com.amazonaws.rds#DBInstance$AutomationMode */ =>  {
-                let var_677 =
+                let var_648 =
                     Some(
                         Result::<crate::model::AutomationMode, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::AutomationMode::from(
@@ -16543,11 +15833,11 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_automation_mode(var_677);
+                builder = builder.set_automation_mode(var_648);
             }
             ,
             s if s.matches("ResumeFullAutomationModeTime") /* ResumeFullAutomationModeTime com.amazonaws.rds#DBInstance$ResumeFullAutomationModeTime */ =>  {
-                let var_678 =
+                let var_649 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16557,11 +15847,11 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_resume_full_automation_mode_time(var_678);
+                builder = builder.set_resume_full_automation_mode_time(var_649);
             }
             ,
             s if s.matches("CustomIamInstanceProfile") /* CustomIamInstanceProfile com.amazonaws.rds#DBInstance$CustomIamInstanceProfile */ =>  {
-                let var_679 =
+                let var_650 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16570,11 +15860,11 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_custom_iam_instance_profile(var_679);
+                builder = builder.set_custom_iam_instance_profile(var_650);
             }
             ,
             s if s.matches("BackupTarget") /* BackupTarget com.amazonaws.rds#DBInstance$BackupTarget */ =>  {
-                let var_680 =
+                let var_651 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16583,7 +15873,7 @@ pub fn deser_structure_crate_model_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_backup_target(var_680);
+                builder = builder.set_backup_target(var_651);
             }
             ,
             _ => {}
@@ -16600,7 +15890,7 @@ pub fn deser_structure_crate_model_db_proxy(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBProxyName") /* DBProxyName com.amazonaws.rds#DBProxy$DBProxyName */ =>  {
-                let var_681 =
+                let var_652 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16609,11 +15899,11 @@ pub fn deser_structure_crate_model_db_proxy(
                         ?
                     )
                 ;
-                builder = builder.set_db_proxy_name(var_681);
+                builder = builder.set_db_proxy_name(var_652);
             }
             ,
             s if s.matches("DBProxyArn") /* DBProxyArn com.amazonaws.rds#DBProxy$DBProxyArn */ =>  {
-                let var_682 =
+                let var_653 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16622,11 +15912,11 @@ pub fn deser_structure_crate_model_db_proxy(
                         ?
                     )
                 ;
-                builder = builder.set_db_proxy_arn(var_682);
+                builder = builder.set_db_proxy_arn(var_653);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#DBProxy$Status */ =>  {
-                let var_683 =
+                let var_654 =
                     Some(
                         Result::<crate::model::DbProxyStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::DbProxyStatus::from(
@@ -16636,11 +15926,11 @@ pub fn deser_structure_crate_model_db_proxy(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_683);
+                builder = builder.set_status(var_654);
             }
             ,
             s if s.matches("EngineFamily") /* EngineFamily com.amazonaws.rds#DBProxy$EngineFamily */ =>  {
-                let var_684 =
+                let var_655 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16649,11 +15939,11 @@ pub fn deser_structure_crate_model_db_proxy(
                         ?
                     )
                 ;
-                builder = builder.set_engine_family(var_684);
+                builder = builder.set_engine_family(var_655);
             }
             ,
             s if s.matches("VpcId") /* VpcId com.amazonaws.rds#DBProxy$VpcId */ =>  {
-                let var_685 =
+                let var_656 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16662,41 +15952,41 @@ pub fn deser_structure_crate_model_db_proxy(
                         ?
                     )
                 ;
-                builder = builder.set_vpc_id(var_685);
+                builder = builder.set_vpc_id(var_656);
             }
             ,
             s if s.matches("VpcSecurityGroupIds") /* VpcSecurityGroupIds com.amazonaws.rds#DBProxy$VpcSecurityGroupIds */ =>  {
-                let var_686 =
+                let var_657 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_vpc_security_group_ids(var_686);
+                builder = builder.set_vpc_security_group_ids(var_657);
             }
             ,
             s if s.matches("VpcSubnetIds") /* VpcSubnetIds com.amazonaws.rds#DBProxy$VpcSubnetIds */ =>  {
-                let var_687 =
+                let var_658 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_vpc_subnet_ids(var_687);
+                builder = builder.set_vpc_subnet_ids(var_658);
             }
             ,
             s if s.matches("Auth") /* Auth com.amazonaws.rds#DBProxy$Auth */ =>  {
-                let var_688 =
+                let var_659 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_user_auth_config_info_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_auth(var_688);
+                builder = builder.set_auth(var_659);
             }
             ,
             s if s.matches("RoleArn") /* RoleArn com.amazonaws.rds#DBProxy$RoleArn */ =>  {
-                let var_689 =
+                let var_660 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16705,11 +15995,11 @@ pub fn deser_structure_crate_model_db_proxy(
                         ?
                     )
                 ;
-                builder = builder.set_role_arn(var_689);
+                builder = builder.set_role_arn(var_660);
             }
             ,
             s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds#DBProxy$Endpoint */ =>  {
-                let var_690 =
+                let var_661 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16718,11 +16008,11 @@ pub fn deser_structure_crate_model_db_proxy(
                         ?
                     )
                 ;
-                builder = builder.set_endpoint(var_690);
+                builder = builder.set_endpoint(var_661);
             }
             ,
             s if s.matches("RequireTLS") /* RequireTLS com.amazonaws.rds#DBProxy$RequireTLS */ =>  {
-                let var_691 =
+                let var_662 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -16733,11 +16023,11 @@ pub fn deser_structure_crate_model_db_proxy(
                         ?
                     )
                 ;
-                builder = builder.set_require_tls(var_691);
+                builder = builder.set_require_tls(var_662);
             }
             ,
             s if s.matches("IdleClientTimeout") /* IdleClientTimeout com.amazonaws.rds#DBProxy$IdleClientTimeout */ =>  {
-                let var_692 =
+                let var_663 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -16748,11 +16038,11 @@ pub fn deser_structure_crate_model_db_proxy(
                         ?
                     )
                 ;
-                builder = builder.set_idle_client_timeout(var_692);
+                builder = builder.set_idle_client_timeout(var_663);
             }
             ,
             s if s.matches("DebugLogging") /* DebugLogging com.amazonaws.rds#DBProxy$DebugLogging */ =>  {
-                let var_693 =
+                let var_664 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -16763,11 +16053,11 @@ pub fn deser_structure_crate_model_db_proxy(
                         ?
                     )
                 ;
-                builder = builder.set_debug_logging(var_693);
+                builder = builder.set_debug_logging(var_664);
             }
             ,
             s if s.matches("CreatedDate") /* CreatedDate com.amazonaws.rds#DBProxy$CreatedDate */ =>  {
-                let var_694 =
+                let var_665 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16777,11 +16067,11 @@ pub fn deser_structure_crate_model_db_proxy(
                         ?
                     )
                 ;
-                builder = builder.set_created_date(var_694);
+                builder = builder.set_created_date(var_665);
             }
             ,
             s if s.matches("UpdatedDate") /* UpdatedDate com.amazonaws.rds#DBProxy$UpdatedDate */ =>  {
-                let var_695 =
+                let var_666 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16791,7 +16081,7 @@ pub fn deser_structure_crate_model_db_proxy(
                         ?
                     )
                 ;
-                builder = builder.set_updated_date(var_695);
+                builder = builder.set_updated_date(var_666);
             }
             ,
             _ => {}
@@ -16808,7 +16098,7 @@ pub fn deser_structure_crate_model_db_proxy_endpoint(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBProxyEndpointName") /* DBProxyEndpointName com.amazonaws.rds#DBProxyEndpoint$DBProxyEndpointName */ =>  {
-                let var_696 =
+                let var_667 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16817,11 +16107,11 @@ pub fn deser_structure_crate_model_db_proxy_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_db_proxy_endpoint_name(var_696);
+                builder = builder.set_db_proxy_endpoint_name(var_667);
             }
             ,
             s if s.matches("DBProxyEndpointArn") /* DBProxyEndpointArn com.amazonaws.rds#DBProxyEndpoint$DBProxyEndpointArn */ =>  {
-                let var_697 =
+                let var_668 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16830,11 +16120,11 @@ pub fn deser_structure_crate_model_db_proxy_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_db_proxy_endpoint_arn(var_697);
+                builder = builder.set_db_proxy_endpoint_arn(var_668);
             }
             ,
             s if s.matches("DBProxyName") /* DBProxyName com.amazonaws.rds#DBProxyEndpoint$DBProxyName */ =>  {
-                let var_698 =
+                let var_669 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16843,11 +16133,11 @@ pub fn deser_structure_crate_model_db_proxy_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_db_proxy_name(var_698);
+                builder = builder.set_db_proxy_name(var_669);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#DBProxyEndpoint$Status */ =>  {
-                let var_699 =
+                let var_670 =
                     Some(
                         Result::<crate::model::DbProxyEndpointStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::DbProxyEndpointStatus::from(
@@ -16857,11 +16147,11 @@ pub fn deser_structure_crate_model_db_proxy_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_699);
+                builder = builder.set_status(var_670);
             }
             ,
             s if s.matches("VpcId") /* VpcId com.amazonaws.rds#DBProxyEndpoint$VpcId */ =>  {
-                let var_700 =
+                let var_671 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16870,31 +16160,31 @@ pub fn deser_structure_crate_model_db_proxy_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_vpc_id(var_700);
+                builder = builder.set_vpc_id(var_671);
             }
             ,
             s if s.matches("VpcSecurityGroupIds") /* VpcSecurityGroupIds com.amazonaws.rds#DBProxyEndpoint$VpcSecurityGroupIds */ =>  {
-                let var_701 =
+                let var_672 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_vpc_security_group_ids(var_701);
+                builder = builder.set_vpc_security_group_ids(var_672);
             }
             ,
             s if s.matches("VpcSubnetIds") /* VpcSubnetIds com.amazonaws.rds#DBProxyEndpoint$VpcSubnetIds */ =>  {
-                let var_702 =
+                let var_673 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_vpc_subnet_ids(var_702);
+                builder = builder.set_vpc_subnet_ids(var_673);
             }
             ,
             s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds#DBProxyEndpoint$Endpoint */ =>  {
-                let var_703 =
+                let var_674 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16903,11 +16193,11 @@ pub fn deser_structure_crate_model_db_proxy_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_endpoint(var_703);
+                builder = builder.set_endpoint(var_674);
             }
             ,
             s if s.matches("CreatedDate") /* CreatedDate com.amazonaws.rds#DBProxyEndpoint$CreatedDate */ =>  {
-                let var_704 =
+                let var_675 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16917,11 +16207,11 @@ pub fn deser_structure_crate_model_db_proxy_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_created_date(var_704);
+                builder = builder.set_created_date(var_675);
             }
             ,
             s if s.matches("TargetRole") /* TargetRole com.amazonaws.rds#DBProxyEndpoint$TargetRole */ =>  {
-                let var_705 =
+                let var_676 =
                     Some(
                         Result::<crate::model::DbProxyEndpointTargetRole, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::DbProxyEndpointTargetRole::from(
@@ -16931,11 +16221,11 @@ pub fn deser_structure_crate_model_db_proxy_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_target_role(var_705);
+                builder = builder.set_target_role(var_676);
             }
             ,
             s if s.matches("IsDefault") /* IsDefault com.amazonaws.rds#DBProxyEndpoint$IsDefault */ =>  {
-                let var_706 =
+                let var_677 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -16946,7 +16236,7 @@ pub fn deser_structure_crate_model_db_proxy_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_is_default(var_706);
+                builder = builder.set_is_default(var_677);
             }
             ,
             _ => {}
@@ -16963,7 +16253,7 @@ pub fn deser_structure_crate_model_db_subnet_group(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBSubnetGroupName") /* DBSubnetGroupName com.amazonaws.rds#DBSubnetGroup$DBSubnetGroupName */ =>  {
-                let var_707 =
+                let var_678 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16972,11 +16262,11 @@ pub fn deser_structure_crate_model_db_subnet_group(
                         ?
                     )
                 ;
-                builder = builder.set_db_subnet_group_name(var_707);
+                builder = builder.set_db_subnet_group_name(var_678);
             }
             ,
             s if s.matches("DBSubnetGroupDescription") /* DBSubnetGroupDescription com.amazonaws.rds#DBSubnetGroup$DBSubnetGroupDescription */ =>  {
-                let var_708 =
+                let var_679 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16985,11 +16275,11 @@ pub fn deser_structure_crate_model_db_subnet_group(
                         ?
                     )
                 ;
-                builder = builder.set_db_subnet_group_description(var_708);
+                builder = builder.set_db_subnet_group_description(var_679);
             }
             ,
             s if s.matches("VpcId") /* VpcId com.amazonaws.rds#DBSubnetGroup$VpcId */ =>  {
-                let var_709 =
+                let var_680 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -16998,11 +16288,11 @@ pub fn deser_structure_crate_model_db_subnet_group(
                         ?
                     )
                 ;
-                builder = builder.set_vpc_id(var_709);
+                builder = builder.set_vpc_id(var_680);
             }
             ,
             s if s.matches("SubnetGroupStatus") /* SubnetGroupStatus com.amazonaws.rds#DBSubnetGroup$SubnetGroupStatus */ =>  {
-                let var_710 =
+                let var_681 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17011,21 +16301,21 @@ pub fn deser_structure_crate_model_db_subnet_group(
                         ?
                     )
                 ;
-                builder = builder.set_subnet_group_status(var_710);
+                builder = builder.set_subnet_group_status(var_681);
             }
             ,
             s if s.matches("Subnets") /* Subnets com.amazonaws.rds#DBSubnetGroup$Subnets */ =>  {
-                let var_711 =
+                let var_682 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_subnet_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_subnets(var_711);
+                builder = builder.set_subnets(var_682);
             }
             ,
             s if s.matches("DBSubnetGroupArn") /* DBSubnetGroupArn com.amazonaws.rds#DBSubnetGroup$DBSubnetGroupArn */ =>  {
-                let var_712 =
+                let var_683 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17034,7 +16324,7 @@ pub fn deser_structure_crate_model_db_subnet_group(
                         ?
                     )
                 ;
-                builder = builder.set_db_subnet_group_arn(var_712);
+                builder = builder.set_db_subnet_group_arn(var_683);
             }
             ,
             _ => {}
@@ -17051,7 +16341,7 @@ pub fn deser_structure_crate_model_global_cluster(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("GlobalClusterIdentifier") /* GlobalClusterIdentifier com.amazonaws.rds#GlobalCluster$GlobalClusterIdentifier */ =>  {
-                let var_713 =
+                let var_684 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17060,11 +16350,11 @@ pub fn deser_structure_crate_model_global_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_global_cluster_identifier(var_713);
+                builder = builder.set_global_cluster_identifier(var_684);
             }
             ,
             s if s.matches("GlobalClusterResourceId") /* GlobalClusterResourceId com.amazonaws.rds#GlobalCluster$GlobalClusterResourceId */ =>  {
-                let var_714 =
+                let var_685 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17073,11 +16363,11 @@ pub fn deser_structure_crate_model_global_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_global_cluster_resource_id(var_714);
+                builder = builder.set_global_cluster_resource_id(var_685);
             }
             ,
             s if s.matches("GlobalClusterArn") /* GlobalClusterArn com.amazonaws.rds#GlobalCluster$GlobalClusterArn */ =>  {
-                let var_715 =
+                let var_686 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17086,11 +16376,11 @@ pub fn deser_structure_crate_model_global_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_global_cluster_arn(var_715);
+                builder = builder.set_global_cluster_arn(var_686);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#GlobalCluster$Status */ =>  {
-                let var_716 =
+                let var_687 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17099,11 +16389,11 @@ pub fn deser_structure_crate_model_global_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_716);
+                builder = builder.set_status(var_687);
             }
             ,
             s if s.matches("Engine") /* Engine com.amazonaws.rds#GlobalCluster$Engine */ =>  {
-                let var_717 =
+                let var_688 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17112,11 +16402,11 @@ pub fn deser_structure_crate_model_global_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_717);
+                builder = builder.set_engine(var_688);
             }
             ,
             s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds#GlobalCluster$EngineVersion */ =>  {
-                let var_718 =
+                let var_689 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17125,11 +16415,11 @@ pub fn deser_structure_crate_model_global_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_engine_version(var_718);
+                builder = builder.set_engine_version(var_689);
             }
             ,
             s if s.matches("DatabaseName") /* DatabaseName com.amazonaws.rds#GlobalCluster$DatabaseName */ =>  {
-                let var_719 =
+                let var_690 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17138,11 +16428,11 @@ pub fn deser_structure_crate_model_global_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_database_name(var_719);
+                builder = builder.set_database_name(var_690);
             }
             ,
             s if s.matches("StorageEncrypted") /* StorageEncrypted com.amazonaws.rds#GlobalCluster$StorageEncrypted */ =>  {
-                let var_720 =
+                let var_691 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -17153,11 +16443,11 @@ pub fn deser_structure_crate_model_global_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_storage_encrypted(var_720);
+                builder = builder.set_storage_encrypted(var_691);
             }
             ,
             s if s.matches("DeletionProtection") /* DeletionProtection com.amazonaws.rds#GlobalCluster$DeletionProtection */ =>  {
-                let var_721 =
+                let var_692 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -17168,27 +16458,27 @@ pub fn deser_structure_crate_model_global_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_deletion_protection(var_721);
+                builder = builder.set_deletion_protection(var_692);
             }
             ,
             s if s.matches("GlobalClusterMembers") /* GlobalClusterMembers com.amazonaws.rds#GlobalCluster$GlobalClusterMembers */ =>  {
-                let var_722 =
+                let var_693 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_global_cluster_member_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_global_cluster_members(var_722);
+                builder = builder.set_global_cluster_members(var_693);
             }
             ,
             s if s.matches("FailoverState") /* FailoverState com.amazonaws.rds#GlobalCluster$FailoverState */ =>  {
-                let var_723 =
+                let var_694 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_failover_state(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_failover_state(var_723);
+                builder = builder.set_failover_state(var_694);
             }
             ,
             _ => {}
@@ -17205,7 +16495,7 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBInstanceArn") /* DBInstanceArn com.amazonaws.rds#DBInstanceAutomatedBackup$DBInstanceArn */ =>  {
-                let var_724 =
+                let var_695 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17214,11 +16504,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_arn(var_724);
+                builder = builder.set_db_instance_arn(var_695);
             }
             ,
             s if s.matches("DbiResourceId") /* DbiResourceId com.amazonaws.rds#DBInstanceAutomatedBackup$DbiResourceId */ =>  {
-                let var_725 =
+                let var_696 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17227,11 +16517,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_dbi_resource_id(var_725);
+                builder = builder.set_dbi_resource_id(var_696);
             }
             ,
             s if s.matches("Region") /* Region com.amazonaws.rds#DBInstanceAutomatedBackup$Region */ =>  {
-                let var_726 =
+                let var_697 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17240,11 +16530,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_region(var_726);
+                builder = builder.set_region(var_697);
             }
             ,
             s if s.matches("DBInstanceIdentifier") /* DBInstanceIdentifier com.amazonaws.rds#DBInstanceAutomatedBackup$DBInstanceIdentifier */ =>  {
-                let var_727 =
+                let var_698 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17253,21 +16543,21 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_identifier(var_727);
+                builder = builder.set_db_instance_identifier(var_698);
             }
             ,
             s if s.matches("RestoreWindow") /* RestoreWindow com.amazonaws.rds#DBInstanceAutomatedBackup$RestoreWindow */ =>  {
-                let var_728 =
+                let var_699 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_restore_window(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_restore_window(var_728);
+                builder = builder.set_restore_window(var_699);
             }
             ,
             s if s.matches("AllocatedStorage") /* AllocatedStorage com.amazonaws.rds#DBInstanceAutomatedBackup$AllocatedStorage */ =>  {
-                let var_729 =
+                let var_700 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -17278,11 +16568,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_allocated_storage(var_729);
+                builder = builder.set_allocated_storage(var_700);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#DBInstanceAutomatedBackup$Status */ =>  {
-                let var_730 =
+                let var_701 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17291,11 +16581,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_730);
+                builder = builder.set_status(var_701);
             }
             ,
             s if s.matches("Port") /* Port com.amazonaws.rds#DBInstanceAutomatedBackup$Port */ =>  {
-                let var_731 =
+                let var_702 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -17306,11 +16596,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_port(var_731);
+                builder = builder.set_port(var_702);
             }
             ,
             s if s.matches("AvailabilityZone") /* AvailabilityZone com.amazonaws.rds#DBInstanceAutomatedBackup$AvailabilityZone */ =>  {
-                let var_732 =
+                let var_703 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17319,11 +16609,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_availability_zone(var_732);
+                builder = builder.set_availability_zone(var_703);
             }
             ,
             s if s.matches("VpcId") /* VpcId com.amazonaws.rds#DBInstanceAutomatedBackup$VpcId */ =>  {
-                let var_733 =
+                let var_704 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17332,11 +16622,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_vpc_id(var_733);
+                builder = builder.set_vpc_id(var_704);
             }
             ,
             s if s.matches("InstanceCreateTime") /* InstanceCreateTime com.amazonaws.rds#DBInstanceAutomatedBackup$InstanceCreateTime */ =>  {
-                let var_734 =
+                let var_705 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17346,11 +16636,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_instance_create_time(var_734);
+                builder = builder.set_instance_create_time(var_705);
             }
             ,
             s if s.matches("MasterUsername") /* MasterUsername com.amazonaws.rds#DBInstanceAutomatedBackup$MasterUsername */ =>  {
-                let var_735 =
+                let var_706 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17359,11 +16649,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_master_username(var_735);
+                builder = builder.set_master_username(var_706);
             }
             ,
             s if s.matches("Engine") /* Engine com.amazonaws.rds#DBInstanceAutomatedBackup$Engine */ =>  {
-                let var_736 =
+                let var_707 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17372,11 +16662,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_736);
+                builder = builder.set_engine(var_707);
             }
             ,
             s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds#DBInstanceAutomatedBackup$EngineVersion */ =>  {
-                let var_737 =
+                let var_708 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17385,11 +16675,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_engine_version(var_737);
+                builder = builder.set_engine_version(var_708);
             }
             ,
             s if s.matches("LicenseModel") /* LicenseModel com.amazonaws.rds#DBInstanceAutomatedBackup$LicenseModel */ =>  {
-                let var_738 =
+                let var_709 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17398,11 +16688,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_license_model(var_738);
+                builder = builder.set_license_model(var_709);
             }
             ,
             s if s.matches("Iops") /* Iops com.amazonaws.rds#DBInstanceAutomatedBackup$Iops */ =>  {
-                let var_739 =
+                let var_710 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -17413,11 +16703,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_iops(var_739);
+                builder = builder.set_iops(var_710);
             }
             ,
             s if s.matches("OptionGroupName") /* OptionGroupName com.amazonaws.rds#DBInstanceAutomatedBackup$OptionGroupName */ =>  {
-                let var_740 =
+                let var_711 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17426,11 +16716,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_option_group_name(var_740);
+                builder = builder.set_option_group_name(var_711);
             }
             ,
             s if s.matches("TdeCredentialArn") /* TdeCredentialArn com.amazonaws.rds#DBInstanceAutomatedBackup$TdeCredentialArn */ =>  {
-                let var_741 =
+                let var_712 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17439,11 +16729,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_tde_credential_arn(var_741);
+                builder = builder.set_tde_credential_arn(var_712);
             }
             ,
             s if s.matches("Encrypted") /* Encrypted com.amazonaws.rds#DBInstanceAutomatedBackup$Encrypted */ =>  {
-                let var_742 =
+                let var_713 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -17454,11 +16744,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_encrypted(var_742);
+                builder = builder.set_encrypted(var_713);
             }
             ,
             s if s.matches("StorageType") /* StorageType com.amazonaws.rds#DBInstanceAutomatedBackup$StorageType */ =>  {
-                let var_743 =
+                let var_714 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17467,11 +16757,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_storage_type(var_743);
+                builder = builder.set_storage_type(var_714);
             }
             ,
             s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.rds#DBInstanceAutomatedBackup$KmsKeyId */ =>  {
-                let var_744 =
+                let var_715 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17480,11 +16770,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_kms_key_id(var_744);
+                builder = builder.set_kms_key_id(var_715);
             }
             ,
             s if s.matches("Timezone") /* Timezone com.amazonaws.rds#DBInstanceAutomatedBackup$Timezone */ =>  {
-                let var_745 =
+                let var_716 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17493,11 +16783,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_timezone(var_745);
+                builder = builder.set_timezone(var_716);
             }
             ,
             s if s.matches("IAMDatabaseAuthenticationEnabled") /* IAMDatabaseAuthenticationEnabled com.amazonaws.rds#DBInstanceAutomatedBackup$IAMDatabaseAuthenticationEnabled */ =>  {
-                let var_746 =
+                let var_717 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -17508,11 +16798,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_iam_database_authentication_enabled(var_746);
+                builder = builder.set_iam_database_authentication_enabled(var_717);
             }
             ,
             s if s.matches("BackupRetentionPeriod") /* BackupRetentionPeriod com.amazonaws.rds#DBInstanceAutomatedBackup$BackupRetentionPeriod */ =>  {
-                let var_747 =
+                let var_718 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -17523,11 +16813,11 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_backup_retention_period(var_747);
+                builder = builder.set_backup_retention_period(var_718);
             }
             ,
             s if s.matches("DBInstanceAutomatedBackupsArn") /* DBInstanceAutomatedBackupsArn com.amazonaws.rds#DBInstanceAutomatedBackup$DBInstanceAutomatedBackupsArn */ =>  {
-                let var_748 =
+                let var_719 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17536,21 +16826,21 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_automated_backups_arn(var_748);
+                builder = builder.set_db_instance_automated_backups_arn(var_719);
             }
             ,
             s if s.matches("DBInstanceAutomatedBackupsReplications") /* DBInstanceAutomatedBackupsReplications com.amazonaws.rds#DBInstanceAutomatedBackup$DBInstanceAutomatedBackupsReplications */ =>  {
-                let var_749 =
+                let var_720 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_db_instance_automated_backups_replication_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_automated_backups_replications(var_749);
+                builder = builder.set_db_instance_automated_backups_replications(var_720);
             }
             ,
             s if s.matches("BackupTarget") /* BackupTarget com.amazonaws.rds#DBInstanceAutomatedBackup$BackupTarget */ =>  {
-                let var_750 =
+                let var_721 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17559,33 +16849,7 @@ pub fn deser_structure_crate_model_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_backup_target(var_750);
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(builder.build())
-}
-
-pub fn deser_structure_crate_model_installation_media_failure_cause(
-    decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::InstallationMediaFailureCause, aws_smithy_xml::decode::XmlError> {
-    #[allow(unused_mut)]
-    let mut builder = crate::model::InstallationMediaFailureCause::builder();
-    while let Some(mut tag) = decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("Message") /* Message com.amazonaws.rds#InstallationMediaFailureCause$Message */ =>  {
-                let var_751 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_message(var_751);
+                builder = builder.set_backup_target(var_721);
             }
             ,
             _ => {}
@@ -17622,25 +16886,6 @@ pub fn deser_list_com_amazonaws_rds_certificate_list(
             s if s.matches("Certificate") /* member com.amazonaws.rds#CertificateList$member */ =>  {
                 out.push(
                     crate::xml_deser::deser_structure_crate_model_certificate(&mut tag)
-                    ?
-                );
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(out)
-}
-
-pub fn deser_list_com_amazonaws_rds_custom_availability_zone_list(
-    decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::CustomAvailabilityZone>, aws_smithy_xml::decode::XmlError> {
-    let mut out = std::vec::Vec::new();
-    while let Some(mut tag) = decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("CustomAvailabilityZone") /* member com.amazonaws.rds#CustomAvailabilityZoneList$member */ =>  {
-                out.push(
-                    crate::xml_deser::deser_structure_crate_model_custom_availability_zone(&mut tag)
                     ?
                 );
             }
@@ -17755,7 +17000,7 @@ pub fn deser_structure_crate_model_db_cluster_snapshot_attributes_result(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBClusterSnapshotIdentifier") /* DBClusterSnapshotIdentifier com.amazonaws.rds#DBClusterSnapshotAttributesResult$DBClusterSnapshotIdentifier */ =>  {
-                let var_752 =
+                let var_722 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -17764,17 +17009,17 @@ pub fn deser_structure_crate_model_db_cluster_snapshot_attributes_result(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_snapshot_identifier(var_752);
+                builder = builder.set_db_cluster_snapshot_identifier(var_722);
             }
             ,
             s if s.matches("DBClusterSnapshotAttributes") /* DBClusterSnapshotAttributes com.amazonaws.rds#DBClusterSnapshotAttributesResult$DBClusterSnapshotAttributes */ =>  {
-                let var_753 =
+                let var_723 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_db_cluster_snapshot_attribute_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_snapshot_attributes(var_753);
+                builder = builder.set_db_cluster_snapshot_attributes(var_723);
             }
             ,
             _ => {}
@@ -18002,7 +17247,7 @@ pub fn deser_structure_crate_model_db_snapshot_attributes_result(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBSnapshotIdentifier") /* DBSnapshotIdentifier com.amazonaws.rds#DBSnapshotAttributesResult$DBSnapshotIdentifier */ =>  {
-                let var_754 =
+                let var_724 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18011,17 +17256,17 @@ pub fn deser_structure_crate_model_db_snapshot_attributes_result(
                         ?
                     )
                 ;
-                builder = builder.set_db_snapshot_identifier(var_754);
+                builder = builder.set_db_snapshot_identifier(var_724);
             }
             ,
             s if s.matches("DBSnapshotAttributes") /* DBSnapshotAttributes com.amazonaws.rds#DBSnapshotAttributesResult$DBSnapshotAttributes */ =>  {
-                let var_755 =
+                let var_725 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_db_snapshot_attribute_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_snapshot_attributes(var_755);
+                builder = builder.set_db_snapshot_attributes(var_725);
             }
             ,
             _ => {}
@@ -18076,7 +17321,7 @@ pub fn deser_structure_crate_model_engine_defaults(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBParameterGroupFamily") /* DBParameterGroupFamily com.amazonaws.rds#EngineDefaults$DBParameterGroupFamily */ =>  {
-                let var_756 =
+                let var_726 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18085,11 +17330,11 @@ pub fn deser_structure_crate_model_engine_defaults(
                         ?
                     )
                 ;
-                builder = builder.set_db_parameter_group_family(var_756);
+                builder = builder.set_db_parameter_group_family(var_726);
             }
             ,
             s if s.matches("Marker") /* Marker com.amazonaws.rds#EngineDefaults$Marker */ =>  {
-                let var_757 =
+                let var_727 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18098,17 +17343,17 @@ pub fn deser_structure_crate_model_engine_defaults(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_757);
+                builder = builder.set_marker(var_727);
             }
             ,
             s if s.matches("Parameters") /* Parameters com.amazonaws.rds#EngineDefaults$Parameters */ =>  {
-                let var_758 =
+                let var_728 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_parameters_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_parameters(var_758);
+                builder = builder.set_parameters(var_728);
             }
             ,
             _ => {}
@@ -18202,25 +17447,6 @@ pub fn deser_list_com_amazonaws_rds_global_cluster_list(
             s if s.matches("GlobalClusterMember") /* member com.amazonaws.rds#GlobalClusterList$member */ =>  {
                 out.push(
                     crate::xml_deser::deser_structure_crate_model_global_cluster(&mut tag)
-                    ?
-                );
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(out)
-}
-
-pub fn deser_list_com_amazonaws_rds_installation_media_list(
-    decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::InstallationMedia>, aws_smithy_xml::decode::XmlError> {
-    let mut out = std::vec::Vec::new();
-    while let Some(mut tag) = decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("InstallationMedia") /* member com.amazonaws.rds#InstallationMediaList$member */ =>  {
-                out.push(
-                    crate::xml_deser::deser_structure_crate_model_installation_media(&mut tag)
                     ?
                 );
             }
@@ -18379,23 +17605,23 @@ pub fn deser_structure_crate_model_valid_db_instance_modifications_message(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Storage") /* Storage com.amazonaws.rds#ValidDBInstanceModificationsMessage$Storage */ =>  {
-                let var_759 =
+                let var_729 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_valid_storage_options_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_storage(var_759);
+                builder = builder.set_storage(var_729);
             }
             ,
             s if s.matches("ValidProcessorFeatures") /* ValidProcessorFeatures com.amazonaws.rds#ValidDBInstanceModificationsMessage$ValidProcessorFeatures */ =>  {
-                let var_760 =
+                let var_730 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_available_processor_feature_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_valid_processor_features(var_760);
+                builder = builder.set_valid_processor_features(var_730);
             }
             ,
             _ => {}
@@ -18412,7 +17638,7 @@ pub fn deser_structure_crate_model_certificate(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CertificateIdentifier") /* CertificateIdentifier com.amazonaws.rds#Certificate$CertificateIdentifier */ =>  {
-                let var_761 =
+                let var_731 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18421,11 +17647,11 @@ pub fn deser_structure_crate_model_certificate(
                         ?
                     )
                 ;
-                builder = builder.set_certificate_identifier(var_761);
+                builder = builder.set_certificate_identifier(var_731);
             }
             ,
             s if s.matches("CertificateType") /* CertificateType com.amazonaws.rds#Certificate$CertificateType */ =>  {
-                let var_762 =
+                let var_732 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18434,11 +17660,11 @@ pub fn deser_structure_crate_model_certificate(
                         ?
                     )
                 ;
-                builder = builder.set_certificate_type(var_762);
+                builder = builder.set_certificate_type(var_732);
             }
             ,
             s if s.matches("Thumbprint") /* Thumbprint com.amazonaws.rds#Certificate$Thumbprint */ =>  {
-                let var_763 =
+                let var_733 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18447,11 +17673,11 @@ pub fn deser_structure_crate_model_certificate(
                         ?
                     )
                 ;
-                builder = builder.set_thumbprint(var_763);
+                builder = builder.set_thumbprint(var_733);
             }
             ,
             s if s.matches("ValidFrom") /* ValidFrom com.amazonaws.rds#Certificate$ValidFrom */ =>  {
-                let var_764 =
+                let var_734 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18461,11 +17687,11 @@ pub fn deser_structure_crate_model_certificate(
                         ?
                     )
                 ;
-                builder = builder.set_valid_from(var_764);
+                builder = builder.set_valid_from(var_734);
             }
             ,
             s if s.matches("ValidTill") /* ValidTill com.amazonaws.rds#Certificate$ValidTill */ =>  {
-                let var_765 =
+                let var_735 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18475,11 +17701,11 @@ pub fn deser_structure_crate_model_certificate(
                         ?
                     )
                 ;
-                builder = builder.set_valid_till(var_765);
+                builder = builder.set_valid_till(var_735);
             }
             ,
             s if s.matches("CertificateArn") /* CertificateArn com.amazonaws.rds#Certificate$CertificateArn */ =>  {
-                let var_766 =
+                let var_736 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18488,11 +17714,11 @@ pub fn deser_structure_crate_model_certificate(
                         ?
                     )
                 ;
-                builder = builder.set_certificate_arn(var_766);
+                builder = builder.set_certificate_arn(var_736);
             }
             ,
             s if s.matches("CustomerOverride") /* CustomerOverride com.amazonaws.rds#Certificate$CustomerOverride */ =>  {
-                let var_767 =
+                let var_737 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -18503,11 +17729,11 @@ pub fn deser_structure_crate_model_certificate(
                         ?
                     )
                 ;
-                builder = builder.set_customer_override(var_767);
+                builder = builder.set_customer_override(var_737);
             }
             ,
             s if s.matches("CustomerOverrideValidTill") /* CustomerOverrideValidTill com.amazonaws.rds#Certificate$CustomerOverrideValidTill */ =>  {
-                let var_768 =
+                let var_738 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18517,7 +17743,7 @@ pub fn deser_structure_crate_model_certificate(
                         ?
                     )
                 ;
-                builder = builder.set_customer_override_valid_till(var_768);
+                builder = builder.set_customer_override_valid_till(var_738);
             }
             ,
             _ => {}
@@ -18534,7 +17760,7 @@ pub fn deser_structure_crate_model_db_proxy_target_group(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBProxyName") /* DBProxyName com.amazonaws.rds#DBProxyTargetGroup$DBProxyName */ =>  {
-                let var_769 =
+                let var_739 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18543,11 +17769,11 @@ pub fn deser_structure_crate_model_db_proxy_target_group(
                         ?
                     )
                 ;
-                builder = builder.set_db_proxy_name(var_769);
+                builder = builder.set_db_proxy_name(var_739);
             }
             ,
             s if s.matches("TargetGroupName") /* TargetGroupName com.amazonaws.rds#DBProxyTargetGroup$TargetGroupName */ =>  {
-                let var_770 =
+                let var_740 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18556,11 +17782,11 @@ pub fn deser_structure_crate_model_db_proxy_target_group(
                         ?
                     )
                 ;
-                builder = builder.set_target_group_name(var_770);
+                builder = builder.set_target_group_name(var_740);
             }
             ,
             s if s.matches("TargetGroupArn") /* TargetGroupArn com.amazonaws.rds#DBProxyTargetGroup$TargetGroupArn */ =>  {
-                let var_771 =
+                let var_741 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18569,11 +17795,11 @@ pub fn deser_structure_crate_model_db_proxy_target_group(
                         ?
                     )
                 ;
-                builder = builder.set_target_group_arn(var_771);
+                builder = builder.set_target_group_arn(var_741);
             }
             ,
             s if s.matches("IsDefault") /* IsDefault com.amazonaws.rds#DBProxyTargetGroup$IsDefault */ =>  {
-                let var_772 =
+                let var_742 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -18584,11 +17810,11 @@ pub fn deser_structure_crate_model_db_proxy_target_group(
                         ?
                     )
                 ;
-                builder = builder.set_is_default(var_772);
+                builder = builder.set_is_default(var_742);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#DBProxyTargetGroup$Status */ =>  {
-                let var_773 =
+                let var_743 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18597,21 +17823,21 @@ pub fn deser_structure_crate_model_db_proxy_target_group(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_773);
+                builder = builder.set_status(var_743);
             }
             ,
             s if s.matches("ConnectionPoolConfig") /* ConnectionPoolConfig com.amazonaws.rds#DBProxyTargetGroup$ConnectionPoolConfig */ =>  {
-                let var_774 =
+                let var_744 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_connection_pool_configuration_info(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_connection_pool_config(var_774);
+                builder = builder.set_connection_pool_config(var_744);
             }
             ,
             s if s.matches("CreatedDate") /* CreatedDate com.amazonaws.rds#DBProxyTargetGroup$CreatedDate */ =>  {
-                let var_775 =
+                let var_745 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18621,11 +17847,11 @@ pub fn deser_structure_crate_model_db_proxy_target_group(
                         ?
                     )
                 ;
-                builder = builder.set_created_date(var_775);
+                builder = builder.set_created_date(var_745);
             }
             ,
             s if s.matches("UpdatedDate") /* UpdatedDate com.amazonaws.rds#DBProxyTargetGroup$UpdatedDate */ =>  {
-                let var_776 =
+                let var_746 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18635,7 +17861,7 @@ pub fn deser_structure_crate_model_db_proxy_target_group(
                         ?
                     )
                 ;
-                builder = builder.set_updated_date(var_776);
+                builder = builder.set_updated_date(var_746);
             }
             ,
             _ => {}
@@ -18652,7 +17878,7 @@ pub fn deser_structure_crate_model_reserved_db_instance(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ReservedDBInstanceId") /* ReservedDBInstanceId com.amazonaws.rds#ReservedDBInstance$ReservedDBInstanceId */ =>  {
-                let var_777 =
+                let var_747 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18661,11 +17887,11 @@ pub fn deser_structure_crate_model_reserved_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_reserved_db_instance_id(var_777);
+                builder = builder.set_reserved_db_instance_id(var_747);
             }
             ,
             s if s.matches("ReservedDBInstancesOfferingId") /* ReservedDBInstancesOfferingId com.amazonaws.rds#ReservedDBInstance$ReservedDBInstancesOfferingId */ =>  {
-                let var_778 =
+                let var_748 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18674,11 +17900,11 @@ pub fn deser_structure_crate_model_reserved_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_reserved_db_instances_offering_id(var_778);
+                builder = builder.set_reserved_db_instances_offering_id(var_748);
             }
             ,
             s if s.matches("DBInstanceClass") /* DBInstanceClass com.amazonaws.rds#ReservedDBInstance$DBInstanceClass */ =>  {
-                let var_779 =
+                let var_749 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18687,11 +17913,11 @@ pub fn deser_structure_crate_model_reserved_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_class(var_779);
+                builder = builder.set_db_instance_class(var_749);
             }
             ,
             s if s.matches("StartTime") /* StartTime com.amazonaws.rds#ReservedDBInstance$StartTime */ =>  {
-                let var_780 =
+                let var_750 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18701,11 +17927,11 @@ pub fn deser_structure_crate_model_reserved_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_start_time(var_780);
+                builder = builder.set_start_time(var_750);
             }
             ,
             s if s.matches("Duration") /* Duration com.amazonaws.rds#ReservedDBInstance$Duration */ =>  {
-                let var_781 =
+                let var_751 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -18716,11 +17942,11 @@ pub fn deser_structure_crate_model_reserved_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_duration(var_781);
+                builder = builder.set_duration(var_751);
             }
             ,
             s if s.matches("FixedPrice") /* FixedPrice com.amazonaws.rds#ReservedDBInstance$FixedPrice */ =>  {
-                let var_782 =
+                let var_752 =
                     Some(
                          {
                             <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -18731,11 +17957,11 @@ pub fn deser_structure_crate_model_reserved_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_fixed_price(var_782);
+                builder = builder.set_fixed_price(var_752);
             }
             ,
             s if s.matches("UsagePrice") /* UsagePrice com.amazonaws.rds#ReservedDBInstance$UsagePrice */ =>  {
-                let var_783 =
+                let var_753 =
                     Some(
                          {
                             <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -18746,11 +17972,11 @@ pub fn deser_structure_crate_model_reserved_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_usage_price(var_783);
+                builder = builder.set_usage_price(var_753);
             }
             ,
             s if s.matches("CurrencyCode") /* CurrencyCode com.amazonaws.rds#ReservedDBInstance$CurrencyCode */ =>  {
-                let var_784 =
+                let var_754 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18759,11 +17985,11 @@ pub fn deser_structure_crate_model_reserved_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_currency_code(var_784);
+                builder = builder.set_currency_code(var_754);
             }
             ,
             s if s.matches("DBInstanceCount") /* DBInstanceCount com.amazonaws.rds#ReservedDBInstance$DBInstanceCount */ =>  {
-                let var_785 =
+                let var_755 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -18774,11 +18000,11 @@ pub fn deser_structure_crate_model_reserved_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_count(var_785);
+                builder = builder.set_db_instance_count(var_755);
             }
             ,
             s if s.matches("ProductDescription") /* ProductDescription com.amazonaws.rds#ReservedDBInstance$ProductDescription */ =>  {
-                let var_786 =
+                let var_756 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18787,11 +18013,11 @@ pub fn deser_structure_crate_model_reserved_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_product_description(var_786);
+                builder = builder.set_product_description(var_756);
             }
             ,
             s if s.matches("OfferingType") /* OfferingType com.amazonaws.rds#ReservedDBInstance$OfferingType */ =>  {
-                let var_787 =
+                let var_757 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18800,11 +18026,11 @@ pub fn deser_structure_crate_model_reserved_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_offering_type(var_787);
+                builder = builder.set_offering_type(var_757);
             }
             ,
             s if s.matches("MultiAZ") /* MultiAZ com.amazonaws.rds#ReservedDBInstance$MultiAZ */ =>  {
-                let var_788 =
+                let var_758 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -18815,11 +18041,11 @@ pub fn deser_structure_crate_model_reserved_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_multi_az(var_788);
+                builder = builder.set_multi_az(var_758);
             }
             ,
             s if s.matches("State") /* State com.amazonaws.rds#ReservedDBInstance$State */ =>  {
-                let var_789 =
+                let var_759 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18828,21 +18054,21 @@ pub fn deser_structure_crate_model_reserved_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_789);
+                builder = builder.set_state(var_759);
             }
             ,
             s if s.matches("RecurringCharges") /* RecurringCharges com.amazonaws.rds#ReservedDBInstance$RecurringCharges */ =>  {
-                let var_790 =
+                let var_760 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_recurring_charge_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_recurring_charges(var_790);
+                builder = builder.set_recurring_charges(var_760);
             }
             ,
             s if s.matches("ReservedDBInstanceArn") /* ReservedDBInstanceArn com.amazonaws.rds#ReservedDBInstance$ReservedDBInstanceArn */ =>  {
-                let var_791 =
+                let var_761 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18851,11 +18077,11 @@ pub fn deser_structure_crate_model_reserved_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_reserved_db_instance_arn(var_791);
+                builder = builder.set_reserved_db_instance_arn(var_761);
             }
             ,
             s if s.matches("LeaseId") /* LeaseId com.amazonaws.rds#ReservedDBInstance$LeaseId */ =>  {
-                let var_792 =
+                let var_762 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -18864,7 +18090,7 @@ pub fn deser_structure_crate_model_reserved_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_lease_id(var_792);
+                builder = builder.set_lease_id(var_762);
             }
             ,
             _ => {}
@@ -19035,97 +18261,6 @@ pub fn deser_list_com_amazonaws_rds_options_list(
     Ok(out)
 }
 
-pub fn deser_structure_crate_model_vpn_details(
-    decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::VpnDetails, aws_smithy_xml::decode::XmlError> {
-    #[allow(unused_mut)]
-    let mut builder = crate::model::VpnDetails::builder();
-    while let Some(mut tag) = decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("VpnId") /* VpnId com.amazonaws.rds#VpnDetails$VpnId */ =>  {
-                let var_793 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_vpn_id(var_793);
-            }
-            ,
-            s if s.matches("VpnTunnelOriginatorIP") /* VpnTunnelOriginatorIP com.amazonaws.rds#VpnDetails$VpnTunnelOriginatorIP */ =>  {
-                let var_794 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_vpn_tunnel_originator_ip(var_794);
-            }
-            ,
-            s if s.matches("VpnGatewayIp") /* VpnGatewayIp com.amazonaws.rds#VpnDetails$VpnGatewayIp */ =>  {
-                let var_795 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_vpn_gateway_ip(var_795);
-            }
-            ,
-            s if s.matches("VpnPSK") /* VpnPSK com.amazonaws.rds#VpnDetails$VpnPSK */ =>  {
-                let var_796 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_vpn_psk(var_796);
-            }
-            ,
-            s if s.matches("VpnName") /* VpnName com.amazonaws.rds#VpnDetails$VpnName */ =>  {
-                let var_797 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_vpn_name(var_797);
-            }
-            ,
-            s if s.matches("VpnState") /* VpnState com.amazonaws.rds#VpnDetails$VpnState */ =>  {
-                let var_798 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_vpn_state(var_798);
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(builder.build())
-}
-
 pub fn deser_structure_crate_model_upgrade_target(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::UpgradeTarget, aws_smithy_xml::decode::XmlError> {
@@ -19134,7 +18269,7 @@ pub fn deser_structure_crate_model_upgrade_target(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Engine") /* Engine com.amazonaws.rds#UpgradeTarget$Engine */ =>  {
-                let var_799 =
+                let var_763 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19143,11 +18278,11 @@ pub fn deser_structure_crate_model_upgrade_target(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_799);
+                builder = builder.set_engine(var_763);
             }
             ,
             s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds#UpgradeTarget$EngineVersion */ =>  {
-                let var_800 =
+                let var_764 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19156,11 +18291,11 @@ pub fn deser_structure_crate_model_upgrade_target(
                         ?
                     )
                 ;
-                builder = builder.set_engine_version(var_800);
+                builder = builder.set_engine_version(var_764);
             }
             ,
             s if s.matches("Description") /* Description com.amazonaws.rds#UpgradeTarget$Description */ =>  {
-                let var_801 =
+                let var_765 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19169,11 +18304,11 @@ pub fn deser_structure_crate_model_upgrade_target(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_801);
+                builder = builder.set_description(var_765);
             }
             ,
             s if s.matches("AutoUpgrade") /* AutoUpgrade com.amazonaws.rds#UpgradeTarget$AutoUpgrade */ =>  {
-                let var_802 =
+                let var_766 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -19184,11 +18319,11 @@ pub fn deser_structure_crate_model_upgrade_target(
                         ?
                     )
                 ;
-                builder = builder.set_auto_upgrade(var_802);
+                builder = builder.set_auto_upgrade(var_766);
             }
             ,
             s if s.matches("IsMajorVersionUpgrade") /* IsMajorVersionUpgrade com.amazonaws.rds#UpgradeTarget$IsMajorVersionUpgrade */ =>  {
-                let var_803 =
+                let var_767 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -19199,21 +18334,21 @@ pub fn deser_structure_crate_model_upgrade_target(
                         ?
                     )
                 ;
-                builder = builder.set_is_major_version_upgrade(var_803);
+                builder = builder.set_is_major_version_upgrade(var_767);
             }
             ,
             s if s.matches("SupportedEngineModes") /* SupportedEngineModes com.amazonaws.rds#UpgradeTarget$SupportedEngineModes */ =>  {
-                let var_804 =
+                let var_768 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_engine_mode_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_engine_modes(var_804);
+                builder = builder.set_supported_engine_modes(var_768);
             }
             ,
             s if s.matches("SupportsParallelQuery") /* SupportsParallelQuery com.amazonaws.rds#UpgradeTarget$SupportsParallelQuery */ =>  {
-                let var_805 =
+                let var_769 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -19224,11 +18359,11 @@ pub fn deser_structure_crate_model_upgrade_target(
                         ?
                     )
                 ;
-                builder = builder.set_supports_parallel_query(var_805);
+                builder = builder.set_supports_parallel_query(var_769);
             }
             ,
             s if s.matches("SupportsGlobalDatabases") /* SupportsGlobalDatabases com.amazonaws.rds#UpgradeTarget$SupportsGlobalDatabases */ =>  {
-                let var_806 =
+                let var_770 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -19239,11 +18374,11 @@ pub fn deser_structure_crate_model_upgrade_target(
                         ?
                     )
                 ;
-                builder = builder.set_supports_global_databases(var_806);
+                builder = builder.set_supports_global_databases(var_770);
             }
             ,
             s if s.matches("SupportsBabelfish") /* SupportsBabelfish com.amazonaws.rds#UpgradeTarget$SupportsBabelfish */ =>  {
-                let var_807 =
+                let var_771 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -19254,7 +18389,7 @@ pub fn deser_structure_crate_model_upgrade_target(
                         ?
                     )
                 ;
-                builder = builder.set_supports_babelfish(var_807);
+                builder = builder.set_supports_babelfish(var_771);
             }
             ,
             _ => {}
@@ -19271,7 +18406,7 @@ pub fn deser_structure_crate_model_timezone(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TimezoneName") /* TimezoneName com.amazonaws.rds#Timezone$TimezoneName */ =>  {
-                let var_808 =
+                let var_772 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19280,7 +18415,7 @@ pub fn deser_structure_crate_model_timezone(
                         ?
                     )
                 ;
-                builder = builder.set_timezone_name(var_808);
+                builder = builder.set_timezone_name(var_772);
             }
             ,
             _ => {}
@@ -19297,7 +18432,7 @@ pub fn deser_structure_crate_model_tag(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Key") /* Key com.amazonaws.rds#Tag$Key */ =>  {
-                let var_809 =
+                let var_773 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19306,11 +18441,11 @@ pub fn deser_structure_crate_model_tag(
                         ?
                     )
                 ;
-                builder = builder.set_key(var_809);
+                builder = builder.set_key(var_773);
             }
             ,
             s if s.matches("Value") /* Value com.amazonaws.rds#Tag$Value */ =>  {
-                let var_810 =
+                let var_774 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19319,7 +18454,7 @@ pub fn deser_structure_crate_model_tag(
                         ?
                     )
                 ;
-                builder = builder.set_value(var_810);
+                builder = builder.set_value(var_774);
             }
             ,
             _ => {}
@@ -19436,7 +18571,7 @@ pub fn deser_structure_crate_model_scaling_configuration_info(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MinCapacity") /* MinCapacity com.amazonaws.rds#ScalingConfigurationInfo$MinCapacity */ =>  {
-                let var_811 =
+                let var_775 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -19447,11 +18582,11 @@ pub fn deser_structure_crate_model_scaling_configuration_info(
                         ?
                     )
                 ;
-                builder = builder.set_min_capacity(var_811);
+                builder = builder.set_min_capacity(var_775);
             }
             ,
             s if s.matches("MaxCapacity") /* MaxCapacity com.amazonaws.rds#ScalingConfigurationInfo$MaxCapacity */ =>  {
-                let var_812 =
+                let var_776 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -19462,11 +18597,11 @@ pub fn deser_structure_crate_model_scaling_configuration_info(
                         ?
                     )
                 ;
-                builder = builder.set_max_capacity(var_812);
+                builder = builder.set_max_capacity(var_776);
             }
             ,
             s if s.matches("AutoPause") /* AutoPause com.amazonaws.rds#ScalingConfigurationInfo$AutoPause */ =>  {
-                let var_813 =
+                let var_777 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -19477,11 +18612,11 @@ pub fn deser_structure_crate_model_scaling_configuration_info(
                         ?
                     )
                 ;
-                builder = builder.set_auto_pause(var_813);
+                builder = builder.set_auto_pause(var_777);
             }
             ,
             s if s.matches("SecondsUntilAutoPause") /* SecondsUntilAutoPause com.amazonaws.rds#ScalingConfigurationInfo$SecondsUntilAutoPause */ =>  {
-                let var_814 =
+                let var_778 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -19492,11 +18627,11 @@ pub fn deser_structure_crate_model_scaling_configuration_info(
                         ?
                     )
                 ;
-                builder = builder.set_seconds_until_auto_pause(var_814);
+                builder = builder.set_seconds_until_auto_pause(var_778);
             }
             ,
             s if s.matches("TimeoutAction") /* TimeoutAction com.amazonaws.rds#ScalingConfigurationInfo$TimeoutAction */ =>  {
-                let var_815 =
+                let var_779 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19505,11 +18640,11 @@ pub fn deser_structure_crate_model_scaling_configuration_info(
                         ?
                     )
                 ;
-                builder = builder.set_timeout_action(var_815);
+                builder = builder.set_timeout_action(var_779);
             }
             ,
             s if s.matches("SecondsBeforeTimeout") /* SecondsBeforeTimeout com.amazonaws.rds#ScalingConfigurationInfo$SecondsBeforeTimeout */ =>  {
-                let var_816 =
+                let var_780 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -19520,7 +18655,7 @@ pub fn deser_structure_crate_model_scaling_configuration_info(
                         ?
                     )
                 ;
-                builder = builder.set_seconds_before_timeout(var_816);
+                builder = builder.set_seconds_before_timeout(var_780);
             }
             ,
             _ => {}
@@ -19556,17 +18691,17 @@ pub fn deser_structure_crate_model_cluster_pending_modified_values(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("PendingCloudwatchLogsExports") /* PendingCloudwatchLogsExports com.amazonaws.rds#ClusterPendingModifiedValues$PendingCloudwatchLogsExports */ =>  {
-                let var_817 =
+                let var_781 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_pending_cloudwatch_logs_exports(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_pending_cloudwatch_logs_exports(var_817);
+                builder = builder.set_pending_cloudwatch_logs_exports(var_781);
             }
             ,
             s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.rds#ClusterPendingModifiedValues$DBClusterIdentifier */ =>  {
-                let var_818 =
+                let var_782 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19575,11 +18710,11 @@ pub fn deser_structure_crate_model_cluster_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_identifier(var_818);
+                builder = builder.set_db_cluster_identifier(var_782);
             }
             ,
             s if s.matches("MasterUserPassword") /* MasterUserPassword com.amazonaws.rds#ClusterPendingModifiedValues$MasterUserPassword */ =>  {
-                let var_819 =
+                let var_783 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19588,11 +18723,11 @@ pub fn deser_structure_crate_model_cluster_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_master_user_password(var_819);
+                builder = builder.set_master_user_password(var_783);
             }
             ,
             s if s.matches("IAMDatabaseAuthenticationEnabled") /* IAMDatabaseAuthenticationEnabled com.amazonaws.rds#ClusterPendingModifiedValues$IAMDatabaseAuthenticationEnabled */ =>  {
-                let var_820 =
+                let var_784 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -19603,11 +18738,11 @@ pub fn deser_structure_crate_model_cluster_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_iam_database_authentication_enabled(var_820);
+                builder = builder.set_iam_database_authentication_enabled(var_784);
             }
             ,
             s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds#ClusterPendingModifiedValues$EngineVersion */ =>  {
-                let var_821 =
+                let var_785 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19616,7 +18751,50 @@ pub fn deser_structure_crate_model_cluster_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_engine_version(var_821);
+                builder = builder.set_engine_version(var_785);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder.build())
+}
+
+pub fn deser_structure_crate_model_serverless_v2_scaling_configuration_info(
+    decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
+) -> Result<crate::model::ServerlessV2ScalingConfigurationInfo, aws_smithy_xml::decode::XmlError> {
+    #[allow(unused_mut)]
+    let mut builder = crate::model::ServerlessV2ScalingConfigurationInfo::builder();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("MinCapacity") /* MinCapacity com.amazonaws.rds#ServerlessV2ScalingConfigurationInfo$MinCapacity */ =>  {
+                let var_786 =
+                    Some(
+                         {
+                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.rds#DoubleOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_min_capacity(var_786);
+            }
+            ,
+            s if s.matches("MaxCapacity") /* MaxCapacity com.amazonaws.rds#ServerlessV2ScalingConfigurationInfo$MaxCapacity */ =>  {
+                let var_787 =
+                    Some(
+                         {
+                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.rds#DoubleOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max_capacity(var_787);
             }
             ,
             _ => {}
@@ -19633,7 +18811,7 @@ pub fn deser_structure_crate_model_endpoint(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Address") /* Address com.amazonaws.rds#Endpoint$Address */ =>  {
-                let var_822 =
+                let var_788 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19642,11 +18820,11 @@ pub fn deser_structure_crate_model_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_address(var_822);
+                builder = builder.set_address(var_788);
             }
             ,
             s if s.matches("Port") /* Port com.amazonaws.rds#Endpoint$Port */ =>  {
-                let var_823 =
+                let var_789 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -19657,11 +18835,11 @@ pub fn deser_structure_crate_model_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_port(var_823);
+                builder = builder.set_port(var_789);
             }
             ,
             s if s.matches("HostedZoneId") /* HostedZoneId com.amazonaws.rds#Endpoint$HostedZoneId */ =>  {
-                let var_824 =
+                let var_790 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19670,7 +18848,7 @@ pub fn deser_structure_crate_model_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_hosted_zone_id(var_824);
+                builder = builder.set_hosted_zone_id(var_790);
             }
             ,
             _ => {}
@@ -19726,7 +18904,7 @@ pub fn deser_structure_crate_model_pending_modified_values(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBInstanceClass") /* DBInstanceClass com.amazonaws.rds#PendingModifiedValues$DBInstanceClass */ =>  {
-                let var_825 =
+                let var_791 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19735,11 +18913,11 @@ pub fn deser_structure_crate_model_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_class(var_825);
+                builder = builder.set_db_instance_class(var_791);
             }
             ,
             s if s.matches("AllocatedStorage") /* AllocatedStorage com.amazonaws.rds#PendingModifiedValues$AllocatedStorage */ =>  {
-                let var_826 =
+                let var_792 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -19750,11 +18928,11 @@ pub fn deser_structure_crate_model_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_allocated_storage(var_826);
+                builder = builder.set_allocated_storage(var_792);
             }
             ,
             s if s.matches("MasterUserPassword") /* MasterUserPassword com.amazonaws.rds#PendingModifiedValues$MasterUserPassword */ =>  {
-                let var_827 =
+                let var_793 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19763,11 +18941,11 @@ pub fn deser_structure_crate_model_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_master_user_password(var_827);
+                builder = builder.set_master_user_password(var_793);
             }
             ,
             s if s.matches("Port") /* Port com.amazonaws.rds#PendingModifiedValues$Port */ =>  {
-                let var_828 =
+                let var_794 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -19778,11 +18956,11 @@ pub fn deser_structure_crate_model_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_port(var_828);
+                builder = builder.set_port(var_794);
             }
             ,
             s if s.matches("BackupRetentionPeriod") /* BackupRetentionPeriod com.amazonaws.rds#PendingModifiedValues$BackupRetentionPeriod */ =>  {
-                let var_829 =
+                let var_795 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -19793,11 +18971,11 @@ pub fn deser_structure_crate_model_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_backup_retention_period(var_829);
+                builder = builder.set_backup_retention_period(var_795);
             }
             ,
             s if s.matches("MultiAZ") /* MultiAZ com.amazonaws.rds#PendingModifiedValues$MultiAZ */ =>  {
-                let var_830 =
+                let var_796 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -19808,11 +18986,11 @@ pub fn deser_structure_crate_model_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_multi_az(var_830);
+                builder = builder.set_multi_az(var_796);
             }
             ,
             s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds#PendingModifiedValues$EngineVersion */ =>  {
-                let var_831 =
+                let var_797 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19821,11 +18999,11 @@ pub fn deser_structure_crate_model_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_engine_version(var_831);
+                builder = builder.set_engine_version(var_797);
             }
             ,
             s if s.matches("LicenseModel") /* LicenseModel com.amazonaws.rds#PendingModifiedValues$LicenseModel */ =>  {
-                let var_832 =
+                let var_798 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19834,11 +19012,11 @@ pub fn deser_structure_crate_model_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_license_model(var_832);
+                builder = builder.set_license_model(var_798);
             }
             ,
             s if s.matches("Iops") /* Iops com.amazonaws.rds#PendingModifiedValues$Iops */ =>  {
-                let var_833 =
+                let var_799 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -19849,11 +19027,11 @@ pub fn deser_structure_crate_model_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_iops(var_833);
+                builder = builder.set_iops(var_799);
             }
             ,
             s if s.matches("DBInstanceIdentifier") /* DBInstanceIdentifier com.amazonaws.rds#PendingModifiedValues$DBInstanceIdentifier */ =>  {
-                let var_834 =
+                let var_800 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19862,11 +19040,11 @@ pub fn deser_structure_crate_model_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_identifier(var_834);
+                builder = builder.set_db_instance_identifier(var_800);
             }
             ,
             s if s.matches("StorageType") /* StorageType com.amazonaws.rds#PendingModifiedValues$StorageType */ =>  {
-                let var_835 =
+                let var_801 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19875,11 +19053,11 @@ pub fn deser_structure_crate_model_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_storage_type(var_835);
+                builder = builder.set_storage_type(var_801);
             }
             ,
             s if s.matches("CACertificateIdentifier") /* CACertificateIdentifier com.amazonaws.rds#PendingModifiedValues$CACertificateIdentifier */ =>  {
-                let var_836 =
+                let var_802 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19888,11 +19066,11 @@ pub fn deser_structure_crate_model_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_ca_certificate_identifier(var_836);
+                builder = builder.set_ca_certificate_identifier(var_802);
             }
             ,
             s if s.matches("DBSubnetGroupName") /* DBSubnetGroupName com.amazonaws.rds#PendingModifiedValues$DBSubnetGroupName */ =>  {
-                let var_837 =
+                let var_803 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19901,31 +19079,31 @@ pub fn deser_structure_crate_model_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_db_subnet_group_name(var_837);
+                builder = builder.set_db_subnet_group_name(var_803);
             }
             ,
             s if s.matches("PendingCloudwatchLogsExports") /* PendingCloudwatchLogsExports com.amazonaws.rds#PendingModifiedValues$PendingCloudwatchLogsExports */ =>  {
-                let var_838 =
+                let var_804 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_pending_cloudwatch_logs_exports(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_pending_cloudwatch_logs_exports(var_838);
+                builder = builder.set_pending_cloudwatch_logs_exports(var_804);
             }
             ,
             s if s.matches("ProcessorFeatures") /* ProcessorFeatures com.amazonaws.rds#PendingModifiedValues$ProcessorFeatures */ =>  {
-                let var_839 =
+                let var_805 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_processor_feature_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_processor_features(var_839);
+                builder = builder.set_processor_features(var_805);
             }
             ,
             s if s.matches("IAMDatabaseAuthenticationEnabled") /* IAMDatabaseAuthenticationEnabled com.amazonaws.rds#PendingModifiedValues$IAMDatabaseAuthenticationEnabled */ =>  {
-                let var_840 =
+                let var_806 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -19936,11 +19114,11 @@ pub fn deser_structure_crate_model_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_iam_database_authentication_enabled(var_840);
+                builder = builder.set_iam_database_authentication_enabled(var_806);
             }
             ,
             s if s.matches("AutomationMode") /* AutomationMode com.amazonaws.rds#PendingModifiedValues$AutomationMode */ =>  {
-                let var_841 =
+                let var_807 =
                     Some(
                         Result::<crate::model::AutomationMode, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::AutomationMode::from(
@@ -19950,11 +19128,11 @@ pub fn deser_structure_crate_model_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_automation_mode(var_841);
+                builder = builder.set_automation_mode(var_807);
             }
             ,
             s if s.matches("ResumeFullAutomationModeTime") /* ResumeFullAutomationModeTime com.amazonaws.rds#PendingModifiedValues$ResumeFullAutomationModeTime */ =>  {
-                let var_842 =
+                let var_808 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -19964,7 +19142,7 @@ pub fn deser_structure_crate_model_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_resume_full_automation_mode_time(var_842);
+                builder = builder.set_resume_full_automation_mode_time(var_808);
             }
             ,
             _ => {}
@@ -20161,7 +19339,7 @@ pub fn deser_structure_crate_model_failover_state(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.rds#FailoverState$Status */ =>  {
-                let var_843 =
+                let var_809 =
                     Some(
                         Result::<crate::model::FailoverStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::FailoverStatus::from(
@@ -20171,11 +19349,11 @@ pub fn deser_structure_crate_model_failover_state(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_843);
+                builder = builder.set_status(var_809);
             }
             ,
             s if s.matches("FromDbClusterArn") /* FromDbClusterArn com.amazonaws.rds#FailoverState$FromDbClusterArn */ =>  {
-                let var_844 =
+                let var_810 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20184,11 +19362,11 @@ pub fn deser_structure_crate_model_failover_state(
                         ?
                     )
                 ;
-                builder = builder.set_from_db_cluster_arn(var_844);
+                builder = builder.set_from_db_cluster_arn(var_810);
             }
             ,
             s if s.matches("ToDbClusterArn") /* ToDbClusterArn com.amazonaws.rds#FailoverState$ToDbClusterArn */ =>  {
-                let var_845 =
+                let var_811 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20197,7 +19375,7 @@ pub fn deser_structure_crate_model_failover_state(
                         ?
                     )
                 ;
-                builder = builder.set_to_db_cluster_arn(var_845);
+                builder = builder.set_to_db_cluster_arn(var_811);
             }
             ,
             _ => {}
@@ -20214,7 +19392,7 @@ pub fn deser_structure_crate_model_restore_window(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("EarliestTime") /* EarliestTime com.amazonaws.rds#RestoreWindow$EarliestTime */ =>  {
-                let var_846 =
+                let var_812 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20224,11 +19402,11 @@ pub fn deser_structure_crate_model_restore_window(
                         ?
                     )
                 ;
-                builder = builder.set_earliest_time(var_846);
+                builder = builder.set_earliest_time(var_812);
             }
             ,
             s if s.matches("LatestTime") /* LatestTime com.amazonaws.rds#RestoreWindow$LatestTime */ =>  {
-                let var_847 =
+                let var_813 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20238,7 +19416,7 @@ pub fn deser_structure_crate_model_restore_window(
                         ?
                     )
                 ;
-                builder = builder.set_latest_time(var_847);
+                builder = builder.set_latest_time(var_813);
             }
             ,
             _ => {}
@@ -20255,7 +19433,7 @@ pub fn deser_structure_crate_model_account_quota(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AccountQuotaName") /* AccountQuotaName com.amazonaws.rds#AccountQuota$AccountQuotaName */ =>  {
-                let var_848 =
+                let var_814 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20264,11 +19442,11 @@ pub fn deser_structure_crate_model_account_quota(
                         ?
                     )
                 ;
-                builder = builder.set_account_quota_name(var_848);
+                builder = builder.set_account_quota_name(var_814);
             }
             ,
             s if s.matches("Used") /* Used com.amazonaws.rds#AccountQuota$Used */ =>  {
-                let var_849 =
+                let var_815 =
                     Some(
                          {
                             <i64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -20279,11 +19457,11 @@ pub fn deser_structure_crate_model_account_quota(
                         ?
                     )
                 ;
-                builder = builder.set_used(var_849);
+                builder = builder.set_used(var_815);
             }
             ,
             s if s.matches("Max") /* Max com.amazonaws.rds#AccountQuota$Max */ =>  {
-                let var_850 =
+                let var_816 =
                     Some(
                          {
                             <i64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -20294,7 +19472,7 @@ pub fn deser_structure_crate_model_account_quota(
                         ?
                     )
                 ;
-                builder = builder.set_max(var_850);
+                builder = builder.set_max(var_816);
             }
             ,
             _ => {}
@@ -20311,7 +19489,7 @@ pub fn deser_structure_crate_model_db_cluster_backtrack(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.rds#DBClusterBacktrack$DBClusterIdentifier */ =>  {
-                let var_851 =
+                let var_817 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20320,11 +19498,11 @@ pub fn deser_structure_crate_model_db_cluster_backtrack(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_identifier(var_851);
+                builder = builder.set_db_cluster_identifier(var_817);
             }
             ,
             s if s.matches("BacktrackIdentifier") /* BacktrackIdentifier com.amazonaws.rds#DBClusterBacktrack$BacktrackIdentifier */ =>  {
-                let var_852 =
+                let var_818 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20333,11 +19511,11 @@ pub fn deser_structure_crate_model_db_cluster_backtrack(
                         ?
                     )
                 ;
-                builder = builder.set_backtrack_identifier(var_852);
+                builder = builder.set_backtrack_identifier(var_818);
             }
             ,
             s if s.matches("BacktrackTo") /* BacktrackTo com.amazonaws.rds#DBClusterBacktrack$BacktrackTo */ =>  {
-                let var_853 =
+                let var_819 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20347,11 +19525,11 @@ pub fn deser_structure_crate_model_db_cluster_backtrack(
                         ?
                     )
                 ;
-                builder = builder.set_backtrack_to(var_853);
+                builder = builder.set_backtrack_to(var_819);
             }
             ,
             s if s.matches("BacktrackedFrom") /* BacktrackedFrom com.amazonaws.rds#DBClusterBacktrack$BacktrackedFrom */ =>  {
-                let var_854 =
+                let var_820 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20361,11 +19539,11 @@ pub fn deser_structure_crate_model_db_cluster_backtrack(
                         ?
                     )
                 ;
-                builder = builder.set_backtracked_from(var_854);
+                builder = builder.set_backtracked_from(var_820);
             }
             ,
             s if s.matches("BacktrackRequestCreationTime") /* BacktrackRequestCreationTime com.amazonaws.rds#DBClusterBacktrack$BacktrackRequestCreationTime */ =>  {
-                let var_855 =
+                let var_821 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20375,11 +19553,11 @@ pub fn deser_structure_crate_model_db_cluster_backtrack(
                         ?
                     )
                 ;
-                builder = builder.set_backtrack_request_creation_time(var_855);
+                builder = builder.set_backtrack_request_creation_time(var_821);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#DBClusterBacktrack$Status */ =>  {
-                let var_856 =
+                let var_822 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20388,7 +19566,7 @@ pub fn deser_structure_crate_model_db_cluster_backtrack(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_856);
+                builder = builder.set_status(var_822);
             }
             ,
             _ => {}
@@ -20405,7 +19583,7 @@ pub fn deser_structure_crate_model_db_cluster_endpoint(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBClusterEndpointIdentifier") /* DBClusterEndpointIdentifier com.amazonaws.rds#DBClusterEndpoint$DBClusterEndpointIdentifier */ =>  {
-                let var_857 =
+                let var_823 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20414,11 +19592,11 @@ pub fn deser_structure_crate_model_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_endpoint_identifier(var_857);
+                builder = builder.set_db_cluster_endpoint_identifier(var_823);
             }
             ,
             s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.rds#DBClusterEndpoint$DBClusterIdentifier */ =>  {
-                let var_858 =
+                let var_824 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20427,11 +19605,11 @@ pub fn deser_structure_crate_model_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_identifier(var_858);
+                builder = builder.set_db_cluster_identifier(var_824);
             }
             ,
             s if s.matches("DBClusterEndpointResourceIdentifier") /* DBClusterEndpointResourceIdentifier com.amazonaws.rds#DBClusterEndpoint$DBClusterEndpointResourceIdentifier */ =>  {
-                let var_859 =
+                let var_825 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20440,11 +19618,11 @@ pub fn deser_structure_crate_model_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_endpoint_resource_identifier(var_859);
+                builder = builder.set_db_cluster_endpoint_resource_identifier(var_825);
             }
             ,
             s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds#DBClusterEndpoint$Endpoint */ =>  {
-                let var_860 =
+                let var_826 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20453,11 +19631,11 @@ pub fn deser_structure_crate_model_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_endpoint(var_860);
+                builder = builder.set_endpoint(var_826);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#DBClusterEndpoint$Status */ =>  {
-                let var_861 =
+                let var_827 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20466,11 +19644,11 @@ pub fn deser_structure_crate_model_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_861);
+                builder = builder.set_status(var_827);
             }
             ,
             s if s.matches("EndpointType") /* EndpointType com.amazonaws.rds#DBClusterEndpoint$EndpointType */ =>  {
-                let var_862 =
+                let var_828 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20479,11 +19657,11 @@ pub fn deser_structure_crate_model_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_endpoint_type(var_862);
+                builder = builder.set_endpoint_type(var_828);
             }
             ,
             s if s.matches("CustomEndpointType") /* CustomEndpointType com.amazonaws.rds#DBClusterEndpoint$CustomEndpointType */ =>  {
-                let var_863 =
+                let var_829 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20492,31 +19670,31 @@ pub fn deser_structure_crate_model_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_custom_endpoint_type(var_863);
+                builder = builder.set_custom_endpoint_type(var_829);
             }
             ,
             s if s.matches("StaticMembers") /* StaticMembers com.amazonaws.rds#DBClusterEndpoint$StaticMembers */ =>  {
-                let var_864 =
+                let var_830 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_static_members(var_864);
+                builder = builder.set_static_members(var_830);
             }
             ,
             s if s.matches("ExcludedMembers") /* ExcludedMembers com.amazonaws.rds#DBClusterEndpoint$ExcludedMembers */ =>  {
-                let var_865 =
+                let var_831 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_excluded_members(var_865);
+                builder = builder.set_excluded_members(var_831);
             }
             ,
             s if s.matches("DBClusterEndpointArn") /* DBClusterEndpointArn com.amazonaws.rds#DBClusterEndpoint$DBClusterEndpointArn */ =>  {
-                let var_866 =
+                let var_832 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20525,7 +19703,7 @@ pub fn deser_structure_crate_model_db_cluster_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_endpoint_arn(var_866);
+                builder = builder.set_db_cluster_endpoint_arn(var_832);
             }
             ,
             _ => {}
@@ -20542,7 +19720,7 @@ pub fn deser_structure_crate_model_parameter(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ParameterName") /* ParameterName com.amazonaws.rds#Parameter$ParameterName */ =>  {
-                let var_867 =
+                let var_833 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20551,11 +19729,11 @@ pub fn deser_structure_crate_model_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_parameter_name(var_867);
+                builder = builder.set_parameter_name(var_833);
             }
             ,
             s if s.matches("ParameterValue") /* ParameterValue com.amazonaws.rds#Parameter$ParameterValue */ =>  {
-                let var_868 =
+                let var_834 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20564,11 +19742,11 @@ pub fn deser_structure_crate_model_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_parameter_value(var_868);
+                builder = builder.set_parameter_value(var_834);
             }
             ,
             s if s.matches("Description") /* Description com.amazonaws.rds#Parameter$Description */ =>  {
-                let var_869 =
+                let var_835 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20577,11 +19755,11 @@ pub fn deser_structure_crate_model_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_869);
+                builder = builder.set_description(var_835);
             }
             ,
             s if s.matches("Source") /* Source com.amazonaws.rds#Parameter$Source */ =>  {
-                let var_870 =
+                let var_836 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20590,11 +19768,11 @@ pub fn deser_structure_crate_model_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_source(var_870);
+                builder = builder.set_source(var_836);
             }
             ,
             s if s.matches("ApplyType") /* ApplyType com.amazonaws.rds#Parameter$ApplyType */ =>  {
-                let var_871 =
+                let var_837 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20603,11 +19781,11 @@ pub fn deser_structure_crate_model_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_apply_type(var_871);
+                builder = builder.set_apply_type(var_837);
             }
             ,
             s if s.matches("DataType") /* DataType com.amazonaws.rds#Parameter$DataType */ =>  {
-                let var_872 =
+                let var_838 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20616,11 +19794,11 @@ pub fn deser_structure_crate_model_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_data_type(var_872);
+                builder = builder.set_data_type(var_838);
             }
             ,
             s if s.matches("AllowedValues") /* AllowedValues com.amazonaws.rds#Parameter$AllowedValues */ =>  {
-                let var_873 =
+                let var_839 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20629,11 +19807,11 @@ pub fn deser_structure_crate_model_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_allowed_values(var_873);
+                builder = builder.set_allowed_values(var_839);
             }
             ,
             s if s.matches("IsModifiable") /* IsModifiable com.amazonaws.rds#Parameter$IsModifiable */ =>  {
-                let var_874 =
+                let var_840 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -20644,11 +19822,11 @@ pub fn deser_structure_crate_model_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_is_modifiable(var_874);
+                builder = builder.set_is_modifiable(var_840);
             }
             ,
             s if s.matches("MinimumEngineVersion") /* MinimumEngineVersion com.amazonaws.rds#Parameter$MinimumEngineVersion */ =>  {
-                let var_875 =
+                let var_841 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20657,11 +19835,11 @@ pub fn deser_structure_crate_model_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_minimum_engine_version(var_875);
+                builder = builder.set_minimum_engine_version(var_841);
             }
             ,
             s if s.matches("ApplyMethod") /* ApplyMethod com.amazonaws.rds#Parameter$ApplyMethod */ =>  {
-                let var_876 =
+                let var_842 =
                     Some(
                         Result::<crate::model::ApplyMethod, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::ApplyMethod::from(
@@ -20671,17 +19849,17 @@ pub fn deser_structure_crate_model_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_apply_method(var_876);
+                builder = builder.set_apply_method(var_842);
             }
             ,
             s if s.matches("SupportedEngineModes") /* SupportedEngineModes com.amazonaws.rds#Parameter$SupportedEngineModes */ =>  {
-                let var_877 =
+                let var_843 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_engine_mode_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_engine_modes(var_877);
+                builder = builder.set_supported_engine_modes(var_843);
             }
             ,
             _ => {}
@@ -20718,7 +19896,7 @@ pub fn deser_structure_crate_model_db_engine_version(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Engine") /* Engine com.amazonaws.rds#DBEngineVersion$Engine */ =>  {
-                let var_878 =
+                let var_844 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20727,11 +19905,11 @@ pub fn deser_structure_crate_model_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_878);
+                builder = builder.set_engine(var_844);
             }
             ,
             s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds#DBEngineVersion$EngineVersion */ =>  {
-                let var_879 =
+                let var_845 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20740,11 +19918,11 @@ pub fn deser_structure_crate_model_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_engine_version(var_879);
+                builder = builder.set_engine_version(var_845);
             }
             ,
             s if s.matches("DBParameterGroupFamily") /* DBParameterGroupFamily com.amazonaws.rds#DBEngineVersion$DBParameterGroupFamily */ =>  {
-                let var_880 =
+                let var_846 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20753,11 +19931,11 @@ pub fn deser_structure_crate_model_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_db_parameter_group_family(var_880);
+                builder = builder.set_db_parameter_group_family(var_846);
             }
             ,
             s if s.matches("DBEngineDescription") /* DBEngineDescription com.amazonaws.rds#DBEngineVersion$DBEngineDescription */ =>  {
-                let var_881 =
+                let var_847 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20766,11 +19944,11 @@ pub fn deser_structure_crate_model_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_db_engine_description(var_881);
+                builder = builder.set_db_engine_description(var_847);
             }
             ,
             s if s.matches("DBEngineVersionDescription") /* DBEngineVersionDescription com.amazonaws.rds#DBEngineVersion$DBEngineVersionDescription */ =>  {
-                let var_882 =
+                let var_848 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20779,71 +19957,71 @@ pub fn deser_structure_crate_model_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_db_engine_version_description(var_882);
+                builder = builder.set_db_engine_version_description(var_848);
             }
             ,
             s if s.matches("DefaultCharacterSet") /* DefaultCharacterSet com.amazonaws.rds#DBEngineVersion$DefaultCharacterSet */ =>  {
-                let var_883 =
+                let var_849 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_character_set(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_default_character_set(var_883);
+                builder = builder.set_default_character_set(var_849);
             }
             ,
             s if s.matches("SupportedCharacterSets") /* SupportedCharacterSets com.amazonaws.rds#DBEngineVersion$SupportedCharacterSets */ =>  {
-                let var_884 =
+                let var_850 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_supported_character_sets_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_character_sets(var_884);
+                builder = builder.set_supported_character_sets(var_850);
             }
             ,
             s if s.matches("SupportedNcharCharacterSets") /* SupportedNcharCharacterSets com.amazonaws.rds#DBEngineVersion$SupportedNcharCharacterSets */ =>  {
-                let var_885 =
+                let var_851 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_supported_character_sets_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_nchar_character_sets(var_885);
+                builder = builder.set_supported_nchar_character_sets(var_851);
             }
             ,
             s if s.matches("ValidUpgradeTarget") /* ValidUpgradeTarget com.amazonaws.rds#DBEngineVersion$ValidUpgradeTarget */ =>  {
-                let var_886 =
+                let var_852 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_valid_upgrade_target_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_valid_upgrade_target(var_886);
+                builder = builder.set_valid_upgrade_target(var_852);
             }
             ,
             s if s.matches("SupportedTimezones") /* SupportedTimezones com.amazonaws.rds#DBEngineVersion$SupportedTimezones */ =>  {
-                let var_887 =
+                let var_853 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_supported_timezones_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_timezones(var_887);
+                builder = builder.set_supported_timezones(var_853);
             }
             ,
             s if s.matches("ExportableLogTypes") /* ExportableLogTypes com.amazonaws.rds#DBEngineVersion$ExportableLogTypes */ =>  {
-                let var_888 =
+                let var_854 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_log_type_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_exportable_log_types(var_888);
+                builder = builder.set_exportable_log_types(var_854);
             }
             ,
             s if s.matches("SupportsLogExportsToCloudwatchLogs") /* SupportsLogExportsToCloudwatchLogs com.amazonaws.rds#DBEngineVersion$SupportsLogExportsToCloudwatchLogs */ =>  {
-                let var_889 =
+                let var_855 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -20854,11 +20032,11 @@ pub fn deser_structure_crate_model_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_log_exports_to_cloudwatch_logs(var_889);
+                builder = builder.set_supports_log_exports_to_cloudwatch_logs(var_855);
             }
             ,
             s if s.matches("SupportsReadReplica") /* SupportsReadReplica com.amazonaws.rds#DBEngineVersion$SupportsReadReplica */ =>  {
-                let var_890 =
+                let var_856 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -20869,31 +20047,31 @@ pub fn deser_structure_crate_model_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_read_replica(var_890);
+                builder = builder.set_supports_read_replica(var_856);
             }
             ,
             s if s.matches("SupportedEngineModes") /* SupportedEngineModes com.amazonaws.rds#DBEngineVersion$SupportedEngineModes */ =>  {
-                let var_891 =
+                let var_857 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_engine_mode_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_engine_modes(var_891);
+                builder = builder.set_supported_engine_modes(var_857);
             }
             ,
             s if s.matches("SupportedFeatureNames") /* SupportedFeatureNames com.amazonaws.rds#DBEngineVersion$SupportedFeatureNames */ =>  {
-                let var_892 =
+                let var_858 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_feature_name_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_feature_names(var_892);
+                builder = builder.set_supported_feature_names(var_858);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#DBEngineVersion$Status */ =>  {
-                let var_893 =
+                let var_859 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20902,11 +20080,11 @@ pub fn deser_structure_crate_model_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_893);
+                builder = builder.set_status(var_859);
             }
             ,
             s if s.matches("SupportsParallelQuery") /* SupportsParallelQuery com.amazonaws.rds#DBEngineVersion$SupportsParallelQuery */ =>  {
-                let var_894 =
+                let var_860 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -20917,11 +20095,11 @@ pub fn deser_structure_crate_model_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_parallel_query(var_894);
+                builder = builder.set_supports_parallel_query(var_860);
             }
             ,
             s if s.matches("SupportsGlobalDatabases") /* SupportsGlobalDatabases com.amazonaws.rds#DBEngineVersion$SupportsGlobalDatabases */ =>  {
-                let var_895 =
+                let var_861 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -20932,11 +20110,11 @@ pub fn deser_structure_crate_model_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_global_databases(var_895);
+                builder = builder.set_supports_global_databases(var_861);
             }
             ,
             s if s.matches("MajorEngineVersion") /* MajorEngineVersion com.amazonaws.rds#DBEngineVersion$MajorEngineVersion */ =>  {
-                let var_896 =
+                let var_862 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20945,11 +20123,11 @@ pub fn deser_structure_crate_model_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_major_engine_version(var_896);
+                builder = builder.set_major_engine_version(var_862);
             }
             ,
             s if s.matches("DatabaseInstallationFilesS3BucketName") /* DatabaseInstallationFilesS3BucketName com.amazonaws.rds#DBEngineVersion$DatabaseInstallationFilesS3BucketName */ =>  {
-                let var_897 =
+                let var_863 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20958,11 +20136,11 @@ pub fn deser_structure_crate_model_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_database_installation_files_s3_bucket_name(var_897);
+                builder = builder.set_database_installation_files_s3_bucket_name(var_863);
             }
             ,
             s if s.matches("DatabaseInstallationFilesS3Prefix") /* DatabaseInstallationFilesS3Prefix com.amazonaws.rds#DBEngineVersion$DatabaseInstallationFilesS3Prefix */ =>  {
-                let var_898 =
+                let var_864 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20971,11 +20149,11 @@ pub fn deser_structure_crate_model_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_database_installation_files_s3_prefix(var_898);
+                builder = builder.set_database_installation_files_s3_prefix(var_864);
             }
             ,
             s if s.matches("DBEngineVersionArn") /* DBEngineVersionArn com.amazonaws.rds#DBEngineVersion$DBEngineVersionArn */ =>  {
-                let var_899 =
+                let var_865 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20984,11 +20162,11 @@ pub fn deser_structure_crate_model_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_db_engine_version_arn(var_899);
+                builder = builder.set_db_engine_version_arn(var_865);
             }
             ,
             s if s.matches("KMSKeyId") /* KMSKeyId com.amazonaws.rds#DBEngineVersion$KMSKeyId */ =>  {
-                let var_900 =
+                let var_866 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -20997,11 +20175,11 @@ pub fn deser_structure_crate_model_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_kms_key_id(var_900);
+                builder = builder.set_kms_key_id(var_866);
             }
             ,
             s if s.matches("CreateTime") /* CreateTime com.amazonaws.rds#DBEngineVersion$CreateTime */ =>  {
-                let var_901 =
+                let var_867 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21011,21 +20189,21 @@ pub fn deser_structure_crate_model_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_create_time(var_901);
+                builder = builder.set_create_time(var_867);
             }
             ,
             s if s.matches("TagList") /* TagList com.amazonaws.rds#DBEngineVersion$TagList */ =>  {
-                let var_902 =
+                let var_868 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tag_list(var_902);
+                builder = builder.set_tag_list(var_868);
             }
             ,
             s if s.matches("SupportsBabelfish") /* SupportsBabelfish com.amazonaws.rds#DBEngineVersion$SupportsBabelfish */ =>  {
-                let var_903 =
+                let var_869 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -21036,7 +20214,7 @@ pub fn deser_structure_crate_model_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_babelfish(var_903);
+                builder = builder.set_supports_babelfish(var_869);
             }
             ,
             _ => {}
@@ -21053,7 +20231,7 @@ pub fn deser_structure_crate_model_describe_db_log_files_details(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LogFileName") /* LogFileName com.amazonaws.rds#DescribeDBLogFilesDetails$LogFileName */ =>  {
-                let var_904 =
+                let var_870 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21062,11 +20240,11 @@ pub fn deser_structure_crate_model_describe_db_log_files_details(
                         ?
                     )
                 ;
-                builder = builder.set_log_file_name(var_904);
+                builder = builder.set_log_file_name(var_870);
             }
             ,
             s if s.matches("LastWritten") /* LastWritten com.amazonaws.rds#DescribeDBLogFilesDetails$LastWritten */ =>  {
-                let var_905 =
+                let var_871 =
                     Some(
                          {
                             <i64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -21077,11 +20255,11 @@ pub fn deser_structure_crate_model_describe_db_log_files_details(
                         ?
                     )
                 ;
-                builder = builder.set_last_written(var_905);
+                builder = builder.set_last_written(var_871);
             }
             ,
             s if s.matches("Size") /* Size com.amazonaws.rds#DescribeDBLogFilesDetails$Size */ =>  {
-                let var_906 =
+                let var_872 =
                     Some(
                          {
                             <i64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -21092,7 +20270,7 @@ pub fn deser_structure_crate_model_describe_db_log_files_details(
                         ?
                     )
                 ;
-                builder = builder.set_size(var_906);
+                builder = builder.set_size(var_872);
             }
             ,
             _ => {}
@@ -21109,7 +20287,7 @@ pub fn deser_structure_crate_model_db_proxy_target(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TargetArn") /* TargetArn com.amazonaws.rds#DBProxyTarget$TargetArn */ =>  {
-                let var_907 =
+                let var_873 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21118,11 +20296,11 @@ pub fn deser_structure_crate_model_db_proxy_target(
                         ?
                     )
                 ;
-                builder = builder.set_target_arn(var_907);
+                builder = builder.set_target_arn(var_873);
             }
             ,
             s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds#DBProxyTarget$Endpoint */ =>  {
-                let var_908 =
+                let var_874 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21131,11 +20309,11 @@ pub fn deser_structure_crate_model_db_proxy_target(
                         ?
                     )
                 ;
-                builder = builder.set_endpoint(var_908);
+                builder = builder.set_endpoint(var_874);
             }
             ,
             s if s.matches("TrackedClusterId") /* TrackedClusterId com.amazonaws.rds#DBProxyTarget$TrackedClusterId */ =>  {
-                let var_909 =
+                let var_875 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21144,11 +20322,11 @@ pub fn deser_structure_crate_model_db_proxy_target(
                         ?
                     )
                 ;
-                builder = builder.set_tracked_cluster_id(var_909);
+                builder = builder.set_tracked_cluster_id(var_875);
             }
             ,
             s if s.matches("RdsResourceId") /* RdsResourceId com.amazonaws.rds#DBProxyTarget$RdsResourceId */ =>  {
-                let var_910 =
+                let var_876 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21157,11 +20335,11 @@ pub fn deser_structure_crate_model_db_proxy_target(
                         ?
                     )
                 ;
-                builder = builder.set_rds_resource_id(var_910);
+                builder = builder.set_rds_resource_id(var_876);
             }
             ,
             s if s.matches("Port") /* Port com.amazonaws.rds#DBProxyTarget$Port */ =>  {
-                let var_911 =
+                let var_877 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -21172,11 +20350,11 @@ pub fn deser_structure_crate_model_db_proxy_target(
                         ?
                     )
                 ;
-                builder = builder.set_port(var_911);
+                builder = builder.set_port(var_877);
             }
             ,
             s if s.matches("Type") /* Type com.amazonaws.rds#DBProxyTarget$Type */ =>  {
-                let var_912 =
+                let var_878 =
                     Some(
                         Result::<crate::model::TargetType, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::TargetType::from(
@@ -21186,11 +20364,11 @@ pub fn deser_structure_crate_model_db_proxy_target(
                         ?
                     )
                 ;
-                builder = builder.set_type(var_912);
+                builder = builder.set_type(var_878);
             }
             ,
             s if s.matches("Role") /* Role com.amazonaws.rds#DBProxyTarget$Role */ =>  {
-                let var_913 =
+                let var_879 =
                     Some(
                         Result::<crate::model::TargetRole, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::TargetRole::from(
@@ -21200,17 +20378,17 @@ pub fn deser_structure_crate_model_db_proxy_target(
                         ?
                     )
                 ;
-                builder = builder.set_role(var_913);
+                builder = builder.set_role(var_879);
             }
             ,
             s if s.matches("TargetHealth") /* TargetHealth com.amazonaws.rds#DBProxyTarget$TargetHealth */ =>  {
-                let var_914 =
+                let var_880 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_target_health(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_target_health(var_914);
+                builder = builder.set_target_health(var_880);
             }
             ,
             _ => {}
@@ -21246,7 +20424,7 @@ pub fn deser_structure_crate_model_event_categories_map(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SourceType") /* SourceType com.amazonaws.rds#EventCategoriesMap$SourceType */ =>  {
-                let var_915 =
+                let var_881 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21255,17 +20433,17 @@ pub fn deser_structure_crate_model_event_categories_map(
                         ?
                     )
                 ;
-                builder = builder.set_source_type(var_915);
+                builder = builder.set_source_type(var_881);
             }
             ,
             s if s.matches("EventCategories") /* EventCategories com.amazonaws.rds#EventCategoriesMap$EventCategories */ =>  {
-                let var_916 =
+                let var_882 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_event_categories_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_event_categories(var_916);
+                builder = builder.set_event_categories(var_882);
             }
             ,
             _ => {}
@@ -21282,7 +20460,7 @@ pub fn deser_structure_crate_model_event(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SourceIdentifier") /* SourceIdentifier com.amazonaws.rds#Event$SourceIdentifier */ =>  {
-                let var_917 =
+                let var_883 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21291,11 +20469,11 @@ pub fn deser_structure_crate_model_event(
                         ?
                     )
                 ;
-                builder = builder.set_source_identifier(var_917);
+                builder = builder.set_source_identifier(var_883);
             }
             ,
             s if s.matches("SourceType") /* SourceType com.amazonaws.rds#Event$SourceType */ =>  {
-                let var_918 =
+                let var_884 =
                     Some(
                         Result::<crate::model::SourceType, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::SourceType::from(
@@ -21305,11 +20483,11 @@ pub fn deser_structure_crate_model_event(
                         ?
                     )
                 ;
-                builder = builder.set_source_type(var_918);
+                builder = builder.set_source_type(var_884);
             }
             ,
             s if s.matches("Message") /* Message com.amazonaws.rds#Event$Message */ =>  {
-                let var_919 =
+                let var_885 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21318,21 +20496,21 @@ pub fn deser_structure_crate_model_event(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_919);
+                builder = builder.set_message(var_885);
             }
             ,
             s if s.matches("EventCategories") /* EventCategories com.amazonaws.rds#Event$EventCategories */ =>  {
-                let var_920 =
+                let var_886 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_event_categories_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_event_categories(var_920);
+                builder = builder.set_event_categories(var_886);
             }
             ,
             s if s.matches("Date") /* Date com.amazonaws.rds#Event$Date */ =>  {
-                let var_921 =
+                let var_887 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21342,11 +20520,11 @@ pub fn deser_structure_crate_model_event(
                         ?
                     )
                 ;
-                builder = builder.set_date(var_921);
+                builder = builder.set_date(var_887);
             }
             ,
             s if s.matches("SourceArn") /* SourceArn com.amazonaws.rds#Event$SourceArn */ =>  {
-                let var_922 =
+                let var_888 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21355,7 +20533,7 @@ pub fn deser_structure_crate_model_event(
                         ?
                     )
                 ;
-                builder = builder.set_source_arn(var_922);
+                builder = builder.set_source_arn(var_888);
             }
             ,
             _ => {}
@@ -21372,7 +20550,7 @@ pub fn deser_structure_crate_model_export_task(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ExportTaskIdentifier") /* ExportTaskIdentifier com.amazonaws.rds#ExportTask$ExportTaskIdentifier */ =>  {
-                let var_923 =
+                let var_889 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21381,11 +20559,11 @@ pub fn deser_structure_crate_model_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_export_task_identifier(var_923);
+                builder = builder.set_export_task_identifier(var_889);
             }
             ,
             s if s.matches("SourceArn") /* SourceArn com.amazonaws.rds#ExportTask$SourceArn */ =>  {
-                let var_924 =
+                let var_890 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21394,21 +20572,21 @@ pub fn deser_structure_crate_model_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_source_arn(var_924);
+                builder = builder.set_source_arn(var_890);
             }
             ,
             s if s.matches("ExportOnly") /* ExportOnly com.amazonaws.rds#ExportTask$ExportOnly */ =>  {
-                let var_925 =
+                let var_891 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_export_only(var_925);
+                builder = builder.set_export_only(var_891);
             }
             ,
             s if s.matches("SnapshotTime") /* SnapshotTime com.amazonaws.rds#ExportTask$SnapshotTime */ =>  {
-                let var_926 =
+                let var_892 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21418,11 +20596,11 @@ pub fn deser_structure_crate_model_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_snapshot_time(var_926);
+                builder = builder.set_snapshot_time(var_892);
             }
             ,
             s if s.matches("TaskStartTime") /* TaskStartTime com.amazonaws.rds#ExportTask$TaskStartTime */ =>  {
-                let var_927 =
+                let var_893 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21432,11 +20610,11 @@ pub fn deser_structure_crate_model_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_task_start_time(var_927);
+                builder = builder.set_task_start_time(var_893);
             }
             ,
             s if s.matches("TaskEndTime") /* TaskEndTime com.amazonaws.rds#ExportTask$TaskEndTime */ =>  {
-                let var_928 =
+                let var_894 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21446,11 +20624,11 @@ pub fn deser_structure_crate_model_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_task_end_time(var_928);
+                builder = builder.set_task_end_time(var_894);
             }
             ,
             s if s.matches("S3Bucket") /* S3Bucket com.amazonaws.rds#ExportTask$S3Bucket */ =>  {
-                let var_929 =
+                let var_895 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21459,11 +20637,11 @@ pub fn deser_structure_crate_model_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_s3_bucket(var_929);
+                builder = builder.set_s3_bucket(var_895);
             }
             ,
             s if s.matches("S3Prefix") /* S3Prefix com.amazonaws.rds#ExportTask$S3Prefix */ =>  {
-                let var_930 =
+                let var_896 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21472,11 +20650,11 @@ pub fn deser_structure_crate_model_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_s3_prefix(var_930);
+                builder = builder.set_s3_prefix(var_896);
             }
             ,
             s if s.matches("IamRoleArn") /* IamRoleArn com.amazonaws.rds#ExportTask$IamRoleArn */ =>  {
-                let var_931 =
+                let var_897 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21485,11 +20663,11 @@ pub fn deser_structure_crate_model_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_iam_role_arn(var_931);
+                builder = builder.set_iam_role_arn(var_897);
             }
             ,
             s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.rds#ExportTask$KmsKeyId */ =>  {
-                let var_932 =
+                let var_898 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21498,11 +20676,11 @@ pub fn deser_structure_crate_model_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_kms_key_id(var_932);
+                builder = builder.set_kms_key_id(var_898);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#ExportTask$Status */ =>  {
-                let var_933 =
+                let var_899 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21511,11 +20689,11 @@ pub fn deser_structure_crate_model_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_933);
+                builder = builder.set_status(var_899);
             }
             ,
             s if s.matches("PercentProgress") /* PercentProgress com.amazonaws.rds#ExportTask$PercentProgress */ =>  {
-                let var_934 =
+                let var_900 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -21526,11 +20704,11 @@ pub fn deser_structure_crate_model_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_percent_progress(var_934);
+                builder = builder.set_percent_progress(var_900);
             }
             ,
             s if s.matches("TotalExtractedDataInGB") /* TotalExtractedDataInGB com.amazonaws.rds#ExportTask$TotalExtractedDataInGB */ =>  {
-                let var_935 =
+                let var_901 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -21541,11 +20719,11 @@ pub fn deser_structure_crate_model_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_total_extracted_data_in_gb(var_935);
+                builder = builder.set_total_extracted_data_in_gb(var_901);
             }
             ,
             s if s.matches("FailureCause") /* FailureCause com.amazonaws.rds#ExportTask$FailureCause */ =>  {
-                let var_936 =
+                let var_902 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21554,11 +20732,11 @@ pub fn deser_structure_crate_model_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_failure_cause(var_936);
+                builder = builder.set_failure_cause(var_902);
             }
             ,
             s if s.matches("WarningMessage") /* WarningMessage com.amazonaws.rds#ExportTask$WarningMessage */ =>  {
-                let var_937 =
+                let var_903 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21567,121 +20745,7 @@ pub fn deser_structure_crate_model_export_task(
                         ?
                     )
                 ;
-                builder = builder.set_warning_message(var_937);
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(builder.build())
-}
-
-pub fn deser_structure_crate_model_installation_media(
-    decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::InstallationMedia, aws_smithy_xml::decode::XmlError> {
-    #[allow(unused_mut)]
-    let mut builder = crate::model::InstallationMedia::builder();
-    while let Some(mut tag) = decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("InstallationMediaId") /* InstallationMediaId com.amazonaws.rds#InstallationMedia$InstallationMediaId */ =>  {
-                let var_938 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_installation_media_id(var_938);
-            }
-            ,
-            s if s.matches("CustomAvailabilityZoneId") /* CustomAvailabilityZoneId com.amazonaws.rds#InstallationMedia$CustomAvailabilityZoneId */ =>  {
-                let var_939 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_custom_availability_zone_id(var_939);
-            }
-            ,
-            s if s.matches("Engine") /* Engine com.amazonaws.rds#InstallationMedia$Engine */ =>  {
-                let var_940 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_engine(var_940);
-            }
-            ,
-            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds#InstallationMedia$EngineVersion */ =>  {
-                let var_941 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_engine_version(var_941);
-            }
-            ,
-            s if s.matches("EngineInstallationMediaPath") /* EngineInstallationMediaPath com.amazonaws.rds#InstallationMedia$EngineInstallationMediaPath */ =>  {
-                let var_942 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_engine_installation_media_path(var_942);
-            }
-            ,
-            s if s.matches("OSInstallationMediaPath") /* OSInstallationMediaPath com.amazonaws.rds#InstallationMedia$OSInstallationMediaPath */ =>  {
-                let var_943 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_os_installation_media_path(var_943);
-            }
-            ,
-            s if s.matches("Status") /* Status com.amazonaws.rds#InstallationMedia$Status */ =>  {
-                let var_944 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_status(var_944);
-            }
-            ,
-            s if s.matches("FailureCause") /* FailureCause com.amazonaws.rds#InstallationMedia$FailureCause */ =>  {
-                let var_945 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_installation_media_failure_cause(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_failure_cause(var_945);
+                builder = builder.set_warning_message(var_903);
             }
             ,
             _ => {}
@@ -21698,7 +20762,7 @@ pub fn deser_structure_crate_model_option_group_option(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.rds#OptionGroupOption$Name */ =>  {
-                let var_946 =
+                let var_904 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21707,11 +20771,11 @@ pub fn deser_structure_crate_model_option_group_option(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_946);
+                builder = builder.set_name(var_904);
             }
             ,
             s if s.matches("Description") /* Description com.amazonaws.rds#OptionGroupOption$Description */ =>  {
-                let var_947 =
+                let var_905 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21720,11 +20784,11 @@ pub fn deser_structure_crate_model_option_group_option(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_947);
+                builder = builder.set_description(var_905);
             }
             ,
             s if s.matches("EngineName") /* EngineName com.amazonaws.rds#OptionGroupOption$EngineName */ =>  {
-                let var_948 =
+                let var_906 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21733,11 +20797,11 @@ pub fn deser_structure_crate_model_option_group_option(
                         ?
                     )
                 ;
-                builder = builder.set_engine_name(var_948);
+                builder = builder.set_engine_name(var_906);
             }
             ,
             s if s.matches("MajorEngineVersion") /* MajorEngineVersion com.amazonaws.rds#OptionGroupOption$MajorEngineVersion */ =>  {
-                let var_949 =
+                let var_907 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21746,11 +20810,11 @@ pub fn deser_structure_crate_model_option_group_option(
                         ?
                     )
                 ;
-                builder = builder.set_major_engine_version(var_949);
+                builder = builder.set_major_engine_version(var_907);
             }
             ,
             s if s.matches("MinimumRequiredMinorEngineVersion") /* MinimumRequiredMinorEngineVersion com.amazonaws.rds#OptionGroupOption$MinimumRequiredMinorEngineVersion */ =>  {
-                let var_950 =
+                let var_908 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21759,11 +20823,11 @@ pub fn deser_structure_crate_model_option_group_option(
                         ?
                     )
                 ;
-                builder = builder.set_minimum_required_minor_engine_version(var_950);
+                builder = builder.set_minimum_required_minor_engine_version(var_908);
             }
             ,
             s if s.matches("PortRequired") /* PortRequired com.amazonaws.rds#OptionGroupOption$PortRequired */ =>  {
-                let var_951 =
+                let var_909 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -21774,11 +20838,11 @@ pub fn deser_structure_crate_model_option_group_option(
                         ?
                     )
                 ;
-                builder = builder.set_port_required(var_951);
+                builder = builder.set_port_required(var_909);
             }
             ,
             s if s.matches("DefaultPort") /* DefaultPort com.amazonaws.rds#OptionGroupOption$DefaultPort */ =>  {
-                let var_952 =
+                let var_910 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -21789,31 +20853,31 @@ pub fn deser_structure_crate_model_option_group_option(
                         ?
                     )
                 ;
-                builder = builder.set_default_port(var_952);
+                builder = builder.set_default_port(var_910);
             }
             ,
             s if s.matches("OptionsDependedOn") /* OptionsDependedOn com.amazonaws.rds#OptionGroupOption$OptionsDependedOn */ =>  {
-                let var_953 =
+                let var_911 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_options_depended_on(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_options_depended_on(var_953);
+                builder = builder.set_options_depended_on(var_911);
             }
             ,
             s if s.matches("OptionsConflictsWith") /* OptionsConflictsWith com.amazonaws.rds#OptionGroupOption$OptionsConflictsWith */ =>  {
-                let var_954 =
+                let var_912 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_options_conflicts_with(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_options_conflicts_with(var_954);
+                builder = builder.set_options_conflicts_with(var_912);
             }
             ,
             s if s.matches("Persistent") /* Persistent com.amazonaws.rds#OptionGroupOption$Persistent */ =>  {
-                let var_955 =
+                let var_913 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -21824,11 +20888,11 @@ pub fn deser_structure_crate_model_option_group_option(
                         ?
                     )
                 ;
-                builder = builder.set_persistent(var_955);
+                builder = builder.set_persistent(var_913);
             }
             ,
             s if s.matches("Permanent") /* Permanent com.amazonaws.rds#OptionGroupOption$Permanent */ =>  {
-                let var_956 =
+                let var_914 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -21839,11 +20903,11 @@ pub fn deser_structure_crate_model_option_group_option(
                         ?
                     )
                 ;
-                builder = builder.set_permanent(var_956);
+                builder = builder.set_permanent(var_914);
             }
             ,
             s if s.matches("RequiresAutoMinorEngineVersionUpgrade") /* RequiresAutoMinorEngineVersionUpgrade com.amazonaws.rds#OptionGroupOption$RequiresAutoMinorEngineVersionUpgrade */ =>  {
-                let var_957 =
+                let var_915 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -21854,11 +20918,11 @@ pub fn deser_structure_crate_model_option_group_option(
                         ?
                     )
                 ;
-                builder = builder.set_requires_auto_minor_engine_version_upgrade(var_957);
+                builder = builder.set_requires_auto_minor_engine_version_upgrade(var_915);
             }
             ,
             s if s.matches("VpcOnly") /* VpcOnly com.amazonaws.rds#OptionGroupOption$VpcOnly */ =>  {
-                let var_958 =
+                let var_916 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -21869,11 +20933,11 @@ pub fn deser_structure_crate_model_option_group_option(
                         ?
                     )
                 ;
-                builder = builder.set_vpc_only(var_958);
+                builder = builder.set_vpc_only(var_916);
             }
             ,
             s if s.matches("SupportsOptionVersionDowngrade") /* SupportsOptionVersionDowngrade com.amazonaws.rds#OptionGroupOption$SupportsOptionVersionDowngrade */ =>  {
-                let var_959 =
+                let var_917 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -21884,27 +20948,27 @@ pub fn deser_structure_crate_model_option_group_option(
                         ?
                     )
                 ;
-                builder = builder.set_supports_option_version_downgrade(var_959);
+                builder = builder.set_supports_option_version_downgrade(var_917);
             }
             ,
             s if s.matches("OptionGroupOptionSettings") /* OptionGroupOptionSettings com.amazonaws.rds#OptionGroupOption$OptionGroupOptionSettings */ =>  {
-                let var_960 =
+                let var_918 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_option_group_option_settings_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_option_group_option_settings(var_960);
+                builder = builder.set_option_group_option_settings(var_918);
             }
             ,
             s if s.matches("OptionGroupOptionVersions") /* OptionGroupOptionVersions com.amazonaws.rds#OptionGroupOption$OptionGroupOptionVersions */ =>  {
-                let var_961 =
+                let var_919 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_option_group_option_versions_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_option_group_option_versions(var_961);
+                builder = builder.set_option_group_option_versions(var_919);
             }
             ,
             _ => {}
@@ -21921,7 +20985,7 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Engine") /* Engine com.amazonaws.rds#OrderableDBInstanceOption$Engine */ =>  {
-                let var_962 =
+                let var_920 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21930,11 +20994,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_962);
+                builder = builder.set_engine(var_920);
             }
             ,
             s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds#OrderableDBInstanceOption$EngineVersion */ =>  {
-                let var_963 =
+                let var_921 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21943,11 +21007,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_engine_version(var_963);
+                builder = builder.set_engine_version(var_921);
             }
             ,
             s if s.matches("DBInstanceClass") /* DBInstanceClass com.amazonaws.rds#OrderableDBInstanceOption$DBInstanceClass */ =>  {
-                let var_964 =
+                let var_922 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21956,11 +21020,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_class(var_964);
+                builder = builder.set_db_instance_class(var_922);
             }
             ,
             s if s.matches("LicenseModel") /* LicenseModel com.amazonaws.rds#OrderableDBInstanceOption$LicenseModel */ =>  {
-                let var_965 =
+                let var_923 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21969,11 +21033,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_license_model(var_965);
+                builder = builder.set_license_model(var_923);
             }
             ,
             s if s.matches("AvailabilityZoneGroup") /* AvailabilityZoneGroup com.amazonaws.rds#OrderableDBInstanceOption$AvailabilityZoneGroup */ =>  {
-                let var_966 =
+                let var_924 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -21982,21 +21046,21 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_availability_zone_group(var_966);
+                builder = builder.set_availability_zone_group(var_924);
             }
             ,
             s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.rds#OrderableDBInstanceOption$AvailabilityZones */ =>  {
-                let var_967 =
+                let var_925 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_availability_zone_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_availability_zones(var_967);
+                builder = builder.set_availability_zones(var_925);
             }
             ,
             s if s.matches("MultiAZCapable") /* MultiAZCapable com.amazonaws.rds#OrderableDBInstanceOption$MultiAZCapable */ =>  {
-                let var_968 =
+                let var_926 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22007,11 +21071,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_multi_az_capable(var_968);
+                builder = builder.set_multi_az_capable(var_926);
             }
             ,
             s if s.matches("ReadReplicaCapable") /* ReadReplicaCapable com.amazonaws.rds#OrderableDBInstanceOption$ReadReplicaCapable */ =>  {
-                let var_969 =
+                let var_927 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22022,11 +21086,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_read_replica_capable(var_969);
+                builder = builder.set_read_replica_capable(var_927);
             }
             ,
             s if s.matches("Vpc") /* Vpc com.amazonaws.rds#OrderableDBInstanceOption$Vpc */ =>  {
-                let var_970 =
+                let var_928 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22037,11 +21101,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_vpc(var_970);
+                builder = builder.set_vpc(var_928);
             }
             ,
             s if s.matches("SupportsStorageEncryption") /* SupportsStorageEncryption com.amazonaws.rds#OrderableDBInstanceOption$SupportsStorageEncryption */ =>  {
-                let var_971 =
+                let var_929 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22052,11 +21116,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_supports_storage_encryption(var_971);
+                builder = builder.set_supports_storage_encryption(var_929);
             }
             ,
             s if s.matches("StorageType") /* StorageType com.amazonaws.rds#OrderableDBInstanceOption$StorageType */ =>  {
-                let var_972 =
+                let var_930 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22065,11 +21129,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_storage_type(var_972);
+                builder = builder.set_storage_type(var_930);
             }
             ,
             s if s.matches("SupportsIops") /* SupportsIops com.amazonaws.rds#OrderableDBInstanceOption$SupportsIops */ =>  {
-                let var_973 =
+                let var_931 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22080,11 +21144,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_supports_iops(var_973);
+                builder = builder.set_supports_iops(var_931);
             }
             ,
             s if s.matches("SupportsEnhancedMonitoring") /* SupportsEnhancedMonitoring com.amazonaws.rds#OrderableDBInstanceOption$SupportsEnhancedMonitoring */ =>  {
-                let var_974 =
+                let var_932 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22095,11 +21159,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_supports_enhanced_monitoring(var_974);
+                builder = builder.set_supports_enhanced_monitoring(var_932);
             }
             ,
             s if s.matches("SupportsIAMDatabaseAuthentication") /* SupportsIAMDatabaseAuthentication com.amazonaws.rds#OrderableDBInstanceOption$SupportsIAMDatabaseAuthentication */ =>  {
-                let var_975 =
+                let var_933 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22110,11 +21174,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_supports_iam_database_authentication(var_975);
+                builder = builder.set_supports_iam_database_authentication(var_933);
             }
             ,
             s if s.matches("SupportsPerformanceInsights") /* SupportsPerformanceInsights com.amazonaws.rds#OrderableDBInstanceOption$SupportsPerformanceInsights */ =>  {
-                let var_976 =
+                let var_934 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22125,11 +21189,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_supports_performance_insights(var_976);
+                builder = builder.set_supports_performance_insights(var_934);
             }
             ,
             s if s.matches("MinStorageSize") /* MinStorageSize com.amazonaws.rds#OrderableDBInstanceOption$MinStorageSize */ =>  {
-                let var_977 =
+                let var_935 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22140,11 +21204,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_min_storage_size(var_977);
+                builder = builder.set_min_storage_size(var_935);
             }
             ,
             s if s.matches("MaxStorageSize") /* MaxStorageSize com.amazonaws.rds#OrderableDBInstanceOption$MaxStorageSize */ =>  {
-                let var_978 =
+                let var_936 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22155,11 +21219,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_max_storage_size(var_978);
+                builder = builder.set_max_storage_size(var_936);
             }
             ,
             s if s.matches("MinIopsPerDbInstance") /* MinIopsPerDbInstance com.amazonaws.rds#OrderableDBInstanceOption$MinIopsPerDbInstance */ =>  {
-                let var_979 =
+                let var_937 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22170,11 +21234,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_min_iops_per_db_instance(var_979);
+                builder = builder.set_min_iops_per_db_instance(var_937);
             }
             ,
             s if s.matches("MaxIopsPerDbInstance") /* MaxIopsPerDbInstance com.amazonaws.rds#OrderableDBInstanceOption$MaxIopsPerDbInstance */ =>  {
-                let var_980 =
+                let var_938 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22185,11 +21249,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_max_iops_per_db_instance(var_980);
+                builder = builder.set_max_iops_per_db_instance(var_938);
             }
             ,
             s if s.matches("MinIopsPerGib") /* MinIopsPerGib com.amazonaws.rds#OrderableDBInstanceOption$MinIopsPerGib */ =>  {
-                let var_981 =
+                let var_939 =
                     Some(
                          {
                             <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22200,11 +21264,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_min_iops_per_gib(var_981);
+                builder = builder.set_min_iops_per_gib(var_939);
             }
             ,
             s if s.matches("MaxIopsPerGib") /* MaxIopsPerGib com.amazonaws.rds#OrderableDBInstanceOption$MaxIopsPerGib */ =>  {
-                let var_982 =
+                let var_940 =
                     Some(
                          {
                             <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22215,31 +21279,31 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_max_iops_per_gib(var_982);
+                builder = builder.set_max_iops_per_gib(var_940);
             }
             ,
             s if s.matches("AvailableProcessorFeatures") /* AvailableProcessorFeatures com.amazonaws.rds#OrderableDBInstanceOption$AvailableProcessorFeatures */ =>  {
-                let var_983 =
+                let var_941 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_available_processor_feature_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_available_processor_features(var_983);
+                builder = builder.set_available_processor_features(var_941);
             }
             ,
             s if s.matches("SupportedEngineModes") /* SupportedEngineModes com.amazonaws.rds#OrderableDBInstanceOption$SupportedEngineModes */ =>  {
-                let var_984 =
+                let var_942 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_engine_mode_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_engine_modes(var_984);
+                builder = builder.set_supported_engine_modes(var_942);
             }
             ,
             s if s.matches("SupportsStorageAutoscaling") /* SupportsStorageAutoscaling com.amazonaws.rds#OrderableDBInstanceOption$SupportsStorageAutoscaling */ =>  {
-                let var_985 =
+                let var_943 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22250,11 +21314,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_supports_storage_autoscaling(var_985);
+                builder = builder.set_supports_storage_autoscaling(var_943);
             }
             ,
             s if s.matches("SupportsKerberosAuthentication") /* SupportsKerberosAuthentication com.amazonaws.rds#OrderableDBInstanceOption$SupportsKerberosAuthentication */ =>  {
-                let var_986 =
+                let var_944 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22265,11 +21329,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_supports_kerberos_authentication(var_986);
+                builder = builder.set_supports_kerberos_authentication(var_944);
             }
             ,
             s if s.matches("OutpostCapable") /* OutpostCapable com.amazonaws.rds#OrderableDBInstanceOption$OutpostCapable */ =>  {
-                let var_987 =
+                let var_945 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22280,21 +21344,21 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_outpost_capable(var_987);
+                builder = builder.set_outpost_capable(var_945);
             }
             ,
             s if s.matches("SupportedActivityStreamModes") /* SupportedActivityStreamModes com.amazonaws.rds#OrderableDBInstanceOption$SupportedActivityStreamModes */ =>  {
-                let var_988 =
+                let var_946 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_activity_stream_mode_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_activity_stream_modes(var_988);
+                builder = builder.set_supported_activity_stream_modes(var_946);
             }
             ,
             s if s.matches("SupportsGlobalDatabases") /* SupportsGlobalDatabases com.amazonaws.rds#OrderableDBInstanceOption$SupportsGlobalDatabases */ =>  {
-                let var_989 =
+                let var_947 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22305,11 +21369,11 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_supports_global_databases(var_989);
+                builder = builder.set_supports_global_databases(var_947);
             }
             ,
             s if s.matches("SupportsClusters") /* SupportsClusters com.amazonaws.rds#OrderableDBInstanceOption$SupportsClusters */ =>  {
-                let var_990 =
+                let var_948 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22320,7 +21384,7 @@ pub fn deser_structure_crate_model_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_supports_clusters(var_990);
+                builder = builder.set_supports_clusters(var_948);
             }
             ,
             _ => {}
@@ -22337,7 +21401,7 @@ pub fn deser_structure_crate_model_reserved_db_instances_offering(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ReservedDBInstancesOfferingId") /* ReservedDBInstancesOfferingId com.amazonaws.rds#ReservedDBInstancesOffering$ReservedDBInstancesOfferingId */ =>  {
-                let var_991 =
+                let var_949 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22346,11 +21410,11 @@ pub fn deser_structure_crate_model_reserved_db_instances_offering(
                         ?
                     )
                 ;
-                builder = builder.set_reserved_db_instances_offering_id(var_991);
+                builder = builder.set_reserved_db_instances_offering_id(var_949);
             }
             ,
             s if s.matches("DBInstanceClass") /* DBInstanceClass com.amazonaws.rds#ReservedDBInstancesOffering$DBInstanceClass */ =>  {
-                let var_992 =
+                let var_950 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22359,11 +21423,11 @@ pub fn deser_structure_crate_model_reserved_db_instances_offering(
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_class(var_992);
+                builder = builder.set_db_instance_class(var_950);
             }
             ,
             s if s.matches("Duration") /* Duration com.amazonaws.rds#ReservedDBInstancesOffering$Duration */ =>  {
-                let var_993 =
+                let var_951 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22374,11 +21438,11 @@ pub fn deser_structure_crate_model_reserved_db_instances_offering(
                         ?
                     )
                 ;
-                builder = builder.set_duration(var_993);
+                builder = builder.set_duration(var_951);
             }
             ,
             s if s.matches("FixedPrice") /* FixedPrice com.amazonaws.rds#ReservedDBInstancesOffering$FixedPrice */ =>  {
-                let var_994 =
+                let var_952 =
                     Some(
                          {
                             <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22389,11 +21453,11 @@ pub fn deser_structure_crate_model_reserved_db_instances_offering(
                         ?
                     )
                 ;
-                builder = builder.set_fixed_price(var_994);
+                builder = builder.set_fixed_price(var_952);
             }
             ,
             s if s.matches("UsagePrice") /* UsagePrice com.amazonaws.rds#ReservedDBInstancesOffering$UsagePrice */ =>  {
-                let var_995 =
+                let var_953 =
                     Some(
                          {
                             <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22404,11 +21468,11 @@ pub fn deser_structure_crate_model_reserved_db_instances_offering(
                         ?
                     )
                 ;
-                builder = builder.set_usage_price(var_995);
+                builder = builder.set_usage_price(var_953);
             }
             ,
             s if s.matches("CurrencyCode") /* CurrencyCode com.amazonaws.rds#ReservedDBInstancesOffering$CurrencyCode */ =>  {
-                let var_996 =
+                let var_954 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22417,11 +21481,11 @@ pub fn deser_structure_crate_model_reserved_db_instances_offering(
                         ?
                     )
                 ;
-                builder = builder.set_currency_code(var_996);
+                builder = builder.set_currency_code(var_954);
             }
             ,
             s if s.matches("ProductDescription") /* ProductDescription com.amazonaws.rds#ReservedDBInstancesOffering$ProductDescription */ =>  {
-                let var_997 =
+                let var_955 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22430,11 +21494,11 @@ pub fn deser_structure_crate_model_reserved_db_instances_offering(
                         ?
                     )
                 ;
-                builder = builder.set_product_description(var_997);
+                builder = builder.set_product_description(var_955);
             }
             ,
             s if s.matches("OfferingType") /* OfferingType com.amazonaws.rds#ReservedDBInstancesOffering$OfferingType */ =>  {
-                let var_998 =
+                let var_956 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22443,11 +21507,11 @@ pub fn deser_structure_crate_model_reserved_db_instances_offering(
                         ?
                     )
                 ;
-                builder = builder.set_offering_type(var_998);
+                builder = builder.set_offering_type(var_956);
             }
             ,
             s if s.matches("MultiAZ") /* MultiAZ com.amazonaws.rds#ReservedDBInstancesOffering$MultiAZ */ =>  {
-                let var_999 =
+                let var_957 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22458,17 +21522,17 @@ pub fn deser_structure_crate_model_reserved_db_instances_offering(
                         ?
                     )
                 ;
-                builder = builder.set_multi_az(var_999);
+                builder = builder.set_multi_az(var_957);
             }
             ,
             s if s.matches("RecurringCharges") /* RecurringCharges com.amazonaws.rds#ReservedDBInstancesOffering$RecurringCharges */ =>  {
-                let var_1000 =
+                let var_958 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_recurring_charge_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_recurring_charges(var_1000);
+                builder = builder.set_recurring_charges(var_958);
             }
             ,
             _ => {}
@@ -22485,7 +21549,7 @@ pub fn deser_structure_crate_model_source_region(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("RegionName") /* RegionName com.amazonaws.rds#SourceRegion$RegionName */ =>  {
-                let var_1001 =
+                let var_959 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22494,11 +21558,11 @@ pub fn deser_structure_crate_model_source_region(
                         ?
                     )
                 ;
-                builder = builder.set_region_name(var_1001);
+                builder = builder.set_region_name(var_959);
             }
             ,
             s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds#SourceRegion$Endpoint */ =>  {
-                let var_1002 =
+                let var_960 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22507,11 +21571,11 @@ pub fn deser_structure_crate_model_source_region(
                         ?
                     )
                 ;
-                builder = builder.set_endpoint(var_1002);
+                builder = builder.set_endpoint(var_960);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#SourceRegion$Status */ =>  {
-                let var_1003 =
+                let var_961 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22520,11 +21584,11 @@ pub fn deser_structure_crate_model_source_region(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_1003);
+                builder = builder.set_status(var_961);
             }
             ,
             s if s.matches("SupportsDBInstanceAutomatedBackupsReplication") /* SupportsDBInstanceAutomatedBackupsReplication com.amazonaws.rds#SourceRegion$SupportsDBInstanceAutomatedBackupsReplication */ =>  {
-                let var_1004 =
+                let var_962 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22535,7 +21599,7 @@ pub fn deser_structure_crate_model_source_region(
                         ?
                     )
                 ;
-                builder = builder.set_supports_db_instance_automated_backups_replication(var_1004);
+                builder = builder.set_supports_db_instance_automated_backups_replication(var_962);
             }
             ,
             _ => {}
@@ -22591,7 +21655,7 @@ pub fn deser_structure_crate_model_connection_pool_configuration_info(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MaxConnectionsPercent") /* MaxConnectionsPercent com.amazonaws.rds#ConnectionPoolConfigurationInfo$MaxConnectionsPercent */ =>  {
-                let var_1005 =
+                let var_963 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22602,11 +21666,11 @@ pub fn deser_structure_crate_model_connection_pool_configuration_info(
                         ?
                     )
                 ;
-                builder = builder.set_max_connections_percent(var_1005);
+                builder = builder.set_max_connections_percent(var_963);
             }
             ,
             s if s.matches("MaxIdleConnectionsPercent") /* MaxIdleConnectionsPercent com.amazonaws.rds#ConnectionPoolConfigurationInfo$MaxIdleConnectionsPercent */ =>  {
-                let var_1006 =
+                let var_964 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22617,11 +21681,11 @@ pub fn deser_structure_crate_model_connection_pool_configuration_info(
                         ?
                     )
                 ;
-                builder = builder.set_max_idle_connections_percent(var_1006);
+                builder = builder.set_max_idle_connections_percent(var_964);
             }
             ,
             s if s.matches("ConnectionBorrowTimeout") /* ConnectionBorrowTimeout com.amazonaws.rds#ConnectionPoolConfigurationInfo$ConnectionBorrowTimeout */ =>  {
-                let var_1007 =
+                let var_965 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22632,21 +21696,21 @@ pub fn deser_structure_crate_model_connection_pool_configuration_info(
                         ?
                     )
                 ;
-                builder = builder.set_connection_borrow_timeout(var_1007);
+                builder = builder.set_connection_borrow_timeout(var_965);
             }
             ,
             s if s.matches("SessionPinningFilters") /* SessionPinningFilters com.amazonaws.rds#ConnectionPoolConfigurationInfo$SessionPinningFilters */ =>  {
-                let var_1008 =
+                let var_966 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_session_pinning_filters(var_1008);
+                builder = builder.set_session_pinning_filters(var_966);
             }
             ,
             s if s.matches("InitQuery") /* InitQuery com.amazonaws.rds#ConnectionPoolConfigurationInfo$InitQuery */ =>  {
-                let var_1009 =
+                let var_967 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22655,7 +21719,7 @@ pub fn deser_structure_crate_model_connection_pool_configuration_info(
                         ?
                     )
                 ;
-                builder = builder.set_init_query(var_1009);
+                builder = builder.set_init_query(var_967);
             }
             ,
             _ => {}
@@ -22691,7 +21755,7 @@ pub fn deser_structure_crate_model_pending_maintenance_action(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Action") /* Action com.amazonaws.rds#PendingMaintenanceAction$Action */ =>  {
-                let var_1010 =
+                let var_968 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22700,11 +21764,11 @@ pub fn deser_structure_crate_model_pending_maintenance_action(
                         ?
                     )
                 ;
-                builder = builder.set_action(var_1010);
+                builder = builder.set_action(var_968);
             }
             ,
             s if s.matches("AutoAppliedAfterDate") /* AutoAppliedAfterDate com.amazonaws.rds#PendingMaintenanceAction$AutoAppliedAfterDate */ =>  {
-                let var_1011 =
+                let var_969 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22714,11 +21778,11 @@ pub fn deser_structure_crate_model_pending_maintenance_action(
                         ?
                     )
                 ;
-                builder = builder.set_auto_applied_after_date(var_1011);
+                builder = builder.set_auto_applied_after_date(var_969);
             }
             ,
             s if s.matches("ForcedApplyDate") /* ForcedApplyDate com.amazonaws.rds#PendingMaintenanceAction$ForcedApplyDate */ =>  {
-                let var_1012 =
+                let var_970 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22728,11 +21792,11 @@ pub fn deser_structure_crate_model_pending_maintenance_action(
                         ?
                     )
                 ;
-                builder = builder.set_forced_apply_date(var_1012);
+                builder = builder.set_forced_apply_date(var_970);
             }
             ,
             s if s.matches("OptInStatus") /* OptInStatus com.amazonaws.rds#PendingMaintenanceAction$OptInStatus */ =>  {
-                let var_1013 =
+                let var_971 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22741,11 +21805,11 @@ pub fn deser_structure_crate_model_pending_maintenance_action(
                         ?
                     )
                 ;
-                builder = builder.set_opt_in_status(var_1013);
+                builder = builder.set_opt_in_status(var_971);
             }
             ,
             s if s.matches("CurrentApplyDate") /* CurrentApplyDate com.amazonaws.rds#PendingMaintenanceAction$CurrentApplyDate */ =>  {
-                let var_1014 =
+                let var_972 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22755,11 +21819,11 @@ pub fn deser_structure_crate_model_pending_maintenance_action(
                         ?
                     )
                 ;
-                builder = builder.set_current_apply_date(var_1014);
+                builder = builder.set_current_apply_date(var_972);
             }
             ,
             s if s.matches("Description") /* Description com.amazonaws.rds#PendingMaintenanceAction$Description */ =>  {
-                let var_1015 =
+                let var_973 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22768,7 +21832,7 @@ pub fn deser_structure_crate_model_pending_maintenance_action(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_1015);
+                builder = builder.set_description(var_973);
             }
             ,
             _ => {}
@@ -22785,7 +21849,7 @@ pub fn deser_structure_crate_model_ec2_security_group(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.rds#EC2SecurityGroup$Status */ =>  {
-                let var_1016 =
+                let var_974 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22794,11 +21858,11 @@ pub fn deser_structure_crate_model_ec2_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_1016);
+                builder = builder.set_status(var_974);
             }
             ,
             s if s.matches("EC2SecurityGroupName") /* EC2SecurityGroupName com.amazonaws.rds#EC2SecurityGroup$EC2SecurityGroupName */ =>  {
-                let var_1017 =
+                let var_975 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22807,11 +21871,11 @@ pub fn deser_structure_crate_model_ec2_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_ec2_security_group_name(var_1017);
+                builder = builder.set_ec2_security_group_name(var_975);
             }
             ,
             s if s.matches("EC2SecurityGroupId") /* EC2SecurityGroupId com.amazonaws.rds#EC2SecurityGroup$EC2SecurityGroupId */ =>  {
-                let var_1018 =
+                let var_976 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22820,11 +21884,11 @@ pub fn deser_structure_crate_model_ec2_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_ec2_security_group_id(var_1018);
+                builder = builder.set_ec2_security_group_id(var_976);
             }
             ,
             s if s.matches("EC2SecurityGroupOwnerId") /* EC2SecurityGroupOwnerId com.amazonaws.rds#EC2SecurityGroup$EC2SecurityGroupOwnerId */ =>  {
-                let var_1019 =
+                let var_977 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22833,7 +21897,7 @@ pub fn deser_structure_crate_model_ec2_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_ec2_security_group_owner_id(var_1019);
+                builder = builder.set_ec2_security_group_owner_id(var_977);
             }
             ,
             _ => {}
@@ -22850,7 +21914,7 @@ pub fn deser_structure_crate_model_ip_range(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.rds#IPRange$Status */ =>  {
-                let var_1020 =
+                let var_978 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22859,11 +21923,11 @@ pub fn deser_structure_crate_model_ip_range(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_1020);
+                builder = builder.set_status(var_978);
             }
             ,
             s if s.matches("CIDRIP") /* CIDRIP com.amazonaws.rds#IPRange$CIDRIP */ =>  {
-                let var_1021 =
+                let var_979 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22872,7 +21936,7 @@ pub fn deser_structure_crate_model_ip_range(
                         ?
                     )
                 ;
-                builder = builder.set_cidrip(var_1021);
+                builder = builder.set_cidrip(var_979);
             }
             ,
             _ => {}
@@ -22889,7 +21953,7 @@ pub fn deser_structure_crate_model_processor_feature(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.rds#ProcessorFeature$Name */ =>  {
-                let var_1022 =
+                let var_980 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22898,11 +21962,11 @@ pub fn deser_structure_crate_model_processor_feature(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_1022);
+                builder = builder.set_name(var_980);
             }
             ,
             s if s.matches("Value") /* Value com.amazonaws.rds#ProcessorFeature$Value */ =>  {
-                let var_1023 =
+                let var_981 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22911,7 +21975,7 @@ pub fn deser_structure_crate_model_processor_feature(
                         ?
                     )
                 ;
-                builder = builder.set_value(var_1023);
+                builder = builder.set_value(var_981);
             }
             ,
             _ => {}
@@ -22928,7 +21992,7 @@ pub fn deser_structure_crate_model_option(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("OptionName") /* OptionName com.amazonaws.rds#Option$OptionName */ =>  {
-                let var_1024 =
+                let var_982 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22937,11 +22001,11 @@ pub fn deser_structure_crate_model_option(
                         ?
                     )
                 ;
-                builder = builder.set_option_name(var_1024);
+                builder = builder.set_option_name(var_982);
             }
             ,
             s if s.matches("OptionDescription") /* OptionDescription com.amazonaws.rds#Option$OptionDescription */ =>  {
-                let var_1025 =
+                let var_983 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -22950,11 +22014,11 @@ pub fn deser_structure_crate_model_option(
                         ?
                     )
                 ;
-                builder = builder.set_option_description(var_1025);
+                builder = builder.set_option_description(var_983);
             }
             ,
             s if s.matches("Persistent") /* Persistent com.amazonaws.rds#Option$Persistent */ =>  {
-                let var_1026 =
+                let var_984 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22965,11 +22029,11 @@ pub fn deser_structure_crate_model_option(
                         ?
                     )
                 ;
-                builder = builder.set_persistent(var_1026);
+                builder = builder.set_persistent(var_984);
             }
             ,
             s if s.matches("Permanent") /* Permanent com.amazonaws.rds#Option$Permanent */ =>  {
-                let var_1027 =
+                let var_985 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22980,11 +22044,11 @@ pub fn deser_structure_crate_model_option(
                         ?
                     )
                 ;
-                builder = builder.set_permanent(var_1027);
+                builder = builder.set_permanent(var_985);
             }
             ,
             s if s.matches("Port") /* Port com.amazonaws.rds#Option$Port */ =>  {
-                let var_1028 =
+                let var_986 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -22995,11 +22059,11 @@ pub fn deser_structure_crate_model_option(
                         ?
                     )
                 ;
-                builder = builder.set_port(var_1028);
+                builder = builder.set_port(var_986);
             }
             ,
             s if s.matches("OptionVersion") /* OptionVersion com.amazonaws.rds#Option$OptionVersion */ =>  {
-                let var_1029 =
+                let var_987 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23008,37 +22072,37 @@ pub fn deser_structure_crate_model_option(
                         ?
                     )
                 ;
-                builder = builder.set_option_version(var_1029);
+                builder = builder.set_option_version(var_987);
             }
             ,
             s if s.matches("OptionSettings") /* OptionSettings com.amazonaws.rds#Option$OptionSettings */ =>  {
-                let var_1030 =
+                let var_988 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_option_setting_configuration_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_option_settings(var_1030);
+                builder = builder.set_option_settings(var_988);
             }
             ,
             s if s.matches("DBSecurityGroupMemberships") /* DBSecurityGroupMemberships com.amazonaws.rds#Option$DBSecurityGroupMemberships */ =>  {
-                let var_1031 =
+                let var_989 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_db_security_group_membership_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_security_group_memberships(var_1031);
+                builder = builder.set_db_security_group_memberships(var_989);
             }
             ,
             s if s.matches("VpcSecurityGroupMemberships") /* VpcSecurityGroupMemberships com.amazonaws.rds#Option$VpcSecurityGroupMemberships */ =>  {
-                let var_1032 =
+                let var_990 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_vpc_security_group_membership_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_vpc_security_group_memberships(var_1032);
+                builder = builder.set_vpc_security_group_memberships(var_990);
             }
             ,
             _ => {}
@@ -23055,7 +22119,7 @@ pub fn deser_structure_crate_model_db_cluster_option_group_status(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBClusterOptionGroupName") /* DBClusterOptionGroupName com.amazonaws.rds#DBClusterOptionGroupStatus$DBClusterOptionGroupName */ =>  {
-                let var_1033 =
+                let var_991 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23064,11 +22128,11 @@ pub fn deser_structure_crate_model_db_cluster_option_group_status(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_option_group_name(var_1033);
+                builder = builder.set_db_cluster_option_group_name(var_991);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#DBClusterOptionGroupStatus$Status */ =>  {
-                let var_1034 =
+                let var_992 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23077,7 +22141,7 @@ pub fn deser_structure_crate_model_db_cluster_option_group_status(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_1034);
+                builder = builder.set_status(var_992);
             }
             ,
             _ => {}
@@ -23094,7 +22158,7 @@ pub fn deser_structure_crate_model_db_cluster_member(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBInstanceIdentifier") /* DBInstanceIdentifier com.amazonaws.rds#DBClusterMember$DBInstanceIdentifier */ =>  {
-                let var_1035 =
+                let var_993 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23103,11 +22167,11 @@ pub fn deser_structure_crate_model_db_cluster_member(
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_identifier(var_1035);
+                builder = builder.set_db_instance_identifier(var_993);
             }
             ,
             s if s.matches("IsClusterWriter") /* IsClusterWriter com.amazonaws.rds#DBClusterMember$IsClusterWriter */ =>  {
-                let var_1036 =
+                let var_994 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -23118,11 +22182,11 @@ pub fn deser_structure_crate_model_db_cluster_member(
                         ?
                     )
                 ;
-                builder = builder.set_is_cluster_writer(var_1036);
+                builder = builder.set_is_cluster_writer(var_994);
             }
             ,
             s if s.matches("DBClusterParameterGroupStatus") /* DBClusterParameterGroupStatus com.amazonaws.rds#DBClusterMember$DBClusterParameterGroupStatus */ =>  {
-                let var_1037 =
+                let var_995 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23131,11 +22195,11 @@ pub fn deser_structure_crate_model_db_cluster_member(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_parameter_group_status(var_1037);
+                builder = builder.set_db_cluster_parameter_group_status(var_995);
             }
             ,
             s if s.matches("PromotionTier") /* PromotionTier com.amazonaws.rds#DBClusterMember$PromotionTier */ =>  {
-                let var_1038 =
+                let var_996 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -23146,7 +22210,7 @@ pub fn deser_structure_crate_model_db_cluster_member(
                         ?
                     )
                 ;
-                builder = builder.set_promotion_tier(var_1038);
+                builder = builder.set_promotion_tier(var_996);
             }
             ,
             _ => {}
@@ -23163,7 +22227,7 @@ pub fn deser_structure_crate_model_vpc_security_group_membership(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("VpcSecurityGroupId") /* VpcSecurityGroupId com.amazonaws.rds#VpcSecurityGroupMembership$VpcSecurityGroupId */ =>  {
-                let var_1039 =
+                let var_997 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23172,11 +22236,11 @@ pub fn deser_structure_crate_model_vpc_security_group_membership(
                         ?
                     )
                 ;
-                builder = builder.set_vpc_security_group_id(var_1039);
+                builder = builder.set_vpc_security_group_id(var_997);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#VpcSecurityGroupMembership$Status */ =>  {
-                let var_1040 =
+                let var_998 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23185,7 +22249,7 @@ pub fn deser_structure_crate_model_vpc_security_group_membership(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_1040);
+                builder = builder.set_status(var_998);
             }
             ,
             _ => {}
@@ -23202,7 +22266,7 @@ pub fn deser_structure_crate_model_db_cluster_role(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("RoleArn") /* RoleArn com.amazonaws.rds#DBClusterRole$RoleArn */ =>  {
-                let var_1041 =
+                let var_999 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23211,11 +22275,11 @@ pub fn deser_structure_crate_model_db_cluster_role(
                         ?
                     )
                 ;
-                builder = builder.set_role_arn(var_1041);
+                builder = builder.set_role_arn(var_999);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#DBClusterRole$Status */ =>  {
-                let var_1042 =
+                let var_1000 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23224,11 +22288,11 @@ pub fn deser_structure_crate_model_db_cluster_role(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_1042);
+                builder = builder.set_status(var_1000);
             }
             ,
             s if s.matches("FeatureName") /* FeatureName com.amazonaws.rds#DBClusterRole$FeatureName */ =>  {
-                let var_1043 =
+                let var_1001 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23237,7 +22301,7 @@ pub fn deser_structure_crate_model_db_cluster_role(
                         ?
                     )
                 ;
-                builder = builder.set_feature_name(var_1043);
+                builder = builder.set_feature_name(var_1001);
             }
             ,
             _ => {}
@@ -23254,7 +22318,7 @@ pub fn deser_structure_crate_model_domain_membership(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Domain") /* Domain com.amazonaws.rds#DomainMembership$Domain */ =>  {
-                let var_1044 =
+                let var_1002 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23263,11 +22327,11 @@ pub fn deser_structure_crate_model_domain_membership(
                         ?
                     )
                 ;
-                builder = builder.set_domain(var_1044);
+                builder = builder.set_domain(var_1002);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#DomainMembership$Status */ =>  {
-                let var_1045 =
+                let var_1003 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23276,11 +22340,11 @@ pub fn deser_structure_crate_model_domain_membership(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_1045);
+                builder = builder.set_status(var_1003);
             }
             ,
             s if s.matches("FQDN") /* FQDN com.amazonaws.rds#DomainMembership$FQDN */ =>  {
-                let var_1046 =
+                let var_1004 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23289,11 +22353,11 @@ pub fn deser_structure_crate_model_domain_membership(
                         ?
                     )
                 ;
-                builder = builder.set_fqdn(var_1046);
+                builder = builder.set_fqdn(var_1004);
             }
             ,
             s if s.matches("IAMRoleName") /* IAMRoleName com.amazonaws.rds#DomainMembership$IAMRoleName */ =>  {
-                let var_1047 =
+                let var_1005 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23302,7 +22366,7 @@ pub fn deser_structure_crate_model_domain_membership(
                         ?
                     )
                 ;
-                builder = builder.set_iam_role_name(var_1047);
+                builder = builder.set_iam_role_name(var_1005);
             }
             ,
             _ => {}
@@ -23319,23 +22383,23 @@ pub fn deser_structure_crate_model_pending_cloudwatch_logs_exports(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LogTypesToEnable") /* LogTypesToEnable com.amazonaws.rds#PendingCloudwatchLogsExports$LogTypesToEnable */ =>  {
-                let var_1048 =
+                let var_1006 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_log_type_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_log_types_to_enable(var_1048);
+                builder = builder.set_log_types_to_enable(var_1006);
             }
             ,
             s if s.matches("LogTypesToDisable") /* LogTypesToDisable com.amazonaws.rds#PendingCloudwatchLogsExports$LogTypesToDisable */ =>  {
-                let var_1049 =
+                let var_1007 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_log_type_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_log_types_to_disable(var_1049);
+                builder = builder.set_log_types_to_disable(var_1007);
             }
             ,
             _ => {}
@@ -23352,7 +22416,7 @@ pub fn deser_structure_crate_model_db_security_group_membership(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBSecurityGroupName") /* DBSecurityGroupName com.amazonaws.rds#DBSecurityGroupMembership$DBSecurityGroupName */ =>  {
-                let var_1050 =
+                let var_1008 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23361,11 +22425,11 @@ pub fn deser_structure_crate_model_db_security_group_membership(
                         ?
                     )
                 ;
-                builder = builder.set_db_security_group_name(var_1050);
+                builder = builder.set_db_security_group_name(var_1008);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#DBSecurityGroupMembership$Status */ =>  {
-                let var_1051 =
+                let var_1009 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23374,7 +22438,7 @@ pub fn deser_structure_crate_model_db_security_group_membership(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_1051);
+                builder = builder.set_status(var_1009);
             }
             ,
             _ => {}
@@ -23391,7 +22455,7 @@ pub fn deser_structure_crate_model_db_parameter_group_status(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBParameterGroupName") /* DBParameterGroupName com.amazonaws.rds#DBParameterGroupStatus$DBParameterGroupName */ =>  {
-                let var_1052 =
+                let var_1010 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23400,11 +22464,11 @@ pub fn deser_structure_crate_model_db_parameter_group_status(
                         ?
                     )
                 ;
-                builder = builder.set_db_parameter_group_name(var_1052);
+                builder = builder.set_db_parameter_group_name(var_1010);
             }
             ,
             s if s.matches("ParameterApplyStatus") /* ParameterApplyStatus com.amazonaws.rds#DBParameterGroupStatus$ParameterApplyStatus */ =>  {
-                let var_1053 =
+                let var_1011 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23413,7 +22477,7 @@ pub fn deser_structure_crate_model_db_parameter_group_status(
                         ?
                     )
                 ;
-                builder = builder.set_parameter_apply_status(var_1053);
+                builder = builder.set_parameter_apply_status(var_1011);
             }
             ,
             _ => {}
@@ -23430,7 +22494,7 @@ pub fn deser_structure_crate_model_option_group_membership(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("OptionGroupName") /* OptionGroupName com.amazonaws.rds#OptionGroupMembership$OptionGroupName */ =>  {
-                let var_1054 =
+                let var_1012 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23439,11 +22503,11 @@ pub fn deser_structure_crate_model_option_group_membership(
                         ?
                     )
                 ;
-                builder = builder.set_option_group_name(var_1054);
+                builder = builder.set_option_group_name(var_1012);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#OptionGroupMembership$Status */ =>  {
-                let var_1055 =
+                let var_1013 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23452,7 +22516,7 @@ pub fn deser_structure_crate_model_option_group_membership(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_1055);
+                builder = builder.set_status(var_1013);
             }
             ,
             _ => {}
@@ -23469,7 +22533,7 @@ pub fn deser_structure_crate_model_db_instance_status_info(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("StatusType") /* StatusType com.amazonaws.rds#DBInstanceStatusInfo$StatusType */ =>  {
-                let var_1056 =
+                let var_1014 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23478,11 +22542,11 @@ pub fn deser_structure_crate_model_db_instance_status_info(
                         ?
                     )
                 ;
-                builder = builder.set_status_type(var_1056);
+                builder = builder.set_status_type(var_1014);
             }
             ,
             s if s.matches("Normal") /* Normal com.amazonaws.rds#DBInstanceStatusInfo$Normal */ =>  {
-                let var_1057 =
+                let var_1015 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -23493,11 +22557,11 @@ pub fn deser_structure_crate_model_db_instance_status_info(
                         ?
                     )
                 ;
-                builder = builder.set_normal(var_1057);
+                builder = builder.set_normal(var_1015);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#DBInstanceStatusInfo$Status */ =>  {
-                let var_1058 =
+                let var_1016 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23506,11 +22570,11 @@ pub fn deser_structure_crate_model_db_instance_status_info(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_1058);
+                builder = builder.set_status(var_1016);
             }
             ,
             s if s.matches("Message") /* Message com.amazonaws.rds#DBInstanceStatusInfo$Message */ =>  {
-                let var_1059 =
+                let var_1017 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23519,7 +22583,7 @@ pub fn deser_structure_crate_model_db_instance_status_info(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_1059);
+                builder = builder.set_message(var_1017);
             }
             ,
             _ => {}
@@ -23536,7 +22600,7 @@ pub fn deser_structure_crate_model_db_instance_role(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("RoleArn") /* RoleArn com.amazonaws.rds#DBInstanceRole$RoleArn */ =>  {
-                let var_1060 =
+                let var_1018 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23545,11 +22609,11 @@ pub fn deser_structure_crate_model_db_instance_role(
                         ?
                     )
                 ;
-                builder = builder.set_role_arn(var_1060);
+                builder = builder.set_role_arn(var_1018);
             }
             ,
             s if s.matches("FeatureName") /* FeatureName com.amazonaws.rds#DBInstanceRole$FeatureName */ =>  {
-                let var_1061 =
+                let var_1019 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23558,11 +22622,11 @@ pub fn deser_structure_crate_model_db_instance_role(
                         ?
                     )
                 ;
-                builder = builder.set_feature_name(var_1061);
+                builder = builder.set_feature_name(var_1019);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#DBInstanceRole$Status */ =>  {
-                let var_1062 =
+                let var_1020 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23571,7 +22635,7 @@ pub fn deser_structure_crate_model_db_instance_role(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_1062);
+                builder = builder.set_status(var_1020);
             }
             ,
             _ => {}
@@ -23588,7 +22652,7 @@ pub fn deser_structure_crate_model_db_instance_automated_backups_replication(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBInstanceAutomatedBackupsArn") /* DBInstanceAutomatedBackupsArn com.amazonaws.rds#DBInstanceAutomatedBackupsReplication$DBInstanceAutomatedBackupsArn */ =>  {
-                let var_1063 =
+                let var_1021 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23597,7 +22661,7 @@ pub fn deser_structure_crate_model_db_instance_automated_backups_replication(
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_automated_backups_arn(var_1063);
+                builder = builder.set_db_instance_automated_backups_arn(var_1021);
             }
             ,
             _ => {}
@@ -23614,7 +22678,7 @@ pub fn deser_structure_crate_model_user_auth_config_info(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Description") /* Description com.amazonaws.rds#UserAuthConfigInfo$Description */ =>  {
-                let var_1064 =
+                let var_1022 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23623,11 +22687,11 @@ pub fn deser_structure_crate_model_user_auth_config_info(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_1064);
+                builder = builder.set_description(var_1022);
             }
             ,
             s if s.matches("UserName") /* UserName com.amazonaws.rds#UserAuthConfigInfo$UserName */ =>  {
-                let var_1065 =
+                let var_1023 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23636,11 +22700,11 @@ pub fn deser_structure_crate_model_user_auth_config_info(
                         ?
                     )
                 ;
-                builder = builder.set_user_name(var_1065);
+                builder = builder.set_user_name(var_1023);
             }
             ,
             s if s.matches("AuthScheme") /* AuthScheme com.amazonaws.rds#UserAuthConfigInfo$AuthScheme */ =>  {
-                let var_1066 =
+                let var_1024 =
                     Some(
                         Result::<crate::model::AuthScheme, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::AuthScheme::from(
@@ -23650,11 +22714,11 @@ pub fn deser_structure_crate_model_user_auth_config_info(
                         ?
                     )
                 ;
-                builder = builder.set_auth_scheme(var_1066);
+                builder = builder.set_auth_scheme(var_1024);
             }
             ,
             s if s.matches("SecretArn") /* SecretArn com.amazonaws.rds#UserAuthConfigInfo$SecretArn */ =>  {
-                let var_1067 =
+                let var_1025 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23663,11 +22727,11 @@ pub fn deser_structure_crate_model_user_auth_config_info(
                         ?
                     )
                 ;
-                builder = builder.set_secret_arn(var_1067);
+                builder = builder.set_secret_arn(var_1025);
             }
             ,
             s if s.matches("IAMAuth") /* IAMAuth com.amazonaws.rds#UserAuthConfigInfo$IAMAuth */ =>  {
-                let var_1068 =
+                let var_1026 =
                     Some(
                         Result::<crate::model::IamAuthMode, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::IamAuthMode::from(
@@ -23677,7 +22741,7 @@ pub fn deser_structure_crate_model_user_auth_config_info(
                         ?
                     )
                 ;
-                builder = builder.set_iam_auth(var_1068);
+                builder = builder.set_iam_auth(var_1026);
             }
             ,
             _ => {}
@@ -23694,7 +22758,7 @@ pub fn deser_structure_crate_model_subnet(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SubnetIdentifier") /* SubnetIdentifier com.amazonaws.rds#Subnet$SubnetIdentifier */ =>  {
-                let var_1069 =
+                let var_1027 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23703,31 +22767,31 @@ pub fn deser_structure_crate_model_subnet(
                         ?
                     )
                 ;
-                builder = builder.set_subnet_identifier(var_1069);
+                builder = builder.set_subnet_identifier(var_1027);
             }
             ,
             s if s.matches("SubnetAvailabilityZone") /* SubnetAvailabilityZone com.amazonaws.rds#Subnet$SubnetAvailabilityZone */ =>  {
-                let var_1070 =
+                let var_1028 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_availability_zone(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_subnet_availability_zone(var_1070);
+                builder = builder.set_subnet_availability_zone(var_1028);
             }
             ,
             s if s.matches("SubnetOutpost") /* SubnetOutpost com.amazonaws.rds#Subnet$SubnetOutpost */ =>  {
-                let var_1071 =
+                let var_1029 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_outpost(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_subnet_outpost(var_1071);
+                builder = builder.set_subnet_outpost(var_1029);
             }
             ,
             s if s.matches("SubnetStatus") /* SubnetStatus com.amazonaws.rds#Subnet$SubnetStatus */ =>  {
-                let var_1072 =
+                let var_1030 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23736,7 +22800,7 @@ pub fn deser_structure_crate_model_subnet(
                         ?
                     )
                 ;
-                builder = builder.set_subnet_status(var_1072);
+                builder = builder.set_subnet_status(var_1030);
             }
             ,
             _ => {}
@@ -23753,7 +22817,7 @@ pub fn deser_structure_crate_model_global_cluster_member(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DBClusterArn") /* DBClusterArn com.amazonaws.rds#GlobalClusterMember$DBClusterArn */ =>  {
-                let var_1073 =
+                let var_1031 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23762,21 +22826,21 @@ pub fn deser_structure_crate_model_global_cluster_member(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_arn(var_1073);
+                builder = builder.set_db_cluster_arn(var_1031);
             }
             ,
             s if s.matches("Readers") /* Readers com.amazonaws.rds#GlobalClusterMember$Readers */ =>  {
-                let var_1074 =
+                let var_1032 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_readers_arn_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_readers(var_1074);
+                builder = builder.set_readers(var_1032);
             }
             ,
             s if s.matches("IsWriter") /* IsWriter com.amazonaws.rds#GlobalClusterMember$IsWriter */ =>  {
-                let var_1075 =
+                let var_1033 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -23787,11 +22851,11 @@ pub fn deser_structure_crate_model_global_cluster_member(
                         ?
                     )
                 ;
-                builder = builder.set_is_writer(var_1075);
+                builder = builder.set_is_writer(var_1033);
             }
             ,
             s if s.matches("GlobalWriteForwardingStatus") /* GlobalWriteForwardingStatus com.amazonaws.rds#GlobalClusterMember$GlobalWriteForwardingStatus */ =>  {
-                let var_1076 =
+                let var_1034 =
                     Some(
                         Result::<crate::model::WriteForwardingStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::WriteForwardingStatus::from(
@@ -23801,7 +22865,7 @@ pub fn deser_structure_crate_model_global_cluster_member(
                         ?
                     )
                 ;
-                builder = builder.set_global_write_forwarding_status(var_1076);
+                builder = builder.set_global_write_forwarding_status(var_1034);
             }
             ,
             _ => {}
@@ -23818,7 +22882,7 @@ pub fn deser_structure_crate_model_db_cluster_snapshot_attribute(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AttributeName") /* AttributeName com.amazonaws.rds#DBClusterSnapshotAttribute$AttributeName */ =>  {
-                let var_1077 =
+                let var_1035 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23827,17 +22891,17 @@ pub fn deser_structure_crate_model_db_cluster_snapshot_attribute(
                         ?
                     )
                 ;
-                builder = builder.set_attribute_name(var_1077);
+                builder = builder.set_attribute_name(var_1035);
             }
             ,
             s if s.matches("AttributeValues") /* AttributeValues com.amazonaws.rds#DBClusterSnapshotAttribute$AttributeValues */ =>  {
-                let var_1078 =
+                let var_1036 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_attribute_value_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_attribute_values(var_1078);
+                builder = builder.set_attribute_values(var_1036);
             }
             ,
             _ => {}
@@ -23854,7 +22918,7 @@ pub fn deser_structure_crate_model_target_health(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("State") /* State com.amazonaws.rds#TargetHealth$State */ =>  {
-                let var_1079 =
+                let var_1037 =
                     Some(
                         Result::<crate::model::TargetState, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::TargetState::from(
@@ -23864,11 +22928,11 @@ pub fn deser_structure_crate_model_target_health(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_1079);
+                builder = builder.set_state(var_1037);
             }
             ,
             s if s.matches("Reason") /* Reason com.amazonaws.rds#TargetHealth$Reason */ =>  {
-                let var_1080 =
+                let var_1038 =
                     Some(
                         Result::<crate::model::TargetHealthReason, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::TargetHealthReason::from(
@@ -23878,11 +22942,11 @@ pub fn deser_structure_crate_model_target_health(
                         ?
                     )
                 ;
-                builder = builder.set_reason(var_1080);
+                builder = builder.set_reason(var_1038);
             }
             ,
             s if s.matches("Description") /* Description com.amazonaws.rds#TargetHealth$Description */ =>  {
-                let var_1081 =
+                let var_1039 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23891,7 +22955,7 @@ pub fn deser_structure_crate_model_target_health(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_1081);
+                builder = builder.set_description(var_1039);
             }
             ,
             _ => {}
@@ -23908,7 +22972,7 @@ pub fn deser_structure_crate_model_db_snapshot_attribute(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AttributeName") /* AttributeName com.amazonaws.rds#DBSnapshotAttribute$AttributeName */ =>  {
-                let var_1082 =
+                let var_1040 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -23917,17 +22981,17 @@ pub fn deser_structure_crate_model_db_snapshot_attribute(
                         ?
                     )
                 ;
-                builder = builder.set_attribute_name(var_1082);
+                builder = builder.set_attribute_name(var_1040);
             }
             ,
             s if s.matches("AttributeValues") /* AttributeValues com.amazonaws.rds#DBSnapshotAttribute$AttributeValues */ =>  {
-                let var_1083 =
+                let var_1041 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_attribute_value_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_attribute_values(var_1083);
+                builder = builder.set_attribute_values(var_1041);
             }
             ,
             _ => {}
@@ -24068,7 +23132,7 @@ pub fn deser_structure_crate_model_valid_storage_options(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("StorageType") /* StorageType com.amazonaws.rds#ValidStorageOptions$StorageType */ =>  {
-                let var_1084 =
+                let var_1042 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24077,41 +23141,41 @@ pub fn deser_structure_crate_model_valid_storage_options(
                         ?
                     )
                 ;
-                builder = builder.set_storage_type(var_1084);
+                builder = builder.set_storage_type(var_1042);
             }
             ,
             s if s.matches("StorageSize") /* StorageSize com.amazonaws.rds#ValidStorageOptions$StorageSize */ =>  {
-                let var_1085 =
+                let var_1043 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_range_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_storage_size(var_1085);
+                builder = builder.set_storage_size(var_1043);
             }
             ,
             s if s.matches("ProvisionedIops") /* ProvisionedIops com.amazonaws.rds#ValidStorageOptions$ProvisionedIops */ =>  {
-                let var_1086 =
+                let var_1044 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_range_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_provisioned_iops(var_1086);
+                builder = builder.set_provisioned_iops(var_1044);
             }
             ,
             s if s.matches("IopsToStorageRatio") /* IopsToStorageRatio com.amazonaws.rds#ValidStorageOptions$IopsToStorageRatio */ =>  {
-                let var_1087 =
+                let var_1045 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_double_range_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_iops_to_storage_ratio(var_1087);
+                builder = builder.set_iops_to_storage_ratio(var_1045);
             }
             ,
             s if s.matches("SupportsStorageAutoscaling") /* SupportsStorageAutoscaling com.amazonaws.rds#ValidStorageOptions$SupportsStorageAutoscaling */ =>  {
-                let var_1088 =
+                let var_1046 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -24122,7 +23186,7 @@ pub fn deser_structure_crate_model_valid_storage_options(
                         ?
                     )
                 ;
-                builder = builder.set_supports_storage_autoscaling(var_1088);
+                builder = builder.set_supports_storage_autoscaling(var_1046);
             }
             ,
             _ => {}
@@ -24139,7 +23203,7 @@ pub fn deser_structure_crate_model_available_processor_feature(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.rds#AvailableProcessorFeature$Name */ =>  {
-                let var_1089 =
+                let var_1047 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24148,11 +23212,11 @@ pub fn deser_structure_crate_model_available_processor_feature(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_1089);
+                builder = builder.set_name(var_1047);
             }
             ,
             s if s.matches("DefaultValue") /* DefaultValue com.amazonaws.rds#AvailableProcessorFeature$DefaultValue */ =>  {
-                let var_1090 =
+                let var_1048 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24161,11 +23225,11 @@ pub fn deser_structure_crate_model_available_processor_feature(
                         ?
                     )
                 ;
-                builder = builder.set_default_value(var_1090);
+                builder = builder.set_default_value(var_1048);
             }
             ,
             s if s.matches("AllowedValues") /* AllowedValues com.amazonaws.rds#AvailableProcessorFeature$AllowedValues */ =>  {
-                let var_1091 =
+                let var_1049 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24174,7 +23238,7 @@ pub fn deser_structure_crate_model_available_processor_feature(
                         ?
                     )
                 ;
-                builder = builder.set_allowed_values(var_1091);
+                builder = builder.set_allowed_values(var_1049);
             }
             ,
             _ => {}
@@ -24191,7 +23255,7 @@ pub fn deser_structure_crate_model_recurring_charge(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("RecurringChargeAmount") /* RecurringChargeAmount com.amazonaws.rds#RecurringCharge$RecurringChargeAmount */ =>  {
-                let var_1092 =
+                let var_1050 =
                     Some(
                          {
                             <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -24202,11 +23266,11 @@ pub fn deser_structure_crate_model_recurring_charge(
                         ?
                     )
                 ;
-                builder = builder.set_recurring_charge_amount(var_1092);
+                builder = builder.set_recurring_charge_amount(var_1050);
             }
             ,
             s if s.matches("RecurringChargeFrequency") /* RecurringChargeFrequency com.amazonaws.rds#RecurringCharge$RecurringChargeFrequency */ =>  {
-                let var_1093 =
+                let var_1051 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24215,7 +23279,7 @@ pub fn deser_structure_crate_model_recurring_charge(
                         ?
                     )
                 ;
-                builder = builder.set_recurring_charge_frequency(var_1093);
+                builder = builder.set_recurring_charge_frequency(var_1051);
             }
             ,
             _ => {}
@@ -24251,7 +23315,7 @@ pub fn deser_structure_crate_model_availability_zone(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.rds#AvailabilityZone$Name */ =>  {
-                let var_1094 =
+                let var_1052 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24260,7 +23324,7 @@ pub fn deser_structure_crate_model_availability_zone(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_1094);
+                builder = builder.set_name(var_1052);
             }
             ,
             _ => {}
@@ -24277,7 +23341,7 @@ pub fn deser_structure_crate_model_outpost(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Arn") /* Arn com.amazonaws.rds#Outpost$Arn */ =>  {
-                let var_1095 =
+                let var_1053 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24286,7 +23350,7 @@ pub fn deser_structure_crate_model_outpost(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_1095);
+                builder = builder.set_arn(var_1053);
             }
             ,
             _ => {}
@@ -24347,7 +23411,7 @@ pub fn deser_structure_crate_model_option_group_option_setting(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SettingName") /* SettingName com.amazonaws.rds#OptionGroupOptionSetting$SettingName */ =>  {
-                let var_1096 =
+                let var_1054 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24356,11 +23420,11 @@ pub fn deser_structure_crate_model_option_group_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_setting_name(var_1096);
+                builder = builder.set_setting_name(var_1054);
             }
             ,
             s if s.matches("SettingDescription") /* SettingDescription com.amazonaws.rds#OptionGroupOptionSetting$SettingDescription */ =>  {
-                let var_1097 =
+                let var_1055 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24369,11 +23433,11 @@ pub fn deser_structure_crate_model_option_group_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_setting_description(var_1097);
+                builder = builder.set_setting_description(var_1055);
             }
             ,
             s if s.matches("DefaultValue") /* DefaultValue com.amazonaws.rds#OptionGroupOptionSetting$DefaultValue */ =>  {
-                let var_1098 =
+                let var_1056 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24382,11 +23446,11 @@ pub fn deser_structure_crate_model_option_group_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_default_value(var_1098);
+                builder = builder.set_default_value(var_1056);
             }
             ,
             s if s.matches("ApplyType") /* ApplyType com.amazonaws.rds#OptionGroupOptionSetting$ApplyType */ =>  {
-                let var_1099 =
+                let var_1057 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24395,11 +23459,11 @@ pub fn deser_structure_crate_model_option_group_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_apply_type(var_1099);
+                builder = builder.set_apply_type(var_1057);
             }
             ,
             s if s.matches("AllowedValues") /* AllowedValues com.amazonaws.rds#OptionGroupOptionSetting$AllowedValues */ =>  {
-                let var_1100 =
+                let var_1058 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24408,11 +23472,11 @@ pub fn deser_structure_crate_model_option_group_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_allowed_values(var_1100);
+                builder = builder.set_allowed_values(var_1058);
             }
             ,
             s if s.matches("IsModifiable") /* IsModifiable com.amazonaws.rds#OptionGroupOptionSetting$IsModifiable */ =>  {
-                let var_1101 =
+                let var_1059 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -24423,11 +23487,11 @@ pub fn deser_structure_crate_model_option_group_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_is_modifiable(var_1101);
+                builder = builder.set_is_modifiable(var_1059);
             }
             ,
             s if s.matches("IsRequired") /* IsRequired com.amazonaws.rds#OptionGroupOptionSetting$IsRequired */ =>  {
-                let var_1102 =
+                let var_1060 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -24438,17 +23502,17 @@ pub fn deser_structure_crate_model_option_group_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_is_required(var_1102);
+                builder = builder.set_is_required(var_1060);
             }
             ,
             s if s.matches("MinimumEngineVersionPerAllowedValue") /* MinimumEngineVersionPerAllowedValue com.amazonaws.rds#OptionGroupOptionSetting$MinimumEngineVersionPerAllowedValue */ =>  {
-                let var_1103 =
+                let var_1061 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_rds_minimum_engine_version_per_allowed_value_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_minimum_engine_version_per_allowed_value(var_1103);
+                builder = builder.set_minimum_engine_version_per_allowed_value(var_1061);
             }
             ,
             _ => {}
@@ -24465,7 +23529,7 @@ pub fn deser_structure_crate_model_option_version(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Version") /* Version com.amazonaws.rds#OptionVersion$Version */ =>  {
-                let var_1104 =
+                let var_1062 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24474,11 +23538,11 @@ pub fn deser_structure_crate_model_option_version(
                         ?
                     )
                 ;
-                builder = builder.set_version(var_1104);
+                builder = builder.set_version(var_1062);
             }
             ,
             s if s.matches("IsDefault") /* IsDefault com.amazonaws.rds#OptionVersion$IsDefault */ =>  {
-                let var_1105 =
+                let var_1063 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -24489,7 +23553,7 @@ pub fn deser_structure_crate_model_option_version(
                         ?
                     )
                 ;
-                builder = builder.set_is_default(var_1105);
+                builder = builder.set_is_default(var_1063);
             }
             ,
             _ => {}
@@ -24544,7 +23608,7 @@ pub fn deser_structure_crate_model_option_setting(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.rds#OptionSetting$Name */ =>  {
-                let var_1106 =
+                let var_1064 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24553,11 +23617,11 @@ pub fn deser_structure_crate_model_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_1106);
+                builder = builder.set_name(var_1064);
             }
             ,
             s if s.matches("Value") /* Value com.amazonaws.rds#OptionSetting$Value */ =>  {
-                let var_1107 =
+                let var_1065 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24566,11 +23630,11 @@ pub fn deser_structure_crate_model_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_value(var_1107);
+                builder = builder.set_value(var_1065);
             }
             ,
             s if s.matches("DefaultValue") /* DefaultValue com.amazonaws.rds#OptionSetting$DefaultValue */ =>  {
-                let var_1108 =
+                let var_1066 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24579,11 +23643,11 @@ pub fn deser_structure_crate_model_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_default_value(var_1108);
+                builder = builder.set_default_value(var_1066);
             }
             ,
             s if s.matches("Description") /* Description com.amazonaws.rds#OptionSetting$Description */ =>  {
-                let var_1109 =
+                let var_1067 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24592,11 +23656,11 @@ pub fn deser_structure_crate_model_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_1109);
+                builder = builder.set_description(var_1067);
             }
             ,
             s if s.matches("ApplyType") /* ApplyType com.amazonaws.rds#OptionSetting$ApplyType */ =>  {
-                let var_1110 =
+                let var_1068 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24605,11 +23669,11 @@ pub fn deser_structure_crate_model_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_apply_type(var_1110);
+                builder = builder.set_apply_type(var_1068);
             }
             ,
             s if s.matches("DataType") /* DataType com.amazonaws.rds#OptionSetting$DataType */ =>  {
-                let var_1111 =
+                let var_1069 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24618,11 +23682,11 @@ pub fn deser_structure_crate_model_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_data_type(var_1111);
+                builder = builder.set_data_type(var_1069);
             }
             ,
             s if s.matches("AllowedValues") /* AllowedValues com.amazonaws.rds#OptionSetting$AllowedValues */ =>  {
-                let var_1112 =
+                let var_1070 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24631,11 +23695,11 @@ pub fn deser_structure_crate_model_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_allowed_values(var_1112);
+                builder = builder.set_allowed_values(var_1070);
             }
             ,
             s if s.matches("IsModifiable") /* IsModifiable com.amazonaws.rds#OptionSetting$IsModifiable */ =>  {
-                let var_1113 =
+                let var_1071 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -24646,11 +23710,11 @@ pub fn deser_structure_crate_model_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_is_modifiable(var_1113);
+                builder = builder.set_is_modifiable(var_1071);
             }
             ,
             s if s.matches("IsCollection") /* IsCollection com.amazonaws.rds#OptionSetting$IsCollection */ =>  {
-                let var_1114 =
+                let var_1072 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -24661,7 +23725,7 @@ pub fn deser_structure_crate_model_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_is_collection(var_1114);
+                builder = builder.set_is_collection(var_1072);
             }
             ,
             _ => {}
@@ -24700,7 +23764,7 @@ pub fn deser_structure_crate_model_range(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("From") /* From com.amazonaws.rds#Range$From */ =>  {
-                let var_1115 =
+                let var_1073 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -24711,11 +23775,11 @@ pub fn deser_structure_crate_model_range(
                         ?
                     )
                 ;
-                builder = builder.set_from(var_1115);
+                builder = builder.set_from(var_1073);
             }
             ,
             s if s.matches("To") /* To com.amazonaws.rds#Range$To */ =>  {
-                let var_1116 =
+                let var_1074 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -24726,11 +23790,11 @@ pub fn deser_structure_crate_model_range(
                         ?
                     )
                 ;
-                builder = builder.set_to(var_1116);
+                builder = builder.set_to(var_1074);
             }
             ,
             s if s.matches("Step") /* Step com.amazonaws.rds#Range$Step */ =>  {
-                let var_1117 =
+                let var_1075 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -24741,7 +23805,7 @@ pub fn deser_structure_crate_model_range(
                         ?
                     )
                 ;
-                builder = builder.set_step(var_1117);
+                builder = builder.set_step(var_1075);
             }
             ,
             _ => {}
@@ -24758,7 +23822,7 @@ pub fn deser_structure_crate_model_double_range(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("From") /* From com.amazonaws.rds#DoubleRange$From */ =>  {
-                let var_1118 =
+                let var_1076 =
                     Some(
                          {
                             <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -24769,11 +23833,11 @@ pub fn deser_structure_crate_model_double_range(
                         ?
                     )
                 ;
-                builder = builder.set_from(var_1118);
+                builder = builder.set_from(var_1076);
             }
             ,
             s if s.matches("To") /* To com.amazonaws.rds#DoubleRange$To */ =>  {
-                let var_1119 =
+                let var_1077 =
                     Some(
                          {
                             <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -24784,7 +23848,7 @@ pub fn deser_structure_crate_model_double_range(
                         ?
                     )
                 ;
-                builder = builder.set_to(var_1119);
+                builder = builder.set_to(var_1077);
             }
             ,
             _ => {}
@@ -24801,7 +23865,7 @@ pub fn deser_structure_crate_model_minimum_engine_version_per_allowed_value(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AllowedValue") /* AllowedValue com.amazonaws.rds#MinimumEngineVersionPerAllowedValue$AllowedValue */ =>  {
-                let var_1120 =
+                let var_1078 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24810,11 +23874,11 @@ pub fn deser_structure_crate_model_minimum_engine_version_per_allowed_value(
                         ?
                     )
                 ;
-                builder = builder.set_allowed_value(var_1120);
+                builder = builder.set_allowed_value(var_1078);
             }
             ,
             s if s.matches("MinimumEngineVersion") /* MinimumEngineVersion com.amazonaws.rds#MinimumEngineVersionPerAllowedValue$MinimumEngineVersion */ =>  {
-                let var_1121 =
+                let var_1079 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -24823,7 +23887,7 @@ pub fn deser_structure_crate_model_minimum_engine_version_per_allowed_value(
                         ?
                     )
                 ;
-                builder = builder.set_minimum_engine_version(var_1121);
+                builder = builder.set_minimum_engine_version(var_1079);
             }
             ,
             _ => {}

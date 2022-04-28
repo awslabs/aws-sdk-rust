@@ -9,16 +9,6 @@ pub(crate) fn reflens_structure_crate_output_describe_certificates_output_marker
     Some(input)
 }
 
-pub(crate) fn reflens_structure_crate_output_describe_custom_availability_zones_output_marker(
-    input: &crate::output::DescribeCustomAvailabilityZonesOutput,
-) -> std::option::Option<&std::string::String> {
-    let input = match &input.marker {
-        None => return None,
-        Some(t) => t,
-    };
-    Some(input)
-}
-
 pub(crate) fn reflens_structure_crate_output_describe_db_cluster_backtracks_output_marker(
     input: &crate::output::DescribeDbClusterBacktracksOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -263,16 +253,6 @@ pub(crate) fn reflens_structure_crate_output_describe_global_clusters_output_mar
     Some(input)
 }
 
-pub(crate) fn reflens_structure_crate_output_describe_installation_media_output_marker(
-    input: &crate::output::DescribeInstallationMediaOutput,
-) -> std::option::Option<&std::string::String> {
-    let input = match &input.marker {
-        None => return None,
-        Some(t) => t,
-    };
-    Some(input)
-}
-
 pub(crate) fn reflens_structure_crate_output_describe_option_group_options_output_marker(
     input: &crate::output::DescribeOptionGroupOptionsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -357,16 +337,6 @@ pub(crate) fn lens_structure_crate_output_describe_certificates_output_certifica
     input: crate::output::DescribeCertificatesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::Certificate>> {
     let input = match input.certificates {
-        None => return None,
-        Some(t) => t,
-    };
-    Some(input)
-}
-
-pub(crate) fn lens_structure_crate_output_describe_custom_availability_zones_output_custom_availability_zones(
-    input: crate::output::DescribeCustomAvailabilityZonesOutput,
-) -> std::option::Option<std::vec::Vec<crate::model::CustomAvailabilityZone>> {
-    let input = match input.custom_availability_zones {
         None => return None,
         Some(t) => t,
     };
@@ -611,16 +581,6 @@ pub(crate) fn lens_structure_crate_output_describe_global_clusters_output_global
     input: crate::output::DescribeGlobalClustersOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::GlobalCluster>> {
     let input = match input.global_clusters {
-        None => return None,
-        Some(t) => t,
-    };
-    Some(input)
-}
-
-pub(crate) fn lens_structure_crate_output_describe_installation_media_output_installation_media(
-    input: crate::output::DescribeInstallationMediaOutput,
-) -> std::option::Option<std::vec::Vec<crate::model::InstallationMedia>> {
-    let input = match input.installation_media {
         None => return None,
         Some(t) => t,
     };

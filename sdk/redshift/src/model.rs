@@ -8974,6 +8974,61 @@ impl AsRef<str> for ReservedNodeExchangeActionType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LogDestinationType {
+    #[allow(missing_docs)] // documentation missing in model
+    Cloudwatch,
+    #[allow(missing_docs)] // documentation missing in model
+    S3,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LogDestinationType {
+    fn from(s: &str) -> Self {
+        match s {
+            "cloudwatch" => LogDestinationType::Cloudwatch,
+            "s3" => LogDestinationType::S3,
+            other => LogDestinationType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LogDestinationType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LogDestinationType::from(s))
+    }
+}
+impl LogDestinationType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LogDestinationType::Cloudwatch => "cloudwatch",
+            LogDestinationType::S3 => "s3",
+            LogDestinationType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["cloudwatch", "s3"]
+    }
+}
+impl AsRef<str> for LogDestinationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Describes a usage limit object for a cluster. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

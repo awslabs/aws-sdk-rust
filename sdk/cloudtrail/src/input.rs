@@ -10,13 +10,13 @@ pub mod add_tags_input {
         pub(crate) tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
+        /// <p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p>
         /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
+        /// <p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p>
         /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
@@ -3000,16 +3000,14 @@ pub mod list_tags_input {
         ///
         /// To override the contents of this collection use [`set_resource_id_list`](Self::set_resource_id_list).
         ///
-        /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p>
-        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        /// <p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
         pub fn resource_id_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_id_list.unwrap_or_default();
             v.push(input.into());
             self.resource_id_list = Some(v);
             self
         }
-        /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p>
-        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        /// <p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
         pub fn set_resource_id_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3890,14 +3888,16 @@ pub mod remove_tags_input {
         pub(crate) tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p>
-        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        /// <p>Specifies the ARN of the trail or event data store from which tags should be removed.</p>
+        /// <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        /// <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p>
-        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        /// <p>Specifies the ARN of the trail or event data store from which tags should be removed.</p>
+        /// <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        /// <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -5472,19 +5472,21 @@ impl std::fmt::Debug for RestoreEventDataStoreInput {
     }
 }
 
-/// <p>Specifies the tags to remove from a trail.</p>
+/// <p>Specifies the tags to remove from a trail or event data store.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsInput {
-    /// <p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p>Specifies the ARN of the trail or event data store from which tags should be removed.</p>
+    /// <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Specifies a list of tags to be removed.</p>
     pub tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl RemoveTagsInput {
-    /// <p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p>Specifies the ARN of the trail or event data store from which tags should be removed.</p>
+    /// <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -5663,19 +5665,17 @@ impl std::fmt::Debug for ListTrailsInput {
     }
 }
 
-/// <p>Specifies a list of trail tags to return.</p>
+/// <p>Specifies a list of tags to return.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
-    /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
     pub resource_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Reserved for future use.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsInput {
-    /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p>Specifies a list of trail and event data store ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
     pub fn resource_id_list(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_id_list.as_deref()
     }
@@ -6349,18 +6349,18 @@ impl std::fmt::Debug for CancelQueryInput {
     }
 }
 
-/// <p>Specifies the tags to add to a trail.</p>
+/// <p>Specifies the tags to add to a trail or event data store.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsInput {
-    /// <p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
+    /// <p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Contains a list of tags, up to a limit of 50</p>
     pub tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsInput {
-    /// <p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
+    /// <p>Specifies the ARN of the trail or event data store to which one or more tags will be added. The format of a trail ARN is:</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()

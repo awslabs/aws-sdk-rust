@@ -422,6 +422,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMulticastGroup {
     }
 }
 
+/// Operation shape for `CreateNetworkAnalyzerConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_network_analyzer_configuration`](crate::client::Client::create_network_analyzer_configuration).
+///
+/// See [`crate::client::fluent_builders::CreateNetworkAnalyzerConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateNetworkAnalyzerConfiguration {
+    _private: (),
+}
+impl CreateNetworkAnalyzerConfiguration {
+    /// Creates a new builder-style object to manufacture [`CreateNetworkAnalyzerConfigurationInput`](crate::input::CreateNetworkAnalyzerConfigurationInput)
+    pub fn builder() -> crate::input::create_network_analyzer_configuration_input::Builder {
+        crate::input::create_network_analyzer_configuration_input::Builder::default()
+    }
+    /// Creates a new `CreateNetworkAnalyzerConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateNetworkAnalyzerConfiguration {
+    type Output = std::result::Result<
+        crate::output::CreateNetworkAnalyzerConfigurationOutput,
+        crate::error::CreateNetworkAnalyzerConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 201 {
+            crate::operation_deser::parse_create_network_analyzer_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_create_network_analyzer_configuration_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateServiceProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -724,6 +758,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMulticastGroup {
             crate::operation_deser::parse_delete_multicast_group_error(response)
         } else {
             crate::operation_deser::parse_delete_multicast_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteNetworkAnalyzerConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_network_analyzer_configuration`](crate::client::Client::delete_network_analyzer_configuration).
+///
+/// See [`crate::client::fluent_builders::DeleteNetworkAnalyzerConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteNetworkAnalyzerConfiguration {
+    _private: (),
+}
+impl DeleteNetworkAnalyzerConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeleteNetworkAnalyzerConfigurationInput`](crate::input::DeleteNetworkAnalyzerConfigurationInput)
+    pub fn builder() -> crate::input::delete_network_analyzer_configuration_input::Builder {
+        crate::input::delete_network_analyzer_configuration_input::Builder::default()
+    }
+    /// Creates a new `DeleteNetworkAnalyzerConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteNetworkAnalyzerConfiguration {
+    type Output = std::result::Result<
+        crate::output::DeleteNetworkAnalyzerConfigurationOutput,
+        crate::error::DeleteNetworkAnalyzerConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_network_analyzer_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_delete_network_analyzer_configuration_response(response)
         }
     }
 }
@@ -1258,6 +1326,42 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeviceProfile {
             crate::operation_deser::parse_get_device_profile_error(response)
         } else {
             crate::operation_deser::parse_get_device_profile_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetEventConfigurationByResourceTypes`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_event_configuration_by_resource_types`](crate::client::Client::get_event_configuration_by_resource_types).
+///
+/// See [`crate::client::fluent_builders::GetEventConfigurationByResourceTypes`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetEventConfigurationByResourceTypes {
+    _private: (),
+}
+impl GetEventConfigurationByResourceTypes {
+    /// Creates a new builder-style object to manufacture [`GetEventConfigurationByResourceTypesInput`](crate::input::GetEventConfigurationByResourceTypesInput)
+    pub fn builder() -> crate::input::get_event_configuration_by_resource_types_input::Builder {
+        crate::input::get_event_configuration_by_resource_types_input::Builder::default()
+    }
+    /// Creates a new `GetEventConfigurationByResourceTypes` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetEventConfigurationByResourceTypes {
+    type Output = std::result::Result<
+        crate::output::GetEventConfigurationByResourceTypesOutput,
+        crate::error::GetEventConfigurationByResourceTypesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_event_configuration_by_resource_types_error(response)
+        } else {
+            crate::operation_deser::parse_get_event_configuration_by_resource_types_response(
+                response,
+            )
         }
     }
 }
@@ -1942,6 +2046,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeviceProfiles {
     }
 }
 
+/// Operation shape for `ListEventConfigurations`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_event_configurations`](crate::client::Client::list_event_configurations).
+///
+/// See [`crate::client::fluent_builders::ListEventConfigurations`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListEventConfigurations {
+    _private: (),
+}
+impl ListEventConfigurations {
+    /// Creates a new builder-style object to manufacture [`ListEventConfigurationsInput`](crate::input::ListEventConfigurationsInput)
+    pub fn builder() -> crate::input::list_event_configurations_input::Builder {
+        crate::input::list_event_configurations_input::Builder::default()
+    }
+    /// Creates a new `ListEventConfigurations` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListEventConfigurations {
+    type Output = std::result::Result<
+        crate::output::ListEventConfigurationsOutput,
+        crate::error::ListEventConfigurationsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_event_configurations_error(response)
+        } else {
+            crate::operation_deser::parse_list_event_configurations_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListFuotaTasks`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2038,6 +2176,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMulticastGroupsByFuo
             crate::operation_deser::parse_list_multicast_groups_by_fuota_task_error(response)
         } else {
             crate::operation_deser::parse_list_multicast_groups_by_fuota_task_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListNetworkAnalyzerConfigurations`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_network_analyzer_configurations`](crate::client::Client::list_network_analyzer_configurations).
+///
+/// See [`crate::client::fluent_builders::ListNetworkAnalyzerConfigurations`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListNetworkAnalyzerConfigurations {
+    _private: (),
+}
+impl ListNetworkAnalyzerConfigurations {
+    /// Creates a new builder-style object to manufacture [`ListNetworkAnalyzerConfigurationsInput`](crate::input::ListNetworkAnalyzerConfigurationsInput)
+    pub fn builder() -> crate::input::list_network_analyzer_configurations_input::Builder {
+        crate::input::list_network_analyzer_configurations_input::Builder::default()
+    }
+    /// Creates a new `ListNetworkAnalyzerConfigurations` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListNetworkAnalyzerConfigurations {
+    type Output = std::result::Result<
+        crate::output::ListNetworkAnalyzerConfigurationsOutput,
+        crate::error::ListNetworkAnalyzerConfigurationsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_network_analyzer_configurations_error(response)
+        } else {
+            crate::operation_deser::parse_list_network_analyzer_configurations_response(response)
         }
     }
 }
@@ -2720,6 +2892,44 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDestination {
             crate::operation_deser::parse_update_destination_error(response)
         } else {
             crate::operation_deser::parse_update_destination_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateEventConfigurationByResourceTypes`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_event_configuration_by_resource_types`](crate::client::Client::update_event_configuration_by_resource_types).
+///
+/// See [`crate::client::fluent_builders::UpdateEventConfigurationByResourceTypes`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateEventConfigurationByResourceTypes {
+    _private: (),
+}
+impl UpdateEventConfigurationByResourceTypes {
+    /// Creates a new builder-style object to manufacture [`UpdateEventConfigurationByResourceTypesInput`](crate::input::UpdateEventConfigurationByResourceTypesInput)
+    pub fn builder() -> crate::input::update_event_configuration_by_resource_types_input::Builder {
+        crate::input::update_event_configuration_by_resource_types_input::Builder::default()
+    }
+    /// Creates a new `UpdateEventConfigurationByResourceTypes` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateEventConfigurationByResourceTypes {
+    type Output = std::result::Result<
+        crate::output::UpdateEventConfigurationByResourceTypesOutput,
+        crate::error::UpdateEventConfigurationByResourceTypesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_update_event_configuration_by_resource_types_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_update_event_configuration_by_resource_types_response(
+                response,
+            )
         }
     }
 }

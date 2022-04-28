@@ -1845,6 +1845,14 @@ pub fn deser_structure_crate_error_service_quota_exceeded_exception_json_err(
                             .transpose()?,
                         );
                     }
+                    "quotaValue" => {
+                        builder = builder.set_quota_value(
+                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|v| v.to_i32()),
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

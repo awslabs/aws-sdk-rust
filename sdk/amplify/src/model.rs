@@ -1457,7 +1457,10 @@ pub struct App {
     pub auto_branch_creation_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> Describes the automated branch creation configuration for the Amplify app. </p>
     pub auto_branch_creation_config: std::option::Option<crate::model::AutoBranchCreationConfig>,
-    /// <p>The authentication protocol to use to access the Git repository for an Amplify app. For a GitHub repository, specify <code>TOKEN</code>. For an Amazon Web Services CodeCommit repository, specify <code>SIGV4</code>. For GitLab and Bitbucket repositories, specify <code>SSH</code>.</p>
+    /// <note>
+    /// <p>This is for internal use.</p>
+    /// </note>
+    /// <p>The Amplify service uses this parameter to specify the authentication protocol to use to access the Git repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository, and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
     pub repository_clone_method: std::option::Option<crate::model::RepositoryCloneMethod>,
 }
 impl App {
@@ -1561,7 +1564,10 @@ impl App {
     ) -> std::option::Option<&crate::model::AutoBranchCreationConfig> {
         self.auto_branch_creation_config.as_ref()
     }
-    /// <p>The authentication protocol to use to access the Git repository for an Amplify app. For a GitHub repository, specify <code>TOKEN</code>. For an Amazon Web Services CodeCommit repository, specify <code>SIGV4</code>. For GitLab and Bitbucket repositories, specify <code>SSH</code>.</p>
+    /// <note>
+    /// <p>This is for internal use.</p>
+    /// </note>
+    /// <p>The Amplify service uses this parameter to specify the authentication protocol to use to access the Git repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository, and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
     pub fn repository_clone_method(
         &self,
     ) -> std::option::Option<&crate::model::RepositoryCloneMethod> {
@@ -1957,7 +1963,10 @@ pub mod app {
             self.auto_branch_creation_config = input;
             self
         }
-        /// <p>The authentication protocol to use to access the Git repository for an Amplify app. For a GitHub repository, specify <code>TOKEN</code>. For an Amazon Web Services CodeCommit repository, specify <code>SIGV4</code>. For GitLab and Bitbucket repositories, specify <code>SSH</code>.</p>
+        /// <note>
+        /// <p>This is for internal use.</p>
+        /// </note>
+        /// <p>The Amplify service uses this parameter to specify the authentication protocol to use to access the Git repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository, and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
         pub fn repository_clone_method(
             mut self,
             input: crate::model::RepositoryCloneMethod,
@@ -1965,7 +1974,10 @@ pub mod app {
             self.repository_clone_method = Some(input);
             self
         }
-        /// <p>The authentication protocol to use to access the Git repository for an Amplify app. For a GitHub repository, specify <code>TOKEN</code>. For an Amazon Web Services CodeCommit repository, specify <code>SIGV4</code>. For GitLab and Bitbucket repositories, specify <code>SSH</code>.</p>
+        /// <note>
+        /// <p>This is for internal use.</p>
+        /// </note>
+        /// <p>The Amplify service uses this parameter to specify the authentication protocol to use to access the Git repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository, and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
         pub fn set_repository_clone_method(
             mut self,
             input: std::option::Option<crate::model::RepositoryCloneMethod>,

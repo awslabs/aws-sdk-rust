@@ -3100,6 +3100,10 @@ pub struct EnableLoggingOutput {
     pub last_failure_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message indicating that logs failed to be delivered.</p>
     pub last_failure_message: std::option::Option<std::string::String>,
+    /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    pub log_destination_type: std::option::Option<crate::model::LogDestinationType>,
+    /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+    pub log_exports: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EnableLoggingOutput {
     /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
@@ -3128,6 +3132,14 @@ impl EnableLoggingOutput {
     pub fn last_failure_message(&self) -> std::option::Option<&str> {
         self.last_failure_message.as_deref()
     }
+    /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    pub fn log_destination_type(&self) -> std::option::Option<&crate::model::LogDestinationType> {
+        self.log_destination_type.as_ref()
+    }
+    /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+    pub fn log_exports(&self) -> std::option::Option<&[std::string::String]> {
+        self.log_exports.as_deref()
+    }
 }
 impl std::fmt::Debug for EnableLoggingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3141,6 +3153,8 @@ impl std::fmt::Debug for EnableLoggingOutput {
         );
         formatter.field("last_failure_time", &self.last_failure_time);
         formatter.field("last_failure_message", &self.last_failure_message);
+        formatter.field("log_destination_type", &self.log_destination_type);
+        formatter.field("log_exports", &self.log_exports);
         formatter.finish()
     }
 }
@@ -3156,6 +3170,8 @@ pub mod enable_logging_output {
         pub(crate) last_successful_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_failure_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_failure_message: std::option::Option<std::string::String>,
+        pub(crate) log_destination_type: std::option::Option<crate::model::LogDestinationType>,
+        pub(crate) log_exports: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
@@ -3230,6 +3246,38 @@ pub mod enable_logging_output {
             self.last_failure_message = input;
             self
         }
+        /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+        pub fn log_destination_type(mut self, input: crate::model::LogDestinationType) -> Self {
+            self.log_destination_type = Some(input);
+            self
+        }
+        /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+        pub fn set_log_destination_type(
+            mut self,
+            input: std::option::Option<crate::model::LogDestinationType>,
+        ) -> Self {
+            self.log_destination_type = input;
+            self
+        }
+        /// Appends an item to `log_exports`.
+        ///
+        /// To override the contents of this collection use [`set_log_exports`](Self::set_log_exports).
+        ///
+        /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+        pub fn log_exports(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.log_exports.unwrap_or_default();
+            v.push(input.into());
+            self.log_exports = Some(v);
+            self
+        }
+        /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+        pub fn set_log_exports(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.log_exports = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EnableLoggingOutput`](crate::output::EnableLoggingOutput)
         pub fn build(self) -> crate::output::EnableLoggingOutput {
             crate::output::EnableLoggingOutput {
@@ -3239,6 +3287,8 @@ pub mod enable_logging_output {
                 last_successful_delivery_time: self.last_successful_delivery_time,
                 last_failure_time: self.last_failure_time,
                 last_failure_message: self.last_failure_message,
+                log_destination_type: self.log_destination_type,
+                log_exports: self.log_exports,
             }
         }
     }
@@ -3477,6 +3527,10 @@ pub struct DisableLoggingOutput {
     pub last_failure_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message indicating that logs failed to be delivered.</p>
     pub last_failure_message: std::option::Option<std::string::String>,
+    /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    pub log_destination_type: std::option::Option<crate::model::LogDestinationType>,
+    /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+    pub log_exports: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisableLoggingOutput {
     /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
@@ -3505,6 +3559,14 @@ impl DisableLoggingOutput {
     pub fn last_failure_message(&self) -> std::option::Option<&str> {
         self.last_failure_message.as_deref()
     }
+    /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    pub fn log_destination_type(&self) -> std::option::Option<&crate::model::LogDestinationType> {
+        self.log_destination_type.as_ref()
+    }
+    /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+    pub fn log_exports(&self) -> std::option::Option<&[std::string::String]> {
+        self.log_exports.as_deref()
+    }
 }
 impl std::fmt::Debug for DisableLoggingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3518,6 +3580,8 @@ impl std::fmt::Debug for DisableLoggingOutput {
         );
         formatter.field("last_failure_time", &self.last_failure_time);
         formatter.field("last_failure_message", &self.last_failure_message);
+        formatter.field("log_destination_type", &self.log_destination_type);
+        formatter.field("log_exports", &self.log_exports);
         formatter.finish()
     }
 }
@@ -3533,6 +3597,8 @@ pub mod disable_logging_output {
         pub(crate) last_successful_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_failure_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_failure_message: std::option::Option<std::string::String>,
+        pub(crate) log_destination_type: std::option::Option<crate::model::LogDestinationType>,
+        pub(crate) log_exports: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
@@ -3607,6 +3673,38 @@ pub mod disable_logging_output {
             self.last_failure_message = input;
             self
         }
+        /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+        pub fn log_destination_type(mut self, input: crate::model::LogDestinationType) -> Self {
+            self.log_destination_type = Some(input);
+            self
+        }
+        /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+        pub fn set_log_destination_type(
+            mut self,
+            input: std::option::Option<crate::model::LogDestinationType>,
+        ) -> Self {
+            self.log_destination_type = input;
+            self
+        }
+        /// Appends an item to `log_exports`.
+        ///
+        /// To override the contents of this collection use [`set_log_exports`](Self::set_log_exports).
+        ///
+        /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+        pub fn log_exports(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.log_exports.unwrap_or_default();
+            v.push(input.into());
+            self.log_exports = Some(v);
+            self
+        }
+        /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+        pub fn set_log_exports(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.log_exports = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DisableLoggingOutput`](crate::output::DisableLoggingOutput)
         pub fn build(self) -> crate::output::DisableLoggingOutput {
             crate::output::DisableLoggingOutput {
@@ -3616,6 +3714,8 @@ pub mod disable_logging_output {
                 last_successful_delivery_time: self.last_successful_delivery_time,
                 last_failure_time: self.last_failure_time,
                 last_failure_message: self.last_failure_message,
+                log_destination_type: self.log_destination_type,
+                log_exports: self.log_exports,
             }
         }
     }
@@ -5188,6 +5288,10 @@ pub struct DescribeLoggingStatusOutput {
     pub last_failure_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message indicating that logs failed to be delivered.</p>
     pub last_failure_message: std::option::Option<std::string::String>,
+    /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    pub log_destination_type: std::option::Option<crate::model::LogDestinationType>,
+    /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+    pub log_exports: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeLoggingStatusOutput {
     /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
@@ -5216,6 +5320,14 @@ impl DescribeLoggingStatusOutput {
     pub fn last_failure_message(&self) -> std::option::Option<&str> {
         self.last_failure_message.as_deref()
     }
+    /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    pub fn log_destination_type(&self) -> std::option::Option<&crate::model::LogDestinationType> {
+        self.log_destination_type.as_ref()
+    }
+    /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+    pub fn log_exports(&self) -> std::option::Option<&[std::string::String]> {
+        self.log_exports.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLoggingStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5229,6 +5341,8 @@ impl std::fmt::Debug for DescribeLoggingStatusOutput {
         );
         formatter.field("last_failure_time", &self.last_failure_time);
         formatter.field("last_failure_message", &self.last_failure_message);
+        formatter.field("log_destination_type", &self.log_destination_type);
+        formatter.field("log_exports", &self.log_exports);
         formatter.finish()
     }
 }
@@ -5244,6 +5358,8 @@ pub mod describe_logging_status_output {
         pub(crate) last_successful_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_failure_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_failure_message: std::option::Option<std::string::String>,
+        pub(crate) log_destination_type: std::option::Option<crate::model::LogDestinationType>,
+        pub(crate) log_exports: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
@@ -5318,6 +5434,38 @@ pub mod describe_logging_status_output {
             self.last_failure_message = input;
             self
         }
+        /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+        pub fn log_destination_type(mut self, input: crate::model::LogDestinationType) -> Self {
+            self.log_destination_type = Some(input);
+            self
+        }
+        /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+        pub fn set_log_destination_type(
+            mut self,
+            input: std::option::Option<crate::model::LogDestinationType>,
+        ) -> Self {
+            self.log_destination_type = input;
+            self
+        }
+        /// Appends an item to `log_exports`.
+        ///
+        /// To override the contents of this collection use [`set_log_exports`](Self::set_log_exports).
+        ///
+        /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+        pub fn log_exports(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.log_exports.unwrap_or_default();
+            v.push(input.into());
+            self.log_exports = Some(v);
+            self
+        }
+        /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+        pub fn set_log_exports(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.log_exports = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeLoggingStatusOutput`](crate::output::DescribeLoggingStatusOutput)
         pub fn build(self) -> crate::output::DescribeLoggingStatusOutput {
             crate::output::DescribeLoggingStatusOutput {
@@ -5327,6 +5475,8 @@ pub mod describe_logging_status_output {
                 last_successful_delivery_time: self.last_successful_delivery_time,
                 last_failure_time: self.last_failure_time,
                 last_failure_message: self.last_failure_message,
+                log_destination_type: self.log_destination_type,
+                log_exports: self.log_exports,
             }
         }
     }

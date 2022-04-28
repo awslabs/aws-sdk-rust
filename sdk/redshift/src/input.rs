@@ -15926,6 +15926,8 @@ pub mod enable_logging_input {
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) s3_key_prefix: std::option::Option<std::string::String>,
+        pub(crate) log_destination_type: std::option::Option<crate::model::LogDestinationType>,
+        pub(crate) log_exports: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The identifier of the cluster on which logging is to be started.</p>
@@ -16000,6 +16002,38 @@ pub mod enable_logging_input {
             self.s3_key_prefix = input;
             self
         }
+        /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+        pub fn log_destination_type(mut self, input: crate::model::LogDestinationType) -> Self {
+            self.log_destination_type = Some(input);
+            self
+        }
+        /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+        pub fn set_log_destination_type(
+            mut self,
+            input: std::option::Option<crate::model::LogDestinationType>,
+        ) -> Self {
+            self.log_destination_type = input;
+            self
+        }
+        /// Appends an item to `log_exports`.
+        ///
+        /// To override the contents of this collection use [`set_log_exports`](Self::set_log_exports).
+        ///
+        /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+        pub fn log_exports(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.log_exports.unwrap_or_default();
+            v.push(input.into());
+            self.log_exports = Some(v);
+            self
+        }
+        /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+        pub fn set_log_exports(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.log_exports = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EnableLoggingInput`](crate::input::EnableLoggingInput)
         pub fn build(
             self,
@@ -16011,6 +16045,8 @@ pub mod enable_logging_input {
                 cluster_identifier: self.cluster_identifier,
                 bucket_name: self.bucket_name,
                 s3_key_prefix: self.s3_key_prefix,
+                log_destination_type: self.log_destination_type,
+                log_exports: self.log_exports,
             })
         }
     }
@@ -21636,12 +21672,12 @@ pub mod restore_from_cluster_snapshot_input {
             self.manual_snapshot_retention_period = input;
             self
         }
-        /// <p>The Key Management Service (KMS) key ID of the encryption key to encrypt data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
+        /// <p>The Key Management Service (KMS) key ID of the encryption key that encrypts data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The Key Management Service (KMS) key ID of the encryption key to encrypt data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
+        /// <p>The Key Management Service (KMS) key ID of the encryption key that encrypts data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -21826,12 +21862,12 @@ pub mod restore_from_cluster_snapshot_input {
             self.target_reserved_node_offering_id = input;
             self
         }
-        /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a CMK.</p>
+        /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a customer managed key.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
             self.encrypted = Some(input);
             self
         }
-        /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a CMK.</p>
+        /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a customer managed key.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.encrypted = input;
             self
@@ -23680,7 +23716,7 @@ pub struct RestoreFromClusterSnapshotInput {
     /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub manual_snapshot_retention_period: std::option::Option<i32>,
-    /// <p>The Key Management Service (KMS) key ID of the encryption key to encrypt data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
+    /// <p>The Key Management Service (KMS) key ID of the encryption key that encrypts data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The node type that the restored cluster will be provisioned with.</p>
     /// <p>Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are using any DS node type. In that case, you can choose to restore into another DS node type of the same size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you must restore into that same instance type and size. In other words, you can only restore a dc1.large instance type into another dc1.large instance type or dc2.large instance type. You can't restore dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize to a dc2.8large cluster. For more information about node types, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes"> About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
@@ -23715,7 +23751,7 @@ pub struct RestoreFromClusterSnapshotInput {
     pub reserved_node_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the target reserved node offering.</p>
     pub target_reserved_node_offering_id: std::option::Option<std::string::String>,
-    /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a CMK.</p>
+    /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a customer managed key.</p>
     pub encrypted: std::option::Option<bool>,
 }
 impl RestoreFromClusterSnapshotInput {
@@ -23825,7 +23861,7 @@ impl RestoreFromClusterSnapshotInput {
     pub fn manual_snapshot_retention_period(&self) -> std::option::Option<i32> {
         self.manual_snapshot_retention_period
     }
-    /// <p>The Key Management Service (KMS) key ID of the encryption key to encrypt data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
+    /// <p>The Key Management Service (KMS) key ID of the encryption key that encrypts data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -23888,7 +23924,7 @@ impl RestoreFromClusterSnapshotInput {
     pub fn target_reserved_node_offering_id(&self) -> std::option::Option<&str> {
         self.target_reserved_node_offering_id.as_deref()
     }
-    /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a CMK.</p>
+    /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a customer managed key.</p>
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
@@ -25408,6 +25444,10 @@ pub struct EnableLoggingInput {
     /// </ul> </li>
     /// </ul>
     pub s3_key_prefix: std::option::Option<std::string::String>,
+    /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    pub log_destination_type: std::option::Option<crate::model::LogDestinationType>,
+    /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+    pub log_exports: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EnableLoggingInput {
     /// <p>The identifier of the cluster on which logging is to be started.</p>
@@ -25440,6 +25480,14 @@ impl EnableLoggingInput {
     pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
+    /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    pub fn log_destination_type(&self) -> std::option::Option<&crate::model::LogDestinationType> {
+        self.log_destination_type.as_ref()
+    }
+    /// <p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>
+    pub fn log_exports(&self) -> std::option::Option<&[std::string::String]> {
+        self.log_exports.as_deref()
+    }
 }
 impl std::fmt::Debug for EnableLoggingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25447,6 +25495,8 @@ impl std::fmt::Debug for EnableLoggingInput {
         formatter.field("cluster_identifier", &self.cluster_identifier);
         formatter.field("bucket_name", &self.bucket_name);
         formatter.field("s3_key_prefix", &self.s3_key_prefix);
+        formatter.field("log_destination_type", &self.log_destination_type);
+        formatter.field("log_exports", &self.log_exports);
         formatter.finish()
     }
 }

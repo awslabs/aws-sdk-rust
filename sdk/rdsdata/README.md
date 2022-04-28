@@ -5,7 +5,7 @@ feedback purposes only. Do not use this SDK for production workloads.**
 
 Amazon RDS provides an HTTP endpoint to run SQL statements on an Amazon Aurora Serverless DB cluster. To run these statements, you work with the Data Service API.
 
-For more information about the Data Service API, see [Using the Data API for Aurora Serverless](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html) in the _Amazon Aurora User Guide_.
+For more information about the Data Service API, see [Using the Data API](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html) in the _Amazon Aurora User Guide_.
 
 ## Getting Started
 
@@ -18,8 +18,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.10.1"
-aws-sdk-rdsdata = "0.10.1"
+aws-config = "0.11.0"
+aws-sdk-rdsdata = "0.11.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

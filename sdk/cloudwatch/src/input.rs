@@ -2939,14 +2939,14 @@ pub mod get_metric_data_input {
         ///
         /// To override the contents of this collection use [`set_metric_data_queries`](Self::set_metric_data_queries).
         ///
-        /// <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, or a math expression to perform on retrieved data. </p>
+        /// <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, a Metrics Insights query, or a math expression to perform on retrieved data. </p>
         pub fn metric_data_queries(mut self, input: crate::model::MetricDataQuery) -> Self {
             let mut v = self.metric_data_queries.unwrap_or_default();
             v.push(input);
             self.metric_data_queries = Some(v);
             self
         }
-        /// <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, or a math expression to perform on retrieved data. </p>
+        /// <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, a Metrics Insights query, or a math expression to perform on retrieved data. </p>
         pub fn set_metric_data_queries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
@@ -5656,13 +5656,17 @@ pub mod put_metric_alarm_input {
             self
         }
         /// <p> Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring How CloudWatch Alarms Treats Missing Data</a>.</p>
-        /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p>
+        /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p> <note>
+        /// <p>Alarms that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always <code>ignore</code> missing data even if you choose a different option for <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has missing data, alarms that evaluate that metric remain in their current state.</p>
+        /// </note>
         pub fn treat_missing_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.treat_missing_data = Some(input.into());
             self
         }
         /// <p> Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring How CloudWatch Alarms Treats Missing Data</a>.</p>
-        /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p>
+        /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p> <note>
+        /// <p>Alarms that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always <code>ignore</code> missing data even if you choose a different option for <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has missing data, alarms that evaluate that metric remain in their current state.</p>
+        /// </note>
         pub fn set_treat_missing_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6067,6 +6071,8 @@ pub mod put_metric_stream_input {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) output_format: std::option::Option<crate::model::MetricStreamOutputFormat>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) statistics_configurations:
+            std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>>,
     }
     impl Builder {
         /// <p>If you are creating a new metric stream, this is the name for the new stream. The name must be different than the names of other metric streams in this account and Region.</p>
@@ -6189,6 +6195,32 @@ pub mod put_metric_stream_input {
             self.tags = input;
             self
         }
+        /// Appends an item to `statistics_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_statistics_configurations`](Self::set_statistics_configurations).
+        ///
+        /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>
+        /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9 and so on.</p>
+        pub fn statistics_configurations(
+            mut self,
+            input: crate::model::MetricStreamStatisticsConfiguration,
+        ) -> Self {
+            let mut v = self.statistics_configurations.unwrap_or_default();
+            v.push(input);
+            self.statistics_configurations = Some(v);
+            self
+        }
+        /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>
+        /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9 and so on.</p>
+        pub fn set_statistics_configurations(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>,
+            >,
+        ) -> Self {
+            self.statistics_configurations = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PutMetricStreamInput`](crate::input::PutMetricStreamInput)
         pub fn build(
             self,
@@ -6204,6 +6236,7 @@ pub mod put_metric_stream_input {
                 role_arn: self.role_arn,
                 output_format: self.output_format,
                 tags: self.tags,
+                statistics_configurations: self.statistics_configurations,
             })
         }
     }
@@ -7300,6 +7333,10 @@ pub struct PutMetricStreamInput {
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>You can use this parameter only when you are creating a new metric stream. If you are using this operation to update an existing metric stream, any tags you specify in this parameter are ignored. To change the tags of an existing metric stream, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>
+    /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9 and so on.</p>
+    pub statistics_configurations:
+        std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>>,
 }
 impl PutMetricStreamInput {
     /// <p>If you are creating a new metric stream, this is the name for the new stream. The name must be different than the names of other metric streams in this account and Region.</p>
@@ -7340,6 +7377,13 @@ impl PutMetricStreamInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>
+    /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9 and so on.</p>
+    pub fn statistics_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::MetricStreamStatisticsConfiguration]> {
+        self.statistics_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for PutMetricStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7351,6 +7395,7 @@ impl std::fmt::Debug for PutMetricStreamInput {
         formatter.field("role_arn", &self.role_arn);
         formatter.field("output_format", &self.output_format);
         formatter.field("tags", &self.tags);
+        formatter.field("statistics_configurations", &self.statistics_configurations);
         formatter.finish()
     }
 }
@@ -7440,7 +7485,9 @@ pub struct PutMetricAlarmInput {
     /// <p>The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.</p>
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
     /// <p> Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring How CloudWatch Alarms Treats Missing Data</a>.</p>
-    /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p>
+    /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p> <note>
+    /// <p>Alarms that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always <code>ignore</code> missing data even if you choose a different option for <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has missing data, alarms that evaluate that metric remain in their current state.</p>
+    /// </note>
     pub treat_missing_data: std::option::Option<std::string::String>,
     /// <p> Used only for alarms based on percentiles. If you specify <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If you specify <code>evaluate</code> or omit this parameter, the alarm is always evaluated and possibly changes state no matter how many data points are available. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based CloudWatch Alarms and Low Data Samples</a>.</p>
     /// <p>Valid Values: <code>evaluate | ignore</code> </p>
@@ -7545,7 +7592,9 @@ impl PutMetricAlarmInput {
         self.comparison_operator.as_ref()
     }
     /// <p> Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring How CloudWatch Alarms Treats Missing Data</a>.</p>
-    /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p>
+    /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p> <note>
+    /// <p>Alarms that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always <code>ignore</code> missing data even if you choose a different option for <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has missing data, alarms that evaluate that metric remain in their current state.</p>
+    /// </note>
     pub fn treat_missing_data(&self) -> std::option::Option<&str> {
         self.treat_missing_data.as_deref()
     }
@@ -8252,7 +8301,7 @@ impl std::fmt::Debug for GetMetricStatisticsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMetricDataInput {
-    /// <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, or a math expression to perform on retrieved data. </p>
+    /// <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, a Metrics Insights query, or a math expression to perform on retrieved data. </p>
     pub metric_data_queries: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
     /// <p>The time stamp indicating the earliest data to be returned.</p>
     /// <p>The value specified is inclusive; results include data points with the specified time stamp. </p>
@@ -8279,7 +8328,7 @@ pub struct GetMetricDataInput {
     pub label_options: std::option::Option<crate::model::LabelOptions>,
 }
 impl GetMetricDataInput {
-    /// <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, or a math expression to perform on retrieved data. </p>
+    /// <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, a Metrics Insights query, or a math expression to perform on retrieved data. </p>
     pub fn metric_data_queries(&self) -> std::option::Option<&[crate::model::MetricDataQuery]> {
         self.metric_data_queries.as_deref()
     }

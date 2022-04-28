@@ -15319,6 +15319,142 @@ pub fn parse_get_load_balancer_tls_certificates_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_load_balancer_tls_policies_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetLoadBalancerTlsPoliciesOutput,
+    crate::error::GetLoadBalancerTlsPoliciesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetLoadBalancerTlsPoliciesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetLoadBalancerTlsPoliciesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::GetLoadBalancerTlsPoliciesError {
+            meta: generic,
+            kind: crate::error::GetLoadBalancerTlsPoliciesErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLoadBalancerTlsPoliciesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "AccountSetupInProgressException" => crate::error::GetLoadBalancerTlsPoliciesError {
+            meta: generic,
+            kind:
+                crate::error::GetLoadBalancerTlsPoliciesErrorKind::AccountSetupInProgressException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::account_setup_in_progress_exception::Builder::default(
+                                );
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_account_setup_in_progress_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLoadBalancerTlsPoliciesError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "InvalidInputException" => crate::error::GetLoadBalancerTlsPoliciesError {
+            meta: generic,
+            kind: crate::error::GetLoadBalancerTlsPoliciesErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLoadBalancerTlsPoliciesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceException" => {
+            crate::error::GetLoadBalancerTlsPoliciesError {
+                meta: generic,
+                kind: crate::error::GetLoadBalancerTlsPoliciesErrorKind::ServiceException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::service_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLoadBalancerTlsPoliciesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "UnauthenticatedException" => crate::error::GetLoadBalancerTlsPoliciesError {
+            meta: generic,
+            kind: crate::error::GetLoadBalancerTlsPoliciesErrorKind::UnauthenticatedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthenticated_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthenticated_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLoadBalancerTlsPoliciesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetLoadBalancerTlsPoliciesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_load_balancer_tls_policies_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetLoadBalancerTlsPoliciesOutput,
+    crate::error::GetLoadBalancerTlsPoliciesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_load_balancer_tls_policies_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_load_balancer_tls_policies(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetLoadBalancerTlsPoliciesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_operation_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetOperationOutput, crate::error::GetOperationError> {

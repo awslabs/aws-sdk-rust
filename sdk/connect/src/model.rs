@@ -3708,6 +3708,2225 @@ impl AsRef<str> for VocabularyLanguageCode {
     }
 }
 
+/// <p>Information about the returned users.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UserSearchSummary {
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The directory identifier of the user.</p>
+    pub directory_user_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the user's hierarchy group.</p>
+    pub hierarchy_group_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the user's summary.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The user's first name and last name.</p>
+    pub identity_info: std::option::Option<crate::model::UserIdentityInfoLite>,
+    /// <p>Contains information about the phone configuration settings for a user.</p>
+    pub phone_config: std::option::Option<crate::model::UserPhoneConfig>,
+    /// <p>The identifier of the user's routing profile.</p>
+    pub routing_profile_id: std::option::Option<std::string::String>,
+    /// <p>The identifiers of the user's security profiles.</p>
+    pub security_profile_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The name of the user.</p>
+    pub username: std::option::Option<std::string::String>,
+}
+impl UserSearchSummary {
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The directory identifier of the user.</p>
+    pub fn directory_user_id(&self) -> std::option::Option<&str> {
+        self.directory_user_id.as_deref()
+    }
+    /// <p>The identifier of the user's hierarchy group.</p>
+    pub fn hierarchy_group_id(&self) -> std::option::Option<&str> {
+        self.hierarchy_group_id.as_deref()
+    }
+    /// <p>The identifier of the user's summary.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The user's first name and last name.</p>
+    pub fn identity_info(&self) -> std::option::Option<&crate::model::UserIdentityInfoLite> {
+        self.identity_info.as_ref()
+    }
+    /// <p>Contains information about the phone configuration settings for a user.</p>
+    pub fn phone_config(&self) -> std::option::Option<&crate::model::UserPhoneConfig> {
+        self.phone_config.as_ref()
+    }
+    /// <p>The identifier of the user's routing profile.</p>
+    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
+        self.routing_profile_id.as_deref()
+    }
+    /// <p>The identifiers of the user's security profiles.</p>
+    pub fn security_profile_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_profile_ids.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The name of the user.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+}
+impl std::fmt::Debug for UserSearchSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UserSearchSummary");
+        formatter.field("arn", &self.arn);
+        formatter.field("directory_user_id", &self.directory_user_id);
+        formatter.field("hierarchy_group_id", &self.hierarchy_group_id);
+        formatter.field("id", &self.id);
+        formatter.field("identity_info", &self.identity_info);
+        formatter.field("phone_config", &self.phone_config);
+        formatter.field("routing_profile_id", &self.routing_profile_id);
+        formatter.field("security_profile_ids", &self.security_profile_ids);
+        formatter.field("tags", &self.tags);
+        formatter.field("username", &self.username);
+        formatter.finish()
+    }
+}
+/// See [`UserSearchSummary`](crate::model::UserSearchSummary)
+pub mod user_search_summary {
+    /// A builder for [`UserSearchSummary`](crate::model::UserSearchSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) directory_user_id: std::option::Option<std::string::String>,
+        pub(crate) hierarchy_group_id: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) identity_info: std::option::Option<crate::model::UserIdentityInfoLite>,
+        pub(crate) phone_config: std::option::Option<crate::model::UserPhoneConfig>,
+        pub(crate) routing_profile_id: std::option::Option<std::string::String>,
+        pub(crate) security_profile_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) username: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the user.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the user.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The directory identifier of the user.</p>
+        pub fn directory_user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.directory_user_id = Some(input.into());
+            self
+        }
+        /// <p>The directory identifier of the user.</p>
+        pub fn set_directory_user_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.directory_user_id = input;
+            self
+        }
+        /// <p>The identifier of the user's hierarchy group.</p>
+        pub fn hierarchy_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hierarchy_group_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the user's hierarchy group.</p>
+        pub fn set_hierarchy_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hierarchy_group_id = input;
+            self
+        }
+        /// <p>The identifier of the user's summary.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the user's summary.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The user's first name and last name.</p>
+        pub fn identity_info(mut self, input: crate::model::UserIdentityInfoLite) -> Self {
+            self.identity_info = Some(input);
+            self
+        }
+        /// <p>The user's first name and last name.</p>
+        pub fn set_identity_info(
+            mut self,
+            input: std::option::Option<crate::model::UserIdentityInfoLite>,
+        ) -> Self {
+            self.identity_info = input;
+            self
+        }
+        /// <p>Contains information about the phone configuration settings for a user.</p>
+        pub fn phone_config(mut self, input: crate::model::UserPhoneConfig) -> Self {
+            self.phone_config = Some(input);
+            self
+        }
+        /// <p>Contains information about the phone configuration settings for a user.</p>
+        pub fn set_phone_config(
+            mut self,
+            input: std::option::Option<crate::model::UserPhoneConfig>,
+        ) -> Self {
+            self.phone_config = input;
+            self
+        }
+        /// <p>The identifier of the user's routing profile.</p>
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.routing_profile_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the user's routing profile.</p>
+        pub fn set_routing_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.routing_profile_id = input;
+            self
+        }
+        /// Appends an item to `security_profile_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_profile_ids`](Self::set_security_profile_ids).
+        ///
+        /// <p>The identifiers of the user's security profiles.</p>
+        pub fn security_profile_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_profile_ids.unwrap_or_default();
+            v.push(input.into());
+            self.security_profile_ids = Some(v);
+            self
+        }
+        /// <p>The identifiers of the user's security profiles.</p>
+        pub fn set_security_profile_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_profile_ids = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The name of the user.</p>
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.username = Some(input.into());
+            self
+        }
+        /// <p>The name of the user.</p>
+        pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.username = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UserSearchSummary`](crate::model::UserSearchSummary)
+        pub fn build(self) -> crate::model::UserSearchSummary {
+            crate::model::UserSearchSummary {
+                arn: self.arn,
+                directory_user_id: self.directory_user_id,
+                hierarchy_group_id: self.hierarchy_group_id,
+                id: self.id,
+                identity_info: self.identity_info,
+                phone_config: self.phone_config,
+                routing_profile_id: self.routing_profile_id,
+                security_profile_ids: self.security_profile_ids,
+                tags: self.tags,
+                username: self.username,
+            }
+        }
+    }
+}
+impl UserSearchSummary {
+    /// Creates a new builder-style object to manufacture [`UserSearchSummary`](crate::model::UserSearchSummary)
+    pub fn builder() -> crate::model::user_search_summary::Builder {
+        crate::model::user_search_summary::Builder::default()
+    }
+}
+
+/// <p>The user's first name and last name.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UserIdentityInfoLite {
+    /// <p>The user's first name.</p>
+    pub first_name: std::option::Option<std::string::String>,
+    /// <p>The user's last name.</p>
+    pub last_name: std::option::Option<std::string::String>,
+}
+impl UserIdentityInfoLite {
+    /// <p>The user's first name.</p>
+    pub fn first_name(&self) -> std::option::Option<&str> {
+        self.first_name.as_deref()
+    }
+    /// <p>The user's last name.</p>
+    pub fn last_name(&self) -> std::option::Option<&str> {
+        self.last_name.as_deref()
+    }
+}
+impl std::fmt::Debug for UserIdentityInfoLite {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UserIdentityInfoLite");
+        formatter.field("first_name", &self.first_name);
+        formatter.field("last_name", &self.last_name);
+        formatter.finish()
+    }
+}
+/// See [`UserIdentityInfoLite`](crate::model::UserIdentityInfoLite)
+pub mod user_identity_info_lite {
+    /// A builder for [`UserIdentityInfoLite`](crate::model::UserIdentityInfoLite)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) first_name: std::option::Option<std::string::String>,
+        pub(crate) last_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The user's first name.</p>
+        pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.first_name = Some(input.into());
+            self
+        }
+        /// <p>The user's first name.</p>
+        pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.first_name = input;
+            self
+        }
+        /// <p>The user's last name.</p>
+        pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_name = Some(input.into());
+            self
+        }
+        /// <p>The user's last name.</p>
+        pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UserIdentityInfoLite`](crate::model::UserIdentityInfoLite)
+        pub fn build(self) -> crate::model::UserIdentityInfoLite {
+            crate::model::UserIdentityInfoLite {
+                first_name: self.first_name,
+                last_name: self.last_name,
+            }
+        }
+    }
+}
+impl UserIdentityInfoLite {
+    /// Creates a new builder-style object to manufacture [`UserIdentityInfoLite`](crate::model::UserIdentityInfoLite)
+    pub fn builder() -> crate::model::user_identity_info_lite::Builder {
+        crate::model::user_identity_info_lite::Builder::default()
+    }
+}
+
+/// <p>The search criteria to be used to return users.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UserSearchCriteria {
+    /// <p>A list of conditions which would be applied together with an <code>OR</code> condition.</p>
+    pub or_conditions: std::option::Option<std::vec::Vec<crate::model::UserSearchCriteria>>,
+    /// <p>A list of conditions which would be applied together with an <code>AND</code> condition. </p>
+    pub and_conditions: std::option::Option<std::vec::Vec<crate::model::UserSearchCriteria>>,
+    /// <p>A leaf node condition which can be used to specify a string condition.</p>
+    pub string_condition: std::option::Option<crate::model::StringCondition>,
+    /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
+    pub hierarchy_group_condition: std::option::Option<crate::model::HierarchyGroupCondition>,
+}
+impl UserSearchCriteria {
+    /// <p>A list of conditions which would be applied together with an <code>OR</code> condition.</p>
+    pub fn or_conditions(&self) -> std::option::Option<&[crate::model::UserSearchCriteria]> {
+        self.or_conditions.as_deref()
+    }
+    /// <p>A list of conditions which would be applied together with an <code>AND</code> condition. </p>
+    pub fn and_conditions(&self) -> std::option::Option<&[crate::model::UserSearchCriteria]> {
+        self.and_conditions.as_deref()
+    }
+    /// <p>A leaf node condition which can be used to specify a string condition.</p>
+    pub fn string_condition(&self) -> std::option::Option<&crate::model::StringCondition> {
+        self.string_condition.as_ref()
+    }
+    /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
+    pub fn hierarchy_group_condition(
+        &self,
+    ) -> std::option::Option<&crate::model::HierarchyGroupCondition> {
+        self.hierarchy_group_condition.as_ref()
+    }
+}
+impl std::fmt::Debug for UserSearchCriteria {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UserSearchCriteria");
+        formatter.field("or_conditions", &self.or_conditions);
+        formatter.field("and_conditions", &self.and_conditions);
+        formatter.field("string_condition", &self.string_condition);
+        formatter.field("hierarchy_group_condition", &self.hierarchy_group_condition);
+        formatter.finish()
+    }
+}
+/// See [`UserSearchCriteria`](crate::model::UserSearchCriteria)
+pub mod user_search_criteria {
+    /// A builder for [`UserSearchCriteria`](crate::model::UserSearchCriteria)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) or_conditions:
+            std::option::Option<std::vec::Vec<crate::model::UserSearchCriteria>>,
+        pub(crate) and_conditions:
+            std::option::Option<std::vec::Vec<crate::model::UserSearchCriteria>>,
+        pub(crate) string_condition: std::option::Option<crate::model::StringCondition>,
+        pub(crate) hierarchy_group_condition:
+            std::option::Option<crate::model::HierarchyGroupCondition>,
+    }
+    impl Builder {
+        /// Appends an item to `or_conditions`.
+        ///
+        /// To override the contents of this collection use [`set_or_conditions`](Self::set_or_conditions).
+        ///
+        /// <p>A list of conditions which would be applied together with an <code>OR</code> condition.</p>
+        pub fn or_conditions(mut self, input: crate::model::UserSearchCriteria) -> Self {
+            let mut v = self.or_conditions.unwrap_or_default();
+            v.push(input);
+            self.or_conditions = Some(v);
+            self
+        }
+        /// <p>A list of conditions which would be applied together with an <code>OR</code> condition.</p>
+        pub fn set_or_conditions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::UserSearchCriteria>>,
+        ) -> Self {
+            self.or_conditions = input;
+            self
+        }
+        /// Appends an item to `and_conditions`.
+        ///
+        /// To override the contents of this collection use [`set_and_conditions`](Self::set_and_conditions).
+        ///
+        /// <p>A list of conditions which would be applied together with an <code>AND</code> condition. </p>
+        pub fn and_conditions(mut self, input: crate::model::UserSearchCriteria) -> Self {
+            let mut v = self.and_conditions.unwrap_or_default();
+            v.push(input);
+            self.and_conditions = Some(v);
+            self
+        }
+        /// <p>A list of conditions which would be applied together with an <code>AND</code> condition. </p>
+        pub fn set_and_conditions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::UserSearchCriteria>>,
+        ) -> Self {
+            self.and_conditions = input;
+            self
+        }
+        /// <p>A leaf node condition which can be used to specify a string condition.</p>
+        pub fn string_condition(mut self, input: crate::model::StringCondition) -> Self {
+            self.string_condition = Some(input);
+            self
+        }
+        /// <p>A leaf node condition which can be used to specify a string condition.</p>
+        pub fn set_string_condition(
+            mut self,
+            input: std::option::Option<crate::model::StringCondition>,
+        ) -> Self {
+            self.string_condition = input;
+            self
+        }
+        /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
+        pub fn hierarchy_group_condition(
+            mut self,
+            input: crate::model::HierarchyGroupCondition,
+        ) -> Self {
+            self.hierarchy_group_condition = Some(input);
+            self
+        }
+        /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
+        pub fn set_hierarchy_group_condition(
+            mut self,
+            input: std::option::Option<crate::model::HierarchyGroupCondition>,
+        ) -> Self {
+            self.hierarchy_group_condition = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UserSearchCriteria`](crate::model::UserSearchCriteria)
+        pub fn build(self) -> crate::model::UserSearchCriteria {
+            crate::model::UserSearchCriteria {
+                or_conditions: self.or_conditions,
+                and_conditions: self.and_conditions,
+                string_condition: self.string_condition,
+                hierarchy_group_condition: self.hierarchy_group_condition,
+            }
+        }
+    }
+}
+impl UserSearchCriteria {
+    /// Creates a new builder-style object to manufacture [`UserSearchCriteria`](crate::model::UserSearchCriteria)
+    pub fn builder() -> crate::model::user_search_criteria::Builder {
+        crate::model::user_search_criteria::Builder::default()
+    }
+}
+
+/// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HierarchyGroupCondition {
+    /// <p>The value in the hierarchy group condition.</p>
+    pub value: std::option::Option<std::string::String>,
+    /// <p>The type of hierarchy group match.</p>
+    pub hierarchy_group_match_type: std::option::Option<crate::model::HierarchyGroupMatchType>,
+}
+impl HierarchyGroupCondition {
+    /// <p>The value in the hierarchy group condition.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The type of hierarchy group match.</p>
+    pub fn hierarchy_group_match_type(
+        &self,
+    ) -> std::option::Option<&crate::model::HierarchyGroupMatchType> {
+        self.hierarchy_group_match_type.as_ref()
+    }
+}
+impl std::fmt::Debug for HierarchyGroupCondition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HierarchyGroupCondition");
+        formatter.field("value", &self.value);
+        formatter.field(
+            "hierarchy_group_match_type",
+            &self.hierarchy_group_match_type,
+        );
+        formatter.finish()
+    }
+}
+/// See [`HierarchyGroupCondition`](crate::model::HierarchyGroupCondition)
+pub mod hierarchy_group_condition {
+    /// A builder for [`HierarchyGroupCondition`](crate::model::HierarchyGroupCondition)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) hierarchy_group_match_type:
+            std::option::Option<crate::model::HierarchyGroupMatchType>,
+    }
+    impl Builder {
+        /// <p>The value in the hierarchy group condition.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The value in the hierarchy group condition.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// <p>The type of hierarchy group match.</p>
+        pub fn hierarchy_group_match_type(
+            mut self,
+            input: crate::model::HierarchyGroupMatchType,
+        ) -> Self {
+            self.hierarchy_group_match_type = Some(input);
+            self
+        }
+        /// <p>The type of hierarchy group match.</p>
+        pub fn set_hierarchy_group_match_type(
+            mut self,
+            input: std::option::Option<crate::model::HierarchyGroupMatchType>,
+        ) -> Self {
+            self.hierarchy_group_match_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HierarchyGroupCondition`](crate::model::HierarchyGroupCondition)
+        pub fn build(self) -> crate::model::HierarchyGroupCondition {
+            crate::model::HierarchyGroupCondition {
+                value: self.value,
+                hierarchy_group_match_type: self.hierarchy_group_match_type,
+            }
+        }
+    }
+}
+impl HierarchyGroupCondition {
+    /// Creates a new builder-style object to manufacture [`HierarchyGroupCondition`](crate::model::HierarchyGroupCondition)
+    pub fn builder() -> crate::model::hierarchy_group_condition::Builder {
+        crate::model::hierarchy_group_condition::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HierarchyGroupMatchType {
+    #[allow(missing_docs)] // documentation missing in model
+    Exact,
+    #[allow(missing_docs)] // documentation missing in model
+    WithChildGroups,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HierarchyGroupMatchType {
+    fn from(s: &str) -> Self {
+        match s {
+            "EXACT" => HierarchyGroupMatchType::Exact,
+            "WITH_CHILD_GROUPS" => HierarchyGroupMatchType::WithChildGroups,
+            other => HierarchyGroupMatchType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HierarchyGroupMatchType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HierarchyGroupMatchType::from(s))
+    }
+}
+impl HierarchyGroupMatchType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HierarchyGroupMatchType::Exact => "EXACT",
+            HierarchyGroupMatchType::WithChildGroups => "WITH_CHILD_GROUPS",
+            HierarchyGroupMatchType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["EXACT", "WITH_CHILD_GROUPS"]
+    }
+}
+impl AsRef<str> for HierarchyGroupMatchType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StringCondition {
+    /// <p>The name of the field in the string condition.</p>
+    pub field_name: std::option::Option<std::string::String>,
+    /// <p>The value of the string.</p>
+    pub value: std::option::Option<std::string::String>,
+    /// <p>The type of comparison to be made when evaluating the string condition.</p>
+    pub comparison_type: std::option::Option<crate::model::StringComparisonType>,
+}
+impl StringCondition {
+    /// <p>The name of the field in the string condition.</p>
+    pub fn field_name(&self) -> std::option::Option<&str> {
+        self.field_name.as_deref()
+    }
+    /// <p>The value of the string.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The type of comparison to be made when evaluating the string condition.</p>
+    pub fn comparison_type(&self) -> std::option::Option<&crate::model::StringComparisonType> {
+        self.comparison_type.as_ref()
+    }
+}
+impl std::fmt::Debug for StringCondition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StringCondition");
+        formatter.field("field_name", &self.field_name);
+        formatter.field("value", &self.value);
+        formatter.field("comparison_type", &self.comparison_type);
+        formatter.finish()
+    }
+}
+/// See [`StringCondition`](crate::model::StringCondition)
+pub mod string_condition {
+    /// A builder for [`StringCondition`](crate::model::StringCondition)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) field_name: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) comparison_type: std::option::Option<crate::model::StringComparisonType>,
+    }
+    impl Builder {
+        /// <p>The name of the field in the string condition.</p>
+        pub fn field_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.field_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the field in the string condition.</p>
+        pub fn set_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.field_name = input;
+            self
+        }
+        /// <p>The value of the string.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The value of the string.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// <p>The type of comparison to be made when evaluating the string condition.</p>
+        pub fn comparison_type(mut self, input: crate::model::StringComparisonType) -> Self {
+            self.comparison_type = Some(input);
+            self
+        }
+        /// <p>The type of comparison to be made when evaluating the string condition.</p>
+        pub fn set_comparison_type(
+            mut self,
+            input: std::option::Option<crate::model::StringComparisonType>,
+        ) -> Self {
+            self.comparison_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StringCondition`](crate::model::StringCondition)
+        pub fn build(self) -> crate::model::StringCondition {
+            crate::model::StringCondition {
+                field_name: self.field_name,
+                value: self.value,
+                comparison_type: self.comparison_type,
+            }
+        }
+    }
+}
+impl StringCondition {
+    /// Creates a new builder-style object to manufacture [`StringCondition`](crate::model::StringCondition)
+    pub fn builder() -> crate::model::string_condition::Builder {
+        crate::model::string_condition::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum StringComparisonType {
+    #[allow(missing_docs)] // documentation missing in model
+    Contains,
+    #[allow(missing_docs)] // documentation missing in model
+    Exact,
+    #[allow(missing_docs)] // documentation missing in model
+    StartsWith,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for StringComparisonType {
+    fn from(s: &str) -> Self {
+        match s {
+            "CONTAINS" => StringComparisonType::Contains,
+            "EXACT" => StringComparisonType::Exact,
+            "STARTS_WITH" => StringComparisonType::StartsWith,
+            other => StringComparisonType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for StringComparisonType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(StringComparisonType::from(s))
+    }
+}
+impl StringComparisonType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            StringComparisonType::Contains => "CONTAINS",
+            StringComparisonType::Exact => "EXACT",
+            StringComparisonType::StartsWith => "STARTS_WITH",
+            StringComparisonType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CONTAINS", "EXACT", "STARTS_WITH"]
+    }
+}
+impl AsRef<str> for StringComparisonType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Filters to be applied to search results.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UserSearchFilter {
+    /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
+    /// <ul>
+    /// <li> <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li>
+    /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
+    /// </ul>
+    pub tag_filter: std::option::Option<crate::model::ControlPlaneTagFilter>,
+}
+impl UserSearchFilter {
+    /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
+    /// <ul>
+    /// <li> <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li>
+    /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
+    /// </ul>
+    pub fn tag_filter(&self) -> std::option::Option<&crate::model::ControlPlaneTagFilter> {
+        self.tag_filter.as_ref()
+    }
+}
+impl std::fmt::Debug for UserSearchFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UserSearchFilter");
+        formatter.field("tag_filter", &self.tag_filter);
+        formatter.finish()
+    }
+}
+/// See [`UserSearchFilter`](crate::model::UserSearchFilter)
+pub mod user_search_filter {
+    /// A builder for [`UserSearchFilter`](crate::model::UserSearchFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tag_filter: std::option::Option<crate::model::ControlPlaneTagFilter>,
+    }
+    impl Builder {
+        /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
+        /// <ul>
+        /// <li> <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li>
+        /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
+        /// </ul>
+        pub fn tag_filter(mut self, input: crate::model::ControlPlaneTagFilter) -> Self {
+            self.tag_filter = Some(input);
+            self
+        }
+        /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
+        /// <ul>
+        /// <li> <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li>
+        /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
+        /// </ul>
+        pub fn set_tag_filter(
+            mut self,
+            input: std::option::Option<crate::model::ControlPlaneTagFilter>,
+        ) -> Self {
+            self.tag_filter = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UserSearchFilter`](crate::model::UserSearchFilter)
+        pub fn build(self) -> crate::model::UserSearchFilter {
+            crate::model::UserSearchFilter {
+                tag_filter: self.tag_filter,
+            }
+        }
+    }
+}
+impl UserSearchFilter {
+    /// Creates a new builder-style object to manufacture [`UserSearchFilter`](crate::model::UserSearchFilter)
+    pub fn builder() -> crate::model::user_search_filter::Builder {
+        crate::model::user_search_filter::Builder::default()
+    }
+}
+
+/// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
+/// <ul>
+/// <li> <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li>
+/// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
+/// </ul>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ControlPlaneTagFilter {
+    /// <p>A list of conditions which would be applied together with an <code>OR</code> condition. </p>
+    pub or_conditions:
+        std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::TagCondition>>>,
+    /// <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
+    pub and_conditions: std::option::Option<std::vec::Vec<crate::model::TagCondition>>,
+    /// <p>A leaf node condition which can be used to specify a tag condition. </p>
+    pub tag_condition: std::option::Option<crate::model::TagCondition>,
+}
+impl ControlPlaneTagFilter {
+    /// <p>A list of conditions which would be applied together with an <code>OR</code> condition. </p>
+    pub fn or_conditions(
+        &self,
+    ) -> std::option::Option<&[std::vec::Vec<crate::model::TagCondition>]> {
+        self.or_conditions.as_deref()
+    }
+    /// <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
+    pub fn and_conditions(&self) -> std::option::Option<&[crate::model::TagCondition]> {
+        self.and_conditions.as_deref()
+    }
+    /// <p>A leaf node condition which can be used to specify a tag condition. </p>
+    pub fn tag_condition(&self) -> std::option::Option<&crate::model::TagCondition> {
+        self.tag_condition.as_ref()
+    }
+}
+impl std::fmt::Debug for ControlPlaneTagFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ControlPlaneTagFilter");
+        formatter.field("or_conditions", &self.or_conditions);
+        formatter.field("and_conditions", &self.and_conditions);
+        formatter.field("tag_condition", &self.tag_condition);
+        formatter.finish()
+    }
+}
+/// See [`ControlPlaneTagFilter`](crate::model::ControlPlaneTagFilter)
+pub mod control_plane_tag_filter {
+    /// A builder for [`ControlPlaneTagFilter`](crate::model::ControlPlaneTagFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) or_conditions:
+            std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::TagCondition>>>,
+        pub(crate) and_conditions: std::option::Option<std::vec::Vec<crate::model::TagCondition>>,
+        pub(crate) tag_condition: std::option::Option<crate::model::TagCondition>,
+    }
+    impl Builder {
+        /// Appends an item to `or_conditions`.
+        ///
+        /// To override the contents of this collection use [`set_or_conditions`](Self::set_or_conditions).
+        ///
+        /// <p>A list of conditions which would be applied together with an <code>OR</code> condition. </p>
+        pub fn or_conditions(mut self, input: std::vec::Vec<crate::model::TagCondition>) -> Self {
+            let mut v = self.or_conditions.unwrap_or_default();
+            v.push(input);
+            self.or_conditions = Some(v);
+            self
+        }
+        /// <p>A list of conditions which would be applied together with an <code>OR</code> condition. </p>
+        pub fn set_or_conditions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::TagCondition>>>,
+        ) -> Self {
+            self.or_conditions = input;
+            self
+        }
+        /// Appends an item to `and_conditions`.
+        ///
+        /// To override the contents of this collection use [`set_and_conditions`](Self::set_and_conditions).
+        ///
+        /// <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
+        pub fn and_conditions(mut self, input: crate::model::TagCondition) -> Self {
+            let mut v = self.and_conditions.unwrap_or_default();
+            v.push(input);
+            self.and_conditions = Some(v);
+            self
+        }
+        /// <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
+        pub fn set_and_conditions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagCondition>>,
+        ) -> Self {
+            self.and_conditions = input;
+            self
+        }
+        /// <p>A leaf node condition which can be used to specify a tag condition. </p>
+        pub fn tag_condition(mut self, input: crate::model::TagCondition) -> Self {
+            self.tag_condition = Some(input);
+            self
+        }
+        /// <p>A leaf node condition which can be used to specify a tag condition. </p>
+        pub fn set_tag_condition(
+            mut self,
+            input: std::option::Option<crate::model::TagCondition>,
+        ) -> Self {
+            self.tag_condition = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ControlPlaneTagFilter`](crate::model::ControlPlaneTagFilter)
+        pub fn build(self) -> crate::model::ControlPlaneTagFilter {
+            crate::model::ControlPlaneTagFilter {
+                or_conditions: self.or_conditions,
+                and_conditions: self.and_conditions,
+                tag_condition: self.tag_condition,
+            }
+        }
+    }
+}
+impl ControlPlaneTagFilter {
+    /// Creates a new builder-style object to manufacture [`ControlPlaneTagFilter`](crate::model::ControlPlaneTagFilter)
+    pub fn builder() -> crate::model::control_plane_tag_filter::Builder {
+        crate::model::control_plane_tag_filter::Builder::default()
+    }
+}
+
+/// <p>A leaf node condition which can be used to specify a tag condition, for example, <code>HAVE BPO = 123</code>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagCondition {
+    /// <p>The tag key in the tag condition.</p>
+    pub tag_key: std::option::Option<std::string::String>,
+    /// <p>The tag value in the tag condition.</p>
+    pub tag_value: std::option::Option<std::string::String>,
+}
+impl TagCondition {
+    /// <p>The tag key in the tag condition.</p>
+    pub fn tag_key(&self) -> std::option::Option<&str> {
+        self.tag_key.as_deref()
+    }
+    /// <p>The tag value in the tag condition.</p>
+    pub fn tag_value(&self) -> std::option::Option<&str> {
+        self.tag_value.as_deref()
+    }
+}
+impl std::fmt::Debug for TagCondition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TagCondition");
+        formatter.field("tag_key", &self.tag_key);
+        formatter.field("tag_value", &self.tag_value);
+        formatter.finish()
+    }
+}
+/// See [`TagCondition`](crate::model::TagCondition)
+pub mod tag_condition {
+    /// A builder for [`TagCondition`](crate::model::TagCondition)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tag_key: std::option::Option<std::string::String>,
+        pub(crate) tag_value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The tag key in the tag condition.</p>
+        pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tag_key = Some(input.into());
+            self
+        }
+        /// <p>The tag key in the tag condition.</p>
+        pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tag_key = input;
+            self
+        }
+        /// <p>The tag value in the tag condition.</p>
+        pub fn tag_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tag_value = Some(input.into());
+            self
+        }
+        /// <p>The tag value in the tag condition.</p>
+        pub fn set_tag_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tag_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TagCondition`](crate::model::TagCondition)
+        pub fn build(self) -> crate::model::TagCondition {
+            crate::model::TagCondition {
+                tag_key: self.tag_key,
+                tag_value: self.tag_value,
+            }
+        }
+    }
+}
+impl TagCondition {
+    /// Creates a new builder-style object to manufacture [`TagCondition`](crate::model::TagCondition)
+    pub fn builder() -> crate::model::tag_condition::Builder {
+        crate::model::tag_condition::Builder::default()
+    }
+}
+
+/// <p>Information about available phone numbers.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AvailableNumberSummary {
+    /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    pub phone_number: std::option::Option<std::string::String>,
+    /// <p>The ISO country code.</p>
+    pub phone_number_country_code: std::option::Option<crate::model::PhoneNumberCountryCode>,
+    /// <p>The type of phone number.</p>
+    pub phone_number_type: std::option::Option<crate::model::PhoneNumberType>,
+}
+impl AvailableNumberSummary {
+    /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>The ISO country code.</p>
+    pub fn phone_number_country_code(
+        &self,
+    ) -> std::option::Option<&crate::model::PhoneNumberCountryCode> {
+        self.phone_number_country_code.as_ref()
+    }
+    /// <p>The type of phone number.</p>
+    pub fn phone_number_type(&self) -> std::option::Option<&crate::model::PhoneNumberType> {
+        self.phone_number_type.as_ref()
+    }
+}
+impl std::fmt::Debug for AvailableNumberSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AvailableNumberSummary");
+        formatter.field("phone_number", &self.phone_number);
+        formatter.field("phone_number_country_code", &self.phone_number_country_code);
+        formatter.field("phone_number_type", &self.phone_number_type);
+        formatter.finish()
+    }
+}
+/// See [`AvailableNumberSummary`](crate::model::AvailableNumberSummary)
+pub mod available_number_summary {
+    /// A builder for [`AvailableNumberSummary`](crate::model::AvailableNumberSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) phone_number: std::option::Option<std::string::String>,
+        pub(crate) phone_number_country_code:
+            std::option::Option<crate::model::PhoneNumberCountryCode>,
+        pub(crate) phone_number_type: std::option::Option<crate::model::PhoneNumberType>,
+    }
+    impl Builder {
+        /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number = Some(input.into());
+            self
+        }
+        /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number = input;
+            self
+        }
+        /// <p>The ISO country code.</p>
+        pub fn phone_number_country_code(
+            mut self,
+            input: crate::model::PhoneNumberCountryCode,
+        ) -> Self {
+            self.phone_number_country_code = Some(input);
+            self
+        }
+        /// <p>The ISO country code.</p>
+        pub fn set_phone_number_country_code(
+            mut self,
+            input: std::option::Option<crate::model::PhoneNumberCountryCode>,
+        ) -> Self {
+            self.phone_number_country_code = input;
+            self
+        }
+        /// <p>The type of phone number.</p>
+        pub fn phone_number_type(mut self, input: crate::model::PhoneNumberType) -> Self {
+            self.phone_number_type = Some(input);
+            self
+        }
+        /// <p>The type of phone number.</p>
+        pub fn set_phone_number_type(
+            mut self,
+            input: std::option::Option<crate::model::PhoneNumberType>,
+        ) -> Self {
+            self.phone_number_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AvailableNumberSummary`](crate::model::AvailableNumberSummary)
+        pub fn build(self) -> crate::model::AvailableNumberSummary {
+            crate::model::AvailableNumberSummary {
+                phone_number: self.phone_number,
+                phone_number_country_code: self.phone_number_country_code,
+                phone_number_type: self.phone_number_type,
+            }
+        }
+    }
+}
+impl AvailableNumberSummary {
+    /// Creates a new builder-style object to manufacture [`AvailableNumberSummary`](crate::model::AvailableNumberSummary)
+    pub fn builder() -> crate::model::available_number_summary::Builder {
+        crate::model::available_number_summary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PhoneNumberType {
+    #[allow(missing_docs)] // documentation missing in model
+    Did,
+    #[allow(missing_docs)] // documentation missing in model
+    TollFree,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PhoneNumberType {
+    fn from(s: &str) -> Self {
+        match s {
+            "DID" => PhoneNumberType::Did,
+            "TOLL_FREE" => PhoneNumberType::TollFree,
+            other => PhoneNumberType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PhoneNumberType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PhoneNumberType::from(s))
+    }
+}
+impl PhoneNumberType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PhoneNumberType::Did => "DID",
+            PhoneNumberType::TollFree => "TOLL_FREE",
+            PhoneNumberType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DID", "TOLL_FREE"]
+    }
+}
+impl AsRef<str> for PhoneNumberType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PhoneNumberCountryCode {
+    #[allow(missing_docs)] // documentation missing in model
+    Ad,
+    #[allow(missing_docs)] // documentation missing in model
+    Ae,
+    #[allow(missing_docs)] // documentation missing in model
+    Af,
+    #[allow(missing_docs)] // documentation missing in model
+    Ag,
+    #[allow(missing_docs)] // documentation missing in model
+    Ai,
+    #[allow(missing_docs)] // documentation missing in model
+    Al,
+    #[allow(missing_docs)] // documentation missing in model
+    Am,
+    #[allow(missing_docs)] // documentation missing in model
+    An,
+    #[allow(missing_docs)] // documentation missing in model
+    Ao,
+    #[allow(missing_docs)] // documentation missing in model
+    Aq,
+    #[allow(missing_docs)] // documentation missing in model
+    Ar,
+    #[allow(missing_docs)] // documentation missing in model
+    As,
+    #[allow(missing_docs)] // documentation missing in model
+    At,
+    #[allow(missing_docs)] // documentation missing in model
+    Au,
+    #[allow(missing_docs)] // documentation missing in model
+    Aw,
+    #[allow(missing_docs)] // documentation missing in model
+    Az,
+    #[allow(missing_docs)] // documentation missing in model
+    Ba,
+    #[allow(missing_docs)] // documentation missing in model
+    Bb,
+    #[allow(missing_docs)] // documentation missing in model
+    Bd,
+    #[allow(missing_docs)] // documentation missing in model
+    Be,
+    #[allow(missing_docs)] // documentation missing in model
+    Bf,
+    #[allow(missing_docs)] // documentation missing in model
+    Bg,
+    #[allow(missing_docs)] // documentation missing in model
+    Bh,
+    #[allow(missing_docs)] // documentation missing in model
+    Bi,
+    #[allow(missing_docs)] // documentation missing in model
+    Bj,
+    #[allow(missing_docs)] // documentation missing in model
+    Bl,
+    #[allow(missing_docs)] // documentation missing in model
+    Bm,
+    #[allow(missing_docs)] // documentation missing in model
+    Bn,
+    #[allow(missing_docs)] // documentation missing in model
+    Bo,
+    #[allow(missing_docs)] // documentation missing in model
+    Br,
+    #[allow(missing_docs)] // documentation missing in model
+    Bs,
+    #[allow(missing_docs)] // documentation missing in model
+    Bt,
+    #[allow(missing_docs)] // documentation missing in model
+    Bw,
+    #[allow(missing_docs)] // documentation missing in model
+    By,
+    #[allow(missing_docs)] // documentation missing in model
+    Bz,
+    #[allow(missing_docs)] // documentation missing in model
+    Ca,
+    #[allow(missing_docs)] // documentation missing in model
+    Cc,
+    #[allow(missing_docs)] // documentation missing in model
+    Cd,
+    #[allow(missing_docs)] // documentation missing in model
+    Cf,
+    #[allow(missing_docs)] // documentation missing in model
+    Cg,
+    #[allow(missing_docs)] // documentation missing in model
+    Ch,
+    #[allow(missing_docs)] // documentation missing in model
+    Ci,
+    #[allow(missing_docs)] // documentation missing in model
+    Ck,
+    #[allow(missing_docs)] // documentation missing in model
+    Cl,
+    #[allow(missing_docs)] // documentation missing in model
+    Cm,
+    #[allow(missing_docs)] // documentation missing in model
+    Cn,
+    #[allow(missing_docs)] // documentation missing in model
+    Co,
+    #[allow(missing_docs)] // documentation missing in model
+    Cr,
+    #[allow(missing_docs)] // documentation missing in model
+    Cu,
+    #[allow(missing_docs)] // documentation missing in model
+    Cv,
+    #[allow(missing_docs)] // documentation missing in model
+    Cw,
+    #[allow(missing_docs)] // documentation missing in model
+    Cx,
+    #[allow(missing_docs)] // documentation missing in model
+    Cy,
+    #[allow(missing_docs)] // documentation missing in model
+    Cz,
+    #[allow(missing_docs)] // documentation missing in model
+    De,
+    #[allow(missing_docs)] // documentation missing in model
+    Dj,
+    #[allow(missing_docs)] // documentation missing in model
+    Dk,
+    #[allow(missing_docs)] // documentation missing in model
+    Dm,
+    #[allow(missing_docs)] // documentation missing in model
+    Do,
+    #[allow(missing_docs)] // documentation missing in model
+    Dz,
+    #[allow(missing_docs)] // documentation missing in model
+    Ec,
+    #[allow(missing_docs)] // documentation missing in model
+    Ee,
+    #[allow(missing_docs)] // documentation missing in model
+    Eg,
+    #[allow(missing_docs)] // documentation missing in model
+    Eh,
+    #[allow(missing_docs)] // documentation missing in model
+    Er,
+    #[allow(missing_docs)] // documentation missing in model
+    Es,
+    #[allow(missing_docs)] // documentation missing in model
+    Et,
+    #[allow(missing_docs)] // documentation missing in model
+    Fi,
+    #[allow(missing_docs)] // documentation missing in model
+    Fj,
+    #[allow(missing_docs)] // documentation missing in model
+    Fk,
+    #[allow(missing_docs)] // documentation missing in model
+    Fm,
+    #[allow(missing_docs)] // documentation missing in model
+    Fo,
+    #[allow(missing_docs)] // documentation missing in model
+    Fr,
+    #[allow(missing_docs)] // documentation missing in model
+    Ga,
+    #[allow(missing_docs)] // documentation missing in model
+    Gb,
+    #[allow(missing_docs)] // documentation missing in model
+    Gd,
+    #[allow(missing_docs)] // documentation missing in model
+    Ge,
+    #[allow(missing_docs)] // documentation missing in model
+    Gg,
+    #[allow(missing_docs)] // documentation missing in model
+    Gh,
+    #[allow(missing_docs)] // documentation missing in model
+    Gi,
+    #[allow(missing_docs)] // documentation missing in model
+    Gl,
+    #[allow(missing_docs)] // documentation missing in model
+    Gm,
+    #[allow(missing_docs)] // documentation missing in model
+    Gn,
+    #[allow(missing_docs)] // documentation missing in model
+    Gq,
+    #[allow(missing_docs)] // documentation missing in model
+    Gr,
+    #[allow(missing_docs)] // documentation missing in model
+    Gt,
+    #[allow(missing_docs)] // documentation missing in model
+    Gu,
+    #[allow(missing_docs)] // documentation missing in model
+    Gw,
+    #[allow(missing_docs)] // documentation missing in model
+    Gy,
+    #[allow(missing_docs)] // documentation missing in model
+    Hk,
+    #[allow(missing_docs)] // documentation missing in model
+    Hn,
+    #[allow(missing_docs)] // documentation missing in model
+    Hr,
+    #[allow(missing_docs)] // documentation missing in model
+    Ht,
+    #[allow(missing_docs)] // documentation missing in model
+    Hu,
+    #[allow(missing_docs)] // documentation missing in model
+    Id,
+    #[allow(missing_docs)] // documentation missing in model
+    Ie,
+    #[allow(missing_docs)] // documentation missing in model
+    Il,
+    #[allow(missing_docs)] // documentation missing in model
+    Im,
+    #[allow(missing_docs)] // documentation missing in model
+    In,
+    #[allow(missing_docs)] // documentation missing in model
+    Io,
+    #[allow(missing_docs)] // documentation missing in model
+    Iq,
+    #[allow(missing_docs)] // documentation missing in model
+    Ir,
+    #[allow(missing_docs)] // documentation missing in model
+    Is,
+    #[allow(missing_docs)] // documentation missing in model
+    It,
+    #[allow(missing_docs)] // documentation missing in model
+    Je,
+    #[allow(missing_docs)] // documentation missing in model
+    Jm,
+    #[allow(missing_docs)] // documentation missing in model
+    Jo,
+    #[allow(missing_docs)] // documentation missing in model
+    Jp,
+    #[allow(missing_docs)] // documentation missing in model
+    Ke,
+    #[allow(missing_docs)] // documentation missing in model
+    Kg,
+    #[allow(missing_docs)] // documentation missing in model
+    Kh,
+    #[allow(missing_docs)] // documentation missing in model
+    Ki,
+    #[allow(missing_docs)] // documentation missing in model
+    Km,
+    #[allow(missing_docs)] // documentation missing in model
+    Kn,
+    #[allow(missing_docs)] // documentation missing in model
+    Kp,
+    #[allow(missing_docs)] // documentation missing in model
+    Kr,
+    #[allow(missing_docs)] // documentation missing in model
+    Kw,
+    #[allow(missing_docs)] // documentation missing in model
+    Ky,
+    #[allow(missing_docs)] // documentation missing in model
+    Kz,
+    #[allow(missing_docs)] // documentation missing in model
+    La,
+    #[allow(missing_docs)] // documentation missing in model
+    Lb,
+    #[allow(missing_docs)] // documentation missing in model
+    Lc,
+    #[allow(missing_docs)] // documentation missing in model
+    Li,
+    #[allow(missing_docs)] // documentation missing in model
+    Lk,
+    #[allow(missing_docs)] // documentation missing in model
+    Lr,
+    #[allow(missing_docs)] // documentation missing in model
+    Ls,
+    #[allow(missing_docs)] // documentation missing in model
+    Lt,
+    #[allow(missing_docs)] // documentation missing in model
+    Lu,
+    #[allow(missing_docs)] // documentation missing in model
+    Lv,
+    #[allow(missing_docs)] // documentation missing in model
+    Ly,
+    #[allow(missing_docs)] // documentation missing in model
+    Ma,
+    #[allow(missing_docs)] // documentation missing in model
+    Mc,
+    #[allow(missing_docs)] // documentation missing in model
+    Md,
+    #[allow(missing_docs)] // documentation missing in model
+    Me,
+    #[allow(missing_docs)] // documentation missing in model
+    Mf,
+    #[allow(missing_docs)] // documentation missing in model
+    Mg,
+    #[allow(missing_docs)] // documentation missing in model
+    Mh,
+    #[allow(missing_docs)] // documentation missing in model
+    Mk,
+    #[allow(missing_docs)] // documentation missing in model
+    Ml,
+    #[allow(missing_docs)] // documentation missing in model
+    Mm,
+    #[allow(missing_docs)] // documentation missing in model
+    Mn,
+    #[allow(missing_docs)] // documentation missing in model
+    Mo,
+    #[allow(missing_docs)] // documentation missing in model
+    Mp,
+    #[allow(missing_docs)] // documentation missing in model
+    Mr,
+    #[allow(missing_docs)] // documentation missing in model
+    Ms,
+    #[allow(missing_docs)] // documentation missing in model
+    Mt,
+    #[allow(missing_docs)] // documentation missing in model
+    Mu,
+    #[allow(missing_docs)] // documentation missing in model
+    Mv,
+    #[allow(missing_docs)] // documentation missing in model
+    Mw,
+    #[allow(missing_docs)] // documentation missing in model
+    Mx,
+    #[allow(missing_docs)] // documentation missing in model
+    My,
+    #[allow(missing_docs)] // documentation missing in model
+    Mz,
+    #[allow(missing_docs)] // documentation missing in model
+    Na,
+    #[allow(missing_docs)] // documentation missing in model
+    Nc,
+    #[allow(missing_docs)] // documentation missing in model
+    Ne,
+    #[allow(missing_docs)] // documentation missing in model
+    Ng,
+    #[allow(missing_docs)] // documentation missing in model
+    Ni,
+    #[allow(missing_docs)] // documentation missing in model
+    Nl,
+    #[allow(missing_docs)] // documentation missing in model
+    No,
+    #[allow(missing_docs)] // documentation missing in model
+    Np,
+    #[allow(missing_docs)] // documentation missing in model
+    Nr,
+    #[allow(missing_docs)] // documentation missing in model
+    Nu,
+    #[allow(missing_docs)] // documentation missing in model
+    Nz,
+    #[allow(missing_docs)] // documentation missing in model
+    Om,
+    #[allow(missing_docs)] // documentation missing in model
+    Pa,
+    #[allow(missing_docs)] // documentation missing in model
+    Pe,
+    #[allow(missing_docs)] // documentation missing in model
+    Pf,
+    #[allow(missing_docs)] // documentation missing in model
+    Pg,
+    #[allow(missing_docs)] // documentation missing in model
+    Ph,
+    #[allow(missing_docs)] // documentation missing in model
+    Pk,
+    #[allow(missing_docs)] // documentation missing in model
+    Pl,
+    #[allow(missing_docs)] // documentation missing in model
+    Pm,
+    #[allow(missing_docs)] // documentation missing in model
+    Pn,
+    #[allow(missing_docs)] // documentation missing in model
+    Pr,
+    #[allow(missing_docs)] // documentation missing in model
+    Pt,
+    #[allow(missing_docs)] // documentation missing in model
+    Pw,
+    #[allow(missing_docs)] // documentation missing in model
+    Py,
+    #[allow(missing_docs)] // documentation missing in model
+    Qa,
+    #[allow(missing_docs)] // documentation missing in model
+    Re,
+    #[allow(missing_docs)] // documentation missing in model
+    Ro,
+    #[allow(missing_docs)] // documentation missing in model
+    Rs,
+    #[allow(missing_docs)] // documentation missing in model
+    Ru,
+    #[allow(missing_docs)] // documentation missing in model
+    Rw,
+    #[allow(missing_docs)] // documentation missing in model
+    Sa,
+    #[allow(missing_docs)] // documentation missing in model
+    Sb,
+    #[allow(missing_docs)] // documentation missing in model
+    Sc,
+    #[allow(missing_docs)] // documentation missing in model
+    Sd,
+    #[allow(missing_docs)] // documentation missing in model
+    Se,
+    #[allow(missing_docs)] // documentation missing in model
+    Sg,
+    #[allow(missing_docs)] // documentation missing in model
+    Sh,
+    #[allow(missing_docs)] // documentation missing in model
+    Si,
+    #[allow(missing_docs)] // documentation missing in model
+    Sj,
+    #[allow(missing_docs)] // documentation missing in model
+    Sk,
+    #[allow(missing_docs)] // documentation missing in model
+    Sl,
+    #[allow(missing_docs)] // documentation missing in model
+    Sm,
+    #[allow(missing_docs)] // documentation missing in model
+    Sn,
+    #[allow(missing_docs)] // documentation missing in model
+    So,
+    #[allow(missing_docs)] // documentation missing in model
+    Sr,
+    #[allow(missing_docs)] // documentation missing in model
+    St,
+    #[allow(missing_docs)] // documentation missing in model
+    Sv,
+    #[allow(missing_docs)] // documentation missing in model
+    Sx,
+    #[allow(missing_docs)] // documentation missing in model
+    Sy,
+    #[allow(missing_docs)] // documentation missing in model
+    Sz,
+    #[allow(missing_docs)] // documentation missing in model
+    Tc,
+    #[allow(missing_docs)] // documentation missing in model
+    Td,
+    #[allow(missing_docs)] // documentation missing in model
+    Tg,
+    #[allow(missing_docs)] // documentation missing in model
+    Th,
+    #[allow(missing_docs)] // documentation missing in model
+    Tj,
+    #[allow(missing_docs)] // documentation missing in model
+    Tk,
+    #[allow(missing_docs)] // documentation missing in model
+    Tl,
+    #[allow(missing_docs)] // documentation missing in model
+    Tm,
+    #[allow(missing_docs)] // documentation missing in model
+    Tn,
+    #[allow(missing_docs)] // documentation missing in model
+    To,
+    #[allow(missing_docs)] // documentation missing in model
+    Tr,
+    #[allow(missing_docs)] // documentation missing in model
+    Tt,
+    #[allow(missing_docs)] // documentation missing in model
+    Tv,
+    #[allow(missing_docs)] // documentation missing in model
+    Tw,
+    #[allow(missing_docs)] // documentation missing in model
+    Tz,
+    #[allow(missing_docs)] // documentation missing in model
+    Ua,
+    #[allow(missing_docs)] // documentation missing in model
+    Ug,
+    #[allow(missing_docs)] // documentation missing in model
+    Us,
+    #[allow(missing_docs)] // documentation missing in model
+    Uy,
+    #[allow(missing_docs)] // documentation missing in model
+    Uz,
+    #[allow(missing_docs)] // documentation missing in model
+    Va,
+    #[allow(missing_docs)] // documentation missing in model
+    Vc,
+    #[allow(missing_docs)] // documentation missing in model
+    Ve,
+    #[allow(missing_docs)] // documentation missing in model
+    Vg,
+    #[allow(missing_docs)] // documentation missing in model
+    Vi,
+    #[allow(missing_docs)] // documentation missing in model
+    Vn,
+    #[allow(missing_docs)] // documentation missing in model
+    Vu,
+    #[allow(missing_docs)] // documentation missing in model
+    Wf,
+    #[allow(missing_docs)] // documentation missing in model
+    Ws,
+    #[allow(missing_docs)] // documentation missing in model
+    Ye,
+    #[allow(missing_docs)] // documentation missing in model
+    Yt,
+    #[allow(missing_docs)] // documentation missing in model
+    Za,
+    #[allow(missing_docs)] // documentation missing in model
+    Zm,
+    #[allow(missing_docs)] // documentation missing in model
+    Zw,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PhoneNumberCountryCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "AD" => PhoneNumberCountryCode::Ad,
+            "AE" => PhoneNumberCountryCode::Ae,
+            "AF" => PhoneNumberCountryCode::Af,
+            "AG" => PhoneNumberCountryCode::Ag,
+            "AI" => PhoneNumberCountryCode::Ai,
+            "AL" => PhoneNumberCountryCode::Al,
+            "AM" => PhoneNumberCountryCode::Am,
+            "AN" => PhoneNumberCountryCode::An,
+            "AO" => PhoneNumberCountryCode::Ao,
+            "AQ" => PhoneNumberCountryCode::Aq,
+            "AR" => PhoneNumberCountryCode::Ar,
+            "AS" => PhoneNumberCountryCode::As,
+            "AT" => PhoneNumberCountryCode::At,
+            "AU" => PhoneNumberCountryCode::Au,
+            "AW" => PhoneNumberCountryCode::Aw,
+            "AZ" => PhoneNumberCountryCode::Az,
+            "BA" => PhoneNumberCountryCode::Ba,
+            "BB" => PhoneNumberCountryCode::Bb,
+            "BD" => PhoneNumberCountryCode::Bd,
+            "BE" => PhoneNumberCountryCode::Be,
+            "BF" => PhoneNumberCountryCode::Bf,
+            "BG" => PhoneNumberCountryCode::Bg,
+            "BH" => PhoneNumberCountryCode::Bh,
+            "BI" => PhoneNumberCountryCode::Bi,
+            "BJ" => PhoneNumberCountryCode::Bj,
+            "BL" => PhoneNumberCountryCode::Bl,
+            "BM" => PhoneNumberCountryCode::Bm,
+            "BN" => PhoneNumberCountryCode::Bn,
+            "BO" => PhoneNumberCountryCode::Bo,
+            "BR" => PhoneNumberCountryCode::Br,
+            "BS" => PhoneNumberCountryCode::Bs,
+            "BT" => PhoneNumberCountryCode::Bt,
+            "BW" => PhoneNumberCountryCode::Bw,
+            "BY" => PhoneNumberCountryCode::By,
+            "BZ" => PhoneNumberCountryCode::Bz,
+            "CA" => PhoneNumberCountryCode::Ca,
+            "CC" => PhoneNumberCountryCode::Cc,
+            "CD" => PhoneNumberCountryCode::Cd,
+            "CF" => PhoneNumberCountryCode::Cf,
+            "CG" => PhoneNumberCountryCode::Cg,
+            "CH" => PhoneNumberCountryCode::Ch,
+            "CI" => PhoneNumberCountryCode::Ci,
+            "CK" => PhoneNumberCountryCode::Ck,
+            "CL" => PhoneNumberCountryCode::Cl,
+            "CM" => PhoneNumberCountryCode::Cm,
+            "CN" => PhoneNumberCountryCode::Cn,
+            "CO" => PhoneNumberCountryCode::Co,
+            "CR" => PhoneNumberCountryCode::Cr,
+            "CU" => PhoneNumberCountryCode::Cu,
+            "CV" => PhoneNumberCountryCode::Cv,
+            "CW" => PhoneNumberCountryCode::Cw,
+            "CX" => PhoneNumberCountryCode::Cx,
+            "CY" => PhoneNumberCountryCode::Cy,
+            "CZ" => PhoneNumberCountryCode::Cz,
+            "DE" => PhoneNumberCountryCode::De,
+            "DJ" => PhoneNumberCountryCode::Dj,
+            "DK" => PhoneNumberCountryCode::Dk,
+            "DM" => PhoneNumberCountryCode::Dm,
+            "DO" => PhoneNumberCountryCode::Do,
+            "DZ" => PhoneNumberCountryCode::Dz,
+            "EC" => PhoneNumberCountryCode::Ec,
+            "EE" => PhoneNumberCountryCode::Ee,
+            "EG" => PhoneNumberCountryCode::Eg,
+            "EH" => PhoneNumberCountryCode::Eh,
+            "ER" => PhoneNumberCountryCode::Er,
+            "ES" => PhoneNumberCountryCode::Es,
+            "ET" => PhoneNumberCountryCode::Et,
+            "FI" => PhoneNumberCountryCode::Fi,
+            "FJ" => PhoneNumberCountryCode::Fj,
+            "FK" => PhoneNumberCountryCode::Fk,
+            "FM" => PhoneNumberCountryCode::Fm,
+            "FO" => PhoneNumberCountryCode::Fo,
+            "FR" => PhoneNumberCountryCode::Fr,
+            "GA" => PhoneNumberCountryCode::Ga,
+            "GB" => PhoneNumberCountryCode::Gb,
+            "GD" => PhoneNumberCountryCode::Gd,
+            "GE" => PhoneNumberCountryCode::Ge,
+            "GG" => PhoneNumberCountryCode::Gg,
+            "GH" => PhoneNumberCountryCode::Gh,
+            "GI" => PhoneNumberCountryCode::Gi,
+            "GL" => PhoneNumberCountryCode::Gl,
+            "GM" => PhoneNumberCountryCode::Gm,
+            "GN" => PhoneNumberCountryCode::Gn,
+            "GQ" => PhoneNumberCountryCode::Gq,
+            "GR" => PhoneNumberCountryCode::Gr,
+            "GT" => PhoneNumberCountryCode::Gt,
+            "GU" => PhoneNumberCountryCode::Gu,
+            "GW" => PhoneNumberCountryCode::Gw,
+            "GY" => PhoneNumberCountryCode::Gy,
+            "HK" => PhoneNumberCountryCode::Hk,
+            "HN" => PhoneNumberCountryCode::Hn,
+            "HR" => PhoneNumberCountryCode::Hr,
+            "HT" => PhoneNumberCountryCode::Ht,
+            "HU" => PhoneNumberCountryCode::Hu,
+            "ID" => PhoneNumberCountryCode::Id,
+            "IE" => PhoneNumberCountryCode::Ie,
+            "IL" => PhoneNumberCountryCode::Il,
+            "IM" => PhoneNumberCountryCode::Im,
+            "IN" => PhoneNumberCountryCode::In,
+            "IO" => PhoneNumberCountryCode::Io,
+            "IQ" => PhoneNumberCountryCode::Iq,
+            "IR" => PhoneNumberCountryCode::Ir,
+            "IS" => PhoneNumberCountryCode::Is,
+            "IT" => PhoneNumberCountryCode::It,
+            "JE" => PhoneNumberCountryCode::Je,
+            "JM" => PhoneNumberCountryCode::Jm,
+            "JO" => PhoneNumberCountryCode::Jo,
+            "JP" => PhoneNumberCountryCode::Jp,
+            "KE" => PhoneNumberCountryCode::Ke,
+            "KG" => PhoneNumberCountryCode::Kg,
+            "KH" => PhoneNumberCountryCode::Kh,
+            "KI" => PhoneNumberCountryCode::Ki,
+            "KM" => PhoneNumberCountryCode::Km,
+            "KN" => PhoneNumberCountryCode::Kn,
+            "KP" => PhoneNumberCountryCode::Kp,
+            "KR" => PhoneNumberCountryCode::Kr,
+            "KW" => PhoneNumberCountryCode::Kw,
+            "KY" => PhoneNumberCountryCode::Ky,
+            "KZ" => PhoneNumberCountryCode::Kz,
+            "LA" => PhoneNumberCountryCode::La,
+            "LB" => PhoneNumberCountryCode::Lb,
+            "LC" => PhoneNumberCountryCode::Lc,
+            "LI" => PhoneNumberCountryCode::Li,
+            "LK" => PhoneNumberCountryCode::Lk,
+            "LR" => PhoneNumberCountryCode::Lr,
+            "LS" => PhoneNumberCountryCode::Ls,
+            "LT" => PhoneNumberCountryCode::Lt,
+            "LU" => PhoneNumberCountryCode::Lu,
+            "LV" => PhoneNumberCountryCode::Lv,
+            "LY" => PhoneNumberCountryCode::Ly,
+            "MA" => PhoneNumberCountryCode::Ma,
+            "MC" => PhoneNumberCountryCode::Mc,
+            "MD" => PhoneNumberCountryCode::Md,
+            "ME" => PhoneNumberCountryCode::Me,
+            "MF" => PhoneNumberCountryCode::Mf,
+            "MG" => PhoneNumberCountryCode::Mg,
+            "MH" => PhoneNumberCountryCode::Mh,
+            "MK" => PhoneNumberCountryCode::Mk,
+            "ML" => PhoneNumberCountryCode::Ml,
+            "MM" => PhoneNumberCountryCode::Mm,
+            "MN" => PhoneNumberCountryCode::Mn,
+            "MO" => PhoneNumberCountryCode::Mo,
+            "MP" => PhoneNumberCountryCode::Mp,
+            "MR" => PhoneNumberCountryCode::Mr,
+            "MS" => PhoneNumberCountryCode::Ms,
+            "MT" => PhoneNumberCountryCode::Mt,
+            "MU" => PhoneNumberCountryCode::Mu,
+            "MV" => PhoneNumberCountryCode::Mv,
+            "MW" => PhoneNumberCountryCode::Mw,
+            "MX" => PhoneNumberCountryCode::Mx,
+            "MY" => PhoneNumberCountryCode::My,
+            "MZ" => PhoneNumberCountryCode::Mz,
+            "NA" => PhoneNumberCountryCode::Na,
+            "NC" => PhoneNumberCountryCode::Nc,
+            "NE" => PhoneNumberCountryCode::Ne,
+            "NG" => PhoneNumberCountryCode::Ng,
+            "NI" => PhoneNumberCountryCode::Ni,
+            "NL" => PhoneNumberCountryCode::Nl,
+            "NO" => PhoneNumberCountryCode::No,
+            "NP" => PhoneNumberCountryCode::Np,
+            "NR" => PhoneNumberCountryCode::Nr,
+            "NU" => PhoneNumberCountryCode::Nu,
+            "NZ" => PhoneNumberCountryCode::Nz,
+            "OM" => PhoneNumberCountryCode::Om,
+            "PA" => PhoneNumberCountryCode::Pa,
+            "PE" => PhoneNumberCountryCode::Pe,
+            "PF" => PhoneNumberCountryCode::Pf,
+            "PG" => PhoneNumberCountryCode::Pg,
+            "PH" => PhoneNumberCountryCode::Ph,
+            "PK" => PhoneNumberCountryCode::Pk,
+            "PL" => PhoneNumberCountryCode::Pl,
+            "PM" => PhoneNumberCountryCode::Pm,
+            "PN" => PhoneNumberCountryCode::Pn,
+            "PR" => PhoneNumberCountryCode::Pr,
+            "PT" => PhoneNumberCountryCode::Pt,
+            "PW" => PhoneNumberCountryCode::Pw,
+            "PY" => PhoneNumberCountryCode::Py,
+            "QA" => PhoneNumberCountryCode::Qa,
+            "RE" => PhoneNumberCountryCode::Re,
+            "RO" => PhoneNumberCountryCode::Ro,
+            "RS" => PhoneNumberCountryCode::Rs,
+            "RU" => PhoneNumberCountryCode::Ru,
+            "RW" => PhoneNumberCountryCode::Rw,
+            "SA" => PhoneNumberCountryCode::Sa,
+            "SB" => PhoneNumberCountryCode::Sb,
+            "SC" => PhoneNumberCountryCode::Sc,
+            "SD" => PhoneNumberCountryCode::Sd,
+            "SE" => PhoneNumberCountryCode::Se,
+            "SG" => PhoneNumberCountryCode::Sg,
+            "SH" => PhoneNumberCountryCode::Sh,
+            "SI" => PhoneNumberCountryCode::Si,
+            "SJ" => PhoneNumberCountryCode::Sj,
+            "SK" => PhoneNumberCountryCode::Sk,
+            "SL" => PhoneNumberCountryCode::Sl,
+            "SM" => PhoneNumberCountryCode::Sm,
+            "SN" => PhoneNumberCountryCode::Sn,
+            "SO" => PhoneNumberCountryCode::So,
+            "SR" => PhoneNumberCountryCode::Sr,
+            "ST" => PhoneNumberCountryCode::St,
+            "SV" => PhoneNumberCountryCode::Sv,
+            "SX" => PhoneNumberCountryCode::Sx,
+            "SY" => PhoneNumberCountryCode::Sy,
+            "SZ" => PhoneNumberCountryCode::Sz,
+            "TC" => PhoneNumberCountryCode::Tc,
+            "TD" => PhoneNumberCountryCode::Td,
+            "TG" => PhoneNumberCountryCode::Tg,
+            "TH" => PhoneNumberCountryCode::Th,
+            "TJ" => PhoneNumberCountryCode::Tj,
+            "TK" => PhoneNumberCountryCode::Tk,
+            "TL" => PhoneNumberCountryCode::Tl,
+            "TM" => PhoneNumberCountryCode::Tm,
+            "TN" => PhoneNumberCountryCode::Tn,
+            "TO" => PhoneNumberCountryCode::To,
+            "TR" => PhoneNumberCountryCode::Tr,
+            "TT" => PhoneNumberCountryCode::Tt,
+            "TV" => PhoneNumberCountryCode::Tv,
+            "TW" => PhoneNumberCountryCode::Tw,
+            "TZ" => PhoneNumberCountryCode::Tz,
+            "UA" => PhoneNumberCountryCode::Ua,
+            "UG" => PhoneNumberCountryCode::Ug,
+            "US" => PhoneNumberCountryCode::Us,
+            "UY" => PhoneNumberCountryCode::Uy,
+            "UZ" => PhoneNumberCountryCode::Uz,
+            "VA" => PhoneNumberCountryCode::Va,
+            "VC" => PhoneNumberCountryCode::Vc,
+            "VE" => PhoneNumberCountryCode::Ve,
+            "VG" => PhoneNumberCountryCode::Vg,
+            "VI" => PhoneNumberCountryCode::Vi,
+            "VN" => PhoneNumberCountryCode::Vn,
+            "VU" => PhoneNumberCountryCode::Vu,
+            "WF" => PhoneNumberCountryCode::Wf,
+            "WS" => PhoneNumberCountryCode::Ws,
+            "YE" => PhoneNumberCountryCode::Ye,
+            "YT" => PhoneNumberCountryCode::Yt,
+            "ZA" => PhoneNumberCountryCode::Za,
+            "ZM" => PhoneNumberCountryCode::Zm,
+            "ZW" => PhoneNumberCountryCode::Zw,
+            other => PhoneNumberCountryCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PhoneNumberCountryCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PhoneNumberCountryCode::from(s))
+    }
+}
+impl PhoneNumberCountryCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PhoneNumberCountryCode::Ad => "AD",
+            PhoneNumberCountryCode::Ae => "AE",
+            PhoneNumberCountryCode::Af => "AF",
+            PhoneNumberCountryCode::Ag => "AG",
+            PhoneNumberCountryCode::Ai => "AI",
+            PhoneNumberCountryCode::Al => "AL",
+            PhoneNumberCountryCode::Am => "AM",
+            PhoneNumberCountryCode::An => "AN",
+            PhoneNumberCountryCode::Ao => "AO",
+            PhoneNumberCountryCode::Aq => "AQ",
+            PhoneNumberCountryCode::Ar => "AR",
+            PhoneNumberCountryCode::As => "AS",
+            PhoneNumberCountryCode::At => "AT",
+            PhoneNumberCountryCode::Au => "AU",
+            PhoneNumberCountryCode::Aw => "AW",
+            PhoneNumberCountryCode::Az => "AZ",
+            PhoneNumberCountryCode::Ba => "BA",
+            PhoneNumberCountryCode::Bb => "BB",
+            PhoneNumberCountryCode::Bd => "BD",
+            PhoneNumberCountryCode::Be => "BE",
+            PhoneNumberCountryCode::Bf => "BF",
+            PhoneNumberCountryCode::Bg => "BG",
+            PhoneNumberCountryCode::Bh => "BH",
+            PhoneNumberCountryCode::Bi => "BI",
+            PhoneNumberCountryCode::Bj => "BJ",
+            PhoneNumberCountryCode::Bl => "BL",
+            PhoneNumberCountryCode::Bm => "BM",
+            PhoneNumberCountryCode::Bn => "BN",
+            PhoneNumberCountryCode::Bo => "BO",
+            PhoneNumberCountryCode::Br => "BR",
+            PhoneNumberCountryCode::Bs => "BS",
+            PhoneNumberCountryCode::Bt => "BT",
+            PhoneNumberCountryCode::Bw => "BW",
+            PhoneNumberCountryCode::By => "BY",
+            PhoneNumberCountryCode::Bz => "BZ",
+            PhoneNumberCountryCode::Ca => "CA",
+            PhoneNumberCountryCode::Cc => "CC",
+            PhoneNumberCountryCode::Cd => "CD",
+            PhoneNumberCountryCode::Cf => "CF",
+            PhoneNumberCountryCode::Cg => "CG",
+            PhoneNumberCountryCode::Ch => "CH",
+            PhoneNumberCountryCode::Ci => "CI",
+            PhoneNumberCountryCode::Ck => "CK",
+            PhoneNumberCountryCode::Cl => "CL",
+            PhoneNumberCountryCode::Cm => "CM",
+            PhoneNumberCountryCode::Cn => "CN",
+            PhoneNumberCountryCode::Co => "CO",
+            PhoneNumberCountryCode::Cr => "CR",
+            PhoneNumberCountryCode::Cu => "CU",
+            PhoneNumberCountryCode::Cv => "CV",
+            PhoneNumberCountryCode::Cw => "CW",
+            PhoneNumberCountryCode::Cx => "CX",
+            PhoneNumberCountryCode::Cy => "CY",
+            PhoneNumberCountryCode::Cz => "CZ",
+            PhoneNumberCountryCode::De => "DE",
+            PhoneNumberCountryCode::Dj => "DJ",
+            PhoneNumberCountryCode::Dk => "DK",
+            PhoneNumberCountryCode::Dm => "DM",
+            PhoneNumberCountryCode::Do => "DO",
+            PhoneNumberCountryCode::Dz => "DZ",
+            PhoneNumberCountryCode::Ec => "EC",
+            PhoneNumberCountryCode::Ee => "EE",
+            PhoneNumberCountryCode::Eg => "EG",
+            PhoneNumberCountryCode::Eh => "EH",
+            PhoneNumberCountryCode::Er => "ER",
+            PhoneNumberCountryCode::Es => "ES",
+            PhoneNumberCountryCode::Et => "ET",
+            PhoneNumberCountryCode::Fi => "FI",
+            PhoneNumberCountryCode::Fj => "FJ",
+            PhoneNumberCountryCode::Fk => "FK",
+            PhoneNumberCountryCode::Fm => "FM",
+            PhoneNumberCountryCode::Fo => "FO",
+            PhoneNumberCountryCode::Fr => "FR",
+            PhoneNumberCountryCode::Ga => "GA",
+            PhoneNumberCountryCode::Gb => "GB",
+            PhoneNumberCountryCode::Gd => "GD",
+            PhoneNumberCountryCode::Ge => "GE",
+            PhoneNumberCountryCode::Gg => "GG",
+            PhoneNumberCountryCode::Gh => "GH",
+            PhoneNumberCountryCode::Gi => "GI",
+            PhoneNumberCountryCode::Gl => "GL",
+            PhoneNumberCountryCode::Gm => "GM",
+            PhoneNumberCountryCode::Gn => "GN",
+            PhoneNumberCountryCode::Gq => "GQ",
+            PhoneNumberCountryCode::Gr => "GR",
+            PhoneNumberCountryCode::Gt => "GT",
+            PhoneNumberCountryCode::Gu => "GU",
+            PhoneNumberCountryCode::Gw => "GW",
+            PhoneNumberCountryCode::Gy => "GY",
+            PhoneNumberCountryCode::Hk => "HK",
+            PhoneNumberCountryCode::Hn => "HN",
+            PhoneNumberCountryCode::Hr => "HR",
+            PhoneNumberCountryCode::Ht => "HT",
+            PhoneNumberCountryCode::Hu => "HU",
+            PhoneNumberCountryCode::Id => "ID",
+            PhoneNumberCountryCode::Ie => "IE",
+            PhoneNumberCountryCode::Il => "IL",
+            PhoneNumberCountryCode::Im => "IM",
+            PhoneNumberCountryCode::In => "IN",
+            PhoneNumberCountryCode::Io => "IO",
+            PhoneNumberCountryCode::Iq => "IQ",
+            PhoneNumberCountryCode::Ir => "IR",
+            PhoneNumberCountryCode::Is => "IS",
+            PhoneNumberCountryCode::It => "IT",
+            PhoneNumberCountryCode::Je => "JE",
+            PhoneNumberCountryCode::Jm => "JM",
+            PhoneNumberCountryCode::Jo => "JO",
+            PhoneNumberCountryCode::Jp => "JP",
+            PhoneNumberCountryCode::Ke => "KE",
+            PhoneNumberCountryCode::Kg => "KG",
+            PhoneNumberCountryCode::Kh => "KH",
+            PhoneNumberCountryCode::Ki => "KI",
+            PhoneNumberCountryCode::Km => "KM",
+            PhoneNumberCountryCode::Kn => "KN",
+            PhoneNumberCountryCode::Kp => "KP",
+            PhoneNumberCountryCode::Kr => "KR",
+            PhoneNumberCountryCode::Kw => "KW",
+            PhoneNumberCountryCode::Ky => "KY",
+            PhoneNumberCountryCode::Kz => "KZ",
+            PhoneNumberCountryCode::La => "LA",
+            PhoneNumberCountryCode::Lb => "LB",
+            PhoneNumberCountryCode::Lc => "LC",
+            PhoneNumberCountryCode::Li => "LI",
+            PhoneNumberCountryCode::Lk => "LK",
+            PhoneNumberCountryCode::Lr => "LR",
+            PhoneNumberCountryCode::Ls => "LS",
+            PhoneNumberCountryCode::Lt => "LT",
+            PhoneNumberCountryCode::Lu => "LU",
+            PhoneNumberCountryCode::Lv => "LV",
+            PhoneNumberCountryCode::Ly => "LY",
+            PhoneNumberCountryCode::Ma => "MA",
+            PhoneNumberCountryCode::Mc => "MC",
+            PhoneNumberCountryCode::Md => "MD",
+            PhoneNumberCountryCode::Me => "ME",
+            PhoneNumberCountryCode::Mf => "MF",
+            PhoneNumberCountryCode::Mg => "MG",
+            PhoneNumberCountryCode::Mh => "MH",
+            PhoneNumberCountryCode::Mk => "MK",
+            PhoneNumberCountryCode::Ml => "ML",
+            PhoneNumberCountryCode::Mm => "MM",
+            PhoneNumberCountryCode::Mn => "MN",
+            PhoneNumberCountryCode::Mo => "MO",
+            PhoneNumberCountryCode::Mp => "MP",
+            PhoneNumberCountryCode::Mr => "MR",
+            PhoneNumberCountryCode::Ms => "MS",
+            PhoneNumberCountryCode::Mt => "MT",
+            PhoneNumberCountryCode::Mu => "MU",
+            PhoneNumberCountryCode::Mv => "MV",
+            PhoneNumberCountryCode::Mw => "MW",
+            PhoneNumberCountryCode::Mx => "MX",
+            PhoneNumberCountryCode::My => "MY",
+            PhoneNumberCountryCode::Mz => "MZ",
+            PhoneNumberCountryCode::Na => "NA",
+            PhoneNumberCountryCode::Nc => "NC",
+            PhoneNumberCountryCode::Ne => "NE",
+            PhoneNumberCountryCode::Ng => "NG",
+            PhoneNumberCountryCode::Ni => "NI",
+            PhoneNumberCountryCode::Nl => "NL",
+            PhoneNumberCountryCode::No => "NO",
+            PhoneNumberCountryCode::Np => "NP",
+            PhoneNumberCountryCode::Nr => "NR",
+            PhoneNumberCountryCode::Nu => "NU",
+            PhoneNumberCountryCode::Nz => "NZ",
+            PhoneNumberCountryCode::Om => "OM",
+            PhoneNumberCountryCode::Pa => "PA",
+            PhoneNumberCountryCode::Pe => "PE",
+            PhoneNumberCountryCode::Pf => "PF",
+            PhoneNumberCountryCode::Pg => "PG",
+            PhoneNumberCountryCode::Ph => "PH",
+            PhoneNumberCountryCode::Pk => "PK",
+            PhoneNumberCountryCode::Pl => "PL",
+            PhoneNumberCountryCode::Pm => "PM",
+            PhoneNumberCountryCode::Pn => "PN",
+            PhoneNumberCountryCode::Pr => "PR",
+            PhoneNumberCountryCode::Pt => "PT",
+            PhoneNumberCountryCode::Pw => "PW",
+            PhoneNumberCountryCode::Py => "PY",
+            PhoneNumberCountryCode::Qa => "QA",
+            PhoneNumberCountryCode::Re => "RE",
+            PhoneNumberCountryCode::Ro => "RO",
+            PhoneNumberCountryCode::Rs => "RS",
+            PhoneNumberCountryCode::Ru => "RU",
+            PhoneNumberCountryCode::Rw => "RW",
+            PhoneNumberCountryCode::Sa => "SA",
+            PhoneNumberCountryCode::Sb => "SB",
+            PhoneNumberCountryCode::Sc => "SC",
+            PhoneNumberCountryCode::Sd => "SD",
+            PhoneNumberCountryCode::Se => "SE",
+            PhoneNumberCountryCode::Sg => "SG",
+            PhoneNumberCountryCode::Sh => "SH",
+            PhoneNumberCountryCode::Si => "SI",
+            PhoneNumberCountryCode::Sj => "SJ",
+            PhoneNumberCountryCode::Sk => "SK",
+            PhoneNumberCountryCode::Sl => "SL",
+            PhoneNumberCountryCode::Sm => "SM",
+            PhoneNumberCountryCode::Sn => "SN",
+            PhoneNumberCountryCode::So => "SO",
+            PhoneNumberCountryCode::Sr => "SR",
+            PhoneNumberCountryCode::St => "ST",
+            PhoneNumberCountryCode::Sv => "SV",
+            PhoneNumberCountryCode::Sx => "SX",
+            PhoneNumberCountryCode::Sy => "SY",
+            PhoneNumberCountryCode::Sz => "SZ",
+            PhoneNumberCountryCode::Tc => "TC",
+            PhoneNumberCountryCode::Td => "TD",
+            PhoneNumberCountryCode::Tg => "TG",
+            PhoneNumberCountryCode::Th => "TH",
+            PhoneNumberCountryCode::Tj => "TJ",
+            PhoneNumberCountryCode::Tk => "TK",
+            PhoneNumberCountryCode::Tl => "TL",
+            PhoneNumberCountryCode::Tm => "TM",
+            PhoneNumberCountryCode::Tn => "TN",
+            PhoneNumberCountryCode::To => "TO",
+            PhoneNumberCountryCode::Tr => "TR",
+            PhoneNumberCountryCode::Tt => "TT",
+            PhoneNumberCountryCode::Tv => "TV",
+            PhoneNumberCountryCode::Tw => "TW",
+            PhoneNumberCountryCode::Tz => "TZ",
+            PhoneNumberCountryCode::Ua => "UA",
+            PhoneNumberCountryCode::Ug => "UG",
+            PhoneNumberCountryCode::Us => "US",
+            PhoneNumberCountryCode::Uy => "UY",
+            PhoneNumberCountryCode::Uz => "UZ",
+            PhoneNumberCountryCode::Va => "VA",
+            PhoneNumberCountryCode::Vc => "VC",
+            PhoneNumberCountryCode::Ve => "VE",
+            PhoneNumberCountryCode::Vg => "VG",
+            PhoneNumberCountryCode::Vi => "VI",
+            PhoneNumberCountryCode::Vn => "VN",
+            PhoneNumberCountryCode::Vu => "VU",
+            PhoneNumberCountryCode::Wf => "WF",
+            PhoneNumberCountryCode::Ws => "WS",
+            PhoneNumberCountryCode::Ye => "YE",
+            PhoneNumberCountryCode::Yt => "YT",
+            PhoneNumberCountryCode::Za => "ZA",
+            PhoneNumberCountryCode::Zm => "ZM",
+            PhoneNumberCountryCode::Zw => "ZW",
+            PhoneNumberCountryCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AN", "AO", "AQ", "AR", "AS", "AT", "AU",
+            "AW", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN",
+            "BO", "BR", "BS", "BT", "BW", "BY", "BZ", "CA", "CC", "CD", "CF", "CG", "CH", "CI",
+            "CK", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CX", "CY", "CZ", "DE", "DJ",
+            "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI", "FJ", "FK",
+            "FM", "FO", "FR", "GA", "GB", "GD", "GE", "GG", "GH", "GI", "GL", "GM", "GN", "GQ",
+            "GR", "GT", "GU", "GW", "GY", "HK", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM",
+            "IN", "IO", "IQ", "IR", "IS", "IT", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI",
+            "KM", "KN", "KP", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS",
+            "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MH", "MK", "ML", "MM",
+            "MN", "MO", "MP", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC",
+            "NE", "NG", "NI", "NL", "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG",
+            "PH", "PK", "PL", "PM", "PN", "PR", "PT", "PW", "PY", "QA", "RE", "RO", "RS", "RU",
+            "RW", "SA", "SB", "SC", "SD", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN",
+            "SO", "SR", "ST", "SV", "SX", "SY", "SZ", "TC", "TD", "TG", "TH", "TJ", "TK", "TL",
+            "TM", "TN", "TO", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "US", "UY", "UZ", "VA",
+            "VC", "VE", "VG", "VI", "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW",
+        ]
+    }
+}
+impl AsRef<str> for PhoneNumberCountryCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Contains summary information about a user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4848,6 +7067,173 @@ impl PromptSummary {
     }
 }
 
+/// <p>Information about phone numbers that have been claimed to your Amazon Connect instance.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListPhoneNumbersSummary {
+    /// <p>A unique identifier for the phone number.</p>
+    pub phone_number_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+    pub phone_number_arn: std::option::Option<std::string::String>,
+    /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    pub phone_number: std::option::Option<std::string::String>,
+    /// <p>The ISO country code.</p>
+    pub phone_number_country_code: std::option::Option<crate::model::PhoneNumberCountryCode>,
+    /// <p>The type of phone number.</p>
+    pub phone_number_type: std::option::Option<crate::model::PhoneNumberType>,
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    pub target_arn: std::option::Option<std::string::String>,
+}
+impl ListPhoneNumbersSummary {
+    /// <p>A unique identifier for the phone number.</p>
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+        self.phone_number_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+    pub fn phone_number_arn(&self) -> std::option::Option<&str> {
+        self.phone_number_arn.as_deref()
+    }
+    /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>The ISO country code.</p>
+    pub fn phone_number_country_code(
+        &self,
+    ) -> std::option::Option<&crate::model::PhoneNumberCountryCode> {
+        self.phone_number_country_code.as_ref()
+    }
+    /// <p>The type of phone number.</p>
+    pub fn phone_number_type(&self) -> std::option::Option<&crate::model::PhoneNumberType> {
+        self.phone_number_type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for ListPhoneNumbersSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListPhoneNumbersSummary");
+        formatter.field("phone_number_id", &self.phone_number_id);
+        formatter.field("phone_number_arn", &self.phone_number_arn);
+        formatter.field("phone_number", &self.phone_number);
+        formatter.field("phone_number_country_code", &self.phone_number_country_code);
+        formatter.field("phone_number_type", &self.phone_number_type);
+        formatter.field("target_arn", &self.target_arn);
+        formatter.finish()
+    }
+}
+/// See [`ListPhoneNumbersSummary`](crate::model::ListPhoneNumbersSummary)
+pub mod list_phone_numbers_summary {
+    /// A builder for [`ListPhoneNumbersSummary`](crate::model::ListPhoneNumbersSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) phone_number_id: std::option::Option<std::string::String>,
+        pub(crate) phone_number_arn: std::option::Option<std::string::String>,
+        pub(crate) phone_number: std::option::Option<std::string::String>,
+        pub(crate) phone_number_country_code:
+            std::option::Option<crate::model::PhoneNumberCountryCode>,
+        pub(crate) phone_number_type: std::option::Option<crate::model::PhoneNumberType>,
+        pub(crate) target_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn set_phone_number_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.phone_number_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+        pub fn phone_number_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+        pub fn set_phone_number_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.phone_number_arn = input;
+            self
+        }
+        /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number = Some(input.into());
+            self
+        }
+        /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number = input;
+            self
+        }
+        /// <p>The ISO country code.</p>
+        pub fn phone_number_country_code(
+            mut self,
+            input: crate::model::PhoneNumberCountryCode,
+        ) -> Self {
+            self.phone_number_country_code = Some(input);
+            self
+        }
+        /// <p>The ISO country code.</p>
+        pub fn set_phone_number_country_code(
+            mut self,
+            input: std::option::Option<crate::model::PhoneNumberCountryCode>,
+        ) -> Self {
+            self.phone_number_country_code = input;
+            self
+        }
+        /// <p>The type of phone number.</p>
+        pub fn phone_number_type(mut self, input: crate::model::PhoneNumberType) -> Self {
+            self.phone_number_type = Some(input);
+            self
+        }
+        /// <p>The type of phone number.</p>
+        pub fn set_phone_number_type(
+            mut self,
+            input: std::option::Option<crate::model::PhoneNumberType>,
+        ) -> Self {
+            self.phone_number_type = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListPhoneNumbersSummary`](crate::model::ListPhoneNumbersSummary)
+        pub fn build(self) -> crate::model::ListPhoneNumbersSummary {
+            crate::model::ListPhoneNumbersSummary {
+                phone_number_id: self.phone_number_id,
+                phone_number_arn: self.phone_number_arn,
+                phone_number: self.phone_number,
+                phone_number_country_code: self.phone_number_country_code,
+                phone_number_type: self.phone_number_type,
+                target_arn: self.target_arn,
+            }
+        }
+    }
+}
+impl ListPhoneNumbersSummary {
+    /// Creates a new builder-style object to manufacture [`ListPhoneNumbersSummary`](crate::model::ListPhoneNumbersSummary)
+    pub fn builder() -> crate::model::list_phone_numbers_summary::Builder {
+        crate::model::list_phone_numbers_summary::Builder::default()
+    }
+}
+
 /// <p>Contains summary information about a phone number for a contact center.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4987,1074 +7373,6 @@ impl PhoneNumberSummary {
     /// Creates a new builder-style object to manufacture [`PhoneNumberSummary`](crate::model::PhoneNumberSummary)
     pub fn builder() -> crate::model::phone_number_summary::Builder {
         crate::model::phone_number_summary::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum PhoneNumberCountryCode {
-    #[allow(missing_docs)] // documentation missing in model
-    Ad,
-    #[allow(missing_docs)] // documentation missing in model
-    Ae,
-    #[allow(missing_docs)] // documentation missing in model
-    Af,
-    #[allow(missing_docs)] // documentation missing in model
-    Ag,
-    #[allow(missing_docs)] // documentation missing in model
-    Ai,
-    #[allow(missing_docs)] // documentation missing in model
-    Al,
-    #[allow(missing_docs)] // documentation missing in model
-    Am,
-    #[allow(missing_docs)] // documentation missing in model
-    An,
-    #[allow(missing_docs)] // documentation missing in model
-    Ao,
-    #[allow(missing_docs)] // documentation missing in model
-    Aq,
-    #[allow(missing_docs)] // documentation missing in model
-    Ar,
-    #[allow(missing_docs)] // documentation missing in model
-    As,
-    #[allow(missing_docs)] // documentation missing in model
-    At,
-    #[allow(missing_docs)] // documentation missing in model
-    Au,
-    #[allow(missing_docs)] // documentation missing in model
-    Aw,
-    #[allow(missing_docs)] // documentation missing in model
-    Az,
-    #[allow(missing_docs)] // documentation missing in model
-    Ba,
-    #[allow(missing_docs)] // documentation missing in model
-    Bb,
-    #[allow(missing_docs)] // documentation missing in model
-    Bd,
-    #[allow(missing_docs)] // documentation missing in model
-    Be,
-    #[allow(missing_docs)] // documentation missing in model
-    Bf,
-    #[allow(missing_docs)] // documentation missing in model
-    Bg,
-    #[allow(missing_docs)] // documentation missing in model
-    Bh,
-    #[allow(missing_docs)] // documentation missing in model
-    Bi,
-    #[allow(missing_docs)] // documentation missing in model
-    Bj,
-    #[allow(missing_docs)] // documentation missing in model
-    Bl,
-    #[allow(missing_docs)] // documentation missing in model
-    Bm,
-    #[allow(missing_docs)] // documentation missing in model
-    Bn,
-    #[allow(missing_docs)] // documentation missing in model
-    Bo,
-    #[allow(missing_docs)] // documentation missing in model
-    Br,
-    #[allow(missing_docs)] // documentation missing in model
-    Bs,
-    #[allow(missing_docs)] // documentation missing in model
-    Bt,
-    #[allow(missing_docs)] // documentation missing in model
-    Bw,
-    #[allow(missing_docs)] // documentation missing in model
-    By,
-    #[allow(missing_docs)] // documentation missing in model
-    Bz,
-    #[allow(missing_docs)] // documentation missing in model
-    Ca,
-    #[allow(missing_docs)] // documentation missing in model
-    Cc,
-    #[allow(missing_docs)] // documentation missing in model
-    Cd,
-    #[allow(missing_docs)] // documentation missing in model
-    Cf,
-    #[allow(missing_docs)] // documentation missing in model
-    Cg,
-    #[allow(missing_docs)] // documentation missing in model
-    Ch,
-    #[allow(missing_docs)] // documentation missing in model
-    Ci,
-    #[allow(missing_docs)] // documentation missing in model
-    Ck,
-    #[allow(missing_docs)] // documentation missing in model
-    Cl,
-    #[allow(missing_docs)] // documentation missing in model
-    Cm,
-    #[allow(missing_docs)] // documentation missing in model
-    Cn,
-    #[allow(missing_docs)] // documentation missing in model
-    Co,
-    #[allow(missing_docs)] // documentation missing in model
-    Cr,
-    #[allow(missing_docs)] // documentation missing in model
-    Cu,
-    #[allow(missing_docs)] // documentation missing in model
-    Cv,
-    #[allow(missing_docs)] // documentation missing in model
-    Cw,
-    #[allow(missing_docs)] // documentation missing in model
-    Cx,
-    #[allow(missing_docs)] // documentation missing in model
-    Cy,
-    #[allow(missing_docs)] // documentation missing in model
-    Cz,
-    #[allow(missing_docs)] // documentation missing in model
-    De,
-    #[allow(missing_docs)] // documentation missing in model
-    Dj,
-    #[allow(missing_docs)] // documentation missing in model
-    Dk,
-    #[allow(missing_docs)] // documentation missing in model
-    Dm,
-    #[allow(missing_docs)] // documentation missing in model
-    Do,
-    #[allow(missing_docs)] // documentation missing in model
-    Dz,
-    #[allow(missing_docs)] // documentation missing in model
-    Ec,
-    #[allow(missing_docs)] // documentation missing in model
-    Ee,
-    #[allow(missing_docs)] // documentation missing in model
-    Eg,
-    #[allow(missing_docs)] // documentation missing in model
-    Eh,
-    #[allow(missing_docs)] // documentation missing in model
-    Er,
-    #[allow(missing_docs)] // documentation missing in model
-    Es,
-    #[allow(missing_docs)] // documentation missing in model
-    Et,
-    #[allow(missing_docs)] // documentation missing in model
-    Fi,
-    #[allow(missing_docs)] // documentation missing in model
-    Fj,
-    #[allow(missing_docs)] // documentation missing in model
-    Fk,
-    #[allow(missing_docs)] // documentation missing in model
-    Fm,
-    #[allow(missing_docs)] // documentation missing in model
-    Fo,
-    #[allow(missing_docs)] // documentation missing in model
-    Fr,
-    #[allow(missing_docs)] // documentation missing in model
-    Ga,
-    #[allow(missing_docs)] // documentation missing in model
-    Gb,
-    #[allow(missing_docs)] // documentation missing in model
-    Gd,
-    #[allow(missing_docs)] // documentation missing in model
-    Ge,
-    #[allow(missing_docs)] // documentation missing in model
-    Gg,
-    #[allow(missing_docs)] // documentation missing in model
-    Gh,
-    #[allow(missing_docs)] // documentation missing in model
-    Gi,
-    #[allow(missing_docs)] // documentation missing in model
-    Gl,
-    #[allow(missing_docs)] // documentation missing in model
-    Gm,
-    #[allow(missing_docs)] // documentation missing in model
-    Gn,
-    #[allow(missing_docs)] // documentation missing in model
-    Gq,
-    #[allow(missing_docs)] // documentation missing in model
-    Gr,
-    #[allow(missing_docs)] // documentation missing in model
-    Gt,
-    #[allow(missing_docs)] // documentation missing in model
-    Gu,
-    #[allow(missing_docs)] // documentation missing in model
-    Gw,
-    #[allow(missing_docs)] // documentation missing in model
-    Gy,
-    #[allow(missing_docs)] // documentation missing in model
-    Hk,
-    #[allow(missing_docs)] // documentation missing in model
-    Hn,
-    #[allow(missing_docs)] // documentation missing in model
-    Hr,
-    #[allow(missing_docs)] // documentation missing in model
-    Ht,
-    #[allow(missing_docs)] // documentation missing in model
-    Hu,
-    #[allow(missing_docs)] // documentation missing in model
-    Id,
-    #[allow(missing_docs)] // documentation missing in model
-    Ie,
-    #[allow(missing_docs)] // documentation missing in model
-    Il,
-    #[allow(missing_docs)] // documentation missing in model
-    Im,
-    #[allow(missing_docs)] // documentation missing in model
-    In,
-    #[allow(missing_docs)] // documentation missing in model
-    Io,
-    #[allow(missing_docs)] // documentation missing in model
-    Iq,
-    #[allow(missing_docs)] // documentation missing in model
-    Ir,
-    #[allow(missing_docs)] // documentation missing in model
-    Is,
-    #[allow(missing_docs)] // documentation missing in model
-    It,
-    #[allow(missing_docs)] // documentation missing in model
-    Je,
-    #[allow(missing_docs)] // documentation missing in model
-    Jm,
-    #[allow(missing_docs)] // documentation missing in model
-    Jo,
-    #[allow(missing_docs)] // documentation missing in model
-    Jp,
-    #[allow(missing_docs)] // documentation missing in model
-    Ke,
-    #[allow(missing_docs)] // documentation missing in model
-    Kg,
-    #[allow(missing_docs)] // documentation missing in model
-    Kh,
-    #[allow(missing_docs)] // documentation missing in model
-    Ki,
-    #[allow(missing_docs)] // documentation missing in model
-    Km,
-    #[allow(missing_docs)] // documentation missing in model
-    Kn,
-    #[allow(missing_docs)] // documentation missing in model
-    Kp,
-    #[allow(missing_docs)] // documentation missing in model
-    Kr,
-    #[allow(missing_docs)] // documentation missing in model
-    Kw,
-    #[allow(missing_docs)] // documentation missing in model
-    Ky,
-    #[allow(missing_docs)] // documentation missing in model
-    Kz,
-    #[allow(missing_docs)] // documentation missing in model
-    La,
-    #[allow(missing_docs)] // documentation missing in model
-    Lb,
-    #[allow(missing_docs)] // documentation missing in model
-    Lc,
-    #[allow(missing_docs)] // documentation missing in model
-    Li,
-    #[allow(missing_docs)] // documentation missing in model
-    Lk,
-    #[allow(missing_docs)] // documentation missing in model
-    Lr,
-    #[allow(missing_docs)] // documentation missing in model
-    Ls,
-    #[allow(missing_docs)] // documentation missing in model
-    Lt,
-    #[allow(missing_docs)] // documentation missing in model
-    Lu,
-    #[allow(missing_docs)] // documentation missing in model
-    Lv,
-    #[allow(missing_docs)] // documentation missing in model
-    Ly,
-    #[allow(missing_docs)] // documentation missing in model
-    Ma,
-    #[allow(missing_docs)] // documentation missing in model
-    Mc,
-    #[allow(missing_docs)] // documentation missing in model
-    Md,
-    #[allow(missing_docs)] // documentation missing in model
-    Me,
-    #[allow(missing_docs)] // documentation missing in model
-    Mf,
-    #[allow(missing_docs)] // documentation missing in model
-    Mg,
-    #[allow(missing_docs)] // documentation missing in model
-    Mh,
-    #[allow(missing_docs)] // documentation missing in model
-    Mk,
-    #[allow(missing_docs)] // documentation missing in model
-    Ml,
-    #[allow(missing_docs)] // documentation missing in model
-    Mm,
-    #[allow(missing_docs)] // documentation missing in model
-    Mn,
-    #[allow(missing_docs)] // documentation missing in model
-    Mo,
-    #[allow(missing_docs)] // documentation missing in model
-    Mp,
-    #[allow(missing_docs)] // documentation missing in model
-    Mr,
-    #[allow(missing_docs)] // documentation missing in model
-    Ms,
-    #[allow(missing_docs)] // documentation missing in model
-    Mt,
-    #[allow(missing_docs)] // documentation missing in model
-    Mu,
-    #[allow(missing_docs)] // documentation missing in model
-    Mv,
-    #[allow(missing_docs)] // documentation missing in model
-    Mw,
-    #[allow(missing_docs)] // documentation missing in model
-    Mx,
-    #[allow(missing_docs)] // documentation missing in model
-    My,
-    #[allow(missing_docs)] // documentation missing in model
-    Mz,
-    #[allow(missing_docs)] // documentation missing in model
-    Na,
-    #[allow(missing_docs)] // documentation missing in model
-    Nc,
-    #[allow(missing_docs)] // documentation missing in model
-    Ne,
-    #[allow(missing_docs)] // documentation missing in model
-    Ng,
-    #[allow(missing_docs)] // documentation missing in model
-    Ni,
-    #[allow(missing_docs)] // documentation missing in model
-    Nl,
-    #[allow(missing_docs)] // documentation missing in model
-    No,
-    #[allow(missing_docs)] // documentation missing in model
-    Np,
-    #[allow(missing_docs)] // documentation missing in model
-    Nr,
-    #[allow(missing_docs)] // documentation missing in model
-    Nu,
-    #[allow(missing_docs)] // documentation missing in model
-    Nz,
-    #[allow(missing_docs)] // documentation missing in model
-    Om,
-    #[allow(missing_docs)] // documentation missing in model
-    Pa,
-    #[allow(missing_docs)] // documentation missing in model
-    Pe,
-    #[allow(missing_docs)] // documentation missing in model
-    Pf,
-    #[allow(missing_docs)] // documentation missing in model
-    Pg,
-    #[allow(missing_docs)] // documentation missing in model
-    Ph,
-    #[allow(missing_docs)] // documentation missing in model
-    Pk,
-    #[allow(missing_docs)] // documentation missing in model
-    Pl,
-    #[allow(missing_docs)] // documentation missing in model
-    Pm,
-    #[allow(missing_docs)] // documentation missing in model
-    Pn,
-    #[allow(missing_docs)] // documentation missing in model
-    Pr,
-    #[allow(missing_docs)] // documentation missing in model
-    Pt,
-    #[allow(missing_docs)] // documentation missing in model
-    Pw,
-    #[allow(missing_docs)] // documentation missing in model
-    Py,
-    #[allow(missing_docs)] // documentation missing in model
-    Qa,
-    #[allow(missing_docs)] // documentation missing in model
-    Re,
-    #[allow(missing_docs)] // documentation missing in model
-    Ro,
-    #[allow(missing_docs)] // documentation missing in model
-    Rs,
-    #[allow(missing_docs)] // documentation missing in model
-    Ru,
-    #[allow(missing_docs)] // documentation missing in model
-    Rw,
-    #[allow(missing_docs)] // documentation missing in model
-    Sa,
-    #[allow(missing_docs)] // documentation missing in model
-    Sb,
-    #[allow(missing_docs)] // documentation missing in model
-    Sc,
-    #[allow(missing_docs)] // documentation missing in model
-    Sd,
-    #[allow(missing_docs)] // documentation missing in model
-    Se,
-    #[allow(missing_docs)] // documentation missing in model
-    Sg,
-    #[allow(missing_docs)] // documentation missing in model
-    Sh,
-    #[allow(missing_docs)] // documentation missing in model
-    Si,
-    #[allow(missing_docs)] // documentation missing in model
-    Sj,
-    #[allow(missing_docs)] // documentation missing in model
-    Sk,
-    #[allow(missing_docs)] // documentation missing in model
-    Sl,
-    #[allow(missing_docs)] // documentation missing in model
-    Sm,
-    #[allow(missing_docs)] // documentation missing in model
-    Sn,
-    #[allow(missing_docs)] // documentation missing in model
-    So,
-    #[allow(missing_docs)] // documentation missing in model
-    Sr,
-    #[allow(missing_docs)] // documentation missing in model
-    St,
-    #[allow(missing_docs)] // documentation missing in model
-    Sv,
-    #[allow(missing_docs)] // documentation missing in model
-    Sx,
-    #[allow(missing_docs)] // documentation missing in model
-    Sy,
-    #[allow(missing_docs)] // documentation missing in model
-    Sz,
-    #[allow(missing_docs)] // documentation missing in model
-    Tc,
-    #[allow(missing_docs)] // documentation missing in model
-    Td,
-    #[allow(missing_docs)] // documentation missing in model
-    Tg,
-    #[allow(missing_docs)] // documentation missing in model
-    Th,
-    #[allow(missing_docs)] // documentation missing in model
-    Tj,
-    #[allow(missing_docs)] // documentation missing in model
-    Tk,
-    #[allow(missing_docs)] // documentation missing in model
-    Tl,
-    #[allow(missing_docs)] // documentation missing in model
-    Tm,
-    #[allow(missing_docs)] // documentation missing in model
-    Tn,
-    #[allow(missing_docs)] // documentation missing in model
-    To,
-    #[allow(missing_docs)] // documentation missing in model
-    Tr,
-    #[allow(missing_docs)] // documentation missing in model
-    Tt,
-    #[allow(missing_docs)] // documentation missing in model
-    Tv,
-    #[allow(missing_docs)] // documentation missing in model
-    Tw,
-    #[allow(missing_docs)] // documentation missing in model
-    Tz,
-    #[allow(missing_docs)] // documentation missing in model
-    Ua,
-    #[allow(missing_docs)] // documentation missing in model
-    Ug,
-    #[allow(missing_docs)] // documentation missing in model
-    Us,
-    #[allow(missing_docs)] // documentation missing in model
-    Uy,
-    #[allow(missing_docs)] // documentation missing in model
-    Uz,
-    #[allow(missing_docs)] // documentation missing in model
-    Va,
-    #[allow(missing_docs)] // documentation missing in model
-    Vc,
-    #[allow(missing_docs)] // documentation missing in model
-    Ve,
-    #[allow(missing_docs)] // documentation missing in model
-    Vg,
-    #[allow(missing_docs)] // documentation missing in model
-    Vi,
-    #[allow(missing_docs)] // documentation missing in model
-    Vn,
-    #[allow(missing_docs)] // documentation missing in model
-    Vu,
-    #[allow(missing_docs)] // documentation missing in model
-    Wf,
-    #[allow(missing_docs)] // documentation missing in model
-    Ws,
-    #[allow(missing_docs)] // documentation missing in model
-    Ye,
-    #[allow(missing_docs)] // documentation missing in model
-    Yt,
-    #[allow(missing_docs)] // documentation missing in model
-    Za,
-    #[allow(missing_docs)] // documentation missing in model
-    Zm,
-    #[allow(missing_docs)] // documentation missing in model
-    Zw,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for PhoneNumberCountryCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "AD" => PhoneNumberCountryCode::Ad,
-            "AE" => PhoneNumberCountryCode::Ae,
-            "AF" => PhoneNumberCountryCode::Af,
-            "AG" => PhoneNumberCountryCode::Ag,
-            "AI" => PhoneNumberCountryCode::Ai,
-            "AL" => PhoneNumberCountryCode::Al,
-            "AM" => PhoneNumberCountryCode::Am,
-            "AN" => PhoneNumberCountryCode::An,
-            "AO" => PhoneNumberCountryCode::Ao,
-            "AQ" => PhoneNumberCountryCode::Aq,
-            "AR" => PhoneNumberCountryCode::Ar,
-            "AS" => PhoneNumberCountryCode::As,
-            "AT" => PhoneNumberCountryCode::At,
-            "AU" => PhoneNumberCountryCode::Au,
-            "AW" => PhoneNumberCountryCode::Aw,
-            "AZ" => PhoneNumberCountryCode::Az,
-            "BA" => PhoneNumberCountryCode::Ba,
-            "BB" => PhoneNumberCountryCode::Bb,
-            "BD" => PhoneNumberCountryCode::Bd,
-            "BE" => PhoneNumberCountryCode::Be,
-            "BF" => PhoneNumberCountryCode::Bf,
-            "BG" => PhoneNumberCountryCode::Bg,
-            "BH" => PhoneNumberCountryCode::Bh,
-            "BI" => PhoneNumberCountryCode::Bi,
-            "BJ" => PhoneNumberCountryCode::Bj,
-            "BL" => PhoneNumberCountryCode::Bl,
-            "BM" => PhoneNumberCountryCode::Bm,
-            "BN" => PhoneNumberCountryCode::Bn,
-            "BO" => PhoneNumberCountryCode::Bo,
-            "BR" => PhoneNumberCountryCode::Br,
-            "BS" => PhoneNumberCountryCode::Bs,
-            "BT" => PhoneNumberCountryCode::Bt,
-            "BW" => PhoneNumberCountryCode::Bw,
-            "BY" => PhoneNumberCountryCode::By,
-            "BZ" => PhoneNumberCountryCode::Bz,
-            "CA" => PhoneNumberCountryCode::Ca,
-            "CC" => PhoneNumberCountryCode::Cc,
-            "CD" => PhoneNumberCountryCode::Cd,
-            "CF" => PhoneNumberCountryCode::Cf,
-            "CG" => PhoneNumberCountryCode::Cg,
-            "CH" => PhoneNumberCountryCode::Ch,
-            "CI" => PhoneNumberCountryCode::Ci,
-            "CK" => PhoneNumberCountryCode::Ck,
-            "CL" => PhoneNumberCountryCode::Cl,
-            "CM" => PhoneNumberCountryCode::Cm,
-            "CN" => PhoneNumberCountryCode::Cn,
-            "CO" => PhoneNumberCountryCode::Co,
-            "CR" => PhoneNumberCountryCode::Cr,
-            "CU" => PhoneNumberCountryCode::Cu,
-            "CV" => PhoneNumberCountryCode::Cv,
-            "CW" => PhoneNumberCountryCode::Cw,
-            "CX" => PhoneNumberCountryCode::Cx,
-            "CY" => PhoneNumberCountryCode::Cy,
-            "CZ" => PhoneNumberCountryCode::Cz,
-            "DE" => PhoneNumberCountryCode::De,
-            "DJ" => PhoneNumberCountryCode::Dj,
-            "DK" => PhoneNumberCountryCode::Dk,
-            "DM" => PhoneNumberCountryCode::Dm,
-            "DO" => PhoneNumberCountryCode::Do,
-            "DZ" => PhoneNumberCountryCode::Dz,
-            "EC" => PhoneNumberCountryCode::Ec,
-            "EE" => PhoneNumberCountryCode::Ee,
-            "EG" => PhoneNumberCountryCode::Eg,
-            "EH" => PhoneNumberCountryCode::Eh,
-            "ER" => PhoneNumberCountryCode::Er,
-            "ES" => PhoneNumberCountryCode::Es,
-            "ET" => PhoneNumberCountryCode::Et,
-            "FI" => PhoneNumberCountryCode::Fi,
-            "FJ" => PhoneNumberCountryCode::Fj,
-            "FK" => PhoneNumberCountryCode::Fk,
-            "FM" => PhoneNumberCountryCode::Fm,
-            "FO" => PhoneNumberCountryCode::Fo,
-            "FR" => PhoneNumberCountryCode::Fr,
-            "GA" => PhoneNumberCountryCode::Ga,
-            "GB" => PhoneNumberCountryCode::Gb,
-            "GD" => PhoneNumberCountryCode::Gd,
-            "GE" => PhoneNumberCountryCode::Ge,
-            "GG" => PhoneNumberCountryCode::Gg,
-            "GH" => PhoneNumberCountryCode::Gh,
-            "GI" => PhoneNumberCountryCode::Gi,
-            "GL" => PhoneNumberCountryCode::Gl,
-            "GM" => PhoneNumberCountryCode::Gm,
-            "GN" => PhoneNumberCountryCode::Gn,
-            "GQ" => PhoneNumberCountryCode::Gq,
-            "GR" => PhoneNumberCountryCode::Gr,
-            "GT" => PhoneNumberCountryCode::Gt,
-            "GU" => PhoneNumberCountryCode::Gu,
-            "GW" => PhoneNumberCountryCode::Gw,
-            "GY" => PhoneNumberCountryCode::Gy,
-            "HK" => PhoneNumberCountryCode::Hk,
-            "HN" => PhoneNumberCountryCode::Hn,
-            "HR" => PhoneNumberCountryCode::Hr,
-            "HT" => PhoneNumberCountryCode::Ht,
-            "HU" => PhoneNumberCountryCode::Hu,
-            "ID" => PhoneNumberCountryCode::Id,
-            "IE" => PhoneNumberCountryCode::Ie,
-            "IL" => PhoneNumberCountryCode::Il,
-            "IM" => PhoneNumberCountryCode::Im,
-            "IN" => PhoneNumberCountryCode::In,
-            "IO" => PhoneNumberCountryCode::Io,
-            "IQ" => PhoneNumberCountryCode::Iq,
-            "IR" => PhoneNumberCountryCode::Ir,
-            "IS" => PhoneNumberCountryCode::Is,
-            "IT" => PhoneNumberCountryCode::It,
-            "JE" => PhoneNumberCountryCode::Je,
-            "JM" => PhoneNumberCountryCode::Jm,
-            "JO" => PhoneNumberCountryCode::Jo,
-            "JP" => PhoneNumberCountryCode::Jp,
-            "KE" => PhoneNumberCountryCode::Ke,
-            "KG" => PhoneNumberCountryCode::Kg,
-            "KH" => PhoneNumberCountryCode::Kh,
-            "KI" => PhoneNumberCountryCode::Ki,
-            "KM" => PhoneNumberCountryCode::Km,
-            "KN" => PhoneNumberCountryCode::Kn,
-            "KP" => PhoneNumberCountryCode::Kp,
-            "KR" => PhoneNumberCountryCode::Kr,
-            "KW" => PhoneNumberCountryCode::Kw,
-            "KY" => PhoneNumberCountryCode::Ky,
-            "KZ" => PhoneNumberCountryCode::Kz,
-            "LA" => PhoneNumberCountryCode::La,
-            "LB" => PhoneNumberCountryCode::Lb,
-            "LC" => PhoneNumberCountryCode::Lc,
-            "LI" => PhoneNumberCountryCode::Li,
-            "LK" => PhoneNumberCountryCode::Lk,
-            "LR" => PhoneNumberCountryCode::Lr,
-            "LS" => PhoneNumberCountryCode::Ls,
-            "LT" => PhoneNumberCountryCode::Lt,
-            "LU" => PhoneNumberCountryCode::Lu,
-            "LV" => PhoneNumberCountryCode::Lv,
-            "LY" => PhoneNumberCountryCode::Ly,
-            "MA" => PhoneNumberCountryCode::Ma,
-            "MC" => PhoneNumberCountryCode::Mc,
-            "MD" => PhoneNumberCountryCode::Md,
-            "ME" => PhoneNumberCountryCode::Me,
-            "MF" => PhoneNumberCountryCode::Mf,
-            "MG" => PhoneNumberCountryCode::Mg,
-            "MH" => PhoneNumberCountryCode::Mh,
-            "MK" => PhoneNumberCountryCode::Mk,
-            "ML" => PhoneNumberCountryCode::Ml,
-            "MM" => PhoneNumberCountryCode::Mm,
-            "MN" => PhoneNumberCountryCode::Mn,
-            "MO" => PhoneNumberCountryCode::Mo,
-            "MP" => PhoneNumberCountryCode::Mp,
-            "MR" => PhoneNumberCountryCode::Mr,
-            "MS" => PhoneNumberCountryCode::Ms,
-            "MT" => PhoneNumberCountryCode::Mt,
-            "MU" => PhoneNumberCountryCode::Mu,
-            "MV" => PhoneNumberCountryCode::Mv,
-            "MW" => PhoneNumberCountryCode::Mw,
-            "MX" => PhoneNumberCountryCode::Mx,
-            "MY" => PhoneNumberCountryCode::My,
-            "MZ" => PhoneNumberCountryCode::Mz,
-            "NA" => PhoneNumberCountryCode::Na,
-            "NC" => PhoneNumberCountryCode::Nc,
-            "NE" => PhoneNumberCountryCode::Ne,
-            "NG" => PhoneNumberCountryCode::Ng,
-            "NI" => PhoneNumberCountryCode::Ni,
-            "NL" => PhoneNumberCountryCode::Nl,
-            "NO" => PhoneNumberCountryCode::No,
-            "NP" => PhoneNumberCountryCode::Np,
-            "NR" => PhoneNumberCountryCode::Nr,
-            "NU" => PhoneNumberCountryCode::Nu,
-            "NZ" => PhoneNumberCountryCode::Nz,
-            "OM" => PhoneNumberCountryCode::Om,
-            "PA" => PhoneNumberCountryCode::Pa,
-            "PE" => PhoneNumberCountryCode::Pe,
-            "PF" => PhoneNumberCountryCode::Pf,
-            "PG" => PhoneNumberCountryCode::Pg,
-            "PH" => PhoneNumberCountryCode::Ph,
-            "PK" => PhoneNumberCountryCode::Pk,
-            "PL" => PhoneNumberCountryCode::Pl,
-            "PM" => PhoneNumberCountryCode::Pm,
-            "PN" => PhoneNumberCountryCode::Pn,
-            "PR" => PhoneNumberCountryCode::Pr,
-            "PT" => PhoneNumberCountryCode::Pt,
-            "PW" => PhoneNumberCountryCode::Pw,
-            "PY" => PhoneNumberCountryCode::Py,
-            "QA" => PhoneNumberCountryCode::Qa,
-            "RE" => PhoneNumberCountryCode::Re,
-            "RO" => PhoneNumberCountryCode::Ro,
-            "RS" => PhoneNumberCountryCode::Rs,
-            "RU" => PhoneNumberCountryCode::Ru,
-            "RW" => PhoneNumberCountryCode::Rw,
-            "SA" => PhoneNumberCountryCode::Sa,
-            "SB" => PhoneNumberCountryCode::Sb,
-            "SC" => PhoneNumberCountryCode::Sc,
-            "SD" => PhoneNumberCountryCode::Sd,
-            "SE" => PhoneNumberCountryCode::Se,
-            "SG" => PhoneNumberCountryCode::Sg,
-            "SH" => PhoneNumberCountryCode::Sh,
-            "SI" => PhoneNumberCountryCode::Si,
-            "SJ" => PhoneNumberCountryCode::Sj,
-            "SK" => PhoneNumberCountryCode::Sk,
-            "SL" => PhoneNumberCountryCode::Sl,
-            "SM" => PhoneNumberCountryCode::Sm,
-            "SN" => PhoneNumberCountryCode::Sn,
-            "SO" => PhoneNumberCountryCode::So,
-            "SR" => PhoneNumberCountryCode::Sr,
-            "ST" => PhoneNumberCountryCode::St,
-            "SV" => PhoneNumberCountryCode::Sv,
-            "SX" => PhoneNumberCountryCode::Sx,
-            "SY" => PhoneNumberCountryCode::Sy,
-            "SZ" => PhoneNumberCountryCode::Sz,
-            "TC" => PhoneNumberCountryCode::Tc,
-            "TD" => PhoneNumberCountryCode::Td,
-            "TG" => PhoneNumberCountryCode::Tg,
-            "TH" => PhoneNumberCountryCode::Th,
-            "TJ" => PhoneNumberCountryCode::Tj,
-            "TK" => PhoneNumberCountryCode::Tk,
-            "TL" => PhoneNumberCountryCode::Tl,
-            "TM" => PhoneNumberCountryCode::Tm,
-            "TN" => PhoneNumberCountryCode::Tn,
-            "TO" => PhoneNumberCountryCode::To,
-            "TR" => PhoneNumberCountryCode::Tr,
-            "TT" => PhoneNumberCountryCode::Tt,
-            "TV" => PhoneNumberCountryCode::Tv,
-            "TW" => PhoneNumberCountryCode::Tw,
-            "TZ" => PhoneNumberCountryCode::Tz,
-            "UA" => PhoneNumberCountryCode::Ua,
-            "UG" => PhoneNumberCountryCode::Ug,
-            "US" => PhoneNumberCountryCode::Us,
-            "UY" => PhoneNumberCountryCode::Uy,
-            "UZ" => PhoneNumberCountryCode::Uz,
-            "VA" => PhoneNumberCountryCode::Va,
-            "VC" => PhoneNumberCountryCode::Vc,
-            "VE" => PhoneNumberCountryCode::Ve,
-            "VG" => PhoneNumberCountryCode::Vg,
-            "VI" => PhoneNumberCountryCode::Vi,
-            "VN" => PhoneNumberCountryCode::Vn,
-            "VU" => PhoneNumberCountryCode::Vu,
-            "WF" => PhoneNumberCountryCode::Wf,
-            "WS" => PhoneNumberCountryCode::Ws,
-            "YE" => PhoneNumberCountryCode::Ye,
-            "YT" => PhoneNumberCountryCode::Yt,
-            "ZA" => PhoneNumberCountryCode::Za,
-            "ZM" => PhoneNumberCountryCode::Zm,
-            "ZW" => PhoneNumberCountryCode::Zw,
-            other => PhoneNumberCountryCode::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for PhoneNumberCountryCode {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PhoneNumberCountryCode::from(s))
-    }
-}
-impl PhoneNumberCountryCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PhoneNumberCountryCode::Ad => "AD",
-            PhoneNumberCountryCode::Ae => "AE",
-            PhoneNumberCountryCode::Af => "AF",
-            PhoneNumberCountryCode::Ag => "AG",
-            PhoneNumberCountryCode::Ai => "AI",
-            PhoneNumberCountryCode::Al => "AL",
-            PhoneNumberCountryCode::Am => "AM",
-            PhoneNumberCountryCode::An => "AN",
-            PhoneNumberCountryCode::Ao => "AO",
-            PhoneNumberCountryCode::Aq => "AQ",
-            PhoneNumberCountryCode::Ar => "AR",
-            PhoneNumberCountryCode::As => "AS",
-            PhoneNumberCountryCode::At => "AT",
-            PhoneNumberCountryCode::Au => "AU",
-            PhoneNumberCountryCode::Aw => "AW",
-            PhoneNumberCountryCode::Az => "AZ",
-            PhoneNumberCountryCode::Ba => "BA",
-            PhoneNumberCountryCode::Bb => "BB",
-            PhoneNumberCountryCode::Bd => "BD",
-            PhoneNumberCountryCode::Be => "BE",
-            PhoneNumberCountryCode::Bf => "BF",
-            PhoneNumberCountryCode::Bg => "BG",
-            PhoneNumberCountryCode::Bh => "BH",
-            PhoneNumberCountryCode::Bi => "BI",
-            PhoneNumberCountryCode::Bj => "BJ",
-            PhoneNumberCountryCode::Bl => "BL",
-            PhoneNumberCountryCode::Bm => "BM",
-            PhoneNumberCountryCode::Bn => "BN",
-            PhoneNumberCountryCode::Bo => "BO",
-            PhoneNumberCountryCode::Br => "BR",
-            PhoneNumberCountryCode::Bs => "BS",
-            PhoneNumberCountryCode::Bt => "BT",
-            PhoneNumberCountryCode::Bw => "BW",
-            PhoneNumberCountryCode::By => "BY",
-            PhoneNumberCountryCode::Bz => "BZ",
-            PhoneNumberCountryCode::Ca => "CA",
-            PhoneNumberCountryCode::Cc => "CC",
-            PhoneNumberCountryCode::Cd => "CD",
-            PhoneNumberCountryCode::Cf => "CF",
-            PhoneNumberCountryCode::Cg => "CG",
-            PhoneNumberCountryCode::Ch => "CH",
-            PhoneNumberCountryCode::Ci => "CI",
-            PhoneNumberCountryCode::Ck => "CK",
-            PhoneNumberCountryCode::Cl => "CL",
-            PhoneNumberCountryCode::Cm => "CM",
-            PhoneNumberCountryCode::Cn => "CN",
-            PhoneNumberCountryCode::Co => "CO",
-            PhoneNumberCountryCode::Cr => "CR",
-            PhoneNumberCountryCode::Cu => "CU",
-            PhoneNumberCountryCode::Cv => "CV",
-            PhoneNumberCountryCode::Cw => "CW",
-            PhoneNumberCountryCode::Cx => "CX",
-            PhoneNumberCountryCode::Cy => "CY",
-            PhoneNumberCountryCode::Cz => "CZ",
-            PhoneNumberCountryCode::De => "DE",
-            PhoneNumberCountryCode::Dj => "DJ",
-            PhoneNumberCountryCode::Dk => "DK",
-            PhoneNumberCountryCode::Dm => "DM",
-            PhoneNumberCountryCode::Do => "DO",
-            PhoneNumberCountryCode::Dz => "DZ",
-            PhoneNumberCountryCode::Ec => "EC",
-            PhoneNumberCountryCode::Ee => "EE",
-            PhoneNumberCountryCode::Eg => "EG",
-            PhoneNumberCountryCode::Eh => "EH",
-            PhoneNumberCountryCode::Er => "ER",
-            PhoneNumberCountryCode::Es => "ES",
-            PhoneNumberCountryCode::Et => "ET",
-            PhoneNumberCountryCode::Fi => "FI",
-            PhoneNumberCountryCode::Fj => "FJ",
-            PhoneNumberCountryCode::Fk => "FK",
-            PhoneNumberCountryCode::Fm => "FM",
-            PhoneNumberCountryCode::Fo => "FO",
-            PhoneNumberCountryCode::Fr => "FR",
-            PhoneNumberCountryCode::Ga => "GA",
-            PhoneNumberCountryCode::Gb => "GB",
-            PhoneNumberCountryCode::Gd => "GD",
-            PhoneNumberCountryCode::Ge => "GE",
-            PhoneNumberCountryCode::Gg => "GG",
-            PhoneNumberCountryCode::Gh => "GH",
-            PhoneNumberCountryCode::Gi => "GI",
-            PhoneNumberCountryCode::Gl => "GL",
-            PhoneNumberCountryCode::Gm => "GM",
-            PhoneNumberCountryCode::Gn => "GN",
-            PhoneNumberCountryCode::Gq => "GQ",
-            PhoneNumberCountryCode::Gr => "GR",
-            PhoneNumberCountryCode::Gt => "GT",
-            PhoneNumberCountryCode::Gu => "GU",
-            PhoneNumberCountryCode::Gw => "GW",
-            PhoneNumberCountryCode::Gy => "GY",
-            PhoneNumberCountryCode::Hk => "HK",
-            PhoneNumberCountryCode::Hn => "HN",
-            PhoneNumberCountryCode::Hr => "HR",
-            PhoneNumberCountryCode::Ht => "HT",
-            PhoneNumberCountryCode::Hu => "HU",
-            PhoneNumberCountryCode::Id => "ID",
-            PhoneNumberCountryCode::Ie => "IE",
-            PhoneNumberCountryCode::Il => "IL",
-            PhoneNumberCountryCode::Im => "IM",
-            PhoneNumberCountryCode::In => "IN",
-            PhoneNumberCountryCode::Io => "IO",
-            PhoneNumberCountryCode::Iq => "IQ",
-            PhoneNumberCountryCode::Ir => "IR",
-            PhoneNumberCountryCode::Is => "IS",
-            PhoneNumberCountryCode::It => "IT",
-            PhoneNumberCountryCode::Je => "JE",
-            PhoneNumberCountryCode::Jm => "JM",
-            PhoneNumberCountryCode::Jo => "JO",
-            PhoneNumberCountryCode::Jp => "JP",
-            PhoneNumberCountryCode::Ke => "KE",
-            PhoneNumberCountryCode::Kg => "KG",
-            PhoneNumberCountryCode::Kh => "KH",
-            PhoneNumberCountryCode::Ki => "KI",
-            PhoneNumberCountryCode::Km => "KM",
-            PhoneNumberCountryCode::Kn => "KN",
-            PhoneNumberCountryCode::Kp => "KP",
-            PhoneNumberCountryCode::Kr => "KR",
-            PhoneNumberCountryCode::Kw => "KW",
-            PhoneNumberCountryCode::Ky => "KY",
-            PhoneNumberCountryCode::Kz => "KZ",
-            PhoneNumberCountryCode::La => "LA",
-            PhoneNumberCountryCode::Lb => "LB",
-            PhoneNumberCountryCode::Lc => "LC",
-            PhoneNumberCountryCode::Li => "LI",
-            PhoneNumberCountryCode::Lk => "LK",
-            PhoneNumberCountryCode::Lr => "LR",
-            PhoneNumberCountryCode::Ls => "LS",
-            PhoneNumberCountryCode::Lt => "LT",
-            PhoneNumberCountryCode::Lu => "LU",
-            PhoneNumberCountryCode::Lv => "LV",
-            PhoneNumberCountryCode::Ly => "LY",
-            PhoneNumberCountryCode::Ma => "MA",
-            PhoneNumberCountryCode::Mc => "MC",
-            PhoneNumberCountryCode::Md => "MD",
-            PhoneNumberCountryCode::Me => "ME",
-            PhoneNumberCountryCode::Mf => "MF",
-            PhoneNumberCountryCode::Mg => "MG",
-            PhoneNumberCountryCode::Mh => "MH",
-            PhoneNumberCountryCode::Mk => "MK",
-            PhoneNumberCountryCode::Ml => "ML",
-            PhoneNumberCountryCode::Mm => "MM",
-            PhoneNumberCountryCode::Mn => "MN",
-            PhoneNumberCountryCode::Mo => "MO",
-            PhoneNumberCountryCode::Mp => "MP",
-            PhoneNumberCountryCode::Mr => "MR",
-            PhoneNumberCountryCode::Ms => "MS",
-            PhoneNumberCountryCode::Mt => "MT",
-            PhoneNumberCountryCode::Mu => "MU",
-            PhoneNumberCountryCode::Mv => "MV",
-            PhoneNumberCountryCode::Mw => "MW",
-            PhoneNumberCountryCode::Mx => "MX",
-            PhoneNumberCountryCode::My => "MY",
-            PhoneNumberCountryCode::Mz => "MZ",
-            PhoneNumberCountryCode::Na => "NA",
-            PhoneNumberCountryCode::Nc => "NC",
-            PhoneNumberCountryCode::Ne => "NE",
-            PhoneNumberCountryCode::Ng => "NG",
-            PhoneNumberCountryCode::Ni => "NI",
-            PhoneNumberCountryCode::Nl => "NL",
-            PhoneNumberCountryCode::No => "NO",
-            PhoneNumberCountryCode::Np => "NP",
-            PhoneNumberCountryCode::Nr => "NR",
-            PhoneNumberCountryCode::Nu => "NU",
-            PhoneNumberCountryCode::Nz => "NZ",
-            PhoneNumberCountryCode::Om => "OM",
-            PhoneNumberCountryCode::Pa => "PA",
-            PhoneNumberCountryCode::Pe => "PE",
-            PhoneNumberCountryCode::Pf => "PF",
-            PhoneNumberCountryCode::Pg => "PG",
-            PhoneNumberCountryCode::Ph => "PH",
-            PhoneNumberCountryCode::Pk => "PK",
-            PhoneNumberCountryCode::Pl => "PL",
-            PhoneNumberCountryCode::Pm => "PM",
-            PhoneNumberCountryCode::Pn => "PN",
-            PhoneNumberCountryCode::Pr => "PR",
-            PhoneNumberCountryCode::Pt => "PT",
-            PhoneNumberCountryCode::Pw => "PW",
-            PhoneNumberCountryCode::Py => "PY",
-            PhoneNumberCountryCode::Qa => "QA",
-            PhoneNumberCountryCode::Re => "RE",
-            PhoneNumberCountryCode::Ro => "RO",
-            PhoneNumberCountryCode::Rs => "RS",
-            PhoneNumberCountryCode::Ru => "RU",
-            PhoneNumberCountryCode::Rw => "RW",
-            PhoneNumberCountryCode::Sa => "SA",
-            PhoneNumberCountryCode::Sb => "SB",
-            PhoneNumberCountryCode::Sc => "SC",
-            PhoneNumberCountryCode::Sd => "SD",
-            PhoneNumberCountryCode::Se => "SE",
-            PhoneNumberCountryCode::Sg => "SG",
-            PhoneNumberCountryCode::Sh => "SH",
-            PhoneNumberCountryCode::Si => "SI",
-            PhoneNumberCountryCode::Sj => "SJ",
-            PhoneNumberCountryCode::Sk => "SK",
-            PhoneNumberCountryCode::Sl => "SL",
-            PhoneNumberCountryCode::Sm => "SM",
-            PhoneNumberCountryCode::Sn => "SN",
-            PhoneNumberCountryCode::So => "SO",
-            PhoneNumberCountryCode::Sr => "SR",
-            PhoneNumberCountryCode::St => "ST",
-            PhoneNumberCountryCode::Sv => "SV",
-            PhoneNumberCountryCode::Sx => "SX",
-            PhoneNumberCountryCode::Sy => "SY",
-            PhoneNumberCountryCode::Sz => "SZ",
-            PhoneNumberCountryCode::Tc => "TC",
-            PhoneNumberCountryCode::Td => "TD",
-            PhoneNumberCountryCode::Tg => "TG",
-            PhoneNumberCountryCode::Th => "TH",
-            PhoneNumberCountryCode::Tj => "TJ",
-            PhoneNumberCountryCode::Tk => "TK",
-            PhoneNumberCountryCode::Tl => "TL",
-            PhoneNumberCountryCode::Tm => "TM",
-            PhoneNumberCountryCode::Tn => "TN",
-            PhoneNumberCountryCode::To => "TO",
-            PhoneNumberCountryCode::Tr => "TR",
-            PhoneNumberCountryCode::Tt => "TT",
-            PhoneNumberCountryCode::Tv => "TV",
-            PhoneNumberCountryCode::Tw => "TW",
-            PhoneNumberCountryCode::Tz => "TZ",
-            PhoneNumberCountryCode::Ua => "UA",
-            PhoneNumberCountryCode::Ug => "UG",
-            PhoneNumberCountryCode::Us => "US",
-            PhoneNumberCountryCode::Uy => "UY",
-            PhoneNumberCountryCode::Uz => "UZ",
-            PhoneNumberCountryCode::Va => "VA",
-            PhoneNumberCountryCode::Vc => "VC",
-            PhoneNumberCountryCode::Ve => "VE",
-            PhoneNumberCountryCode::Vg => "VG",
-            PhoneNumberCountryCode::Vi => "VI",
-            PhoneNumberCountryCode::Vn => "VN",
-            PhoneNumberCountryCode::Vu => "VU",
-            PhoneNumberCountryCode::Wf => "WF",
-            PhoneNumberCountryCode::Ws => "WS",
-            PhoneNumberCountryCode::Ye => "YE",
-            PhoneNumberCountryCode::Yt => "YT",
-            PhoneNumberCountryCode::Za => "ZA",
-            PhoneNumberCountryCode::Zm => "ZM",
-            PhoneNumberCountryCode::Zw => "ZW",
-            PhoneNumberCountryCode::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AN", "AO", "AQ", "AR", "AS", "AT", "AU",
-            "AW", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN",
-            "BO", "BR", "BS", "BT", "BW", "BY", "BZ", "CA", "CC", "CD", "CF", "CG", "CH", "CI",
-            "CK", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CX", "CY", "CZ", "DE", "DJ",
-            "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI", "FJ", "FK",
-            "FM", "FO", "FR", "GA", "GB", "GD", "GE", "GG", "GH", "GI", "GL", "GM", "GN", "GQ",
-            "GR", "GT", "GU", "GW", "GY", "HK", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM",
-            "IN", "IO", "IQ", "IR", "IS", "IT", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI",
-            "KM", "KN", "KP", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS",
-            "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MH", "MK", "ML", "MM",
-            "MN", "MO", "MP", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC",
-            "NE", "NG", "NI", "NL", "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG",
-            "PH", "PK", "PL", "PM", "PN", "PR", "PT", "PW", "PY", "QA", "RE", "RO", "RS", "RU",
-            "RW", "SA", "SB", "SC", "SD", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN",
-            "SO", "SR", "ST", "SV", "SX", "SY", "SZ", "TC", "TD", "TG", "TH", "TJ", "TK", "TL",
-            "TM", "TN", "TO", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "US", "UY", "UZ", "VA",
-            "VC", "VE", "VG", "VI", "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW",
-        ]
-    }
-}
-impl AsRef<str> for PhoneNumberCountryCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum PhoneNumberType {
-    #[allow(missing_docs)] // documentation missing in model
-    Did,
-    #[allow(missing_docs)] // documentation missing in model
-    TollFree,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for PhoneNumberType {
-    fn from(s: &str) -> Self {
-        match s {
-            "DID" => PhoneNumberType::Did,
-            "TOLL_FREE" => PhoneNumberType::TollFree,
-            other => PhoneNumberType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for PhoneNumberType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PhoneNumberType::from(s))
-    }
-}
-impl PhoneNumberType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PhoneNumberType::Did => "DID",
-            PhoneNumberType::TollFree => "TOLL_FREE",
-            PhoneNumberType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["DID", "TOLL_FREE"]
-    }
-}
-impl AsRef<str> for PhoneNumberType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
@@ -11427,6 +12745,392 @@ impl Queue {
     /// Creates a new builder-style object to manufacture [`Queue`](crate::model::Queue)
     pub fn builder() -> crate::model::queue::Builder {
         crate::model::queue::Builder::default()
+    }
+}
+
+/// <p>Information about a phone number that has been claimed to your Amazon Connect instance.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClaimedPhoneNumberSummary {
+    /// <p>A unique identifier for the phone number.</p>
+    pub phone_number_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+    pub phone_number_arn: std::option::Option<std::string::String>,
+    /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    pub phone_number: std::option::Option<std::string::String>,
+    /// <p>The ISO country code.</p>
+    pub phone_number_country_code: std::option::Option<crate::model::PhoneNumberCountryCode>,
+    /// <p>The type of phone number.</p>
+    pub phone_number_type: std::option::Option<crate::model::PhoneNumberType>,
+    /// <p>The description of the phone number.</p>
+    pub phone_number_description: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    pub target_arn: std::option::Option<std::string::String>,
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The status of the phone number.</p>
+    pub phone_number_status: std::option::Option<crate::model::PhoneNumberStatus>,
+}
+impl ClaimedPhoneNumberSummary {
+    /// <p>A unique identifier for the phone number.</p>
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+        self.phone_number_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+    pub fn phone_number_arn(&self) -> std::option::Option<&str> {
+        self.phone_number_arn.as_deref()
+    }
+    /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>The ISO country code.</p>
+    pub fn phone_number_country_code(
+        &self,
+    ) -> std::option::Option<&crate::model::PhoneNumberCountryCode> {
+        self.phone_number_country_code.as_ref()
+    }
+    /// <p>The type of phone number.</p>
+    pub fn phone_number_type(&self) -> std::option::Option<&crate::model::PhoneNumberType> {
+        self.phone_number_type.as_ref()
+    }
+    /// <p>The description of the phone number.</p>
+    pub fn phone_number_description(&self) -> std::option::Option<&str> {
+        self.phone_number_description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The status of the phone number.</p>
+    pub fn phone_number_status(&self) -> std::option::Option<&crate::model::PhoneNumberStatus> {
+        self.phone_number_status.as_ref()
+    }
+}
+impl std::fmt::Debug for ClaimedPhoneNumberSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ClaimedPhoneNumberSummary");
+        formatter.field("phone_number_id", &self.phone_number_id);
+        formatter.field("phone_number_arn", &self.phone_number_arn);
+        formatter.field("phone_number", &self.phone_number);
+        formatter.field("phone_number_country_code", &self.phone_number_country_code);
+        formatter.field("phone_number_type", &self.phone_number_type);
+        formatter.field("phone_number_description", &self.phone_number_description);
+        formatter.field("target_arn", &self.target_arn);
+        formatter.field("tags", &self.tags);
+        formatter.field("phone_number_status", &self.phone_number_status);
+        formatter.finish()
+    }
+}
+/// See [`ClaimedPhoneNumberSummary`](crate::model::ClaimedPhoneNumberSummary)
+pub mod claimed_phone_number_summary {
+    /// A builder for [`ClaimedPhoneNumberSummary`](crate::model::ClaimedPhoneNumberSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) phone_number_id: std::option::Option<std::string::String>,
+        pub(crate) phone_number_arn: std::option::Option<std::string::String>,
+        pub(crate) phone_number: std::option::Option<std::string::String>,
+        pub(crate) phone_number_country_code:
+            std::option::Option<crate::model::PhoneNumberCountryCode>,
+        pub(crate) phone_number_type: std::option::Option<crate::model::PhoneNumberType>,
+        pub(crate) phone_number_description: std::option::Option<std::string::String>,
+        pub(crate) target_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) phone_number_status: std::option::Option<crate::model::PhoneNumberStatus>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the phone number.</p>
+        pub fn set_phone_number_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.phone_number_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+        pub fn phone_number_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+        pub fn set_phone_number_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.phone_number_arn = input;
+            self
+        }
+        /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number = Some(input.into());
+            self
+        }
+        /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number = input;
+            self
+        }
+        /// <p>The ISO country code.</p>
+        pub fn phone_number_country_code(
+            mut self,
+            input: crate::model::PhoneNumberCountryCode,
+        ) -> Self {
+            self.phone_number_country_code = Some(input);
+            self
+        }
+        /// <p>The ISO country code.</p>
+        pub fn set_phone_number_country_code(
+            mut self,
+            input: std::option::Option<crate::model::PhoneNumberCountryCode>,
+        ) -> Self {
+            self.phone_number_country_code = input;
+            self
+        }
+        /// <p>The type of phone number.</p>
+        pub fn phone_number_type(mut self, input: crate::model::PhoneNumberType) -> Self {
+            self.phone_number_type = Some(input);
+            self
+        }
+        /// <p>The type of phone number.</p>
+        pub fn set_phone_number_type(
+            mut self,
+            input: std::option::Option<crate::model::PhoneNumberType>,
+        ) -> Self {
+            self.phone_number_type = input;
+            self
+        }
+        /// <p>The description of the phone number.</p>
+        pub fn phone_number_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phone_number_description = Some(input.into());
+            self
+        }
+        /// <p>The description of the phone number.</p>
+        pub fn set_phone_number_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.phone_number_description = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
+        pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_arn = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The status of the phone number.</p>
+        pub fn phone_number_status(mut self, input: crate::model::PhoneNumberStatus) -> Self {
+            self.phone_number_status = Some(input);
+            self
+        }
+        /// <p>The status of the phone number.</p>
+        pub fn set_phone_number_status(
+            mut self,
+            input: std::option::Option<crate::model::PhoneNumberStatus>,
+        ) -> Self {
+            self.phone_number_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ClaimedPhoneNumberSummary`](crate::model::ClaimedPhoneNumberSummary)
+        pub fn build(self) -> crate::model::ClaimedPhoneNumberSummary {
+            crate::model::ClaimedPhoneNumberSummary {
+                phone_number_id: self.phone_number_id,
+                phone_number_arn: self.phone_number_arn,
+                phone_number: self.phone_number,
+                phone_number_country_code: self.phone_number_country_code,
+                phone_number_type: self.phone_number_type,
+                phone_number_description: self.phone_number_description,
+                target_arn: self.target_arn,
+                tags: self.tags,
+                phone_number_status: self.phone_number_status,
+            }
+        }
+    }
+}
+impl ClaimedPhoneNumberSummary {
+    /// Creates a new builder-style object to manufacture [`ClaimedPhoneNumberSummary`](crate::model::ClaimedPhoneNumberSummary)
+    pub fn builder() -> crate::model::claimed_phone_number_summary::Builder {
+        crate::model::claimed_phone_number_summary::Builder::default()
+    }
+}
+
+/// <p>The status of the phone number.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PhoneNumberStatus {
+    /// <p>The status.</p>
+    pub status: std::option::Option<crate::model::PhoneNumberWorkflowStatus>,
+    /// <p>The status message.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl PhoneNumberStatus {
+    /// <p>The status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::PhoneNumberWorkflowStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The status message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Debug for PhoneNumberStatus {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PhoneNumberStatus");
+        formatter.field("status", &self.status);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`PhoneNumberStatus`](crate::model::PhoneNumberStatus)
+pub mod phone_number_status {
+    /// A builder for [`PhoneNumberStatus`](crate::model::PhoneNumberStatus)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::PhoneNumberWorkflowStatus>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The status.</p>
+        pub fn status(mut self, input: crate::model::PhoneNumberWorkflowStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::PhoneNumberWorkflowStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The status message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The status message.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PhoneNumberStatus`](crate::model::PhoneNumberStatus)
+        pub fn build(self) -> crate::model::PhoneNumberStatus {
+            crate::model::PhoneNumberStatus {
+                status: self.status,
+                message: self.message,
+            }
+        }
+    }
+}
+impl PhoneNumberStatus {
+    /// Creates a new builder-style object to manufacture [`PhoneNumberStatus`](crate::model::PhoneNumberStatus)
+    pub fn builder() -> crate::model::phone_number_status::Builder {
+        crate::model::phone_number_status::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PhoneNumberWorkflowStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Claimed,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    InProgress,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PhoneNumberWorkflowStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "CLAIMED" => PhoneNumberWorkflowStatus::Claimed,
+            "FAILED" => PhoneNumberWorkflowStatus::Failed,
+            "IN_PROGRESS" => PhoneNumberWorkflowStatus::InProgress,
+            other => PhoneNumberWorkflowStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PhoneNumberWorkflowStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PhoneNumberWorkflowStatus::from(s))
+    }
+}
+impl PhoneNumberWorkflowStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PhoneNumberWorkflowStatus::Claimed => "CLAIMED",
+            PhoneNumberWorkflowStatus::Failed => "FAILED",
+            PhoneNumberWorkflowStatus::InProgress => "IN_PROGRESS",
+            PhoneNumberWorkflowStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CLAIMED", "FAILED", "IN_PROGRESS"]
+    }
+}
+impl AsRef<str> for PhoneNumberWorkflowStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

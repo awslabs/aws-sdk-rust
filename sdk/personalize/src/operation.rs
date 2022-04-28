@@ -1763,6 +1763,74 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
     }
 }
 
+/// Operation shape for `StartRecommender`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_recommender`](crate::client::Client::start_recommender).
+///
+/// See [`crate::client::fluent_builders::StartRecommender`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartRecommender {
+    _private: (),
+}
+impl StartRecommender {
+    /// Creates a new builder-style object to manufacture [`StartRecommenderInput`](crate::input::StartRecommenderInput)
+    pub fn builder() -> crate::input::start_recommender_input::Builder {
+        crate::input::start_recommender_input::Builder::default()
+    }
+    /// Creates a new `StartRecommender` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartRecommender {
+    type Output = std::result::Result<
+        crate::output::StartRecommenderOutput,
+        crate::error::StartRecommenderError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_recommender_error(response)
+        } else {
+            crate::operation_deser::parse_start_recommender_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StopRecommender`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`stop_recommender`](crate::client::Client::stop_recommender).
+///
+/// See [`crate::client::fluent_builders::StopRecommender`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StopRecommender {
+    _private: (),
+}
+impl StopRecommender {
+    /// Creates a new builder-style object to manufacture [`StopRecommenderInput`](crate::input::StopRecommenderInput)
+    pub fn builder() -> crate::input::stop_recommender_input::Builder {
+        crate::input::stop_recommender_input::Builder::default()
+    }
+    /// Creates a new `StopRecommender` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StopRecommender {
+    type Output = std::result::Result<
+        crate::output::StopRecommenderOutput,
+        crate::error::StopRecommenderError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_recommender_error(response)
+        } else {
+            crate::operation_deser::parse_stop_recommender_response(response)
+        }
+    }
+}
+
 /// Operation shape for `StopSolutionVersionCreation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

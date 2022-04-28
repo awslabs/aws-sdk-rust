@@ -4344,7 +4344,7 @@ impl TagCriterionPairForJob {
     }
 }
 
-/// <p>The operator to use in a condition. Valid values are:</p>
+/// <p>The operator to use in a condition. Depending on the type of condition, possible values are:</p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11178,7 +11178,7 @@ impl AsRef<str> for FindingActionType {
     }
 }
 
-/// <p>Provides information about a sensitive data finding, including the classification job that produced the finding.</p>
+/// <p>Provides information about a sensitive data finding and the details of the finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClassificationDetails {
@@ -11188,6 +11188,8 @@ pub struct ClassificationDetails {
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the classification job that produced the finding.</p>
     pub job_id: std::option::Option<std::string::String>,
+    /// <p>Specifies how Amazon Macie found the sensitive data that produced the finding: SENSITIVE_DATA_DISCOVERY_JOB, for a classification job.</p>
+    pub origin_type: std::option::Option<crate::model::OriginType>,
     /// <p>The status and other details of the finding.</p>
     pub result: std::option::Option<crate::model::ClassificationResult>,
 }
@@ -11204,6 +11206,10 @@ impl ClassificationDetails {
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
+    /// <p>Specifies how Amazon Macie found the sensitive data that produced the finding: SENSITIVE_DATA_DISCOVERY_JOB, for a classification job.</p>
+    pub fn origin_type(&self) -> std::option::Option<&crate::model::OriginType> {
+        self.origin_type.as_ref()
+    }
     /// <p>The status and other details of the finding.</p>
     pub fn result(&self) -> std::option::Option<&crate::model::ClassificationResult> {
         self.result.as_ref()
@@ -11215,6 +11221,7 @@ impl std::fmt::Debug for ClassificationDetails {
         formatter.field("detailed_results_location", &self.detailed_results_location);
         formatter.field("job_arn", &self.job_arn);
         formatter.field("job_id", &self.job_id);
+        formatter.field("origin_type", &self.origin_type);
         formatter.field("result", &self.result);
         formatter.finish()
     }
@@ -11228,6 +11235,7 @@ pub mod classification_details {
         pub(crate) detailed_results_location: std::option::Option<std::string::String>,
         pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) origin_type: std::option::Option<crate::model::OriginType>,
         pub(crate) result: std::option::Option<crate::model::ClassificationResult>,
     }
     impl Builder {
@@ -11264,6 +11272,19 @@ pub mod classification_details {
             self.job_id = input;
             self
         }
+        /// <p>Specifies how Amazon Macie found the sensitive data that produced the finding: SENSITIVE_DATA_DISCOVERY_JOB, for a classification job.</p>
+        pub fn origin_type(mut self, input: crate::model::OriginType) -> Self {
+            self.origin_type = Some(input);
+            self
+        }
+        /// <p>Specifies how Amazon Macie found the sensitive data that produced the finding: SENSITIVE_DATA_DISCOVERY_JOB, for a classification job.</p>
+        pub fn set_origin_type(
+            mut self,
+            input: std::option::Option<crate::model::OriginType>,
+        ) -> Self {
+            self.origin_type = input;
+            self
+        }
         /// <p>The status and other details of the finding.</p>
         pub fn result(mut self, input: crate::model::ClassificationResult) -> Self {
             self.result = Some(input);
@@ -11283,6 +11304,7 @@ pub mod classification_details {
                 detailed_results_location: self.detailed_results_location,
                 job_arn: self.job_arn,
                 job_id: self.job_id,
+                origin_type: self.origin_type,
                 result: self.result,
             }
         }
@@ -12617,6 +12639,57 @@ impl CustomDetection {
     /// Creates a new builder-style object to manufacture [`CustomDetection`](crate::model::CustomDetection)
     pub fn builder() -> crate::model::custom_detection::Builder {
         crate::model::custom_detection::Builder::default()
+    }
+}
+
+/// <p>Specifies how Amazon Macie found the sensitive data that produced a finding. The only possible value is:</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum OriginType {
+    #[allow(missing_docs)] // documentation missing in model
+    SensitiveDataDiscoveryJob,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for OriginType {
+    fn from(s: &str) -> Self {
+        match s {
+            "SENSITIVE_DATA_DISCOVERY_JOB" => OriginType::SensitiveDataDiscoveryJob,
+            other => OriginType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for OriginType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OriginType::from(s))
+    }
+}
+impl OriginType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            OriginType::SensitiveDataDiscoveryJob => "SENSITIVE_DATA_DISCOVERY_JOB",
+            OriginType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["SENSITIVE_DATA_DISCOVERY_JOB"]
+    }
+}
+impl AsRef<str> for OriginType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

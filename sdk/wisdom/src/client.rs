@@ -123,7 +123,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateContent`](crate::client::fluent_builders::CreateContent) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::CreateContent::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::CreateContent::set_knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::CreateContent::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::CreateContent::set_knowledge_base_id): <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateContent::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateContent::set_name): <p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
     ///   - [`title(impl Into<String>)`](crate::client::fluent_builders::CreateContent::title) / [`set_title(Option<String>)`](crate::client::fluent_builders::CreateContent::set_title): <p>The title of the content. If not set, the title is equal to the name.</p>
     ///   - [`override_link_out_uri(impl Into<String>)`](crate::client::fluent_builders::CreateContent::override_link_out_uri) / [`set_override_link_out_uri(Option<String>)`](crate::client::fluent_builders::CreateContent::set_override_link_out_uri): <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.</p>
@@ -192,7 +192,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteContent`](crate::client::fluent_builders::DeleteContent) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::DeleteContent::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::DeleteContent::set_knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::DeleteContent::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::DeleteContent::set_knowledge_base_id): <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     ///   - [`content_id(impl Into<String>)`](crate::client::fluent_builders::DeleteContent::content_id) / [`set_content_id(Option<String>)`](crate::client::fluent_builders::DeleteContent::set_content_id): <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// - On success, responds with [`DeleteContentOutput`](crate::output::DeleteContentOutput)
 
@@ -235,7 +235,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`content_id(impl Into<String>)`](crate::client::fluent_builders::GetContent::content_id) / [`set_content_id(Option<String>)`](crate::client::fluent_builders::GetContent::set_content_id): <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::GetContent::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::GetContent::set_knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::GetContent::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::GetContent::set_knowledge_base_id): <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// - On success, responds with [`GetContentOutput`](crate::output::GetContentOutput) with field(s):
     ///   - [`content(Option<ContentData>)`](crate::output::GetContentOutput::content): <p>The content.</p>
     /// - On failure, responds with [`SdkError<GetContentError>`](crate::error::GetContentError)
@@ -246,7 +246,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`content_id(impl Into<String>)`](crate::client::fluent_builders::GetContentSummary::content_id) / [`set_content_id(Option<String>)`](crate::client::fluent_builders::GetContentSummary::set_content_id): <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::GetContentSummary::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::GetContentSummary::set_knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::GetContentSummary::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::GetContentSummary::set_knowledge_base_id): <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// - On success, responds with [`GetContentSummaryOutput`](crate::output::GetContentSummaryOutput) with field(s):
     ///   - [`content_summary(Option<ContentSummary>)`](crate::output::GetContentSummaryOutput::content_summary): <p>The content summary.</p>
     /// - On failure, responds with [`SdkError<GetContentSummaryError>`](crate::error::GetContentSummaryError)
@@ -256,7 +256,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetKnowledgeBase`](crate::client::fluent_builders::GetKnowledgeBase) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::GetKnowledgeBase::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::GetKnowledgeBase::set_knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::GetKnowledgeBase::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::GetKnowledgeBase::set_knowledge_base_id): <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// - On success, responds with [`GetKnowledgeBaseOutput`](crate::output::GetKnowledgeBaseOutput) with field(s):
     ///   - [`knowledge_base(Option<KnowledgeBaseData>)`](crate::output::GetKnowledgeBaseOutput::knowledge_base): <p>The knowledge base.</p>
     /// - On failure, responds with [`SdkError<GetKnowledgeBaseError>`](crate::error::GetKnowledgeBaseError)
@@ -272,6 +272,7 @@ impl Client {
     ///   - [`wait_time_seconds(i32)`](crate::client::fluent_builders::GetRecommendations::wait_time_seconds) / [`set_wait_time_seconds(i32)`](crate::client::fluent_builders::GetRecommendations::set_wait_time_seconds): <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
     /// - On success, responds with [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput) with field(s):
     ///   - [`recommendations(Option<Vec<RecommendationData>>)`](crate::output::GetRecommendationsOutput::recommendations): <p>The recommendations.</p>
+    ///   - [`triggers(Option<Vec<RecommendationTrigger>>)`](crate::output::GetRecommendationsOutput::triggers): <p>The triggers corresponding to recommendations.</p>
     /// - On failure, responds with [`SdkError<GetRecommendationsError>`](crate::error::GetRecommendationsError)
     pub fn get_recommendations(&self) -> fluent_builders::GetRecommendations {
         fluent_builders::GetRecommendations::new(self.handle.clone())
@@ -320,7 +321,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListContents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListContents::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListContents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListContents::set_max_results): <p>The maximum number of results to return per page.</p>
-    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::ListContents::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::ListContents::set_knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::ListContents::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::ListContents::set_knowledge_base_id): <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// - On success, responds with [`ListContentsOutput`](crate::output::ListContentsOutput) with field(s):
     ///   - [`content_summaries(Option<Vec<ContentSummary>>)`](crate::output::ListContentsOutput::content_summaries): <p>Information about the content.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListContentsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
@@ -384,7 +385,7 @@ impl Client {
     /// Constructs a fluent builder for the [`RemoveKnowledgeBaseTemplateUri`](crate::client::fluent_builders::RemoveKnowledgeBaseTemplateUri) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::RemoveKnowledgeBaseTemplateUri::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::RemoveKnowledgeBaseTemplateUri::set_knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::RemoveKnowledgeBaseTemplateUri::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::RemoveKnowledgeBaseTemplateUri::set_knowledge_base_id): <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// - On success, responds with [`RemoveKnowledgeBaseTemplateUriOutput`](crate::output::RemoveKnowledgeBaseTemplateUriOutput)
 
     /// - On failure, responds with [`SdkError<RemoveKnowledgeBaseTemplateUriError>`](crate::error::RemoveKnowledgeBaseTemplateUriError)
@@ -399,7 +400,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchContent::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchContent::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchContent::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchContent::set_max_results): <p>The maximum number of results to return per page.</p>
-    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::SearchContent::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::SearchContent::set_knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::SearchContent::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::SearchContent::set_knowledge_base_id): <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     ///   - [`search_expression(SearchExpression)`](crate::client::fluent_builders::SearchContent::search_expression) / [`set_search_expression(Option<SearchExpression>)`](crate::client::fluent_builders::SearchContent::set_search_expression): <p>The search expression to filter results.</p>
     /// - On success, responds with [`SearchContentOutput`](crate::output::SearchContentOutput) with field(s):
     ///   - [`content_summaries(Option<Vec<ContentSummary>>)`](crate::output::SearchContentOutput::content_summaries): <p>Summary information about the content.</p>
@@ -426,7 +427,7 @@ impl Client {
     /// Constructs a fluent builder for the [`StartContentUpload`](crate::client::fluent_builders::StartContentUpload) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::StartContentUpload::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::StartContentUpload::set_knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::StartContentUpload::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::StartContentUpload::set_knowledge_base_id): <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::StartContentUpload::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::StartContentUpload::set_content_type): <p>The type of content to upload.</p>
     /// - On success, responds with [`StartContentUploadOutput`](crate::output::StartContentUploadOutput) with field(s):
     ///   - [`upload_id(Option<String>)`](crate::output::StartContentUploadOutput::upload_id): <p>The identifier of the upload.</p>
@@ -462,7 +463,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateContent`](crate::client::fluent_builders::UpdateContent) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContent::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::UpdateContent::set_knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN</p>
+    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContent::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::UpdateContent::set_knowledge_base_id): <p>The identifier of the knowledge base. Can be either the ID or the ARN</p>
     ///   - [`content_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContent::content_id) / [`set_content_id(Option<String>)`](crate::client::fluent_builders::UpdateContent::set_content_id): <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     ///   - [`revision_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContent::revision_id) / [`set_revision_id(Option<String>)`](crate::client::fluent_builders::UpdateContent::set_revision_id): <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.</p>
     ///   - [`title(impl Into<String>)`](crate::client::fluent_builders::UpdateContent::title) / [`set_title(Option<String>)`](crate::client::fluent_builders::UpdateContent::set_title): <p>The title of the content.</p>
@@ -479,7 +480,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateKnowledgeBaseTemplateUri`](crate::client::fluent_builders::UpdateKnowledgeBaseTemplateUri) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::UpdateKnowledgeBaseTemplateUri::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::UpdateKnowledgeBaseTemplateUri::set_knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`knowledge_base_id(impl Into<String>)`](crate::client::fluent_builders::UpdateKnowledgeBaseTemplateUri::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::client::fluent_builders::UpdateKnowledgeBaseTemplateUri::set_knowledge_base_id): <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     ///   - [`template_uri(impl Into<String>)`](crate::client::fluent_builders::UpdateKnowledgeBaseTemplateUri::template_uri) / [`set_template_uri(Option<String>)`](crate::client::fluent_builders::UpdateKnowledgeBaseTemplateUri::set_template_uri): <p>The template URI to update.</p>
     /// - On success, responds with [`UpdateKnowledgeBaseTemplateUriOutput`](crate::output::UpdateKnowledgeBaseTemplateUriOutput) with field(s):
     ///   - [`knowledge_base(Option<KnowledgeBaseData>)`](crate::output::UpdateKnowledgeBaseTemplateUriOutput::knowledge_base): <p>The knowledge base to update.</p>
@@ -774,12 +775,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1317,12 +1318,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1570,12 +1571,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content_id(input);
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1636,12 +1637,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content_id(input);
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1692,12 +1693,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2068,12 +2069,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2415,12 +2416,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2497,12 +2498,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2658,12 +2659,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2870,12 +2871,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3015,12 +3016,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
-        /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,

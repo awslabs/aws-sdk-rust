@@ -135,6 +135,108 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDisassociateProject
     }
 }
 
+/// Operation shape for `BatchGetAssetPropertyAggregates`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`batch_get_asset_property_aggregates`](crate::client::Client::batch_get_asset_property_aggregates).
+///
+/// See [`crate::client::fluent_builders::BatchGetAssetPropertyAggregates`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct BatchGetAssetPropertyAggregates {
+    _private: (),
+}
+impl BatchGetAssetPropertyAggregates {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesInput`](crate::input::BatchGetAssetPropertyAggregatesInput)
+    pub fn builder() -> crate::input::batch_get_asset_property_aggregates_input::Builder {
+        crate::input::batch_get_asset_property_aggregates_input::Builder::default()
+    }
+    /// Creates a new `BatchGetAssetPropertyAggregates` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for BatchGetAssetPropertyAggregates {
+    type Output = std::result::Result<
+        crate::output::BatchGetAssetPropertyAggregatesOutput,
+        crate::error::BatchGetAssetPropertyAggregatesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_batch_get_asset_property_aggregates_error(response)
+        } else {
+            crate::operation_deser::parse_batch_get_asset_property_aggregates_response(response)
+        }
+    }
+}
+
+/// Operation shape for `BatchGetAssetPropertyValue`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`batch_get_asset_property_value`](crate::client::Client::batch_get_asset_property_value).
+///
+/// See [`crate::client::fluent_builders::BatchGetAssetPropertyValue`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct BatchGetAssetPropertyValue {
+    _private: (),
+}
+impl BatchGetAssetPropertyValue {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueInput`](crate::input::BatchGetAssetPropertyValueInput)
+    pub fn builder() -> crate::input::batch_get_asset_property_value_input::Builder {
+        crate::input::batch_get_asset_property_value_input::Builder::default()
+    }
+    /// Creates a new `BatchGetAssetPropertyValue` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for BatchGetAssetPropertyValue {
+    type Output = std::result::Result<
+        crate::output::BatchGetAssetPropertyValueOutput,
+        crate::error::BatchGetAssetPropertyValueError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_batch_get_asset_property_value_error(response)
+        } else {
+            crate::operation_deser::parse_batch_get_asset_property_value_response(response)
+        }
+    }
+}
+
+/// Operation shape for `BatchGetAssetPropertyValueHistory`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`batch_get_asset_property_value_history`](crate::client::Client::batch_get_asset_property_value_history).
+///
+/// See [`crate::client::fluent_builders::BatchGetAssetPropertyValueHistory`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct BatchGetAssetPropertyValueHistory {
+    _private: (),
+}
+impl BatchGetAssetPropertyValueHistory {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistoryInput`](crate::input::BatchGetAssetPropertyValueHistoryInput)
+    pub fn builder() -> crate::input::batch_get_asset_property_value_history_input::Builder {
+        crate::input::batch_get_asset_property_value_history_input::Builder::default()
+    }
+    /// Creates a new `BatchGetAssetPropertyValueHistory` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for BatchGetAssetPropertyValueHistory {
+    type Output = std::result::Result<
+        crate::output::BatchGetAssetPropertyValueHistoryOutput,
+        crate::error::BatchGetAssetPropertyValueHistoryError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_batch_get_asset_property_value_history_error(response)
+        } else {
+            crate::operation_deser::parse_batch_get_asset_property_value_history_response(response)
+        }
+    }
+}
+
 /// Operation shape for `BatchPutAssetPropertyValue`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

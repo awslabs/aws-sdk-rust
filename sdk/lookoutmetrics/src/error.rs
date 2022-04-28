@@ -1721,6 +1721,143 @@ impl std::error::Error for DescribeMetricSetError {
     }
 }
 
+/// Error type for the `DetectMetricSetConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DetectMetricSetConfigError {
+    /// Kind of error that occurred.
+    pub kind: DetectMetricSetConfigErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DetectMetricSetConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DetectMetricSetConfigErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The specified resource cannot be found. Check the ARN of the resource and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to too many requests being submitted at the same time.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DetectMetricSetConfigError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DetectMetricSetConfigErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DetectMetricSetConfigErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DetectMetricSetConfigErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DetectMetricSetConfigErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DetectMetricSetConfigErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DetectMetricSetConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DetectMetricSetConfigError {
+    fn code(&self) -> Option<&str> {
+        DetectMetricSetConfigError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DetectMetricSetConfigError {
+    /// Creates a new `DetectMetricSetConfigError`.
+    pub fn new(kind: DetectMetricSetConfigErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DetectMetricSetConfigError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DetectMetricSetConfigErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DetectMetricSetConfigError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DetectMetricSetConfigErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DetectMetricSetConfigErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetectMetricSetConfigErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DetectMetricSetConfigErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetectMetricSetConfigErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DetectMetricSetConfigErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetectMetricSetConfigErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DetectMetricSetConfigErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetectMetricSetConfigErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DetectMetricSetConfigErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetectMetricSetConfigErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DetectMetricSetConfigError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DetectMetricSetConfigErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DetectMetricSetConfigErrorKind::InternalServerException(_inner) => Some(_inner),
+            DetectMetricSetConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DetectMetricSetConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DetectMetricSetConfigErrorKind::ValidationException(_inner) => Some(_inner),
+            DetectMetricSetConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetAnomalyGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

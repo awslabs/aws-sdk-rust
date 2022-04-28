@@ -5205,21 +5205,21 @@ impl DataLakePrincipal {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LakeFormationConfiguration {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specifies whether to use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
     pub use_lake_formation_credentials: std::option::Option<bool>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Required for cross account crawls. For same account crawls as the target data, this can be left as null.</p>
     pub account_id: std::option::Option<std::string::String>,
 }
 impl LakeFormationConfiguration {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specifies whether to use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
     pub fn use_lake_formation_credentials(&self) -> std::option::Option<bool> {
         self.use_lake_formation_credentials
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Required for cross account crawls. For same account crawls as the target data, this can be left as null.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -5245,12 +5245,12 @@ pub mod lake_formation_configuration {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specifies whether to use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
         pub fn use_lake_formation_credentials(mut self, input: bool) -> Self {
             self.use_lake_formation_credentials = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specifies whether to use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
         pub fn set_use_lake_formation_credentials(
             mut self,
             input: std::option::Option<bool>,
@@ -5258,12 +5258,12 @@ pub mod lake_formation_configuration {
             self.use_lake_formation_credentials = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Required for cross account crawls. For same account crawls as the target data, this can be left as null.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Required for cross account crawls. For same account crawls as the target data, this can be left as null.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -13120,6 +13120,111 @@ impl AsRef<str> for TransformStatusType {
     }
 }
 
+/// <p>An object representing a custom pattern for detecting sensitive data across the columns and rows of your structured data.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CustomEntityType {
+    /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+    pub regex_string: std::option::Option<std::string::String>,
+    /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
+    /// <p>If no context words are passed only a regular expression is checked.</p>
+    pub context_words: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CustomEntityType {
+    /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+    pub fn regex_string(&self) -> std::option::Option<&str> {
+        self.regex_string.as_deref()
+    }
+    /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
+    /// <p>If no context words are passed only a regular expression is checked.</p>
+    pub fn context_words(&self) -> std::option::Option<&[std::string::String]> {
+        self.context_words.as_deref()
+    }
+}
+impl std::fmt::Debug for CustomEntityType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomEntityType");
+        formatter.field("name", &self.name);
+        formatter.field("regex_string", &self.regex_string);
+        formatter.field("context_words", &self.context_words);
+        formatter.finish()
+    }
+}
+/// See [`CustomEntityType`](crate::model::CustomEntityType)
+pub mod custom_entity_type {
+    /// A builder for [`CustomEntityType`](crate::model::CustomEntityType)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) regex_string: std::option::Option<std::string::String>,
+        pub(crate) context_words: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+        pub fn regex_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.regex_string = Some(input.into());
+            self
+        }
+        /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+        pub fn set_regex_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.regex_string = input;
+            self
+        }
+        /// Appends an item to `context_words`.
+        ///
+        /// To override the contents of this collection use [`set_context_words`](Self::set_context_words).
+        ///
+        /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
+        /// <p>If no context words are passed only a regular expression is checked.</p>
+        pub fn context_words(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.context_words.unwrap_or_default();
+            v.push(input.into());
+            self.context_words = Some(v);
+            self
+        }
+        /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
+        /// <p>If no context words are passed only a regular expression is checked.</p>
+        pub fn set_context_words(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.context_words = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CustomEntityType`](crate::model::CustomEntityType)
+        pub fn build(self) -> crate::model::CustomEntityType {
+            crate::model::CustomEntityType {
+                name: self.name,
+                regex_string: self.regex_string,
+                context_words: self.context_words,
+            }
+        }
+    }
+}
+impl CustomEntityType {
+    /// Creates a new builder-style object to manufacture [`CustomEntityType`](crate::model::CustomEntityType)
+    pub fn builder() -> crate::model::custom_entity_type::Builder {
+        crate::model::custom_entity_type::Builder::default()
+    }
+}
+
 /// <p>A workflow run is an execution of a workflow providing all the runtime information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -14171,6 +14276,8 @@ pub struct JobRun {
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
     pub glue_version: std::option::Option<std::string::String>,
+    /// <p>This field populates only when an Auto Scaling job run completes, and represents the total time each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <code>G.1X</code> and 2 for <code>G.2X</code> workers). This value may be different than the <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of Auto Scaling jobs, as the number of executors running at a given time may be less than the <code>MaxCapacity</code>. Therefore, it is possible that the value of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> * <code>MaxCapacity</code>.</p>
+    pub dpu_seconds: std::option::Option<f64>,
 }
 impl JobRun {
     /// <p>The ID of this job run.</p>
@@ -14284,6 +14391,10 @@ impl JobRun {
     pub fn glue_version(&self) -> std::option::Option<&str> {
         self.glue_version.as_deref()
     }
+    /// <p>This field populates only when an Auto Scaling job run completes, and represents the total time each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <code>G.1X</code> and 2 for <code>G.2X</code> workers). This value may be different than the <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of Auto Scaling jobs, as the number of executors running at a given time may be less than the <code>MaxCapacity</code>. Therefore, it is possible that the value of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> * <code>MaxCapacity</code>.</p>
+    pub fn dpu_seconds(&self) -> std::option::Option<f64> {
+        self.dpu_seconds
+    }
 }
 impl std::fmt::Debug for JobRun {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14310,6 +14421,7 @@ impl std::fmt::Debug for JobRun {
         formatter.field("log_group_name", &self.log_group_name);
         formatter.field("notification_property", &self.notification_property);
         formatter.field("glue_version", &self.glue_version);
+        formatter.field("dpu_seconds", &self.dpu_seconds);
         formatter.finish()
     }
 }
@@ -14343,6 +14455,7 @@ pub mod job_run {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) notification_property: std::option::Option<crate::model::NotificationProperty>,
         pub(crate) glue_version: std::option::Option<std::string::String>,
+        pub(crate) dpu_seconds: std::option::Option<f64>,
     }
     impl Builder {
         /// <p>The ID of this job run.</p>
@@ -14655,6 +14768,16 @@ pub mod job_run {
             self.glue_version = input;
             self
         }
+        /// <p>This field populates only when an Auto Scaling job run completes, and represents the total time each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <code>G.1X</code> and 2 for <code>G.2X</code> workers). This value may be different than the <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of Auto Scaling jobs, as the number of executors running at a given time may be less than the <code>MaxCapacity</code>. Therefore, it is possible that the value of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> * <code>MaxCapacity</code>.</p>
+        pub fn dpu_seconds(mut self, input: f64) -> Self {
+            self.dpu_seconds = Some(input);
+            self
+        }
+        /// <p>This field populates only when an Auto Scaling job run completes, and represents the total time each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <code>G.1X</code> and 2 for <code>G.2X</code> workers). This value may be different than the <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of Auto Scaling jobs, as the number of executors running at a given time may be less than the <code>MaxCapacity</code>. Therefore, it is possible that the value of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> * <code>MaxCapacity</code>.</p>
+        pub fn set_dpu_seconds(mut self, input: std::option::Option<f64>) -> Self {
+            self.dpu_seconds = input;
+            self
+        }
         /// Consumes the builder and constructs a [`JobRun`](crate::model::JobRun)
         pub fn build(self) -> crate::model::JobRun {
             crate::model::JobRun {
@@ -14680,6 +14803,7 @@ pub mod job_run {
                 log_group_name: self.log_group_name,
                 notification_property: self.notification_property,
                 glue_version: self.glue_version,
+                dpu_seconds: self.dpu_seconds,
             }
         }
     }
@@ -22449,7 +22573,7 @@ pub struct Crawler {
     pub configuration: std::option::Option<std::string::String>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
     pub crawler_security_configuration: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specifies whether the crawler should use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
     pub lake_formation_configuration: std::option::Option<crate::model::LakeFormationConfiguration>,
 }
 impl Crawler {
@@ -22531,7 +22655,7 @@ impl Crawler {
     pub fn crawler_security_configuration(&self) -> std::option::Option<&str> {
         self.crawler_security_configuration.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specifies whether the crawler should use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
     pub fn lake_formation_configuration(
         &self,
     ) -> std::option::Option<&crate::model::LakeFormationConfiguration> {
@@ -22831,7 +22955,7 @@ pub mod crawler {
             self.crawler_security_configuration = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specifies whether the crawler should use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
         pub fn lake_formation_configuration(
             mut self,
             input: crate::model::LakeFormationConfiguration,
@@ -22839,7 +22963,7 @@ pub mod crawler {
             self.lake_formation_configuration = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specifies whether the crawler should use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
         pub fn set_lake_formation_configuration(
             mut self,
             input: std::option::Option<crate::model::LakeFormationConfiguration>,

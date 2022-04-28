@@ -32,6 +32,7 @@ pub mod add_tags_to_resource_input {
         /// <p>Use the ID of the resource. Here are some examples:</p>
         /// <p> <code>MaintenanceWindow</code>: <code>mw-012345abcde</code> </p>
         /// <p> <code>PatchBaseline</code>: <code>pb-012345abcde</code> </p>
+        /// <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code> </p>
         /// <p> <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
         /// <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource.</p>
         /// <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p> <note>
@@ -45,6 +46,7 @@ pub mod add_tags_to_resource_input {
         /// <p>Use the ID of the resource. Here are some examples:</p>
         /// <p> <code>MaintenanceWindow</code>: <code>mw-012345abcde</code> </p>
         /// <p> <code>PatchBaseline</code>: <code>pb-012345abcde</code> </p>
+        /// <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code> </p>
         /// <p> <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
         /// <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource.</p>
         /// <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p> <note>
@@ -990,6 +992,7 @@ pub mod create_association_input {
         pub(crate) calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) target_locations:
             std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
+        pub(crate) schedule_offset: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>
@@ -1255,6 +1258,20 @@ pub mod create_association_input {
             self.target_locations = input;
             self
         }
+        /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>
+        /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>
+        /// </note>
+        pub fn schedule_offset(mut self, input: i32) -> Self {
+            self.schedule_offset = Some(input);
+            self
+        }
+        /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>
+        /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>
+        /// </note>
+        pub fn set_schedule_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.schedule_offset = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAssociationInput`](crate::input::CreateAssociationInput)
         pub fn build(
             self,
@@ -1279,6 +1296,7 @@ pub mod create_association_input {
                 apply_only_at_cron_interval: self.apply_only_at_cron_interval.unwrap_or_default(),
                 calendar_names: self.calendar_names,
                 target_locations: self.target_locations,
+                schedule_offset: self.schedule_offset,
             })
         }
     }
@@ -21092,6 +21110,7 @@ pub mod remove_tags_from_resource_input {
         /// <p>The ID of the resource from which you want to remove tags. For example:</p>
         /// <p>ManagedInstance: mi-012345abcde</p>
         /// <p>MaintenanceWindow: mw-012345abcde</p>
+        /// <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code> </p>
         /// <p>PatchBaseline: pb-012345abcde</p>
         /// <p>OpsMetadata object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
         /// <p>For the Document and Parameter values, use the name of the resource.</p> <note>
@@ -21104,6 +21123,7 @@ pub mod remove_tags_from_resource_input {
         /// <p>The ID of the resource from which you want to remove tags. For example:</p>
         /// <p>ManagedInstance: mi-012345abcde</p>
         /// <p>MaintenanceWindow: mw-012345abcde</p>
+        /// <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code> </p>
         /// <p>PatchBaseline: pb-012345abcde</p>
         /// <p>OpsMetadata object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
         /// <p>For the Document and Parameter values, use the name of the resource.</p> <note>
@@ -22562,7 +22582,7 @@ pub mod start_automation_execution_input {
         /// <li> <p> <code>Key=environment,Value=test</code> </p> </li>
         /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
         /// </ul> <note>
-        /// <p>To add tags to an existing patch baseline, use the <code>AddTagsToResource</code> operation.</p>
+        /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
@@ -22575,7 +22595,7 @@ pub mod start_automation_execution_input {
         /// <li> <p> <code>Key=environment,Value=test</code> </p> </li>
         /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
         /// </ul> <note>
-        /// <p>To add tags to an existing patch baseline, use the <code>AddTagsToResource</code> operation.</p>
+        /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -23764,6 +23784,7 @@ pub mod update_association_input {
         pub(crate) calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) target_locations:
             std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
+        pub(crate) schedule_offset: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The ID of the association you want to update. </p>
@@ -24045,6 +24066,20 @@ pub mod update_association_input {
             self.target_locations = input;
             self
         }
+        /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>
+        /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>
+        /// </note>
+        pub fn schedule_offset(mut self, input: i32) -> Self {
+            self.schedule_offset = Some(input);
+            self
+        }
+        /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>
+        /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>
+        /// </note>
+        pub fn set_schedule_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.schedule_offset = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateAssociationInput`](crate::input::UpdateAssociationInput)
         pub fn build(
             self,
@@ -24070,6 +24105,7 @@ pub mod update_association_input {
                 apply_only_at_cron_interval: self.apply_only_at_cron_interval.unwrap_or_default(),
                 calendar_names: self.calendar_names,
                 target_locations: self.target_locations,
+                schedule_offset: self.schedule_offset,
             })
         }
     }
@@ -28343,6 +28379,10 @@ pub struct UpdateAssociationInput {
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to update an association in multiple Regions and multiple accounts.</p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
+    /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>
+    /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>
+    /// </note>
+    pub schedule_offset: std::option::Option<i32>,
 }
 impl UpdateAssociationInput {
     /// <p>The ID of the association you want to update. </p>
@@ -28435,6 +28475,12 @@ impl UpdateAssociationInput {
     pub fn target_locations(&self) -> std::option::Option<&[crate::model::TargetLocation]> {
         self.target_locations.as_deref()
     }
+    /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>
+    /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>
+    /// </note>
+    pub fn schedule_offset(&self) -> std::option::Option<i32> {
+        self.schedule_offset
+    }
 }
 impl std::fmt::Debug for UpdateAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28462,6 +28508,7 @@ impl std::fmt::Debug for UpdateAssociationInput {
         );
         formatter.field("calendar_names", &self.calendar_names);
         formatter.field("target_locations", &self.target_locations);
+        formatter.field("schedule_offset", &self.schedule_offset);
         formatter.finish()
     }
 }
@@ -28755,7 +28802,7 @@ pub struct StartAutomationExecutionInput {
     /// <li> <p> <code>Key=environment,Value=test</code> </p> </li>
     /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
     /// </ul> <note>
-    /// <p>To add tags to an existing patch baseline, use the <code>AddTagsToResource</code> operation.</p>
+    /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -28818,7 +28865,7 @@ impl StartAutomationExecutionInput {
     /// <li> <p> <code>Key=environment,Value=test</code> </p> </li>
     /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
     /// </ul> <note>
-    /// <p>To add tags to an existing patch baseline, use the <code>AddTagsToResource</code> operation.</p>
+    /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -29153,6 +29200,7 @@ pub struct RemoveTagsFromResourceInput {
     /// <p>The ID of the resource from which you want to remove tags. For example:</p>
     /// <p>ManagedInstance: mi-012345abcde</p>
     /// <p>MaintenanceWindow: mw-012345abcde</p>
+    /// <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code> </p>
     /// <p>PatchBaseline: pb-012345abcde</p>
     /// <p>OpsMetadata object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
     /// <p>For the Document and Parameter values, use the name of the resource.</p> <note>
@@ -29172,6 +29220,7 @@ impl RemoveTagsFromResourceInput {
     /// <p>The ID of the resource from which you want to remove tags. For example:</p>
     /// <p>ManagedInstance: mi-012345abcde</p>
     /// <p>MaintenanceWindow: mw-012345abcde</p>
+    /// <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code> </p>
     /// <p>PatchBaseline: pb-012345abcde</p>
     /// <p>OpsMetadata object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
     /// <p>For the Document and Parameter values, use the name of the resource.</p> <note>
@@ -34042,6 +34091,10 @@ pub struct CreateAssociationInput {
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
+    /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>
+    /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>
+    /// </note>
+    pub schedule_offset: std::option::Option<i32>,
 }
 impl CreateAssociationInput {
     /// <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>
@@ -34130,6 +34183,12 @@ impl CreateAssociationInput {
     pub fn target_locations(&self) -> std::option::Option<&[crate::model::TargetLocation]> {
         self.target_locations.as_deref()
     }
+    /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>
+    /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>
+    /// </note>
+    pub fn schedule_offset(&self) -> std::option::Option<i32> {
+        self.schedule_offset
+    }
 }
 impl std::fmt::Debug for CreateAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34156,6 +34215,7 @@ impl std::fmt::Debug for CreateAssociationInput {
         );
         formatter.field("calendar_names", &self.calendar_names);
         formatter.field("target_locations", &self.target_locations);
+        formatter.field("schedule_offset", &self.schedule_offset);
         formatter.finish()
     }
 }
@@ -34355,6 +34415,7 @@ pub struct AddTagsToResourceInput {
     /// <p>Use the ID of the resource. Here are some examples:</p>
     /// <p> <code>MaintenanceWindow</code>: <code>mw-012345abcde</code> </p>
     /// <p> <code>PatchBaseline</code>: <code>pb-012345abcde</code> </p>
+    /// <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code> </p>
     /// <p> <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
     /// <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource.</p>
     /// <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p> <note>
@@ -34377,6 +34438,7 @@ impl AddTagsToResourceInput {
     /// <p>Use the ID of the resource. Here are some examples:</p>
     /// <p> <code>MaintenanceWindow</code>: <code>mw-012345abcde</code> </p>
     /// <p> <code>PatchBaseline</code>: <code>pb-012345abcde</code> </p>
+    /// <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code> </p>
     /// <p> <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
     /// <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource.</p>
     /// <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p> <note>

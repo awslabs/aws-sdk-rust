@@ -26,6 +26,14 @@ pub struct RuleGroupResponse {
     pub consumed_capacity: std::option::Option<i32>,
     /// <p>The number of firewall policies that use this rule group.</p>
     pub number_of_associations: std::option::Option<i32>,
+    /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your rule group.</p>
+    pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+    /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to track the version updates made to the originating rule group.</p>
+    pub source_metadata: std::option::Option<crate::model::SourceMetadata>,
+    /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide.</a>.</p>
+    pub sns_topic: std::option::Option<std::string::String>,
+    /// <p>The last time that the rule group was changed.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RuleGroupResponse {
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p> <note>
@@ -71,6 +79,24 @@ impl RuleGroupResponse {
     pub fn number_of_associations(&self) -> std::option::Option<i32> {
         self.number_of_associations
     }
+    /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your rule group.</p>
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
+    /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to track the version updates made to the originating rule group.</p>
+    pub fn source_metadata(&self) -> std::option::Option<&crate::model::SourceMetadata> {
+        self.source_metadata.as_ref()
+    }
+    /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide.</a>.</p>
+    pub fn sns_topic(&self) -> std::option::Option<&str> {
+        self.sns_topic.as_deref()
+    }
+    /// <p>The last time that the rule group was changed.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
 }
 impl std::fmt::Debug for RuleGroupResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -85,6 +111,10 @@ impl std::fmt::Debug for RuleGroupResponse {
         formatter.field("tags", &self.tags);
         formatter.field("consumed_capacity", &self.consumed_capacity);
         formatter.field("number_of_associations", &self.number_of_associations);
+        formatter.field("encryption_configuration", &self.encryption_configuration);
+        formatter.field("source_metadata", &self.source_metadata);
+        formatter.field("sns_topic", &self.sns_topic);
+        formatter.field("last_modified_time", &self.last_modified_time);
         formatter.finish()
     }
 }
@@ -104,6 +134,11 @@ pub mod rule_group_response {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) consumed_capacity: std::option::Option<i32>,
         pub(crate) number_of_associations: std::option::Option<i32>,
+        pub(crate) encryption_configuration:
+            std::option::Option<crate::model::EncryptionConfiguration>,
+        pub(crate) source_metadata: std::option::Option<crate::model::SourceMetadata>,
+        pub(crate) sns_topic: std::option::Option<std::string::String>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the rule group.</p> <note>
@@ -233,6 +268,58 @@ pub mod rule_group_response {
             self.number_of_associations = input;
             self
         }
+        /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your rule group.</p>
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
+            self.encryption_configuration = Some(input);
+            self
+        }
+        /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your rule group.</p>
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.encryption_configuration = input;
+            self
+        }
+        /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to track the version updates made to the originating rule group.</p>
+        pub fn source_metadata(mut self, input: crate::model::SourceMetadata) -> Self {
+            self.source_metadata = Some(input);
+            self
+        }
+        /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to track the version updates made to the originating rule group.</p>
+        pub fn set_source_metadata(
+            mut self,
+            input: std::option::Option<crate::model::SourceMetadata>,
+        ) -> Self {
+            self.source_metadata = input;
+            self
+        }
+        /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide.</a>.</p>
+        pub fn sns_topic(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sns_topic = Some(input.into());
+            self
+        }
+        /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide.</a>.</p>
+        pub fn set_sns_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sns_topic = input;
+            self
+        }
+        /// <p>The last time that the rule group was changed.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The last time that the rule group was changed.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RuleGroupResponse`](crate::model::RuleGroupResponse)
         pub fn build(self) -> crate::model::RuleGroupResponse {
             crate::model::RuleGroupResponse {
@@ -246,6 +333,10 @@ pub mod rule_group_response {
                 tags: self.tags,
                 consumed_capacity: self.consumed_capacity,
                 number_of_associations: self.number_of_associations,
+                encryption_configuration: self.encryption_configuration,
+                source_metadata: self.source_metadata,
+                sns_topic: self.sns_topic,
+                last_modified_time: self.last_modified_time,
             }
         }
     }
@@ -257,7 +348,214 @@ impl RuleGroupResponse {
     }
 }
 
-/// <p>A key:value pair associated with an AWS resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each AWS resource. </p>
+/// <p>High-level information about the managed rule group that your own rule group is copied from. You can use the the metadata to track version updates made to the originating rule group. You can retrieve all objects for a rule group by calling <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html">DescribeRuleGroup</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SourceMetadata {
+    /// <p>The Amazon Resource Name (ARN) of the rule group that your own rule group is copied from.</p>
+    pub source_arn: std::option::Option<std::string::String>,
+    /// <p>The update token of the Amazon Web Services managed rule group that your own rule group is copied from. To determine the update token for the managed rule group, call <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html#networkfirewall-DescribeRuleGroup-response-UpdateToken">DescribeRuleGroup</a>.</p>
+    pub source_update_token: std::option::Option<std::string::String>,
+}
+impl SourceMetadata {
+    /// <p>The Amazon Resource Name (ARN) of the rule group that your own rule group is copied from.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>The update token of the Amazon Web Services managed rule group that your own rule group is copied from. To determine the update token for the managed rule group, call <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html#networkfirewall-DescribeRuleGroup-response-UpdateToken">DescribeRuleGroup</a>.</p>
+    pub fn source_update_token(&self) -> std::option::Option<&str> {
+        self.source_update_token.as_deref()
+    }
+}
+impl std::fmt::Debug for SourceMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SourceMetadata");
+        formatter.field("source_arn", &self.source_arn);
+        formatter.field("source_update_token", &self.source_update_token);
+        formatter.finish()
+    }
+}
+/// See [`SourceMetadata`](crate::model::SourceMetadata)
+pub mod source_metadata {
+    /// A builder for [`SourceMetadata`](crate::model::SourceMetadata)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_arn: std::option::Option<std::string::String>,
+        pub(crate) source_update_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the rule group that your own rule group is copied from.</p>
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the rule group that your own rule group is copied from.</p>
+        pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_arn = input;
+            self
+        }
+        /// <p>The update token of the Amazon Web Services managed rule group that your own rule group is copied from. To determine the update token for the managed rule group, call <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html#networkfirewall-DescribeRuleGroup-response-UpdateToken">DescribeRuleGroup</a>.</p>
+        pub fn source_update_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_update_token = Some(input.into());
+            self
+        }
+        /// <p>The update token of the Amazon Web Services managed rule group that your own rule group is copied from. To determine the update token for the managed rule group, call <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html#networkfirewall-DescribeRuleGroup-response-UpdateToken">DescribeRuleGroup</a>.</p>
+        pub fn set_source_update_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_update_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SourceMetadata`](crate::model::SourceMetadata)
+        pub fn build(self) -> crate::model::SourceMetadata {
+            crate::model::SourceMetadata {
+                source_arn: self.source_arn,
+                source_update_token: self.source_update_token,
+            }
+        }
+    }
+}
+impl SourceMetadata {
+    /// Creates a new builder-style object to manufacture [`SourceMetadata`](crate::model::SourceMetadata)
+    pub fn builder() -> crate::model::source_metadata::Builder {
+        crate::model::source_metadata::Builder::default()
+    }
+}
+
+/// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EncryptionConfiguration {
+    /// <p>The ID of the Amazon Web Services Key Management Service (KMS) customer managed key. You can use any of the key identifiers that KMS supports, unless you're using a key that's managed by another account. If you're using a key managed by another account, then specify the key ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key ID</a> in the <i>Amazon Web Services KMS Developer Guide</i>.</p>
+    pub key_id: std::option::Option<std::string::String>,
+    /// <p>The type of Amazon Web Services KMS key to use for encryption of your Network Firewall resources.</p>
+    pub r#type: std::option::Option<crate::model::EncryptionType>,
+}
+impl EncryptionConfiguration {
+    /// <p>The ID of the Amazon Web Services Key Management Service (KMS) customer managed key. You can use any of the key identifiers that KMS supports, unless you're using a key that's managed by another account. If you're using a key managed by another account, then specify the key ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key ID</a> in the <i>Amazon Web Services KMS Developer Guide</i>.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>The type of Amazon Web Services KMS key to use for encryption of your Network Firewall resources.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::EncryptionType> {
+        self.r#type.as_ref()
+    }
+}
+impl std::fmt::Debug for EncryptionConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EncryptionConfiguration");
+        formatter.field("key_id", &self.key_id);
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+/// See [`EncryptionConfiguration`](crate::model::EncryptionConfiguration)
+pub mod encryption_configuration {
+    /// A builder for [`EncryptionConfiguration`](crate::model::EncryptionConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::EncryptionType>,
+    }
+    impl Builder {
+        /// <p>The ID of the Amazon Web Services Key Management Service (KMS) customer managed key. You can use any of the key identifiers that KMS supports, unless you're using a key that's managed by another account. If you're using a key managed by another account, then specify the key ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key ID</a> in the <i>Amazon Web Services KMS Developer Guide</i>.</p>
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Amazon Web Services Key Management Service (KMS) customer managed key. You can use any of the key identifiers that KMS supports, unless you're using a key that's managed by another account. If you're using a key managed by another account, then specify the key ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key ID</a> in the <i>Amazon Web Services KMS Developer Guide</i>.</p>
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
+            self
+        }
+        /// <p>The type of Amazon Web Services KMS key to use for encryption of your Network Firewall resources.</p>
+        pub fn r#type(mut self, input: crate::model::EncryptionType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type of Amazon Web Services KMS key to use for encryption of your Network Firewall resources.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EncryptionConfiguration`](crate::model::EncryptionConfiguration)
+        pub fn build(self) -> crate::model::EncryptionConfiguration {
+            crate::model::EncryptionConfiguration {
+                key_id: self.key_id,
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl EncryptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`EncryptionConfiguration`](crate::model::EncryptionConfiguration)
+    pub fn builder() -> crate::model::encryption_configuration::Builder {
+        crate::model::encryption_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EncryptionType {
+    #[allow(missing_docs)] // documentation missing in model
+    AwsOwnedKmsKey,
+    #[allow(missing_docs)] // documentation missing in model
+    CustomerKms,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EncryptionType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AWS_OWNED_KMS_KEY" => EncryptionType::AwsOwnedKmsKey,
+            "CUSTOMER_KMS" => EncryptionType::CustomerKms,
+            other => EncryptionType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EncryptionType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EncryptionType::from(s))
+    }
+}
+impl EncryptionType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EncryptionType::AwsOwnedKmsKey => "AWS_OWNED_KMS_KEY",
+            EncryptionType::CustomerKms => "CUSTOMER_KMS",
+            EncryptionType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AWS_OWNED_KMS_KEY", "CUSTOMER_KMS"]
+    }
+}
+impl AsRef<str> for EncryptionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A key:value pair associated with an Amazon Web Services resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each Amazon Web Services resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
@@ -441,7 +739,7 @@ impl AsRef<str> for RuleGroupType {
 }
 
 /// <p>The object that defines the rules in a rule group. This, along with <code>RuleGroupResponse</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
-/// <p>AWS Network Firewall uses a rule group to inspect and control network traffic. You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their traffic flow. </p>
+/// <p>Network Firewall uses a rule group to inspect and control network traffic. You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their traffic flow. </p>
 /// <p>To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from more than one firewall policy, and you can use a firewall policy in more than one firewall. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -547,11 +845,11 @@ impl RuleGroup {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatefulRuleOptions {
-    /// <p>Indicates how to manage the order of the rule evaluation for the rule group. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
+    /// <p>Indicates how to manage the order of the rule evaluation for the rule group. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
     pub rule_order: std::option::Option<crate::model::RuleOrder>,
 }
 impl StatefulRuleOptions {
-    /// <p>Indicates how to manage the order of the rule evaluation for the rule group. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
+    /// <p>Indicates how to manage the order of the rule evaluation for the rule group. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
     pub fn rule_order(&self) -> std::option::Option<&crate::model::RuleOrder> {
         self.rule_order.as_ref()
     }
@@ -572,12 +870,12 @@ pub mod stateful_rule_options {
         pub(crate) rule_order: std::option::Option<crate::model::RuleOrder>,
     }
     impl Builder {
-        /// <p>Indicates how to manage the order of the rule evaluation for the rule group. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
+        /// <p>Indicates how to manage the order of the rule evaluation for the rule group. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
         pub fn rule_order(mut self, input: crate::model::RuleOrder) -> Self {
             self.rule_order = Some(input);
             self
         }
-        /// <p>Indicates how to manage the order of the rule evaluation for the rule group. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
+        /// <p>Indicates how to manage the order of the rule evaluation for the rule group. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
         pub fn set_rule_order(
             mut self,
             input: std::option::Option<crate::model::RuleOrder>,
@@ -1093,7 +1391,7 @@ impl PublishMetricAction {
 }
 
 /// <p>The value to use in an Amazon CloudWatch custom metric dimension. This is used in the <code>PublishMetrics</code> <code>CustomAction</code>. A CloudWatch custom metric dimension is a name/value pair that's part of the identity of a metric. </p>
-/// <p>AWS Network Firewall sets the dimension name to <code>CustomAction</code> and you provide the dimension value. </p>
+/// <p>Network Firewall sets the dimension name to <code>CustomAction</code> and you provide the dimension value. </p>
 /// <p>For more information about CloudWatch custom metric dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#usingDimensions">Publishing Custom Metrics</a> in the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1230,7 +1528,7 @@ impl StatelessRule {
     }
 }
 
-/// <p>The inspection criteria and action for a single stateless rule. AWS Network Firewall inspects each packet for the specified matching criteria. When a packet matches the criteria, Network Firewall performs the rule's actions on the packet.</p>
+/// <p>The inspection criteria and action for a single stateless rule. Network Firewall inspects each packet for the specified matching criteria. When a packet matches the criteria, Network Firewall performs the rule's actions on the packet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleDefinition {
@@ -2117,11 +2415,11 @@ impl RuleOption {
     }
 }
 
-/// <p>The basic rule criteria for AWS Network Firewall to use to inspect packet headers in stateful traffic flow inspection. Traffic flows that match the criteria are a match for the corresponding <code>StatefulRule</code>. </p>
+/// <p>The basic rule criteria for Network Firewall to use to inspect packet headers in stateful traffic flow inspection. Traffic flows that match the criteria are a match for the corresponding <code>StatefulRule</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Header {
-    /// <p>The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on AWS and on the internet is IP.</p>
+    /// <p>The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on Amazon Web Services and on the internet is IP.</p>
     pub protocol: std::option::Option<crate::model::StatefulRuleProtocol>,
     /// <p>The source IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>. </p>
     /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
@@ -2149,7 +2447,7 @@ pub struct Header {
     pub destination_port: std::option::Option<std::string::String>,
 }
 impl Header {
-    /// <p>The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on AWS and on the internet is IP.</p>
+    /// <p>The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on Amazon Web Services and on the internet is IP.</p>
     pub fn protocol(&self) -> std::option::Option<&crate::model::StatefulRuleProtocol> {
         self.protocol.as_ref()
     }
@@ -2214,12 +2512,12 @@ pub mod header {
         pub(crate) destination_port: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on AWS and on the internet is IP.</p>
+        /// <p>The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on Amazon Web Services and on the internet is IP.</p>
         pub fn protocol(mut self, input: crate::model::StatefulRuleProtocol) -> Self {
             self.protocol = Some(input);
             self
         }
-        /// <p>The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on AWS and on the internet is IP.</p>
+        /// <p>The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on Amazon Web Services and on the internet is IP.</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::StatefulRuleProtocol>,
@@ -2573,7 +2871,7 @@ impl AsRef<str> for StatefulAction {
 
 /// <p>Stateful inspection criteria for a domain list rule group. </p>
 /// <p>For HTTPS traffic, domain filtering is SNI-based. It uses the server name indicator extension of the TLS handshake.</p>
-/// <p>By default, Network Firewall domain list inspection only includes traffic coming from the VPC where you deploy the firewall. To inspect traffic from IP addresses outside of the deployment VPC, you set the <code>HOME_NET</code> rule variable to include the CIDR range of the deployment VPC plus the other CIDR ranges. For more information, see <code>RuleVariables</code> in this guide and <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-domain-names.html">Stateful domain list rule groups in AWS Network Firewall</a> in the <i>Network Firewall Developer Guide</i>.</p>
+/// <p>By default, Network Firewall domain list inspection only includes traffic coming from the VPC where you deploy the firewall. To inspect traffic from IP addresses outside of the deployment VPC, you set the <code>HOME_NET</code> rule variable to include the CIDR range of the deployment VPC plus the other CIDR ranges. For more information, see <code>RuleVariables</code> in this guide and <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-domain-names.html">Stateful domain list rule groups in Network Firewall</a> in the <i>Network Firewall Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RulesSourceList {
@@ -3053,7 +3351,7 @@ impl IpSet {
     }
 }
 
-/// <p>Defines how AWS Network Firewall performs logging for a <code>Firewall</code>. </p>
+/// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingConfiguration {
@@ -3123,7 +3421,7 @@ impl LoggingConfiguration {
     }
 }
 
-/// <p>Defines where AWS Network Firewall sends logs for the firewall for one log type. This is used in <code>LoggingConfiguration</code>. You can send each type of log to an Amazon S3 bucket, a CloudWatch log group, or a Kinesis Data Firehose delivery stream.</p>
+/// <p>Defines where Network Firewall sends logs for the firewall for one log type. This is used in <code>LoggingConfiguration</code>. You can send each type of log to an Amazon S3 bucket, a CloudWatch log group, or a Kinesis Data Firehose delivery stream.</p>
 /// <p>Network Firewall generates logs for stateful rule groups. You can save alert and flow log types. The stateful rules engine records flow logs for all network traffic that it receives. It records alert logs for traffic that matches stateful rules that have the rule action set to <code>DROP</code> or <code>ALERT</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3398,6 +3696,10 @@ pub struct FirewallPolicyResponse {
     pub consumed_stateful_rule_capacity: std::option::Option<i32>,
     /// <p>The number of firewalls that are associated with this firewall policy.</p>
     pub number_of_associations: std::option::Option<i32>,
+    /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall policy.</p>
+    pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+    /// <p>The last time that the firewall policy was changed.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl FirewallPolicyResponse {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
@@ -3438,6 +3740,16 @@ impl FirewallPolicyResponse {
     pub fn number_of_associations(&self) -> std::option::Option<i32> {
         self.number_of_associations
     }
+    /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall policy.</p>
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
+    /// <p>The last time that the firewall policy was changed.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
 }
 impl std::fmt::Debug for FirewallPolicyResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3457,6 +3769,8 @@ impl std::fmt::Debug for FirewallPolicyResponse {
             &self.consumed_stateful_rule_capacity,
         );
         formatter.field("number_of_associations", &self.number_of_associations);
+        formatter.field("encryption_configuration", &self.encryption_configuration);
+        formatter.field("last_modified_time", &self.last_modified_time);
         formatter.finish()
     }
 }
@@ -3475,6 +3789,9 @@ pub mod firewall_policy_response {
         pub(crate) consumed_stateless_rule_capacity: std::option::Option<i32>,
         pub(crate) consumed_stateful_rule_capacity: std::option::Option<i32>,
         pub(crate) number_of_associations: std::option::Option<i32>,
+        pub(crate) encryption_configuration:
+            std::option::Option<crate::model::EncryptionConfiguration>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
@@ -3598,6 +3915,35 @@ pub mod firewall_policy_response {
             self.number_of_associations = input;
             self
         }
+        /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall policy.</p>
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
+            self.encryption_configuration = Some(input);
+            self
+        }
+        /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall policy.</p>
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.encryption_configuration = input;
+            self
+        }
+        /// <p>The last time that the firewall policy was changed.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The last time that the firewall policy was changed.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
         /// Consumes the builder and constructs a [`FirewallPolicyResponse`](crate::model::FirewallPolicyResponse)
         pub fn build(self) -> crate::model::FirewallPolicyResponse {
             crate::model::FirewallPolicyResponse {
@@ -3610,6 +3956,8 @@ pub mod firewall_policy_response {
                 consumed_stateless_rule_capacity: self.consumed_stateless_rule_capacity,
                 consumed_stateful_rule_capacity: self.consumed_stateful_rule_capacity,
                 number_of_associations: self.number_of_associations,
+                encryption_configuration: self.encryption_configuration,
+                last_modified_time: self.last_modified_time,
             }
         }
     }
@@ -3650,7 +3998,7 @@ pub struct FirewallPolicy {
     /// <li> <p>aws:alert_strict</p> </li>
     /// <li> <p>aws:alert_established</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html">Strict evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>. </p>
     pub stateful_default_actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Additional options governing how Network Firewall handles stateful rules. The stateful rule groups that you use in your policy must have stateful rule options settings that are compatible with these settings.</p>
     pub stateful_engine_options: std::option::Option<crate::model::StatefulEngineOptions>,
@@ -3694,7 +4042,7 @@ impl FirewallPolicy {
     /// <li> <p>aws:alert_strict</p> </li>
     /// <li> <p>aws:alert_established</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html">Strict evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>. </p>
     pub fn stateful_default_actions(&self) -> std::option::Option<&[std::string::String]> {
         self.stateful_default_actions.as_deref()
     }
@@ -3873,7 +4221,7 @@ pub mod firewall_policy {
         /// <li> <p>aws:alert_strict</p> </li>
         /// <li> <p>aws:alert_established</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html">Strict evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>. </p>
         pub fn stateful_default_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stateful_default_actions.unwrap_or_default();
             v.push(input.into());
@@ -3888,7 +4236,7 @@ pub mod firewall_policy {
         /// <li> <p>aws:alert_strict</p> </li>
         /// <li> <p>aws:alert_established</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html">Strict evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>. </p>
         pub fn set_stateful_default_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3937,11 +4285,11 @@ impl FirewallPolicy {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatefulEngineOptions {
-    /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
+    /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
     pub rule_order: std::option::Option<crate::model::RuleOrder>,
 }
 impl StatefulEngineOptions {
-    /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
+    /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
     pub fn rule_order(&self) -> std::option::Option<&crate::model::RuleOrder> {
         self.rule_order.as_ref()
     }
@@ -3962,12 +4310,12 @@ pub mod stateful_engine_options {
         pub(crate) rule_order: std::option::Option<crate::model::RuleOrder>,
     }
     impl Builder {
-        /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
+        /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
         pub fn rule_order(mut self, input: crate::model::RuleOrder) -> Self {
             self.rule_order = Some(input);
             self
         }
-        /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
+        /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
         pub fn set_rule_order(
             mut self,
             input: std::option::Option<crate::model::RuleOrder>,
@@ -4358,6 +4706,61 @@ impl RuleGroupMetadata {
     std::fmt::Debug,
     std::hash::Hash,
 )]
+pub enum ResourceManagedType {
+    #[allow(missing_docs)] // documentation missing in model
+    AwsManagedDomainLists,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsManagedThreatSignatures,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ResourceManagedType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AWS_MANAGED_DOMAIN_LISTS" => ResourceManagedType::AwsManagedDomainLists,
+            "AWS_MANAGED_THREAT_SIGNATURES" => ResourceManagedType::AwsManagedThreatSignatures,
+            other => ResourceManagedType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ResourceManagedType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ResourceManagedType::from(s))
+    }
+}
+impl ResourceManagedType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ResourceManagedType::AwsManagedDomainLists => "AWS_MANAGED_DOMAIN_LISTS",
+            ResourceManagedType::AwsManagedThreatSignatures => "AWS_MANAGED_THREAT_SIGNATURES",
+            ResourceManagedType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AWS_MANAGED_DOMAIN_LISTS", "AWS_MANAGED_THREAT_SIGNATURES"]
+    }
+}
+impl AsRef<str> for ResourceManagedType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ResourceManagedStatus {
     #[allow(missing_docs)] // documentation missing in model
     Account,
@@ -4551,7 +4954,7 @@ impl FirewallPolicyMetadata {
     }
 }
 
-/// <p>The ID for a subnet that you want to associate with the firewall. This is used with <code>CreateFirewall</code> and <code>AssociateSubnets</code>. AWS Network Firewall creates an instance of the associated firewall in each subnet that you specify, to filter traffic in the subnet's Availability Zone.</p>
+/// <p>The ID for a subnet that you want to associate with the firewall. This is used with <code>CreateFirewall</code> and <code>AssociateSubnets</code>. Network Firewall creates an instance of the associated firewall in each subnet that you specify, to filter traffic in the subnet's Availability Zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetMapping {
@@ -4743,7 +5146,7 @@ impl FirewallStatus {
 }
 
 /// <p>The status of the firewall endpoint and firewall policy configuration for a single VPC subnet. </p>
-/// <p>For each VPC subnet that you associate with a firewall, AWS Network Firewall does the following: </p>
+/// <p>For each VPC subnet that you associate with a firewall, Network Firewall does the following: </p>
 /// <ul>
 /// <li> <p>Instantiates a firewall endpoint in the subnet, ready to take traffic.</p> </li>
 /// <li> <p>Configures the endpoint with the current firewall policy settings, to provide the filtering behavior for the endpoint.</p> </li>
@@ -4978,7 +5381,7 @@ impl AsRef<str> for PerObjectSyncStatus {
     }
 }
 
-/// <p>The configuration and status for a single subnet that you've specified for use by the AWS Network Firewall firewall. This is part of the <code>FirewallStatus</code>.</p>
+/// <p>The configuration and status for a single subnet that you've specified for use by the Network Firewall firewall. This is part of the <code>FirewallStatus</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Attachment {
@@ -5250,7 +5653,7 @@ impl AsRef<str> for FirewallStatusValue {
     }
 }
 
-/// <p>The firewall defines the configuration settings for an AWS Network Firewall firewall. These settings include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall AWS resource. </p>
+/// <p>The firewall defines the configuration settings for an Network Firewall firewall. These settings include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall Amazon Web Services resource. </p>
 /// <p>The status of the firewall, for example whether it's ready to filter network traffic, is provided in the corresponding <code>FirewallStatus</code>. You can retrieve both objects by calling <code>DescribeFirewall</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5278,6 +5681,8 @@ pub struct Firewall {
     pub firewall_id: std::option::Option<std::string::String>,
     /// <p></p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall.</p>
+    pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
 }
 impl Firewall {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -5325,6 +5730,12 @@ impl Firewall {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall.</p>
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for Firewall {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5343,6 +5754,7 @@ impl std::fmt::Debug for Firewall {
         formatter.field("description", &self.description);
         formatter.field("firewall_id", &self.firewall_id);
         formatter.field("tags", &self.tags);
+        formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.finish()
     }
 }
@@ -5363,6 +5775,8 @@ pub mod firewall {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) firewall_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) encryption_configuration:
+            std::option::Option<crate::model::EncryptionConfiguration>,
     }
     impl Builder {
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -5504,6 +5918,22 @@ pub mod firewall {
             self.tags = input;
             self
         }
+        /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall.</p>
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
+            self.encryption_configuration = Some(input);
+            self
+        }
+        /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall.</p>
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.encryption_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Firewall`](crate::model::Firewall)
         pub fn build(self) -> crate::model::Firewall {
             crate::model::Firewall {
@@ -5520,6 +5950,7 @@ pub mod firewall {
                 description: self.description,
                 firewall_id: self.firewall_id,
                 tags: self.tags,
+                encryption_configuration: self.encryption_configuration,
             }
         }
     }

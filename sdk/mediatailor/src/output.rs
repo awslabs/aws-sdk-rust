@@ -10,7 +10,7 @@ pub struct UpdateVodSourceOutput {
     /// <p>The HTTP package configurations.</p>
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-    /// <p>The ARN for the VOD source.</p>
+    /// <p>The last modified time of the VOD source.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the source location associated with the VOD source.</p>
     pub source_location_name: std::option::Option<std::string::String>,
@@ -35,7 +35,7 @@ impl UpdateVodSourceOutput {
     ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
         self.http_package_configurations.as_deref()
     }
-    /// <p>The ARN for the VOD source.</p>
+    /// <p>The last modified time of the VOD source.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
@@ -134,12 +134,12 @@ pub mod update_vod_source_output {
             self.http_package_configurations = input;
             self
         }
-        /// <p>The ARN for the VOD source.</p>
+        /// <p>The last modified time of the VOD source.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
-        /// <p>The ARN for the VOD source.</p>
+        /// <p>The last modified time of the VOD source.</p>
         pub fn set_last_modified_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -236,7 +236,7 @@ pub struct UpdateSourceLocationOutput {
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
     /// <p>The timestamp that indicates when the source location was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of the segment delivery configurations associated with this resource.</p>
     pub segment_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
     /// <p>The name of the source location.</p>
@@ -272,7 +272,7 @@ impl UpdateSourceLocationOutput {
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of the segment delivery configurations associated with this resource.</p>
     pub fn segment_delivery_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::SegmentDeliveryConfiguration]> {
@@ -414,6 +414,7 @@ pub mod update_source_location_output {
         ///
         /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
         ///
+        /// <p>A list of the segment delivery configurations associated with this resource.</p>
         pub fn segment_delivery_configurations(
             mut self,
             input: crate::model::SegmentDeliveryConfiguration,
@@ -423,7 +424,7 @@ pub mod update_source_location_output {
             self.segment_delivery_configurations = Some(v);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A list of the segment delivery configurations associated with this resource.</p>
         pub fn set_segment_delivery_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
@@ -495,6 +496,226 @@ impl UpdateSourceLocationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateLiveSourceOutput {
+    /// <p>The ARN of the live source.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The timestamp that indicates when the live source was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The HTTP package configurations.</p>
+    pub http_package_configurations:
+        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+    /// <p>The timestamp that indicates when the live source was modified.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The name of the live source.</p>
+    pub live_source_name: std::option::Option<std::string::String>,
+    /// <p>The name of the source location associated with the VOD source.</p>
+    pub source_location_name: std::option::Option<std::string::String>,
+    /// <p>The tags assigned to the live source.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl UpdateLiveSourceOutput {
+    /// <p>The ARN of the live source.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The timestamp that indicates when the live source was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The HTTP package configurations.</p>
+    pub fn http_package_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
+        self.http_package_configurations.as_deref()
+    }
+    /// <p>The timestamp that indicates when the live source was modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The name of the live source.</p>
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
+        self.live_source_name.as_deref()
+    }
+    /// <p>The name of the source location associated with the VOD source.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags assigned to the live source.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateLiveSourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateLiveSourceOutput");
+        formatter.field("arn", &self.arn);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field(
+            "http_package_configurations",
+            &self.http_package_configurations,
+        );
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("live_source_name", &self.live_source_name);
+        formatter.field("source_location_name", &self.source_location_name);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`UpdateLiveSourceOutput`](crate::output::UpdateLiveSourceOutput)
+pub mod update_live_source_output {
+    /// A builder for [`UpdateLiveSourceOutput`](crate::output::UpdateLiveSourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) http_package_configurations:
+            std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) live_source_name: std::option::Option<std::string::String>,
+        pub(crate) source_location_name: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The ARN of the live source.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the live source.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// Appends an item to `http_package_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
+        ///
+        /// <p>The HTTP package configurations.</p>
+        pub fn http_package_configurations(
+            mut self,
+            input: crate::model::HttpPackageConfiguration,
+        ) -> Self {
+            let mut v = self.http_package_configurations.unwrap_or_default();
+            v.push(input);
+            self.http_package_configurations = Some(v);
+            self
+        }
+        /// <p>The HTTP package configurations.</p>
+        pub fn set_http_package_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        ) -> Self {
+            self.http_package_configurations = input;
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>The name of the live source.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.live_source_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the live source.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.live_source_name = input;
+            self
+        }
+        /// <p>The name of the source location associated with the VOD source.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_location_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the source location associated with the VOD source.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_location_name = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags assigned to the live source.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags assigned to the live source.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateLiveSourceOutput`](crate::output::UpdateLiveSourceOutput)
+        pub fn build(self) -> crate::output::UpdateLiveSourceOutput {
+            crate::output::UpdateLiveSourceOutput {
+                arn: self.arn,
+                creation_time: self.creation_time,
+                http_package_configurations: self.http_package_configurations,
+                last_modified_time: self.last_modified_time,
+                live_source_name: self.live_source_name,
+                source_location_name: self.source_location_name,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl UpdateLiveSourceOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLiveSourceOutput`](crate::output::UpdateLiveSourceOutput)
+    pub fn builder() -> crate::output::update_live_source_output::Builder {
+        crate::output::update_live_source_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelOutput {
     /// <p>The ARN of the channel.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -515,6 +736,8 @@ pub struct UpdateChannelOutput {
     /// <p>The tags assigned to the channel.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The channel's tier.</p>
+    pub tier: std::option::Option<std::string::String>,
 }
 impl UpdateChannelOutput {
     /// <p>The ARN of the channel.</p>
@@ -556,6 +779,10 @@ impl UpdateChannelOutput {
     {
         self.tags.as_ref()
     }
+    /// <p>The channel's tier.</p>
+    pub fn tier(&self) -> std::option::Option<&str> {
+        self.tier.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -569,6 +796,7 @@ impl std::fmt::Debug for UpdateChannelOutput {
         formatter.field("outputs", &self.outputs);
         formatter.field("playback_mode", &self.playback_mode);
         formatter.field("tags", &self.tags);
+        formatter.field("tier", &self.tier);
         formatter.finish()
     }
 }
@@ -589,6 +817,7 @@ pub mod update_channel_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) tier: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -720,6 +949,16 @@ pub mod update_channel_output {
             self.tags = input;
             self
         }
+        /// <p>The channel's tier.</p>
+        pub fn tier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tier = Some(input.into());
+            self
+        }
+        /// <p>The channel's tier.</p>
+        pub fn set_tier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tier = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateChannelOutput`](crate::output::UpdateChannelOutput)
         pub fn build(self) -> crate::output::UpdateChannelOutput {
             crate::output::UpdateChannelOutput {
@@ -732,6 +971,7 @@ pub mod update_channel_output {
                 outputs: self.outputs,
                 playback_mode: self.playback_mode,
                 tags: self.tags,
+                tier: self.tier,
             }
         }
     }
@@ -1575,13 +1815,13 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSourceLocationsOutput {
-    /// <p>An array of source locations.</p>
+    /// <p>A list of source locations.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::SourceLocation>>,
     /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSourceLocationsOutput {
-    /// <p>An array of source locations.</p>
+    /// <p>A list of source locations.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::SourceLocation]> {
         self.items.as_deref()
     }
@@ -1612,14 +1852,14 @@ pub mod list_source_locations_output {
         ///
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
-        /// <p>An array of source locations.</p>
+        /// <p>A list of source locations.</p>
         pub fn items(mut self, input: crate::model::SourceLocation) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input);
             self.items = Some(v);
             self
         }
-        /// <p>An array of source locations.</p>
+        /// <p>A list of source locations.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SourceLocation>>,
@@ -1820,14 +2060,96 @@ impl ListPlaybackConfigurationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListLiveSourcesOutput {
+    /// <p>Lists the live sources.</p>
+    pub items: std::option::Option<std::vec::Vec<crate::model::LiveSource>>,
+    /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLiveSourcesOutput {
+    /// <p>Lists the live sources.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::LiveSource]> {
+        self.items.as_deref()
+    }
+    /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListLiveSourcesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListLiveSourcesOutput");
+        formatter.field("items", &self.items);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListLiveSourcesOutput`](crate::output::ListLiveSourcesOutput)
+pub mod list_live_sources_output {
+    /// A builder for [`ListLiveSourcesOutput`](crate::output::ListLiveSourcesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::LiveSource>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>Lists the live sources.</p>
+        pub fn items(mut self, input: crate::model::LiveSource) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input);
+            self.items = Some(v);
+            self
+        }
+        /// <p>Lists the live sources.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LiveSource>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListLiveSourcesOutput`](crate::output::ListLiveSourcesOutput)
+        pub fn build(self) -> crate::output::ListLiveSourcesOutput {
+            crate::output::ListLiveSourcesOutput {
+                items: self.items,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListLiveSourcesOutput {
+    /// Creates a new builder-style object to manufacture [`ListLiveSourcesOutput`](crate::output::ListLiveSourcesOutput)
+    pub fn builder() -> crate::output::list_live_sources_output::Builder {
+        crate::output::list_live_sources_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsOutput {
-    /// <p>An array of channels that are associated with this account.</p>
+    /// <p>A list of channels that are associated with this account.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::Channel>>,
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsOutput {
-    /// <p>An array of channels that are associated with this account.</p>
+    /// <p>A list of channels that are associated with this account.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::Channel]> {
         self.items.as_deref()
     }
@@ -1858,14 +2180,14 @@ pub mod list_channels_output {
         ///
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
-        /// <p>An array of channels that are associated with this account.</p>
+        /// <p>A list of channels that are associated with this account.</p>
         pub fn items(mut self, input: crate::model::Channel) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input);
             self.items = Some(v);
             self
         }
-        /// <p>An array of channels that are associated with this account.</p>
+        /// <p>A list of channels that are associated with this account.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Channel>>,
@@ -1903,13 +2225,13 @@ impl ListChannelsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAlertsOutput {
-    /// <p>An array of alerts that are associated with this resource.</p>
+    /// <p>A list of alerts that are associated with this resource.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::Alert>>,
     /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAlertsOutput {
-    /// <p>An array of alerts that are associated with this resource.</p>
+    /// <p>A list of alerts that are associated with this resource.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::Alert]> {
         self.items.as_deref()
     }
@@ -1940,14 +2262,14 @@ pub mod list_alerts_output {
         ///
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
-        /// <p>An array of alerts that are associated with this resource.</p>
+        /// <p>A list of alerts that are associated with this resource.</p>
         pub fn items(mut self, input: crate::model::Alert) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input);
             self.items = Some(v);
             self
         }
-        /// <p>An array of alerts that are associated with this resource.</p>
+        /// <p>A list of alerts that are associated with this resource.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Alert>>,
@@ -2672,13 +2994,13 @@ impl GetPlaybackConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChannelScheduleOutput {
-    /// <p>An array of schedule entries for the channel.</p>
+    /// <p>A list of schedule entries for the channel.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::ScheduleEntry>>,
     /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetChannelScheduleOutput {
-    /// <p>An array of schedule entries for the channel.</p>
+    /// <p>A list of schedule entries for the channel.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::ScheduleEntry]> {
         self.items.as_deref()
     }
@@ -2709,14 +3031,14 @@ pub mod get_channel_schedule_output {
         ///
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
-        /// <p>An array of schedule entries for the channel.</p>
+        /// <p>A list of schedule entries for the channel.</p>
         pub fn items(mut self, input: crate::model::ScheduleEntry) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input);
             self.items = Some(v);
             self
         }
-        /// <p>An array of schedule entries for the channel.</p>
+        /// <p>A list of schedule entries for the channel.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ScheduleEntry>>,
@@ -2815,7 +3137,7 @@ pub struct DescribeVodSourceOutput {
     /// <p>The HTTP package configurations.</p>
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-    /// <p>The ARN for the VOD source.</p>
+    /// <p>The last modified time of the VOD source.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the source location associated with the VOD source.</p>
     pub source_location_name: std::option::Option<std::string::String>,
@@ -2840,7 +3162,7 @@ impl DescribeVodSourceOutput {
     ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
         self.http_package_configurations.as_deref()
     }
-    /// <p>The ARN for the VOD source.</p>
+    /// <p>The last modified time of the VOD source.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
@@ -2939,12 +3261,12 @@ pub mod describe_vod_source_output {
             self.http_package_configurations = input;
             self
         }
-        /// <p>The ARN for the VOD source.</p>
+        /// <p>The last modified time of the VOD source.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
-        /// <p>The ARN for the VOD source.</p>
+        /// <p>The last modified time of the VOD source.</p>
         pub fn set_last_modified_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3041,7 +3363,7 @@ pub struct DescribeSourceLocationOutput {
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
     /// <p>The timestamp that indicates when the source location was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of the segment delivery configurations associated with this resource.</p>
     pub segment_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
     /// <p>The name of the source location.</p>
@@ -3077,7 +3399,7 @@ impl DescribeSourceLocationOutput {
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of the segment delivery configurations associated with this resource.</p>
     pub fn segment_delivery_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::SegmentDeliveryConfiguration]> {
@@ -3219,6 +3541,7 @@ pub mod describe_source_location_output {
         ///
         /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
         ///
+        /// <p>A list of the segment delivery configurations associated with this resource.</p>
         pub fn segment_delivery_configurations(
             mut self,
             input: crate::model::SegmentDeliveryConfiguration,
@@ -3228,7 +3551,7 @@ pub mod describe_source_location_output {
             self.segment_delivery_configurations = Some(v);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A list of the segment delivery configurations associated with this resource.</p>
         pub fn set_segment_delivery_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
@@ -3309,6 +3632,8 @@ pub struct DescribeProgramOutput {
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the program was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The name of the LiveSource for this Program.</p>
+    pub live_source_name: std::option::Option<std::string::String>,
     /// <p>The name of the program.</p>
     pub program_name: std::option::Option<std::string::String>,
     /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
@@ -3335,6 +3660,10 @@ impl DescribeProgramOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
+    /// <p>The name of the LiveSource for this Program.</p>
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
+        self.live_source_name.as_deref()
+    }
     /// <p>The name of the program.</p>
     pub fn program_name(&self) -> std::option::Option<&str> {
         self.program_name.as_deref()
@@ -3359,6 +3688,7 @@ impl std::fmt::Debug for DescribeProgramOutput {
         formatter.field("arn", &self.arn);
         formatter.field("channel_name", &self.channel_name);
         formatter.field("creation_time", &self.creation_time);
+        formatter.field("live_source_name", &self.live_source_name);
         formatter.field("program_name", &self.program_name);
         formatter.field("scheduled_start_time", &self.scheduled_start_time);
         formatter.field("source_location_name", &self.source_location_name);
@@ -3376,6 +3706,7 @@ pub mod describe_program_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) live_source_name: std::option::Option<std::string::String>,
         pub(crate) program_name: std::option::Option<std::string::String>,
         pub(crate) scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
@@ -3434,6 +3765,19 @@ pub mod describe_program_output {
             self.creation_time = input;
             self
         }
+        /// <p>The name of the LiveSource for this Program.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.live_source_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the LiveSource for this Program.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.live_source_name = input;
+            self
+        }
         /// <p>The name of the program.</p>
         pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.program_name = Some(input.into());
@@ -3490,6 +3834,7 @@ pub mod describe_program_output {
                 arn: self.arn,
                 channel_name: self.channel_name,
                 creation_time: self.creation_time,
+                live_source_name: self.live_source_name,
                 program_name: self.program_name,
                 scheduled_start_time: self.scheduled_start_time,
                 source_location_name: self.source_location_name,
@@ -3502,6 +3847,226 @@ impl DescribeProgramOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProgramOutput`](crate::output::DescribeProgramOutput)
     pub fn builder() -> crate::output::describe_program_output::Builder {
         crate::output::describe_program_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLiveSourceOutput {
+    /// <p>The ARN of the live source.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The timestamp that indicates when the live source was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The HTTP package configurations.</p>
+    pub http_package_configurations:
+        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+    /// <p>The timestamp that indicates when the live source was modified.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The name of the live source.</p>
+    pub live_source_name: std::option::Option<std::string::String>,
+    /// <p>The name of the source location associated with the VOD source.</p>
+    pub source_location_name: std::option::Option<std::string::String>,
+    /// <p>The tags assigned to the live source.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribeLiveSourceOutput {
+    /// <p>The ARN of the live source.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The timestamp that indicates when the live source was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The HTTP package configurations.</p>
+    pub fn http_package_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
+        self.http_package_configurations.as_deref()
+    }
+    /// <p>The timestamp that indicates when the live source was modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The name of the live source.</p>
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
+        self.live_source_name.as_deref()
+    }
+    /// <p>The name of the source location associated with the VOD source.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags assigned to the live source.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeLiveSourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeLiveSourceOutput");
+        formatter.field("arn", &self.arn);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field(
+            "http_package_configurations",
+            &self.http_package_configurations,
+        );
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("live_source_name", &self.live_source_name);
+        formatter.field("source_location_name", &self.source_location_name);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`DescribeLiveSourceOutput`](crate::output::DescribeLiveSourceOutput)
+pub mod describe_live_source_output {
+    /// A builder for [`DescribeLiveSourceOutput`](crate::output::DescribeLiveSourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) http_package_configurations:
+            std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) live_source_name: std::option::Option<std::string::String>,
+        pub(crate) source_location_name: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The ARN of the live source.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the live source.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// Appends an item to `http_package_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
+        ///
+        /// <p>The HTTP package configurations.</p>
+        pub fn http_package_configurations(
+            mut self,
+            input: crate::model::HttpPackageConfiguration,
+        ) -> Self {
+            let mut v = self.http_package_configurations.unwrap_or_default();
+            v.push(input);
+            self.http_package_configurations = Some(v);
+            self
+        }
+        /// <p>The HTTP package configurations.</p>
+        pub fn set_http_package_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        ) -> Self {
+            self.http_package_configurations = input;
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>The name of the live source.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.live_source_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the live source.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.live_source_name = input;
+            self
+        }
+        /// <p>The name of the source location associated with the VOD source.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_location_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the source location associated with the VOD source.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_location_name = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags assigned to the live source.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags assigned to the live source.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeLiveSourceOutput`](crate::output::DescribeLiveSourceOutput)
+        pub fn build(self) -> crate::output::DescribeLiveSourceOutput {
+            crate::output::DescribeLiveSourceOutput {
+                arn: self.arn,
+                creation_time: self.creation_time,
+                http_package_configurations: self.http_package_configurations,
+                last_modified_time: self.last_modified_time,
+                live_source_name: self.live_source_name,
+                source_location_name: self.source_location_name,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl DescribeLiveSourceOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLiveSourceOutput`](crate::output::DescribeLiveSourceOutput)
+    pub fn builder() -> crate::output::describe_live_source_output::Builder {
+        crate::output::describe_live_source_output::Builder::default()
     }
 }
 
@@ -3528,6 +4093,8 @@ pub struct DescribeChannelOutput {
     /// <p>The tags assigned to the channel.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The channel's tier.</p>
+    pub tier: std::option::Option<std::string::String>,
 }
 impl DescribeChannelOutput {
     /// <p>The ARN of the channel.</p>
@@ -3569,6 +4136,10 @@ impl DescribeChannelOutput {
     {
         self.tags.as_ref()
     }
+    /// <p>The channel's tier.</p>
+    pub fn tier(&self) -> std::option::Option<&str> {
+        self.tier.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3582,6 +4153,7 @@ impl std::fmt::Debug for DescribeChannelOutput {
         formatter.field("outputs", &self.outputs);
         formatter.field("playback_mode", &self.playback_mode);
         formatter.field("tags", &self.tags);
+        formatter.field("tier", &self.tier);
         formatter.finish()
     }
 }
@@ -3602,6 +4174,7 @@ pub mod describe_channel_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) tier: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -3733,6 +4306,16 @@ pub mod describe_channel_output {
             self.tags = input;
             self
         }
+        /// <p>The channel's tier.</p>
+        pub fn tier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tier = Some(input.into());
+            self
+        }
+        /// <p>The channel's tier.</p>
+        pub fn set_tier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tier = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeChannelOutput`](crate::output::DescribeChannelOutput)
         pub fn build(self) -> crate::output::DescribeChannelOutput {
             crate::output::DescribeChannelOutput {
@@ -3745,6 +4328,7 @@ pub mod describe_channel_output {
                 outputs: self.outputs,
                 playback_mode: self.playback_mode,
                 tags: self.tags,
+                tier: self.tier,
             }
         }
     }
@@ -3909,6 +4493,36 @@ impl DeletePlaybackConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteLiveSourceOutput {}
+impl std::fmt::Debug for DeleteLiveSourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteLiveSourceOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteLiveSourceOutput`](crate::output::DeleteLiveSourceOutput)
+pub mod delete_live_source_output {
+    /// A builder for [`DeleteLiveSourceOutput`](crate::output::DeleteLiveSourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteLiveSourceOutput`](crate::output::DeleteLiveSourceOutput)
+        pub fn build(self) -> crate::output::DeleteLiveSourceOutput {
+            crate::output::DeleteLiveSourceOutput {}
+        }
+    }
+}
+impl DeleteLiveSourceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLiveSourceOutput`](crate::output::DeleteLiveSourceOutput)
+    pub fn builder() -> crate::output::delete_live_source_output::Builder {
+        crate::output::delete_live_source_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChannelPolicyOutput {}
 impl std::fmt::Debug for DeleteChannelPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3977,7 +4591,7 @@ pub struct CreateVodSourceOutput {
     /// <p>The HTTP package configurations.</p>
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-    /// <p>The ARN for the VOD source.</p>
+    /// <p>The last modified time of the VOD source.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the source location associated with the VOD source.</p>
     pub source_location_name: std::option::Option<std::string::String>,
@@ -4002,7 +4616,7 @@ impl CreateVodSourceOutput {
     ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
         self.http_package_configurations.as_deref()
     }
-    /// <p>The ARN for the VOD source.</p>
+    /// <p>The last modified time of the VOD source.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
@@ -4101,12 +4715,12 @@ pub mod create_vod_source_output {
             self.http_package_configurations = input;
             self
         }
-        /// <p>The ARN for the VOD source.</p>
+        /// <p>The last modified time of the VOD source.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
-        /// <p>The ARN for the VOD source.</p>
+        /// <p>The last modified time of the VOD source.</p>
         pub fn set_last_modified_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4203,7 +4817,7 @@ pub struct CreateSourceLocationOutput {
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
     /// <p>The timestamp that indicates when the source location was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of the segment delivery configurations associated with this resource.</p>
     pub segment_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
     /// <p>The name of the source location.</p>
@@ -4239,7 +4853,7 @@ impl CreateSourceLocationOutput {
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A list of the segment delivery configurations associated with this resource.</p>
     pub fn segment_delivery_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::SegmentDeliveryConfiguration]> {
@@ -4381,6 +4995,7 @@ pub mod create_source_location_output {
         ///
         /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
         ///
+        /// <p>A list of the segment delivery configurations associated with this resource.</p>
         pub fn segment_delivery_configurations(
             mut self,
             input: crate::model::SegmentDeliveryConfiguration,
@@ -4390,7 +5005,7 @@ pub mod create_source_location_output {
             self.segment_delivery_configurations = Some(v);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A list of the segment delivery configurations associated with this resource.</p>
         pub fn set_segment_delivery_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
@@ -4471,6 +5086,8 @@ pub struct CreateProgramOutput {
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the program was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The name of the LiveSource for this Program.</p>
+    pub live_source_name: std::option::Option<std::string::String>,
     /// <p>The name of the program.</p>
     pub program_name: std::option::Option<std::string::String>,
     /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
@@ -4497,6 +5114,10 @@ impl CreateProgramOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
+    /// <p>The name of the LiveSource for this Program.</p>
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
+        self.live_source_name.as_deref()
+    }
     /// <p>The name of the program.</p>
     pub fn program_name(&self) -> std::option::Option<&str> {
         self.program_name.as_deref()
@@ -4521,6 +5142,7 @@ impl std::fmt::Debug for CreateProgramOutput {
         formatter.field("arn", &self.arn);
         formatter.field("channel_name", &self.channel_name);
         formatter.field("creation_time", &self.creation_time);
+        formatter.field("live_source_name", &self.live_source_name);
         formatter.field("program_name", &self.program_name);
         formatter.field("scheduled_start_time", &self.scheduled_start_time);
         formatter.field("source_location_name", &self.source_location_name);
@@ -4538,6 +5160,7 @@ pub mod create_program_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) live_source_name: std::option::Option<std::string::String>,
         pub(crate) program_name: std::option::Option<std::string::String>,
         pub(crate) scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
@@ -4596,6 +5219,19 @@ pub mod create_program_output {
             self.creation_time = input;
             self
         }
+        /// <p>The name of the LiveSource for this Program.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.live_source_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the LiveSource for this Program.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.live_source_name = input;
+            self
+        }
         /// <p>The name of the program.</p>
         pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.program_name = Some(input.into());
@@ -4652,6 +5288,7 @@ pub mod create_program_output {
                 arn: self.arn,
                 channel_name: self.channel_name,
                 creation_time: self.creation_time,
+                live_source_name: self.live_source_name,
                 program_name: self.program_name,
                 scheduled_start_time: self.scheduled_start_time,
                 source_location_name: self.source_location_name,
@@ -4834,6 +5471,226 @@ impl CreatePrefetchScheduleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLiveSourceOutput {
+    /// <p>The ARN of the live source.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The timestamp that indicates when the live source was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The HTTP package configurations.</p>
+    pub http_package_configurations:
+        std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+    /// <p>The timestamp that indicates when the live source was modified.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The name of the live source.</p>
+    pub live_source_name: std::option::Option<std::string::String>,
+    /// <p>The name of the source location associated with the VOD source.</p>
+    pub source_location_name: std::option::Option<std::string::String>,
+    /// <p>The tags assigned to the live source.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateLiveSourceOutput {
+    /// <p>The ARN of the live source.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The timestamp that indicates when the live source was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The HTTP package configurations.</p>
+    pub fn http_package_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
+        self.http_package_configurations.as_deref()
+    }
+    /// <p>The timestamp that indicates when the live source was modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The name of the live source.</p>
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
+        self.live_source_name.as_deref()
+    }
+    /// <p>The name of the source location associated with the VOD source.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags assigned to the live source.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateLiveSourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateLiveSourceOutput");
+        formatter.field("arn", &self.arn);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field(
+            "http_package_configurations",
+            &self.http_package_configurations,
+        );
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("live_source_name", &self.live_source_name);
+        formatter.field("source_location_name", &self.source_location_name);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`CreateLiveSourceOutput`](crate::output::CreateLiveSourceOutput)
+pub mod create_live_source_output {
+    /// A builder for [`CreateLiveSourceOutput`](crate::output::CreateLiveSourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) http_package_configurations:
+            std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) live_source_name: std::option::Option<std::string::String>,
+        pub(crate) source_location_name: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The ARN of the live source.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the live source.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// Appends an item to `http_package_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
+        ///
+        /// <p>The HTTP package configurations.</p>
+        pub fn http_package_configurations(
+            mut self,
+            input: crate::model::HttpPackageConfiguration,
+        ) -> Self {
+            let mut v = self.http_package_configurations.unwrap_or_default();
+            v.push(input);
+            self.http_package_configurations = Some(v);
+            self
+        }
+        /// <p>The HTTP package configurations.</p>
+        pub fn set_http_package_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+        ) -> Self {
+            self.http_package_configurations = input;
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The timestamp that indicates when the live source was modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>The name of the live source.</p>
+        pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.live_source_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the live source.</p>
+        pub fn set_live_source_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.live_source_name = input;
+            self
+        }
+        /// <p>The name of the source location associated with the VOD source.</p>
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_location_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the source location associated with the VOD source.</p>
+        pub fn set_source_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_location_name = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags assigned to the live source.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags assigned to the live source.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateLiveSourceOutput`](crate::output::CreateLiveSourceOutput)
+        pub fn build(self) -> crate::output::CreateLiveSourceOutput {
+            crate::output::CreateLiveSourceOutput {
+                arn: self.arn,
+                creation_time: self.creation_time,
+                http_package_configurations: self.http_package_configurations,
+                last_modified_time: self.last_modified_time,
+                live_source_name: self.live_source_name,
+                source_location_name: self.source_location_name,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl CreateLiveSourceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLiveSourceOutput`](crate::output::CreateLiveSourceOutput)
+    pub fn builder() -> crate::output::create_live_source_output::Builder {
+        crate::output::create_live_source_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelOutput {
     /// <p>The ARN of the channel.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -4854,6 +5711,8 @@ pub struct CreateChannelOutput {
     /// <p>The tags assigned to the channel.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The channel's tier.</p>
+    pub tier: std::option::Option<std::string::String>,
 }
 impl CreateChannelOutput {
     /// <p>The ARN of the channel.</p>
@@ -4895,6 +5754,10 @@ impl CreateChannelOutput {
     {
         self.tags.as_ref()
     }
+    /// <p>The channel's tier.</p>
+    pub fn tier(&self) -> std::option::Option<&str> {
+        self.tier.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4908,6 +5771,7 @@ impl std::fmt::Debug for CreateChannelOutput {
         formatter.field("outputs", &self.outputs);
         formatter.field("playback_mode", &self.playback_mode);
         formatter.field("tags", &self.tags);
+        formatter.field("tier", &self.tier);
         formatter.finish()
     }
 }
@@ -4928,6 +5792,7 @@ pub mod create_channel_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) tier: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -5059,6 +5924,16 @@ pub mod create_channel_output {
             self.tags = input;
             self
         }
+        /// <p>The channel's tier.</p>
+        pub fn tier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tier = Some(input.into());
+            self
+        }
+        /// <p>The channel's tier.</p>
+        pub fn set_tier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tier = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateChannelOutput`](crate::output::CreateChannelOutput)
         pub fn build(self) -> crate::output::CreateChannelOutput {
             crate::output::CreateChannelOutput {
@@ -5071,6 +5946,7 @@ pub mod create_channel_output {
                 outputs: self.outputs,
                 playback_mode: self.playback_mode,
                 tags: self.tags,
+                tier: self.tier,
             }
         }
     }

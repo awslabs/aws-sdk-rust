@@ -159,11 +159,13 @@ impl Client {
     ///   - [`include_result_metadata(bool)`](crate::client::fluent_builders::ExecuteStatement::include_result_metadata) / [`set_include_result_metadata(bool)`](crate::client::fluent_builders::ExecuteStatement::set_include_result_metadata): <p>A value that indicates whether to include metadata in the results.</p>
     ///   - [`continue_after_timeout(bool)`](crate::client::fluent_builders::ExecuteStatement::continue_after_timeout) / [`set_continue_after_timeout(bool)`](crate::client::fluent_builders::ExecuteStatement::set_continue_after_timeout): <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <important>   <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>  </important>
     ///   - [`result_set_options(ResultSetOptions)`](crate::client::fluent_builders::ExecuteStatement::result_set_options) / [`set_result_set_options(Option<ResultSetOptions>)`](crate::client::fluent_builders::ExecuteStatement::set_result_set_options): <p>Options that control how the result set is returned.</p>
+    ///   - [`format_records_as(RecordsFormatType)`](crate::client::fluent_builders::ExecuteStatement::format_records_as) / [`set_format_records_as(Option<RecordsFormatType>)`](crate::client::fluent_builders::ExecuteStatement::set_format_records_as): <p>A value that indicates whether to format the result set as a single JSON string. This parameter only applies to <code>SELECT</code> statements and is ignored for other types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code> field.</p>  <p>For usage information about the JSON format for result sets, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// - On success, responds with [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput) with field(s):
-    ///   - [`records(Option<Vec<Vec<Field>>>)`](crate::output::ExecuteStatementOutput::records): <p>The records returned by the SQL statement.</p>
-    ///   - [`column_metadata(Option<Vec<ColumnMetadata>>)`](crate::output::ExecuteStatementOutput::column_metadata): <p>Metadata for the columns included in the results.</p>
+    ///   - [`records(Option<Vec<Vec<Field>>>)`](crate::output::ExecuteStatementOutput::records): <p>The records returned by the SQL statement. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
+    ///   - [`column_metadata(Option<Vec<ColumnMetadata>>)`](crate::output::ExecuteStatementOutput::column_metadata): <p>Metadata for the columns included in the results. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
     ///   - [`number_of_records_updated(i64)`](crate::output::ExecuteStatementOutput::number_of_records_updated): <p>The number of records updated by the request.</p>
-    ///   - [`generated_fields(Option<Vec<Field>>)`](crate::output::ExecuteStatementOutput::generated_fields): <p>Values for fields generated during the request.</p> <note>   <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>  </note>
+    ///   - [`generated_fields(Option<Vec<Field>>)`](crate::output::ExecuteStatementOutput::generated_fields): <p>Values for fields generated during a DML request.</p> <note>   <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>  </note>
+    ///   - [`formatted_records(Option<String>)`](crate::output::ExecuteStatementOutput::formatted_records): <p>A string value that represents the result set of a <code>SELECT</code> statement in JSON format. This value is only present when the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>  <p>The size limit for this field is currently 10 MB. If the JSON-formatted string representing the result set requires more than 10 MB, the call returns an error.</p>
     /// - On failure, responds with [`SdkError<ExecuteStatementError>`](crate::error::ExecuteStatementError)
     pub fn execute_statement(&self) -> fluent_builders::ExecuteStatement {
         fluent_builders::ExecuteStatement::new(self.handle.clone())
@@ -605,7 +607,7 @@ pub mod fluent_builders {
     /// <p>Runs a SQL statement against a database.</p> <important>
     /// <p>If a call isn't part of a transaction because it doesn't include the <code>transactionID</code> parameter, changes that result from the call are committed automatically.</p>
     /// </important>
-    /// <p>The response size limit is 1 MB. If the call returns more than 1 MB of response data, the call is terminated.</p>
+    /// <p>If the binary response data from the database is more than 1 MB, the call is terminated.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteStatement {
         handle: std::sync::Arc<super::Handle>,
@@ -770,6 +772,21 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ResultSetOptions>,
         ) -> Self {
             self.inner = self.inner.set_result_set_options(input);
+            self
+        }
+        /// <p>A value that indicates whether to format the result set as a single JSON string. This parameter only applies to <code>SELECT</code> statements and is ignored for other types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code> field.</p>
+        /// <p>For usage information about the JSON format for result sets, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn format_records_as(mut self, input: crate::model::RecordsFormatType) -> Self {
+            self.inner = self.inner.format_records_as(input);
+            self
+        }
+        /// <p>A value that indicates whether to format the result set as a single JSON string. This parameter only applies to <code>SELECT</code> statements and is ignored for other types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code> field.</p>
+        /// <p>For usage information about the JSON format for result sets, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_format_records_as(
+            mut self,
+            input: std::option::Option<crate::model::RecordsFormatType>,
+        ) -> Self {
+            self.inner = self.inner.set_format_records_as(input);
             self
         }
     }

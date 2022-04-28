@@ -12490,6 +12490,14 @@ where
                                     crate::json_deser::deser_list_com_amazonaws_ssm_target_locations(tokens)?
                                 );
                             }
+                            "ScheduleOffset" => {
+                                builder = builder.set_schedule_offset(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -22465,6 +22473,14 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "ScheduleOffset" => {
+                                builder = builder.set_schedule_offset(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -22646,6 +22662,14 @@ where
                             "TargetLocations" => {
                                 builder = builder.set_target_locations(
                                     crate::json_deser::deser_list_com_amazonaws_ssm_target_locations(tokens)?
+                                );
+                            }
+                            "ScheduleOffset" => {
+                                builder = builder.set_schedule_offset(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -24452,6 +24476,14 @@ where
                             "TargetLocations" => {
                                 builder = builder.set_target_locations(
                                     crate::json_deser::deser_list_com_amazonaws_ssm_target_locations(tokens)?
+                                );
+                            }
+                            "ScheduleOffset" => {
+                                builder = builder.set_schedule_offset(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

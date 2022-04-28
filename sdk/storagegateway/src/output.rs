@@ -4294,7 +4294,7 @@ pub struct DescribeGatewayInformationOutput {
     pub gateway_type: std::option::Option<std::string::String>,
     /// <p>The date on which an update to the gateway is available. This date is in the time zone of the gateway. If the gateway is not available for an update this field is not returned in the response.</p>
     pub next_update_availability_date: std::option::Option<std::string::String>,
-    /// <p>The date on which the last software update was applied to the gateway. If the gateway has never been updated, this field does not return a value in the response.</p>
+    /// <p>The date on which the last software update was applied to the gateway. If the gateway has never been updated, this field does not return a value in the response. This only only exist and returns once it have been chosen and set by the SGW service, based on the OS version of the gateway VM</p>
     pub last_software_update: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
     pub ec2_instance_id: std::option::Option<std::string::String>,
@@ -4304,7 +4304,7 @@ pub struct DescribeGatewayInformationOutput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.</p>
     pub vpc_endpoint: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway. This field only only exist and returns once it have been chosen and set by the SGW service, based on the OS version of the gateway VM</p>
     pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
     /// <p>The type of hardware or software platform on which the gateway is running.</p>
     pub host_environment: std::option::Option<crate::model::HostEnvironment>,
@@ -4358,7 +4358,7 @@ impl DescribeGatewayInformationOutput {
     pub fn next_update_availability_date(&self) -> std::option::Option<&str> {
         self.next_update_availability_date.as_deref()
     }
-    /// <p>The date on which the last software update was applied to the gateway. If the gateway has never been updated, this field does not return a value in the response.</p>
+    /// <p>The date on which the last software update was applied to the gateway. If the gateway has never been updated, this field does not return a value in the response. This only only exist and returns once it have been chosen and set by the SGW service, based on the OS version of the gateway VM</p>
     pub fn last_software_update(&self) -> std::option::Option<&str> {
         self.last_software_update.as_deref()
     }
@@ -4378,7 +4378,7 @@ impl DescribeGatewayInformationOutput {
     pub fn vpc_endpoint(&self) -> std::option::Option<&str> {
         self.vpc_endpoint.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway. This field only only exist and returns once it have been chosen and set by the SGW service, based on the OS version of the gateway VM</p>
     pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<&str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
@@ -4582,12 +4582,12 @@ pub mod describe_gateway_information_output {
             self.next_update_availability_date = input;
             self
         }
-        /// <p>The date on which the last software update was applied to the gateway. If the gateway has never been updated, this field does not return a value in the response.</p>
+        /// <p>The date on which the last software update was applied to the gateway. If the gateway has never been updated, this field does not return a value in the response. This only only exist and returns once it have been chosen and set by the SGW service, based on the OS version of the gateway VM</p>
         pub fn last_software_update(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_software_update = Some(input.into());
             self
         }
-        /// <p>The date on which the last software update was applied to the gateway. If the gateway has never been updated, this field does not return a value in the response.</p>
+        /// <p>The date on which the last software update was applied to the gateway. If the gateway has never been updated, this field does not return a value in the response. This only only exist and returns once it have been chosen and set by the SGW service, based on the OS version of the gateway VM</p>
         pub fn set_last_software_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4650,12 +4650,12 @@ pub mod describe_gateway_information_output {
             self.vpc_endpoint = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway. This field only only exist and returns once it have been chosen and set by the SGW service, based on the OS version of the gateway VM</p>
         pub fn cloud_watch_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cloud_watch_log_group_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway. This field only only exist and returns once it have been chosen and set by the SGW service, based on the OS version of the gateway VM</p>
         pub fn set_cloud_watch_log_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,

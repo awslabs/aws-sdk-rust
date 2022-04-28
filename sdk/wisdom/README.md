@@ -3,9 +3,7 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-All Amazon Connect Wisdom functionality is accessible using the API. For example, you can create an assistant and a knowledge base.
-
-Some more advanced features are only accessible using the Wisdom API. For example, you can manually manage content by uploading custom files and control their lifecycle.
+Amazon Connect Wisdom delivers agents the information they need to solve customer issues as they're actively speaking with customers. Agents can search across connected repositories from within their agent desktop to find answers quickly. Use the Amazon Connect Wisdom APIs to create an assistant and a knowledge base, for example, or manage content by uploading custom files.
 
 ## Getting Started
 
@@ -18,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.10.1"
-aws-sdk-wisdom = "0.10.1"
+aws-config = "0.11.0"
+aws-sdk-wisdom = "0.11.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

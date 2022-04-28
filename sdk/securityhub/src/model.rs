@@ -54,6 +54,61 @@ impl AsRef<str> for ControlStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AutoEnableStandards {
+    #[allow(missing_docs)] // documentation missing in model
+    Default,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AutoEnableStandards {
+    fn from(s: &str) -> Self {
+        match s {
+            "DEFAULT" => AutoEnableStandards::Default,
+            "NONE" => AutoEnableStandards::None,
+            other => AutoEnableStandards::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AutoEnableStandards {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AutoEnableStandards::from(s))
+    }
+}
+impl AutoEnableStandards {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AutoEnableStandards::Default => "DEFAULT",
+            AutoEnableStandards::None => "NONE",
+            AutoEnableStandards::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DEFAULT", "NONE"]
+    }
+}
+impl AsRef<str> for AutoEnableStandards {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight.</p>
 /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>
 #[non_exhaustive]
@@ -102,10 +157,8 @@ pub struct AwsSecurityFindingFilters {
     /// <p>A data type where security-findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
     pub product_fields: std::option::Option<std::vec::Vec<crate::model::MapFilter>>,
     /// <p>The name of the solution (product) that generates findings.</p>
-    /// <p>Note that this is a filter against the <code>aws/securityhub/ProductName</code> field in <code>ProductFields</code>. It is not a filter for the top-level <code>ProductName</code> field.</p>
     pub product_name: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The name of the findings provider (company) that owns the solution (product) that generates findings.</p>
-    /// <p>Note that this is a filter against the <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It is not a filter for the top-level <code>CompanyName</code> field.</p>
     pub company_name: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding. </p>
     pub user_defined_fields: std::option::Option<std::vec::Vec<crate::model::MapFilter>>,
@@ -391,12 +444,10 @@ impl AwsSecurityFindingFilters {
         self.product_fields.as_deref()
     }
     /// <p>The name of the solution (product) that generates findings.</p>
-    /// <p>Note that this is a filter against the <code>aws/securityhub/ProductName</code> field in <code>ProductFields</code>. It is not a filter for the top-level <code>ProductName</code> field.</p>
     pub fn product_name(&self) -> std::option::Option<&[crate::model::StringFilter]> {
         self.product_name.as_deref()
     }
     /// <p>The name of the findings provider (company) that owns the solution (product) that generates findings.</p>
-    /// <p>Note that this is a filter against the <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It is not a filter for the top-level <code>CompanyName</code> field.</p>
     pub fn company_name(&self) -> std::option::Option<&[crate::model::StringFilter]> {
         self.company_name.as_deref()
     }
@@ -1530,7 +1581,6 @@ pub mod aws_security_finding_filters {
         /// To override the contents of this collection use [`set_product_name`](Self::set_product_name).
         ///
         /// <p>The name of the solution (product) that generates findings.</p>
-        /// <p>Note that this is a filter against the <code>aws/securityhub/ProductName</code> field in <code>ProductFields</code>. It is not a filter for the top-level <code>ProductName</code> field.</p>
         pub fn product_name(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.product_name.unwrap_or_default();
             v.push(input);
@@ -1538,7 +1588,6 @@ pub mod aws_security_finding_filters {
             self
         }
         /// <p>The name of the solution (product) that generates findings.</p>
-        /// <p>Note that this is a filter against the <code>aws/securityhub/ProductName</code> field in <code>ProductFields</code>. It is not a filter for the top-level <code>ProductName</code> field.</p>
         pub fn set_product_name(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
@@ -1551,7 +1600,6 @@ pub mod aws_security_finding_filters {
         /// To override the contents of this collection use [`set_company_name`](Self::set_company_name).
         ///
         /// <p>The name of the findings provider (company) that owns the solution (product) that generates findings.</p>
-        /// <p>Note that this is a filter against the <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It is not a filter for the top-level <code>CompanyName</code> field.</p>
         pub fn company_name(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.company_name.unwrap_or_default();
             v.push(input);
@@ -1559,7 +1607,6 @@ pub mod aws_security_finding_filters {
             self
         }
         /// <p>The name of the findings provider (company) that owns the solution (product) that generates findings.</p>
-        /// <p>Note that this is a filter against the <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It is not a filter for the top-level <code>CompanyName</code> field.</p>
         pub fn set_company_name(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
@@ -5113,16 +5160,12 @@ pub struct AwsSecurityFinding {
     /// <p>The ARN generated by Security Hub that uniquely identifies a product that generates findings. This can be the ARN for a third-party product that is integrated with Security Hub, or the ARN for a custom integration.</p>
     pub product_arn: std::option::Option<std::string::String>,
     /// <p>The name of the product that generated the finding.</p>
-    /// <p>Security Hub populates this attribute automatically for each finding. You cannot update it using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is when you use a custom integration.</p>
-    /// <p>When you use the Security Hub console to filter findings by product name, you use this attribute.</p>
-    /// <p>When you use the Security Hub API to filter findings by product name, you use the <code>aws/securityhub/ProductName</code> attribute under <code>ProductFields</code>.</p>
-    /// <p>Security Hub does not synchronize those two attributes.</p>
+    /// <p>Security Hub populates this attribute automatically for each finding. You cannot update this attribute with <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is a custom integration.</p>
+    /// <p>When you use the Security Hub console or API to filter findings by product name, you use this attribute.</p>
     pub product_name: std::option::Option<std::string::String>,
     /// <p>The name of the company for the product that generated the finding.</p>
-    /// <p>Security Hub populates this attribute automatically for each finding. You cannot be updated using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is when you use a custom integration.</p>
-    /// <p>When you use the Security Hub console to filter findings by company name, you use this attribute.</p>
-    /// <p>When you use the Security Hub API to filter findings by company name, you use the <code>aws/securityhub/CompanyName</code> attribute under <code>ProductFields</code>.</p>
-    /// <p>Security Hub does not synchronize those two attributes.</p>
+    /// <p>Security Hub populates this attribute automatically for each finding. You cannot update this attribute with <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is a custom integration.</p>
+    /// <p>When you use the Security Hub console or API to filter findings by company name, you use this attribute.</p>
     pub company_name: std::option::Option<std::string::String>,
     /// <p>The Region from which the finding was generated.</p>
     /// <p>Security Hub populates this attribute automatically for each finding. You cannot update it using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
@@ -5225,18 +5268,14 @@ impl AwsSecurityFinding {
         self.product_arn.as_deref()
     }
     /// <p>The name of the product that generated the finding.</p>
-    /// <p>Security Hub populates this attribute automatically for each finding. You cannot update it using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is when you use a custom integration.</p>
-    /// <p>When you use the Security Hub console to filter findings by product name, you use this attribute.</p>
-    /// <p>When you use the Security Hub API to filter findings by product name, you use the <code>aws/securityhub/ProductName</code> attribute under <code>ProductFields</code>.</p>
-    /// <p>Security Hub does not synchronize those two attributes.</p>
+    /// <p>Security Hub populates this attribute automatically for each finding. You cannot update this attribute with <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is a custom integration.</p>
+    /// <p>When you use the Security Hub console or API to filter findings by product name, you use this attribute.</p>
     pub fn product_name(&self) -> std::option::Option<&str> {
         self.product_name.as_deref()
     }
     /// <p>The name of the company for the product that generated the finding.</p>
-    /// <p>Security Hub populates this attribute automatically for each finding. You cannot be updated using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is when you use a custom integration.</p>
-    /// <p>When you use the Security Hub console to filter findings by company name, you use this attribute.</p>
-    /// <p>When you use the Security Hub API to filter findings by company name, you use the <code>aws/securityhub/CompanyName</code> attribute under <code>ProductFields</code>.</p>
-    /// <p>Security Hub does not synchronize those two attributes.</p>
+    /// <p>Security Hub populates this attribute automatically for each finding. You cannot update this attribute with <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is a custom integration.</p>
+    /// <p>When you use the Security Hub console or API to filter findings by company name, you use this attribute.</p>
     pub fn company_name(&self) -> std::option::Option<&str> {
         self.company_name.as_deref()
     }
@@ -5540,37 +5579,29 @@ pub mod aws_security_finding {
             self
         }
         /// <p>The name of the product that generated the finding.</p>
-        /// <p>Security Hub populates this attribute automatically for each finding. You cannot update it using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is when you use a custom integration.</p>
-        /// <p>When you use the Security Hub console to filter findings by product name, you use this attribute.</p>
-        /// <p>When you use the Security Hub API to filter findings by product name, you use the <code>aws/securityhub/ProductName</code> attribute under <code>ProductFields</code>.</p>
-        /// <p>Security Hub does not synchronize those two attributes.</p>
+        /// <p>Security Hub populates this attribute automatically for each finding. You cannot update this attribute with <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is a custom integration.</p>
+        /// <p>When you use the Security Hub console or API to filter findings by product name, you use this attribute.</p>
         pub fn product_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.product_name = Some(input.into());
             self
         }
         /// <p>The name of the product that generated the finding.</p>
-        /// <p>Security Hub populates this attribute automatically for each finding. You cannot update it using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is when you use a custom integration.</p>
-        /// <p>When you use the Security Hub console to filter findings by product name, you use this attribute.</p>
-        /// <p>When you use the Security Hub API to filter findings by product name, you use the <code>aws/securityhub/ProductName</code> attribute under <code>ProductFields</code>.</p>
-        /// <p>Security Hub does not synchronize those two attributes.</p>
+        /// <p>Security Hub populates this attribute automatically for each finding. You cannot update this attribute with <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is a custom integration.</p>
+        /// <p>When you use the Security Hub console or API to filter findings by product name, you use this attribute.</p>
         pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_name = input;
             self
         }
         /// <p>The name of the company for the product that generated the finding.</p>
-        /// <p>Security Hub populates this attribute automatically for each finding. You cannot be updated using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is when you use a custom integration.</p>
-        /// <p>When you use the Security Hub console to filter findings by company name, you use this attribute.</p>
-        /// <p>When you use the Security Hub API to filter findings by company name, you use the <code>aws/securityhub/CompanyName</code> attribute under <code>ProductFields</code>.</p>
-        /// <p>Security Hub does not synchronize those two attributes.</p>
+        /// <p>Security Hub populates this attribute automatically for each finding. You cannot update this attribute with <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is a custom integration.</p>
+        /// <p>When you use the Security Hub console or API to filter findings by company name, you use this attribute.</p>
         pub fn company_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.company_name = Some(input.into());
             self
         }
         /// <p>The name of the company for the product that generated the finding.</p>
-        /// <p>Security Hub populates this attribute automatically for each finding. You cannot be updated using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is when you use a custom integration.</p>
-        /// <p>When you use the Security Hub console to filter findings by company name, you use this attribute.</p>
-        /// <p>When you use the Security Hub API to filter findings by company name, you use the <code>aws/securityhub/CompanyName</code> attribute under <code>ProductFields</code>.</p>
-        /// <p>Security Hub does not synchronize those two attributes.</p>
+        /// <p>Security Hub populates this attribute automatically for each finding. You cannot update this attribute with <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is a custom integration.</p>
+        /// <p>When you use the Security Hub console or API to filter findings by company name, you use this attribute.</p>
         pub fn set_company_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.company_name = input;
             self

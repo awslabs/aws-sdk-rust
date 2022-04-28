@@ -6028,7 +6028,7 @@ pub struct AwsApiCallAction {
     pub domain_details: std::option::Option<crate::model::DomainDetails>,
     /// <p>The error code of the failed Amazon Web Services API action.</p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The agent through which the API request was made.</p>
     pub user_agent: std::option::Option<std::string::String>,
     /// <p>The remote IP information of the connection that initiated the Amazon Web Services API call.</p>
     pub remote_ip_details: std::option::Option<crate::model::RemoteIpDetails>,
@@ -6054,7 +6054,7 @@ impl AwsApiCallAction {
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The agent through which the API request was made.</p>
     pub fn user_agent(&self) -> std::option::Option<&str> {
         self.user_agent.as_deref()
     }
@@ -6146,12 +6146,12 @@ pub mod aws_api_call_action {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The agent through which the API request was made.</p>
         pub fn user_agent(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_agent = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The agent through which the API request was made.</p>
         pub fn set_user_agent(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_agent = input;
             self

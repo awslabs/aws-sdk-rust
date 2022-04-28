@@ -1939,3 +1939,37 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDatasetEntries {
         }
     }
 }
+
+/// Operation shape for `UpdateStreamProcessor`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_stream_processor`](crate::client::Client::update_stream_processor).
+///
+/// See [`crate::client::fluent_builders::UpdateStreamProcessor`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateStreamProcessor {
+    _private: (),
+}
+impl UpdateStreamProcessor {
+    /// Creates a new builder-style object to manufacture [`UpdateStreamProcessorInput`](crate::input::UpdateStreamProcessorInput)
+    pub fn builder() -> crate::input::update_stream_processor_input::Builder {
+        crate::input::update_stream_processor_input::Builder::default()
+    }
+    /// Creates a new `UpdateStreamProcessor` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateStreamProcessor {
+    type Output = std::result::Result<
+        crate::output::UpdateStreamProcessorOutput,
+        crate::error::UpdateStreamProcessorError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_stream_processor_error(response)
+        } else {
+            crate::operation_deser::parse_update_stream_processor_response(response)
+        }
+    }
+}

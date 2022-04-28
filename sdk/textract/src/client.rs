@@ -94,9 +94,10 @@ impl Client {
     /// Constructs a fluent builder for the [`AnalyzeDocument`](crate::client::fluent_builders::AnalyzeDocument) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`document(Document)`](crate::client::fluent_builders::AnalyzeDocument::document) / [`set_document(Option<Document>)`](crate::client::fluent_builders::AnalyzeDocument::set_document): <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>  <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
+    ///   - [`document(Document)`](crate::client::fluent_builders::AnalyzeDocument::document) / [`set_document(Option<Document>)`](crate::client::fluent_builders::AnalyzeDocument::set_document): <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>  <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
     ///   - [`feature_types(Vec<FeatureType>)`](crate::client::fluent_builders::AnalyzeDocument::feature_types) / [`set_feature_types(Option<Vec<FeatureType>>)`](crate::client::fluent_builders::AnalyzeDocument::set_feature_types): <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
     ///   - [`human_loop_config(HumanLoopConfig)`](crate::client::fluent_builders::AnalyzeDocument::human_loop_config) / [`set_human_loop_config(Option<HumanLoopConfig>)`](crate::client::fluent_builders::AnalyzeDocument::set_human_loop_config): <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
+    ///   - [`queries_config(QueriesConfig)`](crate::client::fluent_builders::AnalyzeDocument::queries_config) / [`set_queries_config(Option<QueriesConfig>)`](crate::client::fluent_builders::AnalyzeDocument::set_queries_config): <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
     /// - On success, responds with [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput) with field(s):
     ///   - [`document_metadata(Option<DocumentMetadata>)`](crate::output::AnalyzeDocumentOutput::document_metadata): <p>Metadata about the analyzed document. An example is the number of pages.</p>
     ///   - [`blocks(Option<Vec<Block>>)`](crate::output::AnalyzeDocumentOutput::blocks): <p>The items that are detected and analyzed by <code>AnalyzeDocument</code>.</p>
@@ -205,6 +206,7 @@ impl Client {
     ///   - [`notification_channel(NotificationChannel)`](crate::client::fluent_builders::StartDocumentAnalysis::notification_channel) / [`set_notification_channel(Option<NotificationChannel>)`](crate::client::fluent_builders::StartDocumentAnalysis::set_notification_channel): <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
     ///   - [`output_config(OutputConfig)`](crate::client::fluent_builders::StartDocumentAnalysis::output_config) / [`set_output_config(Option<OutputConfig>)`](crate::client::fluent_builders::StartDocumentAnalysis::set_output_config): <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>
     ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::StartDocumentAnalysis::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::StartDocumentAnalysis::set_kms_key_id): <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
+    ///   - [`queries_config(QueriesConfig)`](crate::client::fluent_builders::StartDocumentAnalysis::queries_config) / [`set_queries_config(Option<QueriesConfig>)`](crate::client::fluent_builders::StartDocumentAnalysis::set_queries_config): <p></p>
     /// - On success, responds with [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::StartDocumentAnalysisOutput::job_id): <p>The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     /// - On failure, responds with [`SdkError<StartDocumentAnalysisError>`](crate::error::StartDocumentAnalysisError)
@@ -258,6 +260,7 @@ pub mod fluent_builders {
     /// <li> <p>Form data (key-value pairs). The related information is returned in two <code>Block</code> objects, each of type <code>KEY_VALUE_SET</code>: a KEY <code>Block</code> object and a VALUE <code>Block</code> object. For example, <i>Name: Ana Silva Carolina</i> contains a key and value. <i>Name:</i> is the key. <i>Ana Silva Carolina</i> is the value.</p> </li>
     /// <li> <p>Table and table cell data. A TABLE <code>Block</code> object contains information about a detected table. A CELL <code>Block</code> object is returned for each cell in a table.</p> </li>
     /// <li> <p>Lines and words of text. A LINE <code>Block</code> object contains one or more WORD <code>Block</code> objects. All lines and words that are detected in the document are returned (including text that doesn't have a relationship with the value of <code>FeatureTypes</code>). </p> </li>
+    /// <li> <p>Queries.A QUERIES_RESULT Block object contains the answer to the query, the alias associated and an ID that connect it to the query asked. This Block also contains a location and attached confidence score.</p> </li>
     /// </ul>
     /// <p>Selection elements such as check boxes and option buttons (radio buttons) can be detected in form data and in tables. A SELECTION_ELEMENT <code>Block</code> object contains information about a selection element, including the selection status.</p>
     /// <p>You can choose which type of analysis to perform by specifying the <code>FeatureTypes</code> list. </p>
@@ -303,13 +306,13 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>
+        /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
         /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
         pub fn document(mut self, input: crate::model::Document) -> Self {
             self.inner = self.inner.document(input);
             self
         }
-        /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>
+        /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
         /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
         pub fn set_document(mut self, input: std::option::Option<crate::model::Document>) -> Self {
             self.inner = self.inner.set_document(input);
@@ -343,6 +346,19 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::HumanLoopConfig>,
         ) -> Self {
             self.inner = self.inner.set_human_loop_config(input);
+            self
+        }
+        /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
+        pub fn queries_config(mut self, input: crate::model::QueriesConfig) -> Self {
+            self.inner = self.inner.queries_config(input);
+            self
+        }
+        /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
+        pub fn set_queries_config(
+            mut self,
+            input: std::option::Option<crate::model::QueriesConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_queries_config(input);
             self
         }
     }
@@ -416,7 +432,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AnalyzeID`.
     ///
-    /// <p>Analyzes identity documents for relevant information. This information is extracted and returned as <code>IdentityDocumentFields</code>, which records both the normalized field and value of the extracted text.</p>
+    /// <p>Analyzes identity documents for relevant information. This information is extracted and returned as <code>IdentityDocumentFields</code>, which records both the normalized field and value of the extracted text.Unlike other Amazon Textract operations, <code>AnalyzeID</code> doesn't return any Geometry data.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AnalyzeID {
         handle: std::sync::Arc<super::Handle>,
@@ -476,7 +492,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DetectDocumentText`.
     ///
-    /// <p>Detects text in the input document. Amazon Textract can detect lines of text and the words that make up a line of text. The input document must be an image in JPEG or PNG format. <code>DetectDocumentText</code> returns the detected text in an array of <code>Block</code> objects. </p>
+    /// <p>Detects text in the input document. Amazon Textract can detect lines of text and the words that make up a line of text. The input document must be an image in JPEG, PNG, PDF, or TIFF format. <code>DetectDocumentText</code> returns the detected text in an array of <code>Block</code> objects. </p>
     /// <p>Each document page has as an associated <code>Block</code> of type PAGE. Each PAGE <code>Block</code> object is the parent of LINE <code>Block</code> objects that represent the lines of detected text on a page. A LINE <code>Block</code> object is a parent for each word that makes up the line. Words are represented by <code>Block</code> objects of type WORD.</p>
     /// <p> <code>DetectDocumentText</code> is a synchronous operation. To analyze documents asynchronously, use <code>StartDocumentTextDetection</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document Text Detection</a>.</p>
@@ -541,6 +557,7 @@ pub mod fluent_builders {
     /// <li> <p>Form data (key-value pairs). The related information is returned in two <code>Block</code> objects, each of type <code>KEY_VALUE_SET</code>: a KEY <code>Block</code> object and a VALUE <code>Block</code> object. For example, <i>Name: Ana Silva Carolina</i> contains a key and value. <i>Name:</i> is the key. <i>Ana Silva Carolina</i> is the value.</p> </li>
     /// <li> <p>Table and table cell data. A TABLE <code>Block</code> object contains information about a detected table. A CELL <code>Block</code> object is returned for each cell in a table.</p> </li>
     /// <li> <p>Lines and words of text. A LINE <code>Block</code> object contains one or more WORD <code>Block</code> objects. All lines and words that are detected in the document are returned (including text that doesn't have a relationship with the value of the <code>StartDocumentAnalysis</code> <code>FeatureTypes</code> input parameter). </p> </li>
+    /// <li> <p>Queries. A QUERIES_RESULT Block object contains the answer to the query, the alias associated and an ID that connect it to the query asked. This Block also contains a location and attached confidence score</p> </li>
     /// </ul>
     /// <p>Selection elements such as check boxes and option buttons (radio buttons) can be detected in form data and in tables. A SELECTION_ELEMENT <code>Block</code> object contains information about a selection element, including the selection status.</p>
     /// <p>Use the <code>MaxResults</code> parameter to limit the number of blocks that are returned. If there are more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set of results. To get the next page of results, call <code>GetDocumentAnalysis</code>, and populate the <code>NextToken</code> request parameter with the token value that's returned from the previous call to <code>GetDocumentAnalysis</code>.</p>
@@ -901,6 +918,19 @@ pub mod fluent_builders {
         /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
+            self
+        }
+        /// <p></p>
+        pub fn queries_config(mut self, input: crate::model::QueriesConfig) -> Self {
+            self.inner = self.inner.queries_config(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_queries_config(
+            mut self,
+            input: std::option::Option<crate::model::QueriesConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_queries_config(input);
             self
         }
     }

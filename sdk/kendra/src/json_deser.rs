@@ -3150,6 +3150,11 @@ where
                                     crate::json_deser::deser_structure_crate_model_box_configuration(tokens)?
                                 );
                             }
+                            "QuipConfiguration" => {
+                                builder = builder.set_quip_configuration(
+                                    crate::json_deser::deser_structure_crate_model_quip_configuration(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -5969,6 +5974,117 @@ where
                             }
                             "WebLinkFieldMappings" => {
                                 builder = builder.set_web_link_field_mappings(
+                                    crate::json_deser::deser_list_com_amazonaws_kendra_data_source_to_index_field_mapping_list(tokens)?
+                                );
+                            }
+                            "InclusionPatterns" => {
+                                builder = builder.set_inclusion_patterns(
+                                    crate::json_deser::deser_list_com_amazonaws_kendra_data_source_inclusions_exclusions_strings(tokens)?
+                                );
+                            }
+                            "ExclusionPatterns" => {
+                                builder = builder.set_exclusion_patterns(
+                                    crate::json_deser::deser_list_com_amazonaws_kendra_data_source_inclusions_exclusions_strings(tokens)?
+                                );
+                            }
+                            "VpcConfiguration" => {
+                                builder = builder.set_vpc_configuration(
+                                    crate::json_deser::deser_structure_crate_model_data_source_vpc_configuration(tokens)?
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_quip_configuration<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::QuipConfiguration>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::QuipConfiguration::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Domain" => {
+                                builder = builder.set_domain(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "SecretArn" => {
+                                builder = builder.set_secret_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "CrawlFileComments" => {
+                                builder = builder.set_crawl_file_comments(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "CrawlChatRooms" => {
+                                builder = builder.set_crawl_chat_rooms(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "CrawlAttachments" => {
+                                builder = builder.set_crawl_attachments(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "FolderIds" => {
+                                builder = builder.set_folder_ids(
+                                    crate::json_deser::deser_list_com_amazonaws_kendra_folder_id_list(tokens)?
+                                );
+                            }
+                            "ThreadFieldMappings" => {
+                                builder = builder.set_thread_field_mappings(
+                                    crate::json_deser::deser_list_com_amazonaws_kendra_data_source_to_index_field_mapping_list(tokens)?
+                                );
+                            }
+                            "MessageFieldMappings" => {
+                                builder = builder.set_message_field_mappings(
+                                    crate::json_deser::deser_list_com_amazonaws_kendra_data_source_to_index_field_mapping_list(tokens)?
+                                );
+                            }
+                            "AttachmentFieldMappings" => {
+                                builder = builder.set_attachment_field_mappings(
                                     crate::json_deser::deser_list_com_amazonaws_kendra_data_source_to_index_field_mapping_list(tokens)?
                                 );
                             }
@@ -9361,6 +9477,45 @@ where
 
 #[allow(clippy::type_complexity, non_snake_case)]
 pub fn deser_list_com_amazonaws_kendra_public_channel_filter<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value = aws_smithy_json::deserialize::token::expect_string_or_null(
+                            tokens.next(),
+                        )?
+                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                        .transpose()?;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start array or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_kendra_folder_id_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where

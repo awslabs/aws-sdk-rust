@@ -7756,7 +7756,10 @@ impl ImportSnapshotOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportKeyPairOutput {
-    /// <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
+    /// <ul>
+    /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC 4716.</p> </li>
+    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+    /// </ul>
     pub key_fingerprint: std::option::Option<std::string::String>,
     /// <p>The key pair name that you provided.</p>
     pub key_name: std::option::Option<std::string::String>,
@@ -7766,7 +7769,10 @@ pub struct ImportKeyPairOutput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ImportKeyPairOutput {
-    /// <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
+    /// <ul>
+    /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC 4716.</p> </li>
+    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+    /// </ul>
     pub fn key_fingerprint(&self) -> std::option::Option<&str> {
         self.key_fingerprint.as_deref()
     }
@@ -7805,12 +7811,18 @@ pub mod import_key_pair_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
+        /// <ul>
+        /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC 4716.</p> </li>
+        /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+        /// </ul>
         pub fn key_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_fingerprint = Some(input.into());
             self
         }
-        /// <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
+        /// <ul>
+        /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC 4716.</p> </li>
+        /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+        /// </ul>
         pub fn set_key_fingerprint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -34016,7 +34028,10 @@ impl CreateLaunchTemplateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateKeyPairOutput {
-    /// <p>The SHA-1 digest of the DER encoded private key.</p>
+    /// <ul>
+    /// <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.</p> </li>
+    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with OpenSSH 6.8.</p> </li>
+    /// </ul>
     pub key_fingerprint: std::option::Option<std::string::String>,
     /// <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
     pub key_material: std::option::Option<std::string::String>,
@@ -34028,7 +34043,10 @@ pub struct CreateKeyPairOutput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateKeyPairOutput {
-    /// <p>The SHA-1 digest of the DER encoded private key.</p>
+    /// <ul>
+    /// <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.</p> </li>
+    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with OpenSSH 6.8.</p> </li>
+    /// </ul>
     pub fn key_fingerprint(&self) -> std::option::Option<&str> {
         self.key_fingerprint.as_deref()
     }
@@ -34073,12 +34091,18 @@ pub mod create_key_pair_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The SHA-1 digest of the DER encoded private key.</p>
+        /// <ul>
+        /// <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.</p> </li>
+        /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with OpenSSH 6.8.</p> </li>
+        /// </ul>
         pub fn key_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_fingerprint = Some(input.into());
             self
         }
-        /// <p>The SHA-1 digest of the DER encoded private key.</p>
+        /// <ul>
+        /// <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.</p> </li>
+        /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with OpenSSH 6.8.</p> </li>
+        /// </ul>
         pub fn set_key_fingerprint(
             mut self,
             input: std::option::Option<std::string::String>,

@@ -9092,6 +9092,2029 @@ impl PutAssetPropertyValueEntry {
     }
 }
 
+/// <p>Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValueHistory</a> request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyValueHistorySkippedEntry {
+    /// <p>The ID of the entry.</p>
+    pub entry_id: std::option::Option<std::string::String>,
+    /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValueHistory.html">BatchGetAssetPropertyValueHistory</a> API.</p>
+    pub completion_status: std::option::Option<crate::model::BatchEntryCompletionStatus>,
+    /// <p>The error information, such as the error code and the timestamp.</p>
+    pub error_info: std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorInfo>,
+}
+impl BatchGetAssetPropertyValueHistorySkippedEntry {
+    /// <p>The ID of the entry.</p>
+    pub fn entry_id(&self) -> std::option::Option<&str> {
+        self.entry_id.as_deref()
+    }
+    /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValueHistory.html">BatchGetAssetPropertyValueHistory</a> API.</p>
+    pub fn completion_status(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchEntryCompletionStatus> {
+        self.completion_status.as_ref()
+    }
+    /// <p>The error information, such as the error code and the timestamp.</p>
+    pub fn error_info(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchGetAssetPropertyValueHistoryErrorInfo> {
+        self.error_info.as_ref()
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyValueHistorySkippedEntry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueHistorySkippedEntry");
+        formatter.field("entry_id", &self.entry_id);
+        formatter.field("completion_status", &self.completion_status);
+        formatter.field("error_info", &self.error_info);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetAssetPropertyValueHistorySkippedEntry`](crate::model::BatchGetAssetPropertyValueHistorySkippedEntry)
+pub mod batch_get_asset_property_value_history_skipped_entry {
+    /// A builder for [`BatchGetAssetPropertyValueHistorySkippedEntry`](crate::model::BatchGetAssetPropertyValueHistorySkippedEntry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entry_id: std::option::Option<std::string::String>,
+        pub(crate) completion_status: std::option::Option<crate::model::BatchEntryCompletionStatus>,
+        pub(crate) error_info:
+            std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorInfo>,
+    }
+    impl Builder {
+        /// <p>The ID of the entry.</p>
+        pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entry_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the entry.</p>
+        pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entry_id = input;
+            self
+        }
+        /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValueHistory.html">BatchGetAssetPropertyValueHistory</a> API.</p>
+        pub fn completion_status(
+            mut self,
+            input: crate::model::BatchEntryCompletionStatus,
+        ) -> Self {
+            self.completion_status = Some(input);
+            self
+        }
+        /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValueHistory.html">BatchGetAssetPropertyValueHistory</a> API.</p>
+        pub fn set_completion_status(
+            mut self,
+            input: std::option::Option<crate::model::BatchEntryCompletionStatus>,
+        ) -> Self {
+            self.completion_status = input;
+            self
+        }
+        /// <p>The error information, such as the error code and the timestamp.</p>
+        pub fn error_info(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyValueHistoryErrorInfo,
+        ) -> Self {
+            self.error_info = Some(input);
+            self
+        }
+        /// <p>The error information, such as the error code and the timestamp.</p>
+        pub fn set_error_info(
+            mut self,
+            input: std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorInfo>,
+        ) -> Self {
+            self.error_info = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueHistorySkippedEntry`](crate::model::BatchGetAssetPropertyValueHistorySkippedEntry)
+        pub fn build(self) -> crate::model::BatchGetAssetPropertyValueHistorySkippedEntry {
+            crate::model::BatchGetAssetPropertyValueHistorySkippedEntry {
+                entry_id: self.entry_id,
+                completion_status: self.completion_status,
+                error_info: self.error_info,
+            }
+        }
+    }
+}
+impl BatchGetAssetPropertyValueHistorySkippedEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistorySkippedEntry`](crate::model::BatchGetAssetPropertyValueHistorySkippedEntry)
+    pub fn builder() -> crate::model::batch_get_asset_property_value_history_skipped_entry::Builder
+    {
+        crate::model::batch_get_asset_property_value_history_skipped_entry::Builder::default()
+    }
+}
+
+/// <p>The error information, such as the error code and the timestamp.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyValueHistoryErrorInfo {
+    /// <p>The error code.</p>
+    pub error_code: std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorCode>,
+    /// <p>The date the error occurred, in Unix epoch time.</p>
+    pub error_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl BatchGetAssetPropertyValueHistoryErrorInfo {
+    /// <p>The error code.</p>
+    pub fn error_code(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchGetAssetPropertyValueHistoryErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The date the error occurred, in Unix epoch time.</p>
+    pub fn error_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.error_timestamp.as_ref()
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyValueHistoryErrorInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueHistoryErrorInfo");
+        formatter.field("error_code", &self.error_code);
+        formatter.field("error_timestamp", &self.error_timestamp);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetAssetPropertyValueHistoryErrorInfo`](crate::model::BatchGetAssetPropertyValueHistoryErrorInfo)
+pub mod batch_get_asset_property_value_history_error_info {
+    /// A builder for [`BatchGetAssetPropertyValueHistoryErrorInfo`](crate::model::BatchGetAssetPropertyValueHistoryErrorInfo)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) error_code:
+            std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorCode>,
+        pub(crate) error_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The error code.</p>
+        pub fn error_code(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyValueHistoryErrorCode,
+        ) -> Self {
+            self.error_code = Some(input);
+            self
+        }
+        /// <p>The error code.</p>
+        pub fn set_error_code(
+            mut self,
+            input: std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorCode>,
+        ) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// <p>The date the error occurred, in Unix epoch time.</p>
+        pub fn error_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.error_timestamp = Some(input);
+            self
+        }
+        /// <p>The date the error occurred, in Unix epoch time.</p>
+        pub fn set_error_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.error_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueHistoryErrorInfo`](crate::model::BatchGetAssetPropertyValueHistoryErrorInfo)
+        pub fn build(self) -> crate::model::BatchGetAssetPropertyValueHistoryErrorInfo {
+            crate::model::BatchGetAssetPropertyValueHistoryErrorInfo {
+                error_code: self.error_code,
+                error_timestamp: self.error_timestamp,
+            }
+        }
+    }
+}
+impl BatchGetAssetPropertyValueHistoryErrorInfo {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistoryErrorInfo`](crate::model::BatchGetAssetPropertyValueHistoryErrorInfo)
+    pub fn builder() -> crate::model::batch_get_asset_property_value_history_error_info::Builder {
+        crate::model::batch_get_asset_property_value_history_error_info::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum BatchGetAssetPropertyValueHistoryErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
+    AccessDeniedException,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidRequestException,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceNotFoundException,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for BatchGetAssetPropertyValueHistoryErrorCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "AccessDeniedException" => {
+                BatchGetAssetPropertyValueHistoryErrorCode::AccessDeniedException
+            }
+            "InvalidRequestException" => {
+                BatchGetAssetPropertyValueHistoryErrorCode::InvalidRequestException
+            }
+            "ResourceNotFoundException" => {
+                BatchGetAssetPropertyValueHistoryErrorCode::ResourceNotFoundException
+            }
+            other => BatchGetAssetPropertyValueHistoryErrorCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for BatchGetAssetPropertyValueHistoryErrorCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BatchGetAssetPropertyValueHistoryErrorCode::from(s))
+    }
+}
+impl BatchGetAssetPropertyValueHistoryErrorCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            BatchGetAssetPropertyValueHistoryErrorCode::AccessDeniedException => {
+                "AccessDeniedException"
+            }
+            BatchGetAssetPropertyValueHistoryErrorCode::InvalidRequestException => {
+                "InvalidRequestException"
+            }
+            BatchGetAssetPropertyValueHistoryErrorCode::ResourceNotFoundException => {
+                "ResourceNotFoundException"
+            }
+            BatchGetAssetPropertyValueHistoryErrorCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AccessDeniedException",
+            "InvalidRequestException",
+            "ResourceNotFoundException",
+        ]
+    }
+}
+impl AsRef<str> for BatchGetAssetPropertyValueHistoryErrorCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum BatchEntryCompletionStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Error,
+    #[allow(missing_docs)] // documentation missing in model
+    Success,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for BatchEntryCompletionStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ERROR" => BatchEntryCompletionStatus::Error,
+            "SUCCESS" => BatchEntryCompletionStatus::Success,
+            other => BatchEntryCompletionStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for BatchEntryCompletionStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BatchEntryCompletionStatus::from(s))
+    }
+}
+impl BatchEntryCompletionStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            BatchEntryCompletionStatus::Error => "ERROR",
+            BatchEntryCompletionStatus::Success => "SUCCESS",
+            BatchEntryCompletionStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ERROR", "SUCCESS"]
+    }
+}
+impl AsRef<str> for BatchEntryCompletionStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValueHistory</a> API.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyValueHistorySuccessEntry {
+    /// <p>The ID of the entry.</p>
+    pub entry_id: std::option::Option<std::string::String>,
+    /// <p>The requested historical values for the specified asset property.</p>
+    pub asset_property_value_history:
+        std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
+}
+impl BatchGetAssetPropertyValueHistorySuccessEntry {
+    /// <p>The ID of the entry.</p>
+    pub fn entry_id(&self) -> std::option::Option<&str> {
+        self.entry_id.as_deref()
+    }
+    /// <p>The requested historical values for the specified asset property.</p>
+    pub fn asset_property_value_history(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssetPropertyValue]> {
+        self.asset_property_value_history.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyValueHistorySuccessEntry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueHistorySuccessEntry");
+        formatter.field("entry_id", &self.entry_id);
+        formatter.field(
+            "asset_property_value_history",
+            &self.asset_property_value_history,
+        );
+        formatter.finish()
+    }
+}
+/// See [`BatchGetAssetPropertyValueHistorySuccessEntry`](crate::model::BatchGetAssetPropertyValueHistorySuccessEntry)
+pub mod batch_get_asset_property_value_history_success_entry {
+    /// A builder for [`BatchGetAssetPropertyValueHistorySuccessEntry`](crate::model::BatchGetAssetPropertyValueHistorySuccessEntry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entry_id: std::option::Option<std::string::String>,
+        pub(crate) asset_property_value_history:
+            std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
+    }
+    impl Builder {
+        /// <p>The ID of the entry.</p>
+        pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entry_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the entry.</p>
+        pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entry_id = input;
+            self
+        }
+        /// Appends an item to `asset_property_value_history`.
+        ///
+        /// To override the contents of this collection use [`set_asset_property_value_history`](Self::set_asset_property_value_history).
+        ///
+        /// <p>The requested historical values for the specified asset property.</p>
+        pub fn asset_property_value_history(
+            mut self,
+            input: crate::model::AssetPropertyValue,
+        ) -> Self {
+            let mut v = self.asset_property_value_history.unwrap_or_default();
+            v.push(input);
+            self.asset_property_value_history = Some(v);
+            self
+        }
+        /// <p>The requested historical values for the specified asset property.</p>
+        pub fn set_asset_property_value_history(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
+        ) -> Self {
+            self.asset_property_value_history = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueHistorySuccessEntry`](crate::model::BatchGetAssetPropertyValueHistorySuccessEntry)
+        pub fn build(self) -> crate::model::BatchGetAssetPropertyValueHistorySuccessEntry {
+            crate::model::BatchGetAssetPropertyValueHistorySuccessEntry {
+                entry_id: self.entry_id,
+                asset_property_value_history: self.asset_property_value_history,
+            }
+        }
+    }
+}
+impl BatchGetAssetPropertyValueHistorySuccessEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistorySuccessEntry`](crate::model::BatchGetAssetPropertyValueHistorySuccessEntry)
+    pub fn builder() -> crate::model::batch_get_asset_property_value_history_success_entry::Builder
+    {
+        crate::model::batch_get_asset_property_value_history_success_entry::Builder::default()
+    }
+}
+
+/// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyValueHistoryErrorEntry {
+    /// <p>The error code.</p>
+    pub error_code: std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorCode>,
+    /// <p>The associated error message.</p>
+    pub error_message: std::option::Option<std::string::String>,
+    /// <p>The ID of the entry.</p>
+    pub entry_id: std::option::Option<std::string::String>,
+}
+impl BatchGetAssetPropertyValueHistoryErrorEntry {
+    /// <p>The error code.</p>
+    pub fn error_code(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchGetAssetPropertyValueHistoryErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The associated error message.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The ID of the entry.</p>
+    pub fn entry_id(&self) -> std::option::Option<&str> {
+        self.entry_id.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyValueHistoryErrorEntry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueHistoryErrorEntry");
+        formatter.field("error_code", &self.error_code);
+        formatter.field("error_message", &self.error_message);
+        formatter.field("entry_id", &self.entry_id);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetAssetPropertyValueHistoryErrorEntry`](crate::model::BatchGetAssetPropertyValueHistoryErrorEntry)
+pub mod batch_get_asset_property_value_history_error_entry {
+    /// A builder for [`BatchGetAssetPropertyValueHistoryErrorEntry`](crate::model::BatchGetAssetPropertyValueHistoryErrorEntry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) error_code:
+            std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorCode>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+        pub(crate) entry_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The error code.</p>
+        pub fn error_code(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyValueHistoryErrorCode,
+        ) -> Self {
+            self.error_code = Some(input);
+            self
+        }
+        /// <p>The error code.</p>
+        pub fn set_error_code(
+            mut self,
+            input: std::option::Option<crate::model::BatchGetAssetPropertyValueHistoryErrorCode>,
+        ) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// <p>The associated error message.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        /// <p>The associated error message.</p>
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// <p>The ID of the entry.</p>
+        pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entry_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the entry.</p>
+        pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entry_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueHistoryErrorEntry`](crate::model::BatchGetAssetPropertyValueHistoryErrorEntry)
+        pub fn build(self) -> crate::model::BatchGetAssetPropertyValueHistoryErrorEntry {
+            crate::model::BatchGetAssetPropertyValueHistoryErrorEntry {
+                error_code: self.error_code,
+                error_message: self.error_message,
+                entry_id: self.entry_id,
+            }
+        }
+    }
+}
+impl BatchGetAssetPropertyValueHistoryErrorEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistoryErrorEntry`](crate::model::BatchGetAssetPropertyValueHistoryErrorEntry)
+    pub fn builder() -> crate::model::batch_get_asset_property_value_history_error_entry::Builder {
+        crate::model::batch_get_asset_property_value_history_error_entry::Builder::default()
+    }
+}
+
+/// <p>Contains information for an asset property historical value entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValueHistory</a> API.</p>
+/// <p>To identify an asset property, you must specify one of the following:</p>
+/// <ul>
+/// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+/// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
+/// </ul>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyValueHistoryEntry {
+    /// <p>The ID of the entry.</p>
+    pub entry_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub asset_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the asset property.</p>
+    pub property_id: std::option::Option<std::string::String>,
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub property_alias: std::option::Option<std::string::String>,
+    /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    pub start_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    pub end_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The quality by which to filter asset data.</p>
+    pub qualities: std::option::Option<std::vec::Vec<crate::model::Quality>>,
+    /// <p>The chronological sorting order of the requested information.</p>
+    /// <p>Default: <code>ASCENDING</code> </p>
+    pub time_ordering: std::option::Option<crate::model::TimeOrdering>,
+}
+impl BatchGetAssetPropertyValueHistoryEntry {
+    /// <p>The ID of the entry.</p>
+    pub fn entry_id(&self) -> std::option::Option<&str> {
+        self.entry_id.as_deref()
+    }
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn property_id(&self) -> std::option::Option<&str> {
+        self.property_id.as_deref()
+    }
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn property_alias(&self) -> std::option::Option<&str> {
+        self.property_alias.as_deref()
+    }
+    /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_date.as_ref()
+    }
+    /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_date.as_ref()
+    }
+    /// <p>The quality by which to filter asset data.</p>
+    pub fn qualities(&self) -> std::option::Option<&[crate::model::Quality]> {
+        self.qualities.as_deref()
+    }
+    /// <p>The chronological sorting order of the requested information.</p>
+    /// <p>Default: <code>ASCENDING</code> </p>
+    pub fn time_ordering(&self) -> std::option::Option<&crate::model::TimeOrdering> {
+        self.time_ordering.as_ref()
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyValueHistoryEntry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueHistoryEntry");
+        formatter.field("entry_id", &self.entry_id);
+        formatter.field("asset_id", &self.asset_id);
+        formatter.field("property_id", &self.property_id);
+        formatter.field("property_alias", &self.property_alias);
+        formatter.field("start_date", &self.start_date);
+        formatter.field("end_date", &self.end_date);
+        formatter.field("qualities", &self.qualities);
+        formatter.field("time_ordering", &self.time_ordering);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetAssetPropertyValueHistoryEntry`](crate::model::BatchGetAssetPropertyValueHistoryEntry)
+pub mod batch_get_asset_property_value_history_entry {
+    /// A builder for [`BatchGetAssetPropertyValueHistoryEntry`](crate::model::BatchGetAssetPropertyValueHistoryEntry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entry_id: std::option::Option<std::string::String>,
+        pub(crate) asset_id: std::option::Option<std::string::String>,
+        pub(crate) property_id: std::option::Option<std::string::String>,
+        pub(crate) property_alias: std::option::Option<std::string::String>,
+        pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) qualities: std::option::Option<std::vec::Vec<crate::model::Quality>>,
+        pub(crate) time_ordering: std::option::Option<crate::model::TimeOrdering>,
+    }
+    impl Builder {
+        /// <p>The ID of the entry.</p>
+        pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entry_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the entry.</p>
+        pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entry_id = input;
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.asset_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_id = input;
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.property_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.property_id = input;
+            self
+        }
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.property_alias = Some(input.into());
+            self
+        }
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn set_property_alias(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.property_alias = input;
+            self
+        }
+        /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_date = Some(input);
+            self
+        }
+        /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+        pub fn set_start_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_date = input;
+            self
+        }
+        /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+        pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_date = Some(input);
+            self
+        }
+        /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+        pub fn set_end_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_date = input;
+            self
+        }
+        /// Appends an item to `qualities`.
+        ///
+        /// To override the contents of this collection use [`set_qualities`](Self::set_qualities).
+        ///
+        /// <p>The quality by which to filter asset data.</p>
+        pub fn qualities(mut self, input: crate::model::Quality) -> Self {
+            let mut v = self.qualities.unwrap_or_default();
+            v.push(input);
+            self.qualities = Some(v);
+            self
+        }
+        /// <p>The quality by which to filter asset data.</p>
+        pub fn set_qualities(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Quality>>,
+        ) -> Self {
+            self.qualities = input;
+            self
+        }
+        /// <p>The chronological sorting order of the requested information.</p>
+        /// <p>Default: <code>ASCENDING</code> </p>
+        pub fn time_ordering(mut self, input: crate::model::TimeOrdering) -> Self {
+            self.time_ordering = Some(input);
+            self
+        }
+        /// <p>The chronological sorting order of the requested information.</p>
+        /// <p>Default: <code>ASCENDING</code> </p>
+        pub fn set_time_ordering(
+            mut self,
+            input: std::option::Option<crate::model::TimeOrdering>,
+        ) -> Self {
+            self.time_ordering = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueHistoryEntry`](crate::model::BatchGetAssetPropertyValueHistoryEntry)
+        pub fn build(self) -> crate::model::BatchGetAssetPropertyValueHistoryEntry {
+            crate::model::BatchGetAssetPropertyValueHistoryEntry {
+                entry_id: self.entry_id,
+                asset_id: self.asset_id,
+                property_id: self.property_id,
+                property_alias: self.property_alias,
+                start_date: self.start_date,
+                end_date: self.end_date,
+                qualities: self.qualities,
+                time_ordering: self.time_ordering,
+            }
+        }
+    }
+}
+impl BatchGetAssetPropertyValueHistoryEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistoryEntry`](crate::model::BatchGetAssetPropertyValueHistoryEntry)
+    pub fn builder() -> crate::model::batch_get_asset_property_value_history_entry::Builder {
+        crate::model::batch_get_asset_property_value_history_entry::Builder::default()
+    }
+}
+
+/// <p>Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyValueSkippedEntry {
+    /// <p>The ID of the entry.</p>
+    pub entry_id: std::option::Option<std::string::String>,
+    /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.</p>
+    pub completion_status: std::option::Option<crate::model::BatchEntryCompletionStatus>,
+    /// <p>The error information, such as the error code and the timestamp.</p>
+    pub error_info: std::option::Option<crate::model::BatchGetAssetPropertyValueErrorInfo>,
+}
+impl BatchGetAssetPropertyValueSkippedEntry {
+    /// <p>The ID of the entry.</p>
+    pub fn entry_id(&self) -> std::option::Option<&str> {
+        self.entry_id.as_deref()
+    }
+    /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.</p>
+    pub fn completion_status(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchEntryCompletionStatus> {
+        self.completion_status.as_ref()
+    }
+    /// <p>The error information, such as the error code and the timestamp.</p>
+    pub fn error_info(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchGetAssetPropertyValueErrorInfo> {
+        self.error_info.as_ref()
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyValueSkippedEntry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueSkippedEntry");
+        formatter.field("entry_id", &self.entry_id);
+        formatter.field("completion_status", &self.completion_status);
+        formatter.field("error_info", &self.error_info);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetAssetPropertyValueSkippedEntry`](crate::model::BatchGetAssetPropertyValueSkippedEntry)
+pub mod batch_get_asset_property_value_skipped_entry {
+    /// A builder for [`BatchGetAssetPropertyValueSkippedEntry`](crate::model::BatchGetAssetPropertyValueSkippedEntry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entry_id: std::option::Option<std::string::String>,
+        pub(crate) completion_status: std::option::Option<crate::model::BatchEntryCompletionStatus>,
+        pub(crate) error_info:
+            std::option::Option<crate::model::BatchGetAssetPropertyValueErrorInfo>,
+    }
+    impl Builder {
+        /// <p>The ID of the entry.</p>
+        pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entry_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the entry.</p>
+        pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entry_id = input;
+            self
+        }
+        /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.</p>
+        pub fn completion_status(
+            mut self,
+            input: crate::model::BatchEntryCompletionStatus,
+        ) -> Self {
+            self.completion_status = Some(input);
+            self
+        }
+        /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.</p>
+        pub fn set_completion_status(
+            mut self,
+            input: std::option::Option<crate::model::BatchEntryCompletionStatus>,
+        ) -> Self {
+            self.completion_status = input;
+            self
+        }
+        /// <p>The error information, such as the error code and the timestamp.</p>
+        pub fn error_info(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyValueErrorInfo,
+        ) -> Self {
+            self.error_info = Some(input);
+            self
+        }
+        /// <p>The error information, such as the error code and the timestamp.</p>
+        pub fn set_error_info(
+            mut self,
+            input: std::option::Option<crate::model::BatchGetAssetPropertyValueErrorInfo>,
+        ) -> Self {
+            self.error_info = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueSkippedEntry`](crate::model::BatchGetAssetPropertyValueSkippedEntry)
+        pub fn build(self) -> crate::model::BatchGetAssetPropertyValueSkippedEntry {
+            crate::model::BatchGetAssetPropertyValueSkippedEntry {
+                entry_id: self.entry_id,
+                completion_status: self.completion_status,
+                error_info: self.error_info,
+            }
+        }
+    }
+}
+impl BatchGetAssetPropertyValueSkippedEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueSkippedEntry`](crate::model::BatchGetAssetPropertyValueSkippedEntry)
+    pub fn builder() -> crate::model::batch_get_asset_property_value_skipped_entry::Builder {
+        crate::model::batch_get_asset_property_value_skipped_entry::Builder::default()
+    }
+}
+
+/// <p>The error information, such as the error code and the timestamp.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyValueErrorInfo {
+    /// <p>The error code.</p>
+    pub error_code: std::option::Option<crate::model::BatchGetAssetPropertyValueErrorCode>,
+    /// <p>The date the error occurred, in Unix epoch time.</p>
+    pub error_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl BatchGetAssetPropertyValueErrorInfo {
+    /// <p>The error code.</p>
+    pub fn error_code(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchGetAssetPropertyValueErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The date the error occurred, in Unix epoch time.</p>
+    pub fn error_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.error_timestamp.as_ref()
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyValueErrorInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueErrorInfo");
+        formatter.field("error_code", &self.error_code);
+        formatter.field("error_timestamp", &self.error_timestamp);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetAssetPropertyValueErrorInfo`](crate::model::BatchGetAssetPropertyValueErrorInfo)
+pub mod batch_get_asset_property_value_error_info {
+    /// A builder for [`BatchGetAssetPropertyValueErrorInfo`](crate::model::BatchGetAssetPropertyValueErrorInfo)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) error_code:
+            std::option::Option<crate::model::BatchGetAssetPropertyValueErrorCode>,
+        pub(crate) error_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The error code.</p>
+        pub fn error_code(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyValueErrorCode,
+        ) -> Self {
+            self.error_code = Some(input);
+            self
+        }
+        /// <p>The error code.</p>
+        pub fn set_error_code(
+            mut self,
+            input: std::option::Option<crate::model::BatchGetAssetPropertyValueErrorCode>,
+        ) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// <p>The date the error occurred, in Unix epoch time.</p>
+        pub fn error_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.error_timestamp = Some(input);
+            self
+        }
+        /// <p>The date the error occurred, in Unix epoch time.</p>
+        pub fn set_error_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.error_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueErrorInfo`](crate::model::BatchGetAssetPropertyValueErrorInfo)
+        pub fn build(self) -> crate::model::BatchGetAssetPropertyValueErrorInfo {
+            crate::model::BatchGetAssetPropertyValueErrorInfo {
+                error_code: self.error_code,
+                error_timestamp: self.error_timestamp,
+            }
+        }
+    }
+}
+impl BatchGetAssetPropertyValueErrorInfo {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueErrorInfo`](crate::model::BatchGetAssetPropertyValueErrorInfo)
+    pub fn builder() -> crate::model::batch_get_asset_property_value_error_info::Builder {
+        crate::model::batch_get_asset_property_value_error_info::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum BatchGetAssetPropertyValueErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
+    AccessDeniedException,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidRequestException,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceNotFoundException,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for BatchGetAssetPropertyValueErrorCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "AccessDeniedException" => BatchGetAssetPropertyValueErrorCode::AccessDeniedException,
+            "InvalidRequestException" => {
+                BatchGetAssetPropertyValueErrorCode::InvalidRequestException
+            }
+            "ResourceNotFoundException" => {
+                BatchGetAssetPropertyValueErrorCode::ResourceNotFoundException
+            }
+            other => BatchGetAssetPropertyValueErrorCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for BatchGetAssetPropertyValueErrorCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BatchGetAssetPropertyValueErrorCode::from(s))
+    }
+}
+impl BatchGetAssetPropertyValueErrorCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            BatchGetAssetPropertyValueErrorCode::AccessDeniedException => "AccessDeniedException",
+            BatchGetAssetPropertyValueErrorCode::InvalidRequestException => {
+                "InvalidRequestException"
+            }
+            BatchGetAssetPropertyValueErrorCode::ResourceNotFoundException => {
+                "ResourceNotFoundException"
+            }
+            BatchGetAssetPropertyValueErrorCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AccessDeniedException",
+            "InvalidRequestException",
+            "ResourceNotFoundException",
+        ]
+    }
+}
+impl AsRef<str> for BatchGetAssetPropertyValueErrorCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> API.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyValueSuccessEntry {
+    /// <p>The ID of the entry.</p>
+    pub entry_id: std::option::Option<std::string::String>,
+    /// <p>Contains asset property value information.</p>
+    pub asset_property_value: std::option::Option<crate::model::AssetPropertyValue>,
+}
+impl BatchGetAssetPropertyValueSuccessEntry {
+    /// <p>The ID of the entry.</p>
+    pub fn entry_id(&self) -> std::option::Option<&str> {
+        self.entry_id.as_deref()
+    }
+    /// <p>Contains asset property value information.</p>
+    pub fn asset_property_value(&self) -> std::option::Option<&crate::model::AssetPropertyValue> {
+        self.asset_property_value.as_ref()
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyValueSuccessEntry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueSuccessEntry");
+        formatter.field("entry_id", &self.entry_id);
+        formatter.field("asset_property_value", &self.asset_property_value);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetAssetPropertyValueSuccessEntry`](crate::model::BatchGetAssetPropertyValueSuccessEntry)
+pub mod batch_get_asset_property_value_success_entry {
+    /// A builder for [`BatchGetAssetPropertyValueSuccessEntry`](crate::model::BatchGetAssetPropertyValueSuccessEntry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entry_id: std::option::Option<std::string::String>,
+        pub(crate) asset_property_value: std::option::Option<crate::model::AssetPropertyValue>,
+    }
+    impl Builder {
+        /// <p>The ID of the entry.</p>
+        pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entry_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the entry.</p>
+        pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entry_id = input;
+            self
+        }
+        /// <p>Contains asset property value information.</p>
+        pub fn asset_property_value(mut self, input: crate::model::AssetPropertyValue) -> Self {
+            self.asset_property_value = Some(input);
+            self
+        }
+        /// <p>Contains asset property value information.</p>
+        pub fn set_asset_property_value(
+            mut self,
+            input: std::option::Option<crate::model::AssetPropertyValue>,
+        ) -> Self {
+            self.asset_property_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueSuccessEntry`](crate::model::BatchGetAssetPropertyValueSuccessEntry)
+        pub fn build(self) -> crate::model::BatchGetAssetPropertyValueSuccessEntry {
+            crate::model::BatchGetAssetPropertyValueSuccessEntry {
+                entry_id: self.entry_id,
+                asset_property_value: self.asset_property_value,
+            }
+        }
+    }
+}
+impl BatchGetAssetPropertyValueSuccessEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueSuccessEntry`](crate::model::BatchGetAssetPropertyValueSuccessEntry)
+    pub fn builder() -> crate::model::batch_get_asset_property_value_success_entry::Builder {
+        crate::model::batch_get_asset_property_value_success_entry::Builder::default()
+    }
+}
+
+/// <p>Contains error information for an asset property value entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> API.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyValueErrorEntry {
+    /// <p>The error code.</p>
+    pub error_code: std::option::Option<crate::model::BatchGetAssetPropertyValueErrorCode>,
+    /// <p>The associated error message.</p>
+    pub error_message: std::option::Option<std::string::String>,
+    /// <p>The ID of the entry.</p>
+    pub entry_id: std::option::Option<std::string::String>,
+}
+impl BatchGetAssetPropertyValueErrorEntry {
+    /// <p>The error code.</p>
+    pub fn error_code(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchGetAssetPropertyValueErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The associated error message.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The ID of the entry.</p>
+    pub fn entry_id(&self) -> std::option::Option<&str> {
+        self.entry_id.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyValueErrorEntry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueErrorEntry");
+        formatter.field("error_code", &self.error_code);
+        formatter.field("error_message", &self.error_message);
+        formatter.field("entry_id", &self.entry_id);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetAssetPropertyValueErrorEntry`](crate::model::BatchGetAssetPropertyValueErrorEntry)
+pub mod batch_get_asset_property_value_error_entry {
+    /// A builder for [`BatchGetAssetPropertyValueErrorEntry`](crate::model::BatchGetAssetPropertyValueErrorEntry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) error_code:
+            std::option::Option<crate::model::BatchGetAssetPropertyValueErrorCode>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+        pub(crate) entry_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The error code.</p>
+        pub fn error_code(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyValueErrorCode,
+        ) -> Self {
+            self.error_code = Some(input);
+            self
+        }
+        /// <p>The error code.</p>
+        pub fn set_error_code(
+            mut self,
+            input: std::option::Option<crate::model::BatchGetAssetPropertyValueErrorCode>,
+        ) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// <p>The associated error message.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        /// <p>The associated error message.</p>
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// <p>The ID of the entry.</p>
+        pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entry_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the entry.</p>
+        pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entry_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueErrorEntry`](crate::model::BatchGetAssetPropertyValueErrorEntry)
+        pub fn build(self) -> crate::model::BatchGetAssetPropertyValueErrorEntry {
+            crate::model::BatchGetAssetPropertyValueErrorEntry {
+                error_code: self.error_code,
+                error_message: self.error_message,
+                entry_id: self.entry_id,
+            }
+        }
+    }
+}
+impl BatchGetAssetPropertyValueErrorEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueErrorEntry`](crate::model::BatchGetAssetPropertyValueErrorEntry)
+    pub fn builder() -> crate::model::batch_get_asset_property_value_error_entry::Builder {
+        crate::model::batch_get_asset_property_value_error_entry::Builder::default()
+    }
+}
+
+/// <p>Contains information for an asset property value entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> API.</p>
+/// <p>To identify an asset property, you must specify one of the following:</p>
+/// <ul>
+/// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+/// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
+/// </ul>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyValueEntry {
+    /// <p>The ID of the entry.</p>
+    pub entry_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub asset_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the asset property.</p>
+    pub property_id: std::option::Option<std::string::String>,
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub property_alias: std::option::Option<std::string::String>,
+}
+impl BatchGetAssetPropertyValueEntry {
+    /// <p>The ID of the entry.</p>
+    pub fn entry_id(&self) -> std::option::Option<&str> {
+        self.entry_id.as_deref()
+    }
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn property_id(&self) -> std::option::Option<&str> {
+        self.property_id.as_deref()
+    }
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn property_alias(&self) -> std::option::Option<&str> {
+        self.property_alias.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyValueEntry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyValueEntry");
+        formatter.field("entry_id", &self.entry_id);
+        formatter.field("asset_id", &self.asset_id);
+        formatter.field("property_id", &self.property_id);
+        formatter.field("property_alias", &self.property_alias);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetAssetPropertyValueEntry`](crate::model::BatchGetAssetPropertyValueEntry)
+pub mod batch_get_asset_property_value_entry {
+    /// A builder for [`BatchGetAssetPropertyValueEntry`](crate::model::BatchGetAssetPropertyValueEntry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entry_id: std::option::Option<std::string::String>,
+        pub(crate) asset_id: std::option::Option<std::string::String>,
+        pub(crate) property_id: std::option::Option<std::string::String>,
+        pub(crate) property_alias: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the entry.</p>
+        pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entry_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the entry.</p>
+        pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entry_id = input;
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.asset_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_id = input;
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.property_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.property_id = input;
+            self
+        }
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.property_alias = Some(input.into());
+            self
+        }
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn set_property_alias(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.property_alias = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueEntry`](crate::model::BatchGetAssetPropertyValueEntry)
+        pub fn build(self) -> crate::model::BatchGetAssetPropertyValueEntry {
+            crate::model::BatchGetAssetPropertyValueEntry {
+                entry_id: self.entry_id,
+                asset_id: self.asset_id,
+                property_id: self.property_id,
+                property_alias: self.property_alias,
+            }
+        }
+    }
+}
+impl BatchGetAssetPropertyValueEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueEntry`](crate::model::BatchGetAssetPropertyValueEntry)
+    pub fn builder() -> crate::model::batch_get_asset_property_value_entry::Builder {
+        crate::model::batch_get_asset_property_value_entry::Builder::default()
+    }
+}
+
+/// <p>Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyAggregatesSkippedEntry {
+    /// <p>The ID of the entry.</p>
+    pub entry_id: std::option::Option<std::string::String>,
+    /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
+    pub completion_status: std::option::Option<crate::model::BatchEntryCompletionStatus>,
+    /// <p>The error information, such as the error code and the timestamp.</p>
+    pub error_info: std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorInfo>,
+}
+impl BatchGetAssetPropertyAggregatesSkippedEntry {
+    /// <p>The ID of the entry.</p>
+    pub fn entry_id(&self) -> std::option::Option<&str> {
+        self.entry_id.as_deref()
+    }
+    /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
+    pub fn completion_status(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchEntryCompletionStatus> {
+        self.completion_status.as_ref()
+    }
+    /// <p>The error information, such as the error code and the timestamp.</p>
+    pub fn error_info(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchGetAssetPropertyAggregatesErrorInfo> {
+        self.error_info.as_ref()
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyAggregatesSkippedEntry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyAggregatesSkippedEntry");
+        formatter.field("entry_id", &self.entry_id);
+        formatter.field("completion_status", &self.completion_status);
+        formatter.field("error_info", &self.error_info);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetAssetPropertyAggregatesSkippedEntry`](crate::model::BatchGetAssetPropertyAggregatesSkippedEntry)
+pub mod batch_get_asset_property_aggregates_skipped_entry {
+    /// A builder for [`BatchGetAssetPropertyAggregatesSkippedEntry`](crate::model::BatchGetAssetPropertyAggregatesSkippedEntry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entry_id: std::option::Option<std::string::String>,
+        pub(crate) completion_status: std::option::Option<crate::model::BatchEntryCompletionStatus>,
+        pub(crate) error_info:
+            std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorInfo>,
+    }
+    impl Builder {
+        /// <p>The ID of the entry.</p>
+        pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entry_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the entry.</p>
+        pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entry_id = input;
+            self
+        }
+        /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
+        pub fn completion_status(
+            mut self,
+            input: crate::model::BatchEntryCompletionStatus,
+        ) -> Self {
+            self.completion_status = Some(input);
+            self
+        }
+        /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
+        pub fn set_completion_status(
+            mut self,
+            input: std::option::Option<crate::model::BatchEntryCompletionStatus>,
+        ) -> Self {
+            self.completion_status = input;
+            self
+        }
+        /// <p>The error information, such as the error code and the timestamp.</p>
+        pub fn error_info(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyAggregatesErrorInfo,
+        ) -> Self {
+            self.error_info = Some(input);
+            self
+        }
+        /// <p>The error information, such as the error code and the timestamp.</p>
+        pub fn set_error_info(
+            mut self,
+            input: std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorInfo>,
+        ) -> Self {
+            self.error_info = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyAggregatesSkippedEntry`](crate::model::BatchGetAssetPropertyAggregatesSkippedEntry)
+        pub fn build(self) -> crate::model::BatchGetAssetPropertyAggregatesSkippedEntry {
+            crate::model::BatchGetAssetPropertyAggregatesSkippedEntry {
+                entry_id: self.entry_id,
+                completion_status: self.completion_status,
+                error_info: self.error_info,
+            }
+        }
+    }
+}
+impl BatchGetAssetPropertyAggregatesSkippedEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesSkippedEntry`](crate::model::BatchGetAssetPropertyAggregatesSkippedEntry)
+    pub fn builder() -> crate::model::batch_get_asset_property_aggregates_skipped_entry::Builder {
+        crate::model::batch_get_asset_property_aggregates_skipped_entry::Builder::default()
+    }
+}
+
+/// <p>Contains the error code and the timestamp for an asset property aggregate entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyAggregatesErrorInfo {
+    /// <p>The error code.</p>
+    pub error_code: std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorCode>,
+    /// <p>The date the error occurred, in Unix epoch time.</p>
+    pub error_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl BatchGetAssetPropertyAggregatesErrorInfo {
+    /// <p>The error code.</p>
+    pub fn error_code(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchGetAssetPropertyAggregatesErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The date the error occurred, in Unix epoch time.</p>
+    pub fn error_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.error_timestamp.as_ref()
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyAggregatesErrorInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyAggregatesErrorInfo");
+        formatter.field("error_code", &self.error_code);
+        formatter.field("error_timestamp", &self.error_timestamp);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetAssetPropertyAggregatesErrorInfo`](crate::model::BatchGetAssetPropertyAggregatesErrorInfo)
+pub mod batch_get_asset_property_aggregates_error_info {
+    /// A builder for [`BatchGetAssetPropertyAggregatesErrorInfo`](crate::model::BatchGetAssetPropertyAggregatesErrorInfo)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) error_code:
+            std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorCode>,
+        pub(crate) error_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The error code.</p>
+        pub fn error_code(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyAggregatesErrorCode,
+        ) -> Self {
+            self.error_code = Some(input);
+            self
+        }
+        /// <p>The error code.</p>
+        pub fn set_error_code(
+            mut self,
+            input: std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorCode>,
+        ) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// <p>The date the error occurred, in Unix epoch time.</p>
+        pub fn error_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.error_timestamp = Some(input);
+            self
+        }
+        /// <p>The date the error occurred, in Unix epoch time.</p>
+        pub fn set_error_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.error_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyAggregatesErrorInfo`](crate::model::BatchGetAssetPropertyAggregatesErrorInfo)
+        pub fn build(self) -> crate::model::BatchGetAssetPropertyAggregatesErrorInfo {
+            crate::model::BatchGetAssetPropertyAggregatesErrorInfo {
+                error_code: self.error_code,
+                error_timestamp: self.error_timestamp,
+            }
+        }
+    }
+}
+impl BatchGetAssetPropertyAggregatesErrorInfo {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesErrorInfo`](crate::model::BatchGetAssetPropertyAggregatesErrorInfo)
+    pub fn builder() -> crate::model::batch_get_asset_property_aggregates_error_info::Builder {
+        crate::model::batch_get_asset_property_aggregates_error_info::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum BatchGetAssetPropertyAggregatesErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
+    AccessDeniedException,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidRequestException,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceNotFoundException,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for BatchGetAssetPropertyAggregatesErrorCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "AccessDeniedException" => {
+                BatchGetAssetPropertyAggregatesErrorCode::AccessDeniedException
+            }
+            "InvalidRequestException" => {
+                BatchGetAssetPropertyAggregatesErrorCode::InvalidRequestException
+            }
+            "ResourceNotFoundException" => {
+                BatchGetAssetPropertyAggregatesErrorCode::ResourceNotFoundException
+            }
+            other => BatchGetAssetPropertyAggregatesErrorCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for BatchGetAssetPropertyAggregatesErrorCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BatchGetAssetPropertyAggregatesErrorCode::from(s))
+    }
+}
+impl BatchGetAssetPropertyAggregatesErrorCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            BatchGetAssetPropertyAggregatesErrorCode::AccessDeniedException => {
+                "AccessDeniedException"
+            }
+            BatchGetAssetPropertyAggregatesErrorCode::InvalidRequestException => {
+                "InvalidRequestException"
+            }
+            BatchGetAssetPropertyAggregatesErrorCode::ResourceNotFoundException => {
+                "ResourceNotFoundException"
+            }
+            BatchGetAssetPropertyAggregatesErrorCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AccessDeniedException",
+            "InvalidRequestException",
+            "ResourceNotFoundException",
+        ]
+    }
+}
+impl AsRef<str> for BatchGetAssetPropertyAggregatesErrorCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyAggregatesSuccessEntry {
+    /// <p>The ID of the entry.</p>
+    pub entry_id: std::option::Option<std::string::String>,
+    /// <p>The requested aggregated asset property values (for example, average, minimum, and maximum).</p>
+    pub aggregated_values: std::option::Option<std::vec::Vec<crate::model::AggregatedValue>>,
+}
+impl BatchGetAssetPropertyAggregatesSuccessEntry {
+    /// <p>The ID of the entry.</p>
+    pub fn entry_id(&self) -> std::option::Option<&str> {
+        self.entry_id.as_deref()
+    }
+    /// <p>The requested aggregated asset property values (for example, average, minimum, and maximum).</p>
+    pub fn aggregated_values(&self) -> std::option::Option<&[crate::model::AggregatedValue]> {
+        self.aggregated_values.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyAggregatesSuccessEntry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyAggregatesSuccessEntry");
+        formatter.field("entry_id", &self.entry_id);
+        formatter.field("aggregated_values", &self.aggregated_values);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetAssetPropertyAggregatesSuccessEntry`](crate::model::BatchGetAssetPropertyAggregatesSuccessEntry)
+pub mod batch_get_asset_property_aggregates_success_entry {
+    /// A builder for [`BatchGetAssetPropertyAggregatesSuccessEntry`](crate::model::BatchGetAssetPropertyAggregatesSuccessEntry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entry_id: std::option::Option<std::string::String>,
+        pub(crate) aggregated_values:
+            std::option::Option<std::vec::Vec<crate::model::AggregatedValue>>,
+    }
+    impl Builder {
+        /// <p>The ID of the entry.</p>
+        pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entry_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the entry.</p>
+        pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entry_id = input;
+            self
+        }
+        /// Appends an item to `aggregated_values`.
+        ///
+        /// To override the contents of this collection use [`set_aggregated_values`](Self::set_aggregated_values).
+        ///
+        /// <p>The requested aggregated asset property values (for example, average, minimum, and maximum).</p>
+        pub fn aggregated_values(mut self, input: crate::model::AggregatedValue) -> Self {
+            let mut v = self.aggregated_values.unwrap_or_default();
+            v.push(input);
+            self.aggregated_values = Some(v);
+            self
+        }
+        /// <p>The requested aggregated asset property values (for example, average, minimum, and maximum).</p>
+        pub fn set_aggregated_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AggregatedValue>>,
+        ) -> Self {
+            self.aggregated_values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyAggregatesSuccessEntry`](crate::model::BatchGetAssetPropertyAggregatesSuccessEntry)
+        pub fn build(self) -> crate::model::BatchGetAssetPropertyAggregatesSuccessEntry {
+            crate::model::BatchGetAssetPropertyAggregatesSuccessEntry {
+                entry_id: self.entry_id,
+                aggregated_values: self.aggregated_values,
+            }
+        }
+    }
+}
+impl BatchGetAssetPropertyAggregatesSuccessEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesSuccessEntry`](crate::model::BatchGetAssetPropertyAggregatesSuccessEntry)
+    pub fn builder() -> crate::model::batch_get_asset_property_aggregates_success_entry::Builder {
+        crate::model::batch_get_asset_property_aggregates_success_entry::Builder::default()
+    }
+}
+
+/// <p>Contains error information for an asset property aggregate entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyAggregatesErrorEntry {
+    /// <p>The error code.</p>
+    pub error_code: std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorCode>,
+    /// <p>The associated error message.</p>
+    pub error_message: std::option::Option<std::string::String>,
+    /// <p>The ID of the entry.</p>
+    pub entry_id: std::option::Option<std::string::String>,
+}
+impl BatchGetAssetPropertyAggregatesErrorEntry {
+    /// <p>The error code.</p>
+    pub fn error_code(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchGetAssetPropertyAggregatesErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The associated error message.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The ID of the entry.</p>
+    pub fn entry_id(&self) -> std::option::Option<&str> {
+        self.entry_id.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyAggregatesErrorEntry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyAggregatesErrorEntry");
+        formatter.field("error_code", &self.error_code);
+        formatter.field("error_message", &self.error_message);
+        formatter.field("entry_id", &self.entry_id);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetAssetPropertyAggregatesErrorEntry`](crate::model::BatchGetAssetPropertyAggregatesErrorEntry)
+pub mod batch_get_asset_property_aggregates_error_entry {
+    /// A builder for [`BatchGetAssetPropertyAggregatesErrorEntry`](crate::model::BatchGetAssetPropertyAggregatesErrorEntry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) error_code:
+            std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorCode>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+        pub(crate) entry_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The error code.</p>
+        pub fn error_code(
+            mut self,
+            input: crate::model::BatchGetAssetPropertyAggregatesErrorCode,
+        ) -> Self {
+            self.error_code = Some(input);
+            self
+        }
+        /// <p>The error code.</p>
+        pub fn set_error_code(
+            mut self,
+            input: std::option::Option<crate::model::BatchGetAssetPropertyAggregatesErrorCode>,
+        ) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// <p>The associated error message.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        /// <p>The associated error message.</p>
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// <p>The ID of the entry.</p>
+        pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entry_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the entry.</p>
+        pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entry_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyAggregatesErrorEntry`](crate::model::BatchGetAssetPropertyAggregatesErrorEntry)
+        pub fn build(self) -> crate::model::BatchGetAssetPropertyAggregatesErrorEntry {
+            crate::model::BatchGetAssetPropertyAggregatesErrorEntry {
+                error_code: self.error_code,
+                error_message: self.error_message,
+                entry_id: self.entry_id,
+            }
+        }
+    }
+}
+impl BatchGetAssetPropertyAggregatesErrorEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesErrorEntry`](crate::model::BatchGetAssetPropertyAggregatesErrorEntry)
+    pub fn builder() -> crate::model::batch_get_asset_property_aggregates_error_entry::Builder {
+        crate::model::batch_get_asset_property_aggregates_error_entry::Builder::default()
+    }
+}
+
+/// <p>Contains information for an asset property aggregate entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
+/// <p>To identify an asset property, you must specify one of the following:</p>
+/// <ul>
+/// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+/// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
+/// </ul>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetAssetPropertyAggregatesEntry {
+    /// <p>The ID of the entry.</p>
+    pub entry_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub asset_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the asset property.</p>
+    pub property_id: std::option::Option<std::string::String>,
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub property_alias: std::option::Option<std::string::String>,
+    /// <p>The data aggregating function.</p>
+    pub aggregate_types: std::option::Option<std::vec::Vec<crate::model::AggregateType>>,
+    /// <p>The time interval over which to aggregate data.</p>
+    pub resolution: std::option::Option<std::string::String>,
+    /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    pub start_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    pub end_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The quality by which to filter asset data.</p>
+    pub qualities: std::option::Option<std::vec::Vec<crate::model::Quality>>,
+    /// <p>The chronological sorting order of the requested information.</p>
+    /// <p>Default: <code>ASCENDING</code> </p>
+    pub time_ordering: std::option::Option<crate::model::TimeOrdering>,
+}
+impl BatchGetAssetPropertyAggregatesEntry {
+    /// <p>The ID of the entry.</p>
+    pub fn entry_id(&self) -> std::option::Option<&str> {
+        self.entry_id.as_deref()
+    }
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn property_id(&self) -> std::option::Option<&str> {
+        self.property_id.as_deref()
+    }
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn property_alias(&self) -> std::option::Option<&str> {
+        self.property_alias.as_deref()
+    }
+    /// <p>The data aggregating function.</p>
+    pub fn aggregate_types(&self) -> std::option::Option<&[crate::model::AggregateType]> {
+        self.aggregate_types.as_deref()
+    }
+    /// <p>The time interval over which to aggregate data.</p>
+    pub fn resolution(&self) -> std::option::Option<&str> {
+        self.resolution.as_deref()
+    }
+    /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_date.as_ref()
+    }
+    /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_date.as_ref()
+    }
+    /// <p>The quality by which to filter asset data.</p>
+    pub fn qualities(&self) -> std::option::Option<&[crate::model::Quality]> {
+        self.qualities.as_deref()
+    }
+    /// <p>The chronological sorting order of the requested information.</p>
+    /// <p>Default: <code>ASCENDING</code> </p>
+    pub fn time_ordering(&self) -> std::option::Option<&crate::model::TimeOrdering> {
+        self.time_ordering.as_ref()
+    }
+}
+impl std::fmt::Debug for BatchGetAssetPropertyAggregatesEntry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetAssetPropertyAggregatesEntry");
+        formatter.field("entry_id", &self.entry_id);
+        formatter.field("asset_id", &self.asset_id);
+        formatter.field("property_id", &self.property_id);
+        formatter.field("property_alias", &self.property_alias);
+        formatter.field("aggregate_types", &self.aggregate_types);
+        formatter.field("resolution", &self.resolution);
+        formatter.field("start_date", &self.start_date);
+        formatter.field("end_date", &self.end_date);
+        formatter.field("qualities", &self.qualities);
+        formatter.field("time_ordering", &self.time_ordering);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetAssetPropertyAggregatesEntry`](crate::model::BatchGetAssetPropertyAggregatesEntry)
+pub mod batch_get_asset_property_aggregates_entry {
+    /// A builder for [`BatchGetAssetPropertyAggregatesEntry`](crate::model::BatchGetAssetPropertyAggregatesEntry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entry_id: std::option::Option<std::string::String>,
+        pub(crate) asset_id: std::option::Option<std::string::String>,
+        pub(crate) property_id: std::option::Option<std::string::String>,
+        pub(crate) property_alias: std::option::Option<std::string::String>,
+        pub(crate) aggregate_types: std::option::Option<std::vec::Vec<crate::model::AggregateType>>,
+        pub(crate) resolution: std::option::Option<std::string::String>,
+        pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) qualities: std::option::Option<std::vec::Vec<crate::model::Quality>>,
+        pub(crate) time_ordering: std::option::Option<crate::model::TimeOrdering>,
+    }
+    impl Builder {
+        /// <p>The ID of the entry.</p>
+        pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entry_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the entry.</p>
+        pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entry_id = input;
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.asset_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_id = input;
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.property_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.property_id = input;
+            self
+        }
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.property_alias = Some(input.into());
+            self
+        }
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn set_property_alias(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.property_alias = input;
+            self
+        }
+        /// Appends an item to `aggregate_types`.
+        ///
+        /// To override the contents of this collection use [`set_aggregate_types`](Self::set_aggregate_types).
+        ///
+        /// <p>The data aggregating function.</p>
+        pub fn aggregate_types(mut self, input: crate::model::AggregateType) -> Self {
+            let mut v = self.aggregate_types.unwrap_or_default();
+            v.push(input);
+            self.aggregate_types = Some(v);
+            self
+        }
+        /// <p>The data aggregating function.</p>
+        pub fn set_aggregate_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AggregateType>>,
+        ) -> Self {
+            self.aggregate_types = input;
+            self
+        }
+        /// <p>The time interval over which to aggregate data.</p>
+        pub fn resolution(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resolution = Some(input.into());
+            self
+        }
+        /// <p>The time interval over which to aggregate data.</p>
+        pub fn set_resolution(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resolution = input;
+            self
+        }
+        /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_date = Some(input);
+            self
+        }
+        /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+        pub fn set_start_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_date = input;
+            self
+        }
+        /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+        pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_date = Some(input);
+            self
+        }
+        /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+        pub fn set_end_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_date = input;
+            self
+        }
+        /// Appends an item to `qualities`.
+        ///
+        /// To override the contents of this collection use [`set_qualities`](Self::set_qualities).
+        ///
+        /// <p>The quality by which to filter asset data.</p>
+        pub fn qualities(mut self, input: crate::model::Quality) -> Self {
+            let mut v = self.qualities.unwrap_or_default();
+            v.push(input);
+            self.qualities = Some(v);
+            self
+        }
+        /// <p>The quality by which to filter asset data.</p>
+        pub fn set_qualities(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Quality>>,
+        ) -> Self {
+            self.qualities = input;
+            self
+        }
+        /// <p>The chronological sorting order of the requested information.</p>
+        /// <p>Default: <code>ASCENDING</code> </p>
+        pub fn time_ordering(mut self, input: crate::model::TimeOrdering) -> Self {
+            self.time_ordering = Some(input);
+            self
+        }
+        /// <p>The chronological sorting order of the requested information.</p>
+        /// <p>Default: <code>ASCENDING</code> </p>
+        pub fn set_time_ordering(
+            mut self,
+            input: std::option::Option<crate::model::TimeOrdering>,
+        ) -> Self {
+            self.time_ordering = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetAssetPropertyAggregatesEntry`](crate::model::BatchGetAssetPropertyAggregatesEntry)
+        pub fn build(self) -> crate::model::BatchGetAssetPropertyAggregatesEntry {
+            crate::model::BatchGetAssetPropertyAggregatesEntry {
+                entry_id: self.entry_id,
+                asset_id: self.asset_id,
+                property_id: self.property_id,
+                property_alias: self.property_alias,
+                aggregate_types: self.aggregate_types,
+                resolution: self.resolution,
+                start_date: self.start_date,
+                end_date: self.end_date,
+                qualities: self.qualities,
+                time_ordering: self.time_ordering,
+            }
+        }
+    }
+}
+impl BatchGetAssetPropertyAggregatesEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesEntry`](crate::model::BatchGetAssetPropertyAggregatesEntry)
+    pub fn builder() -> crate::model::batch_get_asset_property_aggregates_entry::Builder {
+        crate::model::batch_get_asset_property_aggregates_entry::Builder::default()
+    }
+}
+
 /// <p>Contains error details for the requested associate project asset action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

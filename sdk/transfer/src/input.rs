@@ -54,7 +54,7 @@ pub mod create_access_input {
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+        /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         pub fn home_directory_mappings(
             mut self,
             input: crate::model::HomeDirectoryMapEntry,
@@ -69,7 +69,7 @@ pub mod create_access_input {
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+        /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         pub fn set_home_directory_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
@@ -777,7 +777,7 @@ pub mod create_user_input {
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+        /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         pub fn home_directory_mappings(
             mut self,
             input: crate::model::HomeDirectoryMapEntry,
@@ -792,7 +792,7 @@ pub mod create_user_input {
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+        /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         pub fn set_home_directory_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
@@ -1061,10 +1061,10 @@ pub mod create_workflow_input {
         /// <p>Specifies the details for the steps that are in the specified workflow.</p>
         /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p>
         /// <ul>
-        /// <li> <p> <i>Copy</i>: copy the file to another location</p> </li>
-        /// <li> <p> <i>Custom</i>: custom step with a lambda target</p> </li>
-        /// <li> <p> <i>Delete</i>: delete the file</p> </li>
-        /// <li> <p> <i>Tag</i>: add a tag to the file</p> </li>
+        /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
+        /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
+        /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
+        /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
         /// </ul> <note>
         /// <p> Currently, copying and tagging are supported only on S3. </p>
         /// </note>
@@ -1078,10 +1078,10 @@ pub mod create_workflow_input {
         /// <p>Specifies the details for the steps that are in the specified workflow.</p>
         /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p>
         /// <ul>
-        /// <li> <p> <i>Copy</i>: copy the file to another location</p> </li>
-        /// <li> <p> <i>Custom</i>: custom step with a lambda target</p> </li>
-        /// <li> <p> <i>Delete</i>: delete the file</p> </li>
-        /// <li> <p> <i>Tag</i>: add a tag to the file</p> </li>
+        /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
+        /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
+        /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
+        /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
         /// </ul> <note>
         /// <p> Currently, copying and tagging are supported only on S3. </p>
         /// </note>
@@ -5289,7 +5289,7 @@ pub mod update_access_input {
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+        /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         pub fn home_directory_mappings(
             mut self,
             input: crate::model::HomeDirectoryMapEntry,
@@ -5304,7 +5304,7 @@ pub mod update_access_input {
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+        /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         pub fn set_home_directory_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
@@ -5968,7 +5968,7 @@ pub mod update_user_input {
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+        /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         pub fn home_directory_mappings(
             mut self,
             input: crate::model::HomeDirectoryMapEntry,
@@ -5983,7 +5983,7 @@ pub mod update_user_input {
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+        /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         pub fn set_home_directory_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
@@ -6198,7 +6198,7 @@ pub struct UpdateUserInput {
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+    /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
     /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
@@ -6232,7 +6232,7 @@ impl UpdateUserInput {
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+    /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     pub fn home_directory_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::HomeDirectoryMapEntry]> {
@@ -6480,7 +6480,7 @@ pub struct UpdateAccessInput {
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+    /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
     /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
@@ -6517,7 +6517,7 @@ impl UpdateAccessInput {
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+    /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     pub fn home_directory_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::HomeDirectoryMapEntry]> {
@@ -7338,10 +7338,10 @@ pub struct CreateWorkflowInput {
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
     /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p>
     /// <ul>
-    /// <li> <p> <i>Copy</i>: copy the file to another location</p> </li>
-    /// <li> <p> <i>Custom</i>: custom step with a lambda target</p> </li>
-    /// <li> <p> <i>Delete</i>: delete the file</p> </li>
-    /// <li> <p> <i>Tag</i>: add a tag to the file</p> </li>
+    /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
+    /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
+    /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
+    /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
     /// </ul> <note>
     /// <p> Currently, copying and tagging are supported only on S3. </p>
     /// </note>
@@ -7362,10 +7362,10 @@ impl CreateWorkflowInput {
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
     /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p>
     /// <ul>
-    /// <li> <p> <i>Copy</i>: copy the file to another location</p> </li>
-    /// <li> <p> <i>Custom</i>: custom step with a lambda target</p> </li>
-    /// <li> <p> <i>Delete</i>: delete the file</p> </li>
-    /// <li> <p> <i>Tag</i>: add a tag to the file</p> </li>
+    /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
+    /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
+    /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
+    /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
     /// </ul> <note>
     /// <p> Currently, copying and tagging are supported only on S3. </p>
     /// </note>
@@ -7409,7 +7409,7 @@ pub struct CreateUserInput {
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+    /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
     /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
@@ -7449,7 +7449,7 @@ impl CreateUserInput {
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+    /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     pub fn home_directory_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::HomeDirectoryMapEntry]> {
@@ -7731,7 +7731,7 @@ pub struct CreateAccessInput {
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+    /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
     /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
@@ -7768,7 +7768,7 @@ impl CreateAccessInput {
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+    /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     pub fn home_directory_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::HomeDirectoryMapEntry]> {

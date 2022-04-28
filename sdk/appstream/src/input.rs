@@ -1949,6 +1949,7 @@ pub mod create_fleet_input {
         pub(crate) max_concurrent_sessions: std::option::Option<i32>,
         pub(crate) usb_device_filter_strings:
             std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) session_script_s3_location: std::option::Option<crate::model::S3Location>,
     }
     impl Builder {
         /// <p>A unique name for the fleet.</p>
@@ -2335,6 +2336,19 @@ pub mod create_fleet_input {
             self.usb_device_filter_strings = input;
             self
         }
+        /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
+        pub fn session_script_s3_location(mut self, input: crate::model::S3Location) -> Self {
+            self.session_script_s3_location = Some(input);
+            self
+        }
+        /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
+        pub fn set_session_script_s3_location(
+            mut self,
+            input: std::option::Option<crate::model::S3Location>,
+        ) -> Self {
+            self.session_script_s3_location = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateFleetInput`](crate::input::CreateFleetInput)
         pub fn build(
             self,
@@ -2363,6 +2377,7 @@ pub mod create_fleet_input {
                 platform: self.platform,
                 max_concurrent_sessions: self.max_concurrent_sessions,
                 usb_device_filter_strings: self.usb_device_filter_strings,
+                session_script_s3_location: self.session_script_s3_location,
             })
         }
     }
@@ -11430,6 +11445,7 @@ pub mod update_fleet_input {
         pub(crate) max_concurrent_sessions: std::option::Option<i32>,
         pub(crate) usb_device_filter_strings:
             std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) session_script_s3_location: std::option::Option<crate::model::S3Location>,
     }
     impl Builder {
         /// <p>The name of the image used to create the fleet.</p>
@@ -11771,6 +11787,19 @@ pub mod update_fleet_input {
             self.usb_device_filter_strings = input;
             self
         }
+        /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets. </p>
+        pub fn session_script_s3_location(mut self, input: crate::model::S3Location) -> Self {
+            self.session_script_s3_location = Some(input);
+            self
+        }
+        /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets. </p>
+        pub fn set_session_script_s3_location(
+            mut self,
+            input: std::option::Option<crate::model::S3Location>,
+        ) -> Self {
+            self.session_script_s3_location = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateFleetInput`](crate::input::UpdateFleetInput)
         pub fn build(
             self,
@@ -11799,6 +11828,7 @@ pub mod update_fleet_input {
                 platform: self.platform,
                 max_concurrent_sessions: self.max_concurrent_sessions,
                 usb_device_filter_strings: self.usb_device_filter_strings,
+                session_script_s3_location: self.session_script_s3_location,
             })
         }
     }
@@ -12636,6 +12666,8 @@ pub struct UpdateFleetInput {
     pub max_concurrent_sessions: std::option::Option<i32>,
     /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
     pub usb_device_filter_strings: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets. </p>
+    pub session_script_s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl UpdateFleetInput {
     /// <p>The name of the image used to create the fleet.</p>
@@ -12765,6 +12797,10 @@ impl UpdateFleetInput {
     pub fn usb_device_filter_strings(&self) -> std::option::Option<&[std::string::String]> {
         self.usb_device_filter_strings.as_deref()
     }
+    /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets. </p>
+    pub fn session_script_s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.session_script_s3_location.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12801,6 +12837,10 @@ impl std::fmt::Debug for UpdateFleetInput {
         formatter.field("platform", &self.platform);
         formatter.field("max_concurrent_sessions", &self.max_concurrent_sessions);
         formatter.field("usb_device_filter_strings", &self.usb_device_filter_strings);
+        formatter.field(
+            "session_script_s3_location",
+            &self.session_script_s3_location,
+        );
         formatter.finish()
     }
 }
@@ -14846,6 +14886,8 @@ pub struct CreateFleetInput {
     pub max_concurrent_sessions: std::option::Option<i32>,
     /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
     pub usb_device_filter_strings: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
+    pub session_script_s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl CreateFleetInput {
     /// <p>A unique name for the fleet.</p>
@@ -14996,6 +15038,10 @@ impl CreateFleetInput {
     pub fn usb_device_filter_strings(&self) -> std::option::Option<&[std::string::String]> {
         self.usb_device_filter_strings.as_deref()
     }
+    /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
+    pub fn session_script_s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.session_script_s3_location.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15032,6 +15078,10 @@ impl std::fmt::Debug for CreateFleetInput {
         formatter.field("platform", &self.platform);
         formatter.field("max_concurrent_sessions", &self.max_concurrent_sessions);
         formatter.field("usb_device_filter_strings", &self.usb_device_filter_strings);
+        formatter.field(
+            "session_script_s3_location",
+            &self.session_script_s3_location,
+        );
         formatter.finish()
     }
 }

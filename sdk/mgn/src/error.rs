@@ -4067,6 +4067,8 @@ pub struct ServiceQuotaExceededException {
     pub service_code: std::option::Option<std::string::String>,
     /// <p>Exceeded the service quota code.</p>
     pub quota_code: std::option::Option<std::string::String>,
+    /// <p>Exceeded the service quota value.</p>
+    pub quota_value: i32,
 }
 impl ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
@@ -4089,6 +4091,10 @@ impl ServiceQuotaExceededException {
     pub fn quota_code(&self) -> std::option::Option<&str> {
         self.quota_code.as_deref()
     }
+    /// <p>Exceeded the service quota value.</p>
+    pub fn quota_value(&self) -> i32 {
+        self.quota_value
+    }
 }
 impl std::fmt::Debug for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4099,6 +4105,7 @@ impl std::fmt::Debug for ServiceQuotaExceededException {
         formatter.field("resource_type", &self.resource_type);
         formatter.field("service_code", &self.service_code);
         formatter.field("quota_code", &self.quota_code);
+        formatter.field("quota_value", &self.quota_value);
         formatter.finish()
     }
 }
@@ -4130,6 +4137,7 @@ pub mod service_quota_exceeded_exception {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) quota_code: std::option::Option<std::string::String>,
+        pub(crate) quota_value: std::option::Option<i32>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -4195,6 +4203,16 @@ pub mod service_quota_exceeded_exception {
             self.quota_code = input;
             self
         }
+        /// <p>Exceeded the service quota value.</p>
+        pub fn quota_value(mut self, input: i32) -> Self {
+            self.quota_value = Some(input);
+            self
+        }
+        /// <p>Exceeded the service quota value.</p>
+        pub fn set_quota_value(mut self, input: std::option::Option<i32>) -> Self {
+            self.quota_value = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
         pub fn build(self) -> crate::error::ServiceQuotaExceededException {
             crate::error::ServiceQuotaExceededException {
@@ -4204,6 +4222,7 @@ pub mod service_quota_exceeded_exception {
                 resource_type: self.resource_type,
                 service_code: self.service_code,
                 quota_code: self.quota_code,
+                quota_value: self.quota_value.unwrap_or_default(),
             }
         }
     }

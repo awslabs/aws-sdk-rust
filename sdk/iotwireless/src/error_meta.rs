@@ -406,6 +406,33 @@ where
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::error::CreateNetworkAnalyzerConfigurationError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::CreateNetworkAnalyzerConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateNetworkAnalyzerConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::CreateNetworkAnalyzerConfigurationErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+                crate::error::CreateNetworkAnalyzerConfigurationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::CreateNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::CreateNetworkAnalyzerConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::CreateNetworkAnalyzerConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::CreateNetworkAnalyzerConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateServiceProfileError, R>>
     for Error
 where
@@ -704,6 +731,33 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::error::DeleteNetworkAnalyzerConfigurationError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DeleteNetworkAnalyzerConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeleteNetworkAnalyzerConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::DeleteNetworkAnalyzerConfigurationErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+                crate::error::DeleteNetworkAnalyzerConfigurationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::DeleteNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DeleteNetworkAnalyzerConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::DeleteNetworkAnalyzerConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::DeleteNetworkAnalyzerConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1166,6 +1220,33 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::GetEventConfigurationByResourceTypesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetEventConfigurationByResourceTypesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetEventConfigurationByResourceTypesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::GetEventConfigurationByResourceTypesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::GetEventConfigurationByResourceTypesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::GetEventConfigurationByResourceTypesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1784,6 +1865,36 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListEventConfigurationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListEventConfigurationsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListEventConfigurationsErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::ListEventConfigurationsErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::ListEventConfigurationsErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::ListEventConfigurationsErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::ListEventConfigurationsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFuotaTasksError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1858,6 +1969,30 @@ where
                 crate::error::ListMulticastGroupsByFuotaTaskErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListMulticastGroupsByFuotaTaskErrorKind::ValidationException(inner) => Error::ValidationException(inner),
                 crate::error::ListMulticastGroupsByFuotaTaskErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::ListNetworkAnalyzerConfigurationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ListNetworkAnalyzerConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListNetworkAnalyzerConfigurationsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::ListNetworkAnalyzerConfigurationsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::ListNetworkAnalyzerConfigurationsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::ListNetworkAnalyzerConfigurationsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::ListNetworkAnalyzerConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
         }
@@ -2474,6 +2609,34 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::UpdateEventConfigurationByResourceTypesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::UpdateEventConfigurationByResourceTypesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateEventConfigurationByResourceTypesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::UpdateEventConfigurationByResourceTypesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::UpdateEventConfigurationByResourceTypesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::UpdateEventConfigurationByResourceTypesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::UpdateEventConfigurationByResourceTypesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

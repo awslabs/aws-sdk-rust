@@ -3205,6 +3205,162 @@ pub fn parse_generate_data_key_without_plaintext_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_generate_mac_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GenerateMacOutput, crate::error::GenerateMacError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GenerateMacError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GenerateMacError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "DisabledException" => {
+            crate::error::GenerateMacError {
+                meta: generic,
+                kind: crate::error::GenerateMacErrorKind::DisabledException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::disabled_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMacError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InvalidGrantTokenException" => crate::error::GenerateMacError {
+            meta: generic,
+            kind: crate::error::GenerateMacErrorKind::InvalidGrantTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_grant_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMacError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidKeyUsageException" => crate::error::GenerateMacError {
+            meta: generic,
+            kind: crate::error::GenerateMacErrorKind::InvalidKeyUsageException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_key_usage_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMacError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "KeyUnavailableException" => crate::error::GenerateMacError {
+            meta: generic,
+            kind: crate::error::GenerateMacErrorKind::KeyUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::key_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMacError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "KMSInternalException" => crate::error::GenerateMacError {
+            meta: generic,
+            kind: crate::error::GenerateMacErrorKind::KmsInternalException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_internal_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMacError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "KMSInvalidStateException" => crate::error::GenerateMacError {
+            meta: generic,
+            kind: crate::error::GenerateMacErrorKind::KmsInvalidStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMacError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::GenerateMacError {
+            meta: generic,
+            kind: crate::error::GenerateMacErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMacError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GenerateMacError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_generate_mac_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GenerateMacOutput, crate::error::GenerateMacError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::generate_mac_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_generate_mac(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GenerateMacError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_generate_random_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GenerateRandomOutput, crate::error::GenerateRandomError> {
@@ -6960,6 +7116,179 @@ pub fn parse_verify_response(
             output,
         )
         .map_err(crate::error::VerifyError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_verify_mac_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::VerifyMacOutput, crate::error::VerifyMacError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::VerifyMacError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::VerifyMacError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "DisabledException" => {
+            crate::error::VerifyMacError {
+                meta: generic,
+                kind: crate::error::VerifyMacErrorKind::DisabledException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::disabled_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InvalidGrantTokenException" => crate::error::VerifyMacError {
+            meta: generic,
+            kind: crate::error::VerifyMacErrorKind::InvalidGrantTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_grant_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidKeyUsageException" => crate::error::VerifyMacError {
+            meta: generic,
+            kind: crate::error::VerifyMacErrorKind::InvalidKeyUsageException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_key_usage_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "KeyUnavailableException" => crate::error::VerifyMacError {
+            meta: generic,
+            kind: crate::error::VerifyMacErrorKind::KeyUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::key_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "KMSInternalException" => crate::error::VerifyMacError {
+            meta: generic,
+            kind: crate::error::VerifyMacErrorKind::KmsInternalException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_internal_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "KMSInvalidMacException" => crate::error::VerifyMacError {
+            meta: generic,
+            kind: crate::error::VerifyMacErrorKind::KmsInvalidMacException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_invalid_mac_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_mac_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "KMSInvalidStateException" => crate::error::VerifyMacError {
+            meta: generic,
+            kind: crate::error::VerifyMacErrorKind::KmsInvalidStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::VerifyMacError {
+            meta: generic,
+            kind: crate::error::VerifyMacErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::VerifyMacError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_verify_mac_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::VerifyMacOutput, crate::error::VerifyMacError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::verify_mac_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_verify_mac(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::VerifyMacError::unhandled)?;
         output.build()
     })
 }

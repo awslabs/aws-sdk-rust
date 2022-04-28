@@ -789,6 +789,7 @@ pub mod execute_statement_input {
         pub(crate) include_result_metadata: std::option::Option<bool>,
         pub(crate) continue_after_timeout: std::option::Option<bool>,
         pub(crate) result_set_options: std::option::Option<crate::model::ResultSetOptions>,
+        pub(crate) format_records_as: std::option::Option<crate::model::RecordsFormatType>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
@@ -920,6 +921,21 @@ pub mod execute_statement_input {
             self.result_set_options = input;
             self
         }
+        /// <p>A value that indicates whether to format the result set as a single JSON string. This parameter only applies to <code>SELECT</code> statements and is ignored for other types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code> field.</p>
+        /// <p>For usage information about the JSON format for result sets, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn format_records_as(mut self, input: crate::model::RecordsFormatType) -> Self {
+            self.format_records_as = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether to format the result set as a single JSON string. This parameter only applies to <code>SELECT</code> statements and is ignored for other types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code> field.</p>
+        /// <p>For usage information about the JSON format for result sets, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        pub fn set_format_records_as(
+            mut self,
+            input: std::option::Option<crate::model::RecordsFormatType>,
+        ) -> Self {
+            self.format_records_as = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::input::ExecuteStatementInput)
         pub fn build(
             self,
@@ -938,6 +954,7 @@ pub mod execute_statement_input {
                 include_result_metadata: self.include_result_metadata.unwrap_or_default(),
                 continue_after_timeout: self.continue_after_timeout.unwrap_or_default(),
                 result_set_options: self.result_set_options,
+                format_records_as: self.format_records_as,
             })
         }
     }
@@ -1277,6 +1294,9 @@ pub struct ExecuteStatementInput {
     pub continue_after_timeout: bool,
     /// <p>Options that control how the result set is returned.</p>
     pub result_set_options: std::option::Option<crate::model::ResultSetOptions>,
+    /// <p>A value that indicates whether to format the result set as a single JSON string. This parameter only applies to <code>SELECT</code> statements and is ignored for other types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code> field.</p>
+    /// <p>For usage information about the JSON format for result sets, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub format_records_as: std::option::Option<crate::model::RecordsFormatType>,
 }
 impl ExecuteStatementInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
@@ -1326,6 +1346,11 @@ impl ExecuteStatementInput {
     pub fn result_set_options(&self) -> std::option::Option<&crate::model::ResultSetOptions> {
         self.result_set_options.as_ref()
     }
+    /// <p>A value that indicates whether to format the result set as a single JSON string. This parameter only applies to <code>SELECT</code> statements and is ignored for other types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code> field.</p>
+    /// <p>For usage information about the JSON format for result sets, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn format_records_as(&self) -> std::option::Option<&crate::model::RecordsFormatType> {
+        self.format_records_as.as_ref()
+    }
 }
 impl std::fmt::Debug for ExecuteStatementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1340,6 +1365,7 @@ impl std::fmt::Debug for ExecuteStatementInput {
         formatter.field("include_result_metadata", &self.include_result_metadata);
         formatter.field("continue_after_timeout", &self.continue_after_timeout);
         formatter.field("result_set_options", &self.result_set_options);
+        formatter.field("format_records_as", &self.format_records_as);
         formatter.finish()
     }
 }

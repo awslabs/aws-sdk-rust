@@ -1096,6 +1096,8 @@ pub struct InstanceConfig {
     pub instance_type: std::option::Option<crate::model::InstanceType>,
     /// <p>The size of the storage volume, in GB, that user wants to provision.</p>
     pub volume_size_in_gb: std::option::Option<i32>,
+    /// <p>Configures the number of resource instances to use while running an Amazon Braket job on Amazon Braket. The default value is 1.</p>
+    pub instance_count: std::option::Option<i32>,
 }
 impl InstanceConfig {
     /// <p>Configures the type resource instances to use while running an Amazon Braket hybrid job.</p>
@@ -1106,12 +1108,17 @@ impl InstanceConfig {
     pub fn volume_size_in_gb(&self) -> std::option::Option<i32> {
         self.volume_size_in_gb
     }
+    /// <p>Configures the number of resource instances to use while running an Amazon Braket job on Amazon Braket. The default value is 1.</p>
+    pub fn instance_count(&self) -> std::option::Option<i32> {
+        self.instance_count
+    }
 }
 impl std::fmt::Debug for InstanceConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceConfig");
         formatter.field("instance_type", &self.instance_type);
         formatter.field("volume_size_in_gb", &self.volume_size_in_gb);
+        formatter.field("instance_count", &self.instance_count);
         formatter.finish()
     }
 }
@@ -1123,6 +1130,7 @@ pub mod instance_config {
     pub struct Builder {
         pub(crate) instance_type: std::option::Option<crate::model::InstanceType>,
         pub(crate) volume_size_in_gb: std::option::Option<i32>,
+        pub(crate) instance_count: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>Configures the type resource instances to use while running an Amazon Braket hybrid job.</p>
@@ -1148,11 +1156,22 @@ pub mod instance_config {
             self.volume_size_in_gb = input;
             self
         }
+        /// <p>Configures the number of resource instances to use while running an Amazon Braket job on Amazon Braket. The default value is 1.</p>
+        pub fn instance_count(mut self, input: i32) -> Self {
+            self.instance_count = Some(input);
+            self
+        }
+        /// <p>Configures the number of resource instances to use while running an Amazon Braket job on Amazon Braket. The default value is 1.</p>
+        pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.instance_count = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InstanceConfig`](crate::model::InstanceConfig)
         pub fn build(self) -> crate::model::InstanceConfig {
             crate::model::InstanceConfig {
                 instance_type: self.instance_type,
                 volume_size_in_gb: self.volume_size_in_gb,
+                instance_count: self.instance_count,
             }
         }
     }

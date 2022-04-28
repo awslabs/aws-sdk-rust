@@ -727,6 +727,38 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateDataKeyWithoutPl
     }
 }
 
+/// Operation shape for `GenerateMac`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`generate_mac`](crate::client::Client::generate_mac).
+///
+/// See [`crate::client::fluent_builders::GenerateMac`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GenerateMac {
+    _private: (),
+}
+impl GenerateMac {
+    /// Creates a new builder-style object to manufacture [`GenerateMacInput`](crate::input::GenerateMacInput)
+    pub fn builder() -> crate::input::generate_mac_input::Builder {
+        crate::input::generate_mac_input::Builder::default()
+    }
+    /// Creates a new `GenerateMac` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GenerateMac {
+    type Output =
+        std::result::Result<crate::output::GenerateMacOutput, crate::error::GenerateMacError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_generate_mac_error(response)
+        } else {
+            crate::operation_deser::parse_generate_mac_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GenerateRandom`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1571,6 +1603,37 @@ impl aws_smithy_http::response::ParseStrictResponse for Verify {
             crate::operation_deser::parse_verify_error(response)
         } else {
             crate::operation_deser::parse_verify_response(response)
+        }
+    }
+}
+
+/// Operation shape for `VerifyMac`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`verify_mac`](crate::client::Client::verify_mac).
+///
+/// See [`crate::client::fluent_builders::VerifyMac`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct VerifyMac {
+    _private: (),
+}
+impl VerifyMac {
+    /// Creates a new builder-style object to manufacture [`VerifyMacInput`](crate::input::VerifyMacInput)
+    pub fn builder() -> crate::input::verify_mac_input::Builder {
+        crate::input::verify_mac_input::Builder::default()
+    }
+    /// Creates a new `VerifyMac` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for VerifyMac {
+    type Output = std::result::Result<crate::output::VerifyMacOutput, crate::error::VerifyMacError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_verify_mac_error(response)
+        } else {
+            crate::operation_deser::parse_verify_mac_response(response)
         }
     }
 }

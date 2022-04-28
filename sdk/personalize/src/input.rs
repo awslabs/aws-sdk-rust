@@ -8832,6 +8832,296 @@ impl ListTagsForResourceInput {
     }
 }
 
+/// See [`StartRecommenderInput`](crate::input::StartRecommenderInput)
+pub mod start_recommender_input {
+    /// A builder for [`StartRecommenderInput`](crate::input::StartRecommenderInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) recommender_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the recommender to start.</p>
+        pub fn recommender_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recommender_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the recommender to start.</p>
+        pub fn set_recommender_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.recommender_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartRecommenderInput`](crate::input::StartRecommenderInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StartRecommenderInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StartRecommenderInput {
+                recommender_arn: self.recommender_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StartRecommenderInputOperationOutputAlias = crate::operation::StartRecommender;
+#[doc(hidden)]
+pub type StartRecommenderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl StartRecommenderInput {
+    /// Consumes the builder and constructs an Operation<[`StartRecommender`](crate::operation::StartRecommender)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartRecommender,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StartRecommenderInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartRecommenderInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonPersonalize.StartRecommender",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_recommender(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartRecommender::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartRecommender",
+            "personalize",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StartRecommenderInput`](crate::input::StartRecommenderInput)
+    pub fn builder() -> crate::input::start_recommender_input::Builder {
+        crate::input::start_recommender_input::Builder::default()
+    }
+}
+
+/// See [`StopRecommenderInput`](crate::input::StopRecommenderInput)
+pub mod stop_recommender_input {
+    /// A builder for [`StopRecommenderInput`](crate::input::StopRecommenderInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) recommender_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the recommender to stop.</p>
+        pub fn recommender_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recommender_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the recommender to stop.</p>
+        pub fn set_recommender_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.recommender_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopRecommenderInput`](crate::input::StopRecommenderInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StopRecommenderInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StopRecommenderInput {
+                recommender_arn: self.recommender_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StopRecommenderInputOperationOutputAlias = crate::operation::StopRecommender;
+#[doc(hidden)]
+pub type StopRecommenderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl StopRecommenderInput {
+    /// Consumes the builder and constructs an Operation<[`StopRecommender`](crate::operation::StopRecommender)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StopRecommender,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StopRecommenderInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StopRecommenderInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonPersonalize.StopRecommender",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_stop_recommender(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StopRecommender::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StopRecommender",
+            "personalize",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StopRecommenderInput`](crate::input::StopRecommenderInput)
+    pub fn builder() -> crate::input::stop_recommender_input::Builder {
+        crate::input::stop_recommender_input::Builder::default()
+    }
+}
+
 /// See [`StopSolutionVersionCreationInput`](crate::input::StopSolutionVersionCreationInput)
 pub mod stop_solution_version_creation_input {
     /// A builder for [`StopSolutionVersionCreationInput`](crate::input::StopSolutionVersionCreationInput)
@@ -9790,6 +10080,48 @@ impl std::fmt::Debug for StopSolutionVersionCreationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopSolutionVersionCreationInput");
         formatter.field("solution_version_arn", &self.solution_version_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopRecommenderInput {
+    /// <p>The Amazon Resource Name (ARN) of the recommender to stop.</p>
+    pub recommender_arn: std::option::Option<std::string::String>,
+}
+impl StopRecommenderInput {
+    /// <p>The Amazon Resource Name (ARN) of the recommender to stop.</p>
+    pub fn recommender_arn(&self) -> std::option::Option<&str> {
+        self.recommender_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for StopRecommenderInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopRecommenderInput");
+        formatter.field("recommender_arn", &self.recommender_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartRecommenderInput {
+    /// <p>The Amazon Resource Name (ARN) of the recommender to start.</p>
+    pub recommender_arn: std::option::Option<std::string::String>,
+}
+impl StartRecommenderInput {
+    /// <p>The Amazon Resource Name (ARN) of the recommender to start.</p>
+    pub fn recommender_arn(&self) -> std::option::Option<&str> {
+        self.recommender_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for StartRecommenderInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartRecommenderInput");
+        formatter.field("recommender_arn", &self.recommender_arn);
         formatter.finish()
     }
 }

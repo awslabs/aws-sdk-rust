@@ -1079,6 +1079,18 @@ pub fn deser_operation_crate_operation_describe_organization_configuration(
                             )?,
                         );
                     }
+                    "AutoEnableStandards" => {
+                        builder = builder.set_auto_enable_standards(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::model::AutoEnableStandards::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                        );
+                    }
                     "MemberAccountLimitReached" => {
                         builder = builder.set_member_account_limit_reached(
                             aws_smithy_json::deserialize::token::expect_bool_or_null(

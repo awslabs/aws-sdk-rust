@@ -576,14 +576,14 @@ pub mod create_build_input {
             self.version = input;
             self
         }
-        /// <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon Web Services to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
-        /// <p>If a <code>StorageLocation</code> is specified, the size of your file can be found in your Amazon S3 bucket. Amazon Web Services will report a <code>SizeOnDisk</code> of 0. </p>
+        /// <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
+        /// <p>If a <code>StorageLocation</code> is specified, the size of your file can be found in your Amazon S3 bucket. Amazon GameLift will report a <code>SizeOnDisk</code> of 0. </p>
         pub fn storage_location(mut self, input: crate::model::S3Location) -> Self {
             self.storage_location = Some(input);
             self
         }
-        /// <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon Web Services to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
-        /// <p>If a <code>StorageLocation</code> is specified, the size of your file can be found in your Amazon S3 bucket. Amazon Web Services will report a <code>SizeOnDisk</code> of 0. </p>
+        /// <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
+        /// <p>If a <code>StorageLocation</code> is specified, the size of your file can be found in your Amazon S3 bucket. Amazon GameLift will report a <code>SizeOnDisk</code> of 0. </p>
         pub fn set_storage_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -1424,12 +1424,12 @@ pub mod create_game_server_group_input {
             self.game_server_group_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -3055,7 +3055,7 @@ pub mod create_player_sessions_input {
         ///
         /// To override the contents of this collection use [`set_player_data_map`](Self::set_player_data_map).
         ///
-        /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon Web Services does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
+        /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
         pub fn player_data_map(
             mut self,
             k: impl Into<std::string::String>,
@@ -3066,7 +3066,7 @@ pub mod create_player_sessions_input {
             self.player_data_map = Some(hash_map);
             self
         }
-        /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon Web Services does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
+        /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
         pub fn set_player_data_map(
             mut self,
             input: std::option::Option<
@@ -3236,12 +3236,12 @@ pub mod create_script_input {
             self.version = input;
             self
         }
-        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon Web Services to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon Web Services uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
+        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
         pub fn storage_location(mut self, input: crate::model::S3Location) -> Self {
             self.storage_location = Some(input);
             self
         }
-        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon Web Services to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon Web Services uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
+        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
         pub fn set_storage_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -3576,22 +3576,22 @@ pub mod create_vpc_peering_connection_input {
         pub(crate) peer_vpc_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon Web Services which GameLift VPC to peer with. </p>
+        /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon Web Services which GameLift VPC to peer with. </p>
+        /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
-        /// <p>A unique identifier for the Amazon Web Services account with the VPC that you want to peer your Amazon Web Services fleet with. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
+        /// <p>A unique identifier for the Amazon Web Services account with the VPC that you want to peer your Amazon GameLift fleet with. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
         pub fn peer_vpc_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.peer_vpc_aws_account_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the Amazon Web Services account with the VPC that you want to peer your Amazon Web Services fleet with. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
+        /// <p>A unique identifier for the Amazon Web Services account with the VPC that you want to peer your Amazon GameLift fleet with. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
         pub fn set_peer_vpc_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12080,7 +12080,7 @@ pub mod put_scaling_policy_input {
             self.evaluation_periods = input;
             self
         }
-        /// <p>Name of the Amazon Web Services-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon Web Services with Amazon CloudWatch</a>. </p>
+        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
         /// <ul>
         /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
         /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
@@ -12098,7 +12098,7 @@ pub mod put_scaling_policy_input {
             self.metric_name = Some(input);
             self
         }
-        /// <p>Name of the Amazon Web Services-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon Web Services with Amazon CloudWatch</a>. </p>
+        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
         /// <ul>
         /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
         /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
@@ -13656,12 +13656,12 @@ pub mod start_match_backfill_input {
         pub(crate) players: std::option::Option<std::vec::Vec<crate::model::Player>>,
     }
     impl Builder {
-        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon Web Services will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
+        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
         pub fn ticket_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ticket_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon Web Services will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
+        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
         pub fn set_ticket_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ticket_id = input;
             self
@@ -13856,12 +13856,12 @@ pub mod start_matchmaking_input {
         pub(crate) players: std::option::Option<std::vec::Vec<crate::model::Player>>,
     }
     impl Builder {
-        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon Web Services will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
+        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
         pub fn ticket_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ticket_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon Web Services will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
+        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
         pub fn set_ticket_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ticket_id = input;
             self
@@ -16181,12 +16181,12 @@ pub mod update_game_server_group_input {
             self.game_server_group_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -17406,12 +17406,12 @@ pub mod update_script_input {
             self.version = input;
             self
         }
-        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon Web Services to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon Web Services uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
+        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
         pub fn storage_location(mut self, input: crate::model::S3Location) -> Self {
             self.storage_location = Some(input);
             self
         }
-        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon Web Services to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon Web Services uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
+        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
         pub fn set_storage_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -17734,7 +17734,7 @@ pub struct UpdateScriptInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon Web Services to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon Web Services uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
+    /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
     pub storage_location: std::option::Option<crate::model::S3Location>,
     /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
     /// <p>When using the Amazon Web Services CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
@@ -17753,7 +17753,7 @@ impl UpdateScriptInput {
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon Web Services to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon Web Services uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
+    /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
     pub fn storage_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.storage_location.as_ref()
     }
@@ -18085,7 +18085,7 @@ impl std::fmt::Debug for UpdateGameSessionInput {
 pub struct UpdateGameServerGroupInput {
     /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub game_server_group_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
     pub instance_definitions: std::option::Option<std::vec::Vec<crate::model::InstanceDefinition>>,
@@ -18105,7 +18105,7 @@ impl UpdateGameServerGroupInput {
     pub fn game_server_group_name(&self) -> std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -18608,7 +18608,7 @@ impl std::fmt::Debug for StopFleetActionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMatchmakingInput {
-    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon Web Services will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
+    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
     pub ticket_id: std::option::Option<std::string::String>,
     /// <p>Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same Region as this request. You can use either the configuration name or ARN value.</p>
     pub configuration_name: std::option::Option<std::string::String>,
@@ -18616,7 +18616,7 @@ pub struct StartMatchmakingInput {
     pub players: std::option::Option<std::vec::Vec<crate::model::Player>>,
 }
 impl StartMatchmakingInput {
-    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon Web Services will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
+    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
     pub fn ticket_id(&self) -> std::option::Option<&str> {
         self.ticket_id.as_deref()
     }
@@ -18643,7 +18643,7 @@ impl std::fmt::Debug for StartMatchmakingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMatchBackfillInput {
-    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon Web Services will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
+    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
     pub ticket_id: std::option::Option<std::string::String>,
     /// <p>Name of the matchmaker to use for this request. You can use either the configuration name or ARN value. The ARN of the matchmaker that was used with the original game session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code> property.</p>
     pub configuration_name: std::option::Option<std::string::String>,
@@ -18657,7 +18657,7 @@ pub struct StartMatchBackfillInput {
     pub players: std::option::Option<std::vec::Vec<crate::model::Player>>,
 }
 impl StartMatchBackfillInput {
-    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon Web Services will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
+    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
     pub fn ticket_id(&self) -> std::option::Option<&str> {
         self.ticket_id.as_deref()
     }
@@ -19049,7 +19049,7 @@ pub struct PutScalingPolicyInput {
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperatorType>,
     /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
     pub evaluation_periods: std::option::Option<i32>,
-    /// <p>Name of the Amazon Web Services-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon Web Services with Amazon CloudWatch</a>. </p>
+    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
     /// <ul>
     /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
     /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
@@ -19107,7 +19107,7 @@ impl PutScalingPolicyInput {
     pub fn evaluation_periods(&self) -> std::option::Option<i32> {
         self.evaluation_periods
     }
-    /// <p>Name of the Amazon Web Services-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon Web Services with Amazon CloudWatch</a>. </p>
+    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
     /// <ul>
     /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
     /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
@@ -20772,19 +20772,19 @@ impl std::fmt::Debug for DeleteAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpcPeeringConnectionInput {
-    /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon Web Services which GameLift VPC to peer with. </p>
+    /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the Amazon Web Services account with the VPC that you want to peer your Amazon Web Services fleet with. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
+    /// <p>A unique identifier for the Amazon Web Services account with the VPC that you want to peer your Amazon GameLift fleet with. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
     pub peer_vpc_aws_account_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
     pub peer_vpc_id: std::option::Option<std::string::String>,
 }
 impl CreateVpcPeeringConnectionInput {
-    /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon Web Services which GameLift VPC to peer with. </p>
+    /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>A unique identifier for the Amazon Web Services account with the VPC that you want to peer your Amazon Web Services fleet with. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
+    /// <p>A unique identifier for the Amazon Web Services account with the VPC that you want to peer your Amazon GameLift fleet with. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
     pub fn peer_vpc_aws_account_id(&self) -> std::option::Option<&str> {
         self.peer_vpc_aws_account_id.as_deref()
     }
@@ -20839,7 +20839,7 @@ pub struct CreateScriptInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <code>UpdateScript</code> to change this value later. </p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon Web Services to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon Web Services uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
+    /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
     pub storage_location: std::option::Option<crate::model::S3Location>,
     /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
     /// <p>When using the Amazon Web Services CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
@@ -20856,7 +20856,7 @@ impl CreateScriptInput {
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon Web Services to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon Web Services uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
+    /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
     pub fn storage_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.storage_location.as_ref()
     }
@@ -20890,7 +20890,7 @@ pub struct CreatePlayerSessionsInput {
     pub game_session_id: std::option::Option<std::string::String>,
     /// <p>List of unique identifiers for the players to be added.</p>
     pub player_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon Web Services does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
+    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
     pub player_data_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -20903,7 +20903,7 @@ impl CreatePlayerSessionsInput {
     pub fn player_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.player_ids.as_deref()
     }
-    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon Web Services does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
+    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
     pub fn player_data_map(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -21320,7 +21320,7 @@ impl std::fmt::Debug for CreateGameSessionInput {
 pub struct CreateGameServerGroupInput {
     /// <p>An identifier for the new game server group. This value is used to generate unique ARN identifiers for the Amazon EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name must be unique per Region per Amazon Web Services account.</p>
     pub game_server_group_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The minimum number of instances allowed in the Amazon EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and Amazon EC2 do not scale down the group below this minimum. In production, this value should be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p>
     pub min_size: std::option::Option<i32>,
@@ -21354,7 +21354,7 @@ impl CreateGameServerGroupInput {
     pub fn game_server_group_name(&self) -> std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -21648,8 +21648,8 @@ pub struct CreateBuildInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <code>UpdateBuild</code> to change this value later. </p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon Web Services to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
-    /// <p>If a <code>StorageLocation</code> is specified, the size of your file can be found in your Amazon S3 bucket. Amazon Web Services will report a <code>SizeOnDisk</code> of 0. </p>
+    /// <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
+    /// <p>If a <code>StorageLocation</code> is specified, the size of your file can be found in your Amazon S3 bucket. Amazon GameLift will report a <code>SizeOnDisk</code> of 0. </p>
     pub storage_location: std::option::Option<crate::model::S3Location>,
     /// <p>The operating system that the game server binaries are built to run on. This value determines the type of fleet resources that you can use for this build. If your game build contains multiple executables, they all must run on the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be changed later.</p>
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
@@ -21665,8 +21665,8 @@ impl CreateBuildInput {
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon Web Services to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
-    /// <p>If a <code>StorageLocation</code> is specified, the size of your file can be found in your Amazon S3 bucket. Amazon Web Services will report a <code>SizeOnDisk</code> of 0. </p>
+    /// <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
+    /// <p>If a <code>StorageLocation</code> is specified, the size of your file can be found in your Amazon S3 bucket. Amazon GameLift will report a <code>SizeOnDisk</code> of 0. </p>
     pub fn storage_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.storage_location.as_ref()
     }

@@ -3,10 +3,10 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-Provides APIs for creating and managing Amazon SageMaker resources.
+Provides APIs for creating and managing SageMaker resources.
 
 Other Resources:
-  - [Amazon SageMaker Developer Guide](https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html#first-time-user)
+  - [SageMaker Developer Guide](https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html#first-time-user)
   - [Amazon Augmented AI Runtime API Reference](https://docs.aws.amazon.com/augmented-ai/2019-11-07/APIReference/Welcome.html)
 
 ## Getting Started
@@ -20,8 +20,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.10.1"
-aws-sdk-sagemaker = "0.10.1"
+aws-config = "0.11.0"
+aws-sdk-sagemaker = "0.11.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

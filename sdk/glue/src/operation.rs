@@ -237,6 +237,40 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetCrawlers {
     }
 }
 
+/// Operation shape for `BatchGetCustomEntityTypes`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`batch_get_custom_entity_types`](crate::client::Client::batch_get_custom_entity_types).
+///
+/// See [`crate::client::fluent_builders::BatchGetCustomEntityTypes`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct BatchGetCustomEntityTypes {
+    _private: (),
+}
+impl BatchGetCustomEntityTypes {
+    /// Creates a new builder-style object to manufacture [`BatchGetCustomEntityTypesInput`](crate::input::BatchGetCustomEntityTypesInput)
+    pub fn builder() -> crate::input::batch_get_custom_entity_types_input::Builder {
+        crate::input::batch_get_custom_entity_types_input::Builder::default()
+    }
+    /// Creates a new `BatchGetCustomEntityTypes` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for BatchGetCustomEntityTypes {
+    type Output = std::result::Result<
+        crate::output::BatchGetCustomEntityTypesOutput,
+        crate::error::BatchGetCustomEntityTypesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_batch_get_custom_entity_types_error(response)
+        } else {
+            crate::operation_deser::parse_batch_get_custom_entity_types_response(response)
+        }
+    }
+}
+
 /// Operation shape for `BatchGetDevEndpoints`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -705,6 +739,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCrawler {
             crate::operation_deser::parse_create_crawler_error(response)
         } else {
             crate::operation_deser::parse_create_crawler_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateCustomEntityType`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_custom_entity_type`](crate::client::Client::create_custom_entity_type).
+///
+/// See [`crate::client::fluent_builders::CreateCustomEntityType`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateCustomEntityType {
+    _private: (),
+}
+impl CreateCustomEntityType {
+    /// Creates a new builder-style object to manufacture [`CreateCustomEntityTypeInput`](crate::input::CreateCustomEntityTypeInput)
+    pub fn builder() -> crate::input::create_custom_entity_type_input::Builder {
+        crate::input::create_custom_entity_type_input::Builder::default()
+    }
+    /// Creates a new `CreateCustomEntityType` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateCustomEntityType {
+    type Output = std::result::Result<
+        crate::output::CreateCustomEntityTypeOutput,
+        crate::error::CreateCustomEntityTypeError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_custom_entity_type_error(response)
+        } else {
+            crate::operation_deser::parse_create_custom_entity_type_response(response)
         }
     }
 }
@@ -1398,6 +1466,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCrawler {
             crate::operation_deser::parse_delete_crawler_error(response)
         } else {
             crate::operation_deser::parse_delete_crawler_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteCustomEntityType`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_custom_entity_type`](crate::client::Client::delete_custom_entity_type).
+///
+/// See [`crate::client::fluent_builders::DeleteCustomEntityType`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteCustomEntityType {
+    _private: (),
+}
+impl DeleteCustomEntityType {
+    /// Creates a new builder-style object to manufacture [`DeleteCustomEntityTypeInput`](crate::input::DeleteCustomEntityTypeInput)
+    pub fn builder() -> crate::input::delete_custom_entity_type_input::Builder {
+        crate::input::delete_custom_entity_type_input::Builder::default()
+    }
+    /// Creates a new `DeleteCustomEntityType` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomEntityType {
+    type Output = std::result::Result<
+        crate::output::DeleteCustomEntityTypeOutput,
+        crate::error::DeleteCustomEntityTypeError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_custom_entity_type_error(response)
+        } else {
+            crate::operation_deser::parse_delete_custom_entity_type_response(response)
         }
     }
 }
@@ -2387,6 +2489,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCrawlers {
             crate::operation_deser::parse_get_crawlers_error(response)
         } else {
             crate::operation_deser::parse_get_crawlers_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetCustomEntityType`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_custom_entity_type`](crate::client::Client::get_custom_entity_type).
+///
+/// See [`crate::client::fluent_builders::GetCustomEntityType`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetCustomEntityType {
+    _private: (),
+}
+impl GetCustomEntityType {
+    /// Creates a new builder-style object to manufacture [`GetCustomEntityTypeInput`](crate::input::GetCustomEntityTypeInput)
+    pub fn builder() -> crate::input::get_custom_entity_type_input::Builder {
+        crate::input::get_custom_entity_type_input::Builder::default()
+    }
+    /// Creates a new `GetCustomEntityType` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetCustomEntityType {
+    type Output = std::result::Result<
+        crate::output::GetCustomEntityTypeOutput,
+        crate::error::GetCustomEntityTypeError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_custom_entity_type_error(response)
+        } else {
+            crate::operation_deser::parse_get_custom_entity_type_response(response)
         }
     }
 }
@@ -4023,6 +4159,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCrawlers {
             crate::operation_deser::parse_list_crawlers_error(response)
         } else {
             crate::operation_deser::parse_list_crawlers_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListCustomEntityTypes`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_custom_entity_types`](crate::client::Client::list_custom_entity_types).
+///
+/// See [`crate::client::fluent_builders::ListCustomEntityTypes`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListCustomEntityTypes {
+    _private: (),
+}
+impl ListCustomEntityTypes {
+    /// Creates a new builder-style object to manufacture [`ListCustomEntityTypesInput`](crate::input::ListCustomEntityTypesInput)
+    pub fn builder() -> crate::input::list_custom_entity_types_input::Builder {
+        crate::input::list_custom_entity_types_input::Builder::default()
+    }
+    /// Creates a new `ListCustomEntityTypes` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListCustomEntityTypes {
+    type Output = std::result::Result<
+        crate::output::ListCustomEntityTypesOutput,
+        crate::error::ListCustomEntityTypesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_custom_entity_types_error(response)
+        } else {
+            crate::operation_deser::parse_list_custom_entity_types_response(response)
         }
     }
 }

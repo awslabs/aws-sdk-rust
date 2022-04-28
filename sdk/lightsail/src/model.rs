@@ -11,7 +11,7 @@ pub struct Operation {
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The AWS Region and Availability Zone.</p>
+    /// <p>The Amazon Web Services Region and Availability Zone.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>A Boolean value indicating whether the operation is terminal.</p>
     pub is_terminal: std::option::Option<bool>,
@@ -45,7 +45,7 @@ impl Operation {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The AWS Region and Availability Zone.</p>
+    /// <p>The Amazon Web Services Region and Availability Zone.</p>
     pub fn location(&self) -> std::option::Option<&crate::model::ResourceLocation> {
         self.location.as_ref()
     }
@@ -165,12 +165,12 @@ pub mod operation {
             self.created_at = input;
             self
         }
-        /// <p>The AWS Region and Availability Zone.</p>
+        /// <p>The Amazon Web Services Region and Availability Zone.</p>
         pub fn location(mut self, input: crate::model::ResourceLocation) -> Self {
             self.location = Some(input);
             self
         }
-        /// <p>The AWS Region and Availability Zone.</p>
+        /// <p>The Amazon Web Services Region and Availability Zone.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -1376,9 +1376,13 @@ pub enum LoadBalancerAttributeName {
     #[allow(missing_docs)] // documentation missing in model
     HealthCheckPath,
     #[allow(missing_docs)] // documentation missing in model
+    HttpsRedirectionEnabled,
+    #[allow(missing_docs)] // documentation missing in model
     SessionStickinessEnabled,
     #[allow(missing_docs)] // documentation missing in model
     SessionStickinessLbCookieDurationSeconds,
+    #[allow(missing_docs)] // documentation missing in model
+    TlsPolicyName,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -1386,10 +1390,12 @@ impl std::convert::From<&str> for LoadBalancerAttributeName {
     fn from(s: &str) -> Self {
         match s {
             "HealthCheckPath" => LoadBalancerAttributeName::HealthCheckPath,
+            "HttpsRedirectionEnabled" => LoadBalancerAttributeName::HttpsRedirectionEnabled,
             "SessionStickinessEnabled" => LoadBalancerAttributeName::SessionStickinessEnabled,
             "SessionStickiness_LB_CookieDurationSeconds" => {
                 LoadBalancerAttributeName::SessionStickinessLbCookieDurationSeconds
             }
+            "TlsPolicyName" => LoadBalancerAttributeName::TlsPolicyName,
             other => LoadBalancerAttributeName::Unknown(other.to_owned()),
         }
     }
@@ -1406,10 +1412,12 @@ impl LoadBalancerAttributeName {
     pub fn as_str(&self) -> &str {
         match self {
             LoadBalancerAttributeName::HealthCheckPath => "HealthCheckPath",
+            LoadBalancerAttributeName::HttpsRedirectionEnabled => "HttpsRedirectionEnabled",
             LoadBalancerAttributeName::SessionStickinessEnabled => "SessionStickinessEnabled",
             LoadBalancerAttributeName::SessionStickinessLbCookieDurationSeconds => {
                 "SessionStickiness_LB_CookieDurationSeconds"
             }
+            LoadBalancerAttributeName::TlsPolicyName => "TlsPolicyName",
             LoadBalancerAttributeName::Unknown(s) => s.as_ref(),
         }
     }
@@ -1417,8 +1425,10 @@ impl LoadBalancerAttributeName {
     pub fn values() -> &'static [&'static str] {
         &[
             "HealthCheckPath",
+            "HttpsRedirectionEnabled",
             "SessionStickinessEnabled",
             "SessionStickiness_LB_CookieDurationSeconds",
+            "TlsPolicyName",
         ]
     }
 }
@@ -2812,7 +2822,7 @@ pub struct ContainerService {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp when the container service was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>An object that describes the location of the container service, such as the AWS Region and Availability Zone.</p>
+    /// <p>An object that describes the location of the container service, such as the Amazon Web Services Region and Availability Zone.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The Lightsail resource type of the container service (i.e., <code>ContainerService</code>).</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
@@ -2850,7 +2860,7 @@ pub struct ContainerService {
     /// <p>A Boolean value indicating whether the container service is disabled.</p>
     pub is_disabled: std::option::Option<bool>,
     /// <p>The principal ARN of the container service.</p>
-    /// <p>The principal ARN can be used to create a trust relationship between your standard AWS account and your Lightsail container service. This allows you to give your service permission to access resources in your standard AWS account.</p>
+    /// <p>The principal ARN can be used to create a trust relationship between your standard Amazon Web Services account and your Lightsail container service. This allows you to give your service permission to access resources in your standard Amazon Web Services account.</p>
     pub principal_arn: std::option::Option<std::string::String>,
     /// <p>The private domain name of the container service.</p>
     /// <p>The private domain name is accessible only by other resources within the default virtual private cloud (VPC) of your Lightsail account.</p>
@@ -2881,7 +2891,7 @@ impl ContainerService {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>An object that describes the location of the container service, such as the AWS Region and Availability Zone.</p>
+    /// <p>An object that describes the location of the container service, such as the Amazon Web Services Region and Availability Zone.</p>
     pub fn location(&self) -> std::option::Option<&crate::model::ResourceLocation> {
         self.location.as_ref()
     }
@@ -2945,7 +2955,7 @@ impl ContainerService {
         self.is_disabled
     }
     /// <p>The principal ARN of the container service.</p>
-    /// <p>The principal ARN can be used to create a trust relationship between your standard AWS account and your Lightsail container service. This allows you to give your service permission to access resources in your standard AWS account.</p>
+    /// <p>The principal ARN can be used to create a trust relationship between your standard Amazon Web Services account and your Lightsail container service. This allows you to give your service permission to access resources in your standard Amazon Web Services account.</p>
     pub fn principal_arn(&self) -> std::option::Option<&str> {
         self.principal_arn.as_deref()
     }
@@ -3062,12 +3072,12 @@ pub mod container_service {
             self.created_at = input;
             self
         }
-        /// <p>An object that describes the location of the container service, such as the AWS Region and Availability Zone.</p>
+        /// <p>An object that describes the location of the container service, such as the Amazon Web Services Region and Availability Zone.</p>
         pub fn location(mut self, input: crate::model::ResourceLocation) -> Self {
             self.location = Some(input);
             self
         }
-        /// <p>An object that describes the location of the container service, such as the AWS Region and Availability Zone.</p>
+        /// <p>An object that describes the location of the container service, such as the Amazon Web Services Region and Availability Zone.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -3236,13 +3246,13 @@ pub mod container_service {
             self
         }
         /// <p>The principal ARN of the container service.</p>
-        /// <p>The principal ARN can be used to create a trust relationship between your standard AWS account and your Lightsail container service. This allows you to give your service permission to access resources in your standard AWS account.</p>
+        /// <p>The principal ARN can be used to create a trust relationship between your standard Amazon Web Services account and your Lightsail container service. This allows you to give your service permission to access resources in your standard Amazon Web Services account.</p>
         pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_arn = Some(input.into());
             self
         }
         /// <p>The principal ARN of the container service.</p>
-        /// <p>The principal ARN can be used to create a trust relationship between your standard AWS account and your Lightsail container service. This allows you to give your service permission to access resources in your standard AWS account.</p>
+        /// <p>The principal ARN can be used to create a trust relationship between your standard Amazon Web Services account and your Lightsail container service. This allows you to give your service permission to access resources in your standard Amazon Web Services account.</p>
         pub fn set_principal_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4602,7 +4612,7 @@ pub struct Bucket {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The URL of the bucket.</p>
     pub url: std::option::Option<std::string::String>,
-    /// <p>Describes the resource location.</p>
+    /// <p>An object that describes the location of the bucket, such as the Amazon Web Services Region and Availability Zone.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The name of the bucket.</p>
     pub name: std::option::Option<std::string::String>,
@@ -4619,10 +4629,10 @@ pub struct Bucket {
     /// </ul>
     pub object_versioning: std::option::Option<std::string::String>,
     /// <p>Indicates whether the bundle that is currently applied to a bucket can be changed to another bundle.</p>
-    /// <p>You can update a bucket's bundle only one time within a monthly AWS billing cycle.</p>
+    /// <p>You can update a bucket's bundle only one time within a monthly Amazon Web Services billing cycle.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change a bucket's bundle.</p>
     pub able_to_update_bundle: std::option::Option<bool>,
-    /// <p>An array of strings that specify the AWS account IDs that have read-only access to the bucket.</p>
+    /// <p>An array of strings that specify the Amazon Web Services account IDs that have read-only access to the bucket.</p>
     pub readonly_access_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of objects that describe Lightsail instances that have access to the bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action to update the instances that have access to a bucket.</p>
@@ -4660,7 +4670,7 @@ impl Bucket {
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
-    /// <p>Describes the resource location.</p>
+    /// <p>An object that describes the location of the bucket, such as the Amazon Web Services Region and Availability Zone.</p>
     pub fn location(&self) -> std::option::Option<&crate::model::ResourceLocation> {
         self.location.as_ref()
     }
@@ -4687,12 +4697,12 @@ impl Bucket {
         self.object_versioning.as_deref()
     }
     /// <p>Indicates whether the bundle that is currently applied to a bucket can be changed to another bundle.</p>
-    /// <p>You can update a bucket's bundle only one time within a monthly AWS billing cycle.</p>
+    /// <p>You can update a bucket's bundle only one time within a monthly Amazon Web Services billing cycle.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change a bucket's bundle.</p>
     pub fn able_to_update_bundle(&self) -> std::option::Option<bool> {
         self.able_to_update_bundle
     }
-    /// <p>An array of strings that specify the AWS account IDs that have read-only access to the bucket.</p>
+    /// <p>An array of strings that specify the Amazon Web Services account IDs that have read-only access to the bucket.</p>
     pub fn readonly_access_accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.readonly_access_accounts.as_deref()
     }
@@ -4836,12 +4846,12 @@ pub mod bucket {
             self.url = input;
             self
         }
-        /// <p>Describes the resource location.</p>
+        /// <p>An object that describes the location of the bucket, such as the Amazon Web Services Region and Availability Zone.</p>
         pub fn location(mut self, input: crate::model::ResourceLocation) -> Self {
             self.location = Some(input);
             self
         }
-        /// <p>Describes the resource location.</p>
+        /// <p>An object that describes the location of the bucket, such as the Amazon Web Services Region and Availability Zone.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -4914,14 +4924,14 @@ pub mod bucket {
             self
         }
         /// <p>Indicates whether the bundle that is currently applied to a bucket can be changed to another bundle.</p>
-        /// <p>You can update a bucket's bundle only one time within a monthly AWS billing cycle.</p>
+        /// <p>You can update a bucket's bundle only one time within a monthly Amazon Web Services billing cycle.</p>
         /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change a bucket's bundle.</p>
         pub fn able_to_update_bundle(mut self, input: bool) -> Self {
             self.able_to_update_bundle = Some(input);
             self
         }
         /// <p>Indicates whether the bundle that is currently applied to a bucket can be changed to another bundle.</p>
-        /// <p>You can update a bucket's bundle only one time within a monthly AWS billing cycle.</p>
+        /// <p>You can update a bucket's bundle only one time within a monthly Amazon Web Services billing cycle.</p>
         /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change a bucket's bundle.</p>
         pub fn set_able_to_update_bundle(mut self, input: std::option::Option<bool>) -> Self {
             self.able_to_update_bundle = input;
@@ -4931,14 +4941,14 @@ pub mod bucket {
         ///
         /// To override the contents of this collection use [`set_readonly_access_accounts`](Self::set_readonly_access_accounts).
         ///
-        /// <p>An array of strings that specify the AWS account IDs that have read-only access to the bucket.</p>
+        /// <p>An array of strings that specify the Amazon Web Services account IDs that have read-only access to the bucket.</p>
         pub fn readonly_access_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.readonly_access_accounts.unwrap_or_default();
             v.push(input.into());
             self.readonly_access_accounts = Some(v);
             self
         }
-        /// <p>An array of strings that specify the AWS account IDs that have read-only access to the bucket.</p>
+        /// <p>An array of strings that specify the Amazon Web Services account IDs that have read-only access to the bucket.</p>
         pub fn set_readonly_access_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5030,7 +5040,7 @@ impl Bucket {
 pub struct BucketAccessLogConfig {
     /// <p>A Boolean value that indicates whether bucket access logging is enabled for the bucket.</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>The name of the bucket where the access is saved. The destination can be a Lightsail bucket in the same account, and in the same AWS Region as the source bucket.</p> <note>
+    /// <p>The name of the bucket where the access logs are saved. The destination can be a Lightsail bucket in the same account, and in the same Amazon Web Services Region as the source bucket.</p> <note>
     /// <p>This parameter is required when enabling the access log for a bucket, and should be omitted when disabling the access log.</p>
     /// </note>
     pub destination: std::option::Option<std::string::String>,
@@ -5045,7 +5055,7 @@ impl BucketAccessLogConfig {
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
-    /// <p>The name of the bucket where the access is saved. The destination can be a Lightsail bucket in the same account, and in the same AWS Region as the source bucket.</p> <note>
+    /// <p>The name of the bucket where the access logs are saved. The destination can be a Lightsail bucket in the same account, and in the same Amazon Web Services Region as the source bucket.</p> <note>
     /// <p>This parameter is required when enabling the access log for a bucket, and should be omitted when disabling the access log.</p>
     /// </note>
     pub fn destination(&self) -> std::option::Option<&str> {
@@ -5089,14 +5099,14 @@ pub mod bucket_access_log_config {
             self.enabled = input;
             self
         }
-        /// <p>The name of the bucket where the access is saved. The destination can be a Lightsail bucket in the same account, and in the same AWS Region as the source bucket.</p> <note>
+        /// <p>The name of the bucket where the access logs are saved. The destination can be a Lightsail bucket in the same account, and in the same Amazon Web Services Region as the source bucket.</p> <note>
         /// <p>This parameter is required when enabling the access log for a bucket, and should be omitted when disabling the access log.</p>
         /// </note>
         pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination = Some(input.into());
             self
         }
-        /// <p>The name of the bucket where the access is saved. The destination can be a Lightsail bucket in the same account, and in the same AWS Region as the source bucket.</p> <note>
+        /// <p>The name of the bucket where the access logs are saved. The destination can be a Lightsail bucket in the same account, and in the same Amazon Web Services Region as the source bucket.</p> <note>
         /// <p>This parameter is required when enabling the access log for a bucket, and should be omitted when disabling the access log.</p>
         /// </note>
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -9535,6 +9545,207 @@ impl AvailabilityZone {
     }
 }
 
+/// <p>Describes the TLS security policies that are available for Lightsail load balancers.</p>
+/// <p>For more information about load balancer TLS security policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Load balancer TLS security policies</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LoadBalancerTlsPolicy {
+    /// <p>The name of the TLS security policy.</p>
+    /// <p>The following TLS security policy names are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>TLS-2016-08</code> </p> </li>
+    /// <li> <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li>
+    /// </ul>
+    /// <p>You can specify either of these values for the <code>tlsSecurityPolicyName</code> request parameter in the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer</a> action, and the <code>attributeValue</code> request parameter in the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html">UpdateLoadBalancerAttribute</a> action.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A Boolean value that indicates whether the TLS security policy is the default.</p>
+    pub is_default: std::option::Option<bool>,
+    /// <p>The description of the TLS security policy.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The protocols used in a given TLS security policy.</p>
+    /// <p>The following protocols are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>Protocol-TLSv1</code> </p> </li>
+    /// <li> <p> <code>Protocol-TLSv1.1</code> </p> </li>
+    /// <li> <p> <code>Protocol-TLSv1.2</code> </p> </li>
+    /// </ul>
+    pub protocols: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The ciphers used by the TLS security policy.</p>
+    /// <p>The ciphers are listed in order of preference.</p>
+    pub ciphers: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl LoadBalancerTlsPolicy {
+    /// <p>The name of the TLS security policy.</p>
+    /// <p>The following TLS security policy names are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>TLS-2016-08</code> </p> </li>
+    /// <li> <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li>
+    /// </ul>
+    /// <p>You can specify either of these values for the <code>tlsSecurityPolicyName</code> request parameter in the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer</a> action, and the <code>attributeValue</code> request parameter in the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html">UpdateLoadBalancerAttribute</a> action.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A Boolean value that indicates whether the TLS security policy is the default.</p>
+    pub fn is_default(&self) -> std::option::Option<bool> {
+        self.is_default
+    }
+    /// <p>The description of the TLS security policy.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The protocols used in a given TLS security policy.</p>
+    /// <p>The following protocols are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>Protocol-TLSv1</code> </p> </li>
+    /// <li> <p> <code>Protocol-TLSv1.1</code> </p> </li>
+    /// <li> <p> <code>Protocol-TLSv1.2</code> </p> </li>
+    /// </ul>
+    pub fn protocols(&self) -> std::option::Option<&[std::string::String]> {
+        self.protocols.as_deref()
+    }
+    /// <p>The ciphers used by the TLS security policy.</p>
+    /// <p>The ciphers are listed in order of preference.</p>
+    pub fn ciphers(&self) -> std::option::Option<&[std::string::String]> {
+        self.ciphers.as_deref()
+    }
+}
+impl std::fmt::Debug for LoadBalancerTlsPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LoadBalancerTlsPolicy");
+        formatter.field("name", &self.name);
+        formatter.field("is_default", &self.is_default);
+        formatter.field("description", &self.description);
+        formatter.field("protocols", &self.protocols);
+        formatter.field("ciphers", &self.ciphers);
+        formatter.finish()
+    }
+}
+/// See [`LoadBalancerTlsPolicy`](crate::model::LoadBalancerTlsPolicy)
+pub mod load_balancer_tls_policy {
+    /// A builder for [`LoadBalancerTlsPolicy`](crate::model::LoadBalancerTlsPolicy)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) is_default: std::option::Option<bool>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) protocols: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) ciphers: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The name of the TLS security policy.</p>
+        /// <p>The following TLS security policy names are possible:</p>
+        /// <ul>
+        /// <li> <p> <code>TLS-2016-08</code> </p> </li>
+        /// <li> <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li>
+        /// </ul>
+        /// <p>You can specify either of these values for the <code>tlsSecurityPolicyName</code> request parameter in the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer</a> action, and the <code>attributeValue</code> request parameter in the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html">UpdateLoadBalancerAttribute</a> action.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the TLS security policy.</p>
+        /// <p>The following TLS security policy names are possible:</p>
+        /// <ul>
+        /// <li> <p> <code>TLS-2016-08</code> </p> </li>
+        /// <li> <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li>
+        /// </ul>
+        /// <p>You can specify either of these values for the <code>tlsSecurityPolicyName</code> request parameter in the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer</a> action, and the <code>attributeValue</code> request parameter in the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html">UpdateLoadBalancerAttribute</a> action.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A Boolean value that indicates whether the TLS security policy is the default.</p>
+        pub fn is_default(mut self, input: bool) -> Self {
+            self.is_default = Some(input);
+            self
+        }
+        /// <p>A Boolean value that indicates whether the TLS security policy is the default.</p>
+        pub fn set_is_default(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_default = input;
+            self
+        }
+        /// <p>The description of the TLS security policy.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the TLS security policy.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `protocols`.
+        ///
+        /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
+        ///
+        /// <p>The protocols used in a given TLS security policy.</p>
+        /// <p>The following protocols are possible:</p>
+        /// <ul>
+        /// <li> <p> <code>Protocol-TLSv1</code> </p> </li>
+        /// <li> <p> <code>Protocol-TLSv1.1</code> </p> </li>
+        /// <li> <p> <code>Protocol-TLSv1.2</code> </p> </li>
+        /// </ul>
+        pub fn protocols(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.protocols.unwrap_or_default();
+            v.push(input.into());
+            self.protocols = Some(v);
+            self
+        }
+        /// <p>The protocols used in a given TLS security policy.</p>
+        /// <p>The following protocols are possible:</p>
+        /// <ul>
+        /// <li> <p> <code>Protocol-TLSv1</code> </p> </li>
+        /// <li> <p> <code>Protocol-TLSv1.1</code> </p> </li>
+        /// <li> <p> <code>Protocol-TLSv1.2</code> </p> </li>
+        /// </ul>
+        pub fn set_protocols(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.protocols = input;
+            self
+        }
+        /// Appends an item to `ciphers`.
+        ///
+        /// To override the contents of this collection use [`set_ciphers`](Self::set_ciphers).
+        ///
+        /// <p>The ciphers used by the TLS security policy.</p>
+        /// <p>The ciphers are listed in order of preference.</p>
+        pub fn ciphers(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.ciphers.unwrap_or_default();
+            v.push(input.into());
+            self.ciphers = Some(v);
+            self
+        }
+        /// <p>The ciphers used by the TLS security policy.</p>
+        /// <p>The ciphers are listed in order of preference.</p>
+        pub fn set_ciphers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.ciphers = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LoadBalancerTlsPolicy`](crate::model::LoadBalancerTlsPolicy)
+        pub fn build(self) -> crate::model::LoadBalancerTlsPolicy {
+            crate::model::LoadBalancerTlsPolicy {
+                name: self.name,
+                is_default: self.is_default,
+                description: self.description,
+                protocols: self.protocols,
+                ciphers: self.ciphers,
+            }
+        }
+    }
+}
+impl LoadBalancerTlsPolicy {
+    /// Creates a new builder-style object to manufacture [`LoadBalancerTlsPolicy`](crate::model::LoadBalancerTlsPolicy)
+    pub fn builder() -> crate::model::load_balancer_tls_policy::Builder {
+        crate::model::load_balancer_tls_policy::Builder::default()
+    }
+}
+
 /// <p>Describes a load balancer SSL/TLS certificate.</p>
 /// <p>TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
 #[non_exhaustive]
@@ -11038,6 +11249,15 @@ pub struct LoadBalancer {
     /// <p>The IP address type of the load balancer.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
+    /// <p>A Boolean value that indicates whether HTTPS redirection is enabled for the load balancer.</p>
+    pub https_redirection_enabled: std::option::Option<bool>,
+    /// <p>The name of the TLS security policy for the load balancer.</p>
+    /// <p>The following TLS security policy names are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>TLS-2016-08</code> </p> </li>
+    /// <li> <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li>
+    /// </ul>
+    pub tls_policy_name: std::option::Option<std::string::String>,
 }
 impl LoadBalancer {
     /// <p>The name of the load balancer (e.g., <code>my-load-balancer</code>).</p>
@@ -11118,6 +11338,19 @@ impl LoadBalancer {
     pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
         self.ip_address_type.as_ref()
     }
+    /// <p>A Boolean value that indicates whether HTTPS redirection is enabled for the load balancer.</p>
+    pub fn https_redirection_enabled(&self) -> std::option::Option<bool> {
+        self.https_redirection_enabled
+    }
+    /// <p>The name of the TLS security policy for the load balancer.</p>
+    /// <p>The following TLS security policy names are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>TLS-2016-08</code> </p> </li>
+    /// <li> <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li>
+    /// </ul>
+    pub fn tls_policy_name(&self) -> std::option::Option<&str> {
+        self.tls_policy_name.as_deref()
+    }
 }
 impl std::fmt::Debug for LoadBalancer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11139,6 +11372,8 @@ impl std::fmt::Debug for LoadBalancer {
         formatter.field("tls_certificate_summaries", &self.tls_certificate_summaries);
         formatter.field("configuration_options", &self.configuration_options);
         formatter.field("ip_address_type", &self.ip_address_type);
+        formatter.field("https_redirection_enabled", &self.https_redirection_enabled);
+        formatter.field("tls_policy_name", &self.tls_policy_name);
         formatter.finish()
     }
 }
@@ -11169,6 +11404,8 @@ pub mod load_balancer {
             std::collections::HashMap<crate::model::LoadBalancerAttributeName, std::string::String>,
         >,
         pub(crate) ip_address_type: std::option::Option<crate::model::IpAddressType>,
+        pub(crate) https_redirection_enabled: std::option::Option<bool>,
+        pub(crate) tls_policy_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the load balancer (e.g., <code>my-load-balancer</code>).</p>
@@ -11425,6 +11662,39 @@ pub mod load_balancer {
             self.ip_address_type = input;
             self
         }
+        /// <p>A Boolean value that indicates whether HTTPS redirection is enabled for the load balancer.</p>
+        pub fn https_redirection_enabled(mut self, input: bool) -> Self {
+            self.https_redirection_enabled = Some(input);
+            self
+        }
+        /// <p>A Boolean value that indicates whether HTTPS redirection is enabled for the load balancer.</p>
+        pub fn set_https_redirection_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.https_redirection_enabled = input;
+            self
+        }
+        /// <p>The name of the TLS security policy for the load balancer.</p>
+        /// <p>The following TLS security policy names are possible:</p>
+        /// <ul>
+        /// <li> <p> <code>TLS-2016-08</code> </p> </li>
+        /// <li> <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li>
+        /// </ul>
+        pub fn tls_policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tls_policy_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the TLS security policy for the load balancer.</p>
+        /// <p>The following TLS security policy names are possible:</p>
+        /// <ul>
+        /// <li> <p> <code>TLS-2016-08</code> </p> </li>
+        /// <li> <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li>
+        /// </ul>
+        pub fn set_tls_policy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.tls_policy_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LoadBalancer`](crate::model::LoadBalancer)
         pub fn build(self) -> crate::model::LoadBalancer {
             crate::model::LoadBalancer {
@@ -11445,6 +11715,8 @@ pub mod load_balancer {
                 tls_certificate_summaries: self.tls_certificate_summaries,
                 configuration_options: self.configuration_options,
                 ip_address_type: self.ip_address_type,
+                https_redirection_enabled: self.https_redirection_enabled,
+                tls_policy_name: self.tls_policy_name,
             }
         }
     }
@@ -16887,8 +17159,8 @@ pub struct LightsailDistribution {
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The timestamp when the distribution was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>An object that describes the location of the distribution, such as the AWS Region and Availability Zone.</p> <note>
-    /// <p>Lightsail distributions are global resources that can reference an origin in any AWS Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
+    /// <p>An object that describes the location of the distribution, such as the Amazon Web Services Region and Availability Zone.</p> <note>
+    /// <p>Lightsail distributions are global resources that can reference an origin in any Amazon Web Services Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
     /// </note>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The Lightsail resource type (e.g., <code>Distribution</code>).</p>
@@ -16942,8 +17214,8 @@ impl LightsailDistribution {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>An object that describes the location of the distribution, such as the AWS Region and Availability Zone.</p> <note>
-    /// <p>Lightsail distributions are global resources that can reference an origin in any AWS Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
+    /// <p>An object that describes the location of the distribution, such as the Amazon Web Services Region and Availability Zone.</p> <note>
+    /// <p>Lightsail distributions are global resources that can reference an origin in any Amazon Web Services Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
     /// </note>
     pub fn location(&self) -> std::option::Option<&crate::model::ResourceLocation> {
         self.location.as_ref()
@@ -17111,15 +17383,15 @@ pub mod lightsail_distribution {
             self.created_at = input;
             self
         }
-        /// <p>An object that describes the location of the distribution, such as the AWS Region and Availability Zone.</p> <note>
-        /// <p>Lightsail distributions are global resources that can reference an origin in any AWS Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
+        /// <p>An object that describes the location of the distribution, such as the Amazon Web Services Region and Availability Zone.</p> <note>
+        /// <p>Lightsail distributions are global resources that can reference an origin in any Amazon Web Services Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
         /// </note>
         pub fn location(mut self, input: crate::model::ResourceLocation) -> Self {
             self.location = Some(input);
             self
         }
-        /// <p>An object that describes the location of the distribution, such as the AWS Region and Availability Zone.</p> <note>
-        /// <p>Lightsail distributions are global resources that can reference an origin in any AWS Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
+        /// <p>An object that describes the location of the distribution, such as the Amazon Web Services Region and Availability Zone.</p> <note>
+        /// <p>Lightsail distributions are global resources that can reference an origin in any Amazon Web Services Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
         /// </note>
         pub fn set_location(
             mut self,
@@ -18412,7 +18684,7 @@ pub struct ContactMethod {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp when the contact method was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Describes the resource location.</p>
+    /// <p>An object that describes the location of the contact method, such as the Amazon Web Services Region and Availability Zone.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The Lightsail resource type (e.g., <code>ContactMethod</code>).</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
@@ -18450,7 +18722,7 @@ impl ContactMethod {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>Describes the resource location.</p>
+    /// <p>An object that describes the location of the contact method, such as the Amazon Web Services Region and Availability Zone.</p>
     pub fn location(&self) -> std::option::Option<&crate::model::ResourceLocation> {
         self.location.as_ref()
     }
@@ -18579,12 +18851,12 @@ pub mod contact_method {
             self.created_at = input;
             self
         }
-        /// <p>Describes the resource location.</p>
+        /// <p>An object that describes the location of the contact method, such as the Amazon Web Services Region and Availability Zone.</p>
         pub fn location(mut self, input: crate::model::ResourceLocation) -> Self {
             self.location = Some(input);
             self
         }
-        /// <p>Describes the resource location.</p>
+        /// <p>An object that describes the location of the contact method, such as the Amazon Web Services Region and Availability Zone.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -18708,7 +18980,7 @@ pub struct CloudFormationStackRecord {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date when the CloudFormation stack record was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A list of objects describing the Availability Zone and AWS Region of the CloudFormation stack record.</p>
+    /// <p>A list of objects describing the Availability Zone and Amazon Web Services Region of the CloudFormation stack record.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The Lightsail resource type (e.g., <code>CloudFormationStackRecord</code>).</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
@@ -18733,7 +19005,7 @@ impl CloudFormationStackRecord {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>A list of objects describing the Availability Zone and AWS Region of the CloudFormation stack record.</p>
+    /// <p>A list of objects describing the Availability Zone and Amazon Web Services Region of the CloudFormation stack record.</p>
     pub fn location(&self) -> std::option::Option<&crate::model::ResourceLocation> {
         self.location.as_ref()
     }
@@ -18820,12 +19092,12 @@ pub mod cloud_formation_stack_record {
             self.created_at = input;
             self
         }
-        /// <p>A list of objects describing the Availability Zone and AWS Region of the CloudFormation stack record.</p>
+        /// <p>A list of objects describing the Availability Zone and Amazon Web Services Region of the CloudFormation stack record.</p>
         pub fn location(mut self, input: crate::model::ResourceLocation) -> Self {
             self.location = Some(input);
             self
         }
-        /// <p>A list of objects describing the Availability Zone and AWS Region of the CloudFormation stack record.</p>
+        /// <p>A list of objects describing the Availability Zone and Amazon Web Services Region of the CloudFormation stack record.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -20552,6 +20824,322 @@ impl InstancePlatform {
     }
 }
 impl AsRef<str> for InstancePlatform {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes the synchronization status of the Amazon Simple Storage Service (Amazon S3) account-level block public access (BPA) feature for your Lightsail buckets.</p>
+/// <p>The account-level BPA feature of Amazon S3 provides centralized controls to limit public access to all Amazon S3 buckets in an account. BPA can make all Amazon S3 buckets in an Amazon Web Services account private regardless of the individual bucket and object permissions that are configured. Lightsail buckets take into account the Amazon S3 account-level BPA configuration when allowing or denying public access. To do this, Lightsail periodically fetches the account-level BPA configuration from Amazon S3. When the account-level BPA status is <code>InSync</code>, the Amazon S3 account-level BPA configuration is synchronized and it applies to your Lightsail buckets. For more information about Amazon Simple Storage Service account-level BPA and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AccountLevelBpaSync {
+    /// <p>The status of the account-level BPA synchronization.</p>
+    /// <p>The following statuses are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>InSync</code> - Account-level BPA is synchronized. The Amazon S3 account-level BPA configuration applies to your Lightsail buckets.</p> </li>
+    /// <li> <p> <code>NeverSynced</code> - Synchronization has not yet happened. The Amazon S3 account-level BPA configuration does not apply to your Lightsail buckets.</p> </li>
+    /// <li> <p> <code>Failed</code> - Synchronization failed. The Amazon S3 account-level BPA configuration does not apply to your Lightsail buckets.</p> </li>
+    /// <li> <p> <code>Defaulted</code> - Synchronization failed and account-level BPA for your Lightsail buckets is defaulted to <i>active</i>.</p> </li>
+    /// </ul> <note>
+    /// <p>You might need to complete further actions if the status is <code>Failed</code> or <code>Defaulted</code>. The <code>message</code> parameter provides more information for those statuses.</p>
+    /// </note>
+    pub status: std::option::Option<crate::model::AccountLevelBpaSyncStatus>,
+    /// <p>The timestamp of when the account-level BPA configuration was last synchronized. This value is null when the account-level BPA configuration has not been synchronized.</p>
+    pub last_synced_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A message that provides a reason for a <code>Failed</code> or <code>Defaulted</code> synchronization status.</p>
+    /// <p>The following messages are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>SYNC_ON_HOLD</code> - The synchronization has not yet happened. This status message occurs immediately after you create your first Lightsail bucket. This status message should change after the first synchronization happens, approximately 1 hour after the first bucket is created.</p> </li>
+    /// <li> <p> <code>DEFAULTED_FOR_SLR_MISSING</code> - The synchronization failed because the required service-linked role is missing from your Amazon Web Services account. The account-level BPA configuration for your Lightsail buckets is defaulted to <i>active</i> until the synchronization can occur. This means that all your buckets are private and not publicly accessible. For more information about how to create the required service-linked role to allow synchronization, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-service-linked-roles">Using Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>DEFAULTED_FOR_SLR_MISSING_ON_HOLD</code> - The synchronization failed because the required service-linked role is missing from your Amazon Web Services account. Account-level BPA is not yet configured for your Lightsail buckets. Therefore, only the bucket access permissions and individual object access permissions apply to your Lightsail buckets. For more information about how to create the required service-linked role to allow synchronization, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-service-linked-roles">Using Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>Unknown</code> - The reason that synchronization failed is unknown. Contact Amazon Web Services Support for more information.</p> </li>
+    /// </ul>
+    pub message: std::option::Option<crate::model::BpaStatusMessage>,
+    /// <p>A Boolean value that indicates whether account-level block public access is affecting your Lightsail buckets.</p>
+    pub bpa_impacts_lightsail: std::option::Option<bool>,
+}
+impl AccountLevelBpaSync {
+    /// <p>The status of the account-level BPA synchronization.</p>
+    /// <p>The following statuses are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>InSync</code> - Account-level BPA is synchronized. The Amazon S3 account-level BPA configuration applies to your Lightsail buckets.</p> </li>
+    /// <li> <p> <code>NeverSynced</code> - Synchronization has not yet happened. The Amazon S3 account-level BPA configuration does not apply to your Lightsail buckets.</p> </li>
+    /// <li> <p> <code>Failed</code> - Synchronization failed. The Amazon S3 account-level BPA configuration does not apply to your Lightsail buckets.</p> </li>
+    /// <li> <p> <code>Defaulted</code> - Synchronization failed and account-level BPA for your Lightsail buckets is defaulted to <i>active</i>.</p> </li>
+    /// </ul> <note>
+    /// <p>You might need to complete further actions if the status is <code>Failed</code> or <code>Defaulted</code>. The <code>message</code> parameter provides more information for those statuses.</p>
+    /// </note>
+    pub fn status(&self) -> std::option::Option<&crate::model::AccountLevelBpaSyncStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The timestamp of when the account-level BPA configuration was last synchronized. This value is null when the account-level BPA configuration has not been synchronized.</p>
+    pub fn last_synced_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_synced_at.as_ref()
+    }
+    /// <p>A message that provides a reason for a <code>Failed</code> or <code>Defaulted</code> synchronization status.</p>
+    /// <p>The following messages are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>SYNC_ON_HOLD</code> - The synchronization has not yet happened. This status message occurs immediately after you create your first Lightsail bucket. This status message should change after the first synchronization happens, approximately 1 hour after the first bucket is created.</p> </li>
+    /// <li> <p> <code>DEFAULTED_FOR_SLR_MISSING</code> - The synchronization failed because the required service-linked role is missing from your Amazon Web Services account. The account-level BPA configuration for your Lightsail buckets is defaulted to <i>active</i> until the synchronization can occur. This means that all your buckets are private and not publicly accessible. For more information about how to create the required service-linked role to allow synchronization, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-service-linked-roles">Using Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>DEFAULTED_FOR_SLR_MISSING_ON_HOLD</code> - The synchronization failed because the required service-linked role is missing from your Amazon Web Services account. Account-level BPA is not yet configured for your Lightsail buckets. Therefore, only the bucket access permissions and individual object access permissions apply to your Lightsail buckets. For more information about how to create the required service-linked role to allow synchronization, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-service-linked-roles">Using Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>Unknown</code> - The reason that synchronization failed is unknown. Contact Amazon Web Services Support for more information.</p> </li>
+    /// </ul>
+    pub fn message(&self) -> std::option::Option<&crate::model::BpaStatusMessage> {
+        self.message.as_ref()
+    }
+    /// <p>A Boolean value that indicates whether account-level block public access is affecting your Lightsail buckets.</p>
+    pub fn bpa_impacts_lightsail(&self) -> std::option::Option<bool> {
+        self.bpa_impacts_lightsail
+    }
+}
+impl std::fmt::Debug for AccountLevelBpaSync {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AccountLevelBpaSync");
+        formatter.field("status", &self.status);
+        formatter.field("last_synced_at", &self.last_synced_at);
+        formatter.field("message", &self.message);
+        formatter.field("bpa_impacts_lightsail", &self.bpa_impacts_lightsail);
+        formatter.finish()
+    }
+}
+/// See [`AccountLevelBpaSync`](crate::model::AccountLevelBpaSync)
+pub mod account_level_bpa_sync {
+    /// A builder for [`AccountLevelBpaSync`](crate::model::AccountLevelBpaSync)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::AccountLevelBpaSyncStatus>,
+        pub(crate) last_synced_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) message: std::option::Option<crate::model::BpaStatusMessage>,
+        pub(crate) bpa_impacts_lightsail: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The status of the account-level BPA synchronization.</p>
+        /// <p>The following statuses are possible:</p>
+        /// <ul>
+        /// <li> <p> <code>InSync</code> - Account-level BPA is synchronized. The Amazon S3 account-level BPA configuration applies to your Lightsail buckets.</p> </li>
+        /// <li> <p> <code>NeverSynced</code> - Synchronization has not yet happened. The Amazon S3 account-level BPA configuration does not apply to your Lightsail buckets.</p> </li>
+        /// <li> <p> <code>Failed</code> - Synchronization failed. The Amazon S3 account-level BPA configuration does not apply to your Lightsail buckets.</p> </li>
+        /// <li> <p> <code>Defaulted</code> - Synchronization failed and account-level BPA for your Lightsail buckets is defaulted to <i>active</i>.</p> </li>
+        /// </ul> <note>
+        /// <p>You might need to complete further actions if the status is <code>Failed</code> or <code>Defaulted</code>. The <code>message</code> parameter provides more information for those statuses.</p>
+        /// </note>
+        pub fn status(mut self, input: crate::model::AccountLevelBpaSyncStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the account-level BPA synchronization.</p>
+        /// <p>The following statuses are possible:</p>
+        /// <ul>
+        /// <li> <p> <code>InSync</code> - Account-level BPA is synchronized. The Amazon S3 account-level BPA configuration applies to your Lightsail buckets.</p> </li>
+        /// <li> <p> <code>NeverSynced</code> - Synchronization has not yet happened. The Amazon S3 account-level BPA configuration does not apply to your Lightsail buckets.</p> </li>
+        /// <li> <p> <code>Failed</code> - Synchronization failed. The Amazon S3 account-level BPA configuration does not apply to your Lightsail buckets.</p> </li>
+        /// <li> <p> <code>Defaulted</code> - Synchronization failed and account-level BPA for your Lightsail buckets is defaulted to <i>active</i>.</p> </li>
+        /// </ul> <note>
+        /// <p>You might need to complete further actions if the status is <code>Failed</code> or <code>Defaulted</code>. The <code>message</code> parameter provides more information for those statuses.</p>
+        /// </note>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::AccountLevelBpaSyncStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The timestamp of when the account-level BPA configuration was last synchronized. This value is null when the account-level BPA configuration has not been synchronized.</p>
+        pub fn last_synced_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_synced_at = Some(input);
+            self
+        }
+        /// <p>The timestamp of when the account-level BPA configuration was last synchronized. This value is null when the account-level BPA configuration has not been synchronized.</p>
+        pub fn set_last_synced_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_synced_at = input;
+            self
+        }
+        /// <p>A message that provides a reason for a <code>Failed</code> or <code>Defaulted</code> synchronization status.</p>
+        /// <p>The following messages are possible:</p>
+        /// <ul>
+        /// <li> <p> <code>SYNC_ON_HOLD</code> - The synchronization has not yet happened. This status message occurs immediately after you create your first Lightsail bucket. This status message should change after the first synchronization happens, approximately 1 hour after the first bucket is created.</p> </li>
+        /// <li> <p> <code>DEFAULTED_FOR_SLR_MISSING</code> - The synchronization failed because the required service-linked role is missing from your Amazon Web Services account. The account-level BPA configuration for your Lightsail buckets is defaulted to <i>active</i> until the synchronization can occur. This means that all your buckets are private and not publicly accessible. For more information about how to create the required service-linked role to allow synchronization, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-service-linked-roles">Using Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>DEFAULTED_FOR_SLR_MISSING_ON_HOLD</code> - The synchronization failed because the required service-linked role is missing from your Amazon Web Services account. Account-level BPA is not yet configured for your Lightsail buckets. Therefore, only the bucket access permissions and individual object access permissions apply to your Lightsail buckets. For more information about how to create the required service-linked role to allow synchronization, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-service-linked-roles">Using Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>Unknown</code> - The reason that synchronization failed is unknown. Contact Amazon Web Services Support for more information.</p> </li>
+        /// </ul>
+        pub fn message(mut self, input: crate::model::BpaStatusMessage) -> Self {
+            self.message = Some(input);
+            self
+        }
+        /// <p>A message that provides a reason for a <code>Failed</code> or <code>Defaulted</code> synchronization status.</p>
+        /// <p>The following messages are possible:</p>
+        /// <ul>
+        /// <li> <p> <code>SYNC_ON_HOLD</code> - The synchronization has not yet happened. This status message occurs immediately after you create your first Lightsail bucket. This status message should change after the first synchronization happens, approximately 1 hour after the first bucket is created.</p> </li>
+        /// <li> <p> <code>DEFAULTED_FOR_SLR_MISSING</code> - The synchronization failed because the required service-linked role is missing from your Amazon Web Services account. The account-level BPA configuration for your Lightsail buckets is defaulted to <i>active</i> until the synchronization can occur. This means that all your buckets are private and not publicly accessible. For more information about how to create the required service-linked role to allow synchronization, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-service-linked-roles">Using Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>DEFAULTED_FOR_SLR_MISSING_ON_HOLD</code> - The synchronization failed because the required service-linked role is missing from your Amazon Web Services account. Account-level BPA is not yet configured for your Lightsail buckets. Therefore, only the bucket access permissions and individual object access permissions apply to your Lightsail buckets. For more information about how to create the required service-linked role to allow synchronization, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-service-linked-roles">Using Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>Unknown</code> - The reason that synchronization failed is unknown. Contact Amazon Web Services Support for more information.</p> </li>
+        /// </ul>
+        pub fn set_message(
+            mut self,
+            input: std::option::Option<crate::model::BpaStatusMessage>,
+        ) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>A Boolean value that indicates whether account-level block public access is affecting your Lightsail buckets.</p>
+        pub fn bpa_impacts_lightsail(mut self, input: bool) -> Self {
+            self.bpa_impacts_lightsail = Some(input);
+            self
+        }
+        /// <p>A Boolean value that indicates whether account-level block public access is affecting your Lightsail buckets.</p>
+        pub fn set_bpa_impacts_lightsail(mut self, input: std::option::Option<bool>) -> Self {
+            self.bpa_impacts_lightsail = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccountLevelBpaSync`](crate::model::AccountLevelBpaSync)
+        pub fn build(self) -> crate::model::AccountLevelBpaSync {
+            crate::model::AccountLevelBpaSync {
+                status: self.status,
+                last_synced_at: self.last_synced_at,
+                message: self.message,
+                bpa_impacts_lightsail: self.bpa_impacts_lightsail,
+            }
+        }
+    }
+}
+impl AccountLevelBpaSync {
+    /// Creates a new builder-style object to manufacture [`AccountLevelBpaSync`](crate::model::AccountLevelBpaSync)
+    pub fn builder() -> crate::model::account_level_bpa_sync::Builder {
+        crate::model::account_level_bpa_sync::Builder::default()
+    }
+}
+
+/// _Note: `BpaStatusMessage::Unknown` has been renamed to `::UnknownValue`._
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum BpaStatusMessage {
+    #[allow(missing_docs)] // documentation missing in model
+    DefaultedForSlrMissing,
+    #[allow(missing_docs)] // documentation missing in model
+    DefaultedForSlrMissingOnHold,
+    #[allow(missing_docs)] // documentation missing in model
+    SyncOnHold,
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
+    UnknownValue,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for BpaStatusMessage {
+    fn from(s: &str) -> Self {
+        match s {
+            "DEFAULTED_FOR_SLR_MISSING" => BpaStatusMessage::DefaultedForSlrMissing,
+            "DEFAULTED_FOR_SLR_MISSING_ON_HOLD" => BpaStatusMessage::DefaultedForSlrMissingOnHold,
+            "SYNC_ON_HOLD" => BpaStatusMessage::SyncOnHold,
+            "Unknown" => BpaStatusMessage::UnknownValue,
+            other => BpaStatusMessage::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for BpaStatusMessage {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BpaStatusMessage::from(s))
+    }
+}
+impl BpaStatusMessage {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            BpaStatusMessage::DefaultedForSlrMissing => "DEFAULTED_FOR_SLR_MISSING",
+            BpaStatusMessage::DefaultedForSlrMissingOnHold => "DEFAULTED_FOR_SLR_MISSING_ON_HOLD",
+            BpaStatusMessage::SyncOnHold => "SYNC_ON_HOLD",
+            BpaStatusMessage::UnknownValue => "Unknown",
+            BpaStatusMessage::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "DEFAULTED_FOR_SLR_MISSING",
+            "DEFAULTED_FOR_SLR_MISSING_ON_HOLD",
+            "SYNC_ON_HOLD",
+            "Unknown",
+        ]
+    }
+}
+impl AsRef<str> for BpaStatusMessage {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AccountLevelBpaSyncStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Defaulted,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    InSync,
+    #[allow(missing_docs)] // documentation missing in model
+    NeverSynced,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AccountLevelBpaSyncStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "Defaulted" => AccountLevelBpaSyncStatus::Defaulted,
+            "Failed" => AccountLevelBpaSyncStatus::Failed,
+            "InSync" => AccountLevelBpaSyncStatus::InSync,
+            "NeverSynced" => AccountLevelBpaSyncStatus::NeverSynced,
+            other => AccountLevelBpaSyncStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AccountLevelBpaSyncStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AccountLevelBpaSyncStatus::from(s))
+    }
+}
+impl AccountLevelBpaSyncStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AccountLevelBpaSyncStatus::Defaulted => "Defaulted",
+            AccountLevelBpaSyncStatus::Failed => "Failed",
+            AccountLevelBpaSyncStatus::InSync => "InSync",
+            AccountLevelBpaSyncStatus::NeverSynced => "NeverSynced",
+            AccountLevelBpaSyncStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Defaulted", "Failed", "InSync", "NeverSynced"]
+    }
+}
+impl AsRef<str> for AccountLevelBpaSyncStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

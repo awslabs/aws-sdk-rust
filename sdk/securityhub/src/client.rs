@@ -308,6 +308,7 @@ impl Client {
     /// - On success, responds with [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput) with field(s):
     ///   - [`auto_enable(bool)`](crate::output::DescribeOrganizationConfigurationOutput::auto_enable): <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>  <p>If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false, then new accounts are not added automatically.</p>
     ///   - [`member_account_limit_reached(bool)`](crate::output::DescribeOrganizationConfigurationOutput::member_account_limit_reached): <p>Whether the maximum number of allowed member accounts are already associated with the Security Hub administrator account.</p>
+    ///   - [`auto_enable_standards(Option<AutoEnableStandards>)`](crate::output::DescribeOrganizationConfigurationOutput::auto_enable_standards): <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>  <p>The default value of this parameter is equal to <code>DEFAULT</code>.</p>  <p>If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member accounts.</p>
     /// - On failure, responds with [`SdkError<DescribeOrganizationConfigurationError>`](crate::error::DescribeOrganizationConfigurationError)
     pub fn describe_organization_configuration(
         &self,
@@ -733,6 +734,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`auto_enable(bool)`](crate::client::fluent_builders::UpdateOrganizationConfiguration::auto_enable) / [`set_auto_enable(bool)`](crate::client::fluent_builders::UpdateOrganizationConfiguration::set_auto_enable): <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>  <p>By default, this is <code>false</code>, and new accounts are not added automatically.</p>  <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
+    ///   - [`auto_enable_standards(AutoEnableStandards)`](crate::client::fluent_builders::UpdateOrganizationConfiguration::auto_enable_standards) / [`set_auto_enable_standards(Option<AutoEnableStandards>)`](crate::client::fluent_builders::UpdateOrganizationConfiguration::set_auto_enable_standards): <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>  <p>By default, this parameter is equal to <code>DEFAULT</code>, and new member accounts are automatically enabled with default Security Hub standards.</p>  <p>To opt out of enabling default standards for new member accounts, set this parameter equal to <code>NONE</code>.</p>
     /// - On success, responds with [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateOrganizationConfigurationError>`](crate::error::UpdateOrganizationConfigurationError)
@@ -1443,7 +1445,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFindingAggregator`.
     ///
     /// <p>Used to enable finding aggregation. Must be called from the aggregation Region.</p>
-    /// <p>For more details about cross-Region replication, see <a href="securityhub/latest/userguide/finding-aggregation.html">Configuring finding aggregation</a> in the <i>Security Hub User Guide</i>. </p>
+    /// <p>For more details about cross-Region replication, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-aggregation.html">Configuring finding aggregation</a> in the <i>Security Hub User Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFindingAggregator {
         handle: std::sync::Arc<super::Handle>,
@@ -4586,6 +4588,23 @@ pub mod fluent_builders {
         /// <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
         pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_enable(input);
+            self
+        }
+        /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
+        /// <p>By default, this parameter is equal to <code>DEFAULT</code>, and new member accounts are automatically enabled with default Security Hub standards.</p>
+        /// <p>To opt out of enabling default standards for new member accounts, set this parameter equal to <code>NONE</code>.</p>
+        pub fn auto_enable_standards(mut self, input: crate::model::AutoEnableStandards) -> Self {
+            self.inner = self.inner.auto_enable_standards(input);
+            self
+        }
+        /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
+        /// <p>By default, this parameter is equal to <code>DEFAULT</code>, and new member accounts are automatically enabled with default Security Hub standards.</p>
+        /// <p>To opt out of enabling default standards for new member accounts, set this parameter equal to <code>NONE</code>.</p>
+        pub fn set_auto_enable_standards(
+            mut self,
+            input: std::option::Option<crate::model::AutoEnableStandards>,
+        ) -> Self {
+            self.inner = self.inner.set_auto_enable_standards(input);
             self
         }
     }

@@ -1146,17 +1146,24 @@ impl NotifyRecommendationsReceivedOutput {
 pub struct GetRecommendationsOutput {
     /// <p>The recommendations.</p>
     pub recommendations: std::option::Option<std::vec::Vec<crate::model::RecommendationData>>,
+    /// <p>The triggers corresponding to recommendations.</p>
+    pub triggers: std::option::Option<std::vec::Vec<crate::model::RecommendationTrigger>>,
 }
 impl GetRecommendationsOutput {
     /// <p>The recommendations.</p>
     pub fn recommendations(&self) -> std::option::Option<&[crate::model::RecommendationData]> {
         self.recommendations.as_deref()
     }
+    /// <p>The triggers corresponding to recommendations.</p>
+    pub fn triggers(&self) -> std::option::Option<&[crate::model::RecommendationTrigger]> {
+        self.triggers.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRecommendationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRecommendationsOutput");
         formatter.field("recommendations", &self.recommendations);
+        formatter.field("triggers", &self.triggers);
         formatter.finish()
     }
 }
@@ -1168,6 +1175,8 @@ pub mod get_recommendations_output {
     pub struct Builder {
         pub(crate) recommendations:
             std::option::Option<std::vec::Vec<crate::model::RecommendationData>>,
+        pub(crate) triggers:
+            std::option::Option<std::vec::Vec<crate::model::RecommendationTrigger>>,
     }
     impl Builder {
         /// Appends an item to `recommendations`.
@@ -1189,10 +1198,30 @@ pub mod get_recommendations_output {
             self.recommendations = input;
             self
         }
+        /// Appends an item to `triggers`.
+        ///
+        /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
+        ///
+        /// <p>The triggers corresponding to recommendations.</p>
+        pub fn triggers(mut self, input: crate::model::RecommendationTrigger) -> Self {
+            let mut v = self.triggers.unwrap_or_default();
+            v.push(input);
+            self.triggers = Some(v);
+            self
+        }
+        /// <p>The triggers corresponding to recommendations.</p>
+        pub fn set_triggers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RecommendationTrigger>>,
+        ) -> Self {
+            self.triggers = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput)
         pub fn build(self) -> crate::output::GetRecommendationsOutput {
             crate::output::GetRecommendationsOutput {
                 recommendations: self.recommendations,
+                triggers: self.triggers,
             }
         }
     }

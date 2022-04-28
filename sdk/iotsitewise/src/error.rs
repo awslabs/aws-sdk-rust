@@ -590,6 +590,423 @@ impl std::error::Error for BatchDisassociateProjectAssetsError {
     }
 }
 
+/// Error type for the `BatchGetAssetPropertyAggregates` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchGetAssetPropertyAggregatesError {
+    /// Kind of error that occurred.
+    pub kind: BatchGetAssetPropertyAggregatesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `BatchGetAssetPropertyAggregates` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchGetAssetPropertyAggregatesErrorKind {
+    /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The requested service is unavailable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for BatchGetAssetPropertyAggregatesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchGetAssetPropertyAggregatesErrorKind::InternalFailureException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchGetAssetPropertyAggregatesErrorKind::InvalidRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchGetAssetPropertyAggregatesErrorKind::ServiceUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchGetAssetPropertyAggregatesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            BatchGetAssetPropertyAggregatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchGetAssetPropertyAggregatesError {
+    fn code(&self) -> Option<&str> {
+        BatchGetAssetPropertyAggregatesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl BatchGetAssetPropertyAggregatesError {
+    /// Creates a new `BatchGetAssetPropertyAggregatesError`.
+    pub fn new(
+        kind: BatchGetAssetPropertyAggregatesErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchGetAssetPropertyAggregatesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchGetAssetPropertyAggregatesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchGetAssetPropertyAggregatesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchGetAssetPropertyAggregatesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchGetAssetPropertyAggregatesErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetAssetPropertyAggregatesErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetAssetPropertyAggregatesErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetAssetPropertyAggregatesErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetAssetPropertyAggregatesErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetAssetPropertyAggregatesErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetAssetPropertyAggregatesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetAssetPropertyAggregatesErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for BatchGetAssetPropertyAggregatesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchGetAssetPropertyAggregatesErrorKind::InternalFailureException(_inner) => {
+                Some(_inner)
+            }
+            BatchGetAssetPropertyAggregatesErrorKind::InvalidRequestException(_inner) => {
+                Some(_inner)
+            }
+            BatchGetAssetPropertyAggregatesErrorKind::ServiceUnavailableException(_inner) => {
+                Some(_inner)
+            }
+            BatchGetAssetPropertyAggregatesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            BatchGetAssetPropertyAggregatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `BatchGetAssetPropertyValue` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchGetAssetPropertyValueError {
+    /// Kind of error that occurred.
+    pub kind: BatchGetAssetPropertyValueErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `BatchGetAssetPropertyValue` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchGetAssetPropertyValueErrorKind {
+    /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The requested service is unavailable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for BatchGetAssetPropertyValueError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchGetAssetPropertyValueErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            BatchGetAssetPropertyValueErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            BatchGetAssetPropertyValueErrorKind::ServiceUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchGetAssetPropertyValueErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            BatchGetAssetPropertyValueErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchGetAssetPropertyValueError {
+    fn code(&self) -> Option<&str> {
+        BatchGetAssetPropertyValueError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl BatchGetAssetPropertyValueError {
+    /// Creates a new `BatchGetAssetPropertyValueError`.
+    pub fn new(kind: BatchGetAssetPropertyValueErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchGetAssetPropertyValueError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchGetAssetPropertyValueErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchGetAssetPropertyValueError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchGetAssetPropertyValueErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchGetAssetPropertyValueErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetAssetPropertyValueErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetAssetPropertyValueErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetAssetPropertyValueErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetAssetPropertyValueErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetAssetPropertyValueErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetAssetPropertyValueErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetAssetPropertyValueErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for BatchGetAssetPropertyValueError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchGetAssetPropertyValueErrorKind::InternalFailureException(_inner) => Some(_inner),
+            BatchGetAssetPropertyValueErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            BatchGetAssetPropertyValueErrorKind::ServiceUnavailableException(_inner) => {
+                Some(_inner)
+            }
+            BatchGetAssetPropertyValueErrorKind::ThrottlingException(_inner) => Some(_inner),
+            BatchGetAssetPropertyValueErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `BatchGetAssetPropertyValueHistory` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchGetAssetPropertyValueHistoryError {
+    /// Kind of error that occurred.
+    pub kind: BatchGetAssetPropertyValueHistoryErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `BatchGetAssetPropertyValueHistory` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchGetAssetPropertyValueHistoryErrorKind {
+    /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The requested service is unavailable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for BatchGetAssetPropertyValueHistoryError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchGetAssetPropertyValueHistoryErrorKind::InternalFailureException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchGetAssetPropertyValueHistoryErrorKind::InvalidRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchGetAssetPropertyValueHistoryErrorKind::ServiceUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchGetAssetPropertyValueHistoryErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchGetAssetPropertyValueHistoryErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchGetAssetPropertyValueHistoryError {
+    fn code(&self) -> Option<&str> {
+        BatchGetAssetPropertyValueHistoryError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl BatchGetAssetPropertyValueHistoryError {
+    /// Creates a new `BatchGetAssetPropertyValueHistoryError`.
+    pub fn new(
+        kind: BatchGetAssetPropertyValueHistoryErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchGetAssetPropertyValueHistoryError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchGetAssetPropertyValueHistoryErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchGetAssetPropertyValueHistoryError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchGetAssetPropertyValueHistoryErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchGetAssetPropertyValueHistoryErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetAssetPropertyValueHistoryErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetAssetPropertyValueHistoryErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetAssetPropertyValueHistoryErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetAssetPropertyValueHistoryErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetAssetPropertyValueHistoryErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetAssetPropertyValueHistoryErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetAssetPropertyValueHistoryErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for BatchGetAssetPropertyValueHistoryError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchGetAssetPropertyValueHistoryErrorKind::InternalFailureException(_inner) => {
+                Some(_inner)
+            }
+            BatchGetAssetPropertyValueHistoryErrorKind::InvalidRequestException(_inner) => {
+                Some(_inner)
+            }
+            BatchGetAssetPropertyValueHistoryErrorKind::ServiceUnavailableException(_inner) => {
+                Some(_inner)
+            }
+            BatchGetAssetPropertyValueHistoryErrorKind::ThrottlingException(_inner) => Some(_inner),
+            BatchGetAssetPropertyValueHistoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `BatchPutAssetPropertyValue` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
